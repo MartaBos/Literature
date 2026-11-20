@@ -1,0 +1,606 @@
+{
+ "id": "daSilva_2023",
+ "title": "Discovery of putative long non-coding RNAs expressed in the eyes of Astyanax mexicanus (Actinopterygii: Characidae)",
+ "link": "https://doi.org/10.1038/s41598-023-34198-5",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/daSilva_2023_SciRep_eye_lncRNAs.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Most eye studies in A. mexicanus focus on protein-coding genes, and almost nothing is known about lncRNAs. The aim was to identify, describe, classify and annotate the lncRNAs expressed in the embryonic eye of cavefish (CF) and surface fish (SF).",
+   "kw": [
+    "lncRNA",
+    "eye development"
+   ],
+   "info": "Their workflow assembles and evaluates the transcriptomes, annotates protein-coding genes and ncRNA families, predicts coding potential, identifies putative lncRNAs, maps them and predicts their interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How many putative lncRNAs did they find?",
+   "a": "33,069 putative lncRNAs mapped in cavefish and 19,493 in surface fish. Thousands were annotated as conserved in human and several fish species, and hundreds were validated in silico with ESTs.",
+   "kw": [
+    "lncRNA"
+   ],
+   "info": "",
+   "concl": "This is one of the first studies describing lncRNAs in A. mexicanus. It gives a catalogue of lncRNA targets for future work."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which eye-related lncRNAs do they highlight?",
+   "a": "A few lncRNAs associated with sox2. The authors suggest they are isoforms of SOX2-OT, a lncRNA that can regulate sox2 expression.",
+   "kw": [
+    "sox2",
+    "SOX2-OT"
+   ],
+   "info": "The paper uses the word 'isomorphs'. Isoform status is not experimentally confirmed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where do surface fish and cavefish populations live?",
+   "a": "Surface fish live in rivers from northwest Mexico to south Texas. Cavefish live in caves of the Sierra de Guatemala, Sierra de Colmena and Sierra de El Abra, where more than 30 populations are known.",
+   "kw": [
+    "morphotypes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What troglomorphic traits do cavefish have?",
+   "a": "Craniofacial changes, more and larger neuromasts, more taste buds, and reduced or absent eyes and pigmentation. They also differ in behaviour, circadian rhythm, sleep and metabolism.",
+   "kw": [
+    "troglomorphic traits"
+   ],
+   "info": "How strong these traits are varies between cave populations, from intermediate to extreme morphotypes. Pachón is an example of the extreme type.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "When does eye degeneration start in cavefish embryos?",
+   "a": "Eye development is quite similar in cavefish and surface fish until 20 hpf. After 40 hpf the cavefish lens becomes apoptotic, which leads to progressive degeneration and no eyes in the adult.",
+   "kw": [
+    "lens apoptosis",
+    "hpf"
+   ],
+   "info": "Eye loss has been studied through retinal morphology, lens defects and transplants, QTL, genomics and transcriptomics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which protein-coding genes have been proposed for eye development and degeneration in A. mexicanus?",
+   "a": "Crystallin genes (αA-crys, cryaa, crybb1, crybb1c, crybgx), the transcription factor sox2, retinal homeobox rx3, cone-rod homeobox crx, cbsa and dusp26.",
+   "kw": [
+    "crystallins",
+    "sox2",
+    "rx3"
+   ],
+   "info": "The authors say this list is not exhaustive. Apart from genome annotations, non-coding RNAs have not been studied in this species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How are ncRNAs split into small and long ncRNAs?",
+   "a": "By length. ncRNAs under 200 nt are small ncRNAs (sncRNA), and those of 200 nt or more are lncRNAs. ncRNAs make up more than 98% of eukaryotic genomes.",
+   "kw": [
+    "sncRNA",
+    "lncRNA"
+   ],
+   "info": "sncRNAs fall into at least 5 classes: miRNA, snRNA, snoRNA, siRNA and piRNA. Disrupting miRNA genes can cause developmental defects, including retinal degeneration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How are lncRNAs classified?",
+   "a": "By genomic position, as in GENCODE: sense, antisense, intronic and intergenic (lincRNA). For transcripts, the classification also uses position, localization and direction of transcription relative to the nearest protein-coding gene.",
+   "kw": [
+    "GENCODE",
+    "lincRNA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why might lncRNAs matter for eye loss?",
+   "a": "lncRNAs regulate gene expression at the transcriptional, post-transcriptional and epigenetic levels. Some are involved in eye diseases such as corneal neovascularization, glaucoma, cataract and diabetic retinopathy.",
+   "kw": [
+    "ANRIL",
+    "gene regulation"
+   ],
+   "info": "ANRIL (antisense noncoding RNA in the INK4 locus) is suggested to modulate optic nerve degeneration.",
+   "concl": "lncRNAs may have a role in cavefish eye degeneration, so they first need to be identified broadly."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library acquisition and pre-processing",
+   "q": "Where did the RNA-seq data come from?",
+   "a": "They reused eye RNA-seq libraries from Gore et al.: eyes from embryos at 54 hpf, two biological replicates per morphotype, poly(A)-enriched TruSeq libraries, sequenced on an Illumina HiSeq 2500 (paired-end 2x100 bp).",
+   "kw": [
+    "SRA",
+    "public data"
+   ],
+   "info": "BioProject PRJNA429434, GEO GSE109006. CF libraries SRR6456919/20, SRR6456921/22. Total RNA was isolated with the ZR-Duet DNA/RNA MiniPrep Kit. The paper does not say which cave population the eyes came from.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library acquisition and pre-processing",
+   "q": "How were the reads quality-checked and trimmed?",
+   "a": "Quality was checked with FastQC v0.11.9 and summarized with MultiQC v1.11. Adapters, contaminants and low-quality reads were removed with fastP v0.20.1 (quality above Q30).",
+   "kw": [
+    "FastQC",
+    "fastP"
+   ],
+   "info": "All tool versions and options are listed in Supplementary Table ST1-S1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - de novo assembly and metrics",
+   "q": "How were the transcriptomes assembled and evaluated?",
+   "a": "Each morphotype was assembled de novo with Trinity v2.9.1 on the Galaxy Europe server. Completeness was checked with BUSCO v5.0.0 (Actinopterygii OrthoDB v10, 3,640 groups), and quality with rnaQUAST v2.2.1 against the reference genomes.",
+   "kw": [
+    "Trinity",
+    "BUSCO",
+    "rnaQUAST"
+   ],
+   "info": "CF was compared to the Pachón cavefish genome and SF to the surface fish genome. TrinityStats gave assembly metrics, and the align-reads-and-estimate-abundance script gave FPKM values.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - functional and ncRNA annotation",
+   "q": "How were the transcripts annotated functionally?",
+   "a": "With EnTAP v5.0.0. First a blastx similarity search (e-value of e-5 or lower, at least 50% coverage) against a custom FishProteinDB and EggNOG. Then functional annotation with EggNOG to assign GO terms, KEGG terms and SMART/PFAM domains.",
+   "kw": [
+    "EnTAP",
+    "FishProteinDB",
+    "EggNOG"
+   ],
+   "info": "FishProteinDB has 171,502 RefSeq proteins from Hyperoartia, Myxini, Chondrichthyes, Actinopterygii and Sarcopterygii (tetrapods excluded), plus A. mexicanus proteins from Ensembl.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - functional and ncRNA annotation",
+   "q": "How did they identify known ncRNA families?",
+   "a": "With cmscan from Infernal v1.1.4 against Rfam v14.6. Only hits passing the Rfam bit-score gathering threshold were kept.",
+   "kw": [
+    "Infernal",
+    "Rfam"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - lncRNA prediction",
+   "q": "How was coding potential predicted?",
+   "a": "Transcripts of 200 bp or longer were run through five tools: CPC2 py3 v1.0.1, RNAsamba v0.2.5, CPAT v3.0.4, RNAmining v1.0.4 and PLEK v1.2. A transcript was called coding or non-coding only if at least 4 of the 5 tools agreed. If only 3 agreed, it was called undetermined.",
+   "kw": [
+    "coding potential",
+    "CPC2",
+    "CPAT"
+   ],
+   "info": "Earlier studies in zebrafish (6 tools) and cobia (3 tools) kept only transcripts that every tool called non-coding. The 4/5 rule is meant to reduce single-tool bias and misclassification.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - lncRNA prediction",
+   "q": "What criteria define a lncRNA candidate here?",
+   "a": "At least 200 nt long, called non-coding by at least 4 coding-potential tools, not annotated by EnTAP or Infernal, non-redundant, and FPKM of 1 or more.",
+   "kw": [
+    "FPKM",
+    "CD-HIT-EST"
+   ],
+   "info": "Redundant sequences were removed with CD-HIT-EST v4.6 (similarity threshold 1.0, word size 8).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - mapping and classification of lncRNAs",
+   "q": "How were lncRNAs mapped to the genome and classified?",
+   "a": "Candidates were mapped with GMAP v2021-12-17 to the chromosomes of their own morphotype's genome, leaving out unplaced scaffolds and chimeric alignments. The GFF3 was converted to GTF with AGAT v0.9.1. The FEELnc v0.2 classifier then classified the lncRNAs and predicted lncRNA-mRNA interactions.",
+   "kw": [
+    "GMAP",
+    "FEELnc",
+    "AGAT"
+   ],
+   "info": "FEELnc uses four categories (type, subtype, transcription direction, localization), giving 16 possible classes. Only the best interaction per lncRNA was kept (isBest=1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - mapping and classification of lncRNAs",
+   "q": "How did they summarise the FEELnc classes?",
+   "a": "Following GENCODE, lncRNAs were split into genic and intergenic. Genic lncRNAs were exonic, intronic or overlapping. Intergenic lncRNAs were same-strand, convergent or divergent.",
+   "kw": [
+    "genic",
+    "intergenic"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation of lncRNAs",
+   "q": "How did they find lncRNAs shared between cavefish and surface fish?",
+   "a": "With a Reciprocal Best Hits (RBH) BLAST analysis on Galaxy Europe, using megablast with at least 70% identity and 70% coverage.",
+   "kw": [
+    "RBH",
+    "megablast"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation of lncRNAs",
+   "q": "How were lncRNAs validated in silico?",
+   "a": "Mapped candidates were aligned with megablast against A. mexicanus ESTs from GenBank, requiring an e-value of e-5 or lower and at least 95% identity and coverage.",
+   "kw": [
+    "ESTs",
+    "in silico validation"
+   ],
+   "info": "189,864 ESTs were downloaded and reduced to 148,690 unique ESTs with CD-HIT-EST (same parameters as before).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation of lncRNAs",
+   "q": "Which lncRNA databases were used, and with what thresholds?",
+   "a": "AmexLNC DB (7,773 lncRNAs predicted in the Pachón and surface genomes) at 70% identity and 70% coverage. ZFLNC (21,128 zebrafish lncRNAs) at 50% and 50%. LncBook 2.0 (323,950 human lncRNA transcripts) at 50% identity and 25% coverage. All used an e-value of e-5 or lower and the top 3 hits.",
+   "kw": [
+    "AmexLNC",
+    "ZFLNC",
+    "LncBook"
+   ],
+   "info": "Thresholds were relaxed with phylogenetic distance because lncRNA sequences are poorly conserved. Top hits were filtered with BLAST top hit descriptions v0.1.1, and Venn diagrams were made with InteractiVenn.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - lncRNA conservation among fishes",
+   "q": "How did they test whether lncRNAs are conserved across fishes?",
+   "a": "They downloaded ncRNA sequences for all 90 Ensembl 'Fish' assemblies and ran BLAST in two rounds. First each assembly was searched separately to drop those with no hits. Then the remaining assemblies were merged into one database and searched again, keeping hits with at least 60% query coverage.",
+   "kw": [
+    "Ensembl",
+    "BLAST"
+   ],
+   "info": "The e-value cutoff is written as 'e-value >= e-3', which is probably a typo for e-3 or lower. Alignments were viewed with BlastViewer v5.5.2. Hits per species were plotted as a dendrogram with taxize, myTAI and ggtree.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - interactions with candidate genes for eye loss",
+   "q": "How did they link lncRNAs to eye-loss genes?",
+   "a": "They built a list of protein-coding eye-loss candidates from Casane and Rétaux and from Warren et al. The list covers CF vs SF differentially expressed genes, genes in eye QTL and other candidates, limited to genes annotated in the Ensembl A. mexicanus genomes. They then took the mapped lncRNAs whose FEELnc partner was on the list.",
+   "kw": [
+    "candidate genes",
+    "qgraph"
+   ],
+   "info": "Interaction networks were drawn with an in-house R script and the qgraph package. The gene list is in Supplementary Table ST1-S3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - conservation of SOX2-OT transcripts",
+   "q": "How did they compare the SOX2-OT candidates between morphotypes?",
+   "a": "They filtered the RBH results for sox2-associated lncRNAs, then compared the secondary structures of each RBH pair with ExpaRNA using default parameters.",
+   "kw": [
+    "ExpaRNA",
+    "secondary structure"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptome assembly and completeness",
+   "q": "What were the read numbers and assembly sizes?",
+   "a": "CF: 178.7 M and 152.4 M raw reads (97.8% and 97.3% kept after trimming), assembled into 270,293 transcripts with 43.89% GC. SF: 185.8 M and 197.6 M raw reads (181.2 M and 192.2 M kept), assembled into 244,721 transcripts with 44.43% GC.",
+   "kw": [
+    "Trinity"
+   ],
+   "info": "FPKM was below 1.0 for 127,764 CF and 123,415 SF transcripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptome assembly and completeness",
+   "q": "How complete were the assemblies according to BUSCO?",
+   "a": "78.0% (2,840) complete BUSCOs in CF and 80.0% (2,911) in SF. The split differed: 27.1% single-copy and 50.9% duplicated in CF, versus 50.3% and 29.7% in SF.",
+   "kw": [
+    "BUSCO"
+   ],
+   "info": "The paper calls the proportions 'significantly different' but reports no statistical test. The high duplication in CF is not explained.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptome assembly and completeness",
+   "q": "What did rnaQUAST show?",
+   "a": "99.88% of CF and 98.54% of SF transcripts aligned to their reference genomes. 319 CF and 3,574 SF transcripts were unaligned. Misassemblies were 4.86% in CF and 6.34% in SF.",
+   "kw": [
+    "rnaQUAST",
+    "misassemblies"
+   ],
+   "info": "Uniquely aligned: 93.75% CF, 91.24% SF. Multiply aligned: 1.28% CF, 0.96% SF. About 48% of CF and 46% of SF transcripts are longer than 500 bp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional annotation",
+   "q": "How much of each transcriptome was functionally annotated?",
+   "a": "Against FishProteinDB, 105,850 (39.2%) CF and 96,100 (39.3%) SF transcripts were annotated, mostly with A. mexicanus proteins as hits. Protein domains were assigned to 34.4% (CF) and 34.2% (SF), and KEGG terms to 11.0% and 10.9%.",
+   "kw": [
+    "EnTAP",
+    "GO",
+    "KEGG"
+   ],
+   "info": "GO biological process: 65,711 CF and 59,550 SF. Molecular function: 64,798 and 58,979. Cellular component: 49,158 and 44,097.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - annotated ncRNA families",
+   "q": "Which known ncRNA families did Infernal find?",
+   "a": "In CF, 739 transcripts matched 174 Rfam RNAs. Of these, 137 were sncRNAs (88 snoRNAs and 49 miRNAs). In SF, 699 transcripts matched 173 Rfam RNAs, with 136 sncRNAs (90 snoRNAs and 46 miRNAs).",
+   "kw": [
+    "snoRNA",
+    "miRNA",
+    "Rfam"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA candidates",
+   "q": "How did the 4/5 consensus classify the transcripts?",
+   "a": "CF: 217,970 (80.65%) non-coding, 26,766 (9.90%) coding and 25,528 (9.45%) undetermined. SF: 197,313 (80.64%) non-coding, 24,025 (9.82%) coding and 23,357 (9.54%) undetermined.",
+   "kw": [
+    "coding potential"
+   ],
+   "info": "Tool agreements and disagreements are shown as a Venn diagram in Supplementary File 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA candidates",
+   "q": "How many candidates were left after filtering?",
+   "a": "33,092 lncRNA candidates in CF and 22,453 in SF.",
+   "kw": [
+    "filtering"
+   ],
+   "info": "Removed from the non-coding set: EnTAP-annotated (55,933 CF, 50,794 SF), Infernal-annotated (357 CF, 325 SF), redundant by CD-HIT (824 CF, 326 SF) and FPKM below 1 (127,764 CF, 123,415 SF).",
+   "concl": "Most transcripts that tools call non-coding are removed by the annotation and expression filters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - mapped lncRNAs",
+   "q": "How many candidates mapped to the genome, and how were they spread across chromosomes?",
+   "a": "33,069 (99.93%) CF candidates mapped to the Pachón genome, but only 19,493 (86.82%) SF candidates mapped to the surface genome. In CF, chromosome 1 had the most (2,873, 8.69%) and chromosome 18 the fewest (664). In SF, chromosome 1 had only 656 (3.29%) and chromosome 21 had the fewest (390).",
+   "kw": [
+    "GMAP",
+    "chromosome distribution"
+   ],
+   "info": "The counts differ on almost every chromosome. The Discussion attributes this mainly to differences between the two genome assemblies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - shared and validated lncRNAs",
+   "q": "How many lncRNAs are shared between morphotypes, and how many were validated?",
+   "a": "5,741 lncRNAs are shared. 27,328 are found only in CF and 13,752 only in SF. EST alignment validated 941 CF and 526 SF lncRNAs.",
+   "kw": [
+    "RBH",
+    "ESTs"
+   ],
+   "info": "The 'exclusive' sets come from presence or absence in each transcriptome, not from a differential expression test.",
+   "concl": "Most lncRNAs appear to be specific to one morphotype."
+  },
+  {
+   "type": "qa",
+   "section": "Results - conserved lncRNAs",
+   "q": "How many lncRNAs matched each lncRNA database?",
+   "a": "AmexLNC: 1,980 CF and 1,423 SF. ZFLNC: 495 CF and 361 SF. LncBook (human): 269 CF and 214 SF. Matches to all three databases: 29 in CF and 23 in SF.",
+   "kw": [
+    "AmexLNC",
+    "ZFLNC",
+    "LncBook"
+   ],
+   "info": "CF overlaps: 135 AmexLNC+ZFLNC, 46 ZFLNC+LncBook, 16 AmexLNC+LncBook. SF overlaps: 78, 37 and 10.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - conserved lncRNAs",
+   "q": "In which other fish species were the lncRNAs conserved?",
+   "a": "In 21 other species. The most hits were to Oncorhynchus kisutch (55 CF, 36 SF) and Cyprinus carpio (55 CF, 31 SF). By order: Salmoniformes 120/80, Cypriniformes 87/49 and Clupeiformes 32/22 (CF/SF).",
+   "kw": [
+    "conservation",
+    "Ensembl"
+   ],
+   "info": "There were 1,707 CF and 1,207 SF hits to the A. mexicanus assembly itself, excluded here. Hit numbers do not follow phylogenetic distance or the number of ncRNAs per assembly: S. salar has 28,609 lncRNAs but only 46/30 hits, and O. kisutch has 3,425 sequences but the most hits. DN2011_c0_g1_i7 (CF) is conserved in D. rerio, S. salar, O. mykiss, O. kisutch and O. tshawytscha.",
+   "concl": "The number of conserved hits does not follow phylogenetic proximity to A. mexicanus."
+  },
+  {
+   "type": "qa",
+   "section": "Results - conserved lncRNAs",
+   "q": "How many lncRNAs are known and how many are novel?",
+   "a": "Known (annotated by at least one database): 2,860 CF and 2,080 SF. Novel (no match in any database): 30,209 CF and 17,413 SF.",
+   "kw": [
+    "novel lncRNAs"
+   ],
+   "info": "",
+   "concl": "Most of the eye lncRNAs found here are novel."
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA classification",
+   "q": "What share of lncRNAs is intergenic, and of which types?",
+   "a": "Intergenic: 22,888 (69.88%) in CF and 9,599 (49.74%) in SF. In both, same-strand was most common (49.71% CF, 49.83% SF), then convergent (43.22% CF, 38.91% SF), then divergent (7.07% CF, 11.26% SF).",
+   "kw": [
+    "lincRNA",
+    "FEELnc"
+   ],
+   "info": "The percentages appear to use the lncRNAs with a FEELnc partner as denominator (32,755 CF, 19,298 SF), not all mapped lncRNAs. The paper does not state this explicitly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA classification",
+   "q": "How do genic lncRNAs differ between morphotypes?",
+   "a": "CF has 9,867 (30.12%) genic lncRNAs: 59.11% intronic, 23.12% exonic and 17.77% overlapping. SF has 9,699 (50.26%): 42.52% intronic, 42.41% exonic and 15.07% overlapping.",
+   "kw": [
+    "genic lncRNA",
+    "intronic"
+   ],
+   "info": "The authors suggest the different genome assemblies may partly cause the genic/intergenic differences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA interactions with partners",
+   "q": "How many lncRNAs had predicted partners, and how many involved eye candidate genes?",
+   "a": "In CF, 32,755 (99.05%) lncRNAs interacted with 12,633 partners. In SF, 19,298 lncRNAs interacted with 8,389 partners. With eye-loss candidate genes: 205 lncRNAs and 57 partners in CF, 143 lncRNAs and 72 partners in SF.",
+   "kw": [
+    "FEELnc",
+    "interaction network"
+   ],
+   "info": "Some partners have many lncRNAs, for example ENSAMXG00000015728 with 35 in CF and ENSAMXG00000029878 with 46 in SF.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA interactions with partners",
+   "q": "Which lncRNAs interact with sox2?",
+   "a": "Seven in CF: 5 genic sense intronic-containing and 2 intergenic antisense convergent. Eight in SF, all intronic-containing. Intronic-containing means the lncRNA is transcribed in the same direction as sox2 and sox2 lies within it.",
+   "kw": [
+    "sox2",
+    "intronic containing"
+   ],
+   "info": "Lengths range from 345 nt (DN1425_c0_g1_i45) to 1,189 nt (DN1425_c0_g1_i26). CF transcripts are mostly from the DN21854_c0_g1 cluster and SF transcripts from DN1425_c0_g1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - lncRNA interactions with partners",
+   "q": "Are the sox2-associated lncRNAs shared between cavefish and surface fish?",
+   "a": "Three RBH pairs are shared, with near-identical sequences: pident 99.621%, 99.566% and 99.533%. ExpaRNA (LCS-EPM) showed that the pairs are also similar in secondary-structure motifs, not only in sequence.",
+   "kw": [
+    "RBH",
+    "ExpaRNA",
+    "SOX2-OT"
+   ],
+   "info": "Pairs (CF/SF): DN21854_c0_g1_i13 / DN1425_c0_g1_i7 (530 bp), DN21854_c0_g1_i2 / DN1425_c0_g1_i27 (463 bp), and DN21854_c0_g1_i10 (642 bp) / DN1425_c0_g1_i19 (662 bp).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors view the 4-6% misassemblies?",
+   "a": "They consider it acceptable for Trinity, which has one of the highest misassembly rates among de novo assemblers (3.9% and 17.9% in two earlier studies). Some misassemblies may be real chimeric transcripts from chromosomal rearrangement or trans-splicing.",
+   "kw": [
+    "Trinity",
+    "chimeric transcripts"
+   ],
+   "info": "Calling 4-6% 'under the expected' does not fit well with the 3.9% reference value. They suggest exploring the misassembled transcripts further.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is the 'undetermined' coding class interesting?",
+   "a": "Coding-potential tools usually give a binary call. The undetermined class may contain bifunctional transcripts, such as lncRNAs with small ORFs encoding regulatory peptides, or non-coding isoforms of protein-coding genes.",
+   "kw": [
+    "sORF",
+    "bifunctional RNA"
+   ],
+   "info": "This still needs to be confirmed. The authors recommend combining several coding-potential tools with annotation against a protein database to reduce bias.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do the chromosomal lncRNA counts differ between CF and SF?",
+   "a": "Probably because of assembly differences, not biology. Chromosome 1 is 133,971,750 bp in the Pachón genome but only 26,953,843 bp in the surface genome. The Pachón assembly has 170 unplaced scaffolds (29,150,210 bp), the surface assembly 2,390 (404,626,875 bp).",
+   "kw": [
+    "assembly bias",
+    "reference genome"
+   ],
+   "info": "These differences may also affect the genic and intergenic proportions. The authors say this should be revisited once equivalent assemblies exist.",
+   "concl": "Comparisons of lncRNA location and class between morphotypes are confounded by the different reference genomes."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is SOX2-OT and why does it matter here?",
+   "a": "SOX2-OT is a lncRNA that overlaps sox2, which sits in one of its introns, and is transcribed in the same direction. Unlike most lncRNAs it is quite conserved in sequence among vertebrates. It has multiple transcription start sites that give transcripts of different lengths.",
+   "kw": [
+    "SOX2-OT",
+    "miRNA sponge"
+   ],
+   "info": "SOX2-OT can act as a miRNA sponge and raise or lower sox2 expression depending on the tissue. It is linked to cell regulation, proliferation and differentiation. The varying lengths of the intronic sox2 lncRNAs found here fit the multiple-TSS pattern.",
+   "concl": "The sox2-associated lncRNAs are proposed as SOX2-OT isoforms, but this is not confirmed."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is known about sox2 in eye development and in A. mexicanus?",
+   "a": "sox2 acts at several stages of retinal development and controls Wnt/β-catenin activity in the retina. Ma et al. found sox2 downregulated in the cavefish lens, and knocking down sox2 in surface fish reduced cryaa expression and caused lens apoptosis.",
+   "kw": [
+    "sox2",
+    "cryaa",
+    "Wnt"
+   ],
+   "info": "In zebrafish, sox2 is highly expressed in eye and brain at 28 hpf and in the retina around 48 hpf. Why sox2 is downregulated in cavefish is still unknown.",
+   "concl": "Regulation of sox2 by SOX2-OT should be considered as a possible part of cavefish lens degeneration."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main limitations and the authors' take-home message?",
+   "a": "The predicted interactions may be undercounted because of the reference genomes, the SOX2-OT isoform status is unconfirmed, and conservation was tested on primary sequence only. The authors present the catalogue as a starting point for targeted studies, including differential expression.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "The assembly is deposited as TSA DANNHJ000000000 (version DANNHJ010000000). Databases, sequences and scripts are on OSF (doi 10.17605/OSF.IO/3Z7QN). The data are two replicates per morphotype from one time point (54 hpf), and no differential expression was tested.",
+   "concl": "Thousands of eye-expressed lncRNAs were found in A. mexicanus, many of them morphotype-specific, and some are linked to eye-development genes such as sox2."
+  },
+  {
+   "type": "note",
+   "section": "Results - shared and validated lncRNAs",
+   "text": "Are the morphotype-exclusive lncRNAs (27,328 CF vs 13,752 SF) real, or partly caused by the different genome assemblies and mapping rates (99.93% vs 86.82%)? Recheck with equivalent assemblies or one common reference."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Are the sox2-associated intronic lncRNAs real SOX2-OT isoforms, and could SOX2-OT explain sox2 downregulation in the cavefish lens? Worth checking with expression data across eye stages (e.g. 20, 40, 54 hpf)."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "The undetermined coding-potential class (about 25,000 transcripts per morphotype) may hold bifunctional or sORF-containing transcripts. Worth going back to with ribosome profiling or proteomics data."
+  }
+ ]
+}

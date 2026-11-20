@@ -1,0 +1,529 @@
+{
+ "id": "Fukushima_2025",
+ "title": "Coordinated action of multiple active histone modifications shapes the zygotic genome activation in teleost embryos",
+ "link": "https://doi.org/10.1038/s41467-025-60246-x",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Fukushima_2025_NatCommun_histone_marks_ZGA_teleost.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does the paper address?",
+   "a": "Many active histone modifications build up at zygotic genome activation (ZGA) and have long been linked to it, but whether they actually matter there was unclear. The authors tested the role of these marks and of the enzymes that write them during ZGA in teleost embryos (medaka and zebrafish).",
+   "kw": [
+    "ZGA",
+    "histone modifications"
+   ],
+   "info": "ZGA is described as the rapid, near-simultaneous activation of chromatin that was silenced across the whole genome.",
+   "concl": "Several histone modifications act together to produce the gene activation program specific to ZGA in non-mammalian vertebrates."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings in one sentence each?",
+   "a": "CBP/P300 activity is needed to activate developmental genes, while housekeeping genes depend on acetylations not made by CBP/P300 (H3K9ac, H4K16ac, H3K14ac). H3K4me2/3 accumulation is not required for ZGA. Temporary accumulation of H3.3S31ph boosts CBP/P300 activity specifically at ZGA.",
+   "kw": [
+    "CBP/P300",
+    "H3K4me2/3",
+    "H3.3S31ph"
+   ],
+   "info": "The H3K4me2/3 result contrasts with earlier reports from cell lines.",
+   "concl": "Developmental genes and housekeeping genes are regulated differently during ZGA."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What happens to the embryo before ZGA in non-mammalian vertebrates?",
+   "a": "Embryos go through rapid cleavages driven by maternal factors, with no zygotic transcription, and most histone modifications are erased. After about the tenth cleavage, at the blastula stage, pioneer factors start transcription across the genome within a very narrow time window.",
+   "kw": [
+    "cleavage",
+    "pioneer factors",
+    "maternal factors"
+   ],
+   "info": "Before ZGA, chromatin is inaccessible, there is no canonical nucleosome patterning, and Pol II does not accumulate on chromatin. In mammals, histone marks are rarely fully erased. Instead, a non-canonical pattern is set up at ZGA, and ZGA lasts relatively long.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about H3K27ac and CBP/P300 at ZGA?",
+   "a": "H3K27ac builds up during ZGA in zebrafish and is strongly remodeled in mouse and human. Inhibiting CBP/P300 blocks ZGA in mouse, zebrafish and medaka, and overexpressing CBP/P300 in zebrafish causes premature but partial ZGA.",
+   "kw": [
+    "H3K27ac",
+    "CBP/P300"
+   ],
+   "info": "H3K27ac marks active promoters and enhancers. How CBP/P300 and H3K27ac regulate ZGA was not understood.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the gap regarding the other active marks?",
+   "a": "H3K9ac, H4K16ac and H3K4me2/3 also accumulate during ZGA in zebrafish, medaka and Xenopus, and were proposed to prime genes for activation. Whether they are actually needed for ZGA had never been tested.",
+   "kw": [
+    "H3K9ac",
+    "H4K16ac",
+    "H3K4me2/3"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "When does ZGA happen in medaka?",
+   "a": "From the tenth round of cell division, at the early blastula stage (about 1000 cells, 6.5 hpf).",
+   "kw": [
+    "medaka",
+    "early blastula"
+   ],
+   "info": "Blastomeres stay pluripotent until the late blastula stage (about 4000 cells, 8.5 hpf). Differentiation starts at the pre-early gastrula stage (6000 to 7000 cells, 10.5 hpf).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "How did they inhibit CBP/P300?",
+   "a": "They treated embryos with A485, which inhibits the HAT (acetyltransferase) activity, and with SGC-CBP30, which inhibits the bromodomain. Treatment ran from the 4-cell stage (2 hpf) to the late blastula stage (8.5 hpf).",
+   "kw": [
+    "A485",
+    "SGC-CBP30"
+   ],
+   "info": "Both treatments strongly reduced H3K27ac at late blastula and stopped development before gastrulation. A fractionation assay showed that A485 did not affect CBP/P300 binding to chromatin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "How many genes changed after CBP/P300 inhibition?",
+   "a": "With 20 µM A485, 767 genes went down and 10 went up. With SGC-CBP30, 527 went down and 22 went up. The downregulated genes were mostly ZGA genes, including both Maternal-ZGA and Pure ZGA genes.",
+   "kw": [
+    "RNA-seq",
+    "DEGs"
+   ],
+   "info": "DEG thresholds: |log2FC| > 1, adjusted p < 0.01, RPKM > 1.5. Two biological replicates each. In PCA, the samples from the two inhibitors clustered together and away from normal embryos.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "What are CBP/P300-dependent and CBP/P300-independent genes?",
+   "a": "Dependent genes are ZGA genes downregulated by both A485 and SGC-CBP30; the two downregulated sets overlapped almost completely. About half of the ZGA genes were not affected by either inhibitor and are called CBP/P300-independent.",
+   "kw": [
+    "CBP/P300-dependent",
+    "CBP/P300-independent"
+   ],
+   "info": "In the Venn diagram, 412 genes are shared by ZGA genes and both inhibitor sets, and 634 ZGA genes are affected by neither.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "Could the CBP/P300-independent genes be a technical artefact of conventional RNA-seq?",
+   "a": "The authors argue they are not. Their ZGA genes covered most of the highly expressed nascent or zygotic transcripts from earlier medaka data, and a re-analysis of zebrafish nascent RNA-seq with SGC-CBP30 also found many zygotic genes that did not respond to CBP/P300 inhibition.",
+   "kw": [
+    "nascent RNA-seq"
+   ],
+   "info": "Limitation: conventional RNA-seq cannot separate maternal mRNA from newly transcribed mRNA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "What kinds of genes are CBP/P300-dependent and which are independent?",
+   "a": "GO terms for development and differentiation were enriched in dependent genes. Terms for recombination and nucleosomes, which relate to cell maintenance, were enriched in independent genes. Developmental genes such as bmp4, chrd, fgf8a, gata6, sox2, zic1 and wnt5b were CBP/P300-dependent in medaka.",
+   "kw": [
+    "GO analysis",
+    "developmental genes",
+    "housekeeping genes"
+   ],
+   "info": "GO thresholds: FDR < 0.05, fold enrichment > 2, top 10 terms. A re-analysis of zebrafish data also showed that developmental genes respond to CBP/P300 inhibition.",
+   "concl": "CBP/P300 is needed to activate developmental genes but not housekeeping genes during ZGA in fish."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 is essential for developmental but not housekeeping genes",
+   "q": "How do the promoters of the two gene groups differ?",
+   "a": "Dependent genes show a sharper boundary between untranscribed and transcribed regions around the TSS than independent genes. This fits the mammalian pattern of sharp promoters (single TSS) in developmental genes and broad promoters (multiple TSSs) in housekeeping genes.",
+   "kw": [
+    "sharp promoter",
+    "broad promoter",
+    "TSS"
+   ],
+   "info": "Based on aggregate RNA-seq signal around the TSS, not on TSS mapping such as CAGE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 shapes the epigenetic landscape at ZGA",
+   "q": "Which genes were used for the chromatin analyses, and why?",
+   "a": "Only CBP/P300-dependent and independent genes with an H3K27ac peak near the promoter (TSS ± 3 kb): 703 dependent and 398 independent. Downregulation of dependent genes without such a peak is probably a secondary effect downstream of direct targets.",
+   "kw": [
+    "H3K27ac proximal peaks"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 shapes the epigenetic landscape at ZGA",
+   "q": "How did histone marks change after A485 treatment?",
+   "a": "H3K27ac decreased at both dependent and independent promoters. H3K4me2 was lost specifically at dependent genes, and some dependent genes gained H3K27me3 too early. H2AK119ub1 decreased in both groups.",
+   "kw": [
+    "H3K4me2",
+    "H3K27me3",
+    "H2AK119ub1"
+   ],
+   "info": "For the genes that gained H3K27me3, the mark normally appears at the onset of gastrulation. Expression of the H3K4 methylation, H3K27me3 and H2AK119ub modifiers was unchanged after A485. H2AK119ub1 was profiled with new spike-in ChIP-seq.",
+   "concl": "CBP/P300 activity is needed to set up the normal epigenetic landscape during ZGA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 shapes the epigenetic landscape at ZGA",
+   "q": "Which chromatin change best tracks the loss of expression?",
+   "a": "Loss of H3K4me2. Its Pearson correlation with RNA change was 0.44 for A485 and 0.27 for SGC-CBP30. For H3K27me3 it was 0.07 and 0.0024, and for H2AK119ub 0.14 and 0.051.",
+   "kw": [
+    "Pearson correlation",
+    "H3K4me2"
+   ],
+   "info": "Among proximal peaks, H3K4me2 fold change after A485 was lower at dependent than at independent genes (p < 2.6 × 10^-27, Wilcoxon).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 shapes the epigenetic landscape at ZGA",
+   "q": "Is the H3K4me2 accumulation a cause or a consequence of transcription?",
+   "a": "Blocking all transcription with alpha-amanitin did not reduce H3K27ac or H3K4me2. So H3K4me2 accumulation at developmental genes depends on CBP/P300 activity, not on zygotic transcription itself.",
+   "kw": [
+    "alpha-amanitin"
+   ],
+   "info": "Alpha-amanitin was injected at the one-cell stage at 10 ng/µL. New spike-in ChIP-seq reproduced the earlier data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K4me2/3 is not prerequisite for ZGA",
+   "q": "How did they deplete H3K4me2/3?",
+   "a": "They injected mRNA for human KDM5B, a demethylase that removes H3K4me2/3, or treated embryos with MM-102, which blocks the WDR5-MLL1 interaction the H3K4 writer complex needs. Both lowered global H3K4me2 at late blastula, and KDM5B also lowered H3K4me3.",
+   "kw": [
+    "KDM5B",
+    "MM-102",
+    "WDR5-MLL1"
+   ],
+   "info": "KDM5B mRNA was injected at 700 ng/µL and MM-102 used at 100 µM. Depletion was confirmed by Western blot and immunofluorescence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K4me2/3 is not prerequisite for ZGA",
+   "q": "What happened to ZGA after H3K4me2/3 depletion?",
+   "a": "Nothing. KDM5B changed only 4 genes up and 2 down, and MM-102 changed none. KDM5B-injected embryos also developed normally.",
+   "kw": [
+    "H3K4me2/3"
+   ],
+   "info": "In PCA (PC1 78.3% of variance), the depleted samples clustered with normal late blastula and the inhibitor controls, while CBP/P300-inhibited samples were far away.",
+   "concl": "Both H3K4me2/3 accumulation and ZGA depend on CBP/P300, but they are independent of each other."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 and BRD4 drive Pol II initiation and elongation",
+   "q": "How does CBP/P300 inhibition affect Pol II?",
+   "a": "In Pol II spike-in ChIP-seq after A485, Pol II was lost at both the TSS and the gene body of CBP/P300-dependent genes. This points to CBP/P300 being needed for Pol II initiation.",
+   "kw": [
+    "Pol II",
+    "initiation"
+   ],
+   "info": "Pol II density was measured as the TSS ± 250 bp region and the gene body as TSS + 500 bp to TES − 250 bp. Genes of 750 bp or shorter were excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 and BRD4 drive Pol II initiation and elongation",
+   "q": "What is the role of BRD4?",
+   "a": "BRD4 reads CBP/P300-made acetylation and controls Pol II pause-release. Inhibiting it with JQ1 downregulated 1059 genes (40 up), mostly CBP/P300-dependent ZGA genes; 693 genes were shared by ZGA, CBP/P300-dependent and JQ1-down. After JQ1, Pol II dropped in gene bodies but not at the TSS.",
+   "kw": [
+    "BRD4",
+    "JQ1",
+    "pause-release"
+   ],
+   "info": "JQ1 was used at 40 µM. Pol II Ser2P, an elongation mark, was reduced in the gene bodies of dependent genes after both A485 and JQ1.",
+   "concl": "CBP/P300 drives Pol II initiation and BRD4 drives elongation at developmental genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 and BRD4 drive Pol II initiation and elongation",
+   "q": "Does CBP/P300 act through chromatin accessibility?",
+   "a": "Probably not. Re-analysis of ATAC-seq from A485-treated embryos showed that global H3K27ac loss only modestly reduced the gain in accessibility at ZGA, including at dependent-gene promoters.",
+   "kw": [
+    "ATAC-seq",
+    "chromatin accessibility"
+   ],
+   "info": "The authors note this matches earlier results in Drosophila ZGA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - non-CBP/P300 acetylation at independent genes",
+   "q": "Why are CBP/P300-independent genes still expressed after inhibition?",
+   "a": "A485 and JQ1 also lowered Pol II at independent genes, but much less than at dependent genes, and their expression stayed largely unchanged. This is true even though CBP/P300 does act at their promoters (H3K27ac is lost there).",
+   "kw": [
+    "Pol II occupancy"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - non-CBP/P300 acetylation at independent genes",
+   "q": "Which marks are enriched at CBP/P300-independent promoters?",
+   "a": "In normal late blastula, H3K9ac, H4K16ac and H3K14ac are higher at independent than at dependent promoters. Their correlation with RNA change after A485 was 0.38, 0.4 and 0.27, compared with 0.2 for H3K27ac.",
+   "kw": [
+    "H3K9ac",
+    "H4K16ac",
+    "H3K14ac"
+   ],
+   "info": "Wilcoxon p values: below 6.1 × 10^-15 for H3K9ac, below 1.1 × 10^-21 for H4K16ac, and below 1.1 × 10^-10 for H3K14ac. These ChIP-seq experiments had no spike-in.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - non-CBP/P300 acetylation at independent genes",
+   "q": "Which HATs might activate housekeeping genes?",
+   "a": "GCN5 (kat2a), MOF (kat8) and HBO1 (kat7b). These non-CBP/P300 HATs write H3K9ac, H4K16ac and H3K14ac and are expressed in early medaka development.",
+   "kw": [
+    "GCN5",
+    "MOF",
+    "HBO1"
+   ],
+   "info": "This is a correlation only. None of these HATs was inhibited in the study.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - non-CBP/P300 acetylation at independent genes",
+   "q": "Does the same pattern hold in zebrafish and mouse?",
+   "a": "In zebrafish, H3K9ac and H4K16ac were enriched at independent promoters but not dependent ones. In mouse there was no such correlation, mouse dependent genes were not developmental genes, and the medaka developmental genes were not expressed at mouse ZGA.",
+   "kw": [
+    "zebrafish",
+    "mouse",
+    "re-analysis"
+   ],
+   "info": "The authors suggest that in mammalian ZGA another mechanism activates the CBP/P300-independent genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - non-CBP/P300 acetylation at independent genes",
+   "q": "Are different transcription factors linked to the two gene groups?",
+   "a": "Motif analysis found PRDM9, HOXB13 and SOX15 motifs specific to dependent promoters, and Twist2, Tcf12, Olig2 and Neurod2 motifs (CAGCTG) specific to independent promoters. This supports a model where different TF groups recruit different HATs.",
+   "kw": [
+    "motif enrichment",
+    "AME",
+    "JASPAR2022"
+   ],
+   "info": "Thresholds: log2 fold change of p value > 1 and log2 fold change of enrichment > 0.1. Earlier zebrafish work showed pioneer TFs recruit HATs at ZGA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 activity is enhanced at ZGA",
+   "q": "Is H3K27ac per cell higher at ZGA than at later stages?",
+   "a": "Yes. Quantitative Western blots with equal cell numbers showed H3K27ac 2 to 3 times higher at late blastula than at late neurula, 6-somite, 24-somite or in fibroblasts. H3K18ac, also made by CBP/P300, showed the same ZGA-specific peak.",
+   "kw": [
+    "quantitative Western blot",
+    "H3K18ac"
+   ],
+   "info": "Cell number was estimated from relative genome copy number by qPCR. H3K9ac, H4K16ac, H3K4me2 and H3K4me3 showed no ZGA-specific accumulation. In zebrafish, H3K27ac was 2 to 3 times higher at sphere (4 hpf) than at bud (10 hpf).",
+   "concl": "CBP/P300 activity is specifically boosted during ZGA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 activity is enhanced at ZGA",
+   "q": "Which explanations for the enhanced CBP/P300 activity were ruled out?",
+   "a": "CBP/P300 expression is similar between ZGA and later stages in medaka and zebrafish, and protein levels are similar in zebrafish. TSA treatment caused strong H3K27ac deposition, so HDACs are active at ZGA. Acetyl-CoA is probably not limiting, because acetylations made by other HATs are not raised.",
+   "kw": [
+    "TSA",
+    "HDAC",
+    "acetyl-CoA"
+   ],
+   "info": "TSA was used at 20 or 100 nM. The acetyl-CoA argument is indirect; acetyl-CoA was not measured.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 activity is enhanced at ZGA",
+   "q": "What is H3.3S31ph and how does it behave at ZGA?",
+   "a": "It is phosphorylation of serine 31 on histone variant H3.3, made by kinases such as Chk1, and it is known to boost CBP/P300 activity. Per cell, H3.3S31ph was much higher at late blastula than at late neurula or 6-somite, and ChIP-seq showed it at H3K27ac promoter peaks of both gene groups.",
+   "kw": [
+    "H3.3S31ph",
+    "Chk1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CBP/P300 activity is enhanced at ZGA",
+   "q": "What happened when chek1 was overexpressed?",
+   "a": "Injecting chek1 mRNA increased H3.3S31ph and H3K27ac and activated CBP/P300-dependent genes early, at late morula (before ZGA). 577 genes went up and 90 down; 429 of the upregulated genes were CBP/P300-dependent and 103 were independent.",
+   "kw": [
+    "chek1",
+    "precocious ZGA"
+   ],
+   "info": "chek1 mRNA was injected at 20 ng/µL, with n = 7 Western blot replicates. In PCA, Chk1-injected morulae moved toward post-ZGA stages.",
+   "concl": "Proposed model: a Chk1-driven rise in H3.3S31ph boosts CBP/P300 activity during ZGA."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why would developmental genes depend on H3K27ac in particular?",
+   "a": "H3K27ac is the acetylation that directly regulates both H3K27me3, which it opposes, and H3K4 methylation, which it promotes at some promoters. That makes it suited to the spatiotemporal control of developmental genes. Here, losing H3K27ac led to H3K27me3 gain and H3K4me2 loss.",
+   "kw": [
+    "H3K27ac",
+    "H3K27me3 antagonism"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why would housekeeping genes use several HATs?",
+   "a": "Housekeeping genes must stay robustly expressed throughout life, so their activation should not depend on CBP/P300 alone. Inhibiting several HATs at once would be needed to test this in future work.",
+   "kw": [
+    "housekeeping genes",
+    "HAT redundancy"
+   ],
+   "info": "This fits cell-line data where A485-sensitive genes are cell-type specific and insensitive genes are broadly expressed. In Drosophila, early developmental genes are CBP-dependent and late ones depend on other HATs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might boosted CBP/P300 activity be essential in non-mammalian ZGA?",
+   "a": "It allows rapid, simultaneous gene activation across the genome, unlike the asynchronous activation of selected genes in differentiated cells. Chk1 activity is tightly timed at the mid-blastula transition, so embryos may couple epigenetic activation to developmental timing through H3.3S31ph.",
+   "kw": [
+    "mid-blastula transition",
+    "developmental timing"
+   ],
+   "info": "The authors note that Chk1 overexpression had already been shown to start ZGA early and partially in medaka and zebrafish.",
+   "concl": "Non-mammalian embryos may achieve ZGA by coupling epigenetic activation with developmental timing."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors reconcile the H3K4me2/3 result with cell-line studies?",
+   "a": "Cell-line studies showed H3K4me3 is needed for Pol II initiation and pause-release while genes stay active, not for activating silenced genes. H3K4me2/3 may matter for maintaining activity during differentiation or gastrulation, or for activation at later stages when CBP/P300 activity is much lower.",
+   "kw": [
+    "H3K4me3",
+    "maintenance"
+   ],
+   "info": "The authors say this is the first demonstration that H3K4me2/3 is dispensable for gene activation during ZGA. They call for further work on H3K4 methylation in early development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and treatments",
+   "q": "Which fish strains and conditions were used?",
+   "a": "Medaka d-rR strain raised at 28 °C, and zebrafish RW strain raised at 28.5 °C. Inhibitors were applied to dechorionated medaka embryos in Yamamoto ringer from the four-cell stage (2 hpf) to late blastula (8.5 hpf).",
+   "kw": [
+    "medaka d-rR",
+    "zebrafish RW"
+   ],
+   "info": "Concentrations: A485 0.5 to 20 µM, SGC-CBP30 10 µM, TSA 20 or 100 nM, JQ1 40 µM, MM-102 100 µM. Injected at one-cell stage: KDM5B mRNA 700 ng/µL, chek1 mRNA 20 ng/µL, FLAG-ep300a mRNA 280 ng/µL, alpha-amanitin 10 ng/µL.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and treatments",
+   "q": "Which cell lines were used and for what?",
+   "a": "A medaka fibroblast line, cultured at 30 °C with 10% FBS, served as the differentiated-cell comparison. The zebrafish fibroblast line BRF41 (RIKEN RCB0804), cultured at 33 °C with 15% FBS, supplied spike-in chromatin.",
+   "kw": [
+    "BRF41",
+    "fibroblast"
+   ],
+   "info": "Both lines were grown in L-15 medium.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing",
+   "q": "How were RNA-seq and ChIP-seq libraries made?",
+   "a": "RNA-seq: total RNA extracted with ISOGEN and RNeasy, rRNA removed with RiboMinus Eukaryote System v2 (1 µg input), libraries made with KAPA RNA HyperPrep. ChIP-seq: medaka chromatin mixed with zebrafish BRF41 spike-in chromatin, libraries made with KAPA Hyper Prep. Both were sequenced on Illumina HiSeq1500 or HiSeqX.",
+   "kw": [
+    "spike-in ChIP-seq",
+    "RNA-seq"
+   ],
+   "info": "No spike-in was used for Pol II Ser2P, H3K9ac, H4K16ac, H3K14ac or H3.3S31ph ChIP-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data processing",
+   "q": "How were RNA-seq data processed and DEGs defined?",
+   "a": "Only the first 50 bp of forward reads were used. Reads were trimmed with Trimmomatic, aligned with STAR to medaka HdrR or zebrafish GRCz11, and filtered to MAPQ of at least 20 with SAMtools; DESeq2 gave RPKM and adjusted p values. Medaka DEGs: RPKM > 1.5, adjusted p < 0.01 and |log2FC| > 1.",
+   "kw": [
+    "STAR",
+    "DESeq2",
+    "Trimmomatic"
+   ],
+   "info": "Software versions are not given. Zebrafish dependent genes: log2FC below −2 after normalizing to mitochondrial reads. Mouse: fastp, STAR, RSEM against mm10, FPKM > 2. PCA used the 500 most variable genes in scikit-learn.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data processing",
+   "q": "How were ZGA, Maternal and Pure ZGA genes defined?",
+   "a": "ZGA genes are genes upregulated at late blastula compared with late morula. Maternal genes have RPKM > 5 at late morula. Maternal-ZGA genes are maternal genes that are also ZGA genes; the remaining ZGA genes are Pure ZGA.",
+   "kw": [
+    "ZGA genes",
+    "maternal genes"
+   ],
+   "info": "Paternal ZGA genes came from paternal reads in earlier hybrid medaka data: normal versus alpha-amanitin-injected embryos, log2FC > 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data processing",
+   "q": "How were H3K27ac peaks called?",
+   "a": "With macs2 callpeak using -g 600000000 -q 0.01 --keep-dup all --nomodel. Peaks with fold change above 6.5 were kept and merged with bedtools merge -d 150, then annotated with Homer annotatePeaks. Peaks within 3 kb of a TSS counted as promoter-proximal.",
+   "kw": [
+    "macs2",
+    "Homer",
+    "bedtools"
+   ],
+   "info": "ChIP reads were extended by 200 bp, and bigwig files were scaled by the spike-in factor. Replicates were checked by Pearson correlation in 10 kb bins (deepTools multiBigwigSummary). ATAC-seq peaks used fold change > 4, and differential accessibility was called with DiffBind (p < 0.05, |log2FC| > 1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data processing",
+   "q": "Which statistical tests were used?",
+   "a": "Normality was tested with Shapiro-Wilk and equal variance with an F-test. If both passed, a two-sided Student t test was used; if only the F-test failed, Welch's t test; otherwise a two-sided Wilcoxon rank-sum test.",
+   "kw": [
+    "Wilcoxon",
+    "Welch's t test"
+   ],
+   "info": "GO analysis was done with PANTHER. Data are in DDBJ under PRJDB18921.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - non-CBP/P300 acetylation at independent genes",
+   "text": "Housekeeping genes are only linked to GCN5, MOF and HBO1 through correlation. No HAT other than CBP/P300 was inhibited, so the authors' proposed test of inhibiting several HATs at once is still open."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Some figure references in the Discussion do not match the figures. Enhanced CBP/P300 activity and H3.3S31ph are cited as Fig. 5A-G and 5I,J, but the data are in Fig. 6. BRD4 and Pol II are cited as Fig. 3D-F, but the data are in Fig. 4. Check the correct panels when going back to the figures."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Is H3K4me2/3 needed later, for keeping genes active during gastrulation or differentiation, when CBP/P300 activity drops? Worth following up, along with whether the CBP/P300 split between developmental and housekeeping genes is the same in other teleosts such as Astyanax."
+  }
+ ]
+}

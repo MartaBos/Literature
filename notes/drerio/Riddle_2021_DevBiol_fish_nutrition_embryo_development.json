@@ -1,0 +1,619 @@
+{
+ "id": "Riddle_2021",
+ "title": "Fish models for investigating nutritional regulation of embryonic development",
+ "link": "https://doi.org/10.1016/j.ydbio.2021.03.012",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Riddle_2021_DevBiol_fish_nutrition_embryo_development.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this review address?",
+   "a": "Maternal diet clearly affects fetal development, but it is not fully understood how nutrients such as lipids and vitamins change developmental programs. Over recent decades, developmental biology has focused mostly on the spatiotemporal regulation and function of genes.",
+   "kw": [
+    "maternal nutrition"
+   ],
+   "info": "This is a review in a Developmental Biology special issue on nutritional, hormonal and metabolic drivers of development. It contains no new experimental data, so it has no Methods or Results sections.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Why are fish embryos good systems for studying nutrition in development?",
+   "a": "Most fish eggs develop outside the mother and depend on a finite amount of yolk. The embryo is therefore a closed system that is easy to analyse biochemically, visualise and manipulate.",
+   "kw": [
+    "yolk",
+    "closed system"
+   ],
+   "info": "This setup lets researchers study the role of nutrients in tissue specification, organogenesis and growth.",
+   "concl": "Natural variation in yolk composition across fish species may be linked to their different developmental strategies."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which three fish species does the review highlight, and why each one?",
+   "a": "Zebrafish (Danio rerio) for its many molecular tools and nutritional datasets. The African killifish (Nothobranchius furzeri) for its annual life cycle, which lets you study developmental timing and lifespan. The Mexican tetra (Astyanax mexicanus) because you can directly compare morphotypes adapted to different nutritional landscapes.",
+   "kw": [
+    "Danio rerio",
+    "Nothobranchius furzeri",
+    "Astyanax mexicanus"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What happens to the fetus when maternal nutrition is poor?",
+   "a": "Micronutrient deficiencies cause defects in neural tube closure, bone mineralization and immune system development. Caloric deficiency restricts fetal growth and is linked to low birth weight and a predisposition to diabetes, obesity and heart disease.",
+   "kw": [
+    "malnutrition"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is maternal nutrition hard to study in humans and mice?",
+   "a": "Human studies need large cohorts and long timeframes, because environmental and genetic variables cannot be controlled and gestation is long. Mouse studies are costly, and nutrient use in the mouse embryo is hard to control and visualise.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What practical advantages do fish offer for nutrition research?",
+   "a": "Fish produce many embryos, sometimes continuously. Egg composition can be changed through the maternal diet or by injection, and embryos can be immersed in chemicals for large-scale screens. Embryos are transparent and develop quickly, and some species are very short lived.",
+   "kw": [
+    "CRISPR/Cas9",
+    "chemical screening"
+   ],
+   "info": "Other advantages: many sequenced genomes with well-understood phylogeny, efficient CRISPR/Cas9 editing in diverse species, existing aquaculture research on fecundity and egg quality, and embryonic development and gene function that are fairly well conserved with humans.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the common problem that all teleost fishes face?",
+   "a": "Teleosts comprise more than 26,000 species. Most of them produce eggs that develop outside the mother and rely on yolk until the larvae can feed. Although their diets differ greatly, all of them must make yolk that can support the growth of the next generation.",
+   "kw": [
+    "Teleostei"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "What is fish egg yolk made of?",
+   "a": "Mostly proteins, lipids and water, with smaller amounts of carbohydrates and vitamins. These nutrients accumulate during oogenesis.",
+   "kw": [
+    "yolk",
+    "oogenesis"
+   ],
+   "info": "Yolk concentrations of lipids, fat-soluble vitamins, inorganic phosphate, iron, calcium and magnesium vary both within and between species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "How is vitellogenin production switched on?",
+   "a": "Environmental cues such as temperature or diet cause the ovary to release estrogen. In the liver, estrogen binds the estrogen receptor, which interacts with estrogen response elements (EREs) in the promoters of vitellogenin (vtg) genes.",
+   "kw": [
+    "vitellogenin",
+    "estrogen response element"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "What is vitellogenin, and how does it get into the oocyte?",
+   "a": "Vitellogenin (Vtg) is a high molecular weight lipoprotein made of polypeptide homodimers that carry carbohydrate and lipid cargo. The lipids carry minerals, fat-soluble vitamins and hormones. Vtg travels from the liver to the ovary in the blood and enters oocytes by receptor-mediated endocytosis through the Vtg receptor (VTGR).",
+   "kw": [
+    "vitellogenin",
+    "VTGR",
+    "receptor-mediated endocytosis"
+   ],
+   "info": "Oocytes can also take up lipids from circulating VLDL. Fluorescently labelled VLDL lipids accumulate in the oocyte but the VLDL proteins do not. This suggests that extracellular lipases release free fatty acids, which enter by passive diffusion or through lipid transporters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "What is vitellogenesis?",
+   "a": "Vitellogenesis is the process of Vtg synthesis and the accumulation of nutrients during oocyte growth.",
+   "kw": [
+    "vitellogenesis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "How is internalized vitellogenin broken down?",
+   "a": "In two steps. During oocyte growth, cathepsins in lower-pH vesicles cut Vtg at specific sites into five yolk proteins: lipovitellin heavy chain (LvH), phosvitin (Pv), lipovitellin light chain (LvL), beta-prime component and C-terminal component (Ct). During oocyte maturation, some of these domains are cut further into free amino acids.",
+   "kw": [
+    "cathepsin",
+    "lipovitellin",
+    "phosvitin"
+   ],
+   "info": "Free amino acids and vesicular pH create an osmotic effect that draws water into the oocyte through aquaporins. This hydrates the egg and makes it buoyant. LvH and LvL carry lipids that contain minerals and fat-soluble vitamins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "What types of Vtg genes do teleosts have?",
+   "a": "Teleosts have two A-type paralogs (VtgAa and VtgAb) that contain all five yolk protein domains. They also have one incomplete C-type Vtg that contains only the LvL and LvH domains. Duplications and deletions have produced variation in Vtg gene number and sequence.",
+   "kw": [
+    "VtgAa",
+    "VtgAb",
+    "VtgC"
+   ],
+   "info": "Zebrafish have eight vtg genes, and some lack the beta-prime and Ct domains. In rainbow trout, one vtg gene is duplicated twenty times in tandem. At the time of writing, the vtg repertoires of African killifish and Mexican tetra had not been described.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "Why might Vtg sequence evolution matter for development?",
+   "a": "The Vtg sequence determines which yolk proteins are made and how strongly they bind lipids and fat-soluble vitamins. It could therefore change embryo physiology, for example membrane properties or the amount of vitamin-derived signalling molecules.",
+   "kw": [
+    "vitellogenin evolution"
+   ],
+   "info": "Regulatory changes in Vtg promoters could change Vtg synthesis rates. Different combinations of Vtg receptors in endocytosed vesicles might route them to specific yolk granules. That could change the order in which granules are used, and with it tissue growth or signalling.",
+   "concl": "Vtg sequence evolution drives differences in yolk nutrition. Whether Vtg evolution parallels changes in developmental strategy is still open."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "Which yolk nutrients vary most within and between species?",
+   "a": "Nutrients derived from carotenoids. Carotenoids are yellow to orange pigments made by plants, fungi, algae and bacteria. Animals convert them into 11-cis-retinal and vitamin A for vision, and into retinoic acid (RA), which regulates gene expression.",
+   "kw": [
+    "carotenoids",
+    "vitamin A",
+    "retinoic acid"
+   ],
+   "info": "In humans, vitamin A deficiency can cause childhood blindness, and excess vitamin A is teratogenic. In fish, RA is involved in symmetry formation, heart development, hematopoiesis, bone and tooth formation, and neural crest migration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - oogenesis and yolk composition",
+   "q": "How does egg carotenoid content relate to egg viability?",
+   "a": "The relationship between carotenoid level and hatching rate is non-linear. There appears to be a critical level for viability, above 1 to 3 micrograms per gram.",
+   "kw": [
+    "carotenoids",
+    "hatching rate"
+   ],
+   "info": "This comes from older work across several species, reviewed by Craik (1985).",
+   "concl": "Species differences in carotenoid assimilation, storage and metabolism probably contribute to developmental diversity."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - yolk utilization",
+   "q": "Which yolk nutrients does the embryo use first, and what is its main energy source?",
+   "a": "Free amino acids are used first, during early blastomere formation. Overall, fatty acids are the main source of ATP, because oxidising them yields more ATP than glucose does.",
+   "kw": [
+    "free amino acids",
+    "fatty acid oxidation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - yolk utilization",
+   "q": "What is the yolk syncytial layer (YSL), and what does it do?",
+   "a": "At the 500 to 1000 cell stage (512 to 1024 cells in zebrafish), blastomeres next to the yolk collapse and deposit their nuclei and cytoplasm into the yolk cell cortex. This forms a multinucleated layer that wraps around the yolk and mediates the transfer of nutrients from the yolk to the embryo.",
+   "kw": [
+    "YSL",
+    "yolk syncytial layer"
+   ],
+   "info": "Lipoproteins are made from yolk granule stores in the endoplasmic reticulum of the YSL and enter the embryo's circulation. They are routed to different tissues according to which lipoprotein receptors those tissues express.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish",
+   "q": "Why is zebrafish a strong model for studying nutrition in development?",
+   "a": "Zebrafish reach sexual maturity at 3 months, and females produce hundreds of embryos every few days (200 to 300 per spawn). Available resources include the complete egg proteome with egg quality biomarkers, lipidome data across development, methods for studying oogenesis, and genomic data on zfin.org.",
+   "kw": [
+    "zebrafish",
+    "proteome",
+    "lipidome"
+   ],
+   "info": "Adults are 2.5 to 4 cm long. Fluorescent molecules have been used to follow nutrients from mother to yolk and from yolk to embryo. Large screens for mutations or toxicants that affect yolk composition and use are feasible.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "How many vitellogenin genes do zebrafish have, and how are they grouped?",
+   "a": "Eight vtg genes, which can produce up to nineteen splice variants. Type I (vtg1, 4, 5, 6, 7) are incomplete VtgA forms lacking the beta-prime and Ct domains. Type II (vtg2, vtg8) are complete VtgA forms. Type III (vtg3) is a typical VtgC that lacks the Pv, beta-prime and Ct domains.",
+   "kw": [
+    "vtg1",
+    "vtg3",
+    "splice variants"
+   ],
+   "info": "Based on the detailed survey of sequences, expression and protein abundance in liver and egg by Yilmaz et al. (2018).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "Which Vtg-derived proteins are most abundant in the early zebrafish embryo?",
+   "a": "Vtg1 is the most abundant (39%), followed by Vtg7 (23.7%), Vtg2 (17.5%), Vtg6 (8.1%), Vtg4 (6.6%) and Vtg5 (2.9%). Vtg3 is the least abundant (2.1%).",
+   "kw": [
+    "Vtg1",
+    "Vtg3"
+   ],
+   "info": "Values are from Fig. 2B, adapted from Yilmaz et al. (2018), and represent the Vtg composition associated with good egg quality at the 1-cell stage. Vtg8 is not shown in the figure.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "What happens when type I vtg genes are knocked out in zebrafish?",
+   "a": "Combined knockout of three type I vtg genes (vtg1-KO) increases egg number without lowering fertilization rate, and egg size is unchanged. However, hatching rate drops by about 20%. About half of hatched larvae die by 9 dpf, and none survive past 16 dpf.",
+   "kw": [
+    "vtg1-KO",
+    "fecundity"
+   ],
+   "info": "vtg1 mutant larvae fail to start feeding, so they probably die because they cannot obtain external nutrition.",
+   "concl": "Some Vtgs appear to restrict fecundity."
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "What is the phenotype of zebrafish vtg3 knockouts?",
+   "a": "Hatching is strongly delayed: wild-type embryos hatch around 3 dpf, but most vtg3-KO embryos do not finish hatching until 9 dpf. About 70% of vtg3-KO embryos die around 24 hpf, and only 10% survive beyond 16 dpf.",
+   "kw": [
+    "vtg3",
+    "hatching"
+   ],
+   "info": "The most common defects in Vtg mutants are abdominal edema and spinal lordosis.",
+   "concl": "Vtg3 contributes the least yolk protein (2.1%), yet losing it seriously harms hatching and viability."
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "What lipids are in the zebrafish yolk at fertilization?",
+   "a": "At the 1-cell stage, cholesterol makes up 40% of total yolk lipids. The rest is phosphatidylcholine (17%), triacylglycerol (9%), phosphatidylinositol (8%), phosphatidylethanolamine (5%), diacylglycerol (4%), cholesteryl esters (3%), sphingomyelins (3%) and other lipids (11%).",
+   "kw": [
+    "lipidome",
+    "cholesterol"
+   ],
+   "info": "From Fig. 2C, adapted from Fraher et al. (2016).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "How do yolk and body lipids change during zebrafish development?",
+   "a": "Most lipids decrease linearly in the yolk between 0 and 120 hpf and increase similarly in the body between 24 and 120 hpf, which suggests simple transfer. The exceptions are phosphatidylcholine and triacylglycerol, which rise in the yolk from 0 to 24 hpf and then fall, and diglyceride, which stays constant in the yolk but rises in the embryo from 24 to 120 hpf.",
+   "kw": [
+    "lipidome",
+    "de novo lipid synthesis"
+   ],
+   "info": "Free fatty acids injected into the yolk appear in the embryo after 6 h as part of different lipid species.",
+   "concl": "Lipids can be synthesized de novo in the yolk before they are transported into the embryo, so the yolk cell is metabolically active."
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk composition",
+   "q": "Does retinoic acid signalling affect embryonic lipid levels?",
+   "a": "Yes. Immersing embryos in RA signalling modulators from 26 to 55 hpf changes neutral lipid levels in developing tissues, as shown by oil-red O staining. Blocking RA synthesis reduces staining because lipoprotein lipases are upregulated.",
+   "kw": [
+    "retinoic acid",
+    "oil-red O",
+    "lipoprotein lipase"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk utilization",
+   "q": "How do yolk lipoproteins reach the zebrafish embryo?",
+   "a": "Lipoproteins are produced in the endoplasmic reticulum of the YSL and enter the circulatory system through direct contact with the caudal vein. Microsomal triglyceride transfer protein (MTP) is essential for assembling ApoB-containing lipoproteins in the YSL.",
+   "kw": [
+    "MTP",
+    "ApoB",
+    "caudal vein"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk utilization",
+   "q": "What happens in zebrafish mttp mutants, and how is it visualized?",
+   "a": "The normally clear YSL turns dark because triglycerides build up in cytoplasmic lipid droplets, and lipoprotein formation is reduced. The ApoBb.1-NanoLuc transgene, in which ApoB is fused to a luciferase, shows the reduced lipoprotein signal in the body.",
+   "kw": [
+    "mttp",
+    "ApoBb.1-NanoLuc",
+    "LipoGlo"
+   ],
+   "info": "The c655 mutation (G863V) is milder than stalactite (L475P). Both abolish MTP triglyceride transfer, but c655 keeps phospholipid transfer activity and still allows small lipoproteins to form. The text calls NanoLuc a luciferase, while the Fig. 3 legend calls it fluorescent, so the readout is described inconsistently.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Zebrafish - yolk utilization",
+   "q": "What developmental defects result from reduced lipoprotein transport?",
+   "a": "The full range has not been explored. One study found excessive angiogenesis in Mtp mutants, because ApoB normally inhibits blood vessel formation through VEGF signalling. Injecting diffusible ApoB rescued the angiogenic defects.",
+   "kw": [
+    "angiogenesis",
+    "VEGF",
+    "ApoB"
+   ],
+   "info": "The authors suggest using different Mtp mutants to control the timing and amount of nutrients delivered to the embryo.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish",
+   "q": "What is the annual life cycle of the African turquoise killifish?",
+   "a": "The fish live in seasonal ponds that hold water only during the short rainy season. They mature within 2 to 3 weeks of hatching and have the shortest known lifespan of any vertebrate. Newly laid embryos enter diapause after somitogenesis and survive in dry sediment for months or years, then resume development when the ponds refill.",
+   "kw": [
+    "diapause",
+    "annual killifish"
+   ],
+   "info": "The paper gives the median lifespan as 4 to 6 months in one place and 5 to 6 months in another.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish",
+   "q": "What triggers hatching in the killifish, and what is delayed hatching?",
+   "a": "Hatching needs two cues: water and humic acid from decaying plants. If either is missing, for example if embryos do not sense water through osmotic water permeability, they enter a second, shorter diapause-like state called delayed hatching.",
+   "kw": [
+    "delayed hatching",
+    "humic acid"
+   ],
+   "info": "Time from fertilization to hatching ranges from 2 to 3 weeks without diapause to more than 2.5 years with diapause at mid-embryogenesis and at the end of embryogenesis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish",
+   "q": "Why is the killifish especially useful for nutrition research?",
+   "a": "It combines a fixed pre-deposited nutrient supply with variable developmental trajectories. Its very short lifespan also makes it possible to follow how embryonic nutrition affects growth, fecundity, health, lifespan and transgenerational epigenetic inheritance.",
+   "kw": [
+    "lifespan",
+    "transgenerational inheritance"
+   ],
+   "info": "Lifespans of mice and zebrafish are about 4 and 5.5 years. Available resources include a de novo assembled and annotated genome, transcriptome and epigenome, Tol2 transgenesis, CRISPR/Cas9 editing and CRISPR/Cas13d mRNA knockdown. Maternal intake and embryo nutrient content (by microinjection) can both be manipulated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish - yolk composition",
+   "q": "Is there a maternal effect on whether killifish embryos enter diapause?",
+   "a": "Yes, a strong one. Most embryos obligatorily enter diapause, but more than 95% of embryos from very young mothers escape it. Because maternal mRNAs are already heavily diluted by mid-embryogenesis, the authors propose that young and old mothers may deposit different nutrients in the egg.",
+   "kw": [
+    "maternal effect",
+    "diapause"
+   ],
+   "info": "This is a hypothesis; the guiding nutrient or chemical has not been identified.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish - yolk composition",
+   "q": "What are oil droplets in killifish eggs, and how do they behave during development?",
+   "a": "Oil droplets (oil globules) are rich in lipids and unsaturated fatty acids. Medaka eggs have them but zebrafish eggs do not. In killifish, droplet volume does not change significantly during embryonic development, including diapause, but the droplets darken during delayed hatching.",
+   "kw": [
+    "oil droplets",
+    "triglycerides"
+   ],
+   "info": "Oil droplets usually hold 50 to 60% of total egg lipids, and up to 90% in annual killifish, mostly as triglycerides. Medaka embryos develop normally after their oil droplets are removed. In the South American killifish Austrolebias bellottii, triglyceride levels did not decline even after six years of diapause. The killifish genome annotation contains 3 vtg genes, corresponding to zebrafish Vtg2, 3 and 7 by protein similarity.",
+   "concl": "Oil droplets may serve as an energy reserve before hatching and in newly hatched fry."
+  },
+  {
+   "type": "qa",
+   "section": "African killifish - yolk composition",
+   "q": "How do annual killifish embryos cope with drying out?",
+   "a": "A specialised chorion structure limits water loss, and downregulation of aquaporins in the enveloping layer is thought to help regulate water permeability. In the first few days in air, embryos lose about half of their extraembryonic water, but the loss then stabilises and the embryo body stays fully hydrated.",
+   "kw": [
+    "desiccation",
+    "aquaporins",
+    "EVL"
+   ],
+   "info": "Transcriptomes of embryos in aerial versus aquatic conditions during delayed hatching differ in signalling (MAPKs), protein metabolism (USP5, UCH11) and lipid metabolism (LPL) genes. Whether diapause length differs between these conditions has not been studied.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish - yolk utilization",
+   "q": "How does killifish developmental timing compare with zebrafish?",
+   "a": "Killifish embryos are similar in size to zebrafish embryos but have a much larger yolk sac. Embryogenesis is much slower (2 to 3 weeks vs 2 to 3 days), but post-hatching development is much faster (2 to 3 weeks vs 2 to 3 months).",
+   "kw": [
+    "developmental timing"
+   ],
+   "info": "",
+   "concl": "This switch from slow pre-hatching to fast post-hatching development may reflect differences in how nutrients are used."
+  },
+  {
+   "type": "qa",
+   "section": "African killifish - yolk utilization",
+   "q": "What is unusual about epiboly and gastrulation in annual killifish?",
+   "a": "Epiboly and gastrulation are interrupted by a phase in which epiblast cells disperse and migrate randomly over the yolk surface. After as long as several days, the cells reaggregate and form the three germ layers.",
+   "kw": [
+    "dispersion-reaggregation",
+    "epiboly"
+   ],
+   "info": "The YSL can be identified during epiboly, but its activity has not been studied in detail in this species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "African killifish - yolk utilization",
+   "q": "Is yolk used during diapause?",
+   "a": "No visible yolk consumption occurs during diapause, even after 5 to 6 months. Starvation-related genes (IGF and lysosomal pathway genes) are upregulated, and heart contractions stop completely. Both development and rapid yolk consumption resume after diapause exit.",
+   "kw": [
+    "diapause",
+    "IGF",
+    "yolk consumption"
+   ],
+   "info": "Yolk is consumed at the embryo-yolk interface, especially beneath the head near the heart tube. Embryos in delayed hatching are fully developed and need active circulation, so they must keep consuming yolk.",
+   "concl": "Embryonic development, diapause and delayed hatching are three phases that use nutrition differently."
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra",
+   "q": "How do the two Astyanax morphotypes differ in habitat and diet?",
+   "a": "Surface fish live in rivers from southern Texas to central Mexico and eat a fairly even mix of plants and insects all year. Eyeless cavefish live in permanently dark limestone caves in northeastern Mexico and eat bat guano and material washed in by seasonal floods.",
+   "kw": [
+    "cavefish",
+    "surface fish"
+   ],
+   "info": "There are at least 32 geographically separate cave populations. Whole-genome sequencing suggests that at least some, such as Tinaja, Pachón and Molino, evolved independently from surface fish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra",
+   "q": "What resources make A. mexicanus a tractable model?",
+   "a": "Surface and cave fish breed easily in the lab and are interfertile, so hybrids can be made by natural spawning or in vitro fertilization. The surface fish and Pachón genomes are sequenced and annotated, and whole-genome data from wild populations exist. Detailed transgenesis and gene editing methods are available.",
+   "kw": [
+    "hybrids",
+    "QTL mapping",
+    "genome"
+   ],
+   "info": "Hybrids have been used to map morphological, physiological and behavioural traits. Cavefish genetic changes can be tested in zebrafish or surface fish. Staging tables and anatomical atlases are also available.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra",
+   "q": "Why is A. mexicanus promising for nutrition research even though it has not been studied that way?",
+   "a": "Many morph differences appear before feeding starts, including pigmentation loss, eye regression, expanded neurosensory structures, altered brain morphology, symmetry reversals and craniofacial changes. Cavefish embryos have more yolk with more carotenoids, and eye regression and brain morphology show a maternal effect in hybrids.",
+   "kw": [
+    "maternal effect",
+    "carotenoids"
+   ],
+   "info": "The maternal effect suggests that instructive components are deposited in the yolk.",
+   "concl": "Linking cave traits to yolk composition could show how evolution has changed nutritional control of development as animals adapted to new diets."
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk composition",
+   "q": "Does yolk composition differ between surface fish and Pachón cavefish?",
+   "a": "The basic composition, as a percentage of dry mass, is the same: 21% fat, 61% protein and 9% ash. However, Pachón yolk is strikingly more yellow, which hints at a difference in nutrient content.",
+   "kw": [
+    "yolk composition",
+    "Pachón"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk composition",
+   "q": "Is the yellow yolk colour inherited maternally?",
+   "a": "Yes, it depends on the mother. Cavefish female x surface male crosses give embryos with yellow yolk, while surface female x cavefish male crosses give clear yolk. The yellow colour may reflect more carotenoids from the diet.",
+   "kw": [
+    "reciprocal cross",
+    "parent of origin"
+   ],
+   "info": "The authors suggest these reciprocal crosses as a tool for studying how maternally provided yolk nutrients affect development. The Fig. 6 legend labels the surface fish panel as C, but it appears to be D.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk composition",
+   "q": "Why might Pachón cavefish make carotenoid-rich eggs?",
+   "a": "In other fish, eggs exposed to limited oxygen have more carotenoids, for example salmon eggs that settle in mud. Dissolved oxygen in Pachón cave water is very low compared with surface rivers, so carotenoids may protect eggs in a low-oxygen environment.",
+   "kw": [
+    "carotenoids",
+    "hypoxia"
+   ],
+   "info": "Pachón adults show altered expression of genes for carotenoid absorption, cleavage and transport in the gut, and they accumulate carotenoids in visceral tissues. The protective role is a hypothesis.",
+   "concl": "The difference in egg composition may start with nutrient assimilation in the mother."
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk composition",
+   "q": "Is carotenoid accumulation just a consequence of eye loss?",
+   "a": "No. Eyeless Molino cavefish neither have yellow eggs nor accumulate carotenoids in visceral tissues.",
+   "kw": [
+    "Molino",
+    "eye loss"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk composition",
+   "q": "Which cavefish traits could be linked to retinoid levels?",
+   "a": "Eye degeneration is one: in zebrafish, reducing RA causes small eyes, and in Pachón the lens starts to undergo apoptosis around hatching (24 hpf). Heart laterality, visceral organ symmetry and hypothalamic neuron differentiation are others. All of these differ between Pachón and surface fish, show a maternal effect, and are linked to retinoids in other species.",
+   "kw": [
+    "retinoic acid",
+    "lens apoptosis",
+    "laterality"
+   ],
+   "info": "Ma et al. (2018) found that F1 hybrids from Pachón females have more lens apoptosis, smaller eyes and smaller sclera than hybrids from surface females. Torres-Paz et al. (2019) found no difference in lens size or apoptosis but did find maternally controlled retina morphogenesis. A link to retinoids has never been tested directly.",
+   "concl": "The authors propose comparing yolk retinoid levels between morphs, mapping where RA modulators are expressed, and manipulating RA signalling."
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk composition",
+   "q": "What is known about vitellogenins and maternal metabolism in A. mexicanus?",
+   "a": "The vtg gene repertoire, the Vtg protein composition of the egg and details of oogenesis have not been described. The authors suggest comparing the sequences and expression of genes for Vtgs, Vtg receptors and Vtg proteases between morphs.",
+   "kw": [
+    "vtg",
+    "liver transcriptome"
+   ],
+   "info": "Existing lab and wild liver transcriptomes of both morphs could be used to study vtg expression. Cavefish have elevated blood sugar and triglyceride levels, which raises the question of how their embryos avoid harm from the unusual maternal metabolism.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mexican tetra - yolk utilization",
+   "q": "How does the larger yolk of cavefish affect development?",
+   "a": "Pachón eggs have about 15% more yolk, yet both morphs pass developmental milestones in sync, including YSL formation at around the 1000-cell stage, somitogenesis and early eye formation. At hatching (24.5 to 28 hpf), Pachón larvae are longer (3.00 mm vs 2.75 mm).",
+   "kw": [
+    "yolk volume",
+    "body size"
+   ],
+   "info": "Cavefish still have more yolk at hatching, and it decreases at the same rate in both morphs. External feeding starts at about 5 dpf, so cavefish can still draw on yolk when surface fish depend entirely on food. Yolk volume and its use have not been measured in Tinaja or Molino, and YSL activity has not been compared between populations. Methods to manipulate yolk volume exist (Torres-Paz and Retaux, 2020).",
+   "concl": "Extra yolk may let cavefish survive longer without feeding and/or produce larger larvae that can eat bigger food, without changing tissue specification or patterning."
+  },
+  {
+   "type": "qa",
+   "section": "Summary and future directions",
+   "q": "What do the authors conclude about each of the three models?",
+   "a": "Zebrafish offer Vtg mutants, yolk-transport mutants, a lipidome and easy transgenesis. Killifish offer multiple developmental trajectories, long embryogenesis, a short lifespan and high stress resistance. Cavefish offer natural variation in nutrient loading produced by adaptation to a nutrient-poor environment.",
+   "kw": [],
+   "info": "The authors note that cavefish research has so far been gene-centric and often overlooks diet. Cavefish traits such as excess fat, high blood sugar and altered vitamin A levels mirror nutritional problems that affect human fetal development.",
+   "concl": "Using natural diversity across species is likely to give a more complete understanding of how nutrition controls embryonic development."
+  },
+  {
+   "type": "note",
+   "section": "Mexican tetra - yolk composition",
+   "text": "Do maternally supplied yolk carotenoids or retinoids explain the maternal effects on lens apoptosis, retina morphogenesis and laterality in Pachón? Comparing vtg genes and their promoter ERE landscape between morphs, and yolk retinoid levels between Pachón and Molino (eyeless but not yellow), would be a natural regulatory genomics angle."
+  },
+  {
+   "type": "note",
+   "section": "African killifish - yolk composition",
+   "text": "Which nutrient or chemical in eggs from very young killifish mothers lets more than 95% of embryos skip diapause, and did yolk composition co-evolve with diapause length?"
+  },
+  {
+   "type": "note",
+   "section": "Mexican tetra - yolk utilization",
+   "text": "Yolk volume, rate of yolk use and YSL activity have never been measured in Tinaja and Molino. Do independently evolved cave populations converge on larger, carotenoid-rich yolk?"
+  }
+ ]
+}

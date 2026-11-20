@@ -1,0 +1,453 @@
+{
+ "id": "Rauluseviciute_2023",
+ "title": "JASPAR 2024: 20th anniversary of the open-access database of transcription factor binding profiles",
+ "link": "https://doi.org/10.1093/nar/gkad1059",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Rauluseviciute_2023_NAR_JASPAR_2024.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is JASPAR?",
+   "a": "A widely used open-access database of manually curated, high-quality, non-redundant DNA-binding profiles for transcription factors (TFs) across taxa.",
+   "kw": [
+    "JASPAR",
+    "TF binding profiles"
+   ],
+   "info": "Available at https://jaspar.elixir.no/. JASPAR 2024 is the 10th release and marks the database's 20th anniversary.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main changes in JASPAR 2024?",
+   "a": "The CORE collection gained 329 new profiles, 3 existing profiles were updated, and 72 profiles from the previous UNVALIDATED collection received orthogonal support. Together this is a 20% increase in CORE profiles compared with the previous release.",
+   "kw": [
+    "CORE collection"
+   ],
+   "info": "Other changes: a trimming algorithm for low-information flanks, richer metadata including a refined structural DBD classification for plant TFs, updated genomic TFBS tracks for 8 organisms, updated Bioconductor and pyJASPAR packages, and a new TFBS extraction tool.",
+   "concl": "JASPAR 2024 is both an expansion of the database and a revision of its quality."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does the paper define a transcription factor?",
+   "a": "The paper uses 'TF' only for proteins that bind DNA in a sequence-specific way through DNA-binding domains (DBDs). It excludes general TFs and transcriptional co-regulators.",
+   "kw": [
+    "transcription factor",
+    "DBD"
+   ],
+   "info": "In the broader sense, TFs include general TFs, sequence-specific DNA-binding TFs and transcriptional co-regulators.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a TFBS and how long is it typically?",
+   "a": "A TF binding site is a defined genomic region where a TF binds in a sequence-specific way at cis-regulatory elements. TFBSs are typically 6 to 20 bp long.",
+   "kw": [
+    "TFBS",
+    "cis-regulatory elements"
+   ],
+   "info": "Promoters and enhancers are given as examples of cis-regulatory elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Do TFs from the same structural family bind similar motifs?",
+   "a": "Yes. TFs whose DBDs belong to the same structural family tend to recognise similar DNA motifs, except zinc finger proteins.",
+   "kw": [
+    "DBD families",
+    "zinc finger"
+   ],
+   "info": "This similarity is the basis of JASPAR's inference tool (introduced in 2016), which supports TF binding profiles based on DBD similarity between TFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are computational models of TF binding still needed?",
+   "a": "Biochemical and genome-wide assays cannot be run for every TF in every cell type and biological condition, so computational models are still essential.",
+   "kw": [],
+   "info": "Besides predicting TFBSs, these models are used for TFBS enrichment in sets of promoters or enhancers, for predicting the impact of non-coding mutations, and for guiding in vitro mutagenesis.",
+   "concl": "This is the gap that motif databases such as JASPAR fill."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a PFM and how does it differ from a PWM?",
+   "a": "A position frequency matrix (PFM) counts how often each nucleotide occurs at each position of a set of aligned TFBSs. It can be converted into a probabilistic position weight matrix (PWM), which models binding affinity or probability and is used to predict TFBSs in any DNA sequence.",
+   "kw": [
+    "PFM",
+    "PWM"
+   ],
+   "info": "PFMs are still the most common computational representation of TF-DNA interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which other databases collect TF binding profiles?",
+   "a": "CIS-BP and HOCOMOCO, in addition to JASPAR.",
+   "kw": [
+    "CIS-BP",
+    "HOCOMOCO"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are JASPAR's three core principles?",
+   "a": "(i) Providing high-quality TF binding profiles, (ii) fostering open access, and (iii) ensuring ease of use.",
+   "kw": [
+    "open science",
+    "FAIR"
+   ],
+   "info": "JASPAR was the first open-access TF-binding profile database with a web interface for direct PFM download. From the start, profiles were shared as simple flat text files, which made it easy to integrate into a FAIR-aligned ecosystem of tools.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the difference between the CORE and UNVALIDATED collections?",
+   "a": "In the CORE collection, each profile is validated by at least two orthogonal experimental supports. The UNVALIDATED collection (added in 2020) holds high-quality profiles, mostly from high-throughput sequencing data, that do not yet have independent validation.",
+   "kw": [
+    "CORE",
+    "UNVALIDATED"
+   ],
+   "info": "UNVALIDATED profiles are still rigorously curated, for example by checking that TFBSs are enriched near ChIP-seq peak summits. Users are told to use them with caution because they lack orthogonal support.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does 'non-redundant' mean in JASPAR, and has this changed?",
+   "a": "Ideally, one profile corresponds to one TF, or one dimeric complex such as MYC::MAX, in one taxon. In 2020 this rule was relaxed to allow binding variants, because some TFs bind two or more distinct DNA motifs.",
+   "kw": [
+    "non-redundancy",
+    "binding variants"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How can users access JASPAR data?",
+   "a": "Through the web interface and programmatically with packages in Perl, Python, R/Bioconductor and Ruby. The JASPAR RESTful API provides platform- and language-independent access.",
+   "kw": [
+    "RESTful API",
+    "pyJASPAR",
+    "Bioconductor"
+   ],
+   "info": "A 'JASPAR dynamic tour' that guides users through the website was added in 2018.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How has JASPAR's curation pipeline changed over time?",
+   "a": "It moved from manually surveying journals and building profiles from article tables or images to a systematic motif-processing pipeline that draws on online resources. This shift followed the growth of high-throughput assays such as ChIP-seq, DAP-seq, PBM, SMiLE-seq and HT-SELEX.",
+   "kw": [
+    "ReMap",
+    "GTRD",
+    "CIS-BP"
+   ],
+   "info": "Data from ReMap, GTRD and CIS-BP are fed directly into the pipelines. The growth of the collection also made new features possible, such as interactive profile clustering trees and archetypes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the TF binding profiles",
+   "q": "Where did the new TF binding profiles come from?",
+   "a": "PFMs were taken from Lai et al. (PBM experiments), CIS-BP (insect, nematode and plant TFs), Bass et al. (worms), and the JASPAR 2022 UNVALIDATED collection. ChIP-seq, ChIP-exo and DAP-seq datasets from GTRD, plus ChIP-exo data from Lai et al., were also processed to find enriched motifs.",
+   "kw": [
+    "RSAT peak-motifs",
+    "GTRD",
+    "ChIP-exo"
+   ],
+   "info": "Motifs were found in peak sets with the RSAT peak-motifs tool. Dataset and method details, including parameters, are only in Supplementary Table S1 and the Supplementary Text, not in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the TF binding profiles",
+   "q": "How was it decided whether a PFM went into CORE or UNVALIDATED?",
+   "a": "Expert curators manually selected PFMs with orthogonal support in the literature and added them to CORE or used them to update existing CORE profiles. High-quality PFMs without orthogonal support in the literature went into the UNVALIDATED collection.",
+   "kw": [
+    "manual curation",
+    "orthogonal support"
+   ],
+   "info": "In total, 26,629 TF binding motifs were curated for this release (from the Conclusions).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the TF binding profiles",
+   "q": "What are the final numbers of profiles in JASPAR 2024?",
+   "a": "2346 TF binding profiles in CORE and 643 in UNVALIDATED. CORE grew from 1956 profiles in JASPAR 2022: +329 new, +72 promoted from UNVALIDATED, and -11 removed.",
+   "kw": [
+    "CORE collection"
+   ],
+   "info": "182 profiles were added to UNVALIDATED. Metadata were updated for 241 CORE and 55 UNVALIDATED profiles. 28 profiles were removed (11 CORE, 17 UNVALIDATED) because they were redundant, incorrectly supported by the literature, or linked to a protein not considered a sequence-specific DNA-binding TF.",
+   "concl": "CORE grew by 20% compared with JASPAR 2022."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the TF binding profiles",
+   "q": "How did the taxonomic groups in CORE change?",
+   "a": "Plants went from 656 to 805 (114 new, 42 promoted), vertebrates from 841 to 879 (19 new, 20 promoted), insects from 150 to 286 (135 new), nematodes from 43 to 103 (61 new), and urochordates from 86 to 94 (8 promoted). Fungi dropped from 179 to 178, and diatoms stayed at 1.",
+   "kw": [
+    "taxonomic groups"
+   ],
+   "info": "From Table 1. Updated PFMs: 2 in plants and 1 in vertebrates. In the Conclusions, the authors put the growth for insects at 90% and for nematodes at 140%.",
+   "concl": "Most of the growth was in plants, insects and nematodes. Vertebrates gained relatively few new profiles."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the TF binding profiles",
+   "q": "What are TFFMs and how many are in JASPAR 2024?",
+   "a": "Transcription factor flexible models (TFFMs) are hidden Markov-based models that capture dinucleotide dependencies in TF-DNA interactions. 75 new TFFMs were built, giving 1135 TFFMs in total.",
+   "kw": [
+    "TFFM",
+    "hidden Markov model"
+   ],
+   "info": "TFFMs were only built for new CORE PFMs with available ChIP-seq data: 45 plants, 12 vertebrates, 11 insects, 7 nematodes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the TF binding profiles",
+   "q": "Where is JASPAR hosted now?",
+   "a": "At https://jaspar.elixir.no. It is now hosted by ELIXIR Norway and recognised as a Norwegian bioinformatics service.",
+   "kw": [
+    "ELIXIR Norway"
+   ],
+   "info": "The web interface runs on the Norwegian Research and Education Cloud (NREC), according to the acknowledgements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Trimming of TF binding profiles",
+   "q": "Why did they trim TF binding profiles?",
+   "a": "De novo motif discovery tools sometimes return PFMs with low information content (IC) at the flanks. These positions are probably uninformative, within the limits of PFM models, for predicting TFBSs and modelling TF-DNA interactions.",
+   "kw": [
+    "information content",
+    "de novo motif discovery"
+   ],
+   "info": "The trimming algorithm is described only in the Supplementary Text. The main text does not give the IC threshold or the rules.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Trimming of TF binding profiles",
+   "q": "How many profiles were trimmed, and by how much?",
+   "a": "1869 of 2506 profiles were trimmed (1457 from JASPAR 2022 CORE and 412 from JASPAR 2022 UNVALIDATED). Between 1 and 19 positions were removed per profile, and after trimming the PFMs are 4 to 33 bp long.",
+   "kw": [
+    "motif trimming"
+   ],
+   "info": "All newly curated profiles were trimmed by default. Examples: FOXA1 went from MA0148.4 to MA0148.5 (12 to 8 positions), and Atoh7 went from MA1845.1 to MA1845.2 (20 to 7 positions). Trimmed profiles get a new version number.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Trimming of TF binding profiles",
+   "q": "How did they show that trimming concentrates profiles on informative positions?",
+   "a": "They used Gini coefficients, which measure inequality in a distribution, computed on the IC of each position. Trimmed PFMs had lower Gini coefficients (peak around 0.2) than the original PFMs (peak around 0.4).",
+   "kw": [
+    "Gini coefficient"
+   ],
+   "info": "Peak values are read from the Figure 2D density plot, not stated in the text. A lower Gini coefficient means IC is spread more evenly across positions, so fewer low-IC flanks remain.",
+   "concl": "Trimmed profiles concentrate on informative positions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Improved structural classification of plant TFs",
+   "q": "Why did JASPAR switch to a new structural classification for plant TFs?",
+   "a": "TFClass, the previous reference classification for TF DBDs, was built for mammalian TFs and lacks many DBD types found in plant genomes. JASPAR therefore re-curated all plant entries with Plant-TFClass, which adds 8 TF classes and 37 families that are missing from TFClass.",
+   "kw": [
+    "TFClass",
+    "Plant-TFClass"
+   ],
+   "info": "Plant-TFClass was developed by members of the same consortium (Parcy group).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds and genomic tracks",
+   "q": "How are similar profiles clustered in JASPAR?",
+   "a": "With an updated, faster, stand-alone version of RSAT matrix-clustering, applied to the PFMs to build hierarchical clusters within each taxon. Users can view profile similarity as a radial tree.",
+   "kw": [
+    "RSAT matrix-clustering",
+    "hierarchical clustering"
+   ],
+   "info": "The tool is at github.com/jaimicore/matrix-clustering_stand-alone, and the clusters are at jaspar.elixir.no/matrix-clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds and genomic tracks",
+   "q": "What are familial binding profiles and how many were built?",
+   "a": "A familial binding profile is a single PFM that summarises a group of similar profiles from the hierarchical clustering, to reduce redundancy. 408 were built: 155 vertebrates, 52 plants, 62 fungi, 44 nematodes, 76 insects and 19 urochordates.",
+   "kw": [
+    "familial binding profiles"
+   ],
+   "info": "The same method as in JASPAR 2022 was used. They were also used to merge overlapping TFBSs predicted from similar PFMs in the genomic tracks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds and genomic tracks",
+   "q": "What are the JASPAR word clouds?",
+   "a": "Introduced in JASPAR 2022, they summarise the biology of each TF. They show how significant each word in the TF's associated abstracts is compared with abstracts for other TFs in the same taxon.",
+   "kw": [
+    "word clouds",
+    "PubMed"
+   ],
+   "info": "For 2024, word clouds were made for new profiles and existing ones were updated with fresh PubMed queries.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds and genomic tracks",
+   "q": "For which genomes are precomputed TFBS tracks available?",
+   "a": "Eight species: Arabidopsis thaliana, Caenorhabditis elegans, Ciona intestinalis, Danio rerio, Drosophila melanogaster, Homo sapiens, Mus musculus and Saccharomyces cerevisiae. Each latest genome assembly was scanned with all CORE profiles from the matching taxon.",
+   "kw": [
+    "genomic tracks",
+    "Danio rerio",
+    "UCSC Genome Browser"
+   ],
+   "info": "Tracks are provided for individual TF profiles and for familial binding profiles. The human and mouse CORE tracks are native UCSC Genome Browser tracks with prediction scores, logos and TF names. Exact assembly versions are not given in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds and genomic tracks",
+   "q": "Did trimming change the number of genome-wide TFBS predictions?",
+   "a": "Most trimmed profiles gave a number of TFBS predictions comparable to their JASPAR 2022 versions. Overall, though, trimmed profiles predicted more TFBSs, and a few exceptions predicted substantially more.",
+   "kw": [
+    "TFBS prediction",
+    "motif trimming"
+   ],
+   "info": "Details are in Supplementary Figure S4. The main text does not say which profiles were the exceptions.",
+   "concl": "Trimming can increase predicted sites. This matters when comparing scans made with 2022 versus 2024 profiles."
+  },
+  {
+   "type": "qa",
+   "section": "Results - JASPAR-associated tools",
+   "q": "How can JASPAR data be used in Python and R workflows?",
+   "a": "Through the pyJASPAR Python package and the JASPAR2024 R/Bioconductor data package. Both retrieve the data serverless.",
+   "kw": [
+    "pyJASPAR",
+    "JASPAR2024 Bioconductor"
+   ],
+   "info": "pyJASPAR: github.com/asntech/pyjaspar. Bioconductor: bioconductor.org/packages/JASPAR2024.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - JASPAR-associated tools",
+   "q": "What is the JASPAR TFBS enrichment tool?",
+   "a": "A command-line tool for TFBS enrichment analysis using JASPAR TFBS predictions in user-provided genomic regions. Its underlying LOLA databases were updated with the JASPAR 2024 predictions.",
+   "kw": [
+    "LOLA",
+    "TFBS enrichment",
+    "Docker"
+   ],
+   "info": "The LOLA databases are on Zenodo (doi 10.5281/zenodo.8341374). A Docker container is now available at hub.docker.com/r/cbgr/jaspar_tfbs_enrichment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - JASPAR-associated tools",
+   "q": "What does the new TFBS extraction tool do?",
+   "a": "It extracts predicted JASPAR TFBSs that intersect a user-provided set of genomic regions. Results can be filtered by TF name, JASPAR matrix ID and TFBS score threshold.",
+   "kw": [
+    "TFBS extraction tool"
+   ],
+   "info": "Available as a command-line tool (bitbucket.org/CBGR/jaspar_tfbs_extraction) and as a Docker container (cbgr/jaspar_tfbs_extraction). It works on the precomputed tracks, so it presumably only covers the 8 species with tracks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "How much curation went into this release?",
+   "a": "26,629 TF binding motifs were curated, either obtained as PFMs or discovered from ChIP-seq/-exo or DAP-seq data. About 2500 JASPAR 2022 profiles were also revisited to promote them to CORE, update their metadata, or remove them for validation inconsistencies or poor quality.",
+   "kw": [
+    "manual curation"
+   ],
+   "info": "Besides expansion, the focus was on re-checking motif quality: new plant family and class annotations from Plant-TFClass, and searching for validation of UNVALIDATED profiles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "What fraction of known TFs have a JASPAR motif?",
+   "a": "CORE vertebrates covers 53% of 1435 curated human TFs (58% of 1118 orthologous mouse TFs), rising to 67% (64% for mouse) with UNVALIDATED. CORE plants covers 32% of 1717 A. thaliana TFs (35% with UNVALIDATED), and CORE insects covers 43% of 628 D. melanogaster TFs (50% with UNVALIDATED).",
+   "kw": [
+    "TF coverage"
+   ],
+   "info": "The authors say a steady community effort will be needed to cover all TFs.",
+   "concl": "Roughly a third to half of TFs still have no motif in JASPAR, depending on the organism."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "What are the main limitations of PFMs as stored in JASPAR?",
+   "a": "PFMs assume that nucleotides are independent, and they ignore DNA methylation status. Modelling methylation would need methylation data and an expanded alphabet or a specific representation.",
+   "kw": [
+    "nucleotide independence",
+    "DNA methylation"
+   ],
+   "info": "TFFMs were added to capture dependencies between successive nucleotides, but only for profiles where data were available to compute them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "How do deep learning models relate to JASPAR, and what is the outlook?",
+   "a": "Deep learning models, mostly convolutional neural networks, are now state of the art for modelling ChIP-seq, ChIP-nexus and ATAC-seq data. Some perform better when their convolutional filters are initialised with JASPAR-derived PWMs, and many check the patterns they learn against JASPAR profiles. The authors expect neural network models may eventually replace PFMs and could be curated and stored in JASPAR.",
+   "kw": [
+    "deep learning",
+    "CNN",
+    "cis-regulatory code"
+   ],
+   "info": "Open challenges: incorporating such models while keeping JASPAR easy to use, building scanning tools for deep learning motif models, and handling context-specific models (specific cell types or tissues), which can capture motifs of cooperative TFs that are absent in other cell types.",
+   "concl": "JASPAR may shift from PFMs toward curated deep learning models, but how to do this is still unresolved."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "How do the authors see binding models developing beyond motifs?",
+   "a": "They expect binding models will need to be paired with advanced knowledge representation about TFs, such as knowledge graphs or vectors of contextual embeddings. They see the word clouds as a first step in this direction.",
+   "kw": [
+    "knowledge graphs",
+    "embeddings"
+   ],
+   "info": "This is framed in the context of large language models and other intelligent systems that link molecular data with structured knowledge.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds and genomic tracks",
+   "text": "Precomputed tracks and the extraction tool cover only 8 species, including zebrafish. Other fish, for example Astyanax, would have to be scanned with the vertebrate CORE profiles by hand. Which assembly versions were used for the tracks? Check the Supplementary Text."
+  },
+  {
+   "type": "note",
+   "section": "Results - Trimming of TF binding profiles",
+   "text": "Trimmed profiles have new version numbers (e.g. MA0148.4 to MA0148.5) and predict more TFBSs overall, with a few predicting substantially more. Check Supplementary Figure S4 and the trimming criteria before reusing older scan results or comparing them with 2024 scans."
+  },
+  {
+   "type": "note",
+   "section": "Conclusions and perspectives",
+   "text": "How would context-specific deep learning models (per cell type or tissue) be curated and validated in a database whose CORE rule is at least two orthogonal supports per profile?"
+  }
+ ]
+}

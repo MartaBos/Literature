@@ -1,0 +1,876 @@
+{
+ "regulatiory_genomics/Alcantara_2026_NatCommun_TFIID_cofactors_promoter_binding": {
+  "title": "High-resolution binding data of TFIID and cofactors show promoter-specific differences",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-026-77758-9",
+  "provided_link": "https://www.nature.com/articles/s41467-026-77758-9",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "amexicanus/Ricemeyer_2026_bioRxiv_cavefish_brain_cell_atlas": {
+  "title": "Cave adaptation drives coordinated transcriptional remodeling across diverse cell types in the brain of a teleost fish",
+  "category": "Brain & behaviour",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.06.19.733352",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.06.19.733352v1.full",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/He_2026_bioRxiv_human_transcription_initiation_sequence_map": {
+  "title": "A comprehensive map of the sequence basis of transcription initiation in humans",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.10.29.762743",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.10.29.762743v1.abstract",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "general/Sudasinghe_2026_MolBiolEvol_Cypriniformes_phylogenomics": {
+  "title": "Phylogenomics of Cypriniformes, the most diverse order of freshwater fishes: consensus, challenges, and limitations",
+  "category": "Genome & chromosome evolution",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1093/molbev/msag261",
+  "provided_link": "https://academic.oup.com/mbe/article/43/11/msag261/9001931",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Naughton_2026_bioRxiv_CpG_islands_DNA_supercoiling": {
+  "title": "CpG islands are topological sinks for transcription-induced DNA supercoiling",
+  "category": "TF binding & DNA structure",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.08.24.746546",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.08.24.746546v1.full",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "general/Romeijn_2026_ConnectSci_LncRNA-BERT": {
+  "provided_link": "https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1.full",
+  "preprint_doi": "10.1101/2025.01.09.632168",
+  "batch": "2026-11-17_damir",
+  "title": "LncRNA-BERT: an RNA language model for classifying coding and long non-coding RNA",
+  "category": "Computational methods",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1080/09540091.2026.2624131",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Jolma_2026_Nature_human_TF_DNA_binding_codebook": {
+  "title": "An expanded codebook of human transcription factor DNA-binding specificity",
+  "category": "TF binding & DNA structure",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41586-026-10798-9",
+  "provided_link": "https://www.nature.com/articles/s41586-026-10798-9",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Nagai_2026_NatGenet_AI_in_regulatory_genomics": {
+  "provided_link": "https://www.nature.com/articles/s41588-026-02670-3",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Toward generalizable and interpretable AI in regulatory genomics",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41588-026-02670-3",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Sheth_2026_NatGenet_enhancer_gene_maps_single_cell": {
+  "title": "Mapping enhancer–gene regulatory interactions from single-cell data",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41588-026-02695-8",
+  "provided_link": "https://www.nature.com/articles/s41588-026-02695-8",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Yun_2026_Zenodo_ENCODE_GRAMMAR": {
+  "provided_link": "https://x.com/i/status/2084836326000746855",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "ENCODE GRAMMAR: A deep learning model resource for decoding the DNA sequence logic of regulatory elements in the human genome",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.5281/zenodo.21795359",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/McGee_2026_bioRxiv_locus_scale_MPRA": {
+  "title": "Locus-Scale Massively Parallel Reporter Assays",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.07.24.740649",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.07.24.740649v2",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Gschwind_2026_Nature_enhancer_gene_encyclopedia": {
+  "title": "An encyclopedia of human enhancer–gene regulatory interactions",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41586-026-10781-4",
+  "provided_link": "https://www.nature.com/articles/s41586-026-10781-4",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Monti_2026_NAR_G4_map_Trypanosoma_chromatin": {
+  "title": "Genome-wide mapping of DNA G-quadruplexes in Trypanosoma brucei chromatin reveals enrichment in coding regions and transcription start sites",
+  "category": "TF binding & DNA structure",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1093/nar/gkag637",
+  "provided_link": "https://doi.org/10.1093/nar/gkag637",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Novakovsky_2022_NatRevGenet_explainable_AI_genomics": {
+  "provided_link": "https://www.nature.com/articles/s41576-022-00532-2",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Obtaining genetics insights from deep learning via explainable artificial intelligence",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41576-022-00532-2",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Novakovsky_2023_GenomeBiol_ExplaiNN": {
+  "title": "ExplaiNN: interpretable and transparent neural networks for genomics",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1186/s13059-023-02985-y",
+  "provided_link": "https://link.springer.com/article/10.1186/s13059-023-02985-y",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Einarsson_2026_bioRxiv_CREs_from_transcription_initiation": {
+  "title": "Mapping active cis-regulatory elements from transcription initiation events",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.05.11.724207",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.05.11.724207v1",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "drerio/CampoBes_2026_bioRxiv_ZGA_timing_DNA_cytoplasm_ratio": {
+  "title": "Zygotic genome activation is timed by the egg DNA-to-cytoplasm ratio across animals",
+  "category": "ZGA & early embryo",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.04.16.718233",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.04.16.718233v1",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Liu_2026_Nature_human_development_multiome_regulatory_syntax": {
+  "title": "Multiomics and deep learning dissect regulatory syntax in human development",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41586-026-10326-9",
+  "provided_link": "https://doi.org/10.1038/s41586-026-10326-9",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "drerio/Li_2026_CBPC_TBBPA_carp_hepatic_lipids": {
+  "title": "Transcriptomic profiling reveals tetrabromobisphenol A-induced dysregulation of hepatic lipid homeostasis in common carp (Cyprinus carpio)",
+  "category": "Toxicology & exposures",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.cbpc.2025.110336",
+  "provided_link": "https://www.sciencedirect.com/science/article/pii/S1532045625002170",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "source_note": "Not the full paper: no access to the full text, so these notes are based only on the publicly available abstract and metadata (PubMed). Details from the main text and figures are missing.",
+  "pdf_from": "no PDF (abstract source, 16_make_abstract_source.py)"
+ },
+ "general/Zhang_2026_NatMethods_ANNEVO_gene_annotation": {
+  "provided_link": "https://www.nature.com/articles/s41592-026-03036-7",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Highly accurate ab initio gene annotation with ANNEVO",
+  "category": "Computational methods",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41592-026-03036-7",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "general/Dhandapany_2014_NatGenet_RAF1_dilated_cardiomyopathy": {
+  "provided_link": "https://www.nature.com/articles/ng.2963",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "RAF1 mutations in childhood-onset dilated cardiomyopathy",
+  "category": "Human genetics",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/ng.2963",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Oguchi_2024_Science_transcribed_enhancers_T_cells": {
+  "provided_link": "https://www.science.org/doi/10.1126/science.add8394",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "An atlas of transcribed enhancers across helper T cell diversity for decoding human diseases",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1126/science.add8394",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "general/Zhao_2026_NatMethods_DECODE_omics_deconvolution": {
+  "title": "DECODE: deep learning-based common deconvolution framework for various omics data",
+  "category": "Computational methods",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41592-026-03007-y",
+  "provided_link": "https://www.nature.com/articles/s41592-026-03007-y",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "drerio/Riddle_2021_DevBiol_fish_nutrition_embryo_development": {
+  "provided_link": "https://www.sciencedirect.com/science/article/pii/S0012160621000749",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Fish models for investigating nutritional regulation of embryonic development",
+  "category": "Embryo development & nutrition",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.ydbio.2021.03.012",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "drerio/Fukushima_2025_NatCommun_histone_marks_ZGA_teleost": {
+  "title": "Coordinated action of multiple active histone modifications shapes the zygotic genome activation in teleost embryos",
+  "category": "ZGA & early embryo",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-025-60246-x",
+  "provided_link": "https://www.nature.com/articles/s41467-025-60246-x",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "general/Liu_2025_NatCommun_amniote_chromosome_evolution": {
+  "title": "Evolution of chromosomes and nuclear architectures of amniotes",
+  "category": "Genome & chromosome evolution",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-025-67427-8",
+  "provided_link": "https://www.nature.com/articles/s41467-025-67427-8",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "general/Schoenle_2025_TrendsGenet_protist_genomics": {
+  "provided_link": "https://www.cell.com/trends/genetics/fulltext/S0168-9525(25)00111-8",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Protist genomics: key to understanding eukaryotic evolution",
+  "category": "Genome & chromosome evolution",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.tig.2025.05.004",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "drerio/Xu_2025_TrendsGenet_epigenetics_ZGA_to_lineage": {
+  "title": "Epigenetic regulation in early embryo development: from zygotic genome activation to the first lineage specification",
+  "category": "ZGA & early embryo",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.tig.2025.05.005",
+  "provided_link": "https://www.cell.com/trends/genetics/fulltext/S0168-9525(25)00112-X",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "source_note": "Not the full paper: no access to the full text, so these notes are based only on the publicly available abstract and metadata (PubMed). Details from the main text and figures are missing.",
+  "pdf_from": "no PDF (abstract source, 16_make_abstract_source.py)"
+ },
+ "general/Cisneros_2026_NatRevGenet_gene_duplication": {
+  "provided_link": "https://www.nature.com/articles/s41576-026-00935-5",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Evolutionary causes and consequences of gene duplication",
+  "category": "Genome & chromosome evolution",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41576-026-00935-5",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Jaganathan_2025_Science_promoter_mutations_deep_learning": {
+  "title": "Predicting expression-altering promoter mutations with deep learning",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1126/science.ads7373",
+  "provided_link": "https://www.science.org/doi/10.1126/science.ads7373",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "source_note": "Not the full paper: no access to the full text, so these notes are based only on the publicly available abstract and metadata (PubMed). Details from the main text and figures are missing.",
+  "pdf_from": "no PDF (abstract source, 16_make_abstract_source.py)"
+ },
+ "regulatiory_genomics/Hou_2025_NAR_ChickenGTEx_portal": {
+  "title": "The ChickenGTEx portal: a pan-tissue catalogue of regulatory variants shaping transcriptomic and phenotypic diversity",
+  "category": "Regulatory variants & atlases",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1093/nar/gkaf731",
+  "provided_link": "https://academic.oup.com/nar/article/54/D1/D982/8237891",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "general/AlfonsoGonzalez_2025_NatRevMCB_RNA_processing_sequencing": {
+  "provided_link": "https://www.nature.com/articles/s41580-025-00895-4",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Elucidating the coordination of RNA processing using short-read and long-read RNA-sequencing methods",
+  "category": "RNA & transcriptomics",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41580-025-00895-4",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Patel_2024_NeurIPS_DART-Eval": {
+  "title": "DART-Eval: A Comprehensive DNA Language Model Evaluation Benchmark on Regulatory DNA",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://papers.nips.cc/paper_files/paper/2024/hash/71998bfc3217ffe1cca1ee084dfadadd-Abstract-Datasets_and_Benchmarks_Track.html",
+  "provided_link": "https://arxiv.org/abs/2412.05430",
+  "preprint_doi": "10.48550/arXiv.2412.05430",
+  "batch": "2026-11-17_damir",
+  "link_override": "https://papers.nips.cc/paper_files/paper/2024/hash/71998bfc3217ffe1cca1ee084dfadadd-Abstract-Datasets_and_Benchmarks_Track.html"
+ },
+ "regulatiory_genomics/Patel_2026_bioRxiv_ARSENAL": {
+  "title": "ARSENAL: Learning Transferable Regulatory DNA Representations with Targeted Short-Context Language Models",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.02.05.703637",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.02.05.703637v2.full",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/DeWinter_2025_NatRevBioeng_enhancer_modelling_design": {
+  "provided_link": "https://www.nature.com/articles/s44222-025-00280-y",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Modelling and design of transcriptional enhancers",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s44222-025-00280-y",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "drerio/Neaverson_2025_CellsDev_gastrula_organiser": {
+  "provided_link": "https://www.sciencedirect.com/science/article/pii/S266729012500049X",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir",
+  "title": "Coordinating tissue development to build body and brain: Lessons from the gastrula organiser and its derivatives",
+  "category": "Embryo development & nutrition",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.cdev.2025.204042",
+  "pdf_from": "Google Drive (2026-11-17_damir_manual)"
+ },
+ "regulatiory_genomics/Mann_2025_NatCommun_paused_PolII_ERalpha": {
+  "title": "Paused RNA polymerase primes promoters via RNA-mediated stabilisation of transcription factor ERα",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-025-64569-7",
+  "provided_link": "https://www.nature.com/articles/s41467-025-64569-7",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Consens_2026_bioRxiv_evolutionary_rate_genome_LM": {
+  "title": "Predicting evolutionary rate as a pretraining task improves genome language model representations",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.02.02.703275",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.02.02.703275v1",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/BerrocalRubio_2026_bioRxiv_alternative_promoters_myeloid": {
+  "title": "Alternative promoters used during myeloid differentiation and upon activation change the gene products available for innate immune programs.",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.64898/2026.02.01.703142",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.02.01.703142v2.abstract",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir"
+ },
+ "regulatiory_genomics/Demircioglu_2019_Cell_pancancer_alternative_promoters": {
+  "title": "A Pan-cancer Transcriptome Analysis Reveals Pervasive Regulation through Alternative Promoters",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.cell.2019.08.018",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Haberle_2016_SeminCellDevBiol_promoter_architectures": {
+  "title": "Promoter architectures and developmental gene regulation",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1016/j.semcdb.2016.01.014",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Haberle_2014_Nature_two_transcription_initiation_codes": {
+  "title": "Two independent transcription initiation codes overlap on vertebrate core promoters",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/nature12974",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Lenhard_2012_NatRevGenet_metazoan_promoters": {
+  "title": "Metazoan promoters: emerging characteristics and insights into transcriptional regulation",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/nrg3163",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Nepal_2023_NatCommun_alternative_promoters_CpG_depleted": {
+  "title": "Alternative promoters in CpG depleted regions are prevalently associated with epigenetic misregulation of liver cancer transcriptomes",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-023-38272-4",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Nepal_2020_NatCommun_dual_initiation_promoters": {
+  "title": "Dual-initiation promoters with intertwined canonical and TCT/TOP transcription start sites diversify transcript processing",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-019-13687-0",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Kadonaga_2011_WIREsDevBiol_core_promoter_perspectives": {
+  "title": "Perspectives on the RNA polymerase II core promoter",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1002/wdev.21",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "regulatiory_genomics/Wragg_2020_NAR_core_promoter_tissue_differentiation": {
+  "title": "Embryonic tissue differentiation is characterized by transitions in cell cycle dynamic-associated core promoter regulation",
+  "category": "Transcription initiation & promoters",
+  "tags": [
+   "Basics",
+   "Important"
+  ],
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1093/nar/gkaa563",
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_damir_basics"
+ },
+ "amexicanus/Richards_2026_bioRxiv_QTL_repeatability_cave_traits": {
+  "title": "Cave evolution on repeat: reuse of the same genomic regions across lineages of Astyanax mexicanus",
+  "category": "Genetics of cave traits",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1093/genetics/iyag223",
+  "provided_link": "https://www.biorxiv.org/content/10.64898/2026.01.31.703033v1.full",
+  "preprint_doi": "10.64898/2026.01.31.703033",
+  "batch": "2026-11-17_damir",
+  "source_note": "Notes are from the bioRxiv preprint (version 1, Feb 2026), not from the peer-reviewed Genetics version (no access). The title and some results may differ in the journal version.",
+  "pdf_from": "bioRxiv v1 (papers/_superseded_preprints, moved back 2026-11-17)"
+ },
+ "amexicanus/Gross_2013_Heredity_albinism_cavefish_populations": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "Albinism in phylogenetically and geographically distinct populations of Astyanax cavefish arises through the same loss-of-function Oca2 allele",
+  "category": "Genetics of cave traits",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/hdy.2013.26",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/Krishnan_2022_NatGenet_cis_regulatory_metabolic_adaptation": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "Genome-wide analysis of cis-regulatory changes underlying metabolic adaptation of cavefish",
+  "category": "Gene regulation & metabolism",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41588-022-01049-4",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/Lal_2025_GBE_conserved_noncoding_element_loss": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "Loss of Conserved Noncoding Elements Likely Shaped the Evolution of Regressed Phenotypes in Cavefish",
+  "category": "Genomes & structural variation",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1093/gbe/evaf211",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/Roback_2026_GenomeRes_pangenome_deletions_cave_traits": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "A pangenome framework uncovers the role of deletions in repeated evolution of cave-derived traits",
+  "category": "Genomes & structural variation",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1101/gr.281719.125",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/Gore_2018_NatEcolEvol_epigenetic_eye_degeneration": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "An epigenetic mechanism for cavefish eye degeneration",
+  "category": "Eye loss",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41559-018-0569-4",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/daSilva_2023_SciRep_eye_lncRNAs": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "Discovery of putative long non-coding RNAs expressed in the eyes of Astyanax mexicanus (Actinopterygii: Characidae)",
+  "category": "Eye loss",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41598-023-34198-5",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/McGaugh_2014_NatCommun_cavefish_genome": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "The cavefish genome reveals candidate genes for eye loss",
+  "category": "Genomes & structural variation",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/ncomms6307",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "amexicanus/Warren_2021_NatCommun_surface_fish_genome": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-17_tetra",
+  "title": "A chromosome-level genome of Astyanax mexicanus surface fish for comparing population-specific genetic differences contributing to trait evolution",
+  "category": "Genomes & structural variation",
+  "shared_by": "Damir",
+  "shared_year": "2026",
+  "link": "https://doi.org/10.1038/s41467-021-21733-z",
+  "pdf_from": "Google Drive (2026-11-17_tetra)"
+ },
+ "regulatiory_genomics/Baudement_2026_NatEcolEvol_salmonid_WGD_regulatory_evolution": {
+  "title": "Developmental contexts of gene-regulatory evolution following whole genome duplication in salmonids",
+  "category": "Regulatory evolution",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41559-026-03171-6",
+  "provided_link": "https://doi.org/10.1038/s41559-026-03171-6",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/JimenezGonzalez_2026_bioRxiv_carp_subgenome_noncoding_elements": {
+  "title": "Mapping non-coding functional elements in allotetraploid Cyprinus carpio embryo development reveals subgenome variation of transcription regulation",
+  "category": "Regulatory evolution",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.64898/2026.06.22.733679",
+  "provided_link": "https://doi.org/10.64898/2026.06.22.733679",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/Xu_2026_NatEcolEvol_gene_body_methylation_cnidarian": {
+  "title": "Gene body methylation suppresses intragenic transcription and permits epigenetic inheritance in a cnidarian",
+  "category": "Regulatory evolution",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41559-026-03090-6",
+  "provided_link": "https://doi.org/10.1038/s41559-026-03090-6",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "general/Clark_2026_F1000Res_ELIXIR_domestic_animals": {
+  "title": "Establishing the ELIXIR Domestic Animals Genome and Phenome Community",
+  "category": "Genomic resources & assembly",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.12688/f1000research.177500.1",
+  "provided_link": "https://doi.org/10.12688/f1000research.177500.1",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/OvekBaydar_2025_NAR_JASPAR_2026": {
+  "title": "JASPAR 2026: expansion of transcription factor binding profiles and integration of deep learning models",
+  "category": "TF binding & DNA structure",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1093/nar/gkaf1209",
+  "provided_link": "https://doi.org/10.1093/nar/gkaf1209",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/Naseer_2025_GenomeRes_salmon_antiviral_regulatory_landscape": {
+  "provided_link": "https://doi.org/10.1101/gr.280579.125",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "title": "Genomic regulatory landscape underlying the antiviral response of Atlantic salmon",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1101/gr.280579.125",
+  "tags": [
+   "Damir's paper"
+  ],
+  "pdf_from": "Google Drive (2026-11-17_baranasic_manual)"
+ },
+ "general/Miranda_2025_Nature_adipose_niche_obesity": {
+  "title": "Selective remodelling of the adipose niche in obesity and weight loss",
+  "category": "Human genetics",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41586-025-09233-2",
+  "provided_link": "https://doi.org/10.1038/s41586-025-09233-2",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/Amblard_2025_DevCell_Cdx2_enhancer_attenuator": {
+  "title": "A dual enhancer-attenuator element ensures transient Cdx2 expression during mouse posterior body formation",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1016/j.devcel.2025.06.006",
+  "provided_link": "https://doi.org/10.1016/j.devcel.2025.06.006",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "fulltext_txt": true,
+  "pdf_from": "PMC12979250 full text (.txt; no PDF in PMC open data)",
+  "source_note": "Notes from the full text in PubMed Central (text version; figures not included), not the journal PDF.",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/Phan_2025_NatGenet_conserved_regulatory_elements_diverged_sequence": {
+  "title": "Conservation of regulatory elements with highly diverged sequences across large evolutionary distances",
+  "category": "Regulatory evolution",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41588-025-02202-5",
+  "provided_link": "https://doi.org/10.1038/s41588-025-02202-5",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ],
+  "prompt_extra": "Cover the Methods in at most 4 short summary items (what was done and with which tools); skip low-level procedural and model-training details. Put the detail into Results instead."
+ },
+ "regulatiory_genomics/Rauluseviciute_2023_NAR_JASPAR_2024": {
+  "title": "JASPAR 2024: 20th anniversary of the open-access database of transcription factor binding profiles",
+  "category": "TF binding & DNA structure",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1093/nar/gkad1059",
+  "provided_link": "https://doi.org/10.1093/nar/gkad1059",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "drerio/JimenezGonzalez_2023_DMM_zebrafish_regulatory_genomic_resources": {
+  "title": "Zebrafish regulatory genomic resources for disease modelling and regeneration",
+  "category": "Genomic resources",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1242/dmm.050280",
+  "provided_link": "https://doi.org/10.1242/dmm.050280",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "general/McAllan_2023_NatCommun_adipocyte_DNA_methylation_obesity": {
+  "title": "Integrative genomic analyses in adipocytes implicate DNA methylation in human obesity and diabetes",
+  "category": "Human genetics",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41467-023-38439-z",
+  "provided_link": "https://doi.org/10.1038/s41467-023-38439-z",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "drerio/Baranasic_2022_NatGenet_zebrafish_CRE_multiomic_atlas": {
+  "title": "Multiomic atlas with functional stratification and developmental dynamics of zebrafish cis-regulatory elements",
+  "category": "Genomic resources",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1038/s41588-022-01089-w",
+  "provided_link": "https://doi.org/10.1038/s41588-022-01089-w",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "general/Slemc_2022_MicrobiolSpectr_Streptomyces_rimosus_genome": {
+  "title": "Reference-Grade Genome and Large Linear Plasmid of Streptomyces rimosus: Pushing the Limits of Nanopore Sequencing",
+  "category": "Genomic resources & assembly",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1128/spectrum.02434-21",
+  "provided_link": "https://doi.org/10.1128/spectrum.02434-21",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/CastroMondragon_2021_NAR_JASPAR_2022": {
+  "title": "JASPAR 2022: the 9th release of the open-access database of transcription factor binding profiles",
+  "category": "TF binding & DNA structure",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1093/nar/gkab1113",
+  "provided_link": "https://doi.org/10.1093/nar/gkab1113",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "regulatiory_genomics/Fornes_2020_NAR_JASPAR_2020": {
+  "title": "JASPAR 2020: update of the open-access database of transcription factor binding profiles",
+  "category": "TF binding & DNA structure",
+  "shared_by": "",
+  "shared_year": "",
+  "link": "https://doi.org/10.1093/nar/gkz1001",
+  "provided_link": "https://doi.org/10.1093/nar/gkz1001",
+  "preprint_doi": null,
+  "batch": "2026-11-17_baranasic",
+  "tags": [
+   "Damir's paper"
+  ]
+ },
+ "amexicanus/Wiese_2025_JHered_QTL_cavefish_genome_regions": {
+  "title": "Quantitative trait loci concentrate in specific regions of the Mexican cavefish genome and reveal key candidate genes for cave-associated evolution",
+  "category": "Genetics of cave traits",
+  "link": "https://doi.org/10.1093/jhered/esae040",
+  "provided_link": "Drive folder (paper + prepared notes)",
+  "preprint_doi": null,
+  "pdf_from": "Drive, notes imported (Wiese_2025_QTL_cavefish_notes.json)",
+  "shared_by": "",
+  "shared_year": "",
+  "tags": [
+   "External notes"
+  ]
+ },
+ "signaling/Komiya_2008_Organogenesis_wnt_signal_transduction": {
+  "title": "Wnt signal transduction pathways",
+  "category": "Wnt",
+  "link": "https://doi.org/10.4161/org.4.2.5851",
+  "provided_link": "Drive folder (paper + prepared notes)",
+  "preprint_doi": null,
+  "pdf_from": "Drive, notes imported (Komiya_2008_Organogenesis_wnt_signal_transduction.json)",
+  "shared_by": "",
+  "shared_year": "",
+  "tags": [
+   "External notes"
+  ]
+ },
+ "signaling/ElKholtei_2025_AnnuRevCellDevBiol_nodal_signaling_TGFb": {
+  "title": "Nodal Signaling: A Paradigm for TGFβ Signaling in Embryonic Development",
+  "category": "TGF-β / Nodal",
+  "link": "https://doi.org/10.1146/annurev-cellbio-112122-030209",
+  "provided_link": "Drive folder (paper + prepared notes)",
+  "preprint_doi": null,
+  "pdf_from": "Drive, notes imported (ElKholtei_2025_AnnuRevCellDevBiol_nodal_signaling_TGFb.json)",
+  "shared_by": "",
+  "shared_year": "",
+  "tags": [
+   "External notes"
+  ]
+ }
+}

@@ -1,0 +1,572 @@
+{
+ "id": "Dhandapany_2014",
+ "title": "RAF1 mutations in childhood-onset dilated cardiomyopathy",
+ "link": "https://doi.org/10.1038/ng.2963",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Dhandapany_2014_NatGenet_RAF1_dilated_cardiomyopathy.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is dilated cardiomyopathy (DCM) genetically?",
+   "a": "A highly heterogeneous trait in which sarcomeric gene mutations predominate, but the cause of a significant percentage of cases remains unknown and no gene-specific therapy exists.",
+   "kw": [
+    "DCM",
+    "sarcomeric genes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What was the study design in one sentence?",
+   "a": "Resequencing in 513 DCM cases and 1,150 matched controls from several ethnically distinct cohorts, which uncovered rare functional RAF1 mutations in three cohorts (South India, North India, Japan).",
+   "kw": [
+    "RAF1",
+    "resequencing"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How common were RAF1 mutations in childhood-onset DCM?",
+   "a": "About 9% of childhood-onset DCM cases in those three cohorts carried a RAF1 mutation.",
+   "kw": [
+    "RAF1"
+   ],
+   "info": "",
+   "concl": "RAF1 is the first gene strongly associated with isolated DCM that predominantly causes pediatric-onset disease."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What was the signalling signature of DCM-associated RAF1 mutants?",
+   "a": "Altered kinase activity with largely unaltered ERK activation but AKT hyperactivation that was BRAF-dependent.",
+   "kw": [
+    "AKT",
+    "ERK",
+    "BRAF"
+   ],
+   "info": "",
+   "concl": "DCM-associated RAF1 alleles act through AKT, not ERK."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did the zebrafish experiment show?",
+   "a": "Constitutive expression of the DCM mutants in zebrafish embryos caused a heart failure phenotype with AKT hyperactivation, and the phenotype was rescued by rapamycin.",
+   "kw": [
+    "zebrafish",
+    "rapamycin"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is DCM defined clinically and how frequent is it?",
+   "a": "DCM is left ventricular dilation with systolic dysfunction and affects approximately 1 in 250 people.",
+   "kw": [
+    "DCM"
+   ],
+   "info": "Mutations in 40 different genes are known, many encoding sarcomeric and other structural proteins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What fraction of DCM is genetically unexplained?",
+   "a": "Roughly 50-60% of DCM cases have unknown underlying genetic causes.",
+   "kw": [],
+   "info": "This is the gap the paper addresses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What overlap exists between DCM and HCM genes?",
+   "a": "Many known DCM genes are also implicated in hypertrophic cardiomyopathy, including titin, cardiac actin, beta-myosin heavy chain, cardiac troponin T and alpha-tropomyosin.",
+   "kw": [
+    "HCM",
+    "titin"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are RASopathies?",
+   "a": "Several overlapping developmental syndromes caused by germ-line mutations in genes encoding RAS-MAPK pathway members, with a high prevalence of hypertrophic cardiomyopathy.",
+   "kw": [
+    "RASopathies",
+    "RAS-MAPK"
+   ],
+   "info": "RASopathy genes do not appear to play a significant causal role in non-syndromic HCM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about MAPK signalling and DCM?",
+   "a": "Mouse genetic models showed that loss of SHP-2 or RAF1, or increased p38 activation, can induce DCM, but inherited RAS-MAPK abnormalities had never been implicated in human DCM.",
+   "kw": [
+    "SHP-2",
+    "p38"
+   ],
+   "info": "",
+   "concl": "This paper tests whether RAS-MAPK genes contribute to non-syndromic human DCM."
+  },
+  {
+   "type": "qa",
+   "section": "Results - discovery cohort (Group 1)",
+   "q": "What was screened in the South Indian discovery cohort?",
+   "a": "DNAs from 218 individuals with isolated DCM (Group 1) were screened for mutations in nine RAS-MAPK genes: PTPN11, HRAS, KRAS, RAF1, BRAF, SOS1, MEK1, MEK2 and SHOC2.",
+   "kw": [
+    "Group 1",
+    "RAS-MAPK"
+   ],
+   "info": "No changes were found in the other eight genes, only in RAF1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - discovery cohort (Group 1)",
+   "q": "Which RAF1 variants were found in South India?",
+   "a": "Five novel missense variants: p.Pro332Ala, p.Leu603Pro (twice), p.His626Arg and p.Thr641Met.",
+   "kw": [
+    "RAF1"
+   ],
+   "info": "Each altered residue is evolutionarily conserved among vertebrate RAF1 orthologs and was absent from 500 ethnically matched normal South Indians.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - discovery cohort (Group 1)",
+   "q": "What did sequencing of additional South Indian controls show?",
+   "a": "All RAF1 coding exons were sequenced in 420 South Indians (100 controls, 190 solid cancers, 100 coronary artery disease, 30 atrial septal defects) and only two synonymous alleles were found, T543T (n=1) and T638T (n=9).",
+   "kw": [
+    "synonymous variants"
+   ],
+   "info": "Missense RAF1 mutation frequency was higher in the South Indian DCM cohort than controls (5/436 vs 0/840, p=0.0046).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - discovery cohort (Group 1)",
+   "q": "Were the carriers excluded for other cardiomyopathy genes?",
+   "a": "Yes. RAF1-positive individuals screened negative for mutations in 12 known cardiomyopathy genes: MYH7, MYH6, MYBPC3, TNNT2, TPM1, MYL3, MYL2, TNNI3, PRKAG2, LMNA, PLN and TTN.",
+   "kw": [
+    "MYBPC3",
+    "TTN"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - discovery cohort (Group 1)",
+   "q": "What did in silico prediction add?",
+   "a": "DCM cases had significantly more variants predicted to alter RAF1 function than matched controls: PolyPhen-2 probably damaging 4/436 vs 0/840 (p=0.0135) and pMUT pathological 5/436 vs 0/840 (p=0.0046).",
+   "kw": [
+    "PolyPhen-2",
+    "pMUT"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - discovery cohort (Group 1)",
+   "q": "What did family analysis of three South Indian probands show?",
+   "a": "The p.Pro332Ala allele was absent in both parents (paternity confirmed), consistent with a de novo change; in the two other families the relevant RAF1 variant was found in another symptomatic relative.",
+   "kw": [
+    "de novo"
+   ],
+   "info": "Family members were assessed by ECG and echocardiography; families of the other 510 index cases were not assessed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - replication cohorts (Groups 2-4)",
+   "q": "What was found in the North Indian cohort (Group 2)?",
+   "a": "In 200 North Indian DCM probands, two RAF1 variants were found: a single base-pair deletion causing truncation (p.R254fs) and a missense p.Thr641Met; neither was present in 350 matched North Indian controls.",
+   "kw": [
+    "p.R254fs"
+   ],
+   "info": "North Indians are genetically distinct from South Indians.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - replication cohorts (Groups 2-4)",
+   "q": "What was found in the Japanese cohort (Group 3)?",
+   "a": "Two novel missense mutations, p.Ala237Thr and p.Thr310Ala, in 35 Japanese DCM probands; neither was detected among 300 Japanese controls.",
+   "kw": [],
+   "info": "Both were predicted to be tolerated in silico but had functional consequences in vitro, showing prediction tools can miss functional alleles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - replication cohorts (Groups 2-4)",
+   "q": "How did the mutation burden compare with public databases?",
+   "a": "RAF1 missense or damaging mutations were more frequent in DCM than in ESP cohorts (9/1026 vs 29/13006, p=0.0004).",
+   "kw": [
+    "ESP"
+   ],
+   "info": "Odds ratios: all DCM vs unmatched ESP OR=3.96 (95% CI 1.87-8.39); South Indian DCM vs matched controls OR=21.42 (95% CI 1.18-388.41). Variants were also absent from dbSNP and 1000 Genomes.",
+   "concl": "RAF1 variants are strongly associated with non-syndromic DCM."
+  },
+  {
+   "type": "qa",
+   "section": "Results - replication cohorts (Groups 2-4)",
+   "q": "What was Group 4 and what did it contribute?",
+   "a": "Group 4 was 60 Italian DCM patients diagnosed after age 18 who were negative for nine known DCM genes; no disease-associated RAF1 mutation was found in them.",
+   "kw": [
+    "Group 4"
+   ],
+   "info": "Supports the childhood-onset specificity of RAF1 DCM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - clinical features",
+   "q": "What is the age profile of RAF1-associated DCM?",
+   "a": "Of ten subjects with a RAF1 mutation and known age of onset, eight presented in childhood or adolescence, with an average age at presentation of 12.6 years versus about 20 years for sarcomeric DCM.",
+   "kw": [
+    "pediatric onset"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - clinical features",
+   "q": "What is the key enrichment statistic for childhood onset?",
+   "a": "RAF1 mutations occurred in 7 of 63 Indian childhood-onset cases (11%) versus 0 of 355 adult-onset cases (p<0.0001); adding one of 25 Japanese childhood cases gives 8 of 88 (9%) childhood-onset DCM with RAF1 mutations (p<0.0001).",
+   "kw": [],
+   "info": "All five South Indian RAF1 carriers were among the 33 childhood-onset cases, and both North Indian carriers among their 30 childhood-onset cases.",
+   "concl": "RAF1 is the first gene strongly associated with isolated DCM that is predominantly pediatric-onset."
+  },
+  {
+   "type": "qa",
+   "section": "Results - clinical features",
+   "q": "How severe was disease in the mutation-positive subjects (Table 1)?",
+   "a": "All ten were NYHA class III or IV, LVEF ranged from 12% to 31%, LVIDd from 52 to 85 mm, and all had mitral regurgitation (mild to severe); one subject (P6) was deceased.",
+   "kw": [
+    "LVEF",
+    "NYHA"
+   ],
+   "info": "Ages of onset ranged from 1 to 40 years.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - clinical features",
+   "q": "Did carriers have RASopathy features?",
+   "a": "No. None of the RAF1 mutation-positive subjects had facial dysmorphism, short stature, webbed neck, chest deformity or mental retardation, so the DCM was isolated/non-syndromic.",
+   "kw": [
+    "RASopathy"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - kinase activity and ERK",
+   "q": "How did DCM-associated RAF1 mutants behave in kinase assays?",
+   "a": "Five DCM mutants (p.Ala237Thr, p.Thr310Ala, p.Pro332Ala, p.His626Arg, p.Thr641Met) expressed in HEK293 cells had mildly increased kinase activity compared to wild type, but much less than the HCM-associated mutants p.Leu613Val and p.Ser257Leu.",
+   "kw": [
+    "HEK293",
+    "kinase assay"
+   ],
+   "info": "Kinase activity was measured as p-MEK/RAF1 after immunoprecipitation and a linked assay with inactive MEK1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - kinase activity and ERK",
+   "q": "Which DCM alleles were loss-of-function?",
+   "a": "p.Leu603Pro showed impaired kinase activity and reduced ERK activation, as did the truncated p.R254fs protein.",
+   "kw": [
+    "p.Leu603Pro"
+   ],
+   "info": "Leu603 sits in the kinase domain, so substitution by proline could plausibly render RAF1 non-functional.",
+   "concl": "DCM RAF1 alleles can be either mildly activating or kinase-impaired."
+  },
+  {
+   "type": "qa",
+   "section": "Results - kinase activity and ERK",
+   "q": "What happened to ERK activation with DCM mutants?",
+   "a": "ERK activation by DCM RAF1 mutants was similar to wild type and significantly less than with HCM mutants.",
+   "kw": [
+    "ERK"
+   ],
+   "info": "",
+   "concl": "DCM-associated mutants are biochemically distinct from RASopathy HCM mutants."
+  },
+  {
+   "type": "qa",
+   "section": "Results - AKT/mTOR signalling",
+   "q": "What pathway is activated by DCM-associated RAF1 mutants?",
+   "a": "Overexpression in HEK293 cells caused excessive activation of AKT and of tuberin (TSC2), a downstream AKT/mTOR target, after EGF or IGF-1 stimulation, compared to wild type.",
+   "kw": [
+    "AKT/mTOR",
+    "tuberin"
+   ],
+   "info": "HCM-related mutants p.Leu613Val, p.Val263Ala and p.Ser257Leu did not excessively activate AKT or tuberin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - BRAF dependence",
+   "q": "How was BRAF dependence tested?",
+   "a": "Two representative DCM mutants, p.Pro332Ala (kinase active) and p.Leu603Pro (kinase impaired), were transiently expressed in Raf1-/- and Braf-/- mouse embryonic fibroblasts and stimulated with EGF.",
+   "kw": [
+    "MEFs",
+    "BRAF"
+   ],
+   "info": "Erk activation by the DCM mutants was similar to wild type in both MEF types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - BRAF dependence",
+   "q": "What was the result of the MEF experiment?",
+   "a": "Akt hyperactivation persisted in Raf1-/- MEFs but was markedly reduced in Braf-/- MEFs.",
+   "kw": [
+    "Akt",
+    "Braf"
+   ],
+   "info": "",
+   "concl": "DCM-associated RAF1 mutants induce AKT hyperactivation in a BRAF-dependent way, possibly via heterodimerization."
+  },
+  {
+   "type": "qa",
+   "section": "Results - zebrafish model",
+   "q": "How was the zebrafish model made?",
+   "a": "Human wild-type RAF1 and the two representative DCM mutants (p.Pro332Ala, p.Leu603Pro) were expressed by mRNA injection into one-cell-stage zebrafish embryos and hearts were examined 3 days later.",
+   "kw": [
+    "zebrafish",
+    "mRNA injection"
+   ],
+   "info": "Embryos expressing wild-type RAF1 had cardiac status indistinguishable from uninjected embryos.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - zebrafish model",
+   "q": "What cardiac phenotype did the mutants produce in zebrafish?",
+   "a": "Both mutants caused heart defects mimicking heart failure: elongated (string-like) ventricular and atrial chambers, profound pericardial edema, blood congestion at the cardiac inflow tract and impaired contractions, with severe bradycardia at 72 hpf.",
+   "kw": [
+    "pericardial edema",
+    "bradycardia"
+   ],
+   "info": "Heart rate measured in 30 embryos per group; phenotype percentage scored in n=150 embryos per group.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - zebrafish model",
+   "q": "What did immunoblotting of zebrafish hearts show?",
+   "a": "Hearts expressing the DCM-associated RAF1 proteins had Erk activation similar to uninjected or wild-type hearts but significantly hyperactivated Akt.",
+   "kw": [
+    "Akt",
+    "Erk"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - zebrafish model",
+   "q": "What was the effect of rapamycin?",
+   "a": "Rapamycin (an AKT/mTOR inhibitor) partially rescued the heart defects in embryos expressing the DCM RAF1 mutants and normalized AKT activation.",
+   "kw": [
+    "rapamycin",
+    "mTOR"
+   ],
+   "info": "",
+   "concl": "The cardiac failure caused by DCM-associated mutant RAF1 is mediated by increased AKT signalling and is pharmacologically reversible in the fish model."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do HCM- and DCM-associated RAF1 mutations differ in position?",
+   "a": "They are mutually exclusive: HCM mutations cluster in two hot spots at Ser259 and Ser612, whereas DCM mutations are more widely distributed and do not alter residues critical for RAF1 regulation, with Ser642 as an exception.",
+   "kw": [
+    "hot spots"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall contrast between the two allelic cardiomyopathies?",
+   "a": "DCM mutants show modestly increased or impaired kinase activity, hyperactivate AKT but not ERK and respond to an AKT/mTOR inhibitor; HCM mutants show greatly enhanced kinase activity and robust ERK activation and are rescued by a MEK inhibitor in mouse models.",
+   "kw": [
+    "allelic"
+   ],
+   "info": "The MEK-inhibitor rescue refers to a mouse model of RASopathy-associated Raf1 p.Leu613Val.",
+   "concl": "The RAF1 cardiomyopathies are allelic but biologically distinct."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What parallel is drawn with PTPN11 and NSML?",
+   "a": "Loss-of-function PTPN11 alleles in Noonan syndrome with multiple lentigines (formerly LEOPARD syndrome) cause HCM via Akt but not Erk1/2 hyperactivation in a knock-in mouse, with HCM transforming to DCM at older ages, and an mTOR inhibitor prevented or rescued that HCM.",
+   "kw": [
+    "PTPN11",
+    "NSML"
+   ],
+   "info": "This motivates a clinical trial of a rapamycin analog in LEOPARD syndrome with HCM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors say is still needed before therapy?",
+   "a": "Pre-clinical studies, most likely with a mouse model carrying a DCM-associated RAF1 mutation, must first recapitulate the cardiac disease and drug efficacy before a similar therapeutic route can be envisioned.",
+   "kw": [],
+   "info": "Acknowledged limitation: the rescue evidence so far comes only from transient mRNA overexpression in zebrafish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - clinical evaluations",
+   "q": "Where did the 513 DCM patients come from?",
+   "a": "Hospitals in South India (Madurai, Trivandrum, Kozhikode; Group 1), North India (Chandigarh, Mumbai; Group 2), Tokyo, Japan (Group 3) and Naples, Italy (Group 4), all recruited with informed written consent and IRB approval.",
+   "kw": [],
+   "info": "Plus 320 registered South Indian cases with other diseases (190 solid cancers, 100 coronary artery disease, 30 atrial septal defects) as additional controls.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - diagnostic criteria",
+   "q": "What echocardiographic criteria defined DCM?",
+   "a": "Depressed LV systolic function (LVEF <0.45 and/or fractional shortening <0.25) plus a dilated LV (LV end-diastolic dimension >117% of the predicted value corrected for age and body surface area), with other cardiac or systemic causes excluded.",
+   "kw": [
+    "LVEF",
+    "fractional shortening"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cohort details",
+   "q": "How were cases and controls matched?",
+   "a": "By geographical region, self-reported ethnicity, sex and age in Groups 1-3; for example Group 1 was 67% vs 64% male and 40.02 +/- 22 vs 45 +/- 17.2 years.",
+   "kw": [
+    "matching"
+   ],
+   "info": "Mean LVEF at enrollment was 29 +/- 11% (Group 1), 32 +/- 10% (Group 2) and 25 +/- 14% (Group 3). Population stratification had been assessed earlier with 50 ancestry-informative markers (AIMs).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing",
+   "q": "How was sequencing performed?",
+   "a": "Genomic DNA from peripheral blood lymphocytes; exons and flanking intronic boundaries were PCR-amplified, gel-isolated with a QiaxII kit, sequenced with BigDye terminator chemistry on an ABI3730 DNA analyzer.",
+   "kw": [
+    "Sanger sequencing",
+    "ABI3730"
+   ],
+   "info": "This is targeted Sanger resequencing, not exome or genome sequencing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cloning and cell assays",
+   "q": "What constructs and cells were used for the biochemistry?",
+   "a": "RAF1 mutations were introduced into a Flag-tagged human RAF1 construct by QuikChange site-directed mutagenesis and transfected with Lipofectamine into HEK293 cells or Raf1-/- and Braf-/- MEFs.",
+   "kw": [
+    "Flag-tag",
+    "QuikChange"
+   ],
+   "info": "Cells were serum-starved 16 h at 48 h post-transfection, stimulated with EGF 10 ng/ml, lysed in RIPA buffer, and ~30 ug protein per lane was immunoblotted on PVDF.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cloning and cell assays",
+   "q": "How was RAF1 kinase activity measured?",
+   "a": "Flag-tagged RAF1 was immunoprecipitated from 800 ug-1 mg of HEK293 lysate with anti-Flag and protein G-Sepharose, then incubated with inactive MEK1 at 30 degrees C for 1 h; phospho-MEK on blot was the readout.",
+   "kw": [
+    "immunoprecipitation",
+    "p-MEK"
+   ],
+   "info": "RAF1 kinase assay kit (Upstate 17-357); anti-p-MEK and anti-Flag used at 1:2,000.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - in silico analysis",
+   "q": "Which prediction and alignment tools were used?",
+   "a": "Pathogenicity was predicted with PolyPhen2, SIFT and PMut; cross-species amino acid conservation was assessed by aligning vertebrate RAF1 protein sequences with ClustalW2.",
+   "kw": [
+    "PolyPhen2",
+    "SIFT",
+    "ClustalW2"
+   ],
+   "info": "Species in the alignment included human, chimpanzee, macaque, dog, rat, mouse, cow, zebrafish and horse.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - zebrafish",
+   "q": "What are the zebrafish husbandry and injection details?",
+   "a": "Wild-type TAB14, AB and TAB5 adults kept at 28 degrees C on a 14:10 light:dark cycle; embryos were injected with 4 nl using a Narishige IM-300 microinjector, 75 ng of mRNA per embryo at the one- to four-cell stage.",
+   "kw": [
+    "Danio rerio",
+    "mMessage mMachine"
+   ],
+   "info": "75 ng was identified by titration as the maximal tolerable and minimal effective dose. mRNA encoded Myc-tagged human RAF1 (six N-terminal Myc copies) made with mMessage mMachine. Tg(cmlc2:EGFP) fish expressing GFP in cardiomyocytes were generated with the Tol2 kit.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - zebrafish",
+   "q": "Was the animal work blinded?",
+   "a": "No. The paper states explicitly that subsequent experiments were neither randomized nor blinded.",
+   "kw": [],
+   "info": "A limitation to keep in mind for the phenotype scoring.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - statistics",
+   "q": "How were the functional data analysed statistically?",
+   "a": "Data are mean +/- standard error of the mean, compared between experimental groups by Student's t test, with p <= 0.05 considered significant.",
+   "kw": [
+    "Student's t test"
+   ],
+   "info": "Figure legends instead report mean +/- SD of two to four independent experiments, so the paper is inconsistent about SEM vs SD.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - BRAF dependence",
+   "text": "BRAF dependence is inferred from Braf-/- MEFs and proposed to work through RAF1-BRAF heterodimerization, but heterodimerization itself was never directly measured here - worth checking the Wu et al. 2012 reference for the HCM-mutant evidence."
+  },
+  {
+   "type": "note",
+   "section": "Results - zebrafish model",
+   "text": "The zebrafish readout is transient overexpression of human RAF1 mRNA at 75 ng per embryo, not an endogenous knock-in, so dosage effects could contribute to the heart failure phenotype; a knock-in model is what the authors themselves say is needed next."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Open question: how can both a mildly kinase-activating allele (p.Pro332Ala) and a kinase-dead allele (p.Leu603Pro, p.R254fs) converge on the same BRAF-dependent AKT hyperactivation and the same cardiac phenotype?"
+  }
+ ]
+}

@@ -1,0 +1,507 @@
+{
+ "id": "Kadonaga_2011",
+ "title": "Perspectives on the RNA polymerase II core promoter",
+ "link": "https://doi.org/10.1002/wdev.21",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Kadonaga_2011_WIREsDevBiol_core_promoter_perspectives.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the core promoter, in simple terms?",
+   "a": "The stretch of DNA that directs the initiation of transcription by RNA polymerase II. It is sometimes called the gateway to transcription.",
+   "kw": [
+    "core promoter",
+    "RNA polymerase II"
+   ],
+   "info": "This is an Advanced Review (WIREs Dev Biol 2012, 1:40-51), not a primary research paper. There are no methods; the author summarises data from Drosophila and mammals.",
+   "concl": "The core promoter is a critical component in the regulation of gene activity, not just a universal on-switch."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "At which levels can core promoters be viewed?",
+   "a": "At the level of DNA sequences (core promoter elements), the transcription factors that act on them, and the biological networks they belong to.",
+   "kw": [
+    "core promoter elements"
+   ],
+   "info": "The motifs named in the abstract are the TATA box, Inr, TCT, BRE, MTE and DPE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is the RNA Pol II core promoter formally defined?",
+   "a": "The minimal stretch of DNA that is sufficient to direct accurate initiation of transcription by RNA polymerase II.",
+   "kw": [
+    "core promoter"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the traditional view of the core promoter, and how has it changed?",
+   "a": "It used to be thought of as a universal element that works indiscriminately with different enhancers and in many contexts. It is now clear that it is structurally and functionally diverse.",
+   "kw": [
+    "enhancer-promoter specificity"
+   ],
+   "info": "This is why the author says the specific components of the core promoter have to be taken into account when analysing gene activity.",
+   "concl": "The core promoter is a diverse regulatory element, not a generic one."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why can't purified RNA polymerase II transcribe from a core promoter on its own?",
+   "a": "Purified Pol II can synthesise RNA but cannot recognise the core promoter. It needs the basal transcription factors TFIIA, TFIIB, TFIID, TFIIE, TFIIF and TFIIH.",
+   "kw": [
+    "GTFs",
+    "basal transcription factors"
+   ],
+   "info": "These are often called general transcription factors (GTFs), but the author notes they do not work universally at all core promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is TFIID and what is the PIC?",
+   "a": "TFIID is made of the TATA box-binding protein (TBP) and TBP-associated factors (TAFs), and it often recognises the core promoter motifs. The basal factors and Pol II assemble at the core promoter into the transcription preinitiation complex (PIC), which starts transcribing once nucleotides are added.",
+   "kw": [
+    "TFIID",
+    "TBP",
+    "PIC"
+   ],
+   "info": "Most of what is known about basal factors comes from TATA-dependent promoters, so many other basal factors probably remain to be found.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements",
+   "q": "Is there a universal core promoter element?",
+   "a": "No. No core promoter element is found in all promoters. The TATA box is the best known, but it occurs in only about 10-20% of metazoan core promoters.",
+   "kw": [
+    "TATA box"
+   ],
+   "info": "Roughly one-third of core promoters lack all known motifs, so many more elements probably remain to be discovered. Motif organisation in S. cerevisiae is quite different from metazoans.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements",
+   "q": "Which core promoter elements are shown in Figure 1, and which are found in both flies and humans?",
+   "a": "BREu, BREd, TATA, Inr, MTE, DPE, Bridge, TCT, XCPE1 and DCE, positioned roughly between -40 and +40. BREu, TATA, Inr, MTE, DPE and TCT have been found in both Drosophila and humans.",
+   "kw": [
+    "XCPE1",
+    "DCE",
+    "Bridge"
+   ],
+   "info": "These motifs are typically found in focused promoters. Dispersed promoters probably contain Inr-like elements.",
+   "concl": "Which motifs a core promoter has or lacks determines its functional properties. For example, some enhancers activate DPE-dependent but not TATA-dependent promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - Initiator",
+   "q": "What is the Initiator (Inr) and what binds it?",
+   "a": "The Inr encompasses the +1 transcription start site and is probably the most common core promoter element. Basal transcription appears to involve TFIID binding to the Inr.",
+   "kw": [
+    "Inr",
+    "TFIID"
+   ],
+   "info": "Corden et al. first described a distinct sequence at the start site. Smale and Baltimore defined the Inr as a functional transcriptional element. Many other factors have also been reported to bind Inr sequences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - Initiator",
+   "q": "What are the Inr consensus sequences?",
+   "a": "From functional studies: TCAKTY in Drosophila and YYANWYY in humans, with A as +1. From computational analyses: TCAGTY for Drosophila focused promoters, TCA for Drosophila dispersed promoters, and YR (R at +1) in humans.",
+   "kw": [
+    "Inr consensus",
+    "IUPAC"
+   ],
+   "info": "The Drosophila dispersed-promoter Inr consensus is more relaxed than the focused one.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - Initiator",
+   "q": "Why is the A of the Inr always called +1, even when transcription starts elsewhere?",
+   "a": "It gives a fixed reference point. The DPE and MTE work cooperatively with the Inr in a way that depends on their distance from A+1.",
+   "kw": [
+    "A+1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - TATA box and BRE",
+   "q": "What is the metazoan TATA box consensus and where does it sit?",
+   "a": "TATAWAAR, with the 5' T usually at -30 or -31 relative to the Inr A+1. It is bound by the TBP subunit of TFIID.",
+   "kw": [
+    "TATA box",
+    "TBP"
+   ],
+   "info": "It was the first core promoter motif identified. The TATA box and TBP are both conserved from archaebacteria to humans.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - TATA box and BRE",
+   "q": "What are the BRE motifs?",
+   "a": "TFIIB recognition elements found upstream (BREu) or downstream (BREd) of a subset of TATA boxes. They act together with the TATA box and can have both positive and negative effects on basal transcription.",
+   "kw": [
+    "BREu",
+    "BREd",
+    "TFIIB"
+   ],
+   "info": "Promoters rarely contain both BREu and BREd. TFIIB and the BRE are conserved from archaebacteria to humans. BREu was originally just called BRE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - TATA box and BRE",
+   "q": "How does a BREu affect enhancer-driven activation?",
+   "a": "In studies of Drosophila Caudal, a BREu upstream of a TATA box suppressed transcriptional activation by Caudal.",
+   "kw": [
+    "Caudal",
+    "BREu"
+   ],
+   "info": "The author suggests that the role of BRE motifs in activation and enhancer function deserves further study.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - DPE and MTE",
+   "q": "How were the DPE and MTE discovered, and what do they contact?",
+   "a": "The DPE was found by analysing TATA-less Drosophila promoters. The MTE, just upstream of the DPE, was first seen computationally as the overrepresented 'motif 10' and later shown to be functional. Both appear to be close to the TFIID subunits TAF6 and TAF9.",
+   "kw": [
+    "DPE",
+    "MTE",
+    "TAF6/TAF9"
+   ],
+   "info": "Both motifs are conserved from Drosophila to humans. TAF6 and TAF9 resemble histones H4 and H3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - DPE and MTE",
+   "q": "Which downstream subregions make up the MTE and the DPE?",
+   "a": "There are three key subregions (positions relative to A+1): 18-22, 27-29 and 30-33. The MTE needs 18-22 plus 27-29, and the DPE is 27-29 plus 30-33.",
+   "kw": [
+    "MTE",
+    "DPE"
+   ],
+   "info": "Favoured nucleotides: 18-22 CGANC, 27-29 CGG, 30-33 WYGT. Disfavoured: 18-22 RT--W, 27-29 GYA, 30-33 SRW-.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoter elements - DPE and MTE",
+   "q": "What is the Bridge element?",
+   "a": "A combination of the first (18-22) and third (30-33) downstream subregions. It also gives an active core promoter but seems to be rare in natural promoters.",
+   "kw": [
+    "Bridge"
+   ],
+   "info": "The +18 to +33 region could be seen as one continuous downstream region. The author still keeps separate motif names because MTE-like and DPE-like promoters probably have distinct transcriptional properties.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modes of transcription initiation - Focused vs dispersed",
+   "q": "What is the difference between focused and dispersed transcription initiation?",
+   "a": "Focused promoters have a single start site or a cluster of start sites within a few nucleotides. Dispersed promoters have multiple weak start sites spread over about 50-100 nt.",
+   "kw": [
+    "focused promoter",
+    "dispersed promoter"
+   ],
+   "info": "Other names for focused: peaked, single dominant peak, narrow peak, sharp peak. Other names for dispersed: broad, broad with peak, weak peak. Focused examples are most viral, beta-globin and histone gene promoters. An early dispersed example is the mammalian HMG-CoA reductase promoter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modes of transcription initiation - Focused vs dispersed",
+   "q": "Are focused and dispersed strict categories?",
+   "a": "No, they are the two ends of a continuum. For example, some promoters show a dispersed pattern with one major start site, and some data suggest these are closer to dispersed than to focused promoters.",
+   "kw": [],
+   "info": "To keep things simple, the review compares the more purely focused and dispersed promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modes of transcription initiation - Focused vs dispersed",
+   "q": "Which kinds of genes use focused and which use dispersed promoters?",
+   "a": "Regulated genes generally use focused promoters, and housekeeping genes with steady expression generally use dispersed promoters. Genome-wide analyses of promoter shape and expression support this.",
+   "kw": [
+    "housekeeping genes",
+    "regulated genes"
+   ],
+   "info": "The author's teleological argument: a regulated gene is easiest to switch on or off through one start site, while many weak start sites give steady output that barely changes if any single one varies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modes of transcription initiation - Mechanisms",
+   "q": "What mechanism does the author propose for focused transcription?",
+   "a": "TFIID, which interacts with several core promoter motifs, positions Pol II at one specific location as the PIC assembles. The positioned polymerase then starts at one highly preferred nucleotide or at one of several preferred nucleotides nearby.",
+   "kw": [
+    "PIC",
+    "TFIID",
+    "start site selection"
+   ],
+   "info": "This fits with start site preference changing with nucleotide availability or with added dinucleotide primers. The signal does not rise continuously to a peak, so 'focused' describes it better than 'peaked'.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modes of transcription initiation - Mechanisms",
+   "q": "What mechanism does the author propose for dispersed transcription?",
+   "a": "Many weak promoter units, each made of a binding site for a sequence-specific factor such as Sp1 or NF-Y plus a loose Inr-like sequence. These units are arranged in tandem and interdigitated, with no TFIID-mediated positioning of Pol II.",
+   "kw": [
+    "Sp1",
+    "NF-Y",
+    "Inr-like"
+   ],
+   "info": "Dispersed transcription is unlikely to be just tandem weak focused promoters, because focused-promoter motifs such as TATA are usually absent. An Sp1 site plus an Inr can drive low transcription in vitro and in cells. The model is unpublished and based on ideas from S.T. Smale and R.G. Roeder.",
+   "concl": "The two initiation patterns probably reflect two distinct transcription mechanisms."
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - TCT motif",
+   "q": "What is the TCT motif?",
+   "a": "The polypyrimidine initiator, a core promoter element dedicated to transcribing ribosomal protein genes and other genes involved in translation. Its consensus is YYC+1TTTYY in Drosophila and YC+1TYTYY in humans, with C+1 as the start site.",
+   "kw": [
+    "TCT motif",
+    "ribosomal protein genes"
+   ],
+   "info": "The name comes from the TCT usually found at -1 to +2. It was earlier called the polypyrimidine initiator in studies of the mouse rpS16 promoter. It overlaps with, but is distinct from, the sequence encoding the 5' TOP tract that regulates translation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - TCT motif",
+   "q": "How widespread is the TCT motif among ribosomal protein gene promoters?",
+   "a": "Of 52 Drosophila ribosomal protein gene promoters with high-confidence start site data, 44 match the YYC+1TTTYY consensus perfectly, 7 have one mismatch and 1 has two mismatches, all with perfect alignment.",
+   "kw": [
+    "TCT motif"
+   ],
+   "info": "This consensus would occur by chance only once every 4096 nt. There are an estimated 120 TCT motif sequences in Drosophila in total.",
+   "concl": "The TCT motif is rare in the genome but present in nearly all ribosomal protein gene promoters in flies and humans."
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - TCT motif",
+   "q": "Can a TCT motif replace an Inr?",
+   "a": "No. In the adenovirus major late promoter, replacing the Inr with a TCT motif abolished transcription and TFIID binding. Changing TCT to TCA, to match the Inr consensus, restored both.",
+   "kw": [
+    "TCT motif",
+    "Inr",
+    "TFIID"
+   ],
+   "info": "TCT also failed to substitute for the Inr in two DPE-containing promoters. The TCA mutant was based on the Drosophila RpLp1 TCT motif (CTCTTTCC changed to CTCATTCC).",
+   "concl": "A single T versus A difference separates two mechanistically distinct systems. TCT-based transcription does not work through TFIID binding the Inr."
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - TCT motif",
+   "q": "How does the TCT system fit with the other RNA polymerases?",
+   "a": "The TCT-based Pol II system makes ribosomal proteins. It complements Pol I and Pol III, which make ribosomal RNAs and tRNAs, so together the three systems supply the RNAs needed to build ribosomes and tRNAs.",
+   "kw": [
+    "Pol I",
+    "Pol III"
+   ],
+   "info": "A shared motif makes sense because ribosomal protein synthesis has to be coordinated.",
+   "concl": "A rare core promoter element can be a key component of a biological network."
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - Hox genes and DPE",
+   "q": "Which core promoter motif do the Drosophila Hox genes use?",
+   "a": "Nearly all Drosophila Hox core promoters are TATA-less and DPE-dependent. Ubx and abd-A, the two most evolutionarily recent Hox genes, lack both a DPE and a TATA box.",
+   "kw": [
+    "Hox",
+    "DPE"
+   ],
+   "info": "The DPE motifs in lab, pb, Dfd, Scr, Antp and Abd-B are conserved from D. melanogaster to D. virilis.",
+   "concl": "Early versions of the Hox network probably had only DPE-dependent core promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - Hox genes and DPE",
+   "q": "What makes Caudal a DPE-specific activator?",
+   "a": "Caudal, a sequence-specific enhancer-binding factor and key Hox regulator, strongly activates DPE-dependent promoters, weakly activates TATA-dependent promoters, and activates promoters with both BREu and TATA little or not at all.",
+   "kw": [
+    "Caudal",
+    "DPE",
+    "enhancer-promoter specificity"
+   ],
+   "info": "The mechanism is unknown. It may involve recruiting NC2 (Dr1-Drap1) and Mot1 (BTAF1, Hel89B), which promote DPE-dependent and inhibit TATA-dependent transcription.",
+   "concl": "Enhancer-core promoter specificity can link sequence-specific factors to their target genes in regulatory networks."
+  },
+  {
+   "type": "qa",
+   "section": "Biological networks - Hox genes and DPE",
+   "q": "Are there other examples of DPE- or TATA-specific enhancers?",
+   "a": "Yes. Enhancer elements have been found that activate in a DPE-specific or TATA-specific way, but the activators responsible were not identified.",
+   "kw": [
+    "enhancer-promoter specificity"
+   ],
+   "info": "The author says finding more core-promoter-specific factors like Caudal will be particularly informative.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - p53",
+   "q": "How does core promoter structure affect p53 target gene kinetics?",
+   "a": "CDKN1A (p21), a cell cycle target, is induced quickly and has a TATA box that allows efficient PIC assembly. FAS, a pro-apoptotic target, is induced slowly, lacks a TATA box and assembles the PIC inefficiently.",
+   "kw": [
+    "p53",
+    "CDKN1A",
+    "FAS"
+   ],
+   "info": "It is not yet known whether other p53 targets behave the same way.",
+   "concl": "Core promoter structure is an important part of the p53 transcriptional response."
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - Pausing",
+   "q": "Where does Pol II pause, and what is the pause button?",
+   "a": "Pol II pauses about 25 nt downstream of the start site at Drosophila hsp70 and, genome-wide, about 20-50 nt downstream at many genes. The pause button (PB) is a sequence enriched in promoters with stalled Pol II, and its location and consensus resemble the DPE.",
+   "kw": [
+    "promoter-proximal pausing",
+    "pause button",
+    "hsp70"
+   ],
+   "info": "Hypothesis: TAF6 and TAF9, which resemble H4 and H3 and sit near the DPE, may bind downstream DNA like an H3-H4 tetramer and promote pausing.",
+   "concl": "The DPE may take part in Pol II pausing."
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - Pausing",
+   "q": "Are paused promoters focused or dispersed?",
+   "a": "In Drosophila, 55% of paused/stalled promoters are focused, roughly twice the percentage among all promoters. Still, 44% of paused/stalled promoters are dispersed.",
+   "kw": [
+    "pausing",
+    "focused promoter"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - CpG islands",
+   "q": "What are CpG islands and why do they exist in vertebrates?",
+   "a": "In vertebrates, CpG cytosines are usually methylated, and deamination of 5-methylcytosine produces thymine that is poorly repaired, so CpGs are depleted overall. CpG islands are exceptions: stretches averaging about 1 kbp that are G+C-rich and whose CpGs are commonly unmethylated.",
+   "kw": [
+    "CpG island",
+    "5-methylcytosine"
+   ],
+   "info": "More than half of known vertebrate promoters lie in CpG islands. These promoters are often dispersed and are associated with housekeeping genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - CpG islands",
+   "q": "Why does Drosophila argue against a link between CpG islands and dispersed transcription?",
+   "a": "Drosophila has very little CpG methylation, so CpGs occur at normal frequency and there are no CpG islands. Both focused and dispersed promoters still exist there.",
+   "kw": [
+    "CpG island",
+    "Drosophila"
+   ],
+   "info": "In Drosophila, focused promoters are enriched for regulated genes and for TATA, Inr and DPE motifs. Dispersed promoters are enriched for housekeeping genes and have more chromatin organisation.",
+   "concl": "There is no obligatory link between CpG islands and dispersed transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - Chromatin",
+   "q": "How does nucleosome positioning relate to promoter type?",
+   "a": "Dispersed promoters generally have strongly positioned nucleosomes, while focused promoters, including those with TATA, Inr, MTE or DPE, have little or no positioning. TCT promoters are the exception: mostly focused, yet strongly positioned.",
+   "kw": [
+    "nucleosome positioning",
+    "TCT motif"
+   ],
+   "info": "The author treats bulk nucleosomes, H2A.Z and H3K4me3 data together. The TCT anomaly is explained by ribosomal protein genes being housekeeping genes.",
+   "concl": "Chromatin order seems to be set by whether the transcriptional state is stable or labile, not by the initiation pattern itself."
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - Chromatin",
+   "q": "What do 'stable' and 'labile' transcriptional states mean here?",
+   "a": "Stable means kinetic resistance to changes in expression level, as in housekeeping genes, which correlates with ordered nucleosomes. Labile means expression changes easily, so the promoter is poised for rapid activation or repression, which correlates with little chromatin order.",
+   "kw": [
+    "poised promoter",
+    "transcriptional state"
+   ],
+   "info": "How these states are established is unknown. Proposed contributors are transcription factors recognising promoter sequences, curved DNA that favours nucleosome formation, and TFIID's TAF3 subunit binding H3K4me3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - Chromatin",
+   "q": "How do the Drosophila chromatin colour types relate to promoter types?",
+   "a": "Of the five types, BLACK, BLUE and GREEN are heterochromatin and RED and YELLOW are euchromatin. RED is enriched for GAGA factor and YELLOW is depleted of it. Focused promoters are enriched for GAGA factor and its sites, and dispersed promoters are depleted.",
+   "kw": [
+    "GAGA factor",
+    "chromatin types"
+   ],
+   "info": "Ribosomal protein genes with TCT promoters lie in YELLOW chromatin.",
+   "concl": "Labile promoters are suggested to be in RED chromatin and stable promoters in YELLOW chromatin."
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - TFIID and differentiation",
+   "q": "Does the basal machinery change during cell differentiation?",
+   "a": "Yes. When myoblasts become myotubes, the canonical TBP-containing TFIID is replaced by a complex containing TRF3 and TAF3. When hepatoblasts become hepatocytes, TFIID (TBP and TAFs) is substantially depleted, but TFIIB, TFIIE, TFIIH and Pol II are not.",
+   "kw": [
+    "TRF3",
+    "TBP2",
+    "TFIID"
+   ],
+   "info": "TRF3 (also called TBP2 or TBPL2) is a vertebrate TBP-related factor that can bind TATA boxes. The author notes that other studies (refs 61 and 63) should also be consulted on the myogenesis finding.",
+   "concl": "TFIID may act in a 'pluripotent' way, with more specialised factors taking over in differentiated cells."
+  },
+  {
+   "type": "qa",
+   "section": "Additional perspectives - Practical applications",
+   "q": "What are the practical uses of core promoter knowledge?",
+   "a": "Study an enhancer together with its own cognate core promoter, because of enhancer-promoter specificity. Use the optimised super core promoter to get high expression. Use reporters with several core elements, such as TATA plus DPE, when screening many enhancers so that both TATA-specific and DPE-specific enhancers can work.",
+   "kw": [
+    "super core promoter",
+    "reporter assays",
+    "enhancer-promoter specificity"
+   ],
+   "info": "This is directly relevant to choosing a minimal promoter for enhancer reporter assays, for example in zebrafish transgenics.",
+   "concl": "The choice of core promoter in a reporter construct can decide whether an enhancer looks active."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion",
+   "q": "What are the main take-home points of the review?",
+   "a": "The core promoter is structurally and functionally diverse. Specific motifs act in networks (TCT for ribosomal proteins, DPE for Hox). Focused and dispersed patterns reflect distinct mechanisms. Stable housekeeping states correlate with ordered chromatin and labile regulated states with disordered chromatin.",
+   "kw": [
+    "core promoter diversity"
+   ],
+   "info": "Current data suggest CpG islands are not functionally linked to dispersed or housekeeping transcription. TATA, Inr, MTE, DPE and TCT are all found in focused promoters, and all are associated with regulated transcription except TCT. The core promoter is also probably involved in divergent transcription.",
+   "concl": "The core promoter is at the heart of transcription and is an active regulator, not a passive landing site."
+  },
+  {
+   "type": "note",
+   "section": "Conclusion",
+   "text": "Open questions raised by the author: What is the basic mechanism of transcription from dispersed promoters? What factors mediate transcription from TCT-dependent promoters? How is enhancer-core promoter specificity achieved, and how many enhancer-binding factors are motif-specific like Caudal?"
+  },
+  {
+   "type": "note",
+   "section": "Additional perspectives - Practical applications",
+   "text": "Go back to this when designing enhancer reporter constructs (e.g. cavefish or zebrafish): does the minimal promoter used contain both TATA and DPE, so that core-promoter-specific enhancers are not missed?"
+  },
+  {
+   "type": "note",
+   "section": "Core promoter elements",
+   "text": "About one-third of core promoters lack any known motif. Which rare, network-specific elements like TCT remain to be found, and could they be detected in fish genomes using TSS data?"
+  }
+ ]
+}

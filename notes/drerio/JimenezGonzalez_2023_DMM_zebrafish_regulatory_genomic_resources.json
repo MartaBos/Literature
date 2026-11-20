@@ -1,0 +1,640 @@
+{
+ "id": "JimenezGonzalez_2023",
+ "title": "Zebrafish regulatory genomic resources for disease modelling and regeneration",
+ "link": "https://doi.org/10.1242/dmm.050280",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/JimenezGonzalez_2023_DMM_zebrafish_regulatory_genomic_resources.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is this paper?",
+   "a": "A Special Article (review/perspective) in Disease Models & Mechanisms discussing recent developments in generating functional annotation maps for regulatory elements of the zebrafish genome and how they can be applied to human disease.",
+   "kw": [
+    "review",
+    "zebrafish",
+    "regulatory genomics"
+   ],
+   "info": "Not a primary data paper, so there are no new experiments or datasets of their own.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Why is zebrafish a popular disease model?",
+   "a": "Fast development, easy genetic manipulation, simplicity for imaging, and sharing conserved disease-associated genes and pathways with humans.",
+   "kw": [
+    "disease modelling"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap do the authors address?",
+   "a": "Disease studies increasingly focus on non-coding mutations, which require genome annotation maps of regulatory elements such as enhancers and promoters, and zebrafish lacked a centralised annotation comparable to human resources.",
+   "kw": [
+    "non-coding mutations"
+   ],
+   "info": "",
+   "concl": "Expanding zebrafish regulatory genomic resources is needed to interpret non-coding disease variants."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What two data types do the authors argue must be integrated?",
+   "a": "Multiomic bulk sequencing data, which gives chromatin characterisation, and fast-expanding single-cell methods such as single-cell ATAC-seq, which give cell-type resolution.",
+   "kw": [
+    "scATAC-seq",
+    "multiomics"
+   ],
+   "info": "They also call for standardised genomics protocols, bioinformatic pipelines, and new analysis and visualisation tools.",
+   "concl": "Integration tools combining bulk multiomics with single-cell resolution are essential."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "How widely is zebrafish used?",
+   "a": "It is a vertebrate model used by nearly 1000 laboratories worldwide.",
+   "kw": [],
+   "info": "Most human disease-associated genes have at least one zebrafish orthologue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "Where do many disease-associated variants fall, according to GWAS?",
+   "a": "A large proportion of disease-associated gene variants occur in non-coding regions that include cis-regulatory elements such as promoters and enhancers.",
+   "kw": [
+    "GWAS",
+    "CRE"
+   ],
+   "info": "Their mechanisms and role in disease are still mostly unknown and require extensive functional annotation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "What is the NEUROD1 example of an enhancer mutation?",
+   "a": "NEUROD1, a transcription factor associated with diabetes, binds less efficiently to a variant enhancer sequence in pancreatic islets, reducing enhancer activity and increasing susceptibility to type 2 diabetes in East Asian populations.",
+   "kw": [
+    "NEUROD1",
+    "type 2 diabetes"
+   ],
+   "info": "Example of a non-coding variant acting through altered TF binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "How can variants act through chromatin looping?",
+   "a": "In Alzheimer's disease, SNPs disrupt CTCF binding sites, a key factor in chromatin loop formation, leading to misexpression of the disease-associated genes GATS (CASTOR3P) and PILRB.",
+   "kw": [
+    "CTCF",
+    "enhancer looping"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "What other two ways can non-coding variation cause disease?",
+   "a": "Variants can create new promoters, as for the variant upstream of the globin genes in alpha-thalassemia patients, and larger chromosomal rearrangements can misplace enhancers and deregulate non-target genes, as seen in neuroblastomas.",
+   "kw": [
+    "alpha-thalassemia",
+    "neuroblastoma"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "Why are zebrafish embryos good for testing human non-coding elements?",
+   "a": "Ease of transgenesis and evolutionarily conserved cis-regulatory logic during development allow in vivo reporter assays to detect the effects of human-disease-associated non-coding elements.",
+   "kw": [
+    "reporter assay",
+    "transgenesis"
+   ],
+   "info": "These assays rely on extreme sequence conservation of candidate elements, which is enriched near developmental regulator genes often associated with disease.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "What did the gata2a enhancer deletion show?",
+   "a": "Deletion of a highly conserved zebrafish gata2a enhancer mimics the dysregulated haematopoiesis characteristic of human GATA2 deficiency.",
+   "kw": [
+    "gata2a",
+    "GATA2 deficiency"
+   ],
+   "info": "Combined with single-cell RNA-seq and single-cell ATAC-seq, this showed that lack of gata2a favours the erythroid lineage by reducing accessibility of certain TFs in myeloid cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "What can be done when sequence conservation is too low to find homologous enhancers?",
+   "a": "Conserved transcription factor binding sites may still predict shared function; transgenic manipulation of enhancers with conserved TF binding site combinations pinpointed a shared mechanism for pancreatic hypoplasia.",
+   "kw": [
+    "TF binding sites",
+    "pancreatic hypoplasia"
+   ],
+   "info": "A dual fluorescence reporter system can simultaneously report the effect of a SNP alongside a common variant in conserved enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "Which organs can zebrafish regenerate that humans cannot?",
+   "a": "Zebrafish can completely regenerate spinal cord, brain, heart, kidney and fins, whereas humans readily regenerate only skin, liver and fingertips, not whole limbs or full organs.",
+   "kw": [
+    "regeneration"
+   ],
+   "info": "Regenerative mechanisms differ between organs but often include reactivation of developmental pathways.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - zebrafish models",
+   "q": "What are regeneration-responsive enhancers?",
+   "a": "Enhancers likely to mediate regeneration programmes; they have been described in heart, fin, retina and inner ear hair cells of zebrafish.",
+   "kw": [
+    "regeneration enhancers"
+   ],
+   "info": "The long-term promise is inducing gene reactivation in human organs for regenerative therapies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - gene manipulation benefits",
+   "q": "Why do transgenic gain-of-function models need annotated CREs?",
+   "a": "Spatio-temporally controlled transgenic gain-of-function models require annotated, functionally validated cis-regulatory elements to drive expression in the right cells at the right time.",
+   "kw": [
+    "CRE",
+    "transgenesis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - gene manipulation benefits",
+   "q": "How do loss-of-function approaches benefit from CRE annotation?",
+   "a": "Tissue-specific knockout with Cre/lox or cell-type-specific transgenic expression of Cas9 and guide RNAs avoids early embryonic lethality, reduces pleiotropy, and models tissue- and time-specific gene regulation in disease.",
+   "kw": [
+    "Cre/lox",
+    "Cas9"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - gene manipulation benefits",
+   "q": "Why does dCas9 knockdown depend on promoter annotation?",
+   "a": "Targeting nuclease-deficient Cas9 to promoters, or deleting promoters, requires precise annotation of transcription start sites for efficient inhibition of gene expression.",
+   "kw": [
+    "dCas9",
+    "TSS"
+   ],
+   "info": "dCas9 offers an alternative to genetic lesions and morpholino knockdown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - gene manipulation benefits",
+   "q": "What is the position effect and why does it matter for transgenesis?",
+   "a": "The chromatin environment where a transgene lands influences how efficiently it is expressed; this matters because transposon-mediated transgenesis predominantly occurs in active genomic regions.",
+   "kw": [
+    "position effect"
+   ],
+   "info": "To avoid it, safe harbour landing sites should be identified and targeted by site-specific recombination.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction - gene manipulation benefits",
+   "q": "Which maps help find safe harbour landing sites?",
+   "a": "Maps of accessible chromatin and chromatin interaction topology, including zebrafish Hi-C interaction maps and interaction boundaries informed by CTCF- and Cohesin-binding sites.",
+   "kw": [
+    "Hi-C",
+    "safe harbour"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Glossary",
+   "q": "What are COPEs and DOPEs?",
+   "a": "A constitutive orphan predicted element (COPE) is open throughout development but lacks an active chromatin mark at any stage; a dynamic orphan predicted element (DOPE) is open at some point in development but also lacks an active chromatin mark at any stage.",
+   "kw": [
+    "COPE",
+    "DOPE"
+   ],
+   "info": "Both are ATAC-seq signal without observable CRE-associated chromatin marks; they have dedicated DANIO-CODE tracks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Glossary",
+   "q": "What are PADREs?",
+   "a": "Predicted ATAC-seq-supported developmental regulatory elements: regulatory elements defined with ATAC-seq chromatin accessibility data whose function is determined from integration of key histone modification ChIP-seq data and predicted by ChromHMM.",
+   "kw": [
+    "PADRE",
+    "ChromHMM"
+   ],
+   "info": "",
+   "concl": "PADREs are the core regulatory element annotation of DANIO-CODE."
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Glossary",
+   "q": "Syntenic anchors versus synteny?",
+   "a": "Syntenic anchors are conserved non-repetitive sequences in two genomes showing a high degree of similarity; synteny refers to blocks of such anchors appearing in the same order on a chromosome between organisms.",
+   "kw": [
+    "synteny",
+    "syntenic anchors"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Glossary",
+   "q": "What is nf-core?",
+   "a": "A community-created resource for developing pipelines following standardised guidelines under the Nextflow system, allowing reproducibility between analyses using the same tools and versions.",
+   "kw": [
+    "nf-core",
+    "Nextflow"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Chromatin features and technologies",
+   "q": "What does CAGE-seq do?",
+   "a": "CAGE-seq sequences specifically the 5' end of capped RNA, allowing accurate recognition of transcription start sites and analysis of the transcriptome.",
+   "kw": [
+    "CAGE-seq",
+    "TSS"
+   ],
+   "info": "TSS positions should be used for the identification of promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Chromatin features and technologies",
+   "q": "How are eRNAs recognised?",
+   "a": "Enhancer RNAs are long non-coding RNAs transcribed from active enhancers, detectable by CAGE-seq signal; most are transcribed bidirectionally from both DNA strands.",
+   "kw": [
+    "eRNA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Chromatin features and technologies",
+   "q": "What does ATAC-seq measure and how?",
+   "a": "It measures chromatin accessibility, using a hyperactive mutant transposase to incorporate sequencing adaptors while simultaneously cleaving the DNA; open regions are found in active enhancers or promoters.",
+   "kw": [
+    "ATAC-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Chromatin features and technologies",
+   "q": "What advantages do CUT&RUN and FitCUT&RUN have over ChIP-seq?",
+   "a": "CUT&RUN uses a protein A-Tn5 transposase fusion targeting antibody-bound chromatin, allowing extremely low input, no crosslinking artifacts and fewer sequencing reads; FitCUT&RUN is an antibody-free variation using Fc fragment of IgG tagging.",
+   "kw": [
+    "CUT&RUN",
+    "FitCUT&RUN"
+   ],
+   "info": "FitCUT&RUN addresses the lack of ChIP-seq- and CUT&RUN-compatible antibodies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Chromatin features and technologies",
+   "q": "Which histone marks mean what here?",
+   "a": "H3K4me3 marks promoters, H3K4me1 marks active or primed enhancers, H3K27ac marks active enhancers and promoters, and H3K27me3 marks polycomb-repressed, compacted chromatin.",
+   "kw": [
+    "H3K4me1",
+    "H3K27ac",
+    "H3K27me3"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Chromatin features and technologies",
+   "q": "Difference between 4C-seq and Hi-C?",
+   "a": "4C-seq studies all genomic regions interacting with one selected locus, while Hi-C measures interaction frequencies genome-wide, including TADs.",
+   "kw": [
+    "4C-seq",
+    "Hi-C",
+    "TAD"
+   ],
+   "info": "TADs are regions of high internal interaction demarcated by topology-defining boundaries; CTCF is often found at TAD boundaries.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - state-of-the-art resources",
+   "q": "What is DANIO-CODE?",
+   "a": "An international network established by the zebrafish community to generate regulatory genomics resources, analogous to ENCODE in humans and modENCODE in C. elegans and Drosophila.",
+   "kw": [
+    "DANIO-CODE",
+    "ENCODE"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - state-of-the-art resources",
+   "q": "How much data does DANIO-CODE hold?",
+   "a": "It collated and reanalysed about 1800 genomics datasets with standardised pipelines, made available in the DANIO-CODE Data Coordination Center, covering 38 developmental stages, 21 assay types and 34 tissues.",
+   "kw": [
+    "DCC"
+   ],
+   "info": "Raw and analysed data are shared with public visualisation tracks at https://danio-code.zfin.org.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - state-of-the-art resources",
+   "q": "How many candidate regulatory elements has DANIO-CODE annotated?",
+   "a": "140,000 developmental candidate regulatory non-coding elements, identified by combining histone modification marks with ATAC-seq-supported open chromatin during zebrafish development.",
+   "kw": [
+    "PADRE",
+    "140000"
+   ],
+   "info": "These include precisely defined developmental promoteromes with an alternative promoter catalogue verified by CAGE-seq.",
+   "concl": "DANIO-CODE provides a centralised, standardised catalogue of zebrafish regulatory elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - state-of-the-art resources",
+   "q": "What are the ChromHMM states used for PADREs?",
+   "a": "Ten states: 1_TssA1, 2_TssA2, 3_TssFlank1, 4_TssFlank2, 5_EnhA1, 6_EnhFlank, 7_EnhWk1, 8_Pois, 9_ReprPC and 10_Quies, each defined by different levels of H3K4me3, H3K27ac, H3K4me1 and H3K27me3.",
+   "kw": [
+    "ChromHMM"
+   ],
+   "info": "TssA1/TssA2 are promoters, EnhA1 and EnhFlank are active enhancers, EnhWk1 is a primed enhancer with H3K4me1 only, ReprPC is polycomb repressed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - state-of-the-art resources",
+   "q": "How is cell-type specificity added to PADREs?",
+   "a": "By integrating PADREs with enhancer annotations emerging from developmental single-cell ATAC-seq, which provides cell cluster resolution and cell-type assignment.",
+   "kw": [
+    "scATAC-seq"
+   ],
+   "info": "Additional support for enhancer candidates comes from CAGE-detected eRNAs and sequence conservation tracks such as cyprinid PhastCons.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Guidance on DANIO-CODE resources",
+   "q": "Which genome assemblies do the DANIO-CODE track hubs use?",
+   "a": "Two versions of the zebrafish genome assembly, danRer10 and danRer11, available as public track hubs in the UCSC Genome Browser.",
+   "kw": [
+    "danRer10",
+    "danRer11"
+   ],
+   "info": "A WashU Epigenome Browser session and video tutorials are also provided.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Guidance on DANIO-CODE resources",
+   "q": "Why should users look at raw signal, not just the called elements?",
+   "a": "The DANIO-CODE atlas uses strict thresholds to call regulatory regions in order to minimise background, so users should explore the underlying signals and manually curate potentially missing regulatory elements.",
+   "kw": [
+    "thresholds"
+   ],
+   "info": "This is an explicit caveat from the authors about sensitivity versus specificity of the atlas.",
+   "concl": "The atlas is conservative; absence of a called element is not evidence of absence."
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Guidance on DANIO-CODE resources",
+   "q": "Which assay tracks are in the DANIO-CODE Track Hub?",
+   "a": "ATAC-seq, bisulfite sequencing, CAGE-seq, ChIP-seq, Hi-C, MNase-seq and RNA-seq, plus cell type, consensus promoter, conservation and CRISPR target, COPE/DOPE, distal PADRE SOM class, enhancer validation, H3K27ac ensemble, mouse H3K27me3 on zebrafish coordinates and stage type tracks.",
+   "kw": [
+    "track hub"
+   ],
+   "info": "Distal PADRE SOM classes are PADREs away from promoters clustered by their openness pattern across development; H3K27ac ensembles are clusters of early developmental PADREs connected by uninterrupted H3K27ac signal.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - expanding non-coding elements",
+   "q": "What marks are missing from the current annotation?",
+   "a": "Marks reflecting sites of active transcription (H3K36me3) and marks of heterochromatin (H3K9me2/3); the candidate elements are currently classified by a limited number of chromatin marks.",
+   "kw": [
+    "H3K36me3",
+    "H3K9me2/3"
+   ],
+   "info": "",
+   "concl": "Functional annotation needs refining with more chromatin marks."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - expanding non-coding elements",
+   "q": "What is ISMARA used for?",
+   "a": "ISMARA models TF activity dynamics from bulk expression or ChIP-seq data to build gene regulatory networks, informing which motifs to target in conserved regulatory elements; it has been applied to zebrafish promoter data.",
+   "kw": [
+    "ISMARA",
+    "MARA"
+   ],
+   "info": "ISMARA was also used to identify type 2 diabetes-associated regulatory elements in humans that were then validated in zebrafish. DANIO-CODE results are at ismara.unibas.ch/danio-code.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - enhancer-target matchmaking",
+   "q": "Why is assigning an enhancer to its target gene so hard?",
+   "a": "Enhancers can act up to two megabases away from their targets and can reside in the introns of unaffected bystander genes.",
+   "kw": [
+    "enhancer-target"
+   ],
+   "info": "",
+   "concl": "Target gene assignment is a key bottleneck in interpreting disease-associated non-coding variants."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - enhancer-target matchmaking",
+   "q": "What data help assign targets in zebrafish, and what is their limitation?",
+   "a": "4C-seq promoter-enhancer interaction maps give sufficient resolution but are available only for a selected set of long-range regulated genes in DANIO-CODE; Hi-C-derived TADs plus TAD-boundary CTCF maps can instead delimit the likely interaction span.",
+   "kw": [
+    "4C-seq",
+    "TAD"
+   ],
+   "info": "Zebrafish TADs are minable in the UCSC Genome Browser or in HiGlass.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - species conservation tracks",
+   "q": "Which comparative genomics tools do they highlight?",
+   "a": "VISTA for alignment of genomic sequences, Ancora as a catalogue and density viewer of highly conserved non-coding elements, and the Genomicus browser for homology prediction and synteny analysis.",
+   "kw": [
+    "VISTA",
+    "Ancora",
+    "Genomicus"
+   ],
+   "info": "VISTA was used to predict disease-associated regulatory variants later tested in vivo, identifying novel enhancers associated with the craniofacial abnormality Pierre Robin sequence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - species conservation tracks",
+   "q": "What did synteny analysis contribute to disease models?",
+   "a": "It informed a zebrafish model of poikiloderma with neutropenia that closely recapitulated the human syndrome, gave insights into Krabbe's disease via galactocerebrosidase cloning and knockdown, and supported a zebrafish Pompe disease model of glycogen storage.",
+   "kw": [
+    "synteny",
+    "Krabbe",
+    "Pompe"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - species conservation tracks",
+   "q": "What is Independent Point Projection (IPP)?",
+   "a": "A multispecies comparison approach that improves the resolution of synteny by increasing the number of syntenic anchors between fish and mammals, narrowing the search space for enhancers that are not alignable but share TF binding site composition.",
+   "kw": [
+    "IPP",
+    "syntenic anchors"
+   ],
+   "info": "It uses 'bridging' species as anchors. Not available as a web tool; available on GitHub (github.com/tobiaszehnder/IPP).",
+   "concl": "IPP increases the predictability of functional equivalence between candidate CREs in different species."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - expanding the reference genome",
+   "q": "What is the state of the zebrafish reference genome?",
+   "a": "It is in its 11th iteration (GRCz11), but an end-to-end full-length reference genome has yet to be achieved.",
+   "kw": [
+    "GRCz11"
+   ],
+   "info": "Long-read sequencing offers high-confidence assembly of repeat-rich sequences, as shown by the finalised human genome; in zebrafish it improved the poorly assembled chromosome 4 and filled some gaps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - expanding the reference genome",
+   "q": "What is AQUA-FAANG and why does it matter for zebrafish?",
+   "a": "A project adapting nf-core pipeline development to annotate regulatory elements in farmed teleosts, including the cyprinid common carp; when published it will offer teleost comparative genomic resources for zebrafish laboratories.",
+   "kw": [
+    "AQUA-FAANG",
+    "nf-core"
+   ],
+   "info": "The authors were supported by AQUA-FAANG (Horizon 2020, 817923).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - expanding the reference genome",
+   "q": "What additions to DANIO-CODE are planned?",
+   "a": "Adding enhancers identified in zebrafish adult tissues was in progress at the time of writing, and integration of recently acquired high-resolution chromatin conformation datasets and fast-expanding non-coding RNA annotations is planned.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell and multiomic integration",
+   "q": "What will bulk-based atlases inevitably miss?",
+   "a": "Regulatory elements that are active in highly dynamic, stage-specific cells or in lineages with small cell numbers.",
+   "kw": [
+    "bulk data"
+   ],
+   "info": "Combining single-cell open chromatin atlases and context-specific atlases such as regeneration atlases with more granular multiomic bulk data will improve cell-type resolution.",
+   "concl": "Bulk and single-cell data are complementary, neither alone is sufficient."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell and multiomic integration",
+   "q": "What is deconvolution needed for, and what is missing?",
+   "a": "Integrating bulk and sorted-cell data with single-cell ATAC data allows estimating cell-type proportions and their contribution to the bulk signal; packages exist for bulk RNA-seq deconvolution, but deconvoluting single-cell ATAC-seq still needs computational tool development.",
+   "kw": [
+    "deconvolution"
+   ],
+   "info": "Popular browsers (UCSC, Ensembl, WashU) are optimised for bulk data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell and multiomic integration",
+   "q": "What is the pressing antibody limitation?",
+   "a": "There is a general lack of high-quality antibodies recognising zebrafish transcription factors and other chromatin-associated proteins.",
+   "kw": [
+    "antibodies"
+   ],
+   "info": "Workaround: single-cell RNA-seq gives high-resolution TF activity, which integrated with single-cell chromatin accessibility can link TFs to enhancer targets, as demonstrated with CellOracle in zebrafish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell and multiomic integration",
+   "q": "What does the proposed integration pipeline (Fig. 2) look like?",
+   "a": "ATAC-seq CRE classification plus ChIP-seq annotation via ChromHMM feeds PADREs; single-cell ATAC-seq adds cell cluster resolution and cell-type assignment, giving cell-type-specific CREs; single-cell RNA-seq adds TF expression and conservation tracks add disease-associated human CREs.",
+   "kw": [
+    "pipeline",
+    "PADRE"
+   ],
+   "info": "Once cell type, target gene, TF and TF binding site are defined, a mutant or reporter zebrafish line can be generated as a human disease model.",
+   "concl": "Combining bulk and single-cell chromatin plus transcriptome annotation is the route to predictive regulatory atlases."
+  },
+  {
+   "type": "qa",
+   "section": "Concluding remarks",
+   "q": "What is the authors' overall assessment?",
+   "a": "Zebrafish regulatory genomics has not yet advanced disease modelling to the same degree as other aspects of zebrafish genetics, but improved regulatory resources are expected to clarify disease-related molecular pathways and their transcriptional targets.",
+   "kw": [],
+   "info": "",
+   "concl": "Zebrafish regulatory genomics currently lags behind other areas of zebrafish genetics."
+  },
+  {
+   "type": "qa",
+   "section": "Concluding remarks",
+   "q": "What three benefits do they list for profiling functional non-coding elements?",
+   "a": "More refined control of gene editing and transgenesis tools; identification, characterisation and manipulation of specific disease-associated cell populations; and molecular understanding of conserved human disease and regeneration mechanisms that may support future treatment and diagnosis.",
+   "kw": [],
+   "info": "",
+   "concl": "Regulatory element annotation underpins both better tools and better mechanistic insight."
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - enhancer-target matchmaking",
+   "text": "4C-seq coverage in DANIO-CODE is limited to selected long-range regulated genes - worth checking which loci are covered before assuming an enhancer-target map exists for a gene of interest."
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - species conservation tracks",
+   "text": "IPP could be relevant for projecting non-alignable cavefish or other teleost regulatory regions onto zebrafish/mammal coordinates; it is GitHub-only, so usability and documentation need checking."
+  },
+  {
+   "type": "note",
+   "section": "Box 3 - Guidance on DANIO-CODE resources",
+   "text": "COPE and DOPE tracks (open chromatin without any active chromatin mark) are an unexplained category - the paper does not say what these elements are functionally, which is an open question."
+  }
+ ]
+}

@@ -1,0 +1,519 @@
+{
+ "id": "Mann_2025",
+ "title": "Paused RNA polymerase primes promoters via RNA-mediated stabilisation of transcription factor ERα",
+ "link": "https://doi.org/10.1038/s41467-025-64569-7",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Mann_2025_NatCommun_paused_PolII_ERalpha.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "Pol II pausing helps create nucleosome-free regions, but it was not known whether these regions engage transcription factors to boost the transcription potential of paused promoters. The authors test this using ligand-induced estrogen receptor-alpha (ERα).",
+   "kw": [
+    "Pol II pausing",
+    "ERα",
+    "nucleosome-free regions"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding in one sentence?",
+   "a": "Short chromatin-associated RNAs made by paused Pol II stabilise ERα binding at paused promoters by increasing its dwell time. Pausing also increases H3K27ac, which primes these promoters for stronger transcription once pausing is released.",
+   "kw": [
+    "dwell time",
+    "short RNA",
+    "H3K27ac"
+   ],
+   "info": "Dwell time was measured by single molecule tracking (SMT).",
+   "concl": "Paused Pol II enhances TF binding through an RNA-dependent mechanism, which fine-tunes ERα-mediated gene regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is promoter-proximal pausing?",
+   "a": "In about 30 to 50% of genes, Pol II stays paused near the TSS after synthesising about 20 to 60 bases of RNA. It is one of the major rate-limiting steps in transcription.",
+   "kw": [
+    "promoter-proximal pausing",
+    "NELF",
+    "pTEFb"
+   ],
+   "info": "Release into productive elongation is regulated by DNA sequence, NELF, pTEFb, Spt5 and other factors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the main products at paused polymerase sites?",
+   "a": "Nucleosome-free regions (NFRs) and short RNAs. Paused Pol II recruits chromatin remodellers such as BAF, which destabilise nucleosomes, and it transcribes short RNA from the TSS.",
+   "kw": [
+    "BAF complex",
+    "NFR"
+   ],
+   "info": "Short RNA that stays associated with polymerase is protected from exonuclease digestion. Released short RNA is degraded quickly. TF binding at motifs exposed around unstable nucleosomes can recruit more remodellers and stabilise the NFR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why could RNA matter for transcription factor binding?",
+   "a": "Most TFs interact with RNA through RNA-binding domains, and RNA binding can significantly change their affinity for their cognate DNA motifs. ERα is known to bind RNA.",
+   "kw": [
+    "RNA-binding TFs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the authors' hypothesis?",
+   "a": "NFRs made by paused Pol II and remodellers expose more TF binding sites, and short RNA from paused Pol II further stabilises TF binding. More TF and co-activator recruitment would then increase transcription when pausing is released.",
+   "kw": [],
+   "info": "ERα was used as the model because it is induced by estrogen signalling and binds RNA. It mainly binds enhancers, where it forms inducible condensates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ERα binding upon elongation inhibition",
+   "q": "How did they induce pausing, and in which cells?",
+   "a": "MCF-7 breast cancer cells were treated with the elongation inhibitor DRB (5,6-dichloro-1-beta-D-ribofuranosylbenzimidazole) and then stimulated with oestradiol (E2) for 1 hour. DRB inhibits CDK9 of the pTEFb complex, which is needed for pause release.",
+   "kw": [
+    "DRB",
+    "CDK9",
+    "MCF-7"
+   ],
+   "info": "qPCR controls: myc and pre-myc were significantly down-regulated by DRB, while ERα levels were unaffected.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ERα binding upon elongation inhibition",
+   "q": "What did ERα ChIP-seq show after DRB?",
+   "a": "ERα binding increased across the genome. About 2271 new peaks appeared, 1493 were lost, and 6574 common peaks also showed increased ERα binding.",
+   "kw": [
+    "ChIP-seq",
+    "GREB1"
+   ],
+   "info": "GREB1 was used as an example locus.",
+   "concl": "Transcription elongation inhibition enhances ERα binding on chromatin."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ERα binding upon elongation inhibition",
+   "q": "How did they separate the effect of Pol II levels from motif strength?",
+   "a": "ERα peaks were first split by motif score into low, medium and high bins, and each bin was split into four sub-bins by Pol II level (1 low to 4 high). Motif scores were similar within each category, but higher Pol II bins had stronger ERα binding.",
+   "kw": [
+    "motif score",
+    "Pol II bins"
+   ],
+   "info": "Statistics used the two-tailed Mann-Whitney-Wilcoxon test on two combined biological replicates. The same dependence on transcription level was seen for other TFs expressed in MCF-7 cells using ENCODE ChIP-seq data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ERα binding upon elongation inhibition",
+   "q": "Which ERα peaks gained the most binding with DRB?",
+   "a": "Peaks that already had high Pol II levels showed the largest gain in ERα binding.",
+   "kw": [],
+   "info": "After DRB, ERα binding still depended mainly on Pol II levels.",
+   "concl": "Paused Pol II allows more ERα binding, and the size of the gain depends on the level of pre-existing Pol II."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ERα condensates",
+   "q": "How do ERα condensates behave during estrogen signalling?",
+   "a": "Condensate formation is E2-dependent. It peaks at 60 minutes after E2, matching the peak of the transcriptional response, and drops at 120 to 180 minutes.",
+   "kw": [
+    "condensates",
+    "phase separation"
+   ],
+   "info": "Overlap of ERα with Pol II S5P spots and with nascent transcription spots followed the same pattern, peaking at 60 minutes and decreasing by 180 minutes. ERα condensates are heterogeneous assemblies of ERα, mediator and possibly other factors.",
+   "concl": "ERα condensates correlate with active polymerase and nascent transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ERα condensates",
+   "q": "What did live-cell imaging of ERα-GFP show after DRB?",
+   "a": "Condensates appeared 5 to 10 minutes after E2 and plateaued at around 40 minutes. With DRB, the maximum number density did not change, but condensates formed faster (lower number-density t-half) and were significantly larger in diameter.",
+   "kw": [
+    "live-cell imaging",
+    "t-half"
+   ],
+   "info": "n = 64 DMSO and 75 DRB cells. ERα concentration was similar between conditions, and the rate of size increase did not differ significantly.",
+   "concl": "Elongation inhibition gives faster-forming, larger ERα condensates, which is consistent with the higher ChIP-seq binding."
+  },
+  {
+   "type": "qa",
+   "section": "Results - single molecule tracking",
+   "q": "How was single molecule tracking (SMT) set up?",
+   "a": "ERα-HaloTag was expressed from the EFS promoter and labelled with JF646 HaloTag ligand. A fast regime (15 ms interval, 1000 frames) measured bound and unbound fractions, and a slow regime (200 ms interval, 600 frames) measured residence time.",
+   "kw": [
+    "SMT",
+    "HaloTag",
+    "JF646"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - single molecule tracking",
+   "q": "How did DRB change ERα binding kinetics?",
+   "a": "The bound fraction of ERα rose from 68.4% (DMSO) to 76.7% (DRB). The residence time of the specifically bound fraction rose from 10.3 ± 1.0 s to 13.4 ± 1.4 s (p < 0.05, z test).",
+   "kw": [
+    "residence time",
+    "bound fraction",
+    "Spot-On"
+   ],
+   "info": "Survival curves fit a double exponential, meaning a specific (long-lived) bound population and a non-specific/transient bound population. Transient residence times were about 1.95 s (DMSO) and 2.10 s (DRB). 2281 tracks were analysed for DMSO and 2564 for DRB.",
+   "concl": "Pausing increases both the bound fraction and the dwell time of ERα on chromatin."
+  },
+  {
+   "type": "qa",
+   "section": "Results - single molecule tracking",
+   "q": "How did they check that the bigger condensates are bound to chromatin?",
+   "a": "Cells were treated with CSK buffer to remove free nucleoplasmic protein, then immunostained for ERα. The volume fraction of chromatin-bound ERα condensates increased after DRB.",
+   "kw": [
+    "CSK buffer"
+   ],
+   "info": "n = 69 DMSO and 78 DRB cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - RNA contributes to ERα binding",
+   "q": "How did they separate the role of the polymerase complex from the role of RNA?",
+   "a": "They used triptolide (TRP), which covalently binds XPB, a TFIIH subunit, blocks its ATPase activity and so prevents initiation. It also causes RPB1 degradation, which lowers overall Pol II. ERα ChIP-seq after TRP showed a widespread loss of binding.",
+   "kw": [
+    "triptolide",
+    "XPB",
+    "TFIIH"
+   ],
+   "info": "Regions with the highest Pol II were less affected by TRP. From this alone, both the Pol II complex and the transcribed RNA could regulate ERα binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - RNA contributes to ERα binding",
+   "q": "How did they increase chromatin-associated RNA, and what happened to ERα?",
+   "a": "They knocked down exosc3, a core subunit of the RNA exosome, which degrades chromatin-associated RNA without affecting transcription itself. ERα binding increased, in line with Pol II levels at the sites.",
+   "kw": [
+    "exosc3",
+    "RNA exosome",
+    "siRNA"
+   ],
+   "info": "Chromatin-bound ERα condensates also increased after exosc3 knockdown.",
+   "concl": "Chromatin-associated RNA can enhance ERα enrichment on chromatin."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RNA contributes to ERα binding",
+   "q": "What is the RNA-binding-deficient ERα mutant and how does it bind the genome?",
+   "a": "ERα binds RNA through the RRGG motif (aa 259 to 262) in its hinge region. Mutating RRGG to AAAA (RBD-ERα) abolishes RNA binding. RBD-ERα lost binding genome-wide compared with WT, and the loss was largest at regions with high Pol II.",
+   "kw": [
+    "RRGG",
+    "RBD-ERα",
+    "hinge region"
+   ],
+   "info": "The WT and RBD-ERα ChIP-seq data came from the group's earlier study (Soota et al. 2024, EMBO J).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - RNA contributes to ERα binding",
+   "q": "Does RBD-ERα gain binding after DRB?",
+   "a": "No. FLAG-tagged RBD-ERα expressed exogenously did not gain binding after DRB, and DRB did not increase its condensate formation either.",
+   "kw": [
+    "RBD-ERα",
+    "DRB"
+   ],
+   "info": "",
+   "concl": "The DRB-induced gain in ERα binding depends on ERα's ability to bind RNA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RNA contributes to ERα binding",
+   "q": "Do promoters and enhancers respond differently to these perturbations?",
+   "a": "Promoter-bound ERα sites, which have higher Pol II, were more sensitive to the perturbations than enhancer-bound sites. Their higher Pol II also made them lose less binding than enhancers after triptolide.",
+   "kw": [
+    "promoters",
+    "enhancers"
+   ],
+   "info": "Sites that gained ERα with DRB also had more nascent RNA under DRB.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - RNA contributes to ERα binding",
+   "q": "What happened to ERα condensates with triptolide?",
+   "a": "Live-cell imaging showed larger condensates with triptolide, as with DRB. However, after CSK extraction the chromatin-bound condensates were smaller, so the larger TRP condensates were mostly nucleoplasmic.",
+   "kw": [
+    "triptolide",
+    "condensates"
+   ],
+   "info": "",
+   "concl": "Short RNA at Pol II paused sites enriches ERα and leads to larger chromatin-bound condensates."
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27ac at paused regions",
+   "q": "How did they confirm that DRB causes promoter-proximal pausing?",
+   "a": "Pol II ChIP-seq after DRB showed increased Pol II at promoters, and the gain was higher at promoters than in gene bodies.",
+   "kw": [
+    "Pol II ChIP-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27ac at paused regions",
+   "q": "How did H3K27ac change with DRB, and how were regions classified?",
+   "a": "H3K27ac rose moderately with DRB. Peaks were ranked and called increasing (log2FC DRB/DMSO > 0.5), unchanged (between -0.5 and 0.5) or decreasing (< -0.5). The regions that gained H3K27ac were mostly promoters and also gained paused Pol II.",
+   "kw": [
+    "H3K27ac",
+    "spike-in"
+   ],
+   "info": "H3K27ac was used as a proxy for transcriptional activity. H3K27ac ChIP used Drosophila S2 chromatin as a spike-in. ARFGEF2 promoter was an example locus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27ac at paused regions",
+   "q": "How did promoters compare with non-promoter sites?",
+   "a": "Promoters already had higher H3K27ac in DMSO, and it rose further with DRB as Pol II paused there. ERα levels were similar at promoters and non-promoters in DMSO, but promoter ERα gained more with DRB.",
+   "kw": [],
+   "info": "Promoter vs non-promoter comparisons used the Mann-Whitney-Wilcoxon test. DMSO vs DRB comparisons used the Wilcoxon signed-rank test.",
+   "concl": "Paused Pol II stabilises ERα at promoters, which also gain H3K27ac, suggesting a more transcription-favourable environment than in the non-paused state."
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription after pause release",
+   "q": "How did they measure transcription after pause release?",
+   "a": "They reanalysed public BrU-seq data collected 10 minutes after release from DRB, quantifying nascent transcription in the 2 kb downstream of each promoter. Promoters were binned into 5 groups by fold change after release compared with no DRB.",
+   "kw": [
+    "BrU-seq",
+    "DRB release"
+   ],
+   "info": "The Fig. 6A legend defines bin 5 as Fold Change > 0.5, which overlaps the other bins. It is probably a typo for > 1.5, but the paper does not say.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription after pause release",
+   "q": "Which promoters had the strongest transcription after release?",
+   "a": "The promoters with the highest transcription after DRB release also had the largest DRB-induced gains in H3K27ac and ERα.",
+   "kw": [
+    "ARID4A"
+   ],
+   "info": "ARID4A was shown as an example locus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription after pause release",
+   "q": "How did they test causally that ERα recruitment drives post-release transcription?",
+   "a": "Cells expressing WT or RRGG-mutant ERα were treated with DRB, the drug was washed off, and GREB1 and NRIP1 expression was measured by qPCR 30 minutes later. Both genes had higher output with WT than with RRGG.",
+   "kw": [
+    "GREB1",
+    "NRIP1",
+    "RRGG"
+   ],
+   "info": "Three biological replicates with three technical repeats each. Error bars show SD. No p-value is reported for this panel, and the difference looks modest (about 1.2 to 1.3 fold relative to the normalised level).",
+   "concl": "ERα gained at paused promoters drives a more robust burst of transcription after pause release."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What model do the authors propose for BAF and ERα at paused sites?",
+   "a": "Paused Pol II recruits BAF, which makes unstable nucleosomes, and TFs may stabilise BAF to evict nucleosomes and form NFRs. They propose that stable, long-dwelling ERα during elongation inhibition is critical for recruiting BAF to stabilise NFRs.",
+   "kw": [
+    "BAF complex",
+    "NFR"
+   ],
+   "info": "This is a proposal. BAF recruitment was not tested directly in this paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do they think ERα has a larger bound fraction and longer dwell time under pausing?",
+   "a": "Short RNA:ERα complexes accumulating at paused sites raise the local ERα concentration, which changes on and off times and increases the bound fraction. RNA binding may also relax the need for strong motifs at these sites.",
+   "kw": [
+    "local concentration",
+    "RNA:ERα"
+   ],
+   "info": "This fits earlier work showing that RNA-binding-deficient ERα forms smaller condensates and is hypermobile, and yeast data showing reduced TF turnover. Short RNAs are still made by paused Pol II even though DRB lowers overall RNA levels.",
+   "concl": "TFs at paused sites are stabilised through their RNA-binding ability."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "Nucleation of TF condensates is poorly understood, so the faster condensate formation under DRB needs more work. DRB is an older inhibitor, and newer CDK9 inhibitors such as NVP-2 inhibit better at lower concentrations and should be used in future studies.",
+   "kw": [
+    "NVP-2",
+    "limitations"
+   ],
+   "info": "The Discussion cites a Fig. 1H that does not exist in the figure (Fig. 1 ends at panel G).",
+   "concl": "Promoters may use Pol II pausing to boost their transcription by recruiting TF complexes in an RNA-dependent way."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and treatments",
+   "q": "How were cells hormone-stripped and treated?",
+   "a": "MCF-7 cells (ATCC) were grown in high-glucose DMEM with 10% FBS, then switched to phenol-red-free DMEM with 5% charcoal-stripped FBS for 3 days. Cells received DRB (10 µM), TRP (1 µM) or DMSO for 1 h, then 10 nM E2 for 1 h.",
+   "kw": [
+    "hormone stripping",
+    "E2"
+   ],
+   "info": "The ChIP-seq section says 'after two hours of inhibitor treatment and 1 h of E2', which matches 1 h inhibitor alone followed by 1 h inhibitor plus E2. For SMT, cells received DRB or DMSO for 120 minutes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and treatments",
+   "q": "How were transfections and knockdowns done?",
+   "a": "1 µg of ERα-eGFP or ERα-Halo plasmid was transfected with Lipofectamine 3000 after 48 h of stripping, and cells were processed 24 h later. siRNA knockdown used two rounds of transfection, at 24 h after seeding and after 48 h in stripping media.",
+   "kw": [
+    "Lipofectamine 3000",
+    "siRNA"
+   ],
+   "info": "RNA was isolated with Trizol, treated with ezDNase and reverse-transcribed with Superscript IV for qPCR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-seq",
+   "q": "What were the key ChIP-seq parameters?",
+   "a": "Cells were fixed in 1% formaldehyde for 10 minutes and quenched with 0.125 M glycine. Chromatin was sonicated on a Bioruptor Pico (28 cycles of 30 s on and 30 s off), and 100 µg was used per IP. Antibodies: ERα sc-8002 (1 µg), Pol II Diagenode C15200004 (2 µg), H3K27ac ab4729 (1 µg).",
+   "kw": [
+    "ChIP-seq",
+    "Bioruptor"
+   ],
+   "info": "For H3K27ac only, 3 µg of Drosophila S2 chromatin and H2av antibody (0.3 µg) were added as spike-in. Libraries were made with NEBNext Ultra II and sequenced on HiSeq or NovaSeq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing analysis",
+   "q": "How were reads aligned and normalised?",
+   "a": "Reads were aligned to hg19 (human) and dm3 (Drosophila spike-in), and reads with quality below 30 were filtered out. Samples were downsampled to the lowest sequencing depth and then by the spike-in factor. BrU-seq reads were aligned with bowtie2 and normalised by downsampling to rRNA reads.",
+   "kw": [
+    "bowtie2",
+    "hg19",
+    "spike-in normalisation"
+   ],
+   "info": "The peak-calling tool is not stated explicitly. MACS is cited next to bowtie2, but its parameters are not given.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - imaging",
+   "q": "How was live-cell and fixed-cell imaging done?",
+   "a": "Live cells were imaged on an Olympus FV3000 with a 60x/1.42 oil objective at 37 °C, one frame every 15 s for 1 h (240 frames). Fixed cells were imaged on an LSM980 confocal with a 63x oil objective, with Airyscan2 for some supplementary panels.",
+   "kw": [
+    "FV3000",
+    "LSM980"
+   ],
+   "info": "CSK extraction was 3 minutes at room temperature before 4% PFA fixation. Primary antibodies were ERα, YY1 and Pol II S5P at 1 µg/ml.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - imaging",
+   "q": "How were condensates quantified?",
+   "a": "Analysis was done in MATLAB. In live cells, nuclei were segmented with Gaussian blur and Otsu thresholding, spots were called by unsharp masking, and spots under 6 pixels were removed. Number density was spots per nuclear area, and diameter was the max axis length.",
+   "kw": [
+    "MATLAB",
+    "Otsu thresholding",
+    "volume fraction"
+   ],
+   "info": "Curves were smoothed with a moving average (kernel 10), and t-half came from an exponential fit after min-max normalisation. In fixed cells, spots were found by high-boost filtering and watershed, and volume fraction was total spot volume divided by nuclear volume.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single molecule tracking",
+   "q": "What microscope and settings were used for SMT?",
+   "a": "Cells were labelled with 5 nM JF646 HTL for 20 minutes and imaged on a Leica DMi8 TIRF microscope with a Prime95B CMOS camera, a 100x 1.47 NA objective and a 638 nm laser. Fast regime: 10 ms exposure plus 5 ms, 100% laser. Slow regime: 50 ms exposure plus 150 ms, 30% laser.",
+   "kw": [
+    "TIRF",
+    "SMT"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single molecule tracking",
+   "q": "How were bound fractions and diffusion coefficients obtained?",
+   "a": "Fast-regime movies were tracked in DiaTrack v3.05 (max jump 6 pixels, 110 nm per pixel), merged with the Sojourner package and analysed with Spot-On using a 2-state CDF model on trajectories of 3 or more frames.",
+   "kw": [
+    "DiaTrack",
+    "Spot-On",
+    "Sojourner"
+   ],
+   "info": "Spot-On settings: bin width 0.01 µm, 8 time points, 4 jumps considered, max jump 1 µm, D bound 0.0001 to 0.5 µm2/s, D free 0.5 to 5 µm2/s, dZ 0.65 µm with Z correction, 3 iterations. Bound D was about 0.009 to 0.010, and free D was 0.97 (DMSO) and 0.84 (DRB).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single molecule tracking",
+   "q": "How was residence time calculated?",
+   "a": "Slow-regime movies were tracked with the MATLAB TrackRecord software. Bound segments were defined with thresholds from H2B motion (Rmin 262 nm, Rmax 370 nm, Nmin 4). The survival distribution was fit with a two-component exponential and compared with a single exponential by F-test.",
+   "kw": [
+    "TrackRecord",
+    "survival distribution"
+   ],
+   "info": "Tracks had to be at least 4 frames long, with gaps of up to 2 frames closed to allow for blinking. A z-test compared conditions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ENCODE analysis",
+   "q": "How did they generalise the Pol II dependence to other TFs?",
+   "a": "They downloaded MCF-7 TF ChIP-seq peaks and bigwigs from ENCODE and motifs from JASPAR. FIMO (MEME suite) scored motifs, with each peak's score being the sum of its motif scores. Peaks were binned by motif score and then into four Pol II bins, and median z-scores of TF signal were compared.",
+   "kw": [
+    "ENCODE",
+    "JASPAR",
+    "FIMO"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data availability",
+   "q": "Where is the data?",
+   "a": "The new ChIP-seq data are in GEO under GSE278896. Public datasets used: GSM678539, GSM365930, GSE55534 (DRB BrU-seq) and PRJNA690129.",
+   "kw": [
+    "GEO"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - single molecule tracking",
+   "text": "In the slow-regime pie charts, the specifically bound fraction is lower with DRB (10.6%) than with DMSO (15.6%), even though the total bound fraction and residence time go up. The paper does not discuss this. Worth going back to."
+  },
+  {
+   "type": "note",
+   "section": "Results - RNA contributes to ERα binding",
+   "text": "Triptolide gives larger but mostly nucleoplasmic condensates, while DRB gives larger chromatin-bound ones. What makes TRP condensates form off chromatin?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Is the RNA-mediated stabilisation of TFs at paused promoters specific to ERα, or general to RNA-binding TFs? This could be tested with other RNA-binding TFs and with better CDK9 inhibitors such as NVP-2."
+  }
+ ]
+}

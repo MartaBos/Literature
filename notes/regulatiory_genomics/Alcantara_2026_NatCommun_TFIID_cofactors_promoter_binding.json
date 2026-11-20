@@ -1,0 +1,607 @@
+{
+ "id": "Alcantara_2026",
+ "title": "High-resolution binding data of TFIID and cofactors show promoter-specific differences",
+ "link": "https://doi.org/10.1038/s41467-026-77758-9",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Alcantara_2026_NatCommun_TFIID_cofactors_promoter_binding.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "How TFIID engages and functions at different promoter types in vivo. A cohesive in vivo picture of this was still missing.",
+   "kw": [
+    "TFIID",
+    "promoter types"
+   ],
+   "info": "They used ChIP-nexus to get high-resolution binding footprints of all Drosophila TFIID subunits across the genome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings in short?",
+   "a": "The TAF footprints are very similar at all promoter types, which suggests the same engaged TFIID conformation. TBP binding is promoter-specific and can be used to identify TATA, DPR and TCT/housekeeping promoters de novo.",
+   "kw": [
+    "TBP",
+    "TAFs",
+    "NC2"
+   ],
+   "info": "TATA promoters show specific TBP and NC2 footprints and reduced TAF occupancy.",
+   "concl": "Part of the transcription at TATA promoters is probably initiated without TAFs. This may explain the larger burst size of TATA promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is TFIID made of?",
+   "a": "TATA-binding protein (TBP) plus 13 TBP-associated factors (TAFs). Reconstituted in vitro, they form a three-lobed structure.",
+   "kw": [
+    "TBP",
+    "TAFs",
+    "TFIID"
+   ],
+   "info": "TFIID recognizes core promoter sequences, assembles the pre-initiation complex (PIC) and initiates RNA Pol II transcription at TSSs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What happens to the TFIID lobes when it binds a promoter, according to cryo-EM?",
+   "a": "The lobes reorganize. Lobe C binds the downstream region, lobe B engages the upstream core promoter together with lobe A, and TBP is placed near the initiation site.",
+   "kw": [
+    "cryo-EM",
+    "lobe A/B/C"
+   ],
+   "info": "Lobe A is more flexible and harder to characterize structurally. Placing TBP is likely a critical step for PIC formation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why might TFIID act differently at different promoter types?",
+   "a": "Promoter types produce transcripts with different bursting properties. For example, TATA promoters produce bursts with more transcripts than TATA-less promoters.",
+   "kw": [
+    "transcriptional bursting",
+    "TATA box"
+   ],
+   "info": "TFIID is flexible in vitro and is sometimes found in substoichiometric compositions. It might therefore prefer some promoters, adopt different conformations, form sub-complexes, or mobilize TBP differently.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which factors regulate TBP's contacts?",
+   "a": "Several TAFs (TAF1 and TAF11/13) bind TBP, as do NC2 and Mot1.",
+   "kw": [
+    "NC2",
+    "Mot1",
+    "TAF11/13"
+   ],
+   "info": "This raised the untested idea that TFIID binding differs between promoter types in vivo.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why did they use Drosophila?",
+   "a": "Drosophila core promoters are well characterized. They mapped all 14 TFIID subunits genome-wide at high resolution.",
+   "kw": [
+    "Drosophila"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ChIP-nexus captures TFIID subunits",
+   "q": "What is ChIP-nexus?",
+   "a": "A ChIP-exo-type method. A 5' exonuclease digests formaldehyde-fixed DNA until it reaches a protein-DNA crosslink, which gives strand-specific peaks on either side of the contact.",
+   "kw": [
+    "ChIP-nexus",
+    "ChIP-exo"
+   ],
+   "info": "The footprint marks where the subunit is directly or indirectly crosslinked to DNA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ChIP-nexus captures TFIID subunits",
+   "q": "Which cells and conditions did they use?",
+   "a": "Drosophila Kc167 cells, either under normal conditions (DMSO control) or treated with triptolide (TRI).",
+   "kw": [
+    "Kc167",
+    "triptolide"
+   ],
+   "info": "Triptolide blocks transcription at the PIC stage and gives higher occupancy of PIC and TFIID components. Biological replicates were highly reproducible, and pooled coverage was analyzed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ChIP-nexus captures TFIID subunits",
+   "q": "Which promoters did they analyze, and why?",
+   "a": "Active narrow promoters where CAGE-seq shows initiation within 11 bp of the annotated TSS (n = 1769). Footprint positions are easiest to interpret when initiation happens at a well-defined site.",
+   "kw": [
+    "CAGE-seq",
+    "narrow promoters"
+   ],
+   "info": "They used public Kc167 nuclear CAGE-seq from modENCODE (ENCSR827COJ). Broad promoters gave much more diffuse average profiles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ChIP-nexus captures TFIID subunits",
+   "q": "How similar are the binding levels of the TFIID subunits across promoters?",
+   "a": "Very similar. The TAFs correlated with a median PCC of 0.87, and the PIC factors (TFIIA, TFIIB, TFIIF, Pol II) correlated with the TFIID subunits at a median PCC of 0.85.",
+   "kw": [
+    "Pearson correlation",
+    "hierarchical clustering"
+   ],
+   "info": "When promoters are sorted by TAF1 occupancy, all other subunits follow the same pattern. TBP correlated most with TFIIA. The most correlated TAF groups (TAF4/12, TAF1/7/2, TAF11/13, TAF6/9) are known physical complexes.",
+   "concl": "High correlation reflects physical interaction, because formaldehyde makes many protein-protein crosslinks. The in vivo organization matches the known in vitro TFIID structure."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "How did they locate each subunit's DNA contacts?",
+   "a": "They averaged the triptolide ChIP-nexus profiles over the narrow promoters. The contact is the midpoint between matching peaks on the positive and negative strands.",
+   "kw": [
+    "footprint",
+    "midpoint"
+   ],
+   "info": "Exact protein-protein interactions cannot be inferred because formaldehyde does not crosslink at all amino acids. The pattern is an aggregate across diverse promoter classes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "Where are TFIID's main DNA contacts relative to the TSS?",
+   "a": "In six regions: -150/-50, -30, -18/-14, +10, +19 and +32 bp (Regions 1 to 6).",
+   "kw": [
+    "DNA contacts"
+   ],
+   "info": "Contacts and modular organization agree with cryo-EM structures of promoter-bound human and yeast TFIID.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "Into which modules did they group the 14 subunits?",
+   "a": "Four modules: downstream, middle, upstream narrow and upstream broad. The grouping was manual and agreed with PCA of the average profiles.",
+   "kw": [
+    "PCA",
+    "modules"
+   ],
+   "info": "PC1 explained 47.3% and PC2 32.7% of the variance. TFIIA and TFIIB sat apart from the TAF modules but close to TBP. Similar modules appeared in DMSO, so they are not caused by triptolide.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "What is in the downstream module?",
+   "a": "TAF1, TAF7 and TAF2, which give footprints at +10, +19 and +32 bp. This is lobe C binding the downstream promoter region (DPR). TAF3 also falls into this module.",
+   "kw": [
+    "TAF1/2/7",
+    "TAF3",
+    "DPR"
+   ],
+   "info": "This contradicts older biochemical evidence that Drosophila TAF6/9 bind DPR elements. Yeast crosslinking mass spec supports TAF3 being near TAF1/2/7. TAF3's position would let its PHD finger reach H3K4me3 on the +1 nucleosome, but TAF3 (and TFIID) levels do not correlate well with H3K4me3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "What is in the middle module, and what was unexpected?",
+   "a": "TAF6, TAF8 and TAF11, with footprints both upstream and downstream of the TSS. TAF11 was unexpected because its heterodimer partner TAF13 is in the upstream module.",
+   "kw": [
+    "TAF6/8",
+    "TAF11/13"
+   ],
+   "info": "TAF6 and TAF8 bridge the upstream and downstream modules in cryo-EM. TAF11/13 bind TBP and block its DNA binding in canonical TFIID, so they must relocate when TBP engages. The authors suggest TAF11 shifts toward the middle while TAF13 stays upstream.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "What is in the narrow upstream module?",
+   "a": "TBP, TAF5, TAF9 and TAF13, from lobes A and B. Their strongest footprints are at the PIC site around -18/-14 bp.",
+   "kw": [
+    "TBP",
+    "PIC"
+   ],
+   "info": "Every TFIID subunit, plus TFIIA and TFIIB, has a footprint at -18/-14. This is likely a crosslinking hotspot that reflects the dense interaction network in the engaged PIC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "Why is TBP's strongest footprint at -18 bp puzzling?",
+   "a": "The TATA box is at -30 bp, and cryo-EM places TBP at a similar position at TATA-less promoters. Yet TBP's strongest footprint is at -18 bp.",
+   "kw": [
+    "TBP",
+    "formaldehyde crosslinking"
+   ],
+   "info": "General poor crosslinking at -30 is unlikely, because TAF13 has a strong footprint there. TBP binds DNA through the minor groove by inserting phenylalanines, and crosslinking needs amine groups near reactive accessible bases, which may be missing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-bound TFIID conformation",
+   "q": "What is the broad upstream module?",
+   "a": "TAF4, TAF10 and TAF12, each present in two copies. They give strong but diffuse footprints upstream of the TSS (-150/-50).",
+   "kw": [
+    "TAF4",
+    "TAF10/12",
+    "SAGA"
+   ],
+   "info": "The diffuse signal may come from interactions with promoter-proximal activators. TAF4 is a known activator interaction hub. TAF10 and TAF12 could also bind here as part of SAGA.",
+   "concl": "The in vivo profiles largely agree with cryo-EM, add detail on TAF3, and leave open questions for TAF11/13 and TBP."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-specific TBP binding",
+   "q": "Which four promoter types did they define, and how many of each?",
+   "a": "TATA (n = 191, TATA box at -30 bp), DPR (n = 334, MTE, DPE or PB motif at +10 to +50), TCT (n = 78) and housekeeping (HK, n = 282).",
+   "kw": [
+    "TATA",
+    "DPR",
+    "TCT"
+   ],
+   "info": "Types were defined by core promoter elements at fixed positions, using untreated data. DPR promoters usually have more Pol II pausing. TCT promoters are often at ribosomal genes. HK promoters have DRE or Ohler 1, 6 or 7 motifs and no TATA, TCT or DPR element.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-specific TBP binding",
+   "q": "Which TFIID subunit has the most promoter-specific profile?",
+   "a": "TBP. The TAFs look broadly similar at all four promoter types, with only subtle differences.",
+   "kw": [
+    "TBP",
+    "TRF2"
+   ],
+   "info": "TAF profiles at TCT and HK promoters are more diffuse, with more upstream binding, possibly from nearby activators. TRF2 occupancy was lowest at TATA promoters and highest at TCT promoters.",
+   "concl": "This supports the idea that TBP is a mobile component of TFIID."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-specific TBP binding",
+   "q": "Which TBP footprint is specific to TATA promoters?",
+   "a": "The strong upstream footprint at -18 bp. It is strongest after triptolide, which links it to the PIC.",
+   "kw": [
+    "TBP -18 bp"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-specific TBP binding",
+   "q": "What is the downstream TBP footprint at +32 bp?",
+   "a": "A broad footprint seen to varying degrees at all promoter types. It disappears after triptolide and is lower at promoters with stably paused Pol II.",
+   "kw": [
+    "downstream TBP",
+    "Pol II pausing"
+   ],
+   "info": "So it likely belongs to an unknown step of the transcription cycle. Cryo-EM places TBP downstream before it is loaded upstream, so it may represent TFIID loading or re-loading.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-specific TBP binding",
+   "q": "Can promoters be classified from individual TBP profiles alone?",
+   "a": "Yes. K-means clustering into four groups gave TATA (cluster 1, n = 309), DPR (cluster 2, n = 509), TCT/HK with diffuse TBP (cluster 3, n = 392) and TCT/HK with low TBP (cluster 4, n = 382).",
+   "kw": [
+    "k-means",
+    "de novo classification"
+   ],
+   "info": "Clusters were checked by enrichment of core promoter elements. TBP levels correlated with mRNA levels from RNA-seq and CAGE-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter-specific TBP binding",
+   "q": "Did de novo sequence analysis of the TBP clusters recover known core promoter elements?",
+   "a": "Yes. All clusters had Inr elements, cluster 1 also had TATA, and cluster 2 had DPR patterns. The motif logos matched known elements.",
+   "kw": [
+    "Inr",
+    "Inr-G",
+    "BREd"
+   ],
+   "info": "Only DPR promoters were enriched for G at +2 (Inr-G). A CG-rich sequence next to TATA resembles BREd, but it might only boost TFIIB crosslinking at that position.",
+   "concl": "TBP binding profiles can classify promoter types de novo and predict their sequence elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "Why did they normalize ChIP-nexus signal to CAGE levels?",
+   "a": "To test whether TBP binds longer at the TATA box, which would mean more TBP per unit of transcription at TATA than at DPR promoters. They divided each promoter's binding signal by its nuclear CAGE-seq level.",
+   "kw": [
+    "CAGE normalization",
+    "re-initiation"
+   ],
+   "info": "This ratio cannot measure initiation kinetics. It only roughly measures occupancy relative to initiation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "After normalization, how did PIC factors and TBP compare between TATA and DPR promoters?",
+   "a": "TFIIA, TFIIB and TFIIF did not differ significantly, so they scale with transcription output. Upstream TBP was significantly higher at TATA promoters.",
+   "kw": [
+    "TFIIA",
+    "TFIIB",
+    "TBP"
+   ],
+   "info": "TCT promoters had higher TFIIB, which suggests functional differences. Only upstream TBP was measured, because the downstream signal is not linked to the PIC.",
+   "concl": "TBP may stay longer at the TATA box and help PIC reassembly during re-initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "How does TAF occupancy differ at TATA promoters?",
+   "a": "After normalization, every TAF was significantly lower at TATA promoters. TBP, TFIIA, TFIIB and TFIIF were similar or higher.",
+   "kw": [
+    "TAF-independent initiation"
+   ],
+   "info": "The result held without CAGE normalization: median-centered log2(factor/TBP) ratios were lower for all TAFs at TATA than at DPR promoters. This fits classic in vitro work showing TATA promoters do not need TAFs.",
+   "concl": "TBP can, to some extent, start PIC formation from the TATA box without TFIID in vivo."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "How do Mot1 and NC2 bind?",
+   "a": "Mot1 is elevated wherever TBP binds at TATA and DPR promoters, especially downstream. NC2 alpha and beta bind specifically at TATA promoters, significantly more than at DPR promoters even after normalization (p < 0.001).",
+   "kw": [
+    "NC2",
+    "Mot1"
+   ],
+   "info": "Each NC2 subunit gives two sharp footprints, at -18 bp (same as TBP) and at -33 bp near the TATA box. This matches the TBP-NC2-DNA crystal structure: NC2 alpha contacts the TATA box under TBP (Lys18, Lys19) and NC2 beta contacts the downstream region (Lys63, Lys64).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "What other evidence supports TAF-independent initiation at TATA promoters?",
+   "a": "High-NC2 promoters had higher TBP and lower TAF binding than low-NC2 promoters. Within TATA promoters, TBP correlated more with TFIIA, TFIIB, TFIIF, NC2 and Mot1 than with the TAFs.",
+   "kw": [
+    "pairwise correlation"
+   ],
+   "info": "The NC2 comparison held at comparable PIC levels and output. DPR promoters showed more homogeneous correlations, consistent with TFIID being integral to PIC formation there.",
+   "concl": "TATA promoters do not start every round of transcription through TFIID, and NC2 may antagonize this."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "Which TAFs are most linked to downstream TBP?",
+   "a": "TAF2 had the largest gain in correlation with downstream TBP in control versus triptolide, followed by TAF1 and TAF7. The gains were larger at DPR than at TATA promoters.",
+   "kw": [
+    "TAF2",
+    "delta PCC"
+   ],
+   "info": "Gain was measured as delta PCC = PCC(DMSO) - PCC(TRI). They expected TAF1, which can contact TBP through its TAND domain. TAF2's DNA-facing surface may simply crosslink more easily.",
+   "concl": "The downstream module seems to mediate TBP loading."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TBP, NC2 and TAF occupancy at TATA promoters",
+   "q": "What model do they propose for TATA versus DPR promoters?",
+   "a": "At both types, TFIID moves TBP from the downstream to the upstream position to initiate. At TATA promoters, TBP can also bind the TATA box directly, or stay after TFIID loads it, and drive TAF-independent re-initiation.",
+   "kw": [
+    "model",
+    "TBP loading"
+   ],
+   "info": "NC2 may remove TBP and reset this TAF-independent state (dashed box in Fig. 5).",
+   "concl": "DPR promoters mainly use TFIID-mediated TBP loading. TATA promoters can also use persistent or directly recruited TBP."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main conclusion about TFIID across promoter types?",
+   "a": "The profiles match cryo-EM and suggest that holo-TFIID is at active promoters. TBP differs by promoter type, and TATA promoters have high TBP but low TAF occupancy relative to PIC levels and output.",
+   "kw": [
+    "holo-TFIID"
+   ],
+   "info": "",
+   "concl": "TFIID contributes to transcription of most genes, but PIC formation at TATA promoters can partly happen without TAFs."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does this study help settle the debate on TAF dependence?",
+   "a": "Earlier studies used single TAFs or small subsets as proxies for all of TFIID. Here all TAFs were mapped together in vivo at high resolution.",
+   "kw": [
+    "TAF dependence"
+   ],
+   "info": "Yeast depletion studies showed TAF loss reduces transcription from both TATA and TATA-less genes, with some TATA-rich promoters less dependent. Other yeast and mammal studies found TATA gene transcription persists after some TAFs are depleted.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the data say about NC2 and TRF2?",
+   "a": "TRF2 binding is low at TATA promoters and higher at DPR, HK and TCT promoters. NC2 binds only at TATA promoters.",
+   "kw": [
+    "NC2",
+    "TRF2"
+   ],
+   "info": "How TRF2 relates to TFIID is unclear, but both seem to work mainly at TATA-less promoters. NC2 is known to prevent PIC assembly and destabilize TBP.",
+   "concl": "NC2 mainly inhibits TATA genes, and its effects at TATA-less promoters may be largely indirect. NC2 probably counteracts prolonged TBP binding."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do they think downstream TBP is the TFIID loading state?",
+   "a": "It is lower at TATA promoters, where TAFs are also lower, and is most associated with TAF2 at DPR promoters. It disappears after triptolide, when TFIID is mostly in the PIC state.",
+   "kw": [
+    "downstream TBP",
+    "loading state"
+   ],
+   "info": "It is also reduced at promoters with stable Pol II pausing, through steric occlusion or lower activity. Cryo-EM suggests TFIID first binds DNA at the downstream position. The authors cannot exclude other explanations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How could this explain the larger burst size of TATA promoters?",
+   "a": "Having alternative initiation modes would let TBP be reloaded more efficiently during a burst. TBP's long residence time and its ability to start PIC formation from the TATA box likely explain the larger bursts.",
+   "kw": [
+    "burst size",
+    "TBP residence time"
+   ],
+   "info": "Yeast single-molecule tracking found TBP residence times of about 28 s, versus about 2 to 5 s for Pol II and PIC factors. It is unresolved whether TBP stays on the TATA box through several rounds, or stays on chromatin but is evicted by elongation and must re-bind.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - statistics and reproducibility",
+   "q": "How many replicates were there, and how were they checked?",
+   "a": "ChIP-nexus had at least two biological replicates per factor and condition, except untreated Mot1, which had one. RNA-seq had two replicates in DMSO, and reproducibility was checked by Pearson correlation of promoter-level signal.",
+   "kw": [
+    "replicates",
+    "R"
+   ],
+   "info": "Public CAGE-seq had two replicates and H3K4me3 ChIP-seq had one. No sample size was predetermined and no data were excluded. All statistics were done in R, and the code is on GitHub (zeitlingerlab/G-M_Alcantara_TFIID_2025).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and triptolide",
+   "q": "How were cells grown and treated?",
+   "a": "Kc167 cells from DGRC were grown at 25 C in HyClone SFX insect medium. They were treated with 10 µM triptolide (TOCRIS 3253) for 1 h at room temperature, with 2% DMSO as control.",
+   "kw": [
+    "Kc167",
+    "triptolide"
+   ],
+   "info": "The cells tested negative for mycoplasma. The cell line identity was not independently authenticated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-nexus experiments",
+   "q": "What are the key steps of their ChIP-nexus protocol?",
+   "a": "10 million cells were fixed in 1% formaldehyde for 10 min and sonicated on a Bioruptor Pico (5 cycles of 30 s on/30 s off, HIGH). Chromatin was pulled down overnight with 10 µg antibody on Protein A plus G Dynabeads, then end-repaired, dA-tailed and ligated to adaptors.",
+   "kw": [
+    "ChIP-nexus",
+    "lambda exonuclease"
+   ],
+   "info": "Adaptors had mixed fixed barcodes (CTGA, TGAC, GACT, ACTG). Digestion used lambda exonuclease and RecJf. Single-stranded DNA was circularized with CircLigase, linearized with BamHI, PCR-amplified, gel-purified and sequenced on an Illumina NextSeq 500.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-nexus data processing",
+   "q": "How was ChIP-nexus data processed?",
+   "a": "Reads were adapter-trimmed with Cutadapt v4.2, aligned to dm6 with bowtie2 v2.3.5.1 and deduplicated using fixed and random barcodes. Coverage used only the first stop base of each read.",
+   "kw": [
+    "Cutadapt",
+    "bowtie2",
+    "RPM"
+   ],
+   "info": "Each replicate was RPM-normalized to total aligned reads, then replicates were pooled and averaged. Older TBP, Pol II and NELF data (GSE85741) were reprocessed the same way.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE-seq and TSS annotation",
+   "q": "How did they define active and narrow promoters from CAGE-seq?",
+   "a": "CAGE reads were aligned with STAR v2.7.1a to dm6, and TSSs were called with CAGEr v2.14.0. This gave 6314 active promoters, of which 1769 had an interquantile cluster width of 11 bp or less (narrow).",
+   "kw": [
+    "CAGEr",
+    "STAR",
+    "tag clusters"
+   ],
+   "info": "Power-law normalization used alpha = 1.19 and T = 10^6, fit range 3 to 40,000. Tag clusters were built with distclu (30 bp), bounded at the 10th to 90th percentiles, and kept at TPM 0.5 or more. They were merged across replicates within 100 bp; single-TSS promoters needed at least 3 TPM. Annotation used FlyBase r6.64, keeping the highest-TPM cluster per gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq and H3K4me3",
+   "q": "How were RNA-seq and H3K4me3 data generated and processed?",
+   "a": "RNA-seq: TRIzol RNA, Illumina TruSeq Stranded mRNA (polyA), NextSeq 500, STAR v2.7.1a with --quantMode GeneCounts, and TPM normalization. H3K4me3 ChIP-seq (GSE62904) was aligned with bowtie, input-normalized with SES in deepTools v3.4.2, and input was subtracted in 50-bp bins.",
+   "kw": [
+    "STAR",
+    "deepTools",
+    "SES"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PCA and promoter classification",
+   "q": "How were the PCA and promoter-type classification done?",
+   "a": "For PCA, average profiles in a 151-bp window around the TSS were min-max normalized and run through prcomp (center = TRUE, scale = FALSE). Promoter types used consensus motif matches allowing one mismatch for TATA and none for other elements.",
+   "kw": [
+    "PCA",
+    "motif matching"
+   ],
+   "info": "TATA and TCT promoters only needed their element. DPR promoters could have MTE, DPE or PB but not TATA, TCT, Ohler 1/6/7 or DRE. HK promoters could have Ohler 1/6/7 or DRE but not TATA, MTE, DPE, PB or TCT. Windows are in Supplementary Table 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TBP clustering and motif enrichment",
+   "q": "How were promoters clustered by TBP profile, and how was motif enrichment tested?",
+   "a": "They took the top 90% of narrow promoters by total TBP signal in an 81-bp window, rank-transformed signals to 0 to 1 to emphasize shape, and ran k-means (centers = 4, nstart = 100). Enrichment compared each cluster's motif fraction with the other three clusters, using two-sided Fisher's exact tests with Benjamini-Hochberg correction.",
+   "kw": [
+    "k-means",
+    "Fisher's exact test"
+   ],
+   "info": "The methods also list 'x = 30' as a k-means parameter, and the paper does not say what it means.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - occupancy normalization and statistics",
+   "q": "How were CAGE-normalized occupancy and its statistics calculated?",
+   "a": "Each factor's signal was measured in a window around its main footprint and divided by the promoter's CAGE level. Upstream modules, TFIIA, TFIIB and TBP used 50 bp upstream, the middle module 100 bp centered on the TSS, and the downstream module 50 bp downstream.",
+   "kw": [
+    "Wilcoxon test",
+    "rank-biserial r"
+   ],
+   "info": "Tests were two-sided Wilcoxon rank-sum with Benjamini-Hochberg correction. Effect size was the rank-biserial r = 2U/(n1 n2) - 1, with bootstrap 95% CIs. For hierarchical clustering, signal from -50 to +50 bp was log2+1 transformed, correlated, converted to 1 - r and clustered with Ward's D.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - paused Pol II half-life",
+   "q": "How did they define short- and long-paused promoters?",
+   "a": "They re-measured paused Pol II half-life at 1307 qualifying promoters by fitting earlier Pol II time-course data to an exponential decay. Quintile 1 (n = 262, half-life under 6 min) was short pausing and quintile 5 (n = 262, over 45 min) was stable pausing.",
+   "kw": [
+    "Pol II pausing",
+    "half-life"
+   ],
+   "info": "Promoters needed Pol II signal above 20, under 80 bp between strand maxima, and a footprint under 80 bp downstream of the TSS. Half-lives over 60 min were capped at 60 min.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - antibodies and data",
+   "q": "Which antibodies were used, and how were they validated?",
+   "a": "Custom rabbit polyclonal antibodies against the TFIID subunits were made by GenScript. Antibodies against TBP, NC2 alpha, NC2 beta, Mot1 and TRF2 came from the Kadonaga lab.",
+   "kw": [
+    "antibodies",
+    "GSE314461"
+   ],
+   "info": "They were not validated by Western blot. Specificity was inferred from characteristic, reproducible footprints, which is a limitation. New data are at GEO GSE314461 and source data at Zenodo (10.5281/zenodo.21753147).",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - promoter-bound TFIID conformation",
+   "text": "Why is TBP's strongest footprint at -18 bp instead of the TATA box at -30 bp? The minor-groove crosslinking explanation is proposed but not tested."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Is downstream TBP really the TFIID loading or re-loading state? The evidence is indirect (triptolide loss, pausing, TAF2 correlation), and the authors say other explanations remain possible."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "During a burst, does TBP stay on the TATA box across several rounds, or is it evicted by elongation and has to re-bind? The CAGE ratio cannot measure kinetics, so this needs live-cell or kinetic data."
+  }
+ ]
+}

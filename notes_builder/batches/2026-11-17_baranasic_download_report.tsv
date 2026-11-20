@@ -1,0 +1,17 @@
+n	status	folder	filename	doi	source	provided_link
+1	already there	regulatiory_genomics	Baudement_2026_NatEcolEvol_salmonid_WGD_regulatory_evolution.pdf	10.1038/s41559-026-03171-6		https://doi.org/10.1038/s41559-026-03171-6
+3	downloaded	regulatiory_genomics	JimenezGonzalez_2026_bioRxiv_carp_subgenome_noncoding_elements.pdf	10.64898/2026.06.22.733679	https://www.biorxiv.org/content/10.64898/2026.06.22.733679v1.full.pdf	https://doi.org/10.64898/2026.06.22.733679
+4	already there	regulatiory_genomics	Xu_2026_NatEcolEvol_gene_body_methylation_cnidarian.pdf	10.1038/s41559-026-03090-6		https://doi.org/10.1038/s41559-026-03090-6
+5	already there	general	Clark_2026_F1000Res_ELIXIR_domestic_animals.pdf	10.12688/f1000research.177500.1		https://doi.org/10.12688/f1000research.177500.1
+6	already there	regulatiory_genomics	OvekBaydar_2025_NAR_JASPAR_2026.pdf	10.1093/nar/gkaf1209		https://doi.org/10.1093/nar/gkaf1209
+7	NOT DOWNLOADED	regulatiory_genomics	Naseer_2025_GenomeRes_salmon_antiviral_regulatory_landscape.pdf	10.1101/gr.280579.125		https://doi.org/10.1101/gr.280579.125
+8	already there	general	Miranda_2025_Nature_adipose_niche_obesity.pdf	10.1038/s41586-025-09233-2		https://doi.org/10.1038/s41586-025-09233-2
+9	NOT DOWNLOADED	regulatiory_genomics	Amblard_2025_DevCell_Cdx2_enhancer_attenuator.pdf	10.1016/j.devcel.2025.06.006		https://doi.org/10.1016/j.devcel.2025.06.006
+11	already there	regulatiory_genomics	Phan_2025_NatGenet_conserved_regulatory_elements_diverged_sequence.pdf	10.1038/s41588-025-02202-5		https://doi.org/10.1038/s41588-025-02202-5
+12	downloaded	regulatiory_genomics	Rauluseviciute_2023_NAR_JASPAR_2024.pdf	10.1093/nar/gkad1059	https://pmc-oa-opendata.s3.amazonaws.com/PMC10767809.1/PMC10767809.1.pdf	https://doi.org/10.1093/nar/gkad1059
+13	already there	drerio	JimenezGonzalez_2023_DMM_zebrafish_regulatory_genomic_resources.pdf	10.1242/dmm.050280		https://doi.org/10.1242/dmm.050280
+14	already there	general	McAllan_2023_NatCommun_adipocyte_DNA_methylation_obesity.pdf	10.1038/s41467-023-38439-z		https://doi.org/10.1038/s41467-023-38439-z
+15	already there	drerio	Baranasic_2022_NatGenet_zebrafish_CRE_multiomic_atlas.pdf	10.1038/s41588-022-01089-w		https://doi.org/10.1038/s41588-022-01089-w
+16	already there	general	Slemc_2022_MicrobiolSpectr_Streptomyces_rimosus_genome.pdf	10.1128/spectrum.02434-21		https://doi.org/10.1128/spectrum.02434-21
+17	already there	regulatiory_genomics	CastroMondragon_2021_NAR_JASPAR_2022.pdf	10.1093/nar/gkab1113		https://doi.org/10.1093/nar/gkab1113
+19	downloaded	regulatiory_genomics	Fornes_2020_NAR_JASPAR_2020.pdf	10.1093/nar/gkz1001	https://pmc-oa-opendata.s3.amazonaws.com/PMC7145627.1/PMC7145627.1.pdf	https://doi.org/10.1093/nar/gkz1001

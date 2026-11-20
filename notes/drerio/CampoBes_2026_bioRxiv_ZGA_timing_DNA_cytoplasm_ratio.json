@@ -1,0 +1,519 @@
+{
+ "id": "CampoBes_2026",
+ "title": "Zygotic genome activation is timed by the egg DNA-to-cytoplasm ratio across animals",
+ "link": "https://doi.org/10.64898/2026.04.16.718233",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/CampoBes_2026_bioRxiv_ZGA_timing_DNA_cytoplasm_ratio.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is zygotic genome activation (ZGA) and why study it across many animals?",
+   "a": "ZGA is the shift in gene expression control from maternally deposited products to newly transcribed RNA from the embryo's own genome. It is essential and universal, but it is poorly understood outside a few model species.",
+   "kw": [
+    "ZGA",
+    "maternal-to-zygotic transition"
+   ],
+   "info": "They built a transcriptomic atlas of early embryogenesis for 61 animal species from 13 phyla. They used one unified computational framework to infer ZGA timing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the two main findings of the paper?",
+   "a": "ZGA onset varies widely across animals, but the ratio between genome size and egg cytoplasmic volume (a proxy for the nuclear-to-cytoplasmic ratio) robustly predicts when it begins. Zygotic genes also differ from maternal transcripts in genomic architecture, function and evolutionary conservation.",
+   "kw": [
+    "DNA-to-cytoplasm ratio",
+    "N/C ratio"
+   ],
+   "info": "",
+   "concl": "ZGA follows a conserved molecular logic even though its transcriptomic output is flexible."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the 'minor' and 'major' ZGA waves, and how does the paper define ZGA?",
+   "a": "ZGA is traditionally thought to start with transcription of a few loci (the minor wave) and then progress to widespread zygotic transcription (the major wave). Recent work suggests the two waves form a continuum, so the authors use 'ZGA' to mean the period of large-scale activation of the zygotic genome.",
+   "kw": [
+    "minor wave",
+    "major wave"
+   ],
+   "info": "ZGA is essential for later cell fate determination and morphogenesis. Defects in ZGA lead to developmental arrest.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How much does ZGA timing differ between classic model organisms?",
+   "a": "Mice and C. elegans start large-scale zygotic transcription very early, after 1 and 3 cleavage cycles. Frogs, zebrafish and fruit flies start much later, after about 9, 10 and 14 cell cycles.",
+   "kw": [
+    "cell cycle",
+    "zebrafish"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which candidate mechanisms had been proposed to set ZGA timing?",
+   "a": "The candidates are the DNA-to-cytoplasm ratio (related to the nuclear-to-cytoplasmic volume ratio), cell cycle lengthening, developmental time, and translation of maternal transcripts. These are partly interconnected and have had varying impacts in different model systems.",
+   "kw": [
+    "N/C ratio",
+    "cell cycle lengthening"
+   ],
+   "info": "It was unclear how far these factors are shared across animals or specific to particular lineages.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was known about the genes activated at ZGA before this study?",
+   "a": "In mice, zebrafish and fruit flies, the earliest transcribed zygotic genes are on average shorter and evolutionarily younger, and the gene sets overlap very little between the three species. Some studies had compared ZGA and maternal genes between closely related species (mammals, flies, annelids).",
+   "kw": [
+    "zygotic genes",
+    "gene age"
+   ],
+   "info": "Gap: knowledge was limited to a small set of model organisms, which prevented robust evolutionary conclusions about ZGA timing and about which genes are activated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identification of ZGA timing across 61 species",
+   "q": "What dataset did they assemble?",
+   "a": "A time-course transcriptomic dataset for 61 animal species from 13 phyla, spanning more than 700 million years of divergence since the ctenophore-mammal common ancestor. For most species it has eight early stages, from oocyte or 1-cell to post-gastrulation.",
+   "kw": [
+    "comparative transcriptomics",
+    "bulk RNA-seq"
+   ],
+   "info": "23 species were sequenced in-house, often to fill phylogenetic gaps, and 38 came from public sources. Samples were bulk RNA-seq with either ribo-depletion or polyA selection. Most data for this study used one ribo-depletion protocol with multi-species pooling to minimize batch effects.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identification of ZGA timing across 61 species",
+   "q": "How was the 'maternal' (MAT) stage defined?",
+   "a": "The earliest sampled stage in each species, usually the oocyte or zygote, was taken as the MAT stage. The assumption is that it most closely captures the maternally deposited transcriptome.",
+   "kw": [
+    "MAT stage"
+   ],
+   "info": "Reads were mapped with STAR to each species' genome, and TPM values plus intron and exon read counts were extracted for every protein-coding gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identification of ZGA timing across 61 species",
+   "q": "Which three metrics did they use to detect the onset of large-scale zygotic transcription?",
+   "a": "(i) Abrupt changes in transcriptome structure in a PCA of the most variable genes. (ii) The appearance of strongly upregulated genes that were absent or weak at the MAT stage. (iii) An increase in the intron/exon read count ratio, which indicates nascent transcription.",
+   "kw": [
+    "PCA",
+    "intron/exon ratio",
+    "nascent transcription"
+   ],
+   "info": "Each metric was scaled to a maximum of 1 within each species. The three were then combined to call the ZGA stage automatically as the first stage with evidence of substantial new transcription.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identification of ZGA timing across 61 species",
+   "q": "How variable is ZGA onset across the 61 species?",
+   "a": "Onset ranged from 1 to 14 cell cycles. Most mammals and nematodes started within the first 2 or 3 cleavages, while many insects and non-mammalian vertebrates activated much later. Half of the species (31/61) had ZGA around cycles 3 to 5.",
+   "kw": [
+    "ZGA timing"
+   ],
+   "info": "ZGA timing was more consistent within clades and had a significant phylogenetic signal (Pagel's lambda = 0.99, Blomberg's K = 0.92, P <= 1e-4).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identification of ZGA timing across 61 species",
+   "q": "Could they reconstruct the ancestral ZGA timing for animals?",
+   "a": "Not confidently. Ancestral state reconstruction put the root at about cell cycle 6, but the 95% confidence interval was wide (3.7 to 8.3) because the trait is so variable.",
+   "kw": [
+    "ancestral state reconstruction"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The egg DNA-to-cytoplasm ratio is a universal timer of ZGA",
+   "q": "Is ZGA timing in cell cycles inversely related to developmental speed in hours?",
+   "a": "No. Across all species there was no significant correlation between ZGA timing in cell cycles and in hours (adjusted R2 OLS = 0.017, P PGLS = 0.916). Analyzed separately, slow and fast developers showed a mild positive correlation (slow: R2 = 0.236, P PGLS = 0.008; fast: R2 = 0.221, P PGLS = 0.205).",
+   "kw": [
+    "developmental time",
+    "PGLS"
+   ],
+   "info": "The expected inverse pattern is that fast developers (frogs, zebrafish, flies) have many quick cycles without G phase before ZGA, while slow mammals have few cycles with G phase. But some fast developers (annelids, nematodes) activate after only a couple of cycles, and the slow-developing lamprey activates after 8 cycles and 77 hours.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The egg DNA-to-cytoplasm ratio is a universal timer of ZGA",
+   "q": "How does ZGA timing relate to gastrulation?",
+   "a": "In 58 of 61 species, ZGA happens before gastrulation begins. The exceptions are the fast-developing Oikopleura dioica, Brachionus plicatilis and Hydractinia symbiolongicarpus, where the first signs of gastrulation appear around the same time as ZGA.",
+   "kw": [
+    "gastrulation",
+    "mid-blastula transition"
+   ],
+   "info": "The authors reasoned that the mid-blastula transition and gastrulation need zygotic control, so ZGA must come first.",
+   "concl": "Gastrulation may set an upper time limit on ZGA, but it is unlikely to explain when ZGA starts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - The egg DNA-to-cytoplasm ratio is a universal timer of ZGA",
+   "q": "Which ecological and developmental traits were associated with ZGA onset?",
+   "a": "Ecological traits were not associated after phylogenetic correction (internal vs external fertilization, aquatic vs terrestrial habitat; phylANOVA P > 0.05). Cleavage type (holoblastic vs meroblastic) and yolk distribution (isolecithal vs non-isolecithal) were both significant (P = 1e-04 each). Species with little, evenly distributed yolk and holoblastic cleavage had much earlier ZGA (median 4 vs 9 to 10 cell cycles).",
+   "kw": [
+    "phylANOVA",
+    "isolecithal",
+    "holoblastic cleavage"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The egg DNA-to-cytoplasm ratio is a universal timer of ZGA",
+   "q": "Which quantitative trait correlated with ZGA onset on its own?",
+   "a": "Egg volume showed a robust positive correlation (adjusted R2 OLS = 0.491, P PGLS = 8.4e-7). Genome size alone was not correlated (adjusted R2 OLS = -0.003, P PGLS = 0.196).",
+   "kw": [
+    "egg volume",
+    "genome size"
+   ],
+   "info": "Most other genomic traits were not significant: GC%, number of CDS, exons per CDS, total CDS length, number of genes, total, mean gene and mean intron length. Because egg size mainly reflects cytoplasmic volume, this pointed to the amount of cytoplasm relative to nuclear content.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The egg DNA-to-cytoplasm ratio is a universal timer of ZGA",
+   "q": "How well does the egg DNA-to-cytoplasm ratio predict ZGA timing?",
+   "a": "The log of genome size divided by egg volume showed a strong negative correlation with ZGA timing in cell cycles (adjusted R2 OLS = 0.753, P PGLS = 2.6e-11). This was stronger than egg volume alone, even though genome size by itself was not correlated.",
+   "kw": [
+    "DNA-to-cytoplasm ratio",
+    "N/C ratio"
+   ],
+   "info": "The correlation stayed robust in subsets: ribo-depletion vs polyA data, in-house vs public data, and slow vs fast developers. For fast developers the nlme PGLS fit failed, but the caper PGLS gave P = 1.3e-12.",
+   "concl": "The egg DNA-to-cytoplasm ratio, which rises with every cleavage cycle, acts as a universal timer of ZGA across animals."
+  },
+  {
+   "type": "qa",
+   "section": "Results - The egg DNA-to-cytoplasm ratio is a universal timer of ZGA",
+   "q": "Can ZGA timing be predicted for a new species?",
+   "a": "Yes, if genome size and egg volume are known: ZGA time (cell cycle) = -2.370 * log10(GS/EV) + 11.734, where GS is genome size in bp and EV is egg volume in um3.",
+   "kw": [
+    "predictive model"
+   ],
+   "info": "The model is a simple linear fit (OLS formula shown in Fig. 3G).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genes transcribed at ZGA share distinctive features",
+   "q": "How were ZGA genes and MAT genes defined for comparison across species?",
+   "a": "A ZGAscore ranks all genes in each species by how strongly they are activated at ZGA, comparing expression at ZGA and the next stage with expression at MAT and pre-ZGA. The top 500 genes by ZGAscore are the 'ZGA genes', and genes with TPM >= 50 at the MAT stage are the 'MAT genes'.",
+   "kw": [
+    "ZGAscore",
+    "ZGA genes",
+    "MAT genes"
+   ],
+   "info": "The score was designed to handle large differences between species in ZGA timing, gene number and RNA-seq type and coverage. As expected, ZGA genes rose sharply at the ZGA stage, while MAT genes declined mildly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genes transcribed at ZGA share distinctive features",
+   "q": "How do ZGA genes differ from MAT genes in genomic architecture?",
+   "a": "ZGA genes are shorter, have fewer introns and shorter 3' UTRs, and have higher codon usage bias. Except in mammals, they also have larger intergenic regions. In 48 of 61 species (79%) they have higher GC content, although this difference is smaller than the others.",
+   "kw": [
+    "gene length",
+    "codon usage bias",
+    "intergenic region"
+   ],
+   "info": "The authors' interpretations: short, intron-poor genes allow rapid transcription during short cleavage cycles. Short 3' UTRs and high codon bias suggest simpler regulation of translation and mRNA stability than for MAT genes. Larger intergenic regions suggest more complex transcriptional regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genes transcribed at ZGA share distinctive features",
+   "q": "Which functions are enriched at the MAT, ZGA, ZGA+1 and ZGA+2 stages?",
+   "a": "MAT: DNA damage response, microtubule-based processes, mitotic cell cycle, RNA localization and post-transcriptional regulation. ZGA and ZGA+1: RNA processing and gene expression, including chromatin, transcription by RNA polymerase II, mRNA binding and splicing. ZGA+2: post-cleavage programs such as patterning and axis formation, morphogenesis and gastrulation, organogenesis, and structural and signaling processes.",
+   "kw": [
+    "GSEA",
+    "Gene Ontology"
+   ],
+   "info": "GSEA was run on ranked lists for each species and stage (MAT expression, ZGAscore, ZGA+1score, ZGA+2score) using standardized GO annotations.",
+   "concl": "There is a conserved functional switch: maternal control of cell division, then zygotic reprogramming of transcription and chromatin, then embryogenesis and organogenesis."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zygotic genes show low genomic and regulatory conservation",
+   "q": "Are ZGA genes genomically conserved, meaning do they have orthologs in other species?",
+   "a": "Less than expected. In every species, MAT genes were more conserved than the background, while ZGA genes were globally less conserved than the background and always less conserved than MAT genes.",
+   "kw": [
+    "genomic conservation",
+    "orthogroups"
+   ],
+   "info": "A query gene counted as conserved in a target species if at least one ortholog was present there. A phylostratigraphic analysis gave similar but noisier results, with ZGA genes overall newer than MAT genes. The fraction of ZGA genes in any orthogroup was also much lower than for MAT genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zygotic genes show low genomic and regulatory conservation",
+   "q": "Are orthologs of ZGA genes also activated at ZGA in other species (regulatory conservation)?",
+   "a": "Mostly only within certain groups, such as mammals, ambulacrarians and cnidarians, with minimal conservation between groups. The top maternally deposited genes had higher fractions of conserved expression across the phylogeny.",
+   "kw": [
+    "regulatory conservation"
+   ],
+   "info": "Measured pairwise as the fraction of a query species' ZGA genes that have at least one ortholog that is also a ZGA gene in the target species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zygotic genes show low genomic and regulatory conservation",
+   "q": "What do group-specific ZGA orthogroups look like?",
+   "a": "ZGA genes belonged to more group-specific orthogroups than MAT genes, and these orthogroups usually had no homologs in other animal groups. This suggests a strong link between gene emergence and the acquisition of ZGA regulation.",
+   "kw": [
+    "TRIM43",
+    "gene emergence"
+   ],
+   "info": "Mammal-specific ZGA orthogroups were enriched for response to stimuli, transcriptional activation and RNA biosynthesis. One example is human TRIM43 and its homologs, a family of ubiquitin-ligating proteins that arose in the mammalian ancestor and are known markers of mammalian ZGA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zygotic genes show low genomic and regulatory conservation",
+   "q": "Is any gene family activated at ZGA in all animal groups?",
+   "a": "Only one orthogroup: the FET genes (human FUS, EWSR1 and TAF15) and their homologs. These RNA-binding proteins mediate co-transcriptional RNA processing. By contrast, 522 MAT orthogroups were broadly shared.",
+   "kw": [
+    "FET genes",
+    "FUS",
+    "EWSR1"
+   ],
+   "info": "Previous perturbation work links FET genes to splicing defects affecting gastrulation (Fus in clawed frog), mitotic defects (ewsr1a and ewsr1b in zebrafish), and differential post-ZGA RNA binding (caz in fruit fly). Shared MAT genes include Ezrin and Radixin, whose combined knockdown in mouse reduces fertilization success.",
+   "concl": "ZGA genes tend to be group- or even species-specific, whereas a common set of MAT genes, mainly for cell cycle and RNA processing, is deposited in eggs across animals."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What caveats of the dataset do the authors acknowledge?",
+   "a": "Actual times for equivalent stages vary widely (first cleavage under 20 minutes in O. dioica vs 20 to 24 hours in mammals). Other caveats are the mix of RNA-seq types (ribo-depletion vs polyA), the lack of nascent RNA-seq, and the bulk nature of the data, which is especially problematic for late activators and for embryos with very unequal blastomere sizes.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "It is also hard to estimate the 'active' cytoplasmic volume (containing maternal mRNAs and proteins) relative to 'inactive' yolk. The authors argue the true association could therefore be even stronger than reported.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Does the DNA-to-cytoplasm rule extend beyond animals?",
+   "a": "Adding two plants, Arabidopsis and maize, gave a pattern consistent with animals and strengthened the negative correlation (adjusted R2 OLS = 0.772, P PGLS = 2.1e-18). This suggests the relationship may hold across other multicellular eukaryotes.",
+   "kw": [
+    "Arabidopsis",
+    "maize"
+   ],
+   "info": "A recent study in brown algae showed a surprisingly contrasting pattern. In the plant fit, both angiosperms sit at ZGA cycle 0 with high DNA-to-cytoplasm ratios (Fig. S10).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How could the egg DNA-to-cytoplasm ratio act as a ZGA timer?",
+   "a": "During early cleavages DNA doubles each cycle while total embryo volume stays roughly constant, so the DNA-to-cytoplasm proportion rises exponentially. ZGA may start once a maternally deposited factor acting on DNA has been titrated enough by repeated genome replication.",
+   "kw": [
+    "titration model"
+   ],
+   "info": "Supporting evidence: triploid and haploid cybrid frog embryos show earlier and later ZGA than diploids, and haploid honeybee males activate their genome later than diploid females.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which molecular factors might be titrated, and how does cell cycle length fit in?",
+   "a": "Histones are long-standing candidates. Histone titration helps set ZGA timing in frog, and in zebrafish ZGA depends on the balance between histones and transcription factors, with fewer free histones letting transcription factors compete better for DNA. The ratio is also tied to cell cycle lengthening, for example through histones inhibiting cell cycle regulators (fly) or dilution of replication factors (frog).",
+   "kw": [
+    "histones",
+    "transcription factors",
+    "cell cycle length"
+   ],
+   "info": "The ratio could therefore act directly (titration) or indirectly (by lengthening the cell cycle, which then triggers ZGA). The authors think a combination likely operates to different extents in each species.",
+   "concl": "Whatever the mechanism, the comparative atlas supports the egg DNA-to-cytoplasm ratio as a universal timer, with conserved functional logic despite extensive turnover of the underlying genes."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Phylogenetic framework",
+   "q": "How was the species tree built, and how were taxa grouped?",
+   "a": "A time-calibrated tree was built mainly from the TimeTree database. Missing species were replaced by the closest congener or sister lineage, or placed from the primary literature. Taxon groups were deliberately non-equivalent in rank and include the paraphyletic 'non-mammalian vertebrates'.",
+   "kw": [
+    "TimeTree"
+   ],
+   "info": "The grouping balances uneven taxon sampling (especially mammals and nematodes) and reflects developmental divergence, for example large differences within Chordata vs the conserved spiral cleavage of Spiralia. The acoel position is marked as uncertain. In the species list, Macaca mulatta and Mus musculus are both abbreviated 'Mmu' in the Methods text; the figures use 'Mma' for macaque.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sample collection and RNA-seq",
+   "q": "How were the in-house libraries prepared and sequenced?",
+   "a": "For most species, RNA from several species was pooled to increase RNA quantity and reduce batch effects, and libraries were made by ribo-depletion with the Illumina TruSeq Stranded Total RNA Kit. C. plicata and L. anatina used poly(A) selection. Sequencing was on an Illumina NovaSeq 6000 with 150 bp paired-end reads.",
+   "kw": [
+    "ribo-depletion",
+    "NovaSeq 6000"
+   ],
+   "info": "In-house data are under NCBI BioProject PRJNA1402383. Public data came from 29 NCBI BioProjects and one CNGBdb project. Zebrafish embryos were raised at 28 C in batches of 100, stored in RNAlater, and extracted with the RNeasy Mini kit.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Mapping and quantification",
+   "q": "Which tools and parameters were used for mapping and quantification?",
+   "a": "Reads were aligned with STAR v2.7.11a in two-pass mode with permissive multimapping (--winAnchorMultimapNmax 200). Only protein-coding genes were quantified, with featureCounts v2.0.2: fragment-level (-p) counts over CDS with MAPQ >= 30 for exons, and over introns with MAPQ >= 30 and >= 30 bp intron overlap.",
+   "kw": [
+    "STAR",
+    "featureCounts"
+   ],
+   "info": "Replicates were aggregated per stage. Counts were converted to length-scaled TPMs, genes with TPM > 100,000 were removed as artifacts, and samples were renormalized to 1e6 TPM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Detection of ZGA timing",
+   "q": "How was the PCA metric computed?",
+   "a": "A PCA was run on rlog-transformed (DESeq2, design ~1) TPM values of the 500 most variable genes. ZGA should show up as the first large jump between consecutive stages, measured as a variance-weighted Euclidean distance in the PC1-PC2 plane.",
+   "kw": [
+    "DESeq2",
+    "rlog",
+    "PCA"
+   ],
+   "info": "In most species, stages followed a horseshoe-shaped trajectory in PC1-PC2 that recapitulated developmental order. PC1 and PC2 were weighted by their proportion of explained variance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Detection of ZGA timing",
+   "q": "How were 'newly transcribed' and 'strongly upregulated' genes defined?",
+   "a": "Newly transcribed genes had < 1 TPM at MAT and > 5 TPM at stage i. Strongly upregulated genes had log2 fold change > 3 vs MAT, among genes with MAT expression >= 10 TPM. The union of the two sets per stage was the activation readout.",
+   "kw": [
+    "upregulated genes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Detection of ZGA timing",
+   "q": "How was the intron/exon ratio metric filtered?",
+   "a": "Only intron-containing genes with >= 50 exonic counts at every stage were used. A maternal mask kept only genes with MAT-stage I/E <= 0.05 and no more than 1.5 times the ratio at the last stage. Change was measured as I/E delta = ratio at stage i minus ratio at MAT, trimming the top and bottom 1%.",
+   "kw": [
+    "intron/exon ratio",
+    "maternal masking"
+   ],
+   "info": "Rationale: new pre-mRNAs carry intronic signal before splicing, while maternal transcripts are deposited fully processed. Masking deals with poor annotations in non-model species, residual intronic signal from abundant maternal transcripts, and low depth.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Detection of ZGA timing",
+   "q": "How were the three metrics combined into a ZGA call, and how was the threshold chosen?",
+   "a": "Each metric was scaled to its species maximum and the three were averaged per stage. ZGA delta is the change in this composite between consecutive stages, and the ZGA stage is the first stage where ZGA delta exceeds 0.1. The threshold was chosen by scanning 0.001 to 1 (step 0.001) on seven model species with well-known ZGA.",
+   "kw": [
+    "ZGA delta",
+    "calibration"
+   ],
+   "info": "Calibration species: human, mouse, zebrafish, medaka, Xenopus tropicalis, C. elegans and D. melanogaster. A cutoff of 0.1 recovered the correct stage in all 7 (100%). All calls were checked visually, and 7 species with noisy metrics or weaker secondary waves were manually curated (Table S3).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Cell cycle and time units",
+   "q": "How was ZGA onset converted into cell cycles when cleavages are asynchronous?",
+   "a": "For early, synchronous ZGA the cycle came directly from cell counts. For asynchronous cleavages (e.g., nematodes) or later stages, the mean cell cycle was inferred from total cell number; for example, about 300 cells was assigned cycle 8 (2^8 = 256).",
+   "kw": [
+    "mean cell cycle"
+   ],
+   "info": "Absolute time is labelled 'hpf' throughout, but some public sources used other reference points (hours post copula, after ootheca formation, after egg extrusion), listed in Table S4. Slow developers were mammals, two nematodes and one jawless vertebrate; all others were classed as fast. This split is a practical, data-driven category, not a strict biological class.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Phylogenetic comparative statistics",
+   "q": "Which phylogenetic comparative methods were used?",
+   "a": "Phylogenetic signal was measured with Blomberg's K and Pagel's lambda (phytools v1.9-16 phylosig; 10,000 randomizations for K, likelihood-ratio test for lambda). Ancestral states were estimated with contMap and fastAnc under Brownian motion. Categorical traits were tested with phylANOVA (10,000 simulations).",
+   "kw": [
+    "phytools",
+    "Pagel's lambda",
+    "Blomberg's K"
+   ],
+   "info": "Continuous traits: R2 values come from OLS and P values from PGLS. PGLS was fitted with nlme v3.1-155 gls using ape v5.7-1 corPagel (lambda starting at 0.5) and with caper v1.0.3 pgls under Brownian motion. Pseudo-R2 came from rr2 v1.1.1, and phylogenetically independent contrasts from ape pic.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Estimation of egg volume",
+   "q": "How was egg volume estimated, especially for yolky fish eggs?",
+   "a": "Spherical eggs were modelled as spheres (V = pi*d^3/6) and elongated eggs as prolate spheroids (V = pi*L*W^2/6). For chicken, zebrafish and medaka, where yolk is concentrated in a distinct region, only the non-yolk embryonic cell volume was used.",
+   "kw": [
+    "egg volume",
+    "yolk",
+    "ImageJ"
+   ],
+   "info": "When no measurements were published, egg dimensions were taken from published microscopy images with ImageJ v1.54g. All values are in Table S4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ZGA-related scores and gene sets",
+   "q": "How is the ZGAscore calculated?",
+   "a": "Genes with 1 to 5,000 TPM were kept and renormalized. Sharp onsets (ZGApre or MAT < 1 TPM with ZGA >= 10 TPM, or ZGApre or MAT < 5 TPM with ZGA >= 25 TPM) score 50 + ZGA/MAT. Other genes score 2*(ZGA/MAT + ZGA/ZGApre) + ZGA+1/MAT + ZGA+1/ZGApre.",
+   "kw": [
+    "ZGAscore"
+   ],
+   "info": "Scores are capped at 0 to 100 and use +1 smoothed ratios. ZGA+1 and ZGA+2 scores use the same logic relative to the previous stage. ZGA+2 could not be computed for 5 species (Bgr, Bbu, Oar, Csa, Cpl). MATtop = top 500 genes by MAT expression, used where equal set sizes were needed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic features and GO",
+   "q": "How were genomic features and GO annotations computed?",
+   "a": "One representative transcript (longest CDS) per gene was used to compute intron number, gene length, 3' UTR length, codon usage bias (SCUO in coRdon v1.27.0), GC content and mean intergenic distance. GO terms came from eggNOG-mapper v2.1.12 and were reduced to 2,172 non-redundant human GO categories.",
+   "kw": [
+    "eggNOG-mapper",
+    "coRdon",
+    "fgsea"
+   ],
+   "info": "GSEA used fgsea (scoreType = pos) on percentile ranks, testing categories with 10 to 1,000 genes. A term counted as universally enriched if significant in >= 60 species (MAT), >= 45 (ZGA, ZGA+1) or >= 40 (ZGA+2). Networks were drawn with Revigo v1.8.2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Orthology and conservation",
+   "q": "How were orthology and genomic or regulatory conservation defined?",
+   "a": "Broccoli v1.2 on the 61 proteomes gave 28,578 orthogroups; genes with max expression < 1 TPM were removed. G-conservation is the log2 ratio of the proportion of conserved ZGA or MAT genes vs background in each target species, summarized by the median. R-conservation requires a target ortholog that is itself a ZGA or MATtop gene.",
+   "kw": [
+    "Broccoli",
+    "genEra",
+    "phylostratigraphy"
+   ],
+   "info": "Gene ages came from genEra v1.4.1 (--query-cover 50). Group-specific orthogroups: >= 1 ZGA or MATtop gene, regulated in >= 50% of the group's species and in no other group. 'Regulated' means a ZGA or MATtop gene, or in the top 30th percentile. Only orthogroups with <= 250 genes were used. GO enrichment used a hypergeometric test, with a term assigned to an orthogroup if >= 20% of its genes carried it.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Direct or indirect timer? The paper cannot tell whether the DNA-to-cytoplasm ratio acts by titrating a maternal factor (histones, replication factors) or by lengthening the cell cycle. It suggests a species-specific mix."
+  },
+  {
+   "type": "note",
+   "section": "Methods - Estimation of egg volume",
+   "text": "Only the non-yolk volume was used for zebrafish, medaka and chicken, and the authors say 'active' vs yolk cytoplasm is hard to estimate. Check the Table S4 volumes for fish and how sensitive the fit is to this choice."
+  },
+  {
+   "type": "note",
+   "section": "Results - Zygotic genes show low genomic and regulatory conservation",
+   "text": "ZGA genes are young, group-specific and poorly conserved, yet ZGA functions (chromatin, Pol II transcription, splicing) are shared. How does new gene emergence become tied to ZGA regulation, and why are FET genes the only universally ZGA-activated family?"
+  }
+ ]
+}

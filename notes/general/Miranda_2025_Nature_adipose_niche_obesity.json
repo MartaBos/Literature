@@ -1,0 +1,637 @@
+{
+ "id": "Miranda_2025",
+ "title": "Selective remodelling of the adipose niche in obesity and weight loss",
+ "link": "https://doi.org/10.1038/s41586-025-09233-2",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Miranda_2025_Nature_adipose_niche_obesity.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What resource did this paper generate?",
+   "a": "A spatially resolved single-nucleus atlas of human adipose tissue (AT) with 171,247 cells from 70 people. It covers leanness, obesity and therapeutic weight loss (WL).",
+   "kw": [
+    "snRNA-seq",
+    "spatial transcriptomics",
+    "adipose tissue"
+   ],
+   "info": "It combines single-nucleus RNA-seq with Xenium in situ spatial transcriptomics. The total appears to include the primary cohort, a published atlas (Emont et al.) and the spatial cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the headline findings?",
+   "a": "Metabolic, precursor and vascular cells are selectively vulnerable to senescence, and WL strongly reverses this. WL also reduces adipocyte hypertrophy and biomechanical constraint pathways and activates metabolic flux. It represses macrophage infiltration but does not fully reverse macrophage activation.",
+   "kw": [
+    "senescence",
+    "weight loss",
+    "macrophage activation"
+   ],
+   "info": "The authors suggest that persistently primed macrophages could trigger weight regain and worsen metabolic dysfunction.",
+   "concl": "WL reverses AT senescence and stress but leaves an immune memory of obesity."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "WL clearly improves metabolic health, but the mechanisms by which it remodels AT are poorly understood. The molecular triggers, cell phenotypes and signalling pathways behind obese AT dysfunction in humans are also only partly known.",
+   "kw": [
+    "obesity",
+    "AT remodelling"
+   ],
+   "info": "Some AT responses to WL may be maladaptive and predispose people to weight regain.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What pathological AT remodelling happens in obesity?",
+   "a": "Excess expansion limits AT flexibility and causes adipocyte hypertrophy, immune cell infiltration, pro-inflammatory cytokine release, impaired angiogenesis and fibrosis. Together these drive multiorgan inflammation, insulin resistance and metabolic disease.",
+   "kw": [
+    "adipocyte hypertrophy",
+    "fibrosis",
+    "inflammation"
+   ],
+   "info": "Obesity affects more than one billion people. Increased AT mass is a main risk factor for type 2 diabetes, cardiovascular disease, some cancers and early death.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mapping AT remodelling dynamics",
+   "q": "What was the primary cohort?",
+   "a": "Single-nucleus RNA-seq of about 100,000 cells from people with extreme obesity (n = 25), sampled before and after WL surgery, plus healthy lean controls (n = 24). WL significantly improved metabolic parameters, but not back to the lean baseline.",
+   "kw": [
+    "bariatric surgery",
+    "paired design"
+   ],
+   "info": "Clinical traits measured were BMI, fasting insulin, HbA1c, HDL and diastolic blood pressure. 26 lean controls were recruited and 2 were removed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mapping AT remodelling dynamics",
+   "q": "Why abdominal subcutaneous AT?",
+   "a": "Because it contributes to central obesity and has adverse metabolic effects compared with other subcutaneous AT depots.",
+   "kw": [
+    "subcutaneous AT"
+   ],
+   "info": "Visceral AT was not studied. The authors list the single-depot focus as a limitation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mapping AT remodelling dynamics",
+   "q": "Which extra datasets were integrated?",
+   "a": "About 50,000 nuclei from the largest published human subcutaneous adipose atlas (Emont et al.; 9 obese and 4 lean samples) were added to improve cell annotation. Spatial transcriptomics covered about 25,000 cells, with n = 4 per group.",
+   "kw": [
+    "Emont atlas",
+    "data integration"
+   ],
+   "info": "The integrated UMAP holds 145,452 cells: 74 primary samples and 13 Emont samples. Between-group exploratory analyses used the primary cohort.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mapping AT remodelling dynamics",
+   "q": "How did tissue composition change in obesity?",
+   "a": "Obese AT showed extensive immune cell infiltration, mainly macrophages but also lymphocytes. It also had fewer mature adipocytes, suggesting more cell death and/or failure to replenish adipocytes. WL mitigated these effects.",
+   "kw": [
+    "immune infiltration",
+    "cell composition"
+   ],
+   "info": "Cell-type proportions were correlated with clinical traits (Pearson, lean and obese samples only).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Persistent macrophage activation",
+   "q": "Which myeloid populations expand in obese AT?",
+   "a": "Macrophages rose from a mean of 14% to 31%. Most of the increase was lipid-associated macrophages (LAMs; mature MYE2 and immature MYE3) expressing CD9, TREM2, LPL and LIPA. Classical monocytes (MYE5, VCAN) also increased, indicating constant recruitment from blood.",
+   "kw": [
+    "LAM",
+    "TREM2",
+    "CD9"
+   ],
+   "info": "34,280 myeloid cells were clustered into MYE1 to MYE10. Marker patterns suggest a differentiation path from monocytes to immature and then mature LAMs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Persistent macrophage activation",
+   "q": "What happens to tissue-resident macrophages (TRMs)?",
+   "a": "TRMs (MYE1; LYVE1, FOLR2, MRC1) made up a smaller fraction in obesity. Neighbourhood graphs showed this was a relative, not absolute, reduction.",
+   "kw": [
+    "TRM",
+    "LYVE1",
+    "FOLR2"
+   ],
+   "info": "Proliferating macrophages expressed MCP-1 (CCL2) together with both TRM and LAM markers. This supports low-level MCP-1-dependent expansion of both populations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Persistent macrophage activation",
+   "q": "What LAM subtypes did they find?",
+   "a": "LAM ST1 is adaptive, with a lysosomal and metabolic signature. LAM ST2 is maladaptive and inflammatory, expressing MHC II, NLRP3, TLR2 and TREM1. Inflammatory LAMs increased in obesity together with metabolic dysfunction.",
+   "kw": [
+    "TLR2",
+    "TREM1",
+    "NLRP3"
+   ],
+   "info": "LAM abundance rose with metabolic dysfunction independent of adiposity. Adaptive LAMs gathered at crown-like structures (CLS, defined as 3 or more LAMs around transcriptionally empty adipocytes). Inflammatory LAMs were more often alone or in pairs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Persistent macrophage activation",
+   "q": "What did flux modelling show for obese macrophages?",
+   "a": "A global activation state seen only in obese macrophages: 1,495 of 1,895 reactions changed (binomial P = 3.1 x 10^-148). Glycolysis and respiration were both high, and the pentose phosphate pathway, TCA cycle, lipid synthesis and lipid oxidation were broadly activated.",
+   "kw": [
+    "COMPASS",
+    "metabolic flux"
+   ],
+   "info": "Fatty acid desaturation (FADS1, SCD) and mitochondrial beta-oxidation were activated. This fits with buffering and burning potentially toxic fatty acids. Activation was strongest in LAMs but also present in other myeloid classes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Persistent macrophage activation",
+   "q": "How was the transcriptome-based flux prediction validated?",
+   "a": "With SCENITH energetic profiling of macrophages from obese donors (n = 7). CD9+ LAMs had higher basal respiration and glycolytic capacity than FOLR2+ TRMs.",
+   "kw": [
+    "SCENITH",
+    "HPG"
+   ],
+   "info": "Reported P-values are 0.006 and 0.001 (paired t-test). The extracted text does not make clear which P-value belongs to which measure.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Persistent macrophage activation",
+   "q": "What does WL do to macrophages?",
+   "a": "Myeloid cells fell from a mean of 31% to 18%, but the relative fractions of myeloid subtypes did not differ between obesity and WL. LAMs shifted towards less inflammatory subtypes, and inflammasome, cytokine and chemotaxis genes went down. Global metabolic activation was not fully reversed.",
+   "kw": [
+    "weight loss",
+    "macrophage memory"
+   ],
+   "info": "WL lowered fatty acid desaturases and acyl-CoA synthetases. Glycolysis, respiratory capacity and pentose phosphate flux increased, implying a switch to other energy sources as fatty acids decline. Network analysis showed WL improved inflammatory networks but not LAM transcriptional reprogramming.",
+   "concl": "Obesity-induced myeloid cell states persist despite extensive WL."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reduced lymphocyte infiltration",
+   "q": "What happened to lymphocytes?",
+   "a": "Obese AT had higher proportions of CD4+ and CD8+ T cells, NK cells and B cells, and WL reduced these. WL also downregulated lymphocyte activation and cytotoxicity genes (ETS1, SYTL3).",
+   "kw": [
+    "T cells",
+    "ETS1",
+    "SYTL3"
+   ],
+   "info": "There were only 6,222 lymphoid cells (4%), so subclass-level changes could not be tested.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhanced adipocyte metabolic flexibility",
+   "q": "What mature adipocyte subpopulations were identified?",
+   "a": "8 subpopulations (AD1 to AD8; 44,583 cells), including stressed AD3 (JUN/NFKBIZ-hi), lipogenic AD5 (PNPLA3/MOGAT1-hi), fibrotic AD6 (NOX4/LOX-hi) and beige AD8 (GATM-hi).",
+   "kw": [
+    "adipocyte heterogeneity",
+    "JUN",
+    "PNPLA3"
+   ],
+   "info": "The others are AD1 basal, AD2 GRIA4-hi, AD4 intermediate and AD7 sphingolipid. Beige adipocytes were rare (1%) and did not differ between conditions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhanced adipocyte metabolic flexibility",
+   "q": "How do adipocyte subtypes shift with obesity and WL?",
+   "a": "Stressed and fibrotic adipocytes increased in obesity, while lipogenic AD5 unexpectedly decreased. WL cut stressed adipocytes from a mean of 55% to 14%, shifted fibrotic numbers lower and relatively increased lipogenic cells.",
+   "kw": [
+    "stressed adipocytes",
+    "Milo"
+   ],
+   "info": "Changes in the stressed and lipid biosynthetic populations were confirmed in the spatial data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhanced adipocyte metabolic flexibility",
+   "q": "What does flux modelling show in adipocytes?",
+   "a": "Obese adipocytes had defects in fatty acid and BCAA breakdown, suggesting impaired metabolic flexibility. WL caused a large global increase in flux: 1,485 of 1,895 reactions (binomial P = 1.4 x 10^-142).",
+   "kw": [
+    "BCAA catabolism",
+    "metabolic flexibility"
+   ],
+   "info": "The authors attribute the WL increase probably to negative energy balance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhanced adipocyte metabolic flexibility",
+   "q": "What is lipid cycling and why does it matter here?",
+   "a": "Lipid cycling is repeated breakdown and resynthesis of triglycerides. WL systematically increased both lipid synthesis and breakdown pathways, including DGAT2, which suggests WL may start triglyceride cycling. This process is highly energy-consuming and can quench toxic fatty acids.",
+   "kw": [
+    "triglyceride cycling",
+    "DGAT2"
+   ],
+   "info": "Activity scores and rate-limiting enzymes were compared across groups. WL also reversed BCAA catabolism defects, predicted to improve systemic BCAA clearance and insulin sensitivity. Lipid cycling was a feature of AD5, while AD3 had low metabolic turnover.",
+   "concl": "WL engages cell-autonomous substrate cycling that may underlie better metabolic health."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhanced adipocyte metabolic flexibility",
+   "q": "Which TFs drive WL-induced metabolic activation in adipocytes?",
+   "a": "MLXIPL and SREBF1 ranked highly for triglyceride synthesis. Other top TFs were linked to redox biology and BCAA catabolism. 38 of 53 leading TFs overlapped human metabolic disease GWAS loci.",
+   "kw": [
+    "pySCENIC",
+    "SREBF1",
+    "MLXIPL"
+   ],
+   "info": "The network analysis was limited to metabolic pathway genes. Leading TFs had P < 0.05 (Bonferroni) and more than 50 metabolic target genes. The main text spells it MLXILP, apparently a typo for MLXIPL as used in the figure.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhanced adipocyte metabolic flexibility",
+   "q": "How are biomechanics linked to adipocyte stress?",
+   "a": "Obesity increased and WL decreased cytoskeletal tension, mechanotransduction, ECM and fibrosis genes (ACTA2, LOX, LOXL2, VGLL3). These genes were enriched in AD3 and AD6. Adipocyte size correlated positively with mechanosensitive, stress and fibrotic genes such as JUN, and negatively with homeostatic genes.",
+   "kw": [
+    "mechanotransduction",
+    "VGLL3",
+    "adipocyte size"
+   ],
+   "info": "Sizes came from WGA-based segmentation: 4,850 lean, 3,315 obese and 3,909 WL adipocytes across 4 donors per group. Correlations were modest, so hypertrophy may be one of several factors or a driver within a degenerative cycle.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reversal of multicellular stress",
+   "q": "What adipocyte progenitor (APC) subtypes were found?",
+   "a": "Multipotent DPP4/CD55-hi progenitors (ASC/APC1), committed preadipocytes (APC2, APC3), adipogenesis-regulatory cells (APC4; KCNIP-hi, CD142/F3-hi) and profibrotic precursors (APC5; ADAM12-hi, POSTN-hi). APC3 had a stressed profile and higher NOCT.",
+   "kw": [
+    "APC",
+    "NOCT",
+    "DPP4"
+   ],
+   "info": "NOCT may act as a restrictive gatekeeper of preadipocyte commitment. APC2 expressed late-stage maturation genes in one subregion.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reversal of multicellular stress",
+   "q": "What role might HIF1A play in progenitors?",
+   "a": "Stressed and profibrotic APCs expressed more HIF1A, which promotes fibrosis and suppresses adipogenesis in mice. WL downregulated hypoxia, profibrotic (TGF-beta) and anti-adipogenic (WNT) genes, and these cell numbers fell significantly.",
+   "kw": [
+    "HIF1A",
+    "hypoxia",
+    "TGF-beta"
+   ],
+   "info": "In mice, HIF1A acts through PPARG phosphorylation. The authors conclude WL may relieve hypoxia-driven loss of differentiation capacity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reversal of multicellular stress",
+   "q": "Do vascular cells also have stressed states?",
+   "a": "Yes. Capillary endothelial and mural cells each had basal and stressed profiles that changed in opposite directions with adiposity. Stressed endothelium (EC2) overexpressed APOLD1 and SNAI1, and stressed mural cells (Mu4) were enriched for ADAMTS1.",
+   "kw": [
+    "APOLD1",
+    "SNAI1",
+    "ADAMTS1"
+   ],
+   "info": "These markers point to pathological neovascularisation, endothelial-to-mesenchymal transition, pericyte detachment and capillary loss. WL strongly reduced stressed vascular cells in both single-nucleus and spatial data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reversal of multicellular stress",
+   "q": "Is there a shared stress signature across cell types?",
+   "a": "Yes. All stressed states (AD3, APC3, EC2, Mu4) upregulated a common set of 188 genes, with 15 genes commonly downregulated. This stress was highest in obesity but was also present in lean tissue, where it increased with age and metabolic dysfunction.",
+   "kw": [
+    "multicellular stress",
+    "stress signature"
+   ],
+   "info": "Proposed mediators are hypoxia, mechanical and oxidative stress, Gp130-mediated cytokines, DNA damage and cell cycle arrest.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reversal of multicellular stress",
+   "q": "How did they test the DNA damage link in vitro?",
+   "a": "They treated immortalised human adipose-derived stromal cells (iHASC) with etoposide. This reproduced the in vivo stress marker proteins (JUN, STAT3) and impaired adipocyte differentiation.",
+   "kw": [
+    "etoposide",
+    "iHASC",
+    "DNA damage"
+   ],
+   "info": "Etoposide was given at 5 or 10 uM on days 1 to 5 of a 15-day differentiation. Differentiation was measured by Oil Red O staining.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Altered tissue niches and cell crosstalk",
+   "q": "Where are stressed cells located in tissue?",
+   "a": "In 50-um bins, stressed cell states were generally enriched in high-stress zones, except stressed capillaries (EC2), which were spread throughout. Stress regions were strongly associated with immune cells (except TRMs and NK cells) and, unexpectedly, with arterial endothelial cells (EC4).",
+   "kw": [
+    "spatial zonation",
+    "Xenium"
+   ],
+   "info": "Bins were split into stress quantiles Q1 (low) to Q4 (high).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Altered tissue niches and cell crosstalk",
+   "q": "What tissue niches did they define?",
+   "a": "Using proximity enrichment within 300 um, they found five niches: arterial, venous, adipocyte, stem and stress. Stem niches held multipotent ASC/APC1 and TRMs. Stress niches held AD3, APC3, LAMs, cMono, cDC2 and T cells.",
+   "kw": [
+    "tissue niche",
+    "neighbourhood analysis"
+   ],
+   "info": "No cell type was exclusive to one niche, so niches are gradations. Arterial ECs formed their own niche with APC3 and Mu4. Immune cells sat close to large veins and LAMs, possibly reflecting migration out of vessels towards CLS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Altered tissue niches and cell crosstalk",
+   "q": "Which signals characterise the niches?",
+   "a": "Adipocyte niches were enriched for adipokines and neurotrophic factors (ADIPOQ, LEP, NRXN3). Stem niches had WNT and ECM components (FN1, collagens, laminins). Stress and arterial niches had chemokines (CXCL2, CCL2, IL6) and stress cues (TGFB1, AREG, NAMPT, THBS1).",
+   "kw": [
+    "CellChat",
+    "THBS1",
+    "ADGRE5"
+   ],
+   "info": "THBS1 (from AD3), ADGRE5 (pan-immune) and NAMPT (multicellular) were all amplified in obesity and reversed by WL. The Xenium panel lacked most ligand-receptor genes, so spatial data were imputed with ENVI.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Repression of senescence",
+   "q": "What genes did WL change in many cell types?",
+   "a": "Genes changed by WL in 3 or more cell types were mostly downregulated: 213 of 333 (binomial P = 3.9 x 10^-7). They mapped to AT dysfunction pathways (TNFA and IFNG inflammation, hypoxia, fibrosis, immune recruitment, oxidative stress) and to cell cycle arrest.",
+   "kw": [
+    "differential expression",
+    "cell cycle arrest"
+   ],
+   "info": "Genes needed FC > 0.5 and P < 0.05 (Bonferroni). The cell cycle arrest signal led the authors to test senescence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Repression of senescence",
+   "q": "What is the evidence that WL reverses senescence?",
+   "a": "WL lowered CDKN1A (p21) and raised p21-repressed cell cycle progression genes in several cell types, and reduced senescence markers and scores. p21-positive cells were most common in stressed adipocyte, precursor and vascular states. WL almost completely removed them, while lean AT still had substantial (though fewer) p21+ cells.",
+   "kw": [
+    "p21",
+    "CDKN1A",
+    "senolytic"
+   ],
+   "info": "This was confirmed by spatial transcriptomics and p21 immunohistochemistry (n = 5 lean, 4 obese, 4 WL). Repressed senescence tracked improved adipocyte energy metabolism.",
+   "concl": "Human WL has previously undescribed, potent senolytic effects."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Repression of senescence",
+   "q": "Which TF network controls the senescent, stressed state?",
+   "a": "A tightly conserved network that increases in obesity and decreases with WL. It includes AP-1 factors, signal-dependent TFs that activate inflammation and SASP, Kruppel-like factors, ciliogenesis TFs (RFX2, RFX3), DNA damage-induced orphan nuclear receptors and several TFs not previously linked to senescence.",
+   "kw": [
+    "AP-1",
+    "KLF",
+    "SASP"
+   ],
+   "info": "All 41 network TFs regulated themselves and they shared targets, including CDKN1A. The authors propose they cooperate in a degenerative cycle: stress, senescence, SASP, inflammation, tissue injury.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Repression of senescence",
+   "q": "What is the AT SASP and the role of NAMPT?",
+   "a": "Comparing secreted proteins between stressed and basal states gave SASP candidates including AREG, ADAMTS1, OSMR, IL6ST and CXCL2, which localised to stress and arterial niches. NAMPT was strongly upregulated in senescent cells, obese macrophages and inflammatory LAMs. NAMPT protein rose in obesity and fell sharply with WL.",
+   "kw": [
+    "NAMPT",
+    "visfatin",
+    "SASP"
+   ],
+   "info": "NAMPT drives SASP inside cells through the NAD salvage pathway and acts outside cells as the adipocytokine visfatin. Secreted proteins came from the Human Protein Atlas, with AREG added by hand.",
+   "concl": "NAMPT is a likely driver of the AT SASP."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main conclusion?",
+   "a": "Metabolic, precursor and vascular cells, but not immune cells, are selectively susceptible to stress and senescence. This is amplified in obesity but also seen in ageing and metabolically unhealthy leanness. Reversing AT senescence may be central to the anti-inflammatory and metabolic benefits of WL.",
+   "kw": [
+    "senescence",
+    "selective vulnerability"
+   ],
+   "info": "They predict WL increases adipocyte metabolic flexibility, improves precursor differentiation and restores vasculature. MCL1 is highlighted as a possible therapeutic vulnerability.",
+   "concl": "Reversal of AT senescence may underlie the multiorgan benefits of human WL."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is the WL metabolic activation surprising?",
+   "a": "BCAA catabolism and lipid cycling both consume energy. This challenges the assumption that WL reduces energy expenditure, at least in AT, and suggests compensation elsewhere.",
+   "kw": [
+    "energy expenditure",
+    "lipid cycling"
+   ],
+   "info": "The authors say this needs further study. They propose substrate turnover affects insulin sensitivity and ectopic lipid.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why does persistent macrophage activation matter?",
+   "a": "Obesity-induced macrophage states persist after WL and are probably epigenetically programmed. This could block full metabolic recovery, trigger weight regain and worsen long-term outcomes.",
+   "kw": [
+    "immune memory",
+    "weight regain"
+   ],
+   "info": "The TLR2-TREM1 inflammatory LAM signature resembles a proatherosclerotic LAM subtype. Mouse studies link AT immune and metabolic memory to weight regain. The epigenetic programming in human AT is inferred, not measured here.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations?",
+   "a": "WL was studied in its early phase, so the effects of negative energy balance, weight change and absolute fat mass cannot be separated. Other limits are the focus on people without diabetes, one abdominal subcutaneous depot and surgical WL, plus variable biopsy methods and incomplete capture of rare immune cells.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "Baseline samples were taken during surgery and follow-up samples by needle biopsy. The authors expect conserved but also context-dependent changes across depots and WL methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - study design and samples",
+   "q": "What were the WL interval, WL amount and inclusion criteria?",
+   "a": "The WL interval was at least 5 months (median 7, range 5 to 18), and median WL was 22% (range 13 to 33%). Obese participants (BMI > 35) were having laparoscopic gastric bypass or sleeve. Lean controls (BMI < 26) were having non-bariatric laparoscopic abdominal surgery.",
+   "kw": [
+    "cohort",
+    "bariatric surgery"
+   ],
+   "info": "Participants were aged 20 to 70, from a multiethnic background and unrelated. Treated type 2 diabetes was excluded. Phenotyping was done after an overnight fast, and cases and controls were matched for age, sex and ethnicity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single-nucleus sequencing and QC",
+   "q": "How were nuclei isolated and pooled?",
+   "a": "About 100 mg of frozen AT was homogenised with a dounce in lysis buffer containing 0.1% NP40. Nuclei from 4 to 5 participants of the same group were pooled (6 pools per group). Pools were cleaned of debris and doublets by DAPI-based FACS.",
+   "kw": [
+    "nucleus isolation",
+    "FACS",
+    "sample pooling"
+   ],
+   "info": "Pools were processed in lean-obese-WL trios to reduce batch effects. Sorting used a BD FACS Aria SORP with an 85 um nozzle.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single-nucleus sequencing and QC",
+   "q": "Which library chemistry and sequencing setup were used?",
+   "a": "10x Chromium Single Cell 3' v3.1 with 5,000 to 10,000 nuclei per pool. Libraries were sequenced on an Illumina NextSeq2000 to more than 20,000 paired-end reads per nucleus.",
+   "kw": [
+    "10x Chromium",
+    "CellRanger"
+   ],
+   "info": "Read 1 was 28 bp and read 2 was 90 bp. Processing used CellRanger v5.0.1 and bcl2fastq v2.20.0, with alignment to GRCh38 (STAR) and introns counted. Sequencing ran in 3 balanced batches.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single-nucleus sequencing and QC",
+   "q": "What QC filters and doublet removal were applied?",
+   "a": "CellBender removed ambient RNA. Nuclei were then dropped if they had fewer than 1,000 UMIs or 400 genes, log10(genes per UMI) below 0.85, or mitochondrial/ribosomal fraction above 5%. Doublets were found with DoubletFinder, genotype-based Vireo and iterative clustering.",
+   "kw": [
+    "CellBender",
+    "DoubletFinder",
+    "sctransform"
+   ],
+   "info": "CellBender settings were 150 to 200 epochs and learning rate 0.0001 to 0.00005. Data were processed in Seurat and normalised with sctransform v2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single-nucleus sequencing and QC",
+   "q": "How were pooled nuclei assigned to participants?",
+   "a": "By genotype demultiplexing. Blood genotypes from Illumina OmniExpress-24 v1.2 were imputed, cell-level SNPs were called with cellsnp-lite (MAF > 0.05), and Vireo matched cells to participants.",
+   "kw": [
+    "Vireo",
+    "cellsnp-lite",
+    "IMPUTE2"
+   ],
+   "info": "SNP QC removed call rate < 90%, MAF < 0.01, HWE P < 1e-6, sex-chromosome and duplicate SNPs, leaving 649,007 SNPs. Phasing used SHAPEIT v2.r900 and imputation used IMPUTE2 v2.3.2 with a 1000 Genomes phase 3 panel (5 Mb chunks, Ne = 20,000), giving 81,656,368 SNPs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational analyses",
+   "q": "How were datasets integrated and cells annotated?",
+   "a": "In Scanpy: Harmonypy corrected the PCA, BBKNN built batch-aware neighbourhoods and Leiden clustering found cell types (resolution 0.15). Each cell type was then reclustered twice, first at high resolution to flag mixed-lineage barcodes as unassigned, then at 0.65 or higher.",
+   "kw": [
+    "Scanpy",
+    "Harmony",
+    "BBKNN"
+   ],
+   "info": "Myeloid cells needed resolution 2.25. Emont samples were reprocessed from raw counts and included only if whole tissue, nuclei, subcutaneous and BMI < 26 or > 30.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational analyses",
+   "q": "How were composition and differential expression tested?",
+   "a": "Composition was tested with Milo neighbourhood differential abundance (neighbourhoods at least 90% one cell type, spatial FDR < 0.1). Differential expression used NEBULA negative binomial mixed models. Thresholds were P < 0.05 Bonferroni for paired obese-WL and FDR < 0.01 for lean-obese.",
+   "kw": [
+    "Milo",
+    "NEBULA"
+   ],
+   "info": "Mitochondrial and ribosomal fractions were technical covariates. Age, sex and ethnicity were covariates in lean-obese comparisons, and no biological covariates were used for paired samples. Results were repeated in the combined dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational analyses",
+   "q": "How were metabolic flux and regulatory networks inferred?",
+   "a": "Flux was modelled with COMPASS on per-sample mean expression for each cell type, comparing reactions by Wilcoxon test. Regulons came from pySCENIC on 20,000 nuclei per condition, using the ENCODE 2019/06/21 ChIP-seq hg38 refseq-r80 (10 kb up/down) database and requiring at least 5 targets.",
+   "kw": [
+    "COMPASS",
+    "pySCENIC"
+   ],
+   "info": "COMPASS covered 1,895 reactions in 83 pathways. Network scores were compared by Wilcoxon test (P < 0.05 Bonferroni). Note COMPASS infers flux from enzyme gene expression, not direct measurement.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational analyses",
+   "q": "How was cell-cell communication analysed?",
+   "a": "With CellChat, run per condition on 20,000 barcodes each, using rankNet for differential signalling. For spatial niches, missing ligand-receptor genes were imputed with ENVI trained on single-nucleus data, repeated 10 times and averaged.",
+   "kw": [
+    "CellChat",
+    "ENVI"
+   ],
+   "info": "Cell-state communication was run without splitting by condition to keep rare states. Low-expressed imputed genes were removed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - spatial transcriptomics",
+   "q": "How was the spatial experiment set up and analysed?",
+   "a": "10x Xenium on 5 um FFPE sections, using the Human Multi-Tissue and Cancer Panel plus 100 custom genes, with transcripts of quality value above 35. Analysis used three approaches: segmentation-free 50-um bins, nucleus segmentation (transcripts within 2 um) for cell typing, and WGA-based boundary segmentation in ImageJ for adipocyte size.",
+   "kw": [
+    "Xenium",
+    "CellTypist",
+    "segmentation"
+   ],
+   "info": "Bins needed more than 10 transcripts and nuclei more than 40. Adipocyte objects had to be 1,000 to 25,000 um2. Niches came from KDTree neighbour counts within 300 um, normalised to percentages because lean samples had about twice as many neighbours. LAM subtypes were transferred with CellTypist.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - experimental validation",
+   "q": "How did SCENITH measure macrophage metabolism?",
+   "a": "Freshly digested AT cells were starved of methionine and treated with 2-DG (100 mM), oligomycin (2 uM) or both. HPG uptake was then read by click chemistry (AZDye 555) and spectral flow cytometry on a Sony ID7000.",
+   "kw": [
+    "SCENITH",
+    "spectral flow cytometry"
+   ],
+   "info": "Gating was live CD45+ cells, then FOLR2+ (TRM) versus CD9+ (LAM). HPG incorporation is a proxy for protein synthesis and energy use.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data availability",
+   "q": "Where are the data and code?",
+   "a": "Raw single-nucleus and spatial data are in GEO (GSE295708, GSE295862), and integrated objects are on the Single Cell Portal (SCP3116, SCP3117). Code is at github.com/WRScottImperial/WAT_single_cell_analysis_Nature_2024.",
+   "kw": [
+    "GEO",
+    "Single Cell Portal"
+   ],
+   "info": "The published Emont dataset is SCP1376 / GSE176171.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Is persistent macrophage activation after WL epigenetically programmed in humans, and does it actually predict weight regain? This needs longer follow-up and epigenomic data; it was not measured here."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "If WL activates energy-consuming lipid cycling and BCAA catabolism in adipocytes, where does the body compensate to lower total energy expenditure? These are flux predictions from gene expression and need direct measurement."
+  },
+  {
+   "type": "note",
+   "section": "Results - Repression of senescence",
+   "text": "Is senescence reversal a cause or a consequence of the metabolic benefits of WL? The early-phase design cannot separate negative energy balance, weight change and fat mass."
+  }
+ ]
+}

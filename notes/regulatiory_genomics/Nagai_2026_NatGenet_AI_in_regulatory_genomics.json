@@ -1,0 +1,620 @@
+{
+ "id": "Nagai_2026",
+ "title": "Toward generalizable and interpretable AI in regulatory genomics",
+ "link": "https://doi.org/10.1038/s41588-026-02670-3",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Nagai_2026_NatGenet_AI_in_regulatory_genomics.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this review address?",
+   "a": "Sequence-to-function (seq2func) models predict molecular regulatory readouts directly from DNA sequence and do well on held-out genomic regions. However, they generalize inconsistently across genetic variation and cellular contexts. The review examines why strong predictive accuracy does not always translate into robust regulatory understanding.",
+   "kw": [
+    "seq2func",
+    "generalization"
+   ],
+   "info": "This is a review article (Nature Genetics, 2026), not a primary research paper, so there are no samples, methods or new data. It covers model architectures, training data, prediction tasks, interpretability methods and evaluation practices.",
+   "concl": "Seq2func models should be reframed as continually refined systems, in which perturbation experiments, systematic evaluation and iterative model updates are coupled through AI-experiment feedback loops."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are seq2func models used for?",
+   "a": "Single-nucleotide variant (SNV) effect prediction, hypothesis generation through mechanistic interpretation of the model, and synthetic regulatory sequence design.",
+   "kw": [
+    "variant effect prediction",
+    "sequence design"
+   ],
+   "info": "The review focuses on generalization behavior and points to other reviews for interpretation and sequence design.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the cis-regulatory code?",
+   "a": "The principles by which DNA sequence specifies regulatory activity in a given cellular context. Under this view, modeling gene regulation means learning a quantitative mapping from DNA sequence to regulatory activity.",
+   "kw": [
+    "cis-regulatory code"
+   ],
+   "info": "Sequence features specify TF binding, influence chromatin accessibility and mediate interactions between distal elements such as enhancers and promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does 'function' mean in seq2func?",
+   "a": "Molecular regulatory activity measured by functional genomics assays. This includes chromatin accessibility, TF binding, histone modifications, transcription initiation and steady-state gene expression. It does not mean cellular, organismal or evolutionary function.",
+   "kw": [
+    "seq2func"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why do seq2func models behave inconsistently outside their training data?",
+   "a": "Training data have biased coverage, training objectives do not target generalization, and evaluation practices only partly probe out-of-distribution behavior.",
+   "kw": [
+    "out-of-distribution"
+   ],
+   "info": "Inconsistency is seen under natural variation (SNVs, indels), synthetic perturbations (CRISPR edits, saturation mutagenesis) and shifts in cellular context.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modeling approaches for regulatory genomics",
+   "q": "What are the three main classes of genomic sequence models?",
+   "a": "(1) Supervised seq2func models trained to predict measured functional readouts. (2) Unsupervised or self-supervised models, mostly genomic language models (gLMs), that learn from sequence statistics alone. (3) Conditional generative models that learn sequence distributions conditioned on functional or contextual variables.",
+   "kw": [
+    "gLM",
+    "seq2func",
+    "diffusion"
+   ],
+   "info": "In gLMs, functional information enters only after pretraining: by fine-tuning, by training predictors on embeddings, or by guiding generation with external scoring functions. Conditional generative models include several diffusion frameworks and some conditionally trained gLMs.",
+   "concl": "Supervised seq2func models remain the main workhorse in regulatory genomics."
+  },
+  {
+   "type": "qa",
+   "section": "Modeling approaches for regulatory genomics",
+   "q": "Why does unsupervised training work for proteins but less well for regulatory DNA?",
+   "a": "Protein sequences evolve under strong positional and covariational constraints that reflect sequence-structure relationships. In regulatory DNA, constraint acts mainly on regulatory output rather than on specific nucleotides, so sequence-level constraints are weak and diffuse. Functional features are sparse, and many different sequences can give similar activity.",
+   "kw": [
+    "gLM",
+    "evolutionary constraint"
+   ],
+   "info": "Regulatory activity is also context dependent. As a result, reconstruction-based objectives are dominated by background variation.",
+   "concl": "gLMs pretrained on whole genomes often learn less informative representations of human regulatory regions than seq2func models, but appear to perform better in species with more compact genomes."
+  },
+  {
+   "type": "qa",
+   "section": "Modeling approaches for regulatory genomics",
+   "q": "How have people tried to steer unsupervised models toward regulatory features?",
+   "a": "By restricting training to annotated regulatory regions or by adding evolutionary conservation constraints. Their effect on learning cis-regulatory logic has not been rigorously benchmarked.",
+   "kw": [
+    "discrete diffusion"
+   ],
+   "info": "Discrete-diffusion approaches are presented as a promising alternative. They model mutational transitions that turn random sequences into functional ones, avoiding reconstruction-centered objectives, but current implementations are small compared with gLMs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Modeling approaches for regulatory genomics",
+   "q": "What data make seq2func models possible?",
+   "a": "Large functional genomics datasets that span multiple assays, cell types and conditions, enabled partly by consortia such as ENCODE.",
+   "kw": [
+    "ENCODE"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Architectural biases for multiscale modeling",
+   "q": "Why is inductive bias so important for seq2func models?",
+   "a": "Regulatory genomics works with extremely limited data: experiments sample only a tiny fraction of possible sequence space. Inductive biases are built-in assumptions that constrain which functions can be learned from limited data.",
+   "kw": [
+    "inductive bias"
+   ],
+   "info": "A successfully trained seq2func model can be treated as a virtual assay that measures new sequences in silico under matched experimental conditions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Architectural biases for multiscale modeling",
+   "q": "What is the receptive field, and how do convolutional networks expand it?",
+   "a": "The receptive field is the span of input positions that can influence a prediction. Convolutional layers aggregate information locally, and the receptive field grows with depth. Dilated convolutions and pooling speed up this growth while keeping local motif structure.",
+   "kw": [
+    "receptive field",
+    "CNN",
+    "dilated convolution"
+   ],
+   "info": "Individual convolutional layers act additively across positions. Deeper stacks are therefore needed to capture higher-order dependencies such as flanking-sequence effects and motif-motif interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Architectural biases for multiscale modeling",
+   "q": "Which architectures can integrate long-range sequence information more directly?",
+   "a": "Recurrent models such as bidirectional LSTMs, transformers that use multi-head self-attention, and state-space models such as Hyena and Mamba, which scale linearly with sequence length.",
+   "kw": [
+    "transformer",
+    "Mamba",
+    "Hyena"
+   ],
+   "info": "Recurrent models are limited by optimization stability and computational cost. Transformers capture pairwise interactions across the whole sequence but need more data. Fully connected layers lack structural bias and are data-inefficient, so they are usually used only after earlier layers have extracted local features.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Architectural biases for multiscale modeling",
+   "q": "How do seq2func architectures reflect the hierarchical nature of the cis-regulatory code?",
+   "a": "They stack layers. Early convolutional layers capture motif-level patterns, and later attention or state-space layers integrate these features to model distal interactions.",
+   "kw": [
+    "squeeze-excitation",
+    "residual connections",
+    "reverse-complement"
+   ],
+   "info": "More inductive bias comes from squeeze-excitation modules (context-dependent channel reweighting), residual connections (contextual refinement of early features) and reverse-complement weight sharing (reduces redundancy).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Architectural biases for multiscale modeling",
+   "q": "Is there a clearly best architecture for seq2func models?",
+   "a": "No. Architecture comparisons rarely produce clear winners, and performance differences often reflect accumulated implementation choices and uneven tuning effort. In some settings, well-tuned CNNs match more expressive transformer-based models.",
+   "kw": [
+    "benchmarking",
+    "loss landscape"
+   ],
+   "info": "Architecture and training data together shape the geometry of the loss landscape. This can make some solutions easier to reach even when representational capacity is the same.",
+   "concl": "Evaluation should go beyond the best held-out metric. It should also look at data-scaling behavior (a readout of inductive bias) and sensitivity to hyperparameters (a measure of robustness)."
+  },
+  {
+   "type": "qa",
+   "section": "Data and task design",
+   "q": "What are the two main data types used to train seq2func models?",
+   "a": "Genome-wide profiling assays, which measure activity in the endogenous genomic context, and massively parallel reporter assays (MPRAs), which measure many natural or synthetic sequences under matched conditions.",
+   "kw": [
+    "MPRA",
+    "profiling assays"
+   ],
+   "info": "Profiling-trained models learn sequence-activity relationships from variation across the genome. MPRAs can be episomal or use lentiviral genomic integration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Data and task design",
+   "q": "Why did the field move from binary peak classification to quantitative profile prediction?",
+   "a": "Quantitative supervision on full signal tracks captures motif strength, footprint structure and local chromatin context. It also substantially improves SNV-effect prediction compared with binary labels from peak calls.",
+   "kw": [
+    "profile prediction",
+    "peak calling"
+   ],
+   "info": "Profile-trained models learn motif representations whose quantitative preferences agree with biophysical measurements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Data and task design",
+   "q": "What is the difference between specialist and generalist seq2func models?",
+   "a": "Specialists are single-task models, such as ChromBPNet, trained for one experimental condition. They work well in-distribution but degrade under distribution shift. Generalists are multitask models that share supervision across assays and cell types and benefit from larger effective training sets.",
+   "kw": [
+    "ChromBPNet",
+    "multitask learning",
+    "foundation models"
+   ],
+   "info": "Fig. 2 places models such as DeepSea, Basset, Enformer, Borzoi, AlphaGenome, ChromBPNet, DeepSTARR and SpliceAI by receptive field (axis about 10^2 to 10^6 bp) and number of tasks. Generalists are trending toward more tasks, larger receptive fields, more parameters and base-pair-resolution output.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Data and task design",
+   "q": "What hidden bias does multitask learning introduce?",
+   "a": "Regulatory programs shared across cell types, such as housekeeping programs, dominate the loss. Models then under-represent features that drive differential regulation, especially between closely related cell types. Aggregate accuracy can be high while context-specific regulatory logic is missed.",
+   "kw": [
+    "multitask learning",
+    "context-specific regulation"
+   ],
+   "info": "The choice of loss function changes how much common versus context-specific signals contribute. Targeted fine-tuning, upsampling and focal-style losses partly recover context-specific signal, but there is no general solution.",
+   "concl": "Evaluation should be stratified by differentially regulated elements."
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "What are post hoc attribution methods?",
+   "a": "Methods that estimate how much each nucleotide contributes to a model's prediction for a given sequence. Examples are gradient-based methods, additive contribution methods and perturbation-based in silico mutagenesis (ISM).",
+   "kw": [
+    "attribution",
+    "ISM",
+    "PISA"
+   ],
+   "info": "Nucleotide-level attribution maps need a scalar output, so for profile models the way the profile is reduced to a scalar affects the attributions. Pairwise Influence by Sequence Attribution (PISA) avoids this by giving attribution maps at individual positions of the predicted profile.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "Why can gradient-based attributions be unreliable even when a model performs well?",
+   "a": "Models are optimized for accuracy, not local smoothness. Noise or benign overfitting can make the learned function locally rough, which makes gradients unstable. Gradients are also computed in continuous space rather than over discrete nucleotides, which adds spurious noise to attribution maps.",
+   "kw": [
+    "gradient correction",
+    "gauge-fixing"
+   ],
+   "info": "Gradient correction and gauge-fixing can reduce these effects. Gauge-fixing is a post-processing step that removes arbitrary components of attribution scores.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "How can interactions between bases or motifs be detected?",
+   "a": "Additive maps, usually shown as sequence logos, cannot capture cooperativity, spacing or context effects. Pairwise interactions can be probed with second-order ISM, hybrid methods such as DFIM, or second-order gradient methods such as Hessians.",
+   "kw": [
+    "DFIM",
+    "Hessian",
+    "DIAMOND"
+   ],
+   "info": "Caveat: an apparent interaction may be true nonadditivity, or additive effects passed through a nonlinear readout. Gauge-fixing (which separates additive and interaction components) or statistical frameworks such as DIAMOND can resolve this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "How do TF-MoDISco and SEAM give global explanations from attribution maps?",
+   "a": "TF-MoDISco clusters recurrent high-attribution subsequences across many sequences into motif-like patterns. SEAM clusters full attribution maps from dense mutagenesis libraries of one reference sequence. This reveals the regulatory mechanisms reachable through a few key mutations.",
+   "kw": [
+    "TF-MoDISco",
+    "SEAM"
+   ],
+   "info": "SEAM can uncover de novo motif emergence, context dependence and cooperative or competitive interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "How are in silico perturbation experiments used to test causality?",
+   "a": "Removing a feature tests necessity, inserting it into randomized sequences tests sufficiency, and moving it tests position and spacing effects. Comparing single-feature with multi-feature perturbations tests for nonadditivity.",
+   "kw": [
+    "global importance analysis",
+    "in silico perturbation"
+   ],
+   "info": "Perturbations are applied across many randomized backgrounds and averaged, to avoid confounding by spurious sequence patterns. This is formalized in global importance analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "What is SQUID?",
+   "a": "A local surrogate-modeling approach. It fits interpretable quantitative models to seq2func predictions from dense perturbations, with parameters that correspond directly to cis-regulatory features and interactions.",
+   "kw": [
+    "SQUID",
+    "surrogate model"
+   ],
+   "info": "In the additive limit, the surrogate parameters resemble attribution scores. The framework extends to pairwise and biophysical models, but computational cost limits it to focused loci.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "Do first-layer convolutional filters learn TF motifs?",
+   "a": "Not reliably when unconstrained. Stable motif representations appear only with strong architectural biases, such as large pooling or highly nonlinear activations that boost regulatory signal and suppress background.",
+   "kw": [
+    "convolutional filters",
+    "attention",
+    "GLIFAC"
+   ],
+   "info": "Attention in deeper layers can point to motif-motif interactions, but attention maps for single sequences are noisy. GLIFAC aggregates attention-weighted motif co-occurrences across many sequences.",
+   "concl": "Interpretable individual parameters do not necessarily mean we understand the model's computation."
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "What are sparse autoencoders (SAEs), and what is their limitation?",
+   "a": "SAEs decompose dense, uninterpretable embeddings into sparse latent features meant to represent interpretable concepts. They have been applied to protein language models and genomic models. Individual latents often capture fragmented or merged signals (feature splitting and absorption) rather than clear biological concepts.",
+   "kw": [
+    "sparse autoencoders"
+   ],
+   "info": "SAE interpretation therefore relies on indirect evidence such as motif enrichment, overlap with annotations or correlation with functional tracks. Virtual perturbations could directly test whether a latent corresponds to a regulatory mechanism.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "What are the main limitations of current interpretation approaches?",
+   "a": "No single method fully explains a model. Perturbation analyses depend on the model being reliable under distribution shift, so misleading interpretations can come from poor generalization rather than from the interpretability method. Extracting insight is also labor-intensive and human-driven.",
+   "kw": [
+    "model ensembles"
+   ],
+   "info": "The authors recommend combining complementary methods and checking whether interpretations are stable across an ensemble of models trained from different random initializations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Interpreting cis-regulatory insights",
+   "q": "How could large language models (LLMs) help automate interpretation?",
+   "a": "In two ways. First, agentic AI systems could run interpretability tools, synthesize results and propose virtual perturbations. Second, LLM-guided global surrogate modeling could discover interpretable functions through closed-loop program search, as in AlphaEvolve and LLMGEN.",
+   "kw": [
+    "agentic AI",
+    "AlphaEvolve",
+    "LLMGEN"
+   ],
+   "info": "Agentic systems are largely unproven in genomics and may be vulnerable to hallucination or poor-quality reasoning.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluating generalization",
+   "q": "Why is evaluating generalization especially important for seq2func models?",
+   "a": "Models are trained on measured regulatory activity but are mainly used to predict unassayed sequences, and model development has outpaced rigorous evaluation. Generalization is framed as distribution shift, which comes in three forms: covariate, label and concept shift.",
+   "kw": [
+    "distribution shift"
+   ],
+   "info": "Table 1 links deployment scenarios to shift types. Natural variants, motif rearrangements, evolutionary rearrangements and synthetic sequences are covariate shift. Cross-experiment transfer is label shift. Cross-cell-state or cross-cell-type transfer is concept shift.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluating generalization",
+   "q": "What is covariate shift in seq2func deployment?",
+   "a": "The input sequence distribution changes while the sequence-function mapping stays the same. This is the most common shift. It ranges from SNVs close to the reference genome, through variant combinations, motif rearrangements and structural variants, to de novo designed sequences at the extreme.",
+   "kw": [
+    "covariate shift"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluating generalization",
+   "q": "What is wrong with standard random or chromosome-holdout splits?",
+   "a": "They keep a lot of local and compositional sequence similarity between training and test sets. Compositionally similar or homologous sequences on different chromosomes can leak information. These splits also do not test SNVs or other edits, so they can substantially overstate robustness for variant effect prediction.",
+   "kw": [
+    "data leakage",
+    "chromosome holdout"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluating generalization",
+   "q": "What is label shift?",
+   "a": "Inputs are similar, but different assays measuring the same biology give systematically different readouts. This is typical in cross-assay or zero-shot tests, such as predicting MPRA perturbation effects, CRISPR screens, or chromatin accessibility and expression QTLs.",
+   "kw": [
+    "label shift",
+    "Tn5 bias",
+    "QTL"
+   ],
+   "info": "Assays differ in noise structure, bias and dynamic range. Some distortions can be partly corrected (for example Tn5 insertion bias in ATAC-seq), but many are poorly characterized. Apparent cross-assay performance differences may reflect the measurement process rather than biology.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluating generalization",
+   "q": "What is concept shift?",
+   "a": "The sequence-function mapping itself changes. This happens when a model trained in one cell type, cellular state or species is applied to another, where TF concentrations, chromatin state and regulatory programs differ. Its severity depends on how biologically divergent the contexts are.",
+   "kw": [
+    "concept shift"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluating generalization",
+   "q": "What would better evaluation look like?",
+   "a": "Evaluations should test graded levels of distribution shift matched to the intended application. This separates models that fail under modest shift from those that degrade gracefully. Shared benchmarks should also make the shifts explicit, define clear metrics and emphasize perturbational data from controlled systems.",
+   "kw": [
+    "GAME",
+    "benchmarks"
+   ],
+   "info": "GAME is mentioned as an emerging community framework for standardized benchmarking. Regulatory genomics still lacks a long-running benchmark ecosystem comparable to ImageNet or CASP.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Generalization gap",
+   "q": "What is the main cause of the generalization gap?",
+   "a": "According to the authors, mainly the structure of the training data rather than model architecture or capacity. Genome-wide assays aligned to a reference genome sample a narrow, biased region of regulatory sequence space, even at genome scale.",
+   "kw": [
+    "training data bias"
+   ],
+   "info": "Models trained on observational data tend to learn coarse statistical associations, a 'blurry vision' of the regulatory genome, rather than the fine-grained mechanisms needed to predict new variation.",
+   "concl": "Strong performance on held-out genomic regions does not guarantee reliable predictions for new variants, engineered sequences or other regulatory configurations."
+  },
+  {
+   "type": "qa",
+   "section": "Generalization gap",
+   "q": "Does fine-tuning on personal genomes and transcriptomes fix variant prediction?",
+   "a": "Only partly. It improves predictions for the genes and individuals in the training data but generalizes poorly to unseen genes or populations. Ancestry, linkage disequilibrium and purifying selection restrict human variants to narrow, highly correlated neighborhoods around the reference.",
+   "kw": [
+    "personal genomes",
+    "Zoonomia",
+    "Vertebrate Genomes Project"
+   ],
+   "info": "Cross-species diversity from Zoonomia and the Vertebrate Genomes Project adds variation. Its value for regulatory generalization is uncertain, because corresponding regions across species may not share the same regulatory function.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Generalization gap",
+   "q": "What is the resolution-coverage tradeoff?",
+   "a": "Perturbation assays such as MPRAs and CRISPR screens give a high-resolution, causal view of regulatory mechanisms but cover only individual loci or small sets of loci. Genome-wide profiling assays cover the whole genome but have low mechanistic resolution.",
+   "kw": [
+    "MPRA",
+    "CRISPRi",
+    "perturbation assays"
+   ],
+   "info": "Fig. 3: MPRA libraries introduce dense position-specific mutations within a cis-regulatory element (intra-CRE). CRISPRi libraries perturb whole CREs, singly or in combination, in their native chromatin (inter-CRE), testing CRE necessity, CRE-CRE interactions and long-range effects.",
+   "concl": "Bridging this tradeoff is a central obstacle for seq2func modeling."
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - generalization across cellular contexts",
+   "q": "Why is applying a seq2func model to a new cell type a concept-shift problem?",
+   "a": "Models predict static snapshots from sequence alone and implicitly assume a fixed cellular context. Chromatin state and trans-acting factors (TFs, cofactors, chromatin regulators and their abundances) affect output but are not model inputs, so the same sequence can map to different outputs.",
+   "kw": [
+    "concept shift",
+    "trans-acting factors"
+   ],
+   "info": "Current responses include scaling multitask training across many cell types; adding auxiliary measurements such as chromatin accessibility or histone profiles (which ties the model to assay availability and quality); and cross-assay imputation of missing measurements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - generalization across cellular contexts",
+   "q": "What is the idea behind conditioning seq2func models on cell-state embeddings, and what are its limits?",
+   "a": "Low-dimensional cell-state embeddings from cell-atlas foundation models are fed to the seq2func model, so that the same sequence features can be interpreted differently across contexts. This only works as well as the embeddings, and current single-cell foundation models struggle to capture cellular dynamics and perturbation responses.",
+   "kw": [
+    "cell-state embeddings",
+    "FiLM",
+    "hypernetworks"
+   ],
+   "info": "Integration methods range from simple concatenation to hypernetworks and feature-wise linear modulation (FiLM). Channel-wise gating, low-rank adaptation and mixture-of-experts are largely unexplored here. Conditioning may allow interpolation between related cell states, but extrapolation to contexts that need new motifs or interactions is harder.",
+   "concl": "The authors propose a bidirectional interface between seq2func models and transcriptomic foundation models, as a step toward mechanistically grounded virtual-cell models."
+  },
+  {
+   "type": "qa",
+   "section": "Integrating local perturbations",
+   "q": "Why do naive ways of adding perturbation data to genome-wide models fail?",
+   "a": "Joint training from scratch suffers from extreme data imbalance (thousands of measurements at a few loci), which biases the model toward locus-specific effects. Naive fine-tuning risks catastrophic forgetting elsewhere in the genome, and repeating it across loci produces many locus-specialized models.",
+   "kw": [
+    "catastrophic forgetting",
+    "LoRA"
+   ],
+   "info": "Restricting updates to adaptor modules, as in low-rank adaptation (LoRA), avoids forgetting. However, the base model stays unchanged, so regulatory knowledge does not accumulate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Integrating local perturbations",
+   "q": "What continual learning strategies could integrate new data without forgetting?",
+   "a": "Replay-based methods mix stored or generated past examples with new data. Regularization-based methods, such as elastic weight consolidation, penalize changes to parameters important for earlier tasks. Architecture-based methods add parameters, keeping locus-specific effects in local parameters while shared components learn new logic.",
+   "kw": [
+    "continual learning",
+    "elastic weight consolidation",
+    "replay"
+   ],
+   "info": "Overparameterized models have many near-equivalent solutions in flat regions of the loss landscape, and continual learning exploits these weakly constrained directions. Nested learning extends the architecture-based idea but has unclear practical advantages. Which strategy works best for perturbation data is unresolved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Integrating local perturbations",
+   "q": "Why is continual learning a natural fit for regulatory genomics?",
+   "a": "It can integrate heterogeneous data (perturbation assays, genome-wide profiles, TF-binding affinities) as they arrive. Because cis-regulatory mechanisms recur across the genome, insight from one locus can improve other loci (forward transfer), and new loci can sharpen previously learned mechanisms (backward transfer).",
+   "kw": [
+    "forward transfer",
+    "backward transfer"
+   ],
+   "info": "The model must also cope with shifts in biological scale, assay modality, measurement bias and technical noise.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing informative perturbations",
+   "q": "What are the trade-offs between perturbation library designs?",
+   "a": "Saturation mutagenesis is tractable but mainly probes additive effects. Partial random mutagenesis samples more complex interactions but is hard to interpret without explicit modeling. Motif-centric designs are biased toward known mechanisms. Fully random libraries sample broadly but are largely inactive in mammalian cells, although they can drive expression in yeast.",
+   "kw": [
+    "saturation mutagenesis",
+    "partial random mutagenesis",
+    "random libraries"
+   ],
+   "info": "The core tension: designs that keep enough biological structure to be interpretable probe only a narrow range of mechanisms, while broader designs are harder to create and interpret.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing informative perturbations",
+   "q": "What is evolution-inspired perturbation?",
+   "a": "Introducing variation through deletions, inversions, translocations and mutations that keep aspects of native sequence composition and arrangement. Genome-shuffle-seq is given as an experimental example.",
+   "kw": [
+    "Genome-shuffle-seq",
+    "EvoAug"
+   ],
+   "info": "Related in silico augmentations, EvoAug and phylogenetic alignments, have improved performance. EvoAug is two-phase: training with label-preserving sequence transformations, then fine-tuning on unaugmented data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing informative perturbations",
+   "q": "How does active learning differ in regulatory genomics from standard machine learning?",
+   "a": "There is usually no fixed pool of unlabeled data, so design has two coupled steps. First, a candidate reservoir is built (through perturbation schemes, design methods or generative models). Then an informative batch is selected for measurement with an acquisition function.",
+   "kw": [
+    "active learning",
+    "acquisition function"
+   ],
+   "info": "Either step can fail. Common acquisition heuristics (uncertainty, model disagreement, sequence diversity) are only weakly linked to information gain. For example, models may be highly uncertain about homopolymers that reveal little about mechanism.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing informative perturbations",
+   "q": "What is the 'AI-first' view of experimental design?",
+   "a": "Generate the data that most improve AI models, rather than data that answer predefined biological questions. This may favor perturbations with limited individual interpretability but higher aggregate training value.",
+   "kw": [
+    "AI-first",
+    "cost-aware design"
+   ],
+   "info": "The field lacks a cost-aware framework for comparing how different perturbation regimes improve models as data accumulate. The best regime may also change as models mature and their remaining failures become more specific.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and outlook",
+   "q": "What is causal refinement?",
+   "a": "A closed-loop process (Fig. 4c). A genome-wide pretrained model identifies loci or contexts with predictive gaps, active learning prioritizes targeted perturbation experiments, and continual learning integrates the results while preserving genome-wide performance.",
+   "kw": [
+    "causal refinement",
+    "active learning",
+    "continual learning"
+   ],
+   "info": "It can include MPRA, CRISPRi and TF-binding affinity data, as well as measurements of splicing regulation and transcriptional dynamics. It replaces the current static paradigm of training once on observational data.",
+   "concl": "Repeating this loop is proposed as the path to self-improving models that align progressively better with causal regulatory mechanisms."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and outlook",
+   "q": "Where should causal refinement start, and how could it extend to harder systems?",
+   "a": "In human cell lines, where genome-wide profiling and high-throughput perturbation screens can be generated efficiently. For primary cells, tissues, developmental trajectories and disease models, genome-wide ATAC-seq and RNA-seq can set a baseline, and targeted perturbations then turn correlations into mechanistic learning.",
+   "kw": [
+    "ATAC-seq",
+    "developmental trajectories"
+   ],
+   "info": "As cis-regulatory knowledge accumulates, smaller perturbation campaigns should be enough to adapt models to new systems. Single-cell transcriptomic foundation models show the same weak generalization under perturbation, which indicates that scaling observational data alone is insufficient.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and outlook",
+   "q": "What do the authors see as needed for seq2func models to be widely useful?",
+   "a": "A community-driven effort in which experimental groups contribute perturbation data and get better models in return. Models also need user-facing interfaces, fast and memory-efficient inference, and calibrated uncertainty estimates, possibly through compact models made with knowledge distillation.",
+   "kw": [
+    "knowledge distillation",
+    "uncertainty"
+   ],
+   "info": "Emerging directions include chat-based interfaces, automated analysis pipelines and agentic AI for experiment design.",
+   "concl": "The goal is a mechanistically grounded world model that improves iteratively, not a full digital twin of the cell."
+  },
+  {
+   "type": "note",
+   "section": "Generalization gap",
+   "text": "How useful is cross-species sequence diversity (Zoonomia, Vertebrate Genomes Project) for regulatory generalization, given that corresponding regions may not share regulatory function? The paper leaves this open."
+  },
+  {
+   "type": "note",
+   "section": "Designing informative perturbations",
+   "text": "Which perturbation regime (saturation, partial random, motif-centric, random, evolution-inspired) gives the largest generalization gain per unit cost? No cost-aware framework exists yet."
+  },
+  {
+   "type": "note",
+   "section": "Conclusions and outlook",
+   "text": "How would causal refinement work in developmental systems with scarce perturbation data? Worth going back to the suggested strategy of an ATAC-seq/RNA-seq baseline followed by targeted perturbations."
+  }
+ ]
+}

@@ -1,0 +1,602 @@
+{
+ "id": "Roback_2026",
+ "title": "A pangenome framework uncovers the role of deletions in repeated evolution of cave-derived traits",
+ "link": "https://doi.org/10.1101/gr.281719.125",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Roback_2026_GenomeRes_pangenome_deletions_cave_traits.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Structural variants (SVs) are increasingly seen as drivers of adaptation, but they have been studied much less than single-nucleotide variation. The authors ask how large-scale genomic changes shape repeated evolution of cave traits in Astyanax mexicanus.",
+   "kw": [
+    "structural variants",
+    "repeated evolution"
+   ],
+   "info": "They built one of the first pangenome graphs from a naturally evolving vertebrate and used it to find SVs in 120 fish from 11 populations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings in the abstract?",
+   "a": "More than 2400 high-confidence cave-specific deletions are enriched in pathways for vision, metabolism and behavior, and they cluster nonrandomly in QTL for cavefish traits. In 67 genes, each independent cave lineage has its own different deletion. 99% of these reused genes contain selective sweeps, compared with 8% to 15% of genes without SVs.",
+   "kw": [
+    "deletions",
+    "QTL",
+    "selective sweeps"
+   ],
+   "info": "",
+   "concl": "Deletions probably rose in frequency through repeated positive selection rather than drift. Recurrent deletions have repeatedly contributed to cave-adapted phenotypes."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How are SVs defined?",
+   "a": "SVs are sequence variants of 50 bp or more. They include inversions, translocations, duplications or insertions of novel sequence, and deletions.",
+   "kw": [
+    "structural variants"
+   ],
+   "info": "Because they are large and abundant, SVs account for much more sequence variation than SNPs. SVs matter under strong selection, for example high-elevation hypoxia and domestication. Convergent SVs are known in sheep and goats and in ragweed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Can loss-of-function SVs like deletions be adaptive?",
+   "a": "Yes. Deletions are generally assumed to be deleterious, but they can create evolutionary novelties such as protection against disease, and they can contribute to adaptation.",
+   "kw": [
+    "loss of function",
+    "deletions"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why have SVs been hard to study at the population level?",
+   "a": "SVs are large and complex, short-read sequencing has limits, and detection sensitivity is reduced. Together these have made genome-wide discovery and genotyping of SVs across populations difficult.",
+   "kw": [
+    "short reads"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a pangenome and why use one for SVs?",
+   "a": "A pangenome is an alignment of several contiguous whole-genome assemblies that captures more of the diversity within a species. Compared with a linear reference, it allows SVs to be genotyped from short reads and reduces false negatives when discovering polymorphic SV alleles.",
+   "kw": [
+    "pangenome graph"
+   ],
+   "info": "First conceptualized by Tettelin et al. 2005. Pangenomes exist mostly for agricultural species. Only a few exist for wild populations, for example Heliconius butterflies (SVs linked to nervous system development) and the house finch (disease resistance).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is A. mexicanus a good system for studying repeated evolution?",
+   "a": "It has colonized caves independently at least twice, which produced two lineages (lineage 1 and lineage 2), each with surface and cave populations. Cave populations probably diverged fewer than 200,000 generations ago and still exchange genes with surface fish and with other caves.",
+   "kw": [
+    "Astyanax mexicanus",
+    "lineages"
+   ],
+   "info": "Phenotypic adaptation to dark, resource-poor caves has proceeded similarly across cave populations, even though the caves differ somewhat in ecology.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which cave-derived traits are relevant here, and what was already known about their genetics?",
+   "a": "Cavefish have lost eyes and pigment, cannot regenerate heart tissue normally after injury, have altered metabolism, and behave differently (no schooling, reduced aggression, hyperphagia). Before this study only a few causal SNPs were known: missense mutations in mc4r (appetite) and insra (insulin signaling), and a premature termination codon in pde6c (vision).",
+   "kw": [
+    "mc4r",
+    "insra",
+    "pde6c"
+   ],
+   "info": "The main structural variant known before this study was the set of different oca2 deletions in the two lineages, linked to depigmentation and sleep loss (from the Discussion).",
+   "concl": "There is a substantial gap in understanding the genetic basis of repeated cave evolution, which this paper addresses with SVs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of study design",
+   "q": "Which samples and data types were used?",
+   "a": "They used 120 A. mexicanus genomes from 4 surface and 7 cave populations: 56 in lineage 1 and 64 in lineage 2. The data are 4 reference assemblies (Río Choy surface; Molino, Pachón and Tinaja caves), short-read WGS from 107 fish, and linked-read WGS from 9 individuals.",
+   "kw": [
+    "WGS",
+    "linked reads"
+   ],
+   "info": "Lineage 1: Río Choy, Mante and Jalpan (surface); Molino, Escondido and Vásquez (cave). Lineage 2: Rascón (surface); Pachón, Japones, Tigre and Tinaja (cave). The 107 short-read samples are 19 surface and 31 cave fish in lineage 1, and 12 surface and 45 cave fish in lineage 2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of study design",
+   "q": "What do the terms pangenome SVs, PGsr, focal deletions and control genes mean?",
+   "a": "Pangenome SVs are insertions and deletions found in the graph built from the 4 assemblies. PGsr (pangenome plus short-read WGS) is the genotype data set from mapping short reads to the graph. Focal deletions are cave-associated deletions that were called by both methods, are absent from all sampled surface fish, and reach an allele frequency of at least 0.8 in a cave.",
+   "kw": [
+    "PGsr",
+    "focal deletions"
+   ],
+   "info": "Control genes have no SV insertions or deletions anywhere in the gene structure in any population in the pangenome. All further analyses focus only on deletions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Pangenome graph construction",
+   "q": "How large is the pangenome graph?",
+   "a": "The graph has 52,571,860 nodes and 72,140,066 edges. The three cave genomes added about 400 Mbp of non-surface sequence: 176 Mbp from Tinaja, 131 Mbp from Molino and 94 Mbp from Pachón.",
+   "kw": [
+    "pangenome graph"
+   ],
+   "info": "The number of new nonreference nodes did not plateau, so adding more genomes would keep growing the graph. Río Choy surface is the reference frame, so all variation and coordinates are relative to Río Choy.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "How many indel and SV sites were found in the pangenome?",
+   "a": "Among top-level variants (LV = 0) on chromosomes, there were 1,100,450 sites with 1 bp indels, 1,359,534 with small insertions, 1,489,289 with small deletions, 236,786 with SV insertions and 216,339 with SV deletions. Because some sites are multiallelic, these correspond to 338,631 unique SV insertion alleles and 255,331 unique SV deletion alleles.",
+   "kw": [
+    "indels",
+    "multiallelic sites"
+   ],
+   "info": "Small means under 50 bp. SVs are 50 bp to 100,000 bp. 80.31% of SV insertions and deletions are 1 kb or shorter. SV alleles are shared more often within a lineage than between lineages.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "How much sequence do SVs affect per cave genome?",
+   "a": "Insertion alleles add up to an average of 138 Mbp per cave morph and deletion alleles to 106 Mbp. Lineage 2 genomes (Pachón, Tinaja) have more base pairs affected, probably because the Río Choy reference belongs to lineage 1 and is closer to Molino.",
+   "kw": [
+    "reference bias"
+   ],
+   "info": "That insertions cover more base pairs than deletions matches subterranean isopods, decapods and mollusks, which have larger genomes than their surface relatives.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "How common are duplications and translocations between the four assemblies?",
+   "a": "Each pairwise comparison gave about 1000 to 2300 calls for both duplications and translocations, far fewer than insertions and deletions. The Pachón vs Tinaja comparison had fewer of them (1027 translocations, 1366 duplications) than either compared with Molino.",
+   "kw": [
+    "SyRI",
+    "duplications",
+    "translocations"
+   ],
+   "info": "This fits other within-species studies, where indels outnumber translocations and duplications by more than two orders of magnitude.",
+   "concl": "Pachón and Tinaja (same lineage) are structurally more similar to each other than to Molino."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "How many genes carry SVs, and does gene length matter?",
+   "a": "Of 26,736 protein-coding genes, 18,016 (67%) have SV deletions and 17,715 (66%) have SV insertions in an intron, exon or UTR. Median gene length is 4847 bp for genes without SVs, 6538 bp with insertions, 7177 bp with deletions and 23,880 bp with both.",
+   "kw": [
+    "gene length",
+    "mutational target"
+   ],
+   "info": "All groups differ (Wilcoxon rank-sum, all P < 0.01, average Cohen's d = 0.33). The fraction of each gene deleted is bimodal: most genes lose 25% or less, but a notable group is deleted completely.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "Where in the genome do SVs fall compared with random placement?",
+   "a": "50.85% of SV deletions and 41.55% of SV insertions are in introns. In permutation tests, both overlap CDS less often than random (P < 0.005) and introns more often than random (deletions P = 0.04, insertions P < 0.005). Intergenic regions have more insertions and fewer deletions than expected (P < 0.005).",
+   "kw": [
+    "permutation test",
+    "negative selection"
+   ],
+   "info": "SV deletions hit exons of 2397 protein-coding genes and SV insertions hit exons of 1332. Insertions are much more overrepresented in introns than deletions are.",
+   "concl": "Negative selection probably removes SVs from coding regions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "What are the cave SV insertions made of?",
+   "a": "On average 78.6% of insertion sequence is repetitive. The largest contributors are retroelements (30.7%, of which 21.3% are LTR elements) and DNA transposons (19.3%).",
+   "kw": [
+    "transposable elements",
+    "RepeatMasker"
+   ],
+   "info": "Transposable elements tend to land in noncoding regions, especially introns and gene flanks. This may explain why insertions are more overrepresented than deletions in introns and intergenic regions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of pangenome SVs",
+   "q": "What share of predicted high-impact variants are SVs?",
+   "a": "According to SnpEff, SV deletions make up 30.92% of all high-impact variants and SV insertions 10.65%.",
+   "kw": [
+    "SnpEff"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Linked-read deletions",
+   "q": "How does linked-read SV calling compare with the pangenome?",
+   "a": "Linked reads aligned to the linear Río Choy reference gave fewer deletion calls. The pangenome found about 1.7 times more deletions in Molino and 1.5 times more in Pachón and Tinaja.",
+   "kw": [
+    "linked reads",
+    "linear reference"
+   ],
+   "info": "Linked reads give an independent deletion call set that does not use the graph. It is used later as a consensus filter.",
+   "concl": "SV detection is more sensitive with a pangenome graph than with a linear reference."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Linked-read deletions",
+   "q": "Which populations had the fewest and most deletions in the linked-read data?",
+   "a": "Jalpan, the lineage 1 surface population closest to Río Choy, had the fewest (75,975). Rascón, the lineage 2 surface population, had the most (94,619), which reflects the deepest divergence in A. mexicanus, between lineage 1 and lineage 2.",
+   "kw": [
+    "Jalpan",
+    "Rascón"
+   ],
+   "info": "Even surface fish of the same lineage and ecotype differ by nearly 76,000 deletions. Deletions counted as shared needed 90% reciprocal overlap and were shared more often within lineages than between them, consistent with at least two cave lineages.",
+   "concl": "Surface populations from different lineages differ a lot structurally, not only in SNP-based measures such as DXY."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Focal deletions",
+   "q": "How were deletions genotyped across populations?",
+   "a": "107 short-read WGS samples from nine populations were mapped to the pangenome and genotyped, giving 279,995 PGsr deletions.",
+   "kw": [
+    "vg giraffe",
+    "genotyping"
+   ],
+   "info": "This only genotypes SVs already in the graph and does not discover new variants in the WGS data, so there are probably many false negatives. The data set is not an exhaustive list of A. mexicanus SVs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Focal deletions",
+   "q": "How did they find deletions associated with the cave morph?",
+   "a": "They ran SnpSift CaseControl separately for each lineage: allelic model, Fisher's exact test, Holm-Bonferroni correction, cave fish as cases and surface fish as controls. This gave 23,032 cave-associated deletions in lineage 1 and 6606 in lineage 2 (adjusted P < 0.05). Of these, 14,050 (lineage 1) and 5246 (lineage 2) were supported by linked-read calls.",
+   "kw": [
+    "SnpSift CaseControl",
+    "Fisher's exact test"
+   ],
+   "info": "Controls were Río Choy and Mante for lineage 1 and Rascón for lineage 2. The authors attribute the lower lineage 2 count to SnpSift artifacts rather than truly fewer deletions (see Methods).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Focal deletions",
+   "q": "Are cave-associated deletions present as standing variation in surface fish?",
+   "a": "In lineage 1, 3437 linked-read-supported cave-associated deletions (24%) are minor alleles in Río Choy and/or Mante (mean deletion frequency 0.11 and 0.10). In lineage 2, 3222 (61%) are minor alleles in Rascón (mean 0.09).",
+   "kw": [
+    "standing genetic variation"
+   ],
+   "info": "A minor allele here means a surface frequency above 0 and at most 0.2. The lower lineage 1 share is probably an artifact of the reference: a deletion carried by the Río Choy reference genome cannot be called.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Focal deletions",
+   "q": "How was the final set of focal deletions defined, and how many are there?",
+   "a": "Cave-associated deletions from both lineages were combined. Any deletion present at any frequency in any sampled surface population was removed, and a deletion frequency of at least 0.8 in at least one cave was required. This left 2431 unique focal deletions.",
+   "kw": [
+    "focal deletions"
+   ],
+   "info": "73% of lineage 1 focal deletions and 79% of lineage 2 focal deletions are unique to their lineage. 99% and 97% of these unique deletions occur in two or more caves of that lineage. About 26% are shared between lineages, which could reflect introgression, standing variation not sampled in surface fish, or similar de novo mutations.",
+   "concl": "The 2431 focal deletions are strong candidates for contributing to cave-derived phenotypes."
+  },
+  {
+   "type": "note",
+   "section": "Results - Focal deletions",
+   "text": "About 26% of focal deletions are shared between lineages. The paper leaves open whether this comes from introgression between caves, surface standing variation that was not sampled, or similar de novo mutations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of focal deletions",
+   "q": "What do focal deletions look like in size and location?",
+   "a": "96% are 1 kb or shorter (mean 202 bp, median 80 bp). Only 14 fall in exons, fewer than expected (permutation P < 0.003). They are not over- or underrepresented in introns (P = 0.303) or intergenic regions (P = 0.376).",
+   "kw": [
+    "purifying selection"
+   ],
+   "info": "For the 1530 focal deletions inside protein-coding genes, start positions along the gene follow a uniform distribution (chi-squared X = 9.098, df = 9, P = 0.4283).",
+   "concl": "Purifying selection removes deletions from coding regions. Focal deletions are not concentrated at particular positions along genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of focal deletions",
+   "q": "Are focal deletions associated with mutagenic TG repeats, as in the stickleback pelvic enhancer?",
+   "a": "Only a few are: 6 deletions in lineage 1 and 4 in lineage 2 contain a TG repeat of 20 bp or more (TG10+), and none of them are shared between lineages or overlap. One notable case is a 1410 bp deletion at a 54 bp TG repeat (TG27), fixed in Molino and Escondido, starting 5413 bp upstream of ptprdb.",
+   "kw": [
+    "TG repeats",
+    "ptprdb"
+   ],
+   "info": "In humans, ptprdb is associated with diabetes risk and insulin resistance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Characteristics of focal deletions",
+   "q": "How often is the same deletion or the same gene hit in both lineages?",
+   "a": "Only 13 focal deletions are significantly cave-associated in both lineages. However, 67 protein-coding genes carry focal deletions at different positions in each lineage (gene reuse). These reuse genes are about three times longer than other genes with focal deletions (median 231,341 vs 74,387 bp, Wilcoxon P < 0.0001).",
+   "kw": [
+    "gene reuse",
+    "mutational target size"
+   ],
+   "info": "",
+   "concl": "Genomic biases such as gene length influence which genes are hit repeatedly in independent bouts of evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional impacts of focal deletions",
+   "q": "Which pathways are enriched among genes with focal deletions?",
+   "a": "Ingenuity pathway analysis (IPA) found 224 enriched pathways in lineage 1 and 6 in lineage 2 (Benjamini-Hochberg adjusted P < 0.05). All 6 lineage 2 pathways were also enriched in lineage 1: RHO GTPase cycle, autism signaling, synaptic adhesion-like molecules, ROBO SLIT signaling, GABAergic receptor signaling (enhanced), and neurexins and neuroligins.",
+   "kw": [
+    "IPA",
+    "pathway enrichment"
+   ],
+   "info": "Lineage 2 has fewer pathways because it had fewer cave-associated deletions to start with. Genes with deletions within 5 kb upstream gave 4 pathways in lineage 1 and 1 in lineage 2, none shared. Genes with deletions within 5 kb downstream gave none. Enriched pathways relate to metabolism, eyes, heart and behavior.",
+   "concl": "Within shared pathways, mostly different genes carry deletions in each lineage, so convergence is at the pathway level rather than the gene level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional impacts of focal deletions",
+   "q": "Do fixed focal deletions affect gene expression in Pachón?",
+   "a": "They used 155 deletions fixed in Pachón (FST = 1 vs Río Choy), which affect 134 genes in the gene body or within 5 kb up- or downstream. Compared with control genes, these genes were not more likely to be differentially expressed in 54 hpf eyes or liver. They were more likely to be differentially expressed in heart at 7 days after injury (Fisher's exact P < 0.05), but not at 3 or 14 days.",
+   "kw": [
+    "RNA-seq",
+    "differential expression",
+    "heart regeneration"
+   ],
+   "info": "A hypergeometric test gave the same pattern. The authors suggest that multiple time points capture dynamic expression that single time-point data (liver, eye) miss.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional impacts of focal deletions",
+   "q": "How many genes with fixed deletions are differentially expressed in each tissue?",
+   "a": "Of the 134 genes, 20 are differentially expressed in eye, 30 in liver and 33 in heart (all time points), and 14 in more than one tissue. 85% of the differentially expressed deletion genes in eye are downregulated in cavefish.",
+   "kw": [
+    "downregulation"
+   ],
+   "info": "WGS genotypes and RNA-seq do not come from the same individuals, which is why only fixed deletions were used.",
+   "concl": "A subset of deletions probably affects expression and therefore cave phenotypes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional impacts of focal deletions",
+   "q": "Are focal deletions enriched in QTL for cave traits?",
+   "a": "Yes. Of the 155 deletions fixed in Pachón, 98 lie inside Pachón QTL regions, more than expected by chance (permutation P < 0.005). This is also more than expected from the background rate of Pachón pangenome deletions in QTL (Fisher's exact P < 0.0005).",
+   "kw": [
+    "QTL",
+    "permutation test"
+   ],
+   "info": "QTL from Pachón x Río Choy crosses, mapped to the Río Choy reference by Wiese et al. 2024. Examples are reduced pigmentation and expanded taste buds.",
+   "concl": "Focal deletions are enriched in regions linked to cave-derived traits, which supports a role in their genetic basis."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Selection",
+   "q": "How did they test whether genes with deletions are under selection?",
+   "a": "They called selective sweeps in 5 kb windows with diploS/HIC in Molino, Pachón and Tinaja. A gene counted as under selection in a population if at least one window had a hard or soft sweep call, and the deletion and the sweep had to occur in the same population.",
+   "kw": [
+    "diploS/HIC",
+    "selective sweeps"
+   ],
+   "info": "Three gene sets were compared. PG genes (n = 16,617) have pangenome deletions not associated with caves. Focal genes (n = 1260) have focal deletions. Reuse genes (n = 67) have different focal deletions in each lineage. Each gene goes into its highest category.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Selection",
+   "q": "What fraction of each gene set shows evidence of selection?",
+   "a": "53% of PG genes, 62% of focal genes and 99% of reuse genes (pairwise chi-squared, all P < 0.0001). For control genes without SVs (n = 5265), only 8% in Molino, 9% in Pachón and 15% in Tinaja.",
+   "kw": [
+    "gene reuse",
+    "control genes"
+   ],
+   "info": "Caveat: this shows that a deletion and a sweep co-occur in a gene in the same population, not that selection acted on the deletion itself.",
+   "concl": "Genes with cave-associated deletions, especially reused genes, are much more likely to show population-specific selection. This supports a role for deletions in cave adaptation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is gene reuse with different deletions in each lineage notable?",
+   "a": "There are often many mutational routes to the same phenotype, which makes reuse of the same gene unlikely. Finding it suggests constraints on evolutionary paths and/or especially advantageous changes at certain loci. Since 99% of reuse genes have sweeps vs 8% to 15% of control genes, the pattern is unlikely to come from chance or relaxed constraint.",
+   "kw": [
+    "genotypic redundancy",
+    "drift vs selection"
+   ],
+   "info": "Since Darwin, loss-of-function traits in cave animals have often been attributed to drift and disuse. Earlier genomic work in Astyanax showed that selection also plays a role.",
+   "concl": "High-frequency deletions in the same genes in both lineages likely reflect repeated selection in cave populations."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is pcsk2 a strong candidate?",
+   "a": "pcsk2 has different deletions in the two lineages: an 81 bp deletion in the fifth of 11 introns in lineage 2 and a 59 bp deletion in the last intron in lineage 1. It also shows evidence of selection. Reduced PCSK2 (PC2) is implicated in Prader-Willi syndrome (insatiable hunger, often abnormal eyesight), and Pcsk2-null mice have impaired insulin and glucagon processing.",
+   "kw": [
+    "pcsk2",
+    "Prader-Willi syndrome"
+   ],
+   "info": "Possible inconsistency: Fig. 6A seems to label the 81 bp deletion as lineage 1 (Molino, Escondido, Vásquez) and the 59 bp deletion as lineage 2 (Pachón, Tinaja, Tigre), the opposite of the text. Check the supplement.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is ksr2 a strong candidate?",
+   "a": "ksr2 has three focal deletions: 67 bp in the first of 22 introns (lineage 2), 57 bp in the sixth intron (lineage 1) and 66 bp in the penultimate intron (lineage 2). Ksr2 knockout mice are obese and glucose intolerant and show hyperphagia that does not respond to leptin. They are more obese and glucose intolerant than Mc4r knockouts.",
+   "kw": [
+    "ksr2",
+    "hyperphagia",
+    "insulin resistance"
+   ],
+   "info": "Human KSR2 lies in a region associated with obesity and type 2 diabetes. These phenotypes match cavefish traits: weight maintenance under starvation, hyperphagia, extra visceral fat, insulin resistance and high blood glucose.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What might drive gene reuse besides selection?",
+   "a": "Repeated, similar environmental pressures, as seen in stickleback pelvic loss, Poeciliidae in hydrogen sulfide springs and high-altitude waterfowl. Genomic biases such as gene length also play a role, since reuse genes are three times longer.",
+   "kw": [
+    "convergence",
+    "gene length"
+   ],
+   "info": "Differences in methods, timescales and selection strength limit comparisons with other pangenome studies of local adaptation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the ndst1b example?",
+   "a": "ndst1b is one of 14 genes with focal deletions that are differentially expressed in several tissues, which suggests pleiotropy. It has a lineage 2 deletion in its second intron, is downregulated in cavefish eye, liver and heart, and lies in Pachón QTL for eye size, dentition and body condition.",
+   "kw": [
+    "ndst1b",
+    "neural crest",
+    "pleiotropy"
+   ],
+   "info": "Knockdown in zebrafish and mice alters neural crest development: craniofacial and eye defects, shorter body and pectoral fins, and changed chromatophore distribution. The intronic location and downregulation suggest a possible regulatory effect.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What lines of evidence support a role for deletions in cave phenotypes?",
+   "a": "Fixed deletions fall nonrandomly within cave-trait QTL. Focal deletions affect genes with known roles in cave-like traits. Focal deletions are enriched in relevant pathways (for example circadian rhythm, melatonin, insulin secretion, phototransduction and cardiac hypertrophy signaling). In addition, genes with deletions more often carry selection signatures than control genes.",
+   "kw": [
+    "convergence"
+   ],
+   "info": "The authors propose transgenesis and gene editing to test candidate deletions functionally.",
+   "concl": "Deletions may contribute to adaptive trait evolution and enable convergent solutions to similar ecological challenges."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Functional tests are still needed. Do the intronic deletions in pcsk2, ksr2 and ndst1b actually change expression or regulation? CRISPR or transgenic tests in surface fish would show this."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Pangenome construction and genotyping",
+   "q": "How was the pangenome built and postprocessed?",
+   "a": "They ran Minigraph-Cactus (cactus v2.4.2 Docker image) on autosomal sequences of AstMex3_surface (Río Choy), AstMex3_Molino, AstMex3_Tinaja and AMEX_1.1 (Pachón), with Río Choy as the reference. The VCF was restricted to top-level variants (vcfbub -l 0) and then to lines where at least one cave assembly carried an alternate allele.",
+   "kw": [
+    "Minigraph-Cactus",
+    "vcfbub"
+   ],
+   "info": "They did not left-align with BCFtools norm because it gave variants new coordinates that were incompatible with the HAL, GFA and VG formats and with each other. Because the assemblies are haploid, each pangenome genotype is a single allele (1 instead of 1/1). Variants on unplaced scaffolds were excluded from summary statistics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Pangenome construction and genotyping",
+   "q": "How were variant types classified and short reads genotyped?",
+   "a": "After multiallelic sites were split, variants were classified by REF and ALT length: SVs are 50 bp to 100 kbp, insertions above 100 kbp are large structural insertions, and small indels are 2 to 49 bp. Short reads were mapped with vg giraffe (defaults) and surjected to BAM against the surface genome with vg surject.",
+   "kw": [
+    "vg giraffe",
+    "vg surject"
+   ],
+   "info": "Only SVs from 50 bp to 100 kbp were kept for downstream analyses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Repeats, rearrangements and annotation",
+   "q": "Which tools were used for repeats, rearrangements and functional annotation?",
+   "a": "Repeat libraries were built with RepeatModeler 2.0.4 (-LTRStruct) for each assembly, and insertion sequences were masked with RepeatMasker v4.1.7-p1. Duplications and translocations came from SyRI v1.6 with default parameters. Variant effects were annotated with SnpEff 5.2a using a database built from the AstMex3_surface NCBI GTF.",
+   "kw": [
+    "RepeatModeler",
+    "SyRI",
+    "SnpEff"
+   ],
+   "info": "Custom SnpEff interval annotations added population-specific sweeps, QTL from Wiese et al. 2024 and CDS IDs. Duplication counts include tandem and interspersed duplications but not tandem repeats.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Linked reads",
+   "q": "How were linked-read SVs called?",
+   "a": "10x Genomics linked reads from 9 individuals (Jalpan and Rascón surface fish; Escondido, Molino, Japones, Pachón, Tigre, Tinaja and Vásquez cave fish) were processed with Long Ranger v2.2.2 (mkfastq, mkref on GCF_023375975.1, wgs mode). Only SVs of 50 bp to 100 kb that passed all filters were kept.",
+   "kw": [
+    "Long Ranger",
+    "10x Genomics"
+   ],
+   "info": "Long Ranger filters use barcode and phasing information to reduce false positives. Deletions were counted as shared between populations with BEDTools intersect at 90% or more reciprocal overlap.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Cave candidate deletions",
+   "q": "How were high-confidence cave-specific deletions filtered?",
+   "a": "SnpSift CaseControl v5.2 was run per lineage, and P-values were Holm-Bonferroni corrected (pysam 0.22.1, statsmodels 0.14.0, adjusted P < 0.05). A PGsr deletion had to overlap a linked-read deletion from a cave fish of the same lineage by at least 50% reciprocally. Deletions overlapping linked-read surface calls (Jalpan or Rascón) by 50% or more were removed, and the ALT frequency had to be zero in all surface populations.",
+   "kw": [
+    "SnpSift",
+    "reciprocal overlap",
+    "Holm-Bonferroni"
+   ],
+   "info": "Lineage 2 likely has fewer hits because of lower power (12 controls and 45 cases vs 19 controls and 31 cases in lineage 1). Another reason is a reference artifact: SnpSift excludes multiallelic sites where Rascón carries an alternate allele, because no reference genotype exists in the controls. The known oca2 deletions are in the PGsr data but are not significant because of low genotype coverage.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Methods - Cave candidate deletions",
+   "text": "The well-known oca2 deletions did not pass the significance threshold because of low coverage. Lineage 2 is probably underdetected because of the lineage 1 reference and few Rascón controls. How many real cave deletions are missing from the 2431 focal set?"
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Selective sweeps",
+   "q": "How was diploS/HIC set up?",
+   "a": "SNPs were genotyped against Río Choy with GATK v4.4.0 GenotypeGVCFs for Río Choy, Rascón, Molino, Pachón and Tinaja. SNPs within indels or a 3 bp buffer were removed, SNPs were hard-filtered following GATK best practices, and repeats were masked with NCBI WindowMasker. Neutral, hard-sweep and soft-sweep data were simulated with discoal under separate surface and cave demographic models (from Moran et al. 2023) to train the network.",
+   "kw": [
+    "diploS/HIC",
+    "discoal",
+    "GATK"
+   ],
+   "info": "The cave model includes a harsh bottleneck at colonization, which reduces false sweep calls caused by low diversity after a bottleneck. Hard and soft sweeps were grouped because diploS/HIC separates them poorly. Only windows with consistent calls after swapping the demographic models were kept.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Permutation tests",
+   "q": "How did the permutation tests work?",
+   "a": "A custom script placed SVs at random positions within the chromosome lengths and created 300 permuted VCFs, which were then annotated with SnpEff. Observed overlaps with CDS, introns, intergenic regions, QTL and sweeps were compared with this random distribution.",
+   "kw": [
+    "permutation test"
+   ],
+   "info": "Fisher's exact test compared focal deletions with all population-specific pangenome deletions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Orthology and pathway analysis",
+   "q": "How were orthologs found and pathway analysis run?",
+   "a": "Human orthologs were inferred with OrthoFinder v3.0.1b1 from NCBI gene predictions. Only genes with single-copy human orthologs (1:1 and multi:1) went into IPA, run separately for gene-body, 5 kb upstream and 5 kb downstream deletion sets in each lineage (six runs; BH adjusted P < 0.05).",
+   "kw": [
+    "OrthoFinder",
+    "IPA"
+   ],
+   "info": "Caveat: several Astyanax genes can map to the same human ortholog. This can falsely suggest that the same gene is affected in both lineages and inflates apparent pathway overlap.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Gene expression",
+   "q": "How was the expression analysis done?",
+   "a": "Published Pachón vs Río Choy RNA-seq (liver, injured heart at 3, 7 and 14 days, 54 hpf eye) was mapped with STAR v2.7.11b (quantMode, no trimming) to the Amex 3.0 NCBI annotation and analyzed with DESeq2 (adjusted P < 0.05). Fixed deletions were defined by Weir and Cockerham FST = 1 (VCFtools). Enrichment was tested with Fisher's exact test and a hypergeometric test (R phyper, lower.tail = FALSE).",
+   "kw": [
+    "STAR",
+    "DESeq2",
+    "FST"
+   ],
+   "info": "The RNA-seq individuals were not genotyped, so only deletions fixed in Pachón were used. Control genes had no SVs in the gene or within 5 kb of the start and stop sites.",
+   "concl": ""
+  }
+ ]
+}

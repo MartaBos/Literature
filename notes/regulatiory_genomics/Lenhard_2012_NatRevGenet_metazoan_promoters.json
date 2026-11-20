@@ -1,0 +1,650 @@
+{
+ "id": "Lenhard_2012",
+ "title": "Metazoan promoters: emerging characteristics and insights into transcriptional regulation",
+ "link": "https://doi.org/10.1038/nrg3163",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Lenhard_2012_NatRevGenet_metazoan_promoters.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is this review about?",
+   "a": "It discusses recent findings on metazoan promoters, many made possible by next-generation sequencing technologies. The authors argue that these findings are changing the picture of what a gene promoter is and how it works.",
+   "kw": [
+    "promoters",
+    "next-generation sequencing"
+   ],
+   "info": "Promoters vary in their associated regulatory elements, sequence motifs and choice of transcription start sites. Newer features being characterized include histone modification types, nucleosome positioning, RNA polymerase pausing and novel small RNAs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a gene promoter?",
+   "a": "The locus overlapping the transcription start sites (TSSs), where the total regulatory input of a gene is integrated into the rate of transcriptional initiation. Its immediate role is to bind and correctly position the transcription initiation complex, whose main catalytic activity is DNA-dependent RNA polymerase.",
+   "kw": [
+    "promoter",
+    "TSS"
+   ],
+   "info": "A TSS is defined as the genomic nucleotide that is the first to be transcribed into a particular RNA. The review focuses on RNA polymerase II (RNAPII) promoters in Metazoa.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are metazoan promoters more complex than those of bacteria and single-cell eukaryotes?",
+   "a": "The regulatory elements controlling them can be spread over a larger genomic space, and they have more regulators. This reflects the harder regulatory tasks of multicellular species, such as building and maintaining distinct tissues and cell-cell communication.",
+   "kw": [
+    "RNAPII"
+   ],
+   "info": "Early models of metazoan promoters were based on bacterial and single-cell eukaryote promoter architectures. RNAPII-transcribed genes vary widely in expression level and context specificity, and different promoter classes mediate an important part of this diversity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the core promoter and the pre-initiation complex (PIC)?",
+   "a": "The core promoter is the DNA region immediately around the TSS, which is assumed to dock the PIC. The PIC is a complex of RNAPII and general transcription factors that forms around the TSS and primes RNAPII for transcription.",
+   "kw": [
+    "core promoter",
+    "PIC"
+   ],
+   "info": "In the standard view, the core promoter is made of several interchangeable sequence elements around the TSS that bind core PIC components. The proximal promoter is a larger region upstream of the TSS. The exact boundaries vary between studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which core promoter sequence motifs are known in Metazoa?",
+   "a": "The TATA box and the initiator (Inr) are the most studied and most prevalent. Others are the upstream and downstream B recognition elements (BRE), the motif ten element (MTE), the downstream promoter element (DPE) and the downstream core elements DCE1-3.",
+   "kw": [
+    "TATA box",
+    "Inr",
+    "DPE"
+   ],
+   "info": "In Fig. 1b, TATA (around -30) and BRE are universal, MTE and DPE are fly-specific, and the DCEs are vertebrate-specific. The Inr ranges from TCA(G/T)TC(C/T) down to a single pyrimidine-purine dinucleotide, depending on the study. BRE consensus is SSRCGCC, upstream of TATA. DPE consensus is RGWCGTG, 25-30 bp downstream of the TSS in Drosophila. Most promoters have only one or a few of these motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What do the differences in core motifs between metazoan groups suggest?",
+   "a": "Different metazoan groups have different key motifs at ubiquitously expressed genes, even though their initiation complexes are similar. So at least some motifs are lineage-specific innovations rather than ancient markers of promoter type, or in some promoter types the motifs may not be the main determinants of start site selection.",
+   "kw": [
+    "lineage-specific motifs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "In the classical model, how does regulatory input reach the core promoter?",
+   "a": "Transcription factors bind sites within several hundred base pairs of the TSS (proximal elements) or further away (distal elements, such as enhancers). Clusters of transcription factor binding sites form cis-regulatory modules (CRMs).",
+   "kw": [
+    "enhancer",
+    "CRM",
+    "insulator"
+   ],
+   "info": "Insulators can mark the boundaries between tightly packed and accessible chromatin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the review address?",
+   "a": "Many fundamental questions about metazoan promoters cannot be answered with the classical model. The review describes distinct promoter classes that are conserved even across distant metazoans, then covers newly discovered features such as promoter-associated small RNAs and RNAPII pausing, stalling and backtracking.",
+   "kw": [
+    "promoter classes"
+   ],
+   "info": "The same functional class can differ a lot in motif and nucleotide composition between species.",
+   "concl": "Equivalent promoter classes share epigenetic modifications and their dynamics, nucleosome configuration and association with long-range regulatory elements across Metazoa."
+  },
+  {
+   "type": "qa",
+   "section": "Methods overview - Table 1",
+   "q": "How do 5'-tag-based methods such as CAGE map TSSs?",
+   "a": "They capture capped mRNAs, isolate the first 20-30 nt of the corresponding full-length cDNA, then sequence these tags and map them back to the genome. This gives single-nucleotide TSS resolution, much higher than ChIP-based methods.",
+   "kw": [
+    "CAGE",
+    "nanoCAGE",
+    "PET"
+   ],
+   "info": "Examples: CAGE, nanoCAGE, oligocapping 5' end SAGE, template switching, and 5'-3' paired-end tags (PET), some of which also identify 3' ends. Drawbacks: they measure transcription products rather than promoter activity, some protocols need large amounts of RNA, and they cannot tell capped RNAs from recapped ones.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods overview - Table 1",
+   "q": "What are the pros and cons of small RNA sequencing for studying promoters?",
+   "a": "Small RNAs, often 18-30 nt, are size-selected by gel fractionation and sequenced, usually without cap selection. The protocols are flexible and high-resolution, but miRNAs and tRNAs dominate the samples, so rare small RNAs need very deep sequencing.",
+   "kw": [
+    "small RNA-seq"
+   ],
+   "info": "Size range, modifications, cell compartment or binding to specific molecules can all be selected for. Most platforms can sequence these RNAs over their full length.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods overview - Table 1",
+   "q": "What does GRO-seq measure?",
+   "a": "It sequences RNAs inside elongating RNAPII by incorporating a label into nascent RNA, so it shows where elongating RNAPII is. It separates RNAPII-associated RNAs from other processed small RNAs and is highly sensitive.",
+   "kw": [
+    "GRO-seq"
+   ],
+   "info": "It is technically challenging and requires isolating nuclei.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods overview - Table 1",
+   "q": "What are the limitations of ChIP-seq and ChIP-chip for promoter studies?",
+   "a": "They depend heavily on antibody specificity and quality, which makes ChIP experiments hard to compare, even for the same target. Resolution is lower than RNA-based methods because the fragments are much larger than the bound site, and peak calling has no general standards.",
+   "kw": [
+    "ChIP-seq",
+    "ChIP-chip"
+   ],
+   "info": "Proteins are formaldehyde-crosslinked to DNA, DNA is fragmented, and complexes are pulled down with antibodies. The advantage is that DNA-bound proteins (TFs, modified histones, RNAPII) are captured 'in the act'. The ENCODE Consortium published a user guide to these methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods overview - Table 1",
+   "q": "What is permanganate footprinting used for?",
+   "a": "It finds DNA regions that correspond to the melted transcription bubble, so it locates the exact sites of active RNAPII rather than its RNA products. It is best at identifying poised RNAPII.",
+   "kw": [
+    "permanganate footprinting"
+   ],
+   "info": "It currently works only on targeted genes, so throughput is limited.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "How many main classes of core promoters are there?",
+   "a": "The number is not settled, but current evidence points to three main functional classes with common features across Metazoa: type I (adult, tissue-specific), type II (ubiquitous) and type III (developmentally regulated).",
+   "kw": [
+    "promoter classes",
+    "CAGE"
+   ],
+   "info": "The classes were found through large-scale promoter detection with CAGE-like and ChIP-based methods. The type I/II/III names are the authors' own labels for clarity.",
+   "concl": "Three main functional promoter classes appear to be shared across Metazoa."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "What was the original dichotomy of mammalian promoters?",
+   "a": "High-CG and low-CG promoters, separated by GC content and CpG dinucleotide frequency. High-CG promoters overlap a CpG island, usually have multiple TSSs ('broad') and belong to widely expressed or developmentally regulated genes. Most low-CG promoters have a precise, single-position start site ('sharp', 'focused' or 'peaked').",
+   "kw": [
+    "CpG island",
+    "broad promoter",
+    "sharp promoter"
+   ],
+   "info": "A CpG island is sequence not depleted of CG dinucleotides (CG depletion happens through 5-methylcytosine deamination). Most definitions set a minimum length, for example 200 or 500 bp, and a minimum observed/expected CpG ratio.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "Why do TATA-box promoters initiate at such a narrow position?",
+   "a": "The PIC uses an initiator site at a fixed distance from the TATA box. The TATA-Inr spacing together with the initiator consensus is the main determinant of TSS selection.",
+   "kw": [
+    "TATA box",
+    "Inr"
+   ],
+   "info": "Many, but not all, low-CG promoters have a TATA box. TATA-box promoters go with tissue-specific transcription. They include promoters of many gene families with lineage-specific expansions and pseudogenization, such as liver-specific genes and olfactory receptors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "Is the CpG versus non-CpG split a clean functional division?",
+   "a": "No. Splitting promoters into 'sharp' and 'broad' gives a better functional division than CpG versus non-CpG. Some promoters have both a functional TATA box and a CpG island and may use both TATA-dependent and TATA-independent initiation.",
+   "kw": [
+    "sharp vs broad"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "What promoter classes were defined in Drosophila melanogaster?",
+   "a": "Five motif-based classes were proposed and grouped into three functional classes. Type I is tissue-specific, with a TATA box at the right distance from an Inr. Type II covers housekeeping genes and genes regulated in individual cells, with a DRE or novel motifs. Type III has an Inr alone or Inr plus DPE and belongs to developmental genes coordinated across cells of a tissue.",
+   "kw": [
+    "Drosophila",
+    "DRE",
+    "DPE"
+   ],
+   "info": "An exhaustive motif analysis of Drosophila and human promoters also found large differences in motif type and directionality, and in their association with gene function.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "How do mammalian type II and type III promoters differ, given that both are CpG-rich and TATA-poor?",
+   "a": "Ubiquitously expressed genes (type II) usually have one short CpG island overlapping the TSS. Developmental genes (type III) have several large CpG islands that often extend well into the gene body.",
+   "kw": [
+    "type II",
+    "type III",
+    "CpG island"
+   ],
+   "info": "They also differ systematically in motif composition, width of the transcription start region and epigenetic features. Mammalian type I promoters are clearly equivalent to Drosophila type I.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "What are the main features of the three promoter types (Table 2)?",
+   "a": "Type I (adult): tissue-specific expression, sharp TSS, TATA enrichment, disordered nucleosomes, mostly no CpG island. Type II (ubiquitous): broad expression, broad TSS, ordered nucleosomes, CpG islands, TATA-depleted. Type III (developmental): Polycomb-regulated genes with broad H3K27me3, large CpG islands extending into the gene body in vertebrates, and DPE enrichment in the fly.",
+   "kw": [
+    "Table 2"
+   ],
+   "info": "In Drosophila, type II promoters are enriched for motifs without a fixed position (Motif 1 or 6, DRE).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "Why was it surprising that sharp and broad promoters also exist in Drosophila?",
+   "a": "Broad promoters were thought to be tightly linked to CpG islands, which the fly genome lacks. All fly promoter classes were also thought to have well-defined motifs that fix the TSS at a few positions.",
+   "kw": [
+    "Drosophila",
+    "CAGE",
+    "EST"
+   ],
+   "info": "This was shown by EST analysis and by CAGE on total RNA from embryos at a series of developmental time points. The classical fly elements (TATA, DPE, the 'pause button') turned out to belong to peaked type I promoters, while broad type II promoters carry DREs and weaker motifs. Type III promoters are on average sharper than type II in mammals, and the difference is even larger in the fly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "Are CpG islands required for broad promoters?",
+   "a": "Probably not. Some sharp promoters overlap CpG islands and some broad promoters lack CpG enrichment. In both fly and human, nucleosome positioning and histone modification separate sharp from broad promoters much more precisely than CpG islands do.",
+   "kw": [
+    "CpG island",
+    "nucleosome positioning"
+   ],
+   "info": "An artificial CpG island introduced into mouse cells acquired promoter-like epigenetic patterns. This suggests mammalian CpG islands are primed to be promoters by default. In the fly, other sequence determinants may play this role.",
+   "concl": "What determines how precisely transcription initiates is still unresolved."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "Which species support the cross-species equivalence of promoter classes?",
+   "a": "Mainly mammals and D. melanogaster, which have systematic genome-wide TSS data (CAGE and PEAT) and extensive epigenomic profiles. Similar properties are seen in frogs, and the corresponding classes can be seen in C. elegans despite features unique to it, such as trans-splicing.",
+   "kw": [
+    "PEAT",
+    "C. elegans"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - sequence and function",
+   "q": "What are TCT promoters?",
+   "a": "A possible separate 'high-performance' class used by genes for ribosomal proteins and major translation initiation and elongation factors. Their initiator is a stretch of pyrimidines (the TCT motif), and they are sharp.",
+   "kw": [
+    "TCT motif",
+    "ribosomal protein genes"
+   ],
+   "info": "The transcribed part of the initiator may help coordinate the translational response of these mRNAs to amino acid starvation. In the fly, they typically lack a TATA box or DPE. Mammalian TCT promoters usually have a TATA box but also overlap CpG islands and have ordered nucleosomes.",
+   "concl": "In each species, this combination of features apparently supports high, constitutive and coordinated expression in all cell types."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "What is the epigenetic signature of type I promoters?",
+   "a": "H3K4me3 is generally present only downstream of the TSS, and RNAPII does not bind when the gene is inactive. These promoters drive genes expressed in terminally differentiated peripheral tissues.",
+   "kw": [
+    "H3K4me3",
+    "type I"
+   ],
+   "info": "Example tissues: liver and skeletal muscle in mammals; cuticle-forming epidermis and endocrine tissues in Drosophila. The data come from ENCODE, modENCODE and smaller studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "What is the epigenetic signature of type II promoters?",
+   "a": "Ubiquitously expressed genes carry H3K4me3 throughout their promoters in all tissues. In vertebrates, the H3K4me3 domain matches the CpG island span almost exactly, and because these CpG islands are short, both cover only the 5' end of the gene.",
+   "kw": [
+    "H3K4me3",
+    "type II"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "What are bivalent promoters and how do they relate to type III?",
+   "a": "Vertebrate developmental genes have multiple large CpG islands, widespread Polycomb group (PcG) protein binding, and both H3K27me3 (repressive) and H3K4me3 (activating). This combination is called bivalent. H3K4me3 follows the large CpG islands into the gene body, so it is not limited to the promoter.",
+   "kw": [
+    "bivalent promoter",
+    "H3K27me3",
+    "Polycomb"
+   ],
+   "info": "Drosophila has broad H3K27me3 and PRC2 marks without CpG islands, but bivalent promoters there are unproven. A 'balanced' chromatin state may be the fly equivalent. It combines repressive features (H3K27me3, Polycomb) with active ones (RNAPII, the Trithorax protein ASH1) but has no H3K4me3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "How do the promoter types differ in enhancer use and chromatin states in human cells?",
+   "a": "Developmental (type III) genes are regulated at both the enhancer and promoter level, have the most nearby enhancers and show diverse states, including poised and Polycomb-repressed. Tissue-specific (type I) genes depend mainly on cis-regulatory modules and are usually simply active or inactive. Housekeeping (type II) genes have few nearby enhancers and are generally in an active configuration.",
+   "kw": [
+    "chromatin states",
+    "enhancers"
+   ],
+   "info": "These chromatin state classifications are based on combinations of epigenetic marks and/or TF binding. They are cell-type-specific, but across many cell types each promoter type associates with different states. Caveat: even for the best-studied marks, only correlation with transcription is known, and causality is understood for only a small subset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "What is the difference between nucleosome occupancy and nucleosome positioning?",
+   "a": "Occupancy is the fraction of copies of a DNA location in a sample that is bound by a nucleosome rather than nucleosome-free. Positioning is the precise preferred position of a nucleosome on the underlying sequence.",
+   "kw": [
+    "nucleosome occupancy",
+    "nucleosome positioning"
+   ],
+   "info": "Both are often measured by DNA digestion combined with sequencing. Limited sequencing depth generally prevents analysis of individual core promoters, but the authors expect newer platforms and protocols to remove this limit.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "How do nucleosome patterns differ between broad and sharp promoters?",
+   "a": "Counter-intuitively, broad promoters of housekeeping genes have more precise nucleosome positioning than sharp tissue-specific promoters. Broad promoters have a nucleosome-free region covering the TSSs and the region just upstream, often with DNase hypersensitivity even when the gene is off. Sharp promoters often have a nucleosome over the TSS and less-ordered flanking nucleosomes.",
+   "kw": [
+    "nucleosome-free region",
+    "DNase hypersensitivity"
+   ],
+   "info": "Seen in both Drosophila and mammals. These analyses did not separate type II from type III promoters. How nucleosome configuration is set up and what it does for promoter function is still open.",
+   "concl": "Ordered versus disordered nucleosomes is one of the most striking differences between broad ubiquitous and sharp tissue-specific promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "How does SWI/SNF dependence relate to promoter class?",
+   "a": "In TLR4-induced mouse macrophages, most primary response genes with CpG island promoters were activated independently of SWI/SNF, while most SWI/SNF-dependent promoters lacked CpG islands. However, 12% of primary response CpG promoters were SWI/SNF-dependent, and some non-CpG promoters of inducible immune genes were SWI/SNF-independent without having constitutively active chromatin.",
+   "kw": [
+    "SWI/SNF",
+    "BRG1",
+    "TLR4"
+   ],
+   "info": "BRG1, the motor of SWI/SNF, helps RNAPII overcome nucleosomal barriers during elongation, suggesting most CpG island promoters lack such barriers. The text calls the non-CpG sharp promoters 'type II' here, which seems inconsistent with the rest of the review (sharp, non-CpG is type I elsewhere), so this is unclear. The authors predict that primary response genes will mostly be type III and secondary response genes type I.",
+   "concl": "Nucleosome position and epigenetic properties may predict SWI/SNF dependence better than CpG island presence."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "How can CTCF influence promoters?",
+   "a": "CTCF can impose positioning on up to ten nucleosomes flanking its binding sites. Through this, it may affect promoter activity over distances of several kilobases.",
+   "kw": [
+    "CTCF"
+   ],
+   "info": "CTCF is described as a transcription factor that seems to define some chromatin boundaries associated with differential DNA accessibility.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "How do type I and type III promoters differ in long-range regulation?",
+   "a": "In Drosophila and vertebrates, developmental (type III) genes are more often associated with multiple long-range enhancers and highly conserved non-coding elements. Many tissue-specific type I genes have their key regulatory inputs close to the promoter.",
+   "kw": [
+    "long-range enhancers",
+    "conserved non-coding elements"
+   ],
+   "info": "ENCODE data confirmed that, across tissues, expression of developmental genes correlates with nearby long-range enhancers carrying active marks. The difference in regulatory distance holds even for genes regulated by the same TF complex and may partly reflect differences in nucleosome organization.",
+   "concl": "Searching for context-specific regulatory signals only in the promoters of co-regulated genes is questionable for developmental genes."
+  },
+  {
+   "type": "qa",
+   "section": "Core promoters - chromatin",
+   "q": "How does nuclear localization relate to promoter activity?",
+   "a": "3C-based methods show that genes and their regulatory elements can contact each other over megabase distances. Silenced genes are often associated with the nuclear lamina and can move to transcription factories when activated.",
+   "kw": [
+    "3C",
+    "nuclear lamina",
+    "transcription factories"
+   ],
+   "info": "Transcription factories are nuclear compartments of active transcription with a high RNAPII concentration. Promoters regulated during differentiation are therefore likely to move within the nucleus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "q": "What is the difference between RNAPII poising and pausing?",
+   "a": "Both describe RNAPII enrichment at the TSS compared with the gene body. Poising is a regulated block of transcription until a release or activation signal arrives. Pausing is RNAPII piling up at promoters of actively transcribed genes because it slows down just downstream of the TSS.",
+   "kw": [
+    "poising",
+    "pausing",
+    "RNAPII stalling"
+   ],
+   "info": "Seen in Drosophila and mammals. This TSS enrichment of RNAPII was first observed at heat shock genes in several species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "q": "How widespread is promoter-proximal RNAPII accumulation?",
+   "a": "Over 55% of non-expressed genes in mouse embryonic stem cells (ESCs) have RNAPII accumulated at their promoter. GRO-seq showed that over 40% of all genes have more RNAPII at their 5' ends than in their gene bodies.",
+   "kw": [
+    "GRO-seq",
+    "ESCs"
+   ],
+   "info": "Even highly transcribed, successfully elongating genes have about nine times higher RNAPII density at the promoter than in the gene body, though this varies a lot. So calling a gene 'poised' or 'stalled' depends on the threshold, and is harder for lowly transcribed genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "q": "Is H3K4me3 a reliable marker of active transcription?",
+   "a": "Not necessarily. H3K4me3 is generally linked to active promoters, but it is also found on promoters with non-elongating RNAPII.",
+   "kw": [
+    "H3K4me3"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "q": "How does RNAPII occupancy mirror the three promoter types?",
+   "a": "In early Drosophila embryos (ChIP-chip), tissue-specific promoters had no RNAPII because they are activated only later. Housekeeping genes had RNAPII along the whole gene body, showing active transcription. Developmental regulator genes had RNAPII piled up at or just downstream of the promoter.",
+   "kw": [
+    "ChIP-chip",
+    "tripartition"
+   ],
+   "info": "The distinction is clear in ESCs. In more differentiated cells such as fibroblasts, paused RNAPII increases at otherwise highly expressed translational machinery genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "q": "What is the function of RNAPII pausing or stalling?",
+   "a": "It is unclear. For developmental and heat shock genes, poising may allow a rapid response to stimuli. At broad promoters it may just reflect open chromatin, or it may reflect early elongation being the least efficient step. In poised genes, controlled release could produce bursts of transcription.",
+   "kw": [
+    "RNAPII pausing"
+   ],
+   "info": "Methodological problem: RNAPII post-translational modifications change from initiation to pausing to elongation, which can change antibody recognition in ChIP. Single-cell approaches may be needed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "q": "What is RNAPII backtracking and where does it happen?",
+   "a": "Backtracking is RNAPII moving back towards the TSS. It has been seen in Drosophila in vitro and in vivo, where promoter sequence features seem to direct stalling and backtracking. These promoters mostly belong to developmental (type III) genes, are enriched for DPE, and are more AT-rich just upstream of the backtracked RNAPII.",
+   "kw": [
+    "backtracking",
+    "DPE"
+   ],
+   "info": "The lower melting temperature of AT-rich sequence probably favours backtracking. It is less clear in mammals, where DPEs are not clearly detected and the region just downstream of the TSS is generally not AT-rich.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - retrotransposons and 3' UTR promoters",
+   "q": "Can retrotransposons act as promoters?",
+   "a": "Yes. A subset of retrotransposons drives tissue-specific ncRNAs or alternative forms of protein-coding mRNAs. CAGE identified more than 200,000 retrotransposon-driven TSSs in human, expressed at low to moderate levels and often upstream of typical mRNA promoters, transcribing towards downstream genes.",
+   "kw": [
+    "retrotransposons",
+    "CAGE",
+    "ncRNA"
+   ],
+   "info": "Finding them required next-generation sequencing, which unlike microarrays can tell apart related sequences differing by a few nucleotides. Most use a degenerate pyrimidine-purine initiator, often just a G at +1. CAGE tags often start inside the element rather than at its 5' end, suggesting complex regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - retrotransposons and 3' UTR promoters",
+   "q": "Which retrotransposons get recruited as promoters, and what kind of promoters are they?",
+   "a": "Mostly less conserved elements that can no longer retrotranspose. Elements still able to retrotranspose are generally repressed, for example by DNA methylation. Repeat-derived promoters do not clearly fit the main classes: simple-repeat promoters are mostly broad, while retrotransposon promoters are sharp but usually lack a TATA box or other strong fixed-position motif.",
+   "kw": [
+    "DNA methylation",
+    "repeats"
+   ],
+   "info": "Their RNAs often lack a polyA tail and are often nuclear, suggesting roles in transcriptional regulation or nuclear organization. The few experimentally tested retrotransposon promoters give mixed results but lean towards tissue-specific activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - retrotransposons and 3' UTR promoters",
+   "q": "Where do CAGE tags inside exons and 3' UTRs come from?",
+   "a": "This is debated: they could be real promoters or degradation products that were recapped. Some 3' UTR promoters were validated by reporter assay. However, tags spanning exon-exon junctions (so from mature mRNA), capped exonic tags without core promoter signals (PEAT in Drosophila) and links to cleaved RNA ends (PARE) support degradation plus recapping.",
+   "kw": [
+    "recapping",
+    "PARE",
+    "3' UTR"
+   ],
+   "info": "Many such 5' ends were tissue- or stage-specific and correlated weakly with full-length mRNA expression. This fits recapping only if the full-length mRNA is degraded rapidly and the cleaved RNAs are stabilized efficiently. Another model is gene looping, which brings TSS and termination site together and raises local RNAPII concentration in 3' UTRs. Suggested ways to separate the signals: biological replicates, PARE, H3K4me3 ChIP, DNase hypersensitivity, or TATA/Inr motif filtering.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - promoter-associated small RNAs",
+   "q": "What long bidirectional ncRNAs are found at promoters?",
+   "a": "PROMPTs are capped, unstable ncRNAs about 0.5-2 kb upstream of TSSs that the exosome degrades quickly. PASRs are capped, 22-100 nt long, overlap the TSS and are expressed in proportion to the gene they overlap. PALRs were also identified by tiling arrays.",
+   "kw": [
+    "PROMPTs",
+    "PASRs",
+    "PALRs"
+   ],
+   "info": "PROMPTs are enriched at CpG island promoters but occur at most expressed genes, including RNAPII and RNAPIII promoters. PASRs map from -200 to +400 in sense and -300 to +200 in antisense, peak at the TSS and tend to follow CpG islands. Possible roles: precursors of small regulatory RNAs, or interaction with chromatin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - promoter-associated small RNAs",
+   "q": "What are TSS-associated (TSSa) RNAs?",
+   "a": "Small RNAs from at or just downstream of the TSS, transcribed in the sense direction and in the reverse direction about 250 nt upstream. Their 3' ends map near +40 (sense) and -250 (antisense), next to the first nucleosome on each side and where RNAPII is enriched. Their levels correlate with the amount of RNAPII at the promoter.",
+   "kw": [
+    "TSSa RNAs",
+    "tiRNAs"
+   ],
+   "info": "Sizes differ between sources: Box 1 gives 18-24 nt, while Box 2 says one study defined TSSa RNAs as 20-90 nt and another found ~18 nt 'tiny RNAs' (tiRNAs) ending around +40. Whether these are distinct classes is unclear. They are associated with CpG islands.",
+   "concl": "Their biogenesis appears linked to RNAPII during stalling and/or early elongation."
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - promoter-associated small RNAs",
+   "q": "How does small RNA distribution differ between sharp and broad promoters?",
+   "a": "Sharp (type I) promoters have many more small RNAs downstream of the TSS, while broad (mostly type II) promoters have a more even distribution. The likely reason is that the small RNAs are by-products of elongating RNAPII, and sharp promoters give RNAPII more directionality through TATA boxes and similar elements.",
+   "kw": [
+    "directionality"
+   ],
+   "info": "Small RNAs appear to be a general feature of active promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - promoter-associated small RNAs",
+   "q": "What is the backtracking-and-excision model of small RNA biogenesis?",
+   "a": "RNAPII backtracks towards the TSS and exposes part of the nascent RNA, which TFIIS (TCEA1) cleaves off. One problem is that tiRNAs are over 18 nt, while in vitro excised RNAs are only 6-14 nt.",
+   "kw": [
+    "TFIIS",
+    "backtracking"
+   ],
+   "info": "Drosophila has a subclass of capped small RNAs starting at the mRNA TSS and ending at +38. They extend further downstream when TFIIS is depleted, supporting this model there. This fits the fly nucleosome boundary lying about 20 nt further downstream than in mammals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - promoter-associated small RNAs",
+   "q": "What is the failed-elongation-and-degradation model of small RNA biogenesis?",
+   "a": "Some RNAPII complexes start transcription but do not elongate. Their uncapped nascent RNAs are degraded from the 5' end, except for the 17-22 nt covered and protected by RNAPII, which matches the tiRNA size range.",
+   "kw": [
+    "tiRNAs",
+    "capping checkpoint"
+   ],
+   "info": "The model suggests RNAPII stalling may serve as an RNA-capping quality checkpoint. The two models are not mutually exclusive and together could explain the mix of capped and uncapped small RNAs of different lengths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mechanistic complexity - promoter-associated small RNAs",
+   "q": "What are the open challenges with promoter-associated small RNAs?",
+   "a": "It is not clear how many distinct classes exist, because studies used different methods and supposedly separate classes may share the same biogenesis. Most seem to be transcription by-products with limited function, but some do have a demonstrated function, so strategies to tell them apart are needed. Their relationship to promoter classes also needs more work.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Perspective",
+   "q": "How many promoters fit the classical model of transcription initiation?",
+   "a": "Only a minority: the tissue-specific sharp type I promoters, whose regulatory elements sit mostly near the TSS and act locally. A much larger fraction of genes uses broad promoters whose activity seems driven more by epigenomic context than by sequence-specific transcription factors.",
+   "kw": [
+    "classical model",
+    "broad promoters"
+   ],
+   "info": "Developmental and ubiquitously expressed genes are switched on and off under different conditions, so their promoter classes use different regulatory mechanisms acting over different genomic distances. ncRNAs still need to be fitted into this framework.",
+   "concl": "Promoter architecture determines how regulatory inputs are interpreted, and most promoters do not follow the classical, locally controlled model."
+  },
+  {
+   "type": "qa",
+   "section": "Perspective",
+   "q": "When did the promoter class distinctions arise in evolution?",
+   "a": "The distinction between developmental and context-specific promoters was apparently established early in metazoan evolution. The distinction between ubiquitously expressed and regulated genes may be even older.",
+   "kw": [
+    "evolution",
+    "regulatory clusters"
+   ],
+   "info": "In metazoans with large genomes, at least part of the expanded sequence is filled with clusters of regulatory elements targeting key developmental genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Perspective",
+   "q": "What practical challenge do these methods share?",
+   "a": "Data analysis: a single experiment often produces 20-70 million reads, and turning them into testable hypotheses needs substantial human expertise, not just computing power.",
+   "kw": [
+    "ENCODE",
+    "FANTOM"
+   ],
+   "info": "The authors value large projects such as ENCODE and FANTOM for their data and also for unified analysis methods, common cell lines and pooled expertise. They also stress training the next generation in both experimental and computational analysis.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Core promoters - sequence and function",
+   "text": "What sequence determinants replace CpG islands in setting up broad initiation in Drosophila, and what really controls how precisely transcription initiates?"
+  },
+  {
+   "type": "note",
+   "section": "Mechanistic complexity - RNAPII dynamics",
+   "text": "Is RNAPII pausing or stalling a regulated function or just a kinetic by-product of early elongation? The authors think single-cell approaches may be needed to settle it."
+  },
+  {
+   "type": "note",
+   "section": "Core promoters - chromatin",
+   "text": "Check the chromatin remodelling paragraph: non-CpG sharp promoters are labelled 'type II', which conflicts with the type I definition used elsewhere in the review."
+  }
+ ]
+}

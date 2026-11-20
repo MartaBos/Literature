@@ -1,0 +1,555 @@
+{
+ "id": "Naseer_2025",
+ "title": "Genomic regulatory landscape underlying the antiviral response of Atlantic salmon",
+ "link": "https://doi.org/10.1101/gr.280579.125",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Naseer_2025_GenomeRes_salmon_antiviral_regulatory_landscape.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "It asks what genome-wide regulatory changes drive antiviral gene expression in Atlantic salmon, a species from a teleost family that went through a whole-genome duplication (WGD) about 100 Mya.",
+   "kw": [
+    "antiviral response",
+    "ISGs",
+    "Salmo salar"
+   ],
+   "info": "All jawed vertebrates share a coordinated innate antiviral response built on a core set of interferon-stimulated genes (ISGs), but this response varies a lot between species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they do and what were the headline findings?",
+   "a": "They injected fish with poly I:C and profiled the head kidney with ATAC-seq, ChIP-seq (H3K27ac, H3K27me3) and mRNA-seq. They found 197 ISGs whose regulatory elements gained accessibility and H3K27ac while their expression went up. Of these, 54 are conserved ISGs in rainbow trout, zebrafish and humans.",
+   "kw": [
+    "poly I:C",
+    "ATAC-seq",
+    "ChIP-seq"
+   ],
+   "info": "Predicted TFs binding ISG promoters include IRF8, IRF9, STAT1 and STAT2. Regulatory elements of differentially expressed genes are enriched for STAT6, PRDM1, IRF6, JDP2, NR2E1 and BCL6 motifs.",
+   "concl": "ISRE motifs are enriched in a paralog-specific way in poly I:C-activated promoters of ISGs retained as duplicates from the salmonid WGD."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does the type I IFN pathway lead to ISG induction?",
+   "a": "Viral RNA is sensed by RIG-I, MDA5 (IFIH1) or TLRs, which leads to type I IFN production. IFN binds IFNAR1/IFNAR2, and JAK1 and TYK2 then phosphorylate STAT1 and STAT2. These join IRF9 to form ISGF3, which moves to the nucleus and binds ISREs in ISG promoters.",
+   "kw": [
+    "ISGF3",
+    "ISRE",
+    "JAK-STAT"
+   ],
+   "info": "ISGF3 binding to ISREs is described as essential for ISG induction and for establishing the antiviral state.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is the teleost ISG repertoire different from the mammalian one?",
+   "a": "It is more complex. Extra paralogs were retained after WGD events, and some antiviral gene families exist only in teleosts, such as gig1, pkz and finTRIMs.",
+   "kw": [
+    "WGD",
+    "paralogs",
+    "finTRIM"
+   ],
+   "info": "These teleost-specific ISGs probably arose through lineage-specific expansions, or were lost in the lineages leading to tetrapods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the knowledge gap?",
+   "a": "The teleost IFN response is well described at the transcriptome level, and ISRE function has been proposed, but the regulatory basis of the IFN system and of antiviral transcription in general is poorly understood.",
+   "kw": [],
+   "info": "Earlier salmonid ISRE work used in silico promoter analyses and reporter assays.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What were the three hypotheses?",
+   "a": "(1) The poly I:C response involves coordinated changes in chromatin accessibility and histone marks, as in higher vertebrates. (2) Regulatory divergence between paralogs contributes to their differential expression. (3) Expanded or salmonid-specific gene families show distinct regulatory signatures.",
+   "kw": [
+    "hypotheses"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use H3K27ac and H3K27me3?",
+   "a": "H3K27ac is an activating mark of open chromatin and active promoters and enhancers. H3K27me3 is a repressive mark linked to polycomb-mediated silencing of inactive genes.",
+   "kw": [
+    "H3K27ac",
+    "H3K27me3",
+    "polycomb"
+   ],
+   "info": "The introduction also notes general limits of ATAC-seq and ChIP-seq: false positives (regions that are accessible but not active) and false negatives (context-dependent enhancers missed in bulk tissue).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequencing data and sample metadata",
+   "q": "How many datasets were generated and were any excluded?",
+   "a": "38 datasets: 12 ATAC-seq (6 poly I:C, 6 PBS), 12 ChIP-seq per histone mark (6 poly I:C, 6 PBS) and 2 input controls. One PBS H3K27ac sample was excluded, and for H3K27me3 one PBS and one poly I:C sample were excluded.",
+   "kw": [],
+   "info": "The paper says these samples were excluded after sequencing but does not give the reason in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequencing data and sample metadata",
+   "q": "How did they define promoters, enhancers and polycomb-repressed regions?",
+   "a": "Promoters were TSS-overlapping regions with ATAC consensus peaks and H3K27ac. Candidate enhancers were intergenic or intronic regions with both ATAC accessibility and H3K27ac. Regions marked mainly by H3K27me3 were called polycomb-repressed.",
+   "kw": [
+    "promoter",
+    "enhancer",
+    "ChromHMM"
+   ],
+   "info": "These ChromHMM-annotated enhancers and promoters were then used for TFBS analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequencing data and sample metadata",
+   "q": "Where are the ATAC-seq and H3K27ac peaks in the genome?",
+   "a": "Almost all are associated with genes: 147,487 ATAC peaks are gene-associated versus 2,747 not, and 143,206 H3K27ac peaks versus 798. Most lie within 50 kb of a TSS.",
+   "kw": [
+    "peak annotation"
+   ],
+   "info": "Accessible regions fall in promoter-TSS (10%), exonic (13%), intronic (45%) and intergenic (26%) features. Browser tracks at the housekeeping gene elf1a were used to show data quality.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Immune stimulation remodels chromatin",
+   "q": "How much did poly I:C change chromatin accessibility?",
+   "a": "ATAC peaks per fish went from 39,869 ± 11,858 in PBS controls to 53,102 ± 6,142 after poly I:C, which the paper calls about a 25% increase.",
+   "kw": [
+    "ATAC-seq",
+    "chromatin accessibility"
+   ],
+   "info": "The two means actually differ by about a third, so the stated 25% is unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Immune stimulation remodels chromatin",
+   "q": "How many differentially accessible regions were there?",
+   "a": "613 regions gained accessibility (250 promoters, 363 enhancers) and 48 lost it (6 promoters, 42 enhancers), at fold change > 2 and Padj < 0.05.",
+   "kw": [
+    "differential accessibility",
+    "rGREAT"
+   ],
+   "info": "rGREAT enrichment of the gained regions gave 'regulation of cytokine-mediated signaling', 'interferon-mediated signaling', 'type I interferon response', plus JAK-STAT and host-virus interaction terms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Immune stimulation remodels chromatin",
+   "q": "How did the histone marks change after stimulation?",
+   "a": "Stimulated fish averaged 72,490 H3K27ac and 68,873 H3K27me3 peaks, versus 78,816 and 48,221 in controls. 1,539 regions gained H3K27ac (528 promoters, 1,011 enhancers) and 794 gained H3K27me3 (124 promoters, 670 enhancers).",
+   "kw": [
+    "H3K27ac",
+    "H3K27me3"
+   ],
+   "info": "A similar number of regions lost each mark. The Discussion gives 795 H3K27me3 regions instead of 794.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Immune stimulation remodels chromatin",
+   "q": "Do H3K27ac and H3K27me3 change at the same loci?",
+   "a": "Rarely. 45 loci gained H3K27ac while losing H3K27me3, which suggests polycomb repression was relieved. Only 30 regions gained both marks.",
+   "kw": [
+    "reciprocal regulation"
+   ],
+   "info": "Regions gaining H3K27ac were enriched for interferon signaling, response to virus, and epithelial and endothelial cell migration. Eight of the top 15 GO terms for ATAC peaks were also enriched among regions gaining H3K27ac.",
+   "concl": "The two marks are regulated largely independently in this context."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Multiomics and core ISGs",
+   "q": "How did they combine the four assays into gene sets?",
+   "a": "They defined 3,541 genes associated with changes across the four assays and split them into five sets with distinct regulatory profiles.",
+   "kw": [
+    "multiomics integration"
+   ],
+   "info": "Set 1: ATAC + H3K27ac + RNA (197). Set 2: ATAC + H3K27ac, no RNA change (1,348). Set 3: RNA only (1,008). Set 4: ATAC + RNA, no H3K27ac (52). Set 5: H3K27ac + RNA, no ATAC (173).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Multiomics and core ISGs",
+   "q": "What is the core set 1 and what does it contain?",
+   "a": "197 genes with significant increases in accessibility, H3K27ac and mRNA at the same time. They include canonical antiviral effectors such as TRIM25, RSAD2, IRF7, MX1 and IFI44, and are enriched for 'response to virus', 'innate immune response' and 'protein ubiquitination'.",
+   "kw": [
+    "core ISGs",
+    "set 1"
+   ],
+   "info": "GO analysis was done in DAVID with FDR < 0.05 and fold enrichment > 2.",
+   "concl": "Set 1 is the main group showing multilayered antiviral gene regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Multiomics and core ISGs",
+   "q": "How many of the 197 core genes are conserved ISGs?",
+   "a": "54 of 197 (27%) are in the core salmon ISG set conserved with human (154 genes, from Clark et al. 2023). That is significantly more than among all poly I:C-induced genes (154 of 1,446, 11%; two-tailed Fisher's exact test, P < 0.0001).",
+   "kw": [
+    "conserved ISGs",
+    "Fisher's exact test"
+   ],
+   "info": "Table 1 lists them, with examples IFIT5, MX1, RNF213, SOCS1, RIGI, IFIH1, IRF7, CGAS, PARP9/12/14 and RSAD2 (RNA fold change 6.43). The Abstract describes the 54 as conserved in rainbow trout, zebrafish and humans.",
+   "concl": "Coordinated chromatin and expression changes pick out evolutionarily conserved ISGs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Multiomics and core ISGs",
+   "q": "Why might set 2 genes gain chromatin activity without more expression?",
+   "a": "Many set 2 peaks are intergenic or intronic putative enhancers that may regulate distal genes, not the nearest one. At promoters, small transcriptional changes may be hidden by stable pre-existing transcripts in total RNA-seq.",
+   "kw": [
+    "primed enhancers",
+    "set 2"
+   ],
+   "info": "Set 2 (1,348 genes) was not enriched for antiviral or IFN terms. Its terms included TORC1 signaling, B cell differentiation and cell cycle.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Multiomics and core ISGs",
+   "q": "What characterizes sets 3, 4 and 5?",
+   "a": "Set 3 (1,008 genes, RNA only) includes STAT1 and IRF8 and is enriched for response to virus, NF-kappaB and inflammatory terms. Set 4 (52, ATAC + RNA) is enriched for T-helper 2 cell differentiation and response to virus. Set 5 (173, H3K27ac + RNA) is enriched for defense response to virus and innate immunity.",
+   "kw": [
+    "set 3",
+    "set 4",
+    "set 5"
+   ],
+   "info": "For set 4, the authors suggest distal enhancers, changes in chromatin topology or mechanisms unrelated to acetylation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Multiomics and core ISGs",
+   "q": "What about genes that gained only H3K27me3?",
+   "a": "747 genes were associated only with an increase in H3K27me3, and GO analysis found no significantly enriched terms for them.",
+   "kw": [
+    "H3K27me3"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IRF8 and the ISRE motif",
+   "q": "Which TF motif was most enriched in the 197 core genes?",
+   "a": "IRF8. Nine TFBSs were enriched overall, and the IRF8 site was found in regulatory regions of 37 of the 197 genes (18.8%). All 37 were highly significantly upregulated at the mRNA level.",
+   "kw": [
+    "IRF8",
+    "TFBS",
+    "GimmeMotifs"
+   ],
+   "info": "The Figure 4 legend says more than 20% of genes contain IRF8 sites, which does not match the 18.8% in the text. The other enriched motifs include FOXD2, E2F8, ZNF317, ZIM3, KLF16, ZNF549, MGA::EVX1 and KLF4.",
+   "concl": "IRF8 appears to be a key TF driving IFN-stimulated regulatory networks during poly I:C stimulation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IRF8 and the ISRE motif",
+   "q": "What is the ISRE core sequence and which genes carry IRF8/ISRE sites?",
+   "a": "The IRF8 site corresponds to the ISRE, with core elements nnGAAAnnGAAAnn. Genes with the site include MX1, a TRIM ubiquitin ligase (TRIM21), MEFV, PARP14, RTP3/RTP4, HERC3, IFIH1, TLR7 and MAVS.",
+   "kw": [
+    "ISRE",
+    "MX1",
+    "PARP14"
+   ],
+   "info": "Table 2 RNA fold changes reach 52.11 for RTP3, 44.79 for a UBB copy and 35.48 for RTP4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Chromatin states and TFBS",
+   "q": "Which chromatin states did ChromHMM find?",
+   "a": "Five states: (1) ATAC islands (accessible, no H3K27ac or H3K27me3), (2) quiescent/low, (3) repressed (H3K27me3, low ATAC), (4) poised enhancers and (5) active enhancers/promoters (strong ATAC and H3K27ac). State 5 was more common in poly I:C-stimulated samples.",
+   "kw": [
+    "ChromHMM",
+    "chromatin states"
+   ],
+   "info": "The annotation follows Ernst and Kellis 2017. State 4 is described as H3K27me3 plus H3K4me1, but H3K4me1 was not profiled in this study, so it is unclear how that state was assigned.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Chromatin states and TFBS",
+   "q": "Which TF motifs were enriched in active regions (state 5) after poly I:C?",
+   "a": "16 TFBSs were significantly enriched or depleted. Seven were enriched only in the poly I:C group: STAT6, IRF9, PRDM1, IRF6, JDP2, NR2E1 and BCL6.",
+   "kw": [
+    "STAT6",
+    "IRF9",
+    "PRDM1"
+   ],
+   "info": "Z-scores (PBS vs poly I:C) were STAT6 -2.43 vs 4.56 and IRF9 -5.39 vs 4.45. Motifs depleted after poly I:C included GATA5, ONECUT2, POU1F1, KLF9, RFX5, TBX19, ZNF93, ZSCAN4 and FOXF2. The IRF9 site is very similar to the IRF8 site.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ISREs in regulatory elements",
+   "q": "What happened to RIG-I pathway genes?",
+   "a": "rig-i (dhx58), mda5 (ifih1), irf3 and irf7 were upregulated at the mRNA level and gained ATAC and H3K27ac peaks. mavs was expressed but not induced. rig-i and mda5 also lost promoter H3K27me3.",
+   "kw": [
+    "RIG-I",
+    "MDA5",
+    "MAVS"
+   ],
+   "info": "Fold changes for dhx58: ATAC 2.78, H3K27ac 3.11, H3K27me3 -2.43, RNA 5.83. For irf7, RNA fold change was 10.33.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ISREs in regulatory elements",
+   "q": "What happened to JAK-STAT pathway genes?",
+   "a": "stat1, stat2 and irf9 mRNAs were significantly induced, with more promoter openness and H3K27ac. H3K27me3 visibly decreased at the stat2 and irf9 promoters.",
+   "kw": [
+    "STAT1",
+    "STAT2",
+    "IRF9"
+   ],
+   "info": "The paper calls the H3K27me3 decrease 'visible'. Its significance is not stated.",
+   "concl": "The main signaling TF genes of the IFN response show both chromatin activation and higher expression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ISREs in regulatory elements",
+   "q": "Which ISRE sequences were found in the promoters of the signaling genes?",
+   "a": "rigi and mda5 share TTTCGGTTTC and TTTCGTTTC. irf7 and stat1 share TTTCACTTC. irf3 has a single ISRE, GAAAACGAAA. stat2 and irf9 each have two ISREs in their proximal promoters.",
+   "kw": [
+    "ISRE"
+   ],
+   "info": "ISREs were counted only if they lay in promoters that gained accessibility and/or H3K27ac after poly I:C.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ISREs in regulatory elements",
+   "q": "Which ISREs were found in other key effector ISGs?",
+   "a": "mx had 2 ISREs (GAAATGAAA, TTTCGATTTC), cd9 2, rsad2 3, tapbp 3 and isg15 1 (GAAACCGAAA). At these ISRE peaks, H3K27me3 either decreased significantly or did not change.",
+   "kw": [
+    "mx",
+    "rsad2",
+    "isg15"
+   ],
+   "info": "RNA fold changes (Fig 7B): mx2 23.64, rsad2 86.03, isg15 44.79, cd9 3.36, tapbp 2.89. Figure 7 labels the gene mx2, but its ID matches MX1 in Table 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Paralog-specific ISRE enrichment",
+   "q": "How were ISREs distributed among mx paralogs?",
+   "a": "Of 7 mx paralogs, 4 were highly induced, but only the most upregulated one (ENSSSAG00000077530) had ISREs in its putative promoter. Four mx paralogs are tandem repeats on chromosome 25.",
+   "kw": [
+    "mx",
+    "paralogs"
+   ],
+   "info": "",
+   "concl": "ISRE presence follows paralog-specific induction."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Paralog-specific ISRE enrichment",
+   "q": "What did the paralog analysis show for rsad2, irf9, irf7, rigi, stat1 and cd9?",
+   "a": "rsad2: 3 of 4 paralogs were highly induced and each had 2-3 ISREs. irf9 and irf7: only one paralog each had ISREs in activated elements. rigi: all 3 paralogs had ISREs. stat1: 3 of 5 did. cd9: only 1 of 8 (ENSSSAG00000059637) did, and it was the most strongly induced.",
+   "kw": [
+    "paralog-specific",
+    "cd9",
+    "stat1"
+   ],
+   "info": "A second irf7 paralog had an open promoter with no stimulation-dependent change. One stat1 copy was open but lacked an ISRE. Four cd9 paralogs sit on unplaced contigs because of repetitive sequence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do they interpret the regions that gained both H3K27ac and H3K27me3?",
+   "a": "Probably as cell-type heterogeneity: the same element may be repressed in some cell populations and active in others, rather than being truly bivalent.",
+   "kw": [
+    "bivalent chromatin",
+    "cell heterogeneity"
+   ],
+   "info": "Single-cell studies of salmon head kidney and liver show strong immune cell heterogeneity. A locus-by-locus check was beyond the scope of this study.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why are many induced genes missing chromatin changes (set 3)?",
+   "a": "They may be early-response genes that are already accessible, so they can be activated quickly. Alternatively, they may be regulated post-transcriptionally through mRNA stability, translation or degradation.",
+   "kw": [
+    "early response genes",
+    "post-transcriptional regulation"
+   ],
+   "info": "Genes with chromatin remodeling but no expression change may be primed for expression before or after the single 24 h time point.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is IRF8 considered important?",
+   "a": "IRF8 binds ISREs to regulate antiviral genes. In humans and mice it is crucial for dendritic cell and macrophage development and function, and IRF8-deficient mice are more susceptible to viruses. Here it was the most enriched motif in genes active across all three data types.",
+   "kw": [
+    "IRF8"
+   ],
+   "info": "The Discussion also says IRF3 and IRF7 TFBSs were enriched, but the main-text Results do not clearly show this.",
+   "concl": "IRF8 motif enrichment suggests IRF8 has a conserved central role in the salmon antiviral response."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the caveats of the TFBS analysis?",
+   "a": "The analysis relies on JASPAR, which is based mainly on experimental data from mammalian TFs. The authors still argue that enrichment of these motifs suggests conservation across vertebrates.",
+   "kw": [
+    "JASPAR"
+   ],
+   "info": "PRDM1 (BLIMP-1) and BCL6 are known for B cell and plasma cell roles, JDP2 for inflammatory signaling, and NR2E1 for neural progenitors, so some hits are not obviously antiviral.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do they explain paralog-specific regulation?",
+   "a": "Salmon carry the effects of four WGD rounds: two in early vertebrates, one in the teleost ancestor and one salmonid-specific. Duplicated ISGs have evolved distinct regulation. One proposed reason for silencing a paralog is transposable element insertion into its regulatory regions.",
+   "kw": [
+    "WGD",
+    "transposable elements",
+    "ohnologs"
+   ],
+   "info": "The TE explanation is based on Gillard et al. 2021 and was not tested here.",
+   "concl": "Paralog-specific changes in key TFBSs suggest that regulation of key immune genes changed in recent salmonid evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "They profiled one activating mark (no H3K4me3 or H3K4me1), one time point (24 h) and bulk tissue with heterogeneous cell types. No functional validation was done; knockout or knock-in of the identified elements is needed.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and stimulation",
+   "q": "What fish and stimulation protocol did they use?",
+   "a": "Juvenile Atlantic salmon of about 70 g from a commercial source, kept in 250 L freshwater tanks at 14°C with a 12:12 photoperiod. Fish got an intraperitoneal injection of 500 µg poly I:C in 0.1 mL (n = 6) or 0.1 mL PBS (n = 6), and head kidney was sampled 24 h later.",
+   "kw": [
+    "poly I:C",
+    "head kidney"
+   ],
+   "info": "Poly I:C (Sigma P1530) was heated for 15 min at 55°C before use. Fish were anaesthetized with 2-phenoxyethanol. The head kidney was chosen as the primary hematopoietic tissue in teleosts, rich in leucocytes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and stimulation",
+   "q": "How were the assays matched across samples?",
+   "a": "From each fish, one RNA-seq, one ATAC-seq and two ChIP-seq libraries (H3K27ac, H3K27me3) were made from the same head kidney sample.",
+   "kw": [
+    "matched samples"
+   ],
+   "info": "RNA-seq data came from the matched samples already published by Clark et al. 2023 (PRJEB50076).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq and ChIP-seq libraries",
+   "q": "How were the ATAC-seq libraries made?",
+   "a": "They adapted Buenrostro et al. 2015. Tissue was dissociated through a 100 µm mesh, and 75,000 cells per sample were lysed in buffer with 0.1% Tween-20, 0.1% NP-40 and 0.01% digitonin for 3 min on ice before transposition.",
+   "kw": [
+    "ATAC-seq"
+   ],
+   "info": "About 20 mg of tissue was used per sample, and cells were counted with trypan blue on a hemocytometer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq and ChIP-seq libraries",
+   "q": "How were the ChIP-seq libraries made?",
+   "a": "With the Diagenode ChIPmentation kit for histones on 2 x 10^6 cells. Cells were cross-linked with 1% formaldehyde for 5 min, sonicated in a Bioruptor Pico (20 cycles of 30 s on/30 s off) to 100-700 bp fragments, and immunoprecipitated with Diagenode H3K27ac (C15410196) and H3K27me3 (C15410195) antibodies.",
+   "kw": [
+    "ChIPmentation",
+    "ChIP-seq"
+   ],
+   "info": "Inputs used an IgG antibody and were a pooled mix of all six samples per group.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing and data analysis",
+   "q": "How were the ATAC-seq and ChIP-seq data sequenced and processed?",
+   "a": "Libraries were sequenced as PE150 on an Illumina NovaSeq 6000, aiming for 40 M reads. Data were processed with nf-core/atacseq v2.0 and nf-core/chipseq v2.0: Trim Galore v0.6.10, BWA v0.7.17 mapping to Ssal_v3.1 (GCA_905237065.2), MACS2 consensus peaks, HOMER v4.9.1 annotation and featureCounts quantification.",
+   "kw": [
+    "nf-core",
+    "BWA",
+    "MACS2"
+   ],
+   "info": "Input controls were used during peak calling. Loci were visualized in IGV.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing and data analysis",
+   "q": "How was differential peak analysis done?",
+   "a": "With DESeq2 in R v4.2.2, using the Wald test and Benjamini-Hochberg FDR correction. Thresholds were adjusted P < 0.05 and fold change > 2 in either direction.",
+   "kw": [
+    "DESeq2"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Gene set enrichment",
+   "q": "How was enrichment analysis done?",
+   "a": "Region-based enrichment used rGREAT on differential ATAC or H3K27ac regions, with all consensus peaks from that assay as background (GO:BP, adjusted P < 0.05). Gene-based enrichment used DAVID v2023q4 on human orthologs of the DEGs, with fold enrichment > 2 and FDR < 0.05.",
+   "kw": [
+    "rGREAT",
+    "DAVID"
+   ],
+   "info": "When several paralogs were expressed, the highest-expressed one was used for DAVID. The background was the human gene repertoire. Using consensus peaks as background avoids the bias of using the whole genome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Chromatin states and TFBS",
+   "q": "How were ChromHMM and the motif analysis set up?",
+   "a": "ChromHMM v1.24 was run with BinarizeBam and then LearnModel with 5 states on ATAC, H3K27ac and H3K27me3. Motifs were analyzed with GimmeMotifs and the JASPAR2022 vertebrate core database on state 5 regions, using background-matched regions and a Z-score > 2.",
+   "kw": [
+    "ChromHMM",
+    "GimmeMotifs",
+    "JASPAR2022"
+   ],
+   "info": "Promoters were ChromHMM promoter-like segments that overlap TSSs from the reference GTF. Data are at ENA: PRJEB50076 (RNA-seq), PRJEB50077 (ATAC-seq), PRJEB56698 (ChIP-seq), with metadata on the AQUA-FAANG portal.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Chromatin states and TFBS",
+   "text": "The poised enhancer state is defined with H3K4me1, but only ATAC, H3K27ac and H3K27me3 went into ChromHMM. How was state 4 actually assigned?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Paralog-specific ISRE enrichment",
+   "text": "Does ISRE loss or gain in salmon ISG paralogs line up with TE insertions or with ohnolog expression divergence (as in Gillard 2021)? Could the same approach apply to duplicated regulatory elements in cavefish or zebrafish?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Several numbers don't match: about 25% vs a roughly 33% difference in mean ATAC peaks, 794 vs 795 H3K27me3 regions, IRF8 sites in 18.8% vs >20% of genes, and IRF3/IRF7 enrichment claimed in the Discussion but not shown in Results. Check against the supplementary tables."
+  }
+ ]
+}

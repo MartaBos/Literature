@@ -1,0 +1,600 @@
+{
+ "id": "McGaugh_2014",
+ "title": "The cavefish genome reveals candidate genes for eye loss",
+ "link": "https://doi.org/10.1038/ncomms6307",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/McGaugh_2014_NatCommun_cavefish_genome.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which traits evolved repeatedly in cave populations of Astyanax mexicanus?",
+   "a": "Eye degeneration, pigment loss, larger and more numerous taste buds and mechanosensory organs, and shifts in many behavioural traits.",
+   "kw": [
+    "repeated evolution",
+    "troglomorphic traits"
+   ],
+   "info": "Cavefish are presented as natural populations under strong environmental selection, which makes them useful for studying the genetics of evolutionary change.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does the paper address, and what did they do?",
+   "a": "Surface and cave forms are interfertile, so the system suits genetic study, but there was no reference genome to identify the genes behind cave traits. They produced the first de novo cavefish genome assembly, compared its repeats to other teleosts, found candidate genes under QTL and tested them for coding and expression differences.",
+   "kw": [
+    "de novo assembly",
+    "QTL"
+   ],
+   "info": "The authors also expect the genome to help understanding of analogous human diseases, such as retinal dysfunction.",
+   "concl": "First reference genome for A. mexicanus, used to move from QTL regions to candidate genes for eye loss."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How many times did cave traits evolve independently in A. mexicanus?",
+   "a": "Surface Mexican tetras colonized several caves in northeastern Mexico and evolved extreme cave-associated traits at least four independent times over the past 2 to 3 Myr.",
+   "kw": [
+    "parallel evolution",
+    "convergent evolution"
+   ],
+   "info": "The direction of trait change is known: the traits are derived in cavefish. These natural replicates can be used to study the genetics of parallel and convergent evolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which behavioural and physiological differences do cavefish show compared with surface fish?",
+   "a": "Stronger attraction to vibrations, better olfaction, altered feeding angles, and loss of schooling and aggression. They also lose body weight more slowly and sleep much less than surface fish.",
+   "kw": [
+    "behaviour",
+    "sleep loss"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How were candidate genes under cavefish QTL found before this genome existed, and why was that limited?",
+   "a": "Candidates were inferred through syntenic comparisons with zebrafish. A de novo cavefish assembly allows more precise identification of the genes under each QTL.",
+   "kw": [
+    "synteny",
+    "QTL"
+   ],
+   "info": "Earlier QTL studies of surface x cave crosses had mapped many behavioural and morphological traits to genomic regions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequencing and annotation",
+   "q": "Which fish was sequenced?",
+   "a": "A first-generation offspring of two wild-caught parents from Pachón cave, Tamaulipas, Mexico. Pachón cavefish are the most studied population and have the most extreme troglomorphic phenotypes.",
+   "kw": [
+    "Pachón"
+   ],
+   "info": "At least 29 caves contain Astyanax cavefish. Methods: DNA came from the heart, liver, spleen and gill of a single 7-year-old adult female Pachón cavefish (Jeffery lab).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequencing and annotation",
+   "q": "What are the main assembly statistics?",
+   "a": "The draft is 964 Mb in 10,735 scaffolds, with contig N50 of 14.7 kb, scaffold N50 of 1.775 Mb and a longest scaffold of 9.823 Mb.",
+   "kw": [
+    "N50",
+    "assembly"
+   ],
+   "info": "The size is similar to that of a congeneric species in Brazil.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequencing and annotation",
+   "q": "How many genes were annotated, and how many are one-to-one orthologs with zebrafish?",
+   "a": "The Ensembl pipeline, using RNAseq evidence from eight tissues, predicted 23,042 protein-coding genes, similar to other teleosts. Of these, 16,480 are one-to-one orthologs with zebrafish.",
+   "kw": [
+    "Ensembl annotation",
+    "orthologs"
+   ],
+   "info": "Zebrafish is the closest sequenced relative of cavefish; they diverged about 250 Myr ago.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequencing and annotation",
+   "q": "How did they check how much of the gene space the assembly captured?",
+   "a": "Across tissue-specific transcriptomes, a median of 81% of transcripts aligned over at least 75% of their length with at least 90% identity. CEGMA found 95% of the 248 ultra-conserved core eukaryotic genes present and 69% complete.",
+   "kw": [
+    "CEGMA",
+    "completeness"
+   ],
+   "info": "They aligned the best open reading frames from assembled cavefish transcripts to the genome scaffolds.",
+   "concl": "The assembly captured most of the protein-coding sequence."
+  },
+  {
+   "type": "qa",
+   "section": "Results - transposable elements",
+   "q": "How much of the cavefish genome is transposable elements, and which types dominate?",
+   "a": "About one-third of the genome is TEs, similar to most fish genomes; the exceptions are zebrafish (52.2%) and Fugu (2.8%). DNA transposons (at least 12 superfamilies, 12.7% of the genome) are more abundant and diverse than retrotransposons (2.3%).",
+   "kw": [
+    "transposable elements",
+    "DNA transposons"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transposable elements",
+   "q": "Which TE superfamilies made up the recent transposition wave in cavefish?",
+   "a": "Mostly Tc-Mariner and hAT, which together make up about 9.5% of the cavefish genome.",
+   "kw": [
+    "Tc-Mariner",
+    "hAT"
+   ],
+   "info": "Zebrafish also had a recent large expansion of repeat families including Tc-Mariner and hAT. Stickleback did not.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transposable elements",
+   "q": "What is the Kimura distance, and how was it used for TEs?",
+   "a": "It estimates the age of TE copies from their divergence to the family consensus, assuming most mutations in TE copies are neutral. K = -1/2 ln(1 - 2p - q) - 1/4 ln(1 - 2q), where p is the transition rate and q the transversion rate.",
+   "kw": [
+    "Kimura distance"
+   ],
+   "info": "In Fig. 1, values run from 0 (recent copies) to 50 (old insertions). Only superfamilies above 0.1% genome content were plotted.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transposable elements",
+   "q": "Are the Tc-Mariner and hAT elements still active in cavefish?",
+   "a": "Probably not many. Unlike zebrafish, the cavefish genome seems to lack very young elements, so it is unlikely that many copies are still active, and transcriptome analyses support this.",
+   "kw": [
+    "TE activity"
+   ],
+   "info": "The authors note that assembly artefacts could explain the missing young elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - candidate genes under eye QTL",
+   "q": "How does eye degeneration proceed during cavefish development?",
+   "a": "Lens vesicles and optic cups form as in surface fish but are already smaller at 14 h.p.f. Lens apoptosis starts after 25 h.p.f. and retinal apoptosis at about 35 h.p.f. Apoptosis continues for days to weeks and arrests eye development.",
+   "kw": [
+    "apoptosis",
+    "eye degeneration"
+   ],
+   "info": "The eye is called the most distinct cavefish trait and was derived independently in several cave invasions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - candidate genes under eye QTL",
+   "q": "How many eye QTL were used, and how many genes fall under them?",
+   "a": "Across studies they counted 15 non-overlapping QTL for eye-related phenotypes in the Pachón population. All genes on any scaffold carrying a QTL-linked marker were included, giving 2,408 of the 23,042 annotated genes.",
+   "kw": [
+    "QTL",
+    "candidate genes"
+   ],
+   "info": "Scaffolds often did not span a whole QTL critical region, so one QTL can be spread over several scaffolds. Many of these genes are probably linked to the causal variant without causing the phenotype themselves.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - candidate genes under eye QTL",
+   "q": "Which developmental RNAseq data were used to narrow down the candidates?",
+   "a": "A time course at 10 h.p.f., 24 h.p.f., 1.5 d.p.f. and 3 d.p.f. Each time point used RNA from 50 pooled whole individuals, sequenced separately for cave and surface fish on Illumina.",
+   "kw": [
+    "RNAseq",
+    "time course"
+   ],
+   "info": "Caveat: cavefish eyes are smaller even early on, so fewer transcripts may reflect smaller eyes rather than true downregulation. The same reads were used to call coding variants between morphs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - candidate genes under eye QTL",
+   "q": "What did the integrated pathway analysis predict from the expression data?",
+   "a": "It implicated 30 genes under the QTL in congenital eye anomalies. Expression direction favoured more eye anomalies in cavefish at 10 h.p.f., 24 h.p.f. and 1.5 d.p.f. (12/27, 12/19 and 11/30 genes consistent; bias-corrected z >= 2.266, P < 0.0001).",
+   "kw": [
+    "Ingenuity Pathway Analysis",
+    "congenital eye anomaly"
+   ],
+   "info": "The analysis uses prior knowledge of how transcriptional regulators affect their targets. At 3 d.p.f. the direction was still consistent, but z scores shrank as development progressed and were not significant.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - candidate genes under eye QTL",
+   "q": "Were eye QTL enriched for eye-related genes?",
+   "a": "Yes for congenital eye anomaly genes: 30/1,560 in the QTL versus 159/12,040 overall (Yates chi-square = 4.48, P < 0.034, OR 1.57, 95% CI 1.05 to 2.35). Broader eye development, function and disease genes were not significantly enriched (129/1,560 vs 921/12,040, P = 0.35, OR 1.10).",
+   "kw": [
+    "enrichment test",
+    "chi-square"
+   ],
+   "info": "Data were combined across time points.",
+   "concl": "Eye QTL are qualitatively enriched for eye genes, and quantitatively more likely to contain genes linked to congenital eye defects."
+  },
+  {
+   "type": "qa",
+   "section": "Results - specific candidate genes",
+   "q": "How were expression differences between cave and surface fish tested, and what is the caveat for linkage group names?",
+   "a": "Log fold change tests in Cuffdiff 2.1.0, used for all differential expression P values unless stated otherwise. Linkage group names differ between studies, so each LG follows the naming of the original QTL study.",
+   "kw": [
+    "Cuffdiff"
+   ],
+   "info": "Candidates were narrowed to genes with expression differences between morphs. The Methods name the expression step as Cufflinks 2.1.0.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - specific candidate genes",
+   "q": "Why is cryaa a candidate?",
+   "a": "It encodes an antiapoptotic chaperone whose missing expression had been proposed to play a role in cavefish eye degeneration. It lies under a QTL for eye size on LG27 (scaffold with marker Am229b, Protas et al.).",
+   "kw": [
+    "cryaa",
+    "crystallin"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - specific candidate genes",
+   "q": "What did they find for pitx3?",
+   "a": "pitx3 is essential for lens development in zebrafish. Cavefish expression is significantly lower at 24 h.p.f. and 3 d.p.f. (P < 0.002) and qualitatively lower at all times, with only two synonymous coding differences.",
+   "kw": [
+    "pitx3",
+    "lens"
+   ],
+   "info": "In zebrafish, knockdown gives degenerate lens and retina and a misshapen lower jaw. pitx3 lies under a QTL for lens length on LG14 and for eye size on LG4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - specific candidate genes",
+   "q": "What about rx3?",
+   "a": "rx3 lies under an eye size QTL on LG4 and its mutation causes eye loss in zebrafish (chokh) and medaka (eyeless). It is expressed significantly less in cavefish at 10 h.p.f. and 3 d.p.f. (P < 0.0003) and has no coding variants.",
+   "kw": [
+    "rx3",
+    "chokh",
+    "eyeless"
+   ],
+   "info": "Qualitatively lower at all time points.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - specific candidate genes",
+   "q": "Why are olfm2a and BCoR candidates?",
+   "a": "olfm2a (eye size QTL, LG4) is significantly lower in cavefish at 3 d.p.f. (P < 0.001) and has no coding differences. BCoR (LG19) is linked to ocular colobomas, is lower at 10 h.p.f. (P < 0.013) and has four nonsynonymous differences, all at evolutionarily labile sites.",
+   "kw": [
+    "olfm2a",
+    "BCoR",
+    "coloboma"
+   ],
+   "info": "Zebrafish olfm2 knockdown causes defects in olfactory pits, eyes and optic tectum, with reduced Pax6 in the eye. No data were available for olfml2a. The BCoR binding partner BCL6 controls optic cup morphogenesis through p53 in zebrafish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "What is the potentially pleiotropic QTL on LG2?",
+   "a": "One region where vibration attraction behaviour, eye size and superficial neuromast number at the orbit co-localize (LG2, Yoshizawa et al.). The same region appears as an eye size QTL in other studies (LG7, LG8, LG1) and as an inner nuclear layer thickness QTL (LG2, O'Quin et al.), so it is counted as a single QTL.",
+   "kw": [
+    "pleiotropy",
+    "vibration attraction behaviour"
+   ],
+   "info": "Co-localization has been taken as evidence that selection for some cave traits caused eye loss through pleiotropy. They focused on genes expressed in both morphs and not pseudogenized in cavefish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "What does shisa2 do, and how is it expressed in cavefish RNAseq?",
+   "a": "shisa2 inhibits Wnt and FGF signalling by keeping their receptors, Frizzled and FGFR, in the endoplasmic reticulum. It is expressed higher in cavefish at all time points (significant at 10 h.p.f., 24 h.p.f. and 1.5 d.p.f., P < 0.005) and has only one synonymous change.",
+   "kw": [
+    "shisa2",
+    "Wnt",
+    "FGF"
+   ],
+   "info": "A paralog lies under an eye QTL on LG6. It has no coding differences, is higher in cavefish at 24 h.p.f. (P < 0.0003), not significant at 10 h.p.f. and 1.5 d.p.f., and lower at 3 d.p.f. (P < 0.0002).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "What did qPCR and in situ hybridization show for the two shisa2 genes at 36 h.p.f.?",
+   "a": "qPCR showed no significant difference between morphs (Mann-Whitney U, P > 0.05), meaning less than twofold. In situ, shisa2-LG2 was in epidermis, olfactory epithelium and lens in surface fish, but lens expression was missing in cavefish. shisa2-LG6 had a more complex pattern with no obvious morph difference.",
+   "kw": [
+    "in situ hybridization",
+    "qPCR",
+    "shisa2"
+   ],
+   "info": "shisa2-LG6 was expressed in branchial arches, cranial ganglia, epidermis, olfactory epithelium, retina and lens, as described in Xenopus and zebrafish.",
+   "concl": "The missing shisa2 (LG2) lens expression suggests regulatory changes in this gene may contribute to cavefish eye loss."
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "Why did they look at otx2, and what did they find?",
+   "a": "In Xenopus, shisa2 knockdown or mRNA injection changes expression of otx2, a key homeobox gene for head and eye development. In cavefish, otx2 head and brain expression looked like surface fish, but lens expression was much weaker at 48 h.p.f. Semi-quantitative RT-PCR at 40 h.p.f. also showed lower levels.",
+   "kw": [
+    "otx2",
+    "lens"
+   ],
+   "info": "otx2 could not be placed on a specific linkage group.",
+   "concl": "A possible regulatory cascade involving shisa2 and otx2 in the developing lens may lead to cavefish eye loss."
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "Why should prox1 be looked at again?",
+   "a": "prox1 was earlier considered unlikely to matter because its lens expression pattern is similar in both morphs. Here it had no sequence differences but significantly lower whole-organism expression in cavefish at 24 h.p.f., 1.5 d.p.f. and 3 d.p.f. (P < 0.022), consistent with more lens apoptosis.",
+   "kw": [
+    "prox1",
+    "lens fibre"
+   ],
+   "info": "prox1 regulates lens fibre elongation and the exit of retinal progenitors from the cell cycle. Knockdown disrupts gamma-crystallin expression and causes lens apoptosis. Expression was marginally higher in cavefish at 10 h.p.f. (P = 0.083). In neuromast hair cells and taste bud cells it is only expressed from 96 h.p.f.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "What did they find for AIFM1 and its paralog AIFM2?",
+   "a": "AIFM1 loss causes progressive optic atrophy in Harlequin mice. In cavefish it is lower at 24 h.p.f. (P < 0.003) and has an intronic splice region variant plus five nonsynonymous variants, two apparently derived in cavefish but predicted tolerated by SIFT. AIFM2, under the LG14/LG4 eye QTL, is lower at 10 h.p.f., 24 h.p.f. and 3 d.p.f. (P < 0.022) and has two splice region variants fixed between morphs.",
+   "kw": [
+    "AIFM1",
+    "AIFM2",
+    "SIFT"
+   ],
+   "info": "The Harlequin phenotype can be rescued with an AIFM1 expression vector. One AIFM2 splice variant is also nonsynonymous, putatively derived in cavefish and predicted tolerated. AIFM2 at 1.5 d.p.f.: P = 0.095.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "What about crxa and tbx2a, which were also found by O'Quin et al.?",
+   "a": "crxa (photoreceptor differentiation) is lower in cavefish at 1.5 and 3 d.p.f. (P < 0.001) with no sequence differences. tbx2a is lower at all time points and has three nonsynonymous differences, of which only D401E seems derived in cavefish, and SIFT predicts it tolerated.",
+   "kw": [
+    "crxa",
+    "tbx2a"
+   ],
+   "info": "crxa knockdown in zebrafish downregulates phototransduction genes, and crxa is implicated in eye reduction in Sinocyclocheilus anophtalmus. crxa could not be tested at the other time points. For tbx2a, P < 0.07 at 1.5 d.p.f. and P < 0.001 elsewhere, so 'lower at all time points' includes one value that is only marginal.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pleiotropic QTL",
+   "q": "Why is the second co-localizing QTL (LG17) less informative?",
+   "a": "The scaffolds did not cover several markers in the centre of the QTL (208e, 205d and 221a). The genes found there were less compelling than those on LG2.",
+   "kw": [
+    "scaffold coverage"
+   ],
+   "info": "The authors expect future genome drafts to reveal more candidates in this region.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - other cave phenotypes",
+   "q": "Which candidate genes did they note for pigmentation, taste buds and teeth?",
+   "a": "mc1r, known to be mutated in Pachón, lies under the QTL for melanocyte number in four body regions (LG9). A taste bud number QTL (LG5) contains the serotonin receptor htr2a. A maxillary tooth number QTL (LG13) contains dact2, which inhibits dlx2 during mouse tooth formation.",
+   "kw": [
+    "mc1r",
+    "htr2a",
+    "dact2"
+   ],
+   "info": "Serotonin signalling is involved in taste cell development and signal transduction. dlx2 knockout mice have fewer molars.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - putative gene losses",
+   "q": "How did they look for genes lost in the cavefish lineage?",
+   "a": "They looked for genes present in zebrafish and eight other actinopterygian teleosts in Ensembl but missing in cavefish. These genes were not enriched for 305 GO accessions related to eye development or function, and ZFIN anatomical expression and predicted phenotype data gave similar results.",
+   "kw": [
+    "gene loss",
+    "gene ontology",
+    "ZFIN"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - putative gene losses",
+   "q": "How did they check whether a missing gene was still transcribed?",
+   "a": "They assembled 10 transcriptomes with Trinity (8 tissues plus the surface and cave time courses), predicted ORFs with Transdecoder and ran BLASTn of the longest ORFs against zebrafish coding sequences (Ensembl Genes 74) with an e-value cutoff below 1E-100. Some genes seemed to lack a cavefish transcript but had a surface fish one.",
+   "kw": [
+    "Trinity",
+    "Transdecoder",
+    "BLASTn"
+   ],
+   "info": "Results were robust for e-value cutoffs from 1E-20 to 1E-100. Every putatively missing cavefish transcript they tried to confirm by reverse transcription was in fact detected.",
+   "concl": "There is no confirmed cavefish-specific gene loss."
+  },
+  {
+   "type": "qa",
+   "section": "Results - putative gene losses",
+   "q": "Which gene families are preliminary candidates for gene loss?",
+   "a": "Families involved in vision (retinol dehydrogenases, crystallins, sine oculis homeoboxes, opsins and rhodopsins including melanopsin), development, and sleep and circadian regulation (FGFs, GABA-A receptors, dopamine receptors). Several genes whose knockout causes hyperlocomotion in mice or zebrafish also seem absent.",
+   "kw": [
+    "opsins",
+    "melanopsin",
+    "circadian"
+   ],
+   "info": "Members were not annotated in the genome and not found in surface or cave transcriptomes. The naked mole rat, which also lives in darkness with reduced eyes, lost genes from similar families. Large gene families are often misassembled or misannotated in draft genomes, so these results are very preliminary.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the strengths and limits of the pathway approach?",
+   "a": "The pathway analysis predicted the reduced-eye phenotype from expression direction, and this was one of the most significant predicted downstream phenotypes. But IPA contains only human, mouse and rat orthologs, and about 89% of QTL genes (2,013/2,408) matched.",
+   "kw": [
+    "Ingenuity Pathway Analysis",
+    "orthology"
+   ],
+   "info": "The Methods say only 65% (1,560/2,408) were 'analysis-ready', because some genes lacked enough expression data.",
+   "concl": "Pathway databases need nonmammalian models such as zebrafish and Drosophila."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do crosses between different caves tell us about the genetics of cave traits?",
+   "a": "Crosses between fish from different caves complement and restore some cave phenotypes, such as rudimentary eyes. So at least some of the genetic changes are unique to each cave lineage.",
+   "kw": [
+    "complementation",
+    "repeated evolution"
+   ],
+   "info": "Surface populations provide standing genetic variation for the caves, and the system can be used to study adaptation in the face of gene flow.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations and next steps do the authors name?",
+   "a": "The genome is not anchored to a chromosome-scale map, which population genomic work needs. A better draft using long reads and a genotyping-by-sequencing linkage map was underway, alongside population genomics of several cave and surface localities.",
+   "kw": [
+    "chromosome-scale assembly",
+    "population genomics"
+   ],
+   "info": "The improved draft should help study selection, drift, migration and genetic architecture behind the replicated phenotypes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How can candidate genes be validated in this system, and what is the wider relevance?",
+   "a": "In cavefish: mRNA injection into embryos and meganuclease- or transposase-based transgenesis. In the close relative zebrafish: methods such as TALEN gene editing.",
+   "kw": [
+    "transgenesis",
+    "TALENs"
+   ],
+   "info": "",
+   "concl": "The genome should help dissect constructive and degenerative cave traits, study repeated evolution, and model human conditions such as sleep disorders and congenital eye defects."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome sequencing and assembly",
+   "q": "How was the genome sequenced and assembled?",
+   "a": "With a genome size estimate of 1.19 Gb, they generated about 95x Illumina coverage (short-insert paired-end plus 3, 8 and 40 kb mate-pair libraries) and assembled with ALLPATHS to 70x assembled coverage. The assembly is called Astyanax mexicanus 1.0.2.",
+   "kw": [
+    "ALLPATHS",
+    "Illumina",
+    "mate-pair"
+   ],
+   "info": "Gaps were filled with a version of IMAGE modified for large genomes. Contaminating contigs were removed with MegaBLAST against adapter, bacterial and vertebrate databases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL location in the assembly",
+   "q": "How were QTL markers placed on scaffolds?",
+   "a": "689 RAD-tag, microsatellite and cDNA markers with linkage map positions were aligned to scaffolds with BLASTn, keeping only the top hit with an e-value of 1E-20. This placed 340 scaffolds (574 Mb) on linkage groups.",
+   "kw": [
+    "BLASTn",
+    "RAD-tag",
+    "linkage map"
+   ],
+   "info": "Microsatellites with only primer sequences: word size 7, e-value < 1E-1, identity > 99%. Two Danio rerio cDNAs: identity of 85% or more. Nine scaffolds mapping to different LGs were excluded, and three single incongruent markers were dropped. A. mexicanus has 25 haploid chromosomes, and the markers covered 24 LGs. 219 single-marker scaffolds got random orientation; 121 scaffolds (about 339 Mb) with two or more markers were oriented.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - repetitive landscape",
+   "q": "How were repeats annotated?",
+   "a": "With RepeatModeler (default parameters), following the universal TE classification. The library was filtered against Uniprot proteins and supplemented by manual BLAST searches with known TE proteins. Scaffolds were masked with RepeatMasker 3.3.0 using the cavefish-specific library (--lib, --align).",
+   "kw": [
+    "RepeatModeler",
+    "RepeatMasker"
+   ],
+   "info": "For TE transcription, three assembled transcriptomes (muscle, brain and whole eye of surface fish) were masked the same way. Over- or under-representation was measured as the family percentage times 100 divided by total repeat content in the genome or transcriptome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNAseq",
+   "q": "Which RNAseq data were generated for annotation?",
+   "a": "Tissue-specific 100 bp paired-end Illumina reads from brain, heart, kidney, liver, muscle, nasal cavity and skin of adult Pachón cavefish, plus eyes of adult surface fish from Texas. One to six individuals were pooled per tissue, except eyes, which came from one surface fish.",
+   "kw": [
+    "RNAseq",
+    "genome annotation"
+   ],
+   "info": "Gene models came from iterative Ensembl steps using similarity to teleost gene models plus ab initio prediction. Models were extended into UTRs and validated with RNAseq. A second, unused NCBI gene set also exists.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNAseq",
+   "q": "How was the developmental time-course RNAseq processed?",
+   "a": "Each time point had three TruSeq2 libraries made from the same RNA pool (technical replicates). Reads were trimmed with Fastx_trimmer (first base) and Trimmomatic v0.30 (Q30 over a 4 bp sliding window, reads under 30 nt removed), then aligned with TopHat2 (max intron length 10,000).",
+   "kw": [
+    "Trimmomatic",
+    "TopHat2",
+    "Cufflinks"
+   ],
+   "info": "Cufflinks 2.1.0 was run with --frag-bias-correct --multi-read-correct --upper-quartile-norm --compatible-hits-norm. Cuffdiff was run with --frag-bias-correct --multi-read-correct --FDR 0.1 --dispersion-method per-condition. Replicates are technical only, not biological.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - transcript variant analyses",
+   "q": "How were coding variants between cave and surface fish called?",
+   "a": "Reads were pooled per morph, mapped with TopHat2 and turned into mpileups with Samtools v0.1.19. VarScan v2.3.6 called 'somatic' variants with surface as 'normal' and cave as 'tumour'. Only differences fully fixed between morphs were kept, and Variant Effect Predictor v73 classified them.",
+   "kw": [
+    "VarScan",
+    "Variant Effect Predictor",
+    "SIFT"
+   ],
+   "info": "At most 15 Pachón parents (9 from Line 163, 6 from Line 138) and 3 surface fish contributed. These lab stocks are likely somewhat inbred, giving little power for allele frequencies. Derived states were inferred by ClustalW alignment with zebrafish, coelacanth, spotted gar, stickleback and platyfish orthologs, and SIFT predicted impact. Caveat: a 'derived' cavefish variant may exist in unsampled surface standing variation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - identification of candidate genes",
+   "q": "Which criteria were used to prioritize candidate genes outside IPA?",
+   "a": "Genes were prioritized if they (1) were differentially expressed at one or more time points, (2) carried at least one fixed nonsense or missense difference, or (3) were expressed in an eye structure during zebrafish development (ZFIN) or had eye, retina, lens or optic GO annotations.",
+   "kw": [
+    "prioritization",
+    "ZFIN"
+   ],
+   "info": "IPA's analysis-ready pool contained 65% (1,560/2,408) of QTL genes. Enrichment tests used only this filtered set, which excludes duplicate Entrez gene names and genes without expression data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - qPCR and in situ hybridization",
+   "q": "How were the shisa2 qPCR and otx2 RT-PCR done?",
+   "a": "shisa2: 36 h.p.f. embryos, SYBR green qPCR on a QuantStudio 12K Flex with Gapdh and Actb1 as references, n = 3 pools of 10 to 15 larvae per morph. otx2: semi-quantitative RT-PCR on 40 h.p.f. larvae (857 bp product, 35 cycles), with 18S rRNA (343 bp, 25 cycles) as control.",
+   "kw": [
+    "qPCR",
+    "semi-quantitative RT-PCR"
+   ],
+   "info": "shisa2 work used surface fish from San Solomon Spring (Balmorhea State Park, Texas) and Pachón fish from the Jeffery lab (obtained 2004 to 2006). In situ hybridization used DIG-labelled riboprobes. otx2 embryos were also sectioned at 15 micrometres.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - pleiotropic QTL",
+   "text": "Is the missing shisa2-LG2 lens expression a cause of lens degeneration or a consequence of a smaller, degenerating lens? The cis-regulatory change was proposed but not tested."
+  },
+  {
+   "type": "note",
+   "section": "Results - candidate genes under eye QTL",
+   "text": "Whole-embryo pooled RNAseq cannot separate true downregulation from smaller eyes in cavefish. How many 'lower expression' candidates survive tissue-specific or allele-specific expression tests?"
+  },
+  {
+   "type": "note",
+   "section": "Results - putative gene losses",
+   "text": "Revisit the putative losses of vision, sleep and circadian gene families (Supplementary Data 19) with the chromosome-scale, long-read assemblies to separate real losses from draft assembly errors."
+  }
+ ]
+}

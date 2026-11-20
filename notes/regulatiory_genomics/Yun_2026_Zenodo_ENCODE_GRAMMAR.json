@@ -1,0 +1,423 @@
+{
+ "id": "Yun_2026",
+ "title": "ENCODE GRAMMAR: A deep learning model resource for decoding the DNA sequence logic of regulatory elements in the human genome",
+ "link": "https://doi.org/10.5281/zenodo.21795359",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Yun_2026_Zenodo_ENCODE_GRAMMAR.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does ENCODE GRAMMAR address?",
+   "a": "ENCODE maps show where regulatory elements are and how active they are across cell types. They do not explain how that activity is encoded in the DNA sequence: which bases matter, how combinations and arrangements of bases produce cell-type-specific behaviour, or how a variant changes activity.",
+   "kw": [
+    "ENCODE",
+    "regulatory sequence"
+   ],
+   "info": "This is a blog post from the Kundaje Lab at Stanford, posted 4 August 2026 and updated 25 August 2026. It is not a peer-reviewed paper and it has no formal methods section.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does GRAMMAR stand for and what does it contain?",
+   "a": "Genomic Regulatory Atlas of sequence Models, Motifs, Annotations and Rules. It is a collection of 3,865 experiment-specific deep learning model sets trained across the ENCODE data compendium.",
+   "kw": [
+    "GRAMMAR"
+   ],
+   "info": "It covers TF binding, chromatin accessibility, transcription initiation and reporter-assay regulatory activity.",
+   "concl": "It turns thousands of ENCODE experiments into a reusable, interpretable atlas of cell-context-specific DNA sequence rules."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is released for each experiment besides the model?",
+   "a": "De-noised, model-predicted activity profiles at single-base resolution, per-base contribution scores for each regulatory element, de novo motifs learned by the models, genomic locations of predictive motif instances, and genome-browser tracks.",
+   "kw": [],
+   "info": "This is the first post in a planned series of 9 posts, covering a quickstart guide, interpretation, the TF binding and accessibility resources, variant effects, MotifCompendium, cross-assay comparisons, and building the atlas.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How can the same genome produce so many different cell types?",
+   "a": "Different cell types express different combinations of TFs and keep different chromatin states. As a result they use different sets of regulatory elements and end up with different gene expression patterns, even though their DNA is essentially the same.",
+   "kw": [
+    "cell-type specificity",
+    "chromatin"
+   ],
+   "info": "The human genome is about 3.2 billion bp, and individual genomes differ at millions of positions (genetic variants).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do promoters differ from enhancers?",
+   "a": "Promoters sit at or near transcription start sites and help recruit the RNA-producing machinery. Distal enhancers can act over hundreds of kilobases, boosting transcription of target promoters they contact through 3D folding of the genome.",
+   "kw": [
+    "promoter",
+    "enhancer"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do chromatin accessibility and TF binding relate to each other?",
+   "a": "They influence each other. Exposed DNA is easier for TFs to reach, and some proteins can also open or reorganize chromatin. TFs recognize short sequence patterns (motifs) and increase or decrease expression by recruiting or blocking the transcription machinery.",
+   "kw": [
+    "transcription factor",
+    "motif"
+   ],
+   "info": "In less accessible chromatin, densely positioned nucleosomes can restrict TF and polymerase access.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What four things do we need to understand how the genome encodes regulation?",
+   "a": "(1) Map candidate regulatory elements. (2) Measure their biochemical activity and associated expression across contexts. (3) Find which bases are important and how their combinations and arrangements control activity in each cell type. (4) Determine how variants alter activity in each context.",
+   "kw": [],
+   "info": "According to the authors, ENCODE has made major progress on the first two goals. GRAMMAR targets the last two.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does TF ChIP-seq measure, and what is its main limitation?",
+   "a": "It maps where one TF binds the genome in one cell type: protein-DNA complexes are crosslinked and fragmented, then pulled down with an antibody, sequenced and mapped, giving peaks. Each experiment profiles only one TF in one context, so covering about 2,000 human TFs across all cell types is prohibitively laborious and expensive.",
+   "kw": [
+    "ChIP-seq",
+    "peaks"
+   ],
+   "info": "Peaks are often enriched for the motif that mediates the TF's binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do DNase-seq and ATAC-seq differ, and what bias affects both?",
+   "a": "DNase-seq cuts exposed DNA with DNase I, while ATAC-seq inserts adapters into accessible DNA with Tn5 transposase. Both enzymes have their own sequence preferences, so the signal mixes true accessibility with an assay-specific sequence bias.",
+   "kw": [
+    "DNase-seq",
+    "ATAC-seq",
+    "Tn5"
+   ],
+   "info": "One accessibility experiment highlights elements bound by many factors, but it does not say which proteins are bound. Separating the bias matters most at single-base resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does PRO-cap measure?",
+   "a": "It maps the exact positions where transcription starts by enriching and sequencing the capped 5' ends of nascent RNAs. The result is a base-resolution, strand-specific map of initiation at promoters and transcribed regulatory elements.",
+   "kw": [
+    "PRO-cap",
+    "transcription initiation"
+   ],
+   "info": "The number of reads starting at a site measures its relative initiation activity. It is needed because TF binding and accessibility do not necessarily lead to transcription.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does an MPRA work and what is its caveat?",
+   "a": "Thousands of candidate sequences are cloned next to a reporter gene with identifying barcodes. Activity is measured as barcode abundance in reporter RNA compared with the input DNA library. Because the sequences are tested outside their native genomic location, MPRAs measure regulatory potential in the reporter system, not the full endogenous function.",
+   "kw": [
+    "MPRA",
+    "reporter assay"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How big is the ENCODE compendium?",
+   "a": "More than 16,000 genome-wide assays across thousands of human and mouse biosamples. More than 5 million accessible chromatin elements are mapped in the human genome, of which about 2.4 million are classified as candidate cis-regulatory elements (cCREs).",
+   "kw": [
+    "cCREs",
+    "ENCODE 4"
+   ],
+   "info": "cCREs are accessible elements supported by additional biochemical signatures of regulatory activity. The biosamples include cell lines, primary cells, tissues, differentiated cells and perturbed samples, all processed with standardized pipelines. The ENCODE 4 compendium preprint was released in 2026.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which open questions do the authors say ENCODE maps cannot answer?",
+   "a": "Which bases and motifs drive each type of activity in a given cell type, how combinations and arrangements of these patterns determine activity, why the same element behaves differently across cell types, and how a variant alters activity in a given context.",
+   "kw": [
+    "regulatory syntax"
+   ],
+   "info": "",
+   "concl": "We need to move from mapping regulatory elements to decoding the sequence rules that govern them."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - BPNet model family",
+   "q": "What kind of model is BPNet?",
+   "a": "A neural network built from stacks of dilated residual convolutional layers. It learns TF motifs and their higher-order combinations and arrangements (regulatory syntax) from up to about 2 kb of local DNA sequence.",
+   "kw": [
+    "BPNet",
+    "dilated convolution"
+   ],
+   "info": "The architecture figure shows a one-hot 2,114 bp input, an initial convolution, 8 residual blocks with increasing dilation (d = 1, 2, 4, ...), and then two output heads.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - BPNet model family",
+   "q": "What exactly does BPNet predict?",
+   "a": "Two outputs, predicted jointly: the base-resolution shape of the signal profile across a 1 kb region, and the total signal (log counts) in that region. It does not just classify a region as active or inactive.",
+   "kw": [
+    "base-pair resolution",
+    "profile head",
+    "counts head"
+   ],
+   "info": "In the figure, the profile head uses a convolution to output a distribution over 1,000 bp. The counts head uses mean pooling and a dense layer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - BPNet model family",
+   "q": "Why restrict the models to local sequence context?",
+   "a": "It makes them computationally efficient and allows robust sequence-level interpretation. The authors say the models are still quite competitive with much larger models that use much longer sequences.",
+   "kw": [
+    "local context"
+   ],
+   "info": "The blog post gives no benchmark numbers for this claim. It only links to another source.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - BPNet model family",
+   "q": "Which four model families are in GRAMMAR, and how many model sets does each have?",
+   "a": "BPNet: 2,339 TF ChIP-seq model sets covering 788 TF targets. ChromBPNet: 1,512 DNase-seq and ATAC-seq model sets across 408 biosamples. ProCapNet: 6 PRO-cap model sets. ReporterNet: 8 reporter-assay model sets.",
+   "kw": [
+    "BPNet",
+    "ChromBPNet",
+    "ProCapNet"
+   ],
+   "info": "The total is 3,865 model sets, each trained and evaluated with five-fold cross-validation. Unlike the other three families, ReporterNet predicts at the resolution of the tested candidate sequence, not per base.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - BPNet model family",
+   "q": "What derived products does GRAMMAR provide for each experiment?",
+   "a": "Predicted base-resolution profiles, bias-corrected accessibility profiles, sequence-contribution maps, de novo motifs, the ENCODE Motif Compendium (a unified non-redundant motif lexicon), predictive genomic motif instances, and genome-browser tracks.",
+   "kw": [],
+   "info": "The predicted profiles are often de-noised compared with sparse, noisy measured profiles, especially for TF ChIP-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "How was each model set trained?",
+   "a": "For each experiment, a model learns to predict the measured profile from local sequence around active regions plus background regions matched for overall sequence composition. Models are trained on a subset of chromosomes and evaluated on held-out chromosomes.",
+   "kw": [
+    "held-out chromosomes",
+    "model set"
+   ],
+   "info": "At least five models per experiment are trained on different chromosome splits. The ensemble is the experiment's model set, and averaging across it stabilizes predictions and interpretation.",
+   "concl": "Good performance on held-out chromosomes suggests the model learned generalizable features such as motifs, their spacing and their arrangement."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "Can a model trained on one experiment predict for other cell types or assays?",
+   "a": "No. Each model learns the sequence-to-activity relationship of one assay in one cellular context, so its predictions should not be extrapolated directly to other assays or cell types.",
+   "kw": [
+    "generalization"
+   ],
+   "info": "Generalization is strongest for sequences whose regulatory syntax resembles the training data, although the models often tolerate modest departures.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "How are variant effects predicted?",
+   "a": "By comparing model predictions for the reference and alternate allele sequences, averaged across all models in the set. Variation among the models gives an empirical estimate of uncertainty.",
+   "kw": [
+    "variant effect prediction"
+   ],
+   "info": "The models are trained only on reference-genome sequence and never see variant-effect labels, yet they can often predict molecular variant effects well. The post points to Fig. 6 of the ChromBPNet paper as evidence.",
+   "concl": "The predicted change applies to the biochemical activity measured by that experiment, not to downstream phenotypes such as disease risk."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "How does ChromBPNet deal with DNase I and Tn5 sequence bias?",
+   "a": "It factorizes the signal. A separate bias model learns the enzyme-driven signal, and the main model learns the remaining sequence-dependent accessibility signal. The bias is subtracted to give bias-corrected predictions.",
+   "kw": [
+    "ChromBPNet",
+    "bias factorization"
+   ],
+   "info": "According to the authors, this gives a cleaner estimate of the underlying regulatory profile, especially at base-pair resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "How are per-base contribution scores calculated?",
+   "a": "With DeepLIFT/DeepSHAP, which approximates a prediction as an additive sum of per-base contributions. The scores sum to the difference between the prediction for the input sequence and the prediction for dinucleotide-shuffled reference sequences.",
+   "kw": [
+    "DeepLIFT",
+    "DeepSHAP",
+    "contribution scores"
+   ],
+   "info": "Positive scores increase the predicted activity and negative scores decrease it. Scores are averaged across the models in a set. Many high-contribution patterns match known TF sites, and others may be previously unrecognized features.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "What does TF-MoDISco do?",
+   "a": "It samples high-contribution subsequences across peak regions, aligns and clusters similar ones, and averages each cluster into a contribution-weighted summary motif.",
+   "kw": [
+    "TF-MoDISco",
+    "de novo motifs"
+   ],
+   "info": "Many motifs match known TF preferences. Others reveal unrecognized motifs, context-specific TF preferences, or composite motifs bound by TF complexes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "Why is FiNeMo needed if TF-MoDISco already gives motifs?",
+   "a": "A TF-MoDISco motif summarizes a cluster but does not find all predictive instances with high sensitivity and specificity, because motifs can overlap, share subpatterns and compete for the same contribution signal. FiNeMo scans contribution maps with the full motif set and jointly assigns each instance to the motif that best explains it.",
+   "kw": [
+    "FiNeMo",
+    "motif instances"
+   ],
+   "info": "The output is a quantitative genome-wide map of predictive motif occurrences within the active elements of each experiment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - workflow",
+   "q": "What is MotifCompendium for?",
+   "a": "It clusters the motifs discovered by all models into one scalable, non-redundant lexicon, links them to known TF motifs, classifies motif types, and records which models and contexts each motif came from.",
+   "kw": [
+    "MotifCompendium",
+    "motif lexicon"
+   ],
+   "info": "Comparing hundreds of thousands of contribution-weighted motifs has to account for shifts, reverse complements, partial overlaps and differences in contribution patterns. The lexicon is ENCODE annotation ENCSR091GRD.",
+   "concl": "It makes it possible to tell which motifs are shared across assays and cell types and which are context-specific."
+  },
+  {
+   "type": "qa",
+   "section": "Results - MYC enhancer case study",
+   "q": "Which locus and cell line did they use as the example?",
+   "a": "A CRISPRi-validated distal enhancer of MYC at chr8:127,898,412-127,899,647 (hg38) in K562 leukemia cells, about 162 kb from the gene. They analysed it with 15 independently trained K562 models covering accessibility and TF binding.",
+   "kw": [
+    "MYC",
+    "K562",
+    "enhancer"
+   ],
+   "info": "The post does not list all 15 models. The figures show DNase and ATAC ChromBPNet models plus GATA2, SP1, CEBPB, JUND and GABPB1 BPNet models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MYC enhancer case study",
+   "q": "How well did ChromBPNet reproduce the observed accessibility at this enhancer?",
+   "a": "The separately trained DNase-seq and ATAC-seq models both closely reproduced the broad shape and many fine-scale features of their observed signals.",
+   "kw": [
+    "ChromBPNet"
+   ],
+   "info": "The evidence is visual only, with no quantitative metric reported for this locus. Displayed ranges: DNase observed 0-3543 vs predicted 0-588; ATAC observed 0-1268 vs predicted 0-272.",
+   "concl": "Local DNA sequence contains substantial information about accessibility in K562."
+  },
+  {
+   "type": "qa",
+   "section": "Results - MYC enhancer case study",
+   "q": "Why do the raw DNase and ATAC profiles look different, and what happens after bias correction?",
+   "a": "They differ substantially in shape, mostly because DNase I and Tn5 have different sequence preferences. After ChromBPNet bias correction, the two independently trained models converge on a much more similar accessibility profile.",
+   "kw": [
+    "bias correction"
+   ],
+   "info": "Bias-corrected display ranges were 0-239 for DNase and 0-53 for ATAC.",
+   "concl": "Bias correction helps reconcile the two accessibility assays."
+  },
+  {
+   "type": "qa",
+   "section": "Results - MYC enhancer case study",
+   "q": "Which motifs did the contribution maps find in the MYC enhancer?",
+   "a": "Predictive instances of GATA, AP-1, SP, ETV/ETS and CEBP family motifs, all TFs active in K562. The DNase and ATAC contribution maps were highly concordant.",
+   "kw": [
+    "GATA",
+    "AP-1",
+    "ETS"
+   ],
+   "info": "The annotated instances, in order, were GATA, GATA, SP, GATA, SP, GATA, AP1, ETV, CEBP, ETV, AP1, AP1.",
+   "concl": "This goes beyond calling the enhancer accessible and nominates the specific sequence features that may establish its accessibility."
+  },
+  {
+   "type": "qa",
+   "section": "Results - MYC enhancer case study",
+   "q": "How did TF ChIP-seq BPNet models confirm the accessibility motifs?",
+   "a": "For each motif class, the matching TF-specific BPNet model gave high contribution to the same instances: GATA sites by GATA2, AP-1 by JUND, ETV/ETS by GABPB1, and SP and CEBP by SP1 and CEBPB. Together, the TF models accounted for most of the motif instances found by ChromBPNet.",
+   "kw": [
+    "GATA2",
+    "JUND",
+    "GABPB1"
+   ],
+   "info": "In the browser tracks the SP1 contribution track looks nearly flat at this locus, so the SP1 support seems weaker than the text suggests. 'Most' is not quantified.",
+   "concl": "Combining models from different assays at one locus links individual bases and motifs to both accessibility and binding by specific TFs."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What can researchers use GRAMMAR for?",
+   "a": "Browsing base-resolution predictions and contribution maps, finding candidate motifs and motif combinations in many cell types, comparing features across assays and tissues in a common lexicon, predicting and interpreting noncoding variant effects, and reusing models in new methods.",
+   "kw": [
+    "noncoding variants"
+   ],
+   "info": "The point is to avoid training and interpreting thousands of models from scratch.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors themselves state?",
+   "a": "Model outputs are testable hypotheses about the sequence determinants of activity. They are not substitutes for perturbation experiments or evidence of causal effects on downstream phenotypes, and are most informative when interpreted with experimental data and biological context.",
+   "kw": [],
+   "info": "Other stated caveats: predictions are specific to one assay and cell type, generalization is best for in-distribution syntax, and MPRAs measure activity outside native chromatin context.",
+   "concl": "The models predict biochemical activity, not phenotype or causality."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Where can the resource be accessed?",
+   "a": "Everything is on the ENCODE portal. Trained models are on Hugging Face, and predictions, contribution maps and motif instances are on a UCSC Track Hub. The unified motif lexicon is ENCODE annotation ENCSR091GRD, and the BPNet, ChromBPNet and ProCapNet code is in their repositories.",
+   "kw": [
+    "Hugging Face",
+    "UCSC Track Hub"
+   ],
+   "info": "Human genome only in this release (hg38 coordinates shown), although ENCODE also covers mouse.",
+   "concl": "The goal is to ask which bases, motifs and syntactic arrangements drive each type of activity of every regulatory element in every cellular context."
+  },
+  {
+   "type": "note",
+   "section": "Methods - BPNet model family",
+   "text": "No performance metrics (e.g. correlation of counts, profile JSD) are given in this post for the 3,865 model sets, so model quality has to be checked per experiment or in the BPNet, ChromBPNet and ProCapNet papers. Worth checking how much quality varies across ChIP targets and biosamples."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Everything is trained on human ENCODE data. Could the same pipeline (ChromBPNet, TF-MoDISco, FiNeMo, MotifCompendium) be applied to cavefish or zebrafish ATAC-seq to compare regulatory syntax between morphs? Also check whether the human motif lexicon transfers to teleosts."
+  },
+  {
+   "type": "note",
+   "section": "Results - MYC enhancer case study",
+   "text": "The case study is one locus and the evidence is mostly visual. Go back to the later posts in the series (variant effects, MotifCompendium, cross-assay comparisons) for genome-wide quantitative results."
+  }
+ ]
+}

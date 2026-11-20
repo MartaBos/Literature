@@ -1,0 +1,583 @@
+{
+ "id": "Liu_2025",
+ "title": "Evolution of chromosomes and nuclear architectures of amniotes",
+ "link": "https://doi.org/10.1038/s41467-025-67427-8",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Liu_2025_NatCommun_amniote_chromosome_evolution.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "How chromosomes of mammals and reptiles diverged in sequence and 3D nuclear organization since their last common amniote ancestor. It also asks how chromosome rearrangements relate to 3D genome architecture.",
+   "kw": [
+    "amniote",
+    "3D genome",
+    "chromosome rearrangement"
+   ],
+   "info": "Published online 10 December 2025 in Nature Communications (2026) 17:737. Two authors: Jing Liu and Qi Zhou (Zhejiang University).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they do, in one sentence?",
+   "a": "They reconstructed the ancestral linkage groups (ALGs) of the amniote ancestor and its descendant nodes from chromosome-level assemblies of 36 species, two of them newly assembled. They then compared these with Hi-C, lamin-B1 and other chromatin data.",
+   "kw": [
+    "ALG",
+    "Hi-C"
+   ],
+   "info": "The abstract says 36 species. The Results describe 20 mammals, 16 reptiles and 1 amphibian outgroup (37 genomes, with 29/37 given as the long-read fraction).",
+   "concl": "Mammals and reptiles show contrasting rearrangement regimes, but nuclear organization tied to the ancient split between micro- and macro-ALG chromatin is conserved, which suggests deep constraints on chromosome evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are A/B compartments, subcompartments and TADs?",
+   "a": "Using Hi-C, the genome can be split into transcriptionally active (A) and inactive (B) compartments, which roughly match euchromatin and heterochromatin. These can be further divided into subcompartments A1, A2, B1, B2 and B3 that associate with particular nuclear bodies. At a finer scale, chromatin folds into topologically associated domains (TADs) through loop extrusion or self-organization.",
+   "kw": [
+    "A/B compartments",
+    "subcompartments",
+    "TAD"
+   ],
+   "info": "Later in the paper, A1 is linked to speckles and B3 to the nuclear lamina (LAD).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a chromosome territory, and what decides the radial position of a chromosome?",
+   "a": "FISH work by Thomas Cremer's group showed that each chromosome occupies its own territory in the interphase nucleus. Radial position was proposed to correlate with chromosome size, and gene density also contributes.",
+   "kw": [
+    "chromosome territory",
+    "FISH",
+    "radial position"
+   ],
+   "info": "Human chr18 and chr19 are similar in size, but chr18 sits toward the periphery and chr19 in the interior, probably because of their different gene densities.",
+   "concl": "Both size and gene density seem to matter. It was unclear whether the segregated layout seen in reptiles is ancestral or derived."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where do reptile microchromosomes sit in the nucleus?",
+   "a": "The short, gene-rich and GC-rich microchromosomes of reptiles (including birds) sit in the nuclear interior. The large, gene-poor macrochromosomes sit near the periphery.",
+   "kw": [
+    "microchromosomes"
+   ],
+   "info": "In most reptiles, and especially in birds, microchromosomes also show strong interchromosomal (trans) interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a Muller element / ancestral linkage group (ALG)?",
+   "a": "Muller's 1940s hypothesis, from Drosophila, is that gene content within the same chromosomal element stays mostly conserved during evolution. Such ancestral elements are called ALGs here, and they keep their gene content and sequence across most descendant lineages.",
+   "kw": [
+    "Muller element",
+    "ALG"
+   ],
+   "info": "The idea extends to many animal phyla, including amniotes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How old are microchromosomes, and do mammals have them?",
+   "a": "Microchromosomes have an ancient origin dating to the jawed vertebrate ancestor. They are widely present and conserved in extant reptiles, including birds, but absent in mammals.",
+   "kw": [
+    "microchromosomes",
+    "jawed vertebrates"
+   ],
+   "info": "The paper is not consistent on the dating. The Discussion says microchromosomes originated in the vertebrate ancestor over 500 MY ago through asymmetric loss after whole genome duplications. The Fig. 5 legend says the bony vertebrate ancestor, 450-460 MYA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the gap in knowledge?",
+   "a": "Mammals were known to have more extensive rearrangements, but nobody had quantified how the tempo and mode of chromosome evolution differ between reptiles and mammals. It was also unclear how these different trajectories connect to nuclear architecture.",
+   "kw": [],
+   "info": "Earlier comparative 3D work mostly looked at conservation of TAD boundaries, not chromosome-level nuclear positioning. One exception is cytogenetic work showing human chr18 and chr19 positions are conserved across primates (20-30 MY).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "Which ancestral nodes did they reconstruct, and with which species?",
+   "a": "They reconstructed Amniota, Mammalia, Reptilia, Archelosauria, Archosauria, Eutheria and Boreoeutheria. The input was 20 mammals, 16 reptiles and one amphibian outgroup (Xenopus tropicalis).",
+   "kw": [
+    "ancestral reconstruction"
+   ],
+   "info": "Species were chosen for phylogenetic representation, karyotype diversity and assembly quality. They include small chromosome numbers (Tasmanian devil 2n = 14, aardvark 2n = 20) and large ones (echidna 2n = 64, horse 2n = 66). Tuatara was excluded because it lacks a chromosome-level assembly. 29/37 (78.4%) of assemblies were from long reads with contig N50 > 10 Mb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "Which new genomes did they generate, and why?",
+   "a": "They made chromosome-level assemblies of the Chinese softshell turtle (Pelodiscus sinensis, 2n = 66) and the Siamese crocodile (Crocodylus siamensis, 2n = 30). Testudines and Crocodilia were under-represented among high-quality genomes.",
+   "kw": [
+    "Pelodiscus sinensis",
+    "Crocodylus siamensis"
+   ],
+   "info": "Both lineages were reported to have relatively conserved karyotypes within the lineage.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "Why did they use reference-based reconstruction, and which references?",
+   "a": "Reference-based reconstruction includes intergenic regions, unlike gene-based reference-free methods. Human T2T-CHM13v2.0 was the mammalian reference and chicken GGswu was the reptilian reference, as both are among the best genomes in their classes.",
+   "kw": [
+    "DESCHRAMBLER",
+    "T2T-CHM13",
+    "GGswu"
+   ],
+   "info": "DESCHRAMBLER builds homologous syntenic blocks (HSBs) into reconstructed ancestral chromosome fragments (RACFs). RACFs were then manually oriented and joined into ALGs, following Damas et al.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "How many ALGs did each ancestor have?",
+   "a": "The amniote ancestor had 44 ALGs (AALGs). The mammalian ancestor had 32, the reptilian ancestor 36, the Boreoeutherian ancestor 26 and the Archosaurian ancestor 38.",
+   "kw": [
+    "AALG"
+   ],
+   "info": "72% to 89% of each analysed genome was included in the multi-species alignments (Results). Methods gives reconstructed ancestor coverage as 67.0-89.4%. Fig. 1a also shows n = 35 (Archelosauria) and n = 23 (Eutheria).",
+   "concl": "The number of ALGs falls from the amniote ancestor to its descendant nodes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "How were AALGs grouped by size?",
+   "a": "Macro-AALGs are A1-8 (>90 Mb), medium-AALGs are A9-15 (40-90 Mb) and micro-AALGs are A16-44 (<40 Mb). Sizes are based on the human-sequence reconstruction.",
+   "kw": [
+    "micro-AALG",
+    "macro-AALG"
+   ],
+   "info": "The authors call this split artificial. It was made to capture the size spectrum.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "What happened to micro-AALGs in the ancestral nodes?",
+   "a": "Micro-AALGs remained mostly intact in the reptilian and mammalian ancestors. They only became fused or translocated into larger chromosomes after mammals diverged, for example in human.",
+   "kw": [
+    "micro-AALG"
+   ],
+   "info": "Chicken macrochromosomes can be explained by six AALG fusions and chicken microchromosomes by only one fusion.",
+   "concl": "The avian karyotype best recapitulates the proto-karyotype of the jawed vertebrate ancestor, and the karyotype stayed largely stable from jawed vertebrates to amniotes and birds."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstructing ancestral linkage groups",
+   "q": "How does the reconstruction compare with earlier ones?",
+   "a": "It recovered all 14 previously reported associations between human chromosome segments inferred by FISH, and it identified the avian homologues of 10 previously inferred amniote ancestral macrochromosomes. It also found a new fusion, AALG10 with AALG19, in the Reptilia ancestor, which is confirmed in all reptiles studied.",
+   "kw": [
+    "validation"
+   ],
+   "info": "Sacerdot et al. inferred 49 AALGs, compared with 44 here. The authors attribute this to scaffold-level genomes that break at common fragile sites. One sentence comparing with another recent reconstruction is truncated in the PDF and unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "Do mammals and reptiles differ in the number of rearrangements since the amniote ancestor?",
+   "a": "Yes. Few fusions and translocations occurred on the lineage to the reptile ancestor, compared with many more in mammalian ancestors, especially translocations (one-sided t-test, t = 16.901, p = 3.5e-15). Extant mammalian chromosomes also contain fragments from significantly more different AALGs (p = 0.000145).",
+   "kw": [
+    "translocation",
+    "fusion"
+   ],
+   "info": "The overall composition of the mammalian ancestor's ALGs is not very different from the AALGs. Translocations kept dominating as mammals diverged from each other, but not among reptiles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "How do inversion rates compare between mammals and reptiles?",
+   "a": "Mammals have on average more than 3-fold higher inversion rates than reptiles: 3.30 vs. 0.94 events per MY. The highest rate is on the Atlantogenata branch (elephants, anteaters), followed by Laurasiatheria.",
+   "kw": [
+    "inversion rate"
+   ],
+   "info": "Rates are estimated per AALG per million years along each lineage.",
+   "concl": "Mammals have about 3-fold higher inversion rates than reptiles."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "Which kinds of interchromosomal rearrangement dominate in each class?",
+   "a": "Reptilian chromosomes, especially crocodile ones, are mostly products of fusions between AALGs. Mammalian chromosomes are shaped mainly by fissions and translocations. Birds and turtles have the lowest rates of both inter- and intrachromosomal rearrangement among amniotes.",
+   "kw": [
+    "fusion",
+    "fission",
+    "translocation"
+   ],
+   "info": "Each platypus chromosome contains fragments from 4.3 AALGs on average, compared with 2.7 for crocodile.",
+   "concl": "Bird and turtle karyotypes best represent the amniote ancestor."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "Do macro- and micro-AALGs behave differently in rearrangements?",
+   "a": "In mammals, rearrangements between micro- and macro-sized AALGs are more frequent than in reptiles (p = 0.008473). Mammalian macro-AALGs tend to undergo translocations and fissions (6.3 vs. 1.5, p = 5.9e-15), while micro-AALGs tend to undergo fusions. Reptiles show neither tendency.",
+   "kw": [
+    "micro-AALG",
+    "macro-AALG"
+   ],
+   "info": "For micro-AALG fusions the paper reports 0.53 vs. 0.87 (W = 720.5, p = 1.0e-08). It is unclear which group each number refers to, since the order seems to contradict the claim.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "What are EBRs and HSBs, and how were EBRs classified?",
+   "a": "HSBs (homologous syntenic blocks) are conserved syntenic blocks, and EBRs (evolutionary breakpoint regions) are the junctions between them. Class-level EBRs are shared by at least 80% of lineages, order-level EBRs by at least 80% of one lineage only, family-level EBRs are unique to one species, and reused EBRs are found in less than 80% of lineage species without being specific to one lineage.",
+   "kw": [
+    "EBR",
+    "HSB"
+   ],
+   "info": "The lineages are Monotremata, Atlantogenata, Laurasiatheria and Euarchontoglires for mammals, and Squamata, Pantestudines/Testudines, Crocodilia and Aves for reptiles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "Which EBR classes shape extant chromosomes?",
+   "a": "Eutherian chromosomes are shaped mostly by class-level EBRs, while monotreme and reptilian chromosomes are shaped mostly by order-level EBRs. 12-19% of EBRs are reused across eutherian lineages, but reused EBRs are rare in reptiles except squamates.",
+   "kw": [
+    "reused EBR",
+    "fragile sites"
+   ],
+   "info": "Many reused EBRs have higher GC content than HSBs. GC-rich regions are more prone to double-strand breaks, which supports the existence of genomic fragile sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rates and patterns of chromosome evolution",
+   "q": "What sequence features do family-level (species-specific) EBRs have?",
+   "a": "Compared with HSBs and class- or order-level EBRs, they have higher GC and repeat content and lower insulation scores, so they are more likely to overlap TAD borders. The authors suggest this reflects recent TE insertions that contributed to local 3D organization.",
+   "kw": [
+    "insulation score",
+    "TE",
+    "TAD boundary"
+   ],
+   "info": "Reptile family-level EBRs are enriched for GC-rich LINEs (CR1, L2). Euarchontoglires EBRs have more AT-rich L1 and fewer Alu, so they have lower GC. Human-lineage EBRs are enriched in segmental duplications, many linked to psychiatric and cognitive disorders.",
+   "concl": "Recent EBRs carry signatures of TE-associated fragility. Older or reused breakpoints show no shared sequence feature, which suggests diverse mechanisms."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Nuclear architecture of ancestral microchromosomes",
+   "q": "Are platypus microchromosomes homologous to reptile microchromosomes?",
+   "a": "No. Almost all of them (9/10) come from translocations between fragments of different macro- and micro-AALGs, so they have a different and more recent origin.",
+   "kw": [
+    "platypus",
+    "microchromosomes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Nuclear architecture of ancestral microchromosomes",
+   "q": "Which predicts a chromosome's trans-interaction strength better: its size or its micro-AALG content?",
+   "a": "Micro-AALG content. Size is negatively associated with trans-interaction (R = -0.57), but micro-AALG percentage has a stronger positive association (R = 0.59) and a much larger coefficient in multiple linear regression (0.35 vs. -0.0012 for size).",
+   "kw": [
+    "trans-interaction",
+    "micro-AALG%"
+   ],
+   "info": "751 extant chromosomes (df = 749). Among chromosomes under 100 Mb, those with more than 50% micro-AALG origin have significantly higher trans-interaction (p = 6.4e-16).",
+   "concl": "Ancestral micro-AALG origin predicts nuclear position better than current chromosome size."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Nuclear architecture of ancestral microchromosomes",
+   "q": "How did they test whether micro-AALG regions are in the nuclear interior?",
+   "a": "They used lamin-B1 data, a marker of the nuclear periphery, from human and emu tissues. Micro-AALG-derived regions in human and emu microchromosomes had higher trans-interaction (p = 9.55e-05) and lower lamin-B1 signal (p < 2.2e-16) than other chromosomes.",
+   "kw": [
+    "lamin-B1",
+    "nuclear periphery"
+   ],
+   "info": "Emu lamin-B1 data were generated by CUT&Tag (ovary, brain) according to Methods, although the abstract and Results call it ChIP-seq. Human lamin-B1 ChIP-seq was public (hESC, epicardium, liver).",
+   "concl": "Higher-order nuclear organization constrains micro-AALGs to keep their interior position despite rearrangements."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Nuclear architecture of ancestral microchromosomes",
+   "q": "Are there exceptions to the micro-interior / macro-periphery rule?",
+   "a": "Yes. Some macro-AALG-derived chromosomes that became small after fission (human chr21, platypus chr19) gained trans-interactions. Some large chromosomes made mostly of fused micro-AALGs (leopard gecko chr4, platypus chr3) lost them.",
+   "kw": [
+    "chr21",
+    "outliers"
+   ],
+   "info": "Micro-AALG chromosomes with weaker trans-interactions had higher repeat content (platypus) or lower GC (leopard gecko) than other micro-AALG chromosomes. The authors attribute this to chromosome-specific turnover of euchromatin and heterochromatin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "What is GPSeq, and what did it show?",
+   "a": "GPSeq (genomic loci positioning by sequencing) measures radial nuclear position. A higher score means farther from the periphery. In human HAP1 cells, regions with high GPSeq scores had stronger trans-interactions (p = 4.5e-11), and micro-AALG-derived regions had higher GPSeq scores than medium- or macro-derived regions (p < 2.2e-16).",
+   "kw": [
+    "GPSeq",
+    "HAP1"
+   ],
+   "info": "Translocated chr9 and chr22 in HAP1 were excluded. Public data GSE135882, at 100 kb and 1 Mb resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "What new explanation do they give for the different positions of chr18 and chr19?",
+   "a": "Previously this was attributed to gene density. Here they show chr19 (and chr17) is derived from micro-AALGs and kept an interior position dating back to the amniote ancestor, while chr18 comes from medium- or macro-AALGs.",
+   "kw": [
+    "chr18",
+    "chr19",
+    "evolutionary origin"
+   ],
+   "info": "",
+   "concl": "Evolutionary origin (micro- vs. macro-AALG) is an additional explanation for radial position."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "Do micro-AALG regions differ in chromatin state and subcompartment?",
+   "a": "Yes. They differ in H3K4me3 (euchromatin) and H3K9me3 (heterochromatin) levels in both human and emu. In human, micro-AALG regions are enriched for the speckle-associated A1 subcompartment, and macro-AALG regions for the lamina-associated B3 subcompartment (chi-square = 4699.20, p < 2.2e-16).",
+   "kw": [
+    "H3K4me3",
+    "H3K9me3",
+    "nuclear speckles"
+   ],
+   "info": "The authors suggest these different sequence compositions and epigenomic states were already present in the amniote ancestor.",
+   "concl": "Natural selection keeps micro-AALGs in the interior around speckles and macro-AALGs at the lamina-associated periphery."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "What are the trans-interaction stripes in human Hi-C?",
+   "a": "They are conserved trans-interactions (for example between chr19 and chr7) located where Alu SINEs are concentrated, but not where L1 LINEs are, whether or not the region is micro-AALG-derived. Genome-wide, GPSeq score correlates with Alu density (R = 0.452), and the correlation is strongest in micro-AALG regions.",
+   "kw": [
+    "Alu",
+    "SINE",
+    "trans-interaction"
+   ],
+   "info": "The stripes are conserved across cell types and developmental stages. Correlation in Fig. 4e, using 100 kb bins: PCC 0.427 for micro, 0.355 for medium, 0.303 for macro.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "Which Alu subfamily drives the homotypic trans-interactions?",
+   "a": "Only AluSx, the most abundant subfamily, which expanded in higher primates, shows significant trans-interactions with other members of the same subfamily. It shows weak interactions with AluSz and AluY.",
+   "kw": [
+    "AluSx"
+   ],
+   "info": "AluSx is enriched in micro-AALG regions (chi-square = 645.44).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "Are AluSx interactions ancestral or new in primates?",
+   "a": "Probably new. Some macro- and medium-AALG regions that should have few ancestral trans-interactions interact strongly at AluSx-enriched loci. The homologous flanking regions in emu, platypus and elephant show few or no trans-interactions.",
+   "kw": [
+    "AluSx",
+    "de novo"
+   ],
+   "info": "Genes within 2 kb of highly interacting AluSx have higher H3K36me3 (1.72 vs. 0.54, p = 1.4e-10). These genes are enriched for DNA/RNA metabolism, DNA damage response and chromatin organization GO terms. Alu-rich regions are more often A1/speckle and less often B3/LAD.",
+   "concl": "Alu elements locally tune the conserved architecture, possibly by pulling nearby housekeeping genes from different chromosomes toward speckles."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "q": "Do other mammals show SINE-driven trans-interactions?",
+   "a": "Yes. Mouse B1, B2 and B4 SINEs and Asian elephant MIR SINEs show significant trans-interactions. Human and mouse share less than 10% of the orthologous genes near interacting Alu and B1 elements.",
+   "kw": [
+    "B1",
+    "MIR",
+    "mouse"
+   ],
+   "info": "These SINEs expanded independently in each lineage.",
+   "concl": "Independent SINE expansions are a mechanism for the recent divergence of nuclear architecture between mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall evolutionary model?",
+   "a": "Ancient microchromosomes, the building blocks, were kept in the amniote, reptile and mammal ancestors and in most reptiles, but were integrated into larger chromosomes in extant mammals by fusions and translocations. Their interior position was nonetheless conserved.",
+   "kw": [
+    "building block chromosomes"
+   ],
+   "info": "Mammals: more inversions (3-fold), translocations and fissions that break AALGs. Reptiles: mainly fusions that keep the AALG unit intact.",
+   "concl": "Linear rearrangement regimes differ between the classes, but spatial organization is conserved."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might EBRs be reused across lineages?",
+   "a": "EBRs cluster in fragile, repeat-rich regions. Recurrent breakpoint usage is probably related to the spatial proximity of breakpoints, which fits with the conserved nuclear positions of AALG sequences.",
+   "kw": [
+    "EBR reuse",
+    "fragile sites"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How old is the conventional nucleus (euchromatin inside, heterochromatin at the periphery)?",
+   "a": "Probably older than the vertebrate radiation. Microchromosomes of little skate and lungfish also interact strongly in trans, and the gene-rich, A-compartment middle parts of amphioxus chromosomes interact strongly with each other.",
+   "kw": [
+    "conventional nuclei",
+    "amphioxus"
+   ],
+   "info": "A similar pattern is reported in C. elegans but not in Drosophila. Amphioxus data are from adult muscle Hi-C.",
+   "concl": "This ancient nuclear organization constrains the positions of micro-AALG regions against fusions in reptiles and translocations in mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which mechanisms can change the conserved architecture?",
+   "a": "One is a change in chromosome size, which alters recombination rate and in turn repeat and heterochromatin content. The other is lineage-specific repeats such as AluSx and B1, which act through homotypic interactions. Human chr21 is an example of both acting together: a truncated macro-AALG fragment that accumulated AluSx and moved toward the interior.",
+   "kw": [
+    "recombination rate",
+    "chr21",
+    "AluSx"
+   ],
+   "info": "Micro-AALG regions inside large chromosomes (human chr1, chr12) mostly stay in the interior. Fusion does not drag the whole micro-AALG to the periphery.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "TE contact signals could partly reflect lineage-specific bursts and the mappability of recent insertions. Filtering for uniquely mapped reads cannot fully exclude this. Causality and the predicted nuclear positions still need imaging and functional perturbation.",
+   "kw": [
+    "mappability",
+    "limitations"
+   ],
+   "info": "They argue that differences between TE subfamilies of similar age and abundance point to real biology beyond mapping bias.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is SIRLOIN, and why is it relevant?",
+   "a": "SIRLOIN (SINE-derived nuclear RNA localization) is a 42-nt GC-rich element found in AluSx. It promotes nuclear retention of lncRNAs and some mRNAs through hnRNPK, and may explain how Alu and B1 copies interact with speckles.",
+   "kw": [
+    "SIRLOIN",
+    "hnRNPK"
+   ],
+   "info": "It is found in different Alu subfamilies and in B1 with variable consensus sequences. Motifs were detected with FIMO. The authors propose precise excision of the interacting Alu/B1 elements as future work.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic dataset collection",
+   "q": "Where did the genomes come from?",
+   "a": "Most were downloaded from NCBI or DNAzoo and were chosen to have both a chromosome-level assembly and Hi-C data. Examples are human T2T-CHM13v2.0, mouse GRCm39, chicken GGswu, emu ZJU2.0 and the outgroup Xenopus tropicalis UCB_Xtro_10.0.",
+   "kw": [
+    "DNAzoo",
+    "NCBI"
+   ],
+   "info": "Accessions are listed in Supplementary Table 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - De novo assemblies",
+   "q": "How were the turtle and crocodile genomes assembled?",
+   "a": "HMW DNA was extracted from liver. The turtle (male) got 100x Nanopore GridION reads assembled with Flye v2.8 and scaffolded with 10x linked reads (Scaff10X). The crocodile (female) got 17x PacBio HiFi reads assembled with wtdbg2.5. Both were polished with Racon using 100x Illumina PE150 reads and scaffolded with Hi-C (MboI) using Juicer, 3D-DNA and manual curation in Juicer_tools.",
+   "kw": [
+    "Flye",
+    "wtdbg2",
+    "3D-DNA"
+   ],
+   "info": "The final assemblies have 33 (turtle) and 15 (crocodile) chromosomes, with contig N50 of 15 Mb and 25.9 Mb. Data are in BioProject PRJNA1219809.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Chromatin data collection and analysis",
+   "q": "What chromatin data did they generate for emu, and how were they processed?",
+   "a": "From female emus they generated in situ Hi-C (MboI; liver, ovary, brain), native ChIP-seq for H3K4me3 and H3K9me3 (ovary, brain), and lamin-B1 CUT&Tag (Abcam ab16048; ovary, brain). Reads were trimmed with Trimmomatic v0.33, mapped with bwa-mem at MAPQ 20 or higher, and converted to RPKM-normalized IP/input ratios at 10 kb with bamCompare.",
+   "kw": [
+    "CUT&Tag",
+    "ChIP-seq",
+    "bamCompare"
+   ],
+   "info": "Human data: GPSeq from GSE135882, Hi-C and subcompartments for GM12878, IMR90 and K562 from GSE63525, ENCODE GM12878 histone marks lifted over to T2T, and lamin-B1 from GSM5669226.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Ancestral chromosome reconstruction",
+   "q": "What was the alignment and phylogeny pipeline?",
+   "a": "Genomes were repeat-masked with RepeatMasker 4.1.2 and Tandem Repeat Finder, then aligned to human and chicken with LastZ 1.04.00 (H=2000 Y=3400 L=6000 K=2200). Alignments were converted to chain/net with UCSC tools and merged with Multiz 10.0. The tree was built from fourfold degenerate sites with IQ-Tree 2.0-rc1 (-m MFP -bb 1000), and divergence times came from TimeTree.",
+   "kw": [
+    "LastZ",
+    "Multiz",
+    "IQ-Tree"
+   ],
+   "info": "DESCHRAMBLER requires the reference to be a descendant of the ancestor being reconstructed. Unanchored scaffolds were removed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Ancestral chromosome reconstruction",
+   "q": "How were RACFs built and joined into ALGs?",
+   "a": "DESCHRAMBLER identified syntenic fragments at 300 kb resolution and built RACFs from adjacency probabilities, using a graph of syntenic fragments. Two RACFs were manually joined into one ALG if they were connected in at least 1 outgroup plus 4/16 reptiles plus 5/20 mammals, or in 0 outgroups plus 8/16 reptiles plus 10/20 mammals.",
+   "kw": [
+    "RACF",
+    "adjacency score"
+   ],
+   "info": "This is stricter than Damas et al., who joined 76 RACFs into 20 mammalian ALGs. Here 71 RACFs gave 32 mammalian ALGs. Human- and chicken-based results were combined for the amniote ancestor to reduce reference bias. Coverage is slightly lower than before because T2T-type genomes contain more unalignable repeats and more distant species shorten HSBs.",
+   "concl": "The stricter joining rule is the main reason the mammalian ALG count (32) is higher than in Damas et al. (20)."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Characterizing chromosome rearrangements",
+   "q": "How were rearrangements and their rates inferred?",
+   "a": "HSB order and orientation were compared between AALGs, internal nodes and extant species with GRIMM plus manual curation. A rearrangement shared by two related species with more than 80% overlap was placed in their common ancestor, iterating back to the amniote root, and counts were divided by TimeTree divergence times.",
+   "kw": [
+    "GRIMM",
+    "rearrangement rate"
+   ],
+   "info": "A fusion was called when more than 50% of two or more AALGs sat on one extant chromosome. Any other AALGs on that chromosome were counted as translocations or fissions. Inversion counts were scaled by reconstructed AALG size. For EBRs, HSBs within 50 kb were merged and the largest 5% of EBRs (complex regions such as pericentromeres) were excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - 3D chromatin interaction analysis",
+   "q": "How was the Hi-C analysed?",
+   "a": "Reads were trimmed with Trimmomatic v0.32, mapped with Bowtie2 keeping unique reads (MAPQ 20 or higher), and processed with HiC-Pro v2.10.0 with ICE normalization at 25 kb to 1 Mb. Trans-interaction was measured as observed/expected between chromosome pairs. Compartments were called with HiTC pca.hic using gene density as correction, and TADs with HiCExplorer hicCallTADs (FDR correction, delta 0.05, threshold 0.01).",
+   "kw": [
+    "HiC-Pro",
+    "HiCExplorer",
+    "O/E"
+   ],
+   "info": "Repeat aggregation used 5 Mb flanks around repeat pairs from different AALGs. High trans-interaction bins were those in the top 5%. Highly interacting AluSx copies were those with more than 40 trans reads. Trimmomatic is given as v0.32 here but v0.33 in the emu section.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Lineage-specific repeats tune nuclear architecture",
+   "text": "Do AluSx/B1 homotypic interactions actually cause the relocation of nearby genes to speckles, or do they just mark it? The authors propose excising the interacting copies and their SIRLOIN motifs."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Does micro- vs. macro-ALG origin also predict nuclear position in teleosts (zebrafish, Astyanax), whose karyotypes went through an extra genome duplication? The paper only covers amniotes plus amphioxus, skate and lungfish."
+  },
+  {
+   "type": "note",
+   "section": "Methods - Chromatin data collection and analysis",
+   "text": "Check the inconsistencies: emu lamin-B1 is called ChIP-seq in the Abstract and Results but CUT&Tag in Methods; 36 vs. 37 genomes; the dating of microchromosome origin (jawed vertebrate vs. bony vertebrate 450-460 MYA vs. over 500 MYA)."
+  }
+ ]
+}

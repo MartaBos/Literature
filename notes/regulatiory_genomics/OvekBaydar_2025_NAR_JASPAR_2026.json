@@ -1,0 +1,464 @@
+{
+ "id": "OvekBaydar_2025",
+ "title": "JASPAR 2026: expansion of transcription factor binding profiles and integration of deep learning models",
+ "link": "https://doi.org/10.1093/nar/gkaf1209",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/OvekBaydar_2025_NAR_JASPAR_2026.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is JASPAR?",
+   "a": "An open-access database that has provided high-quality, manually curated, non-redundant DNA binding profiles for transcription factors (TFs), stored as position frequency matrices (PFMs), for over 20 years.",
+   "kw": [
+    "JASPAR",
+    "PFM"
+   ],
+   "info": "Available at jaspar.elixir.no. This is a Database issue paper in NAR (2026, vol 54, D184-D193), published online 2 December 2025. Ovek Baydar and Rauluseviciute are joint first authors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main updates in JASPAR 2026?",
+   "a": "The CORE collection grew by 306 profiles (a 12% increase) and the UNVALIDATED collection by 433 profiles (a 60% increase), and 13 existing profiles were updated. TFBS predictions and genome tracks were updated for eight species, and the release adds the inMOTIFin simulation tool, LLM-extracted human TF target information and a new deep learning (DL) collection.",
+   "kw": [
+    "CORE",
+    "UNVALIDATED"
+   ],
+   "info": "TF binding profile clusters and familial TF binding sites were also updated to match the new profiles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is in the new deep learning collection?",
+   "a": "1259 BPNet models trained on Homo sapiens ENCODE ChIP-seq datasets for 240 TFs. The models were interpreted to find predictive motif patterns, and motifs from the same TF were clustered into 240 primary and 113 alternative motif patterns.",
+   "kw": [
+    "BPNet",
+    "deep learning",
+    "ENCODE"
+   ],
+   "info": "The authors call this a paradigm shift in modelling and characterising TF-DNA interactions.",
+   "concl": "JASPAR now offers trained deep learning models of human TF binding alongside the classical PFMs."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What kind of TFs does the paper focus on, and how do they bind DNA?",
+   "a": "The paper covers TFs that bind DNA in a sequence-specific way. They do this through DNA-binding domains (DBDs), which contact the DNA at TF binding sites (TFBSs) within cis-regulatory elements such as promoters and enhancers.",
+   "kw": [
+    "TF",
+    "DBD",
+    "TFBS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Besides the DNA sequence, what affects where a TF binds in the genome?",
+   "a": "In complex organisms, binding depends heavily on context. Local chromatin accessibility, nucleosome positioning, DNA shape, binding of other TFs and cooperation with protein co-factors all affect TF occupancy.",
+   "kw": [
+    "chromatin accessibility",
+    "cooperativity"
+   ],
+   "info": "TFs often form cooperative complexes that stabilise each other's binding. This combinatorial binding allows precise and dynamic regulation across cell types and conditions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the difference between a PFM and a PWM?",
+   "a": "A PFM counts how often each nucleotide occurs at each position across a set of experimentally observed TF-DNA interactions. A PWM is derived from the PFM and uses log-likelihood scores. Both are quantitative summaries of a TF's DNA-binding preference.",
+   "kw": [
+    "PFM",
+    "PWM"
+   ],
+   "info": "PWMs are the most common computational representation of TF-DNA interaction. They are used to test TFBS enrichment in regulatory regions, to predict the effect of mutations in CREs and to guide in vitro mutagenesis. CIS-BP, HOCOMOCO and JASPAR are other databases that store PFMs and PWMs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the limitations of PFMs?",
+   "a": "PFMs assume that each position in a TFBS contributes to binding independently, even though interactions between adjacent or distant bases can be critical. They also ignore genomic context such as cooperativity, nucleosome positioning and co-factor binding.",
+   "kw": [
+    "PFM limitations"
+   ],
+   "info": "Earlier machine learning approaches tried to capture more complex patterns: Markov models, variable-order Bayesian trees, support vector machines and gradient-boosted decision trees.",
+   "concl": "This is the gap the new DL collection is meant to fill."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How are deep learning models of TF binding interpreted?",
+   "a": "With explainable AI methods. DeepLIFT assigns contribution scores to each input nucleotide, and TF-MoDISco then uses these scores to derive the predictive DNA motifs the model has learned.",
+   "kw": [
+    "DeepLIFT",
+    "TF-MoDISco",
+    "explainable AI"
+   ],
+   "info": "The models are convolutional neural networks (CNNs) trained in a supervised way, so the learned sequence patterns have to be interpreted after training.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use BPNet?",
+   "a": "BPNet predicts experimental TF binding (for example ChIP-seq) at base-pair resolution and can be interpreted at the motif level. It captures complex features such as the spacing and orientation of TFBSs and TF cooperativity.",
+   "kw": [
+    "BPNet"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What exactly was added to the PFM collections in this release?",
+   "a": "686 new profiles (265 in CORE and 421 in UNVALIDATED). 41 UNVALIDATED profiles were promoted to CORE because they now have orthogonal support, 13 profiles got new matrices, and metadata was updated for 62 profiles.",
+   "kw": [
+    "CORE",
+    "UNVALIDATED"
+   ],
+   "info": "The UNVALIDATED numbers are inconsistent across the paper: 421 new (Introduction), 433 added (Abstract and Conclusions) and 871 new (Results). The paper does not explain the differences, so check Supplementary Table S2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the classical TF binding profiles",
+   "q": "Where did the candidate profiles for manual curation come from?",
+   "a": "From PFMs and position probability matrices in public resources (HOCOMOCO, ModERN, CIS-BP, Codebook/GRECO-BIT and CAP-SELEX), plus PFMs the authors generated by de novo motif enrichment. They also processed CUT&RUN, ChIP-seq, DAP-seq, ampDAP-seq and ChEC-seq data from individual GEO studies.",
+   "kw": [
+    "HOCOMOCO",
+    "CAP-SELEX",
+    "Codebook/GRECO-BIT"
+   ],
+   "info": "De novo motifs came from ChIP-seq data in KRABopedia and ModERN, and from SMiLE-Seq, ChIP-seq and GHT-SELEX data in Codebook & GRECO-BIT. Methods are in the Supplementary Text and the GEO studies are listed in Supplementary Table S1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the classical TF binding profiles",
+   "q": "How do curators decide whether a profile goes into CORE or UNVALIDATED?",
+   "a": "Expert curators manually evaluated 11,565 profiles. PFMs with orthogonal validation in the literature went into CORE. High-quality PFMs without orthogonal literature support went into UNVALIDATED.",
+   "kw": [
+    "manual curation",
+    "orthogonal validation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the classical TF binding profiles",
+   "q": "How many new CORE profiles were added for each taxon?",
+   "a": "There were 265 new CORE profiles across four taxa: plants 125 (an 18% increase), vertebrates 121 (16%), insects 4 (3.5%) and fungi 15 (8%).",
+   "kw": [
+    "vertebrates",
+    "plants"
+   ],
+   "info": "Urochordates, nematodes and diatoms got no new CORE profiles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the classical TF binding profiles",
+   "q": "Were any profiles removed or downgraded?",
+   "a": "11 profiles were removed (7 from CORE and 4 from UNVALIDATED) because they were redundant or the protein was not considered a specific DNA-binding TF. 12 profiles were downgraded from CORE to UNVALIDATED because literature support was insufficient.",
+   "kw": [],
+   "info": "According to Table 1, all 7 CORE removals and all 12 downgrades were plant profiles. 13 CORE profiles were replaced with new, higher-quality PFMs (5 plant, 7 vertebrate and 1 insect).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expansion and update of the classical TF binding profiles",
+   "q": "How many profiles does JASPAR 2026 contain in total?",
+   "a": "2633 non-redundant profiles in CORE and 1231 in UNVALIDATED. CORE went from 2346 in JASPAR 2024 to 2633.",
+   "kw": [
+    "CORE"
+   ],
+   "info": "CORE totals by taxon: vertebrates 1019 (879 in 2024), plants 927 (805), insects 296 (286), fungi 193 (178), nematodes 103, urochordates 94 and diatoms 1. 41 profiles were promoted in total: 16 plant, 19 vertebrate and 6 insect.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds, and genomic tracks",
+   "q": "What are familial binding profiles and why does JASPAR provide them?",
+   "a": "TFs from the same structural family or class often have very similar binding profiles. JASPAR hierarchically clusters the CORE collection within each taxonomic group and summarises each cluster of similar profiles as a single PFM.",
+   "kw": [
+    "familial binding profiles",
+    "clustering"
+   ],
+   "info": "Users can browse profile similarity as radial and linear trees, for CORE alone or CORE plus UNVALIDATED, at jaspar.elixir.no/matrix-clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds, and genomic tracks",
+   "q": "How many familial profiles are there in JASPAR 2026?",
+   "a": "504 familial profiles built from CORE PFMs: 233 for vertebrates, 85 for insects, 69 for fungi, 55 for plants, 43 for nematodes and 19 for urochordates.",
+   "kw": [
+    "familial binding profiles"
+   ],
+   "info": "The text says six main taxonomic groups. Diatoms are not included.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds, and genomic tracks",
+   "q": "What are JASPAR word clouds?",
+   "a": "Summaries of the biological information explicitly linked to each TF in PubMed abstracts. They were introduced in 2022 and have been updated and extended to the newly added profiles.",
+   "kw": [
+    "word clouds",
+    "PubMed"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds, and genomic tracks",
+   "q": "For which genomes did JASPAR predict TFBSs?",
+   "a": "The latest genome versions of eight species: Arabidopsis thaliana, Caenorhabditis elegans, Ciona intestinalis, Danio rerio, Drosophila melanogaster, Homo sapiens, Mus musculus and Saccharomyces cerevisiae. Each genome was scanned with the CORE profiles for its taxonomic group.",
+   "kw": [
+    "genomic tracks",
+    "Danio rerio",
+    "TFBS prediction"
+   ],
+   "info": "Familial binding site tracks group TFBSs of TFs that share a familial profile. Tracks come in several formats. Human and mouse TFBSs predicted with CORE vertebrate PFMs are native tracks in the UCSC Genome Browser. The paper does not say which genome assembly versions or scanning thresholds were used.",
+   "concl": "Ready-made zebrafish TFBS tracks are available, but there is no Astyanax genome."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Large language model-based TF-target gene associations",
+   "q": "How did they extract TF-target gene relationships from the literature?",
+   "a": "They designed a prompt and a JSON output schema for ChatGPT-5 to extract TF-TG relationships from text-mined sentences in the ExTRI resource. A set of 192 ExTRI sentences was manually curated to mark the TF and TG text, and 350 relationships were then generated automatically.",
+   "kw": [
+    "LLM",
+    "ChatGPT-5",
+    "ExTRI"
+   ],
+   "info": "This applies only to human TFs, according to the Abstract.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Large language model-based TF-target gene associations",
+   "q": "Which relationship categories and TF modifiers are annotated?",
+   "a": "There are four relationship categories: positive regulation, negative regulation, neutral regulation (direction cannot be inferred) and binding (the TF binds a DNA element associated with the target). There are five non-exclusive TF modifiers: mutant, increased expression or activity, reduced expression or activity, absent, and altered function.",
+   "kw": [
+    "TF modifiers"
+   ],
+   "info": "Modifiers give context about the TF's expression or activity in the sentence. Examples: increased means overexpression, absent means knockout or loss, and altered function means a non-canonical tissue or a novel binding site. The web table shows the modifiers, source sentences and PMIDs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Large language model-based TF-target gene associations",
+   "q": "How accurate were the LLM-extracted TF-target relationships?",
+   "a": "88% (308 of 350) were correct on manual review, and only those 308 are shown in the web interface. Most errors involved relations affected by the Increased, Absent and Reduced modifiers, or relations stated as hypotheses.",
+   "kw": [
+    "LLM accuracy"
+   ],
+   "info": "Future expansions will be fully automated, so the interface warns that the relationships are LLM-extracted and may contain errors.",
+   "concl": "LLM extraction is fairly accurate, but negations, perturbations and hypothetical statements are still weak points."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "How was the DL collection built?",
+   "a": "One BPNet model was trained per human ENCODE TF ChIP-seq dataset to predict ChIP-seq tracks at base-pair resolution from DNA sequence. DeepLIFT and TF-MoDISco found the motifs contributing most to model accuracy, and MotifCompendium clustered all TF-MoDISco motifs per TF into summary binding profiles.",
+   "kw": [
+    "BPNet",
+    "TF-MoDISco",
+    "MotifCompendium"
+   ],
+   "info": "Model performance metrics are in Supplementary Fig. S2. The paper does not give training details such as hyperparameters, peak sets or software versions in the main text; they are in the Supplementary Text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "How did they quality-control the DL-derived motifs?",
+   "a": "With several QC metrics that require the motif patterns matched to the cognate TF to be supported by in vitro orthogonal evidence. This filtering left motifs for 240 TFs.",
+   "kw": [
+    "quality control"
+   ],
+   "info": "The specific QC metrics are only described in the Supplementary Text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "What are PMPs and AMPs?",
+   "a": "For each TF, the primary motif pattern (PMP) is the main binding pattern and alternative motif patterns (AMPs) are additional ones. Together there are 353 motif patterns for 240 TFs, between 1 and 7 per TF, each linked to its best-matching JASPAR 2026 PFM.",
+   "kw": [
+    "PMP",
+    "AMP"
+   ],
+   "info": "240 primary plus 113 alternative patterns gives 353. The distribution per TF is in Supplementary Fig. S3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "How are DL collection entries labelled?",
+   "a": "TF summary profile pages are DLXXXXXX.Y, motif patterns (PMPs and AMPs) are MOXXXXXX.Y, and individual BPNet models are BPXXXXXX.Y. XXXXXX is the ID and Y is the version number.",
+   "kw": [
+    "identifiers"
+   ],
+   "info": "Each summary profile links to the BPNet models (1259 in total, one per ChIP-seq dataset; Supplementary Table S3) that support it.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "What is a contribution weight matrix (CWM)?",
+   "a": "A matrix similar to a PFM, except that it holds contribution scores to the model's prediction aggregated across sequences, not nucleotide frequencies. JASPAR provides DL binding profiles as both CWMs and PFMs.",
+   "kw": [
+    "CWM"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "What can users do with the DL collection on the website?",
+   "a": "Search and filter TF binding profiles, switch to a list of DL models, and select models to scan their motifs against input sequences using the tangermeme framework. Each model page has metadata, the PMP, AMPs and other TF-MoDISco motifs, plus download links for the model and the TF-MoDISco results.",
+   "kw": [
+    "tangermeme"
+   ],
+   "info": "All trained BPNet models can be downloaded. The DL collection is reached from the left sidebar of the JASPAR website.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deep learning collection",
+   "q": "Do DL-derived motifs agree with existing PFMs?",
+   "a": "Figure 4 shows three kinds of example. CTCF, IRF1 and FOXK1 CWMs matched JASPAR CORE PFMs, and E4F1 and ZNF507 matched UNVALIDATED PFMs. ZNF316 matched no JASPAR PFM but matched another in vitro-derived PFM from HOCOMOCO v13.",
+   "kw": [
+    "CTCF",
+    "IRF1",
+    "FOXK1"
+   ],
+   "info": "Per-dataset CWMs (for example CTCF in spleen, pancreas and GM13977) were combined into a per-TF CWM with MotifCompendium, and MotifCompendium also found the best-matching PFM. These are selected examples; the main text gives no overall match statistics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - JASPAR-associated tools",
+   "q": "What is inMOTIFin and why is it useful?",
+   "a": "A lightweight package for simulating PFMs and regulatory sequences. It creates PFMs with user-defined properties and inserts TFBSs into user-provided or random DNA under flexible rules for position, co-occurrence and spacing, giving ground-truth data for benchmarking methods, studying TF cooperativity and interpreting models.",
+   "kw": [
+    "inMOTIFin",
+    "simulation"
+   ],
+   "info": "On the website, users choose the number and length of random sequences or upload a background FASTA. By default each selected profile is inserted at the centre of a random background, and users can set the number of motif instances per sequence. Output is a FASTA (headers contain background and motif IDs) plus a BED file of insertion positions. The standalone version runs from the command line or Python and imports JASPAR profiles via pyJASPAR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - JASPAR-associated tools",
+   "q": "How can JASPAR data be accessed programmatically?",
+   "a": "Through the RESTful API, the pyJASPAR Python package and the JASPAR R/Bioconductor data package. pyJASPAR can now also retrieve DL collection models.",
+   "kw": [
+    "pyJASPAR",
+    "Bioconductor",
+    "RESTful API"
+   ],
+   "info": "The R/Bioconductor package stores the latest release and the two previous ones, all accessible through AnnotationHub.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "Why is it getting harder to expand JASPAR?",
+   "a": "Primary big-data sources such as GTRD and CIS-BP have nearly been exhausted for manual curation. Codebook & GRECO-BIT was an important new source, contributing 2425 motifs from ChIP-seq, PBM, SMiLE-seq, HT-SELEX and GHT-SELEX, mostly for less-studied TFs.",
+   "kw": [
+    "Codebook/GRECO-BIT"
+   ],
+   "info": "Many TFs in Codebook were assayed with several techniques, which gave orthogonal support across technologies.",
+   "concl": "This release moves JASPAR closer to a complete list of curated profiles for human TFs."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "Why did so many new profiles end up in UNVALIDATED?",
+   "a": "Most of them were CAP-SELEX PFMs for TFs that bind DNA as dimers, and orthogonal confirmation was found for only a few. This reflects how few studies test TF cooperativity with dedicated assays.",
+   "kw": [
+    "CAP-SELEX",
+    "TF dimers",
+    "cooperativity"
+   ],
+   "info": "",
+   "concl": "Literature on TF cooperativity is the bottleneck for validating dimer motifs."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "How many UNVALIDATED profiles were re-evaluated?",
+   "a": "638 UNVALIDATED profiles were systematically revised, and 41 were promoted to CORE. Finding orthogonal literature support is still manual and time-consuming.",
+   "kw": [],
+   "info": "The authors expect LLMs to help automate this curation step in the future.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "How were the DL-derived motifs validated, and why do PFMs still matter?",
+   "a": "They were validated by matching them to existing PFMs. So high-quality, manually curated PFM resources remain essential, both for validation and for training large models, and should be kept alongside more expressive representations.",
+   "kw": [
+    "validation"
+   ],
+   "info": "",
+   "concl": "DL models complement PFMs; they do not replace them."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "What do the authors expect DL models to add beyond PFMs?",
+   "a": "They expect interpreted DL models to capture genomic context, TF cooperativity and nucleosome positioning, which traditional motif discovery cannot. DL models can also predict how sequence variants affect binding through in silico mutagenesis.",
+   "kw": [
+    "in silico mutagenesis",
+    "tangermeme",
+    "ledidi"
+   ],
+   "info": "Tools such as tangermeme and ledidi let users interpret models, run in silico mutagenesis, call TFBS hits and generate regulatory sequences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "What is the main limitation of the DL collection, and what is planned?",
+   "a": "It currently contains only models trained on human (Homo sapiens) ENCODE ChIP-seq data. The authors plan to add other organisms and taxa.",
+   "kw": [
+    "Homo sapiens"
+   ],
+   "info": "There is no timeline and no list of which taxa will come next.",
+   "concl": "For now, the DL models can only be used directly for human; fish and other taxa still rely on PFMs."
+  },
+  {
+   "type": "note",
+   "section": "Results - TF binding profile clusters, familial binding profiles, word clouds, and genomic tracks",
+   "text": "Check which zebrafish genome version and score threshold were used for the Danio rerio TFBS tracks (Supplementary Text). Could the vertebrate CORE scan approach be reused for Astyanax?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Deep learning collection",
+   "text": "The human BPNet models capture spacing and cooperativity. How well would they transfer to fish regulatory sequences, given that the DL collection is human-only for now?"
+  },
+  {
+   "type": "note",
+   "section": "Conclusions and perspectives",
+   "text": "Most CAP-SELEX dimer motifs remain UNVALIDATED because of limited cooperativity data. Worth checking whether any of these dimer motifs are relevant to candidate cavefish enhancers."
+  }
+ ]
+}

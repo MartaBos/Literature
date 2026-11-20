@@ -1,0 +1,578 @@
+{
+ "id": "JimenezGonzalez_2026",
+ "title": "Mapping non-coding functional elements in allotetraploid Cyprinus carpio embryo development reveals subgenome variation of transcription regulation",
+ "link": "https://doi.org/10.64898/2026.06.22.733679",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/JimenezGonzalez_2026_bioRxiv_carp_subgenome_noncoding_elements.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "Common carp has two subgenomes on separate chromosomes, and they show different gene expression profiles. It was not known how their regulatory landscapes control gene expression dynamics during development.",
+   "kw": [
+    "allotetraploidy",
+    "subgenome",
+    "cis-regulatory elements"
+   ],
+   "info": "Carp is presented as a key cyprinid model for allotetraploidy, with ornamental and aquaculture importance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they generate and what is the main finding?",
+   "a": "A developmental regulatory atlas combining transcriptomes from 12 stages with ATAC-seq, CAGE TSS mapping and histone marks, annotating 254,276 regulatory elements (PADREs) assigned to subgenomes. Regulatory divergence between subgenomes is highest in early development and converges toward the phylotypic period, mirroring expression convergence.",
+   "kw": [
+    "PADREs",
+    "hourglass model",
+    "phylotypic period"
+   ],
+   "info": "Enhancers drive the convergence. Promoters keep a more stable subgenome bias.",
+   "concl": "The hourglass model of developmental constraint extends to subgenome regulation in an allotetraploid."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which subgenome keeps more specific and ancestral regulatory elements?",
+   "a": "Subgenome B. It preferentially retains subgenome-specific enhancers and more ancestral cyprinid regulatory elements, while subgenome A shifts toward homeologous enhancer activity near the phylotypic stage.",
+   "kw": [
+    "subgenome dominance",
+    "zebrafish"
+   ],
+   "info": "Ancestral status was inferred by comparison with zebrafish as an outgroup.",
+   "concl": "Regulatory divergence between the subgenomes is directional."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How did the carp genome arise?",
+   "a": "Through allotetraploidisation during a fourth round of vertebrate genome duplication (4R). A Barbinae species hybridised with a now-extinct unidentified relative about 11 to 13 Myr ago, and the two progenitors were about 23 Myr apart.",
+   "kw": [
+    "4R WGD",
+    "allotetraploidisation"
+   ],
+   "info": "The genome is small for a tetraploid (1.6 Gb). The two subgenomes have remained chromosomally distinct, with largely intact homeologous chromosomes and broadly balanced gene numbers. Cyprininae (carp, goldfish) is the largest polyploid vertebrate group, with over 600 species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about subgenome expression bias in carp?",
+   "a": "Subgenome expression dominance, dosage compensation and dynamic functionalisation of homeologs had been described. The biases are category-specific: A dominates nucleobase biosynthesis and metabolism genes, and B-biased genes are enriched in redox, stress response and DNA repair.",
+   "kw": [
+    "expression dominance",
+    "homeologs"
+   ],
+   "info": "Hypoxia tolerance was linked to subgenome A genes for macromolecule biosynthesis and protein binding. Subgenome B bias was linked to signalling, stimulus response and cell communication. No strong subgenome dominance was found for antiviral responses.",
+   "concl": "Unknown: which cis-regulatory elements drive this bias and divergence."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What precedent exists in another allotetraploid?",
+   "a": "In Xenopus laevis, regulatory divergence was shown to underlie subgenome-specific gene expression during the maternal-to-zygotic transition.",
+   "kw": [
+    "Xenopus laevis",
+    "MZT"
+   ],
+   "info": "The Discussion adds that enhancer gain and loss drive subgenome asymmetry at ZGA in X. laevis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the developmental hourglass model?",
+   "a": "Among vertebrates, developmental transcriptomes are most constrained at the mid-embryonic phylotypic stage, giving an hourglass pattern of evolutionary conservation.",
+   "kw": [
+    "hourglass model",
+    "phylotypic stage"
+   ],
+   "info": "It was unknown whether this constraint shows up in regulatory dynamics and whether it relates to divergence between a polyploid's subgenomes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use zebrafish as a comparator?",
+   "a": "Carp and zebrafish are both cyprinids, separated by 42 to 90 Myr, and predicted regulatory elements are highly conserved among cyprinids. Zebrafish also has a well-annotated non-coding genome.",
+   "kw": [
+    "zebrafish",
+    "outgroup"
+   ],
+   "info": "Zebrafish diverged before the carp-specific WGD, so it serves both as an outgroup for tracing subgenome divergence and as an independent reference for validating carp elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A multiomic catalogue of carp embryo development",
+   "q": "What data did they generate?",
+   "a": "119 sequencing libraries across embryo development: 36 RNA-seq transcriptomes (unfertilised egg to late pharyngula), CAGE-seq for TSSs, ATAC-seq, and ChIP-seq for H3K4me3, H3K27ac and H3K27me3.",
+   "kw": [
+    "RNA-seq",
+    "ATAC-seq",
+    "CAGE-seq"
+   ],
+   "info": "Stages were identified from anatomical similarity to zebrafish. Samples came from the strain used for the Ensembl assembly Cypcar_WagV4.0. Metadata and SOPs follow FAANG and AQUA-FAANG guidelines. Figure 1a says 129 samples, which conflicts with the 119 libraries in the text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A multiomic catalogue of carp embryo development",
+   "q": "Which stages are covered, and which assays were done at which stages?",
+   "a": "There are 12 stages: unfertilised egg, 64-cell, 128-cell, 512-cell, 1000-cell, sphere, dome, shield, early segmentation, mid segmentation, early pharyngula and late pharyngula. RNA-seq covers all 12. ATAC-seq and ChIP-seq cover the 6 stages from dome to late pharyngula.",
+   "kw": [
+    "developmental stages"
+   ],
+   "info": "Per Figure 1b, samples are in duplicates or triplicates. CAGE was done at a subset of stages. Figure 1b shows eggs and 512-cells among them, while the Methods mention a 2-cell stage, so the exact CAGE stage list is somewhat unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A multiomic catalogue of carp embryo development",
+   "q": "What are the overall numbers of the atlas?",
+   "a": "45,107 expressed genes, 14,849 one-to-one homeolog pairs, and 255,028 regulatory elements, of which 254,276 were assigned to subgenomes.",
+   "kw": [
+    "UCSC track hub"
+   ],
+   "info": "Data are available as UCSC Genome Browser track hubs. The summary box in Figure 1a gives different figures (over 145,000 elements, 25.5% shared between subgenomes, 103,563 classified elements with 72.6% overlapping zebrafish) that do not match the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome dynamics and subgenome expression asymmetry",
+   "q": "How did samples cluster in the transcriptome PCA?",
+   "a": "Replicates clustered by stage. PC1 explained 64.14% of variance and separated samples by developmental stage, reflecting major transitions including the MZT.",
+   "kw": [
+    "PCA",
+    "MZT"
+   ],
+   "info": "PC2 explained 12.7% and PC3 7.7% (Figure 2a). Expression levels increased progressively, and late pharyngula showed the highest transcriptional activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome dynamics and subgenome expression asymmetry",
+   "q": "How many genes were differentially expressed across development?",
+   "a": "A likelihood ratio test found 36,054 of 38,114 expressed genes (more than 10 counts) differentially expressed across stages.",
+   "kw": [
+    "DESeq2",
+    "LRT"
+   ],
+   "info": "The 38,114 here differs from the 45,107 expressed genes reported earlier, probably because of the count filter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome dynamics and subgenome expression asymmetry",
+   "q": "What changed between the egg and the 64-cell stage?",
+   "a": "4,453 genes were higher in the egg (maternal mRNAs degraded by 64-cell), and 2,931 were higher at 64-cell. The latter are likely maternal mRNAs with delayed polyadenylation, as described in zebrafish.",
+   "kw": [
+    "maternal mRNA",
+    "delayed polyadenylation"
+   ],
+   "info": "Poly-A selected RNA-seq is what makes delayed polyadenylation look like upregulation. 879 genes overlapped with zebrafish delayed-polyadenylation genes (17.4%, Fisher's exact test, p given as 2-16, presumably 2e-16). GO terms resembled zebrafish: protein transport, protein localisation, cellular macromolecular metabolic process.",
+   "concl": "Early changes appear before the MZT, which previous carp transcriptome studies did not report."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome dynamics and subgenome expression asymmetry",
+   "q": "How does homeolog expression balance change during development?",
+   "a": "Matching expression of both homeologs was more common than subgenome bias at all stages and peaked at late pharyngula. The earliest stages showed the most asymmetry, with subgenome B homeologs more expressed than A.",
+   "kw": [
+    "homeolog expression bias"
+   ],
+   "info": "Ensembl gene IDs were used as anchors to split counts between homeologs. Figure 2c shows the 'Both' class rising from about 7,166 to 10,887 pairs.",
+   "concl": "Expression converges between subgenomes toward later stages."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome dynamics and subgenome expression asymmetry",
+   "q": "How were homeolog expression patterns classified, and what GO terms came out?",
+   "a": "K-means clustering gave five shared temporal classes (maternal, maternal-zygotic, zygotic, late zygotic, late pharyngula) and 10 subgenome-biased categories. Shared maternal and maternal-zygotic genes were enriched for germ cell development and serine/threonine phosphatase complexes. ZGA genes biased to A were enriched for GPCR activity, and those biased to B for transcription-related terms.",
+   "kw": [
+    "k-means",
+    "GO enrichment"
+   ],
+   "info": "The 10 biased categories are 3 temporal classes split by subgenome (6) plus 4 constitutive patterns (A only, B only, A with late onset in B, B with late onset in A). Early subgenome-biased genes had no significant GO enrichment. Figure 2d lists constitutive B as enriched for DNA repair and constitutive A for ncRNA processing and methylation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE identification by chromatin segmentation",
+   "q": "What are PADREs and how were they defined?",
+   "a": "Predicted ATAC-supported Developmental Regulatory Elements. ATAC-seq peaks were annotated with chromatin states from ChromHMM, which integrated H3K4me3, H3K27ac and H3K27me3 with ATAC-seq into ten states.",
+   "kw": [
+    "PADREs",
+    "ChromHMM"
+   ],
+   "info": "The approach follows the zebrafish regulatory element atlas (Baranasic et al. 2022). H3K4me3 marks active or activation-ready promoters, H3K27ac active promoters and enhancers, and H3K27me3 Polycomb repression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE identification by chromatin segmentation",
+   "q": "What are the ten chromatin states?",
+   "a": "TssA1, TssA2, TssFlank1, TssFlank2, EnhA, EnhFlank, OpenChr, PrC (Polycomb-repressed), Bival (bivalent) and Quies (quiescent).",
+   "kw": [
+    "chromatin states",
+    "bivalent"
+   ],
+   "info": "TssA1 is a canonical promoter with H3K4me3 and H3K27ac. TssA2 has H3K4me3 without H3K27ac, possibly an alternative or poised promoter. State functions were manually assigned using Roadmap Epigenomics annotations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE identification by chromatin segmentation",
+   "q": "What do the OpenChr, Quies and flanking states mean for PADREs?",
+   "a": "Quies PADREs lack marks and accessibility at a given stage, so they are inactive at that stage. OpenChr PADREs are accessible but lack the profiled marks and may be primed, decommissioned or non-canonical elements. Flank states carry histone signal without ATAC support and may be poised, primed or decommissioned.",
+   "kw": [
+    "OpenChr",
+    "quiescent"
+   ],
+   "info": "Consensus peaks were called across all samples, so every stage has the same 254,276 PADREs with stage-varying annotation. OpenChr and Quies dominate, so only a fraction of PADREs is active at any one stage. Example locus: sox2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE identification by chromatin segmentation",
+   "q": "How were promoter PADREs validated?",
+   "a": "By intersecting PADREs with CAGE tag clusters. 12,953 to 15,250 PADREs per stage had TSS support, mostly TssA1 or TssA2, and these were called high-confidence promoter PADREs.",
+   "kw": [
+    "CAGE-seq",
+    "TSS"
+   ],
+   "info": "Many promoter-annotated PADREs fell outside Ensembl promoter-proximal regions. Promoter-annotated PADREs without CAGE support may be mis-annotated enhancers. Some high-confidence promoters lie far from any Ensembl TSS and could be novel promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE identification by chromatin segmentation",
+   "q": "How many regulatory phases did they find across development?",
+   "a": "Three, from Jensen-Shannon divergence of PADRE ATAC signal between stage pairs: late blastula plus gastrula, segmentation plus early pharyngula, and late pharyngula.",
+   "kw": [
+    "Jensen-Shannon divergence"
+   ],
+   "info": "Shown in Figure 3f. The later text refers to these phases as Figure 3e, which looks like a figure-label error.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE identification by chromatin segmentation",
+   "q": "Which PADREs are most conserved?",
+   "a": "By phastCons, Polycomb-repressed regions and active enhancers were the most conserved. PADREs active at later stages were more conserved than early ones.",
+   "kw": [
+    "phastCons",
+    "sequence conservation"
+   ],
+   "info": "This mirrors zebrafish and other vertebrates. phastCons scores come from multispecies vertebrate alignments.",
+   "concl": "Consistent with the hourglass model: the strongest constraint falls toward mid-embryogenesis, not at blastula or gastrula."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "How were PADREs split between subgenomes and classified by homeology?",
+   "a": "There were 122,002 PADREs in subgenome A and 132,274 in B. They were projected onto the homeologous chromosome via pairwise whole-genome alignment and classified as homeologous (PADRE at both loci), asymmetric (alignable but no PADRE at the projection) or singleton (no alignable sequence).",
+   "kw": [
+    "homeologous PADREs",
+    "projection",
+    "liftOver"
+   ],
+   "info": "From Figure 4a: homeologous A 64,799 (53.1%) and B 65,499 (49.5%); asymmetric A 26,054 (21.4%) and B 33,891 (25.6%); singleton A 31,149 (25.5%) and B 32,890 (24.9%).",
+   "concl": "Subgenome B carries disproportionately more asymmetric PADREs, showing regulatory asymmetry."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "Are asymmetric PADREs really subgenome-specific?",
+   "a": "Yes. They showed clear ATAC-seq signal in one subgenome and none at the homeologous coordinates, confirming activity in one subgenome only.",
+   "kw": [
+    "ATAC-seq"
+   ],
+   "info": "Shown for mid-segmentation in Figure 4c.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "How does regulatory divergence between homeologous elements change over development?",
+   "a": "JSD between homeologous elements was highest at early stages and decreased progressively, with the lowest values at early and late pharyngula.",
+   "kw": [
+    "JSD",
+    "hourglass model"
+   ],
+   "info": "This mirrors the transcriptome convergence (Figure 2c) and the three regulatory phases.",
+   "concl": "Consistent with the hourglass model applied to subgenome regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "Do enhancers and promoters differ in subgenome divergence?",
+   "a": "Enhancers diverged markedly more than promoters, especially early, so enhancer activity is less constrained between subgenomes. Subgenome B PADREs consistently diverged more from their A projections than the reverse.",
+   "kw": [
+    "enhancers",
+    "promoters"
+   ],
+   "info": "Promoter PADRE numbers were stable, with a constant and higher subgenome-specific fraction in B. Enhancer numbers rose during development while the specific fraction fell, because homeologous PADREs were activated. Asymmetric PADREs dropped sharply after early segmentation.",
+   "concl": "Asymmetric regulatory constraint between subgenomes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "How strong is the drop in subgenome-specific enhancers in subgenome A?",
+   "a": "At late pharyngula, only 2.5% of subgenome A enhancers with homeology in B were active in A only.",
+   "kw": [
+    "enhancer purging"
+   ],
+   "info": "The authors describe the trend as much more prominent in A than in B.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "How did they test these dynamics statistically?",
+   "a": "With a binomial GLM of the subgenome-specific proportion as a function of stage, subgenome and element type, validated by element-level bootstrapping. The proportion declined with stage (beta = -0.322, p < 0.0001), and B declined less steeply than A (stage x subgenome beta = +0.110, 95% CI 0.075 to 0.145, p < 0.0001).",
+   "kw": [
+    "binomial GLM",
+    "bootstrapping"
+   ],
+   "info": "Three-way interaction stage x subgenome x element type: beta = -0.083, 95% CI -0.126 to -0.040, p < 0.0001. The stage x subgenome effect was four-fold larger for enhancers (+0.110) than promoters (+0.027). Promoters showed overall B dominance (subgenome x element type beta = +0.277, p < 0.001) with no developmental trend.",
+   "concl": "Developmental convergence is driven by enhancers. Promoters keep a stable baseline of B dominance. The authors interpret A as more constrained, and the promoter result as ruling out a genome-wide technical artefact."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "Which loci illustrate enhancer and promoter divergence between subgenomes?",
+   "a": "bmp7a shows enhancer activity divergence (ATAC and H3K27ac in subgenome B) with matching expression differences. hars shows a constitutive promoter difference, with CAGE, ATAC, H3K27ac and H3K4me3 and expression in the B homeolog only.",
+   "kw": [
+    "bmp7a",
+    "hars"
+   ],
+   "info": "Figure 5. Both are examples of expression variation reflected in subgenome-specific regulatory divergence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Subgenome distribution of PADREs",
+   "q": "What is the overall conclusion on subgenome dominance at the regulatory level?",
+   "a": "Subgenome B dominates retained regulatory activity: an element active in only one subgenome is preferentially active in B. This is static at promoters and dynamically reinforced at enhancers toward the phylotypic stage.",
+   "kw": [
+    "subgenome B dominance"
+   ],
+   "info": "GO terms for genes near subgenome-biased PADREs included DNA repair and RNA processing, which partly overlap the expression-bias categories. PADRE-to-gene assignment is by proximity.",
+   "concl": "The enhancer-dominated divergence fits the idea that enhancers diverge more readily (for example by subfunctionalisation), while promoter turnover is more tightly coupled to gene retention and loss."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation with zebrafish",
+   "q": "How were carp PADREs classified against zebrafish?",
+   "a": "Carp PADREs were projected onto the zebrafish genome and overlapped with zebrafish PADREs, giving four classes. Pan-orthologous: PADRE in both carp subgenomes and zebrafish. Sub-orthologous: in one subgenome and zebrafish. Carp-detected: alignable but no zebrafish PADRE. Lineage-specific: not alignable to zebrafish.",
+   "kw": [
+    "pan-orthologous",
+    "sub-orthologous",
+    "lineage-specific"
+   ],
+   "info": "From Figure 6b. A: pan 34,335 (28.1%), sub 17,922 (14.7%), carp-detected 28,968 (23.7%), lineage-specific 40,777 (33.4%). B: 34,286 (25.9%), 21,866 (16.5%), 32,888 (24.9%), 43,234 (32.7%).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation with zebrafish",
+   "q": "Do the subgenomes differ in conservation category composition?",
+   "a": "Yes, significantly but modestly (chi-squared = 296.8, df = 3, p < 2.2e-16, Cramer's V = 0.034). A is enriched in pan-orthologous PADREs (+2.2 pp). B is enriched in sub-orthologous (+1.8 pp) and carp-detected (+1.1 pp, p = 5.0e-11) PADREs.",
+   "kw": [
+    "chi-squared",
+    "Cramer's V"
+   ],
+   "info": "Lineage-specific PADREs were similar in both, about 33%. The effect size is small.",
+   "concl": "Subgenome B retained more ancestral regulatory elements. Subgenome A's landscape is stripped down mostly to elements shared by both subgenomes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation with zebrafish",
+   "q": "What did ATAC signal at projected loci show?",
+   "a": "Pan-orthologous PADREs had the strongest ATAC signal in carp and zebrafish, and sub-orthologous ones had reduced but clear signal. Carp-detected regions had weak but non-zero zebrafish signal.",
+   "kw": [
+    "ATAC-seq",
+    "peak calling threshold"
+   ],
+   "info": "Many carp-detected elements are probably functional but fall below peak-calling thresholds, perhaps because of low activity or cell-type specificity masked in bulk data.",
+   "concl": "Strict peak overlap underestimates conservation. Functionally conserved elements may approach about two-thirds when weakly active orthologous regions are included."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation with zebrafish",
+   "q": "What does the mycn locus show?",
+   "a": "The subgenome B regulatory landscape at mycn is mirrored by the orthologous zebrafish locus, with a conserved PADRE arrangement and concordant expression.",
+   "kw": [
+    "mycn"
+   ],
+   "info": "Figure 6d. One highlighted element is a subgenome B-specific PADRE orthologous to a zebrafish PADRE.",
+   "concl": "Only subgenome B appears to have retained the cyprinid-ancestral regulatory architecture at this locus."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What model do the authors propose?",
+   "a": "Subgenome-specific regulatory divergence peaks in early embryogenesis and contracts as homeolog expression and PADRE states become coordinated toward the phylotypic stage. They call this the first demonstration that the hourglass model extends to the subgenomes of an allotetraploid.",
+   "kw": [
+    "hourglass model",
+    "phylotypic constraint"
+   ],
+   "info": "Expression asymmetry was restricted to early stages, which contrasts with prior reports of constitutive B dominance. The Discussion says 14,850 homeolog pairs, while the Results give 14,849.",
+   "concl": "Directional purging of enhancers in subgenome A, plus higher zebrafish orthology of B PADREs, indicates progressive B dominance at the regulatory level even when transcriptional output becomes balanced."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What else does the zebrafish comparison and segmentation say about conservation?",
+   "a": "Roughly two-thirds of carp PADREs are orthologous to zebrafish, showing strong conservation of cis-regulatory logic despite the carp WGD. Core regulatory logic (active promoters and enhancers, Polycomb repression, bivalency) is conserved with other vertebrates.",
+   "kw": [
+    "cis-regulatory conservation"
+   ],
+   "info": "Lineage-specific PADREs may reflect allotetraploidisation, subfunctionalisation, or divergence not captured by sequence orthology.",
+   "concl": "The atlas is a resource for cyprinid evo-devo and for linking aquaculture trait mapping to regulatory variants."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "There is no H3K4me1 or other marks, so poised and primed enhancers are likely underrepresented, and PADRE-to-gene assignment is proximity-based without Hi-C or perturbation data. Bulk data may mask cell-type-specific signal, and no candidate elements were functionally validated.",
+   "kw": [
+    "H3K4me1",
+    "bulk data",
+    "functional validation"
+   ],
+   "info": "Separating relaxed selection from true evolutionary distance, between subgenomes and relative to zebrafish, needs broader comparative analyses. Single-cell chromatin tools for carp could improve sensitivity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and staging",
+   "q": "Which carp strain was used and how were embryos produced?",
+   "a": "An inbred European R3xR8 strain, a cross of Polish (R3) and Hungarian (R8) carp. Females were injected with pituitary extract the day before, and gametes from abdominal massage were used for IVF at room temperature.",
+   "kw": [
+    "R3xR8 strain",
+    "IVF"
+   ],
+   "info": "Embryos were dechorionated in 10 mg/ml pronase, washed in E3 and raised at 24 C on agarose-coated dishes. They were imaged on a Leica M205 FA under 100 mg/L MS-222 and staged using zebrafish stage criteria (Kimmel et al.).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Library preparation",
+   "q": "How were RNA-seq and ATAC-seq libraries made?",
+   "a": "RNA-seq: miRNeasy extraction, then poly-A selected NEBNext Ultra Directional libraries run on NovaSeq 6000 (150 bp PE, Novogene UK). ATAC-seq: adapted Omni-ATAC on isolated nuclei, tagmentation at 37 C for 30 min at 900 RPM.",
+   "kw": [
+    "Omni-ATAC",
+    "NEBNext"
+   ],
+   "info": "ATAC amplification: 5 pre-amplification cycles, then qPCR-guided cycles stopped at one quarter of maximum fluorescence. Double-sided AMPure selection kept about 100 to 670 bp, and libraries showed nucleosomal banding with a main peak near 200 bp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Library preparation",
+   "q": "How were CAGE-seq and ChIP-seq libraries made?",
+   "a": "CAGE followed Murata et al. with the 3-bp barcode replaced by 8-bp TruSeq UDIs and 5 to 6 extra PCR cycles. ChIP-seq used the Diagenode microchipmentation kit with input controls and antibodies previously validated in zebrafish.",
+   "kw": [
+    "CAGE-seq",
+    "ChIP-seq"
+   ],
+   "info": "CAGE sequencing: 512-cell, gastrula, early and mid segmentation on NextSeq 2000 (70 bp SE); 2-cell, early and late pharyngula on NovaSeq 6000 (2 x 50 bp).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing data analysis",
+   "q": "Which pipelines and tools processed the data?",
+   "a": "nf-core pipelines following ENCODE guidelines: RNA-seq (FastQC, Trim Galore!, STAR, RSEM), ATAC-seq v2.1.2 and ChIP-seq v2.0.0 (BWA, MACS2), and nf-core cageseq 2.0 for CAGE.",
+   "kw": [
+    "nf-core",
+    "STAR",
+    "MACS2"
+   ],
+   "info": "The reference was Cypcar_WagV4.0 (GCA_905221575.1). CAGE tag clusters were filtered for artefacts and low expression. Data are in ENA (RNA-seq PRJEB112855, ATAC-seq PRJEB114341, ChIP-seq PRJEB114353, CAGE-seq PRJEB115120) and code is at github.com/mlkr-rbi/carp-regulatory-atlas.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Differential expression and homeologs",
+   "q": "What were the differential expression settings?",
+   "a": "DESeq2 with design ~ Stage and genes with more than 10 counts. Consecutive-stage contrasts used padj <= 0.001 and log2FC >= 1.5. Subgenome bias per stage used padj <= 0.001 and |log2FC| >= 1.",
+   "kw": [
+    "DESeq2",
+    "VST"
+   ],
+   "info": "LRT: full ~ Stage against reduced ~ 1, padj < 0.01. k-means used k = 10 on VST counts (elbow plot) via pheatmap. PCA was run on all VST counts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Differential expression and homeologs",
+   "q": "How were the 1:1 homeolog pairs defined?",
+   "a": "Duplicated carp genes were pulled from Genomicus v108.01 with a TreePattern Search, then filtered to strict 1:1 homeologs on homologous chromosomes, giving 14,849 pairs.",
+   "kw": [
+    "Genomicus",
+    "homeolog pairs"
+   ],
+   "info": "Gene names were harmonised by propagating an annotated partner's name and by case-insensitive matching. Pairs sharing a name were kept as high-confidence, discordant pairs were recorded separately, and all-zero genes were removed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PADREs and subgenome projection",
+   "q": "How were PADREs called and projected between subgenomes?",
+   "a": "ChromHMM was trained on the 6 stages using ATAC and ChIP tracks. Consensus ATAC peaks took the highest-priority overlapping state. Canonical-chromosome PADREs were projected A to B and B to A with a liftOver chain from pairwise subgenome alignment.",
+   "kw": [
+    "ChromHMM",
+    "liftOver"
+   ],
+   "info": "There were 255,028 PADREs: 254,276 on canonical chromosomes and 752 on non-canonical sequences. Projections were merged within 300 bp and kept only if they mapped to the expected homeologous chromosome (syntenic regions).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PADREs and subgenome projection",
+   "q": "How was differential accessibility between a peak and its projection tested?",
+   "a": "With edgeR v4.4.2, separately for promoters (TssA1/TssA2) and enhancers (EnhA) at each of six stages. featureCounts counts used design ~ replicate + class (peak versus projection) and an LRT, with significance at FDR <= 0.05 and |log2FC| >= 2.",
+   "kw": [
+    "edgeR",
+    "featureCounts"
+   ],
+   "info": "Elements with fewer than 5 counts were filtered out. Results were stratified by subgenome and homeology class.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Zebrafish comparison",
+   "q": "How was the zebrafish projection done?",
+   "a": "Carp PADREs from each subgenome were lifted to zebrafish with a stitched liftOver chain from carp-zebrafish whole-genome alignment. Only single contiguous intervals on the orthologous zebrafish chromosome were kept and then intersected with consensus zebrafish PADREs (cPADREs).",
+   "kw": [
+    "liftOver",
+    "cPADREs"
+   ],
+   "info": "Statistics: chi-squared test of independence with Cramer's V, and per-category two-proportion z-tests with Bonferroni correction. The Methods define category iv as homeologous PADREs not alignable to zebrafish, while the Results define lineage-specific PADREs simply as not alignable. The two definitions are inconsistent.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Subgenome distribution of PADREs",
+   "text": "The GLM shows subgenome B declines less steeply in subgenome-specific elements, and the authors read this as subgenome A being more constrained. Is this convergence or purging of A enhancers, and how would one tell relaxed selection from true divergence?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Conservation with zebrafish",
+   "text": "Check the inconsistencies between the main text and Figure 1a (145,000 vs 254,276 elements, 72.6% zebrafish overlap, 129 vs 119 libraries) and between the Results and Methods definitions of lineage-specific PADREs."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could the same hourglass-like subgenome convergence apply to other allopolyploids such as goldfish or X. laevis? Single-cell chromatin data would show whether early divergence is cell-type driven."
+  }
+ ]
+}

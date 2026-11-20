@@ -1,0 +1,505 @@
+{
+ "id": "Gore_2018",
+ "title": "An epigenetic mechanism for cavefish eye degeneration",
+ "link": "https://doi.org/10.1038/s41559-018-0569-4",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Gore_2018_NatEcolEvol_epigenetic_eye_degeneration.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Coding and non-coding DNA mutations are known to drive phenotypic variation in evolution, but much less is known about the role of epigenetics. Eye development genes have been linked to eye loss in Pachón cavefish, yet no inactivating mutations have been found in any of them.",
+   "kw": [
+    "epigenetics",
+    "Pachón cavefish"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding of the paper?",
+   "a": "Excess DNA methylation-based epigenetic silencing promotes eye degeneration in blind cave A. mexicanus. DNA methylation represses eye-specific genes and globally regulates early eye development.",
+   "kw": [
+    "DNA methylation",
+    "eye degeneration"
+   ],
+   "info": "They ran parallel analyses in A. mexicanus cave and surface morphs and in zebrafish (Danio rerio).",
+   "concl": "Changes in DNA methylation-based gene repression can be an important molecular mechanism for generating phenotypic diversity during development and evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How do the hypermethylated cavefish genes relate to human disease?",
+   "a": "The most significantly hypermethylated and downregulated genes in the cave morph are linked to human eye disorders.",
+   "kw": [
+    "human eye disorders"
+   ],
+   "info": "",
+   "concl": "Suggests that the function of these genes is conserved across vertebrates."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why might cavefish have lost their eyes in the first place?",
+   "a": "Recent studies suggest that eye regression evolved as part of a strategy to save energy in fish adapted to dark, nutrient-poor caves.",
+   "kw": [
+    "energy conservation"
+   ],
+   "info": "Blind cave morphs evolved from surface fish over a few million years of isolation in dark Mexican caves.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does eye loss in the naked mole rat differ from that in Pachón cavefish?",
+   "a": "The naked mole rat genome shows functional loss of more than a dozen key eye genes through inactivating mutations. The Pachón cavefish genome and other studies found no inactivating null mutations in essential eye development genes.",
+   "kw": [
+    "naked mole rat",
+    "Heterocephalus glaber",
+    "null mutations"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What hypothesis did the authors propose to explain eye loss without null mutations?",
+   "a": "Pachón cavefish may carry cis-regulatory mutations that change the expression of eye genes and epigenetic regulators. Epigenetic regulation would then indirectly affect many target eye genes at the same time.",
+   "kw": [
+    "cis-regulatory mutations",
+    "epigenetic regulators"
+   ],
+   "info": "DNA methylation was chosen because it is known to change the expression of large cohorts of genes simultaneously.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - eye phenotypes and dnmt3bb.1",
+   "q": "When does the cavefish eye phenotype appear during development?",
+   "a": "At 36 hpf, cave and surface embryos look the same, with properly formed lenses and optic cups. By 5 days of development, eye degeneration is clearly visible, and adult cavefish have no eyes.",
+   "kw": [
+    "eye regression",
+    "optic cup"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - eye phenotypes and dnmt3bb.1",
+   "q": "Which genes show reduced expression before eye regression in cavefish?",
+   "a": "The crystallins crybb1, crybb1c and cryaa are reduced in cavefish heads at 54 hpf compared with surface fish (qRT-PCR, P<0.005). The control gene myod is not significantly changed.",
+   "kw": [
+    "crybb1",
+    "cryaa",
+    "crystallins"
+   ],
+   "info": "Three biological replicates, isolated heads, normalized to surface fish levels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - eye phenotypes and dnmt3bb.1",
+   "q": "What are de novo DNMTs, and where is dnmt3bb.1 expressed?",
+   "a": "De novo DNA methyltransferases (DNMTs) add new methyl marks to DNA. Zebrafish dnmt3bb.1 is expressed in haematopoietic stem and progenitor cells and in the ciliary marginal zone of the developing eye.",
+   "kw": [
+    "dnmt3bb.1",
+    "DNMT",
+    "ciliary marginal zone"
+   ],
+   "info": "The ciliary marginal zone is a stem-cell-containing tissue around the lens that generates neurons and other eye cell types. Expression in this zone was shown by whole-mount in situ hybridization at 36 hpf. The authors had shown earlier that loss of dnmt3bb.1 causes failure to maintain haematopoietic stem and progenitor cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - eye phenotypes and dnmt3bb.1",
+   "q": "What eye phenotype do zebrafish dnmt3bb.1 mutants show?",
+   "a": "dnmt3bb.1 y258 null mutant larvae and adults have enlarged eyes with retinal hyperplasia compared with wild-type siblings. Their eyes also have higher expression of opn1lw1, gnb3a and crx.",
+   "kw": [
+    "dnmt3bb.1",
+    "retinal hyperplasia",
+    "opn1lw1"
+   ],
+   "info": "Eye size was measured in 3-week-old fish (n = 18, two-tailed t-test, P<0.05). qRT-PCR was done on adult eyes (3 biological replicates, P<0.005). The text writes the allele as y258 while the figure panel labels show y358, an inconsistency in the PDF.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - eye phenotypes and dnmt3bb.1",
+   "q": "How is dnmt3bb.1 expressed in Pachón cavefish?",
+   "a": "Its expression is 1.5-fold higher in Pachón cavefish than in surface fish (qRT-PCR, P<0.05). The A. mexicanus dnmt3bb.1 gene also maps to an eye size QTL.",
+   "kw": [
+    "dnmt3bb.1",
+    "QTL"
+   ],
+   "info": "",
+   "concl": "The inverse correlation between eye size and dnmt3bb.1 expression in both species led to the hypothesis that excess Dnmt3bb.1-dependent methylation globally represses eye genes in cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "What genome-wide experiment did they do on cavefish and surface fish eyes?",
+   "a": "They ran combined RNA-seq and whole-genome bisulfite sequencing on RNA and DNA co-isolated from eyes dissected at 54 hpf. This is a critical period for eye development in Pachón cavefish.",
+   "kw": [
+    "RNA-seq",
+    "WGBS",
+    "co-isolation"
+   ],
+   "info": "Two biological replicates per morph.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "What did the RNA-seq show?",
+   "a": "It confirmed higher dnmt3bb.1 expression in cavefish eyes and showed reduced expression of many eye development genes. Downregulated genes included cryaa, crybgx, opn1lw and rom1a, and upregulated genes included lyz and isl1l.",
+   "kw": [
+    "differential expression",
+    "dnmt3bb.1"
+   ],
+   "info": "dnmt3bb.1 was compared as FPKM normalized to surface fish (P<0.05).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "Which biological processes and pathways are most downregulated in cavefish eyes?",
+   "a": "Visual perception (GO:0007601) was the top downregulated GO term, and eye electrophysiology was the top hit in Ingenuity Pathway Analysis. IPA predicted phototransduction as the most affected signalling pathway.",
+   "kw": [
+    "Gene Ontology",
+    "IPA",
+    "phototransduction"
+   ],
+   "info": "Other downregulated GO terms were sensory perception, cell-cell adhesion, neurological process, system process, synaptic transmission, cell adhesion and biological adhesion.",
+   "concl": "The same top downregulated processes were found in the naked mole rat."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "How many genes are both promoter-hypermethylated and downregulated in cavefish eyes?",
+   "a": "128 genes have at least 15% more methylation within 2 kb upstream of the TSS (P≤0.05) and at least 1.5-fold lower expression (P≤0.05) in cavefish compared with surface fish.",
+   "kw": [
+    "promoter methylation",
+    "TSS"
+   ],
+   "info": "Of these, 39 are annotated as expressed in the eye in mice and 26 in humans. The rationale is that promoter methylation is highly correlated with gene repression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "How many of the hypermethylated, downregulated genes are linked to human eye disease, and which are the extremes?",
+   "a": "19 genes are linked to human eye disorders (Table 1). OPN1LW has the largest methylation increase (47.98%, log2FC -4.15, cone-rod dystrophy), and OPN1MW has the largest expression drop (log2FC -7.26, 36.78% methylation increase).",
+   "kw": [
+    "Table 1",
+    "OPN1LW",
+    "OPN1MW"
+   ],
+   "info": "Other examples: RS1 (log2FC -4.81, retinoschisis), PRPH2 (-4.61, retinitis pigmentosa), GRK1 (-4.39, Oguchi disease), CRYGB (-4.13, polar cataract), CRX (-1.34, 20.36%, retinitis pigmentosa) and GNB3 (-2.15, 15.75%, congenital night blindness).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "What are opn1lw1, gnb3a and crx, and why focus on them?",
+   "a": "opn1lw1 is an opsin associated with cone-rod dystrophy and colour blindness. gnb3a is defective in autosomal recessive congenital stationary night blindness, and crx is a photoreceptor-specific transcription factor whose loss causes blindness in humans.",
+   "kw": [
+    "opn1lw1",
+    "gnb3a",
+    "crx"
+   ],
+   "info": "These three genes were used for validation throughout the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "How did targeted bisulfite sequencing confirm promoter hypermethylation in cavefish?",
+   "a": "At 54 hpf, promoter CpG methylation was higher in cavefish than in surface fish: opn1lw1 rose from 68% to 98%, gnb3a from 34% to 65%, and crx from 2% to 54%.",
+   "kw": [
+    "targeted bisulfite sequencing",
+    "CpG"
+   ],
+   "info": "The values are percentages of methylated residues shown as pie charts in Fig. 2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "How was the reduced expression of these three genes validated?",
+   "a": "Whole-mount in situ hybridization with opn1lw1, gnb3a and crx probes showed strongly reduced expression in cavefish eyes compared with surface fish eyes.",
+   "kw": [
+    "WISH"
+   ],
+   "info": "At least 20-25 embryos were analysed by in situ hybridization.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "q": "Can eye genes be downregulated without being methylated themselves?",
+   "a": "Yes. crx is needed for proper expression of many other eye genes, and many of these crx targets are strongly reduced in cavefish eyes even though most are not methylated.",
+   "kw": [
+    "crx",
+    "indirect regulation"
+   ],
+   "info": "Shown in Supplementary Fig. 5.",
+   "concl": "Methylation of a key transcription factor could spread repression to downstream eye genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - tet2/tet3 zebrafish mutants",
+   "q": "What do TET enzymes do, and how do they differ from DNMTs?",
+   "a": "DNMTs add methyl groups to cytosines to make 5-methylcytosine. TET enzymes oxidize methylcytosine to hydroxymethylcytosine, which promotes DNA demethylation.",
+   "kw": [
+    "TET",
+    "5hmC",
+    "demethylation"
+   ],
+   "info": "Zebrafish, like mammals, have three partially redundant TET enzymes (Tet1, Tet2, Tet3). Tet2 and Tet3 are the main ones, and tet1/2/3 triple mutants show no extra phenotypes compared with tet2/3 double mutants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - tet2/tet3 zebrafish mutants",
+   "q": "Why use tet2-/- tet3-/- double mutant zebrafish?",
+   "a": "These mutants have global DNA hypermethylation. They let the authors test experimentally whether more DNA methylation reduces eye gene expression and eye development.",
+   "kw": [
+    "tet2",
+    "tet3",
+    "hypermethylation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - tet2/tet3 zebrafish mutants",
+   "q": "What eye phenotype do tet2/tet3 double mutants have?",
+   "a": "At 48 hpf they have smaller eyes than wild-type siblings, with increased promoter methylation and reduced expression of crx and gnb3a in isolated eyes.",
+   "kw": [
+    "tet2/tet3 double mutant",
+    "crx",
+    "gnb3a"
+   ],
+   "info": "crx promoter methylation rose from 14% to 60% and gnb3a from 41% to 92%. Eye size: n = 10, two-tailed t-test, P<0.05. qRT-PCR: 3 biological replicates, P<0.005.",
+   "concl": "Increasing DNA methylation is enough to repress eye genes and reduce eye size, mirroring the cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - tet2/tet3 zebrafish mutants",
+   "q": "What other phenotypes do tet2/tet3 double mutants have?",
+   "a": "Like dnmt3bb.1 mutants, they have haematopoietic defects. After 48 hpf they also start to deteriorate with defects in brain development and do not survive beyond 5 dpf.",
+   "kw": [
+    "pleiotropy"
+   ],
+   "info": "The authors suggest these extra phenotypes may result from global DNA hypermethylation. They are a caveat when reading the eye phenotype.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Aza rescue of cavefish eyes",
+   "q": "What is 5-azacytidine, and why was it injected into the eye instead of given systemically?",
+   "a": "5-Azacytidine (Aza) is a well-characterized inhibitor of DNA methylation, approved for treating aberrant methylation in myelodysplastic syndrome. Giving Aza systemically to zebrafish embryos causes severe pleiotropic defects and early death.",
+   "kw": [
+    "5-Azacytidine",
+    "DNA methylation inhibitor"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Aza rescue of cavefish eyes",
+   "q": "How was the Aza rescue experiment designed?",
+   "a": "A single dose of Aza or DMSO carrier was injected into the vitreous chamber of the left eye of cavefish embryos at 42-48 hpf. Phenotypes were scored in the injected left eye and the uninjected right eye at 5 dpf.",
+   "kw": [
+    "microinjection",
+    "internal control"
+   ],
+   "info": "The uninjected right eye serves as an internal control within each animal. DMSO group n = 18, Aza group n = 12.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Aza rescue of cavefish eyes",
+   "q": "What did Aza injection do to cavefish eyes?",
+   "a": "Aza-injected left eyes were larger than the uninjected right eyes and the DMSO-injected eyes (P<0.05). Histology showed a more organized structure with well-defined lens and retinal layers.",
+   "kw": [
+    "partial rescue",
+    "histology"
+   ],
+   "info": "Four to eight embryos per condition were sectioned and stained with H&E.",
+   "concl": "Inhibiting excess methylation partially rescues cavefish eye development."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Aza rescue of cavefish eyes",
+   "q": "Did Aza change methylation and expression of the target genes?",
+   "a": "Targeted bisulfite sequencing showed reduced gnb3a promoter methylation in Aza-injected eyes. gnb3a and crx expression went up after injection of either Aza or the more DNA-specific 5-Aza-2'-deoxycytidine.",
+   "kw": [
+    "5-Aza-2'-deoxycytidine",
+    "gnb3a"
+   ],
+   "info": "Data are in Supplementary Fig. 7.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - conclusions",
+   "q": "What model do the authors propose?",
+   "a": "DNA methylation plays a critical role in teleost eye development. Increased methylation-based repression of eye genes is a major mechanism behind cavefish eye degeneration, with eye size inversely related to eye gene methylation.",
+   "kw": [
+    "model"
+   ],
+   "info": "In the Fig. 4f model, eye size runs from largest to smallest: dnmt3bb.1 mutant zebrafish, then wild-type zebrafish and surface fish, then tet2/3 double mutants and cavefish.",
+   "concl": "Small genetic changes that alter epigenetic regulation can drive rapid adaptive evolution by changing the expression of large gene sets."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - conclusions",
+   "q": "Why might cavefish and naked mole rats lose eyes through different mechanisms?",
+   "a": "The difference may reflect evolutionary timescales. Cavefish evolved over the past 1 to 5 million years, while naked mole rats evolved 73 million years ago, which gave enough time to fix inactivating mutations in eye genes.",
+   "kw": [
+    "evolutionary timescale"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - conclusions",
+   "q": "Is there precedent for epigenetic changes switching developmental fate?",
+   "a": "Yes. In honeybees (Apis mellifera), nutrition-driven changes in DNA methylation control the switch between queen and worker caste.",
+   "kw": [
+    "honeybee",
+    "Apis mellifera"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - fish stocks",
+   "q": "Which fish lines were used?",
+   "a": "Zebrafish dnmt3bb.1 y258 mutants, tet2 mk17 and tet3 mk18 mutants, and the EkkWill wild-type line. They also used surface and Pachón cave populations of A. mexicanus.",
+   "kw": [
+    "EkkWill",
+    "Pachón"
+   ],
+   "info": "Fish were spawned naturally. Embryos and larvae up to 5 days were used. Work followed NICHD IACUC protocols 12-039 and 18-016.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DNA isolation and whole-genome bisulfite sequencing",
+   "q": "How were eye DNA and RNA obtained and the WGBS libraries made?",
+   "a": "Eyes were removed with fine tungsten needles from dechorionated embryos in PBS without Ca and Mg, and DNA and RNA were co-isolated with the ZR-Duet DNA/RNA MiniPrep Kit. For WGBS, 200 ng of DNA was converted with the EZ DNA Methylation-Lightning kit, and libraries were made with the TruSeq DNA Methylation Kit.",
+   "kw": [
+    "ZR-Duet",
+    "EZ DNA Methylation-Lightning",
+    "TruSeq DNA Methylation"
+   ],
+   "info": "Two biological replicates per morph were run on two flow cells of an Illumina HiSeq 2500 (rapid run, V2 chemistry), giving about 400 million 2x100 bp read pairs per sample.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DNA isolation and whole-genome bisulfite sequencing",
+   "q": "How were the WGBS reads processed and differential methylation tested?",
+   "a": "Reads were trimmed with Trimmomatic and aligned with Bismark to a bisulfite-converted Pachón genome using non-directional alignment. Conversion rates were summed per gene body and per promoter (2 kb upstream of the TSS) and compared between conditions with a two-proportion z-test.",
+   "kw": [
+    "Trimmomatic",
+    "Bismark",
+    "two-proportion z-test"
+   ],
+   "info": "Trimming removed leading or trailing bases with quality below 5 and used a 4 bp sliding window requiring average quality above 15. Reads trimmed below 50 bp were discarded. The methods call the raw data single-end even though paired reads were sequenced, which is unclear. No multiple testing correction is described.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DNA isolation and whole-genome bisulfite sequencing",
+   "q": "How was targeted bisulfite sequencing done?",
+   "a": "Bisulfite-converted DNA was PCR-amplified with primers designed in MethPrimer using OneTaq Hot Start Master Mix. Amplicons were cloned into pCRII-TOPO, individual clones were Sanger-sequenced with T7 or SP6 primers, and methylation was analysed with QUMA.",
+   "kw": [
+    "MethPrimer",
+    "QUMA",
+    "pCRII-TOPO"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq",
+   "q": "How was RNA-seq done and analysed?",
+   "a": "300-900 ng of poly-A-enriched RNA was made into TruSeq Standard mRNA libraries and sequenced on one HiSeq 2500 flow cell (rapid run, V2), with 100 million paired-end reads per sample. Reads were trimmed with Trimmomatic, aligned to the Pachón genome with RNA-STAR, counted with subread featureCounts, and tested with DESeq2.",
+   "kw": [
+    "STAR",
+    "featureCounts",
+    "DESeq2"
+   ],
+   "info": "Two biological replicates per morph. Human, mouse and zebrafish homologues were found with Ensembl BioMart. Pathway and GO analyses used Ingenuity Pathway Analysis and PANTHER.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - qRT-PCR, in situ hybridization and histology",
+   "q": "How were qRT-PCR and in situ hybridization done?",
+   "a": "For qRT-PCR, cDNA was made with the ThermoScript RT-PCR System and run with SsoAdvanced Universal SYBR Green on a Bio-Rad CFX96, with at least three biological replicates. For in situ hybridization, DIG- and FITC-labelled antisense riboprobes were used, with 5% dextran sulfate in the hybridization buffer and antibodies pre-adsorbed to whole cavefish powder.",
+   "kw": [
+    "qRT-PCR",
+    "riboprobes",
+    "dextran sulfate"
+   ],
+   "info": "The ISH modifications were made to reduce non-specific hybridization and improve signal-to-noise. For histology, samples were fixed in 4% PFA overnight at 4 °C, embedded in paraffin, and stained with H&E.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - microinjection and eye size",
+   "q": "What were the injection parameters and how was eye size measured?",
+   "a": "A single 1-2 nl bolus of 100 µM Aza or 5-Aza-2'-deoxycytidine in 5% DMSO, or 5% DMSO alone, was delivered into the left eye vitreous with a Pneumatic PicoPump. Eye area was normalized to head area and compared with a paired Student's t-test.",
+   "kw": [
+    "PicoPump",
+    "eye size normalization"
+   ],
+   "info": "Embryos were mounted laterally in low-melting-point agarose. Injected embryos with axis or brain deformities were excluded. The figure legends report two-tailed t-tests while the methods say paired t-test, which is not fully consistent. Investigators were not blinded (stated in the reporting summary).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data availability",
+   "q": "Where are the sequencing data?",
+   "a": "In the Gene Expression Omnibus under accession GSE109006.",
+   "kw": [
+    "GEO"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Introduction",
+   "text": "What makes dnmt3bb.1 expression higher in Pachón cavefish? The paper suggests cis-regulatory mutations and notes that dnmt3bb.1 maps to an eye size QTL, but the causal variant is not identified."
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - RNA-seq and methylome of cavefish eyes",
+   "text": "The genome-wide data rest on two biological replicates at a single stage (54 hpf), and the link between methylation and expression is correlational. Is the hypermethylation causal or a consequence of degeneration, and does it also occur in other cave populations such as Tinaja or Molino?"
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - conclusions",
+   "text": "The Aza rescue was only partial, and tet2/3 mutants have pleiotropic defects. Does targeted demethylation of specific promoters such as crx rescue the eye, and has altered epigenetic regulation been used in other rapidly evolved animals?"
+  }
+ ]
+}

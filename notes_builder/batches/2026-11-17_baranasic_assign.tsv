@@ -1,0 +1,19 @@
+# Damir Baranasic's papers 2020+ (n = line in _links.txt). Not listed: n=2 salmonid preprint (= Nat Ecol Evol 2026, n=1),
+# n=10 Cdx2 preprint (= Dev Cell 2025, n=9), n=18 genomic-features preprint (= Nat Genet 2022 DANIO-CODE, n=15).
+n	folder	subcategory	filename	doi_override
+1	regulatiory_genomics	Regulatory evolution	Baudement_2026_NatEcolEvol_salmonid_WGD_regulatory_evolution.pdf	
+3	regulatiory_genomics	Regulatory evolution	JimenezGonzalez_2026_bioRxiv_carp_subgenome_noncoding_elements.pdf	
+4	regulatiory_genomics	Regulatory evolution	Xu_2026_NatEcolEvol_gene_body_methylation_cnidarian.pdf	
+5	general	Genomic resources & assembly	Clark_2026_F1000Res_ELIXIR_domestic_animals.pdf	
+6	regulatiory_genomics	TF binding & DNA structure	OvekBaydar_2025_NAR_JASPAR_2026.pdf	
+7	regulatiory_genomics	Enhancers & enhancer–gene maps	Naseer_2025_GenomeRes_salmon_antiviral_regulatory_landscape.pdf	
+8	general	Human genetics	Miranda_2025_Nature_adipose_niche_obesity.pdf	
+9	regulatiory_genomics	Enhancers & enhancer–gene maps	Amblard_2025_DevCell_Cdx2_enhancer_attenuator.pdf	
+11	regulatiory_genomics	Regulatory evolution	Phan_2025_NatGenet_conserved_regulatory_elements_diverged_sequence.pdf	
+12	regulatiory_genomics	TF binding & DNA structure	Rauluseviciute_2023_NAR_JASPAR_2024.pdf	
+13	drerio	Genomic resources	JimenezGonzalez_2023_DMM_zebrafish_regulatory_genomic_resources.pdf	
+14	general	Human genetics	McAllan_2023_NatCommun_adipocyte_DNA_methylation_obesity.pdf	
+15	drerio	Genomic resources	Baranasic_2022_NatGenet_zebrafish_CRE_multiomic_atlas.pdf	
+16	general	Genomic resources & assembly	Slemc_2022_MicrobiolSpectr_Streptomyces_rimosus_genome.pdf	
+17	regulatiory_genomics	TF binding & DNA structure	CastroMondragon_2021_NAR_JASPAR_2022.pdf	
+19	regulatiory_genomics	TF binding & DNA structure	Fornes_2020_NAR_JASPAR_2020.pdf	

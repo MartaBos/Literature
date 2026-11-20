@@ -1,0 +1,554 @@
+{
+ "id": "Zhang_2026",
+ "title": "Highly accurate ab initio gene annotation with ANNEVO",
+ "link": "https://doi.org/10.1038/s41592-026-03036-7",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Zhang_2026_NatMethods_ANNEVO_gene_annotation.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is ANNEVO?",
+   "a": "A genomic language model based on a mixture of experts (MoE). It predicts genes ab initio, from genome sequence alone, by modelling distal sequence dependencies and joint evolutionary relationships across diverse genomes.",
+   "kw": [
+    "ANNEVO",
+    "mixture of experts",
+    "ab initio annotation"
+   ],
+   "info": "Benchmarked on 566 phylogenetically diverse species. Published in Nature Methods 23, 740-748 (April 2026).",
+   "concl": "ANNEVO clearly outperforms existing ab initio methods and performs as well as state-of-the-art evidence-based annotation pipelines."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap in gene annotation does the paper address?",
+   "a": "Current methods struggle to model complex patterns of gene transmission, such as vertical inheritance and horizontal gene transfer. Ab initio methods also have limited accuracy.",
+   "kw": [
+    "horizontal gene transfer",
+    "vertical inheritance"
+   ],
+   "info": "Because ANNEVO needs no external evidence, it can also give more complete annotations than the reference annotations for many species and correct errors in them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is ab initio gene annotation, and how did the classical tools do it?",
+   "a": "It infers gene structures from genomic sequence composition alone. Early tools such as Augustus and GeneMark used hidden Markov models (HMMs) with static parameters.",
+   "kw": [
+    "Augustus",
+    "GeneMark",
+    "HMM"
+   ],
+   "info": "Because ab initio accuracy was limited, people turned to automated pipelines such as BRAKER3. These add repeat masking and extrinsic evidence such as known proteins and RNA-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the problems with evidence-based annotation pipelines?",
+   "a": "Species with little wet-lab data get poor annotations. Relying on expression data can miss genes with rare spatial or temporal expression. Processing the evidence is also computationally expensive.",
+   "kw": [
+    "BRAKER3",
+    "RNA-seq evidence"
+   ],
+   "info": "Because of these limits, nearly half of the species in NCBI GenBank have no annotation. The Earth BioGenome Project, which aims to sequence more than 1 million genomes within a decade, will make this worse.",
+   "concl": "There is an urgent need for fast, highly accurate, evidence-free annotation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do recent deep learning tools such as Helixer and Tiberius approach annotation, and what do they lack?",
+   "a": "They treat annotation as nucleotide-level sequence labelling. Architectures such as LSTMs predict class probabilities for each base, and these are then post-processed into gene structures.",
+   "kw": [
+    "Helixer",
+    "Tiberius",
+    "LSTM"
+   ],
+   "info": "According to the authors, these tools recognise general syntactic patterns well but do not account for differences in genomic semantics across divergent clades. They also do not consider vertical and horizontal evolutionary trajectories.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are long genes a particular challenge for annotation?",
+   "a": "Long genes, for example products of gene fusion or of exon and intron expansion, involve distal interactions and complex patterns of paired splice sites. Existing methods use this distal information poorly.",
+   "kw": [
+    "long-range dependencies",
+    "gene fusion"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How exactly is the annotation task defined in ANNEVO?",
+   "a": "As sequence-based prediction of the longest coding transcript of each protein-coding gene across phylogenetically diverse species.",
+   "kw": [
+    "longest transcript"
+   ],
+   "info": "This means ANNEVO does not predict alternative isoforms. See the limitations in the Discussion.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of the ANNEVO framework",
+   "q": "What are the three main components of ANNEVO?",
+   "a": "Context extension (adds flanking sequence to each genome segment), a neural network (predicts gene structure classes at nucleotide resolution) and gene structure decoding (Viterbi algorithm to produce biologically valid gene models).",
+   "kw": [
+    "context extension",
+    "Viterbi"
+   ],
+   "info": "Context extension prevents bias at the edges of segments. A targeted loss masking strategy lets the model use flank and error-region sequence as input without training on their labels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of the ANNEVO framework",
+   "q": "How does ANNEVO handle deep evolutionary divergence between major groups?",
+   "a": "It trains five separate clade-specific models: Fungi, Embryophyta, Invertebrates, Vertebrate_other and Mammalia, following RefSeq's taxonomic groups. You pick the model that matches the genome being annotated.",
+   "kw": [
+    "clade-specific model",
+    "RefSeq"
+   ],
+   "info": "Keeping distant groups in separate models prevents negative interference between them. Diversity within each clade is handled by the MoE architecture inside each model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of the ANNEVO framework",
+   "q": "Why is the distal information modelling module compared to Hi-C?",
+   "a": "A convolutional tower first compresses subregions into bins. A Transformer then computes interactions between bins rather than between single nucleotides, similar to how Hi-C measures contacts between regions.",
+   "kw": [
+    "Transformer",
+    "Hi-C analogy"
+   ],
+   "info": "This lets ANNEVO model sequences up to about 40 kb long.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of the ANNEVO framework",
+   "q": "What does the joint evolutionary modelling (MoE) module do?",
+   "a": "Several expert subnetworks each specialise on a subclade. A controller weighs how much each expert contributes, based on the composition of the input sequence.",
+   "kw": [
+    "mixture of experts",
+    "gating"
+   ],
+   "info": "During training each expert becomes specialised for a subclade. During prediction the model adjusts its feature representation to the sequence automatically. There are eight experts, and the final representation is a weighted sum of their outputs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of the ANNEVO framework",
+   "q": "What does the resolution restorer module do?",
+   "a": "It upsamples the coarse binned representation back to single-nucleotide resolution. It uses stacked transposed convolutions interleaved with normalisation and convolution layers.",
+   "kw": [
+    "transposed convolution",
+    "resolution restorer"
+   ],
+   "info": "This step is needed for exact base-level placement of features such as splice sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Annotation across divergent clades",
+   "q": "How many species were tested, and how was Augustus set up for a fair comparison?",
+   "a": "566 RefSeq species: 288 Fungi, 128 Embryophyta and 50 each of Invertebrate, Vertebrate_other and Mammalia. Augustus was trained separately for each test species using evolutionarily close relatives.",
+   "kw": [
+    "Augustus",
+    "benchmark"
+   ],
+   "info": "ANNEVO, in contrast, uses one species-agnostic model per clade. For the animal clades, 50 species were randomly subsampled from the candidates, with model organisms and representative taxa prioritised.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Annotation across divergent clades",
+   "q": "How much better was ANNEVO than Augustus across the five clades?",
+   "a": "Mean improvements were 8.8-25.6% in nucleotide-level F1, 13.5-45.2% in gene-level F1 and 11.6-37.8% in BUSCO score. Each range runs from the smallest to the largest clade mean.",
+   "kw": [
+    "F1 score",
+    "BUSCO"
+   ],
+   "info": "This held even though Augustus used a bespoke model for each species and ANNEVO used one model per clade.",
+   "concl": "ANNEVO combines cross-species evolutionary signal into one predictor and does not need species-specific parameters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Annotation across divergent clades",
+   "q": "How fast is ANNEVO compared with Augustus?",
+   "a": "About fivefold faster with the same 48-thread parallelisation. It annotated the Arabidopsis genome in 3.4 minutes and the human genome in 1.4 hours.",
+   "kw": [
+    "runtime"
+   ],
+   "info": "Fitted runtime against genome size: Augustus y = 2.53x + 0.26 hours, ANNEVO y = 0.47x hours (x in Gb). The Augustus time counts decoding only, while the ANNEVO time includes network inference plus decoding. The speed comes from parallelisation in the decoding step.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Length-robust gene prediction",
+   "q": "In which clade did ANNEVO gain the most over Augustus, and why?",
+   "a": "In Mammalia, likely because mammals have characteristically longer genes. The BUSCO advantage over Augustus grew with clade gene length, to almost 40 points in Mammalia (read from Fig. 2d).",
+   "kw": [
+    "gene length",
+    "Mammalia"
+   ],
+   "info": "Gene length was defined as the distance from start to stop codon of the longest transcript, including introns.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Length-robust gene prediction",
+   "q": "How did prediction accuracy change with gene length?",
+   "a": "Augustus fully predicted 52.9% of mammalian genes of 0-10 kb but only 25.2% of genes over 100 kb. ANNEVO kept or even improved its accuracy for longer genes, at roughly 78-90% across the length bins.",
+   "kw": [
+    "length robustness"
+   ],
+   "info": "The ANNEVO percentages are read from the Fig. 2e bar chart. The genes were mammalian protein-coding genes split into 0-10, 10-40, 40-100 and over 100 kb groups. The text gives 1,035,026 genes, but the Fig. 2d legend gives 1,035,058 for Mammalia, a small inconsistency in the paper. The authors attribute Augustus's decline to its short-term memory.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Length-robust gene prediction",
+   "q": "Which example long genes did ANNEVO reconstruct?",
+   "a": "It fully reconstructed 13 genes longer than 400 kb, including human GMDS (621 kb, the longest case). It also exactly reconstructed DYNC2H1 (370 kb, 89 coding exons). Augustus split these genes into several fragments with misannotated splice sites.",
+   "kw": [
+    "GMDS",
+    "DYNC2H1"
+   ],
+   "info": "The authors credit this to the Hi-C-inspired long-range modelling.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Comparison with evidence-based pipelines",
+   "q": "Which tools was ANNEVO compared against in the 12-model-species benchmark?",
+   "a": "Augustus-Evidence (with RefSeq repeat masking, RNA-seq and proteins), GeneMark-ETP and BRAKER3 (same evidence), and two sequence-only deep learning tools, Helixer and Tiberius.",
+   "kw": [
+    "BRAKER3",
+    "GeneMark-ETP",
+    "Helixer"
+   ],
+   "info": "The 12 species were Aspergillus oryzae, Arabidopsis thaliana, Zea mays, Homo sapiens, Rattus norvegicus, Sus scrofa, Drosophila melanogaster, Bombyx mori, Danio rerio, Gallus gallus, Xenopus tropicalis and Oryzias latipes. The evidence-based tools were deliberately favoured with RNA-seq from five tissues and proteomes from close relatives. Tiberius was only run on the vertebrate clades.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Comparison with evidence-based pipelines",
+   "q": "How did ANNEVO do on Sus scrofa compared with BRAKER3?",
+   "a": "Nucleotide-level F1 was 0.934 for ANNEVO versus 0.741 for BRAKER3. ANNEVO's gene completeness was 85.2%, 21.6 points higher than BRAKER3 at comparable precision. Its BUSCO was 96.0 versus 75.9.",
+   "kw": [
+    "Sus scrofa",
+    "BRAKER3"
+   ],
+   "info": "Other BUSCO scores on pig: Tiberius 89.6, Augustus-Evidence 88.4, GeneMark-ETP 81.4, Helixer 68.4. ANNEVO also kept lower false-positive rates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Comparison with evidence-based pipelines",
+   "q": "What were the average scores across the 12 model species?",
+   "a": "ANNEVO had NT-F1 0.92, gene-F1 0.82 and BUSCO 96.6. BRAKER3 had 0.85, 0.78 and 93.9. Helixer had 0.88, 0.71 and 90.3.",
+   "kw": [
+    "model species",
+    "benchmark"
+   ],
+   "info": "GeneMark-ETP: 0.66, 0.50, 95.0. Augustus-Evidence: 0.81, 0.60, 92.9. At the nucleotide level, ANNEVO recall was 0.922 versus 0.805 for BRAKER3, and precision was 0.919 versus 0.906.",
+   "concl": "Using only genome sequence, ANNEVO outperformed BRAKER3, which used multi-tissue RNA-seq and protein evidence."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Comparison with evidence-based pipelines",
+   "q": "How does ANNEVO compare with Tiberius?",
+   "a": "Tiberius came closest to ANNEVO in Mammalia but dropped sharply in Vertebrate_other. Across 43 test mammals, ANNEVO was higher by 5.9% NT(CDS)-F1, 1.0% gene-F1 and 3.5% BUSCO.",
+   "kw": [
+    "Tiberius"
+   ],
+   "info": "Tiberius is more conservative: gene precision 2.3% higher than ANNEVO but gene recall 4.5% lower. The authors suggest gene length modelling during decoding may explain this. Over six vertebrate model species, the averages were ANNEVO 0.92/0.81/95.7 and Tiberius 0.78/0.65/75.0. It is not explained why 43 mammals were used here when 50 mammalian test species are listed elsewhere.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Comparison with evidence-based pipelines",
+   "q": "How does ANNEVO compare in runtime and GPU memory with other tools?",
+   "a": "On GPU it was about 5x faster than Tiberius, 24x faster than Helixer and 83x faster than BRAKER3. On CPU only, it was more than 10x faster than all others and more than 20x faster than Tiberius.",
+   "kw": [
+    "GPU memory",
+    "runtime"
+   ],
+   "info": "Average runtimes on GPU (4 species): BRAKER3 49.7 h, Helixer 14.4 h, Tiberius 2.8 h, ANNEVO 0.6 h. On CPU (7 species): BRAKER3 56.8 h, Helixer 57.3 h, Tiberius 110.3 h, ANNEVO 5.1 h. BRAKER3 time excludes RNA-seq alignment. GPU memory at batch size 8 for mammalian genomes: ANNEVO 3 GB, Helixer 8.6 GB, Tiberius more than 32 GB.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Improving reference annotations",
+   "q": "How often did ANNEVO beat the reference annotations in BUSCO completeness?",
+   "a": "In 318 of 793 species (40.1%; 566 RefSeq and 227 Ensembl). Against Ensembl, it was better in 60% of Fungi (24/40), 72% of Embryophyta (60/83) and 68% of Vertebrate_other (34/50).",
+   "kw": [
+    "RefSeq",
+    "Ensembl",
+    "BUSCO"
+   ],
+   "info": "For Embryophyta, mean BUSCO was 95.6% versus 91% (n = 83, P = 1.8 x 10^-6, two-sided Mann-Whitney U test). Against RefSeq, the mean differences were mostly slightly negative except in Fungi (Fig. 4b). So RefSeq references are generally harder to beat.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Improving reference annotations",
+   "q": "How were ANNEVO's corrections of Ensembl validated in Brassica oleracea?",
+   "a": "ANNEVO found 55 additional BUSCO genes with full RNA-seq support, over 3% of all BUSCO orthologs. It also made 23 RNA-seq-supported corrections in nearby, mostly non-BUSCO, less conserved genes.",
+   "kw": [
+    "Brassica oleracea",
+    "Iso-Seq"
+   ],
+   "info": "Error types read from Fig. 4c: BUSCO genes had 43 gene losses, 10 erroneous fusions and 2 other; surrounding genes had 8 gene losses, 10 fusions and 5 other. Other errors included incomplete models due to premature stop codons and wrong start codons due to incorrect splice sites. Validation used short-read RNA-seq and Iso-Seq.",
+   "concl": "The improvements are real biology, not artefacts limited to conserved BUSCO genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Improving reference annotations",
+   "q": "What did the gene fusion example show?",
+   "a": "On B. oleracea chromosome 5, Ensembl had merged two distinct genes into one transcript at a splice junction with no RNA-seq or Iso-Seq support. ANNEVO split them into the BUSCO gene and its neighbour.",
+   "kw": [
+    "gene fusion error"
+   ],
+   "info": "The region is chr. 5:39558654-39563623, Ensembl transcript Bo5g127470.1, visualised in IGV.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Model ablation and fine-tuning",
+   "q": "Which module contributes most to performance according to the ablation?",
+   "a": "The joint evolutionary (MoE) module. Removing it with parameter count unchanged dropped NT-F1, gene-F1 and BUSCO by 2.3%, 7.8% and 6.3% (0.93 to 0.90, 0.80 to 0.72, 95.8 to 89.5).",
+   "kw": [
+    "ablation",
+    "mixture of experts"
+   ],
+   "info": "Removing the resolution restorer and mapping features directly to nucleotides also reduced performance (0.91, 0.76, 93.7).",
+   "concl": "Modelling cross-clade relationships with MoE is key to accuracy and generalisability."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Model ablation and fine-tuning",
+   "q": "What happened when the distal modelling module was replaced by a SpliceAI-like architecture?",
+   "a": "GPU requirement rose 2.5-fold and training speed fell 8.8-fold. The projected training time for the Mammalia model became an impractical 56 days.",
+   "kw": [
+    "SpliceAI",
+    "computational efficiency"
+   ],
+   "info": "GPU memory per sample was 5.1 GB versus 2.0 GB, and throughput was 12.3 versus 108.8 samples/s. The Extended Data legend calls the replacement a pure CNN-based architecture.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Model ablation and fine-tuning",
+   "q": "Does fine-tuning ANNEVO on a specific subclade help?",
+   "a": "Full-parameter fine-tuning did not help, likely due to overfitting and MoE instability. Fine-tuning only the task-specific module gave modest gains.",
+   "kw": [
+    "fine-tuning"
+   ],
+   "info": "Test species were Homo sapiens and Echinops telfairi, the mammal with the largest BUSCO gap between ANNEVO and RefSeq. For human, gene-F1 went from 0.772 to 0.793 and BUSCO from 95.7 to 96.5. For Echinops, gene-F1 went from 0.737 to 0.743 and BUSCO from 85.3 to 86.6. A fine-tuned non-MoE model stayed far lower (human 0.714/91.7, Echinops 0.682/79.1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How common is a lack of transcriptomic data among the test species?",
+   "a": "Of the 566 RefSeq test species, 46% (261) have no transcriptomic data at all. 72% (410) have fewer than five transcriptomic datasets in NCBI SRA.",
+   "kw": [
+    "SRA",
+    "data paucity"
+   ],
+   "info": "Even well-sampled species can have incomplete annotations because of spatiotemporal variation in expression.",
+   "concl": "ANNEVO serves two roles: a primary annotator for new genomes and a refinement tool for existing database annotations."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do the authors stress computational efficiency?",
+   "a": "Genomic large language models are very computationally demanding, which limits their real-world use. Genome annotation needs high throughput on contig-scale inputs, unlike protein tasks where minutes per sequence is acceptable.",
+   "kw": [
+    "genomic LLM"
+   ],
+   "info": "ANNEVO's efficiency comes from its distal modelling module and from decoding optimisations that constrain the search space and increase parallelism. This reduces its dependence on GPUs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are ANNEVO's main limitations?",
+   "a": "It annotates only the longest transcript of protein-coding genes, with no multi-isoform output. It does not annotate noncoding RNAs. It struggles with regions underrepresented in training, such as UTRs and rare splice types like AT-AC introns.",
+   "kw": [
+    "isoforms",
+    "UTR",
+    "AT-AC introns"
+   ],
+   "info": "Matching predictions to any annotated isoform instead of only the longest raised gene-F1 from 0.817 to 0.833 (recall 0.833 to 0.850, precision 0.804 to 0.820). UTRs are hard to benchmark because of alternative transcription start sites and polyadenylation. The authors note that SpliceAI also fails on AT-AC introns.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are ANNEVO's false positives?",
+   "a": "60.6% overlap fragmented mRNAs and 18.3% overlap annotated noncoding transcripts at exon level. This suggests many false positives are biologically relevant.",
+   "kw": [
+    "false positives"
+   ],
+   "info": "Breakdown from Extended Data Fig. 7e: mRNA 60.64%, pseudogene 7.46%, other transcript 6.25%, lncRNA 4.55%, no overlap with any known transcript 21.10%.",
+   "concl": "Extending ANNEVO to noncoding RNAs is a promising future direction, possibly using seq2img-style representation learning to capture RNA secondary structure."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data sources and processing",
+   "q": "Which genome and annotation data were used?",
+   "a": "The latest assemblies and annotations as of July 2024: RefSeq from the NCBI FTP site (1,828 species) and Ensembl (428 species). Ensembl data came from release 112 for animals and Ensembl Fungi and Ensembl Plants release 59.",
+   "kw": [
+    "RefSeq",
+    "Ensembl"
+   ],
+   "info": "Species with parsing-breaking errors were excluded. One example is Actinidia eriantha, where a gene extends beyond the end of its sequence. Ensembl species were grouped into the same five clades as RefSeq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data sources and processing",
+   "q": "Why was RefSeq chosen over Ensembl for training?",
+   "a": "For each clade they picked the database with the higher average BUSCO score of its species. RefSeq won for all five clades.",
+   "kw": [
+    "database selection"
+   ],
+   "info": "Ensembl was used only as a supplementary evaluation of ANNEVO's completeness.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data sources and processing",
+   "q": "How were training, validation and test species chosen?",
+   "a": "Each clade was divided into subclades. Within each subclade, the top percentile of species by BUSCO score was selected so every subclade had at least one species. Total genome size was capped at about 50-60 Gb per clade (12 Gb for fungi).",
+   "kw": [
+    "species selection",
+    "data leakage"
+   ],
+   "info": "For Mammalia, the top 5.5% per subclade gave 61 Gb. Selected species were split randomly into training and validation at a genome-size ratio of about 5:1, partitioned at a high taxonomic level so validation species were not close relatives of training species. All remaining species became test candidates: all were tested for Fungi and Embryophyta, and 50 per animal clade.",
+   "concl": "The design is cross-species, so test genomes were never seen in training."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ANNEVO methodology",
+   "q": "How are genome segments built and encoded?",
+   "a": "The genome is cut by sliding window into 30,720-bp core regions, each extended by 5,120 bp of flank on both sides, with zero padding where needed. Sequence is one-hot encoded, and ambiguous bases (N) are coded as [0.25, 0.25, 0.25, 0.25].",
+   "kw": [
+    "one-hot encoding",
+    "sliding window"
+   ],
+   "info": "Core plus flanks gives 40,960 bp, which matches the stated ~40 kb modelling range. Only the sequence of the flanks is used, not their annotation labels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ANNEVO methodology",
+   "q": "What labels does the model predict for each nucleotide?",
+   "a": "Five classes taken from the longest transcript: intergenic, CDS0, CDS1, CDS2 (coding sequence in reading-frame phases 0, 1 and 2) and intron.",
+   "kw": [
+    "CDS phase",
+    "labels"
+   ],
+   "info": "Separate phase labels are critical for modelling codon structure and keeping the reading frame consistent.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ANNEVO methodology",
+   "q": "What are the key architecture parameters of the network?",
+   "a": "Five residual ConvBlocks expand channels from C = 64 to 320 and compress every 32 nucleotides into one bin. A 6-layer Transformer encoder follows (8 attention heads, hidden dimension 768), then 8 EvoExperts and a gating network (RelaCalNet).",
+   "kw": [
+    "ConvBlock",
+    "EvoExpert",
+    "Transformer encoder"
+   ],
+   "info": "Each EvoExpert is two linear layers (320 to 768 to 320). The RelaCalNet gate is one linear layer mapping 320 to 8 expert weights. The resolution restorer is 5 transposed-convolution blocks, and its per-nucleotide probabilities are used as emission probabilities for decoding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ANNEVO methodology",
+   "q": "How did they deal with class imbalance and annotation errors during training?",
+   "a": "Focal loss was the main objective, supplemented by dice loss to help minority classes (CDS, intron). Intergenic to CDS ratios can reach tens of thousands to one. Flank sites and preidentified erroneous sites were given loss weight zero.",
+   "kw": [
+    "focal loss",
+    "dice loss",
+    "loss masking"
+   ],
+   "info": "Only the focal-loss focusing parameter was tuned; class weights were left unchanged so the model stays reusable on datasets with different class ratios. Examples of masked errors: implied introns of only 2 bp, and loci annotated without internal structure. The Fig. 1 legend calls this soft masking while the Methods say weight zero. Training used 4 Tesla V100S GPUs, about 2 GB per sample, and took 6-7 days for mammals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ANNEVO methodology",
+   "q": "How does gene structure decoding work?",
+   "a": "Broad candidate gene regions are first identified so segments can be decoded in parallel, unlike HMMs that parallelise only per contig. Then the Viterbi algorithm finds the most probable state path, using a minimal set of states.",
+   "kw": [
+    "Viterbi",
+    "splice site types"
+   ],
+   "info": "States: intergenic, start codon, end codon, six CDS states (three phases) and intron state groups for GT-AG, GC-AG and AT-AC splicing. An intron always exits to the next CDS phase (CDS0 to CDS1), which fully prevents in-frame premature stop codons, including codons split across splice junctions. Emission probabilities need no manual tuning, unlike Augustus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evaluation metrics",
+   "q": "What do the three evaluation metrics capture, and what are their weaknesses?",
+   "a": "Nucleotide-level F1 covers all sites but misses gene structure. BUSCO captures structure but only for a small conserved core and ignores false positives. Gene-level F1 covers the whole gene set and does account for false positives.",
+   "kw": [
+    "BUSCO",
+    "gene-level F1"
+   ],
+   "info": "BUSCO genes in the Embryophyta database are only about 6% of Arabidopsis thaliana genes. BUSCO v5.3.2 was used.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evaluation metrics",
+   "q": "When is a predicted gene counted as correct for gene-level F1?",
+   "a": "Predicted and reference proteins are compared with blastp. The top hit must have a bit score of at least 50 and an e-value below 1 x 10^-5, the genes must lie in the same genomic region, and the hit must cover more than 70% of both proteins.",
+   "kw": [
+    "blastp",
+    "gene-level F1"
+   ],
+   "info": "Only the longest-CDS transcript of each reference gene was used. Recall = TP/P (reference genes), precision = TP/PP (predicted genes), F1 = 2 x recall x precision/(recall + precision). The protein-level approach follows the BUSCO protein-mode protocol and reduces penalties for correct alternative isoforms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evaluation metrics",
+   "q": "Which software versions were used for comparison and evidence processing?",
+   "a": "Augustus v3.5.0, BRAKER3 v3.0.8, GeneMark-ETP (latest from GitHub), Helixer (downloaded 2025-03) and Tiberius (downloaded 2025-06). RNA-seq was processed with fastp v0.23.4, HISAT2 v2.2.1 and SAMtools v1.12; proteins were aligned with miniprot v0.13.",
+   "kw": [
+    "software versions"
+   ],
+   "info": "Other tools: gffread v0.12.7, AGAT v1.4.2, SeqKit v2.8.2, GNU Parallel for Augustus, BUSCO v5.3.2. Code is at github.com/xjtu-omics/ANNEVO, free for non-commercial academic use only.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Comparison with evidence-based pipelines",
+   "text": "Danio rerio and Oryzias latipes were benchmark species in Vertebrate_other. Check Supplementary Tables 23-27 to see whether Astyanax mexicanus was in training or test. Worth trying the Vertebrate_other model on cavefish and surface fish assemblies to look for missed or fused genes in the current annotation."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "ANNEVO predicts only the longest CDS transcript and no UTRs or ncRNAs. How useful is it for regulatory genomics work that depends on TSS and UTR positions, or on lncRNAs?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Improving reference annotations",
+   "text": "ANNEVO usually beat Ensembl but not RefSeq on BUSCO, and the Brassica corrections were checked in only one species. How often are ANNEVO's disagreements with RefSeq actually right?"
+  }
+ ]
+}

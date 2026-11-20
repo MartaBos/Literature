@@ -1,0 +1,644 @@
+{
+ "id": "Jolma_2026",
+ "title": "An expanded codebook of human transcription factor DNA-binding specificity",
+ "link": "https://doi.org/10.1038/s41586-026-10798-9",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Jolma_2026_Nature_human_TF_DNA_binding_codebook.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does the Codebook paper address?",
+   "a": "Several hundred putative human TFs, identified mainly by an apparent DNA-binding domain, have no known binding motif. Even for well-studied TFs it is still debated how well motifs reflect binding sites in living cells.",
+   "kw": [
+    "transcription factors",
+    "binding motifs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did the Codebook project do and what was the headline result?",
+   "a": "They ran more than 4,000 independent in vitro and in vivo experiments on 332 putative and poorly characterized human TFs. They obtained motifs for 177 (53%), which adds about 130 distinct motifs to the human TF vocabulary.",
+   "kw": [
+    "Codebook"
+   ],
+   "info": "Most motifs are associated with only a single protein. In vitro motifs are strongly enriched at cellular binding sites. The data reveal tens of thousands of conserved, direct binding sites, concentrated in promoters and predictive of gene expression.",
+   "concl": "The new codebook is an important step forward in decoding the human genome."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How large was the deficit of known motifs before this study?",
+   "a": "A 2018 survey found that over one-quarter of the estimated 1,600 human TFs lacked established binding motifs.",
+   "kw": [
+    "TF census"
+   ],
+   "info": "Most uncharacterized and putative TFs are not close paralogues of any established TF, so their motifs cannot be inferred from relatives. The authors also note that some of these putative TFs may lack sequence specificity entirely. In this paper, poorly characterized means having no confidently known binding motif.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a position weight matrix (PWM)?",
+   "a": "The usual model of a TF DNA-binding motif. It describes the TF's relative preference for each nucleotide at each base pair of the binding site.",
+   "kw": [
+    "PWM"
+   ],
+   "info": "Different methods for measuring TF binding and for deriving PWMs have different inherent limitations and biases. There is also a long-standing debate about how much a TF's intrinsic specificity, compared with chromatin and cofactors, determines where it binds in cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the Codebook-GRECO-BIT Collaboration?",
+   "a": "The international collaboration behind the study. The 'Codebook project' produced the reagents and lab experiments, and GRECO-BIT (Benchmarking Initiative of the Gene Regulation Consortium) did much of the data analysis.",
+   "kw": [
+    "GRECO-BIT"
+   ],
+   "info": "The name Codebook refers to TFs decoding individual 'words' in the genome. Companion manuscripts cover GHT-SELEX, the ChIP-seq/dark matter results, motif benchmarking and meSMiLE-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "Which proteins were analysed, and how many constructs and experiments were there?",
+   "a": "They analysed 393 proteins: 332 putative Codebook TFs and 61 control TFs. They used 622 and 93 inserts cloned into 1,267 and 118 expression constructs, and ran 4,804 experiments (4,377 for Codebook proteins and 427 for controls).",
+   "kw": [
+    "controls",
+    "constructs"
+   ],
+   "info": "Many TFs were tested as several constructs (full-length and DBD) and in several expression systems, so the number of experiments per protein varies. The Methods and reporting summary mention 4,873 experiments, of which 721 were removed early. The paper does not explain the gap between this and the 4,804 in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "Which five assays were used?",
+   "a": "HT-SELEX, SMiLE-seq, protein binding microarrays (PBMs), ChIP-seq with inducible eGFP-tagged transgenes in HEK293 cells, and GHT-SELEX.",
+   "kw": [
+    "HT-SELEX",
+    "ChIP-seq",
+    "SMiLE-seq"
+   ],
+   "info": "Together the assays cover both in vitro and living-cell contexts. HT-SELEX and GHT-SELEX used three protein sources: E. coli T7-GST IVT, HEK293 lysates and wheat germ SP6-eGFP IVT. SMiLE-seq is a single-step selection in a microfluidic device. ChIP-seq used Tet-driven eGFP fusions with two replicates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "What is GHT-SELEX?",
+   "a": "A variant of HT-SELEX in which the selection is done on fragmented genomic DNA instead of random sequences.",
+   "kw": [
+    "GHT-SELEX"
+   ],
+   "info": "It gives in vitro binding on real genomic sequence, so it can be compared directly with ChIP-seq peaks. A companion paper shows that in vitro and in vivo genomic binding are more similar than generally thought.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "How did they decide which experiments were successful?",
+   "a": "Because there was no reference motif, deciding success was coupled to motif derivation. Experiments counted as successful if two or more different platforms gave similar motifs for the same protein and those motifs predicted data across platforms.",
+   "kw": [
+    "expert curation"
+   ],
+   "info": "In total 1,073 Codebook experiments and 280 control experiments were successful. Motifs were obtained for 177 of 332 Codebook proteins and 58 of 61 controls. The authors take the control result to mean the overall false-negative rate is low.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "How did success rates differ between assays for Codebook proteins?",
+   "a": "ChIP-seq 130 (41% of those tested), HT-SELEX 144 (44%), GHT-SELEX 139 (42%), SMiLE-seq 64 (23%) and PBM 39 (27%).",
+   "kw": [
+    "success rate"
+   ],
+   "info": "A single representative PWM that scored highly across data types was then chosen for each protein and used in later analyses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "How did success depend on DBD class?",
+   "a": "C2H2 zinc finger proteins dominated: 67% (121 of 180) gave motifs. About half (49%; 50 of 103) of proteins with other DBD types succeeded, but only 6 of 49 (12%) proteins without a well-established DBD did.",
+   "kw": [
+    "C2H2-zf",
+    "DBD"
+   ],
+   "info": "On closer inspection, all six successful proteins without a known DBD do contain plausible DNA-binding regions. Extended Data Fig. 3a gives slightly different counts (120 C2H2-zf and 51 other DBDs successful) than the main text.",
+   "concl": "Most Codebook C2H2-zf proteins are DNA-binding proteins, although they may have other functions too."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "What did they find about the SKI/SNO/DAC domain?",
+   "a": "DACH1 and DACH2, homologues of Drosophila Dachshund, recognize the same motif through the SKI/SNO/DAC domain, whose DNA binding had been controversial. In follow-up HT-SELEX of all five other human SKI/SNO/DAC proteins, one (SKIDA1) gave a motif.",
+   "kw": [
+    "DACH1",
+    "SKIDA1",
+    "SKI/SNO/DAC"
+   ],
+   "info": "Extended Data Fig. 2 shows AlphaFold3 models of DACH1 (residues 130-390) and SKIDA1 bound to DNA, plus an IQTree phylogeny. The SKIDA1 clade includes a blind cavefish SKIDA1 sequence.",
+   "concl": "This supports SKI/SNO/DAC as a DNA-binding domain."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook project overview",
+   "q": "Why did almost half of the Codebook proteins give no motif?",
+   "a": "False negatives can come from a missing obligate partner, a need for modified DNA, missing post-translational modifications or method limits. On manual re-assessment, however, 83 of 155 were judged probably true negatives.",
+   "kw": [
+    "true negatives",
+    "false negatives"
+   ],
+   "info": "C2H2-zf proteins with a single zinc finger, only unusual zinc fingers, or without the canonical spacing that lets tandem arrays bind long sites usually failed. Almost two dozen cases belonged to DBD subtypes known to lack specificity (for example HMG). 43 of 49 proteins with no known DBD failed, and 33 of them had DNA-binding evidence from only a single study, mostly more than two decades old.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cellular binding sites and SNVs",
+   "q": "Do the in vitro motifs explain binding in cells?",
+   "a": "Yes. For the 130 successful Codebook TFs with good ChIP-seq data, motif matches were clearly enriched at ChIP-seq peaks, so the TFs use their intrinsic specificity to select cellular sites.",
+   "kw": [
+    "ChIP-seq",
+    "motif enrichment"
+   ],
+   "info": "Some TFs showed motif enrichment over a wide region around the summit because of repeated motif matches, especially at CpG island promoters. Matches were found with MOODS at P < 0.001 within ±500 bp of peak summits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cellular binding sites and SNVs",
+   "q": "Do Codebook PWMs work on ChIP-seq data from other studies and cell types?",
+   "a": "Peaks from external datasets such as ENCODE overlapped only partly with Codebook peaks for the same TF. Codebook PWMs still separated those peaks from random sequence, with a median AUROC of 0.71 in HEK293 and slightly lower in other cell types.",
+   "kw": [
+    "ENCODE",
+    "AUROC"
+   ],
+   "info": "Partial overlap is expected because chromatin and cofactors affect site accessibility. For 20 TFs that had both an external PWM and external ChIP-seq, Codebook PWMs performed comparably to external PWMs.",
+   "concl": "The motifs are predictive across studies and cell types."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cellular binding sites and SNVs",
+   "q": "How many allele-specific binding (ASB) events did they find, and did they agree with the motifs?",
+   "a": "They found 12,060 ASB events at 10,009 common SNPs for 190 TFs at 5% FDR. For strongly motif-disrupting variants (at least twofold difference in PWM P value between alleles), the preferred allele matched the PWM prediction in 1,682 of 2,260 ASBs (74%).",
+   "kw": [
+    "allele-specific binding",
+    "SNPs"
+   ],
+   "info": "10,575 ASBs came from ChIP-seq and 1,485 from GHT-SELEX. The Methods give 152 Codebook TFs plus 39 controls (191), which does not quite match the 190 in the main text. Only SNPs heterozygous in HEK293 cells could be tested.",
+   "concl": "Codebook motifs can be used to predict differential TF binding at any sequence variant."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cellular binding sites and SNVs",
+   "q": "Are the ASB SNPs enriched for functional variant sets?",
+   "a": "Yes. Aggregated ASB SNPs were enriched for previously characterized ASBs (odds ratio 2.4, P = 3.90e-162), disease-associated GWAS SNPs (odds ratio 1.35, P = 3.79e-18) and GTEx eQTLs (odds ratio 1.34, P = 1.77e-41).",
+   "kw": [
+    "GTEx",
+    "GWAS",
+    "eQTL"
+   ],
+   "info": "Two-sided Fisher's exact test on a joint set of 22,064 ASBs. The reference sets were ADASTRA v6.1, EBI GWAS Catalog and GTEx v8.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Motif diversity and degeneracy",
+   "q": "How distinct are the 177 Codebook motifs from one another?",
+   "a": "Most are distinct: the 177 Codebook TFs encompass 129 distinct motifs. Small clusters mainly correspond to paralogues, such as SP140/SP140L, DACH1/DACH2, CAMTA1/CAMTA2 and ZXDA/ZXDB/ZXDC.",
+   "kw": [
+    "motif clustering",
+    "paralogues"
+   ],
+   "info": "There is a group of 8 TFs whose motif is dominated by a single CG. Five of them (CXXC4, FBXL19, TET3, MBD1, KDM2A) have CXXC zinc fingers, which bind unmethylated CpGs. Five AT-hook proteins prefer AT-containing sequence. The high diversity is partly explained by the many C2H2-zf proteins with different DNA-contacting specificity residues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Motif diversity and degeneracy",
+   "q": "How many new motifs does Codebook add to the known human repertoire?",
+   "a": "Clustered together with motifs for 1,211 previously characterized TFs (7.8-fold more TFs), they gave only 4.75-fold more clusters (613), and 92 (15%) contained only Codebook proteins. An alternative pipeline gave 653 clusters, 135 (21%) of them Codebook-only.",
+   "kw": [
+    "motif lexicon"
+   ],
+   "info": "The alternative used a different database (HOCOMOCO v12), a different similarity metric (MACRO-APE) and a different clustering procedure, so the result is robust to method.",
+   "concl": "Codebook expands the human TF lexicon by at least 15%, adding about 130 previously unknown motifs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Motif diversity and degeneracy",
+   "q": "What is motif degeneracy?",
+   "a": "A PWM with few or no positions where a specific base is absolutely required. Such motifs are 'flat', with low information content (IC), and might be expected to mean low specificity.",
+   "kw": [
+    "degeneracy",
+    "information content"
+   ],
+   "info": "For dozens of TFs, the representative PWM chosen for best cross-dataset accuracy was degenerate. Fifty-two representative PWMs had no position with IC above 1.4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Motif diversity and degeneracy",
+   "q": "Does making a degenerate motif more specific improve its performance?",
+   "a": "No. Artificially raising the IC ('unflattening' the logo) almost always reduced motif performance on ChIP-seq and GHT-SELEX, and overall IC did not predict motif performance.",
+   "kw": [
+    "degeneracy",
+    "IC"
+   ],
+   "info": "Possible explanations from the authors: a single PWM may be forced to represent several related motifs, or tolerance of binding-site mutations may benefit evolution. They call the result counterintuitive but note that other studies support it.",
+   "concl": "Degeneracy is needed to keep prediction accuracy across data types."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "What are TOP sites?",
+   "a": "Triple optimized overlap sites: loci in the overlap of ChIP-seq peaks, GHT-SELEX peaks and PWM matches, each after an optimized score threshold. They mark direct binding at base-level resolution.",
+   "kw": [
+    "TOP sites"
+   ],
+   "info": "Bound in vivo (ChIP-seq), bound in vitro on genomic DNA (GHT-SELEX) and containing a motif match.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "Are TOP sites under purifying selection?",
+   "a": "Yes. 85 of the 101 Codebook TFs (and 31 of 36 controls) with successful GHT-SELEX and ChIP-seq had at least one conserved TOP site (FDR < 0.1). In total there were 113,577 conserved TOP (CTOP) sites, 82,760 for Codebook TFs and 30,817 for controls, covering 1,394,530 bases.",
+   "kw": [
+    "CTOP",
+    "phyloP",
+    "purifying selection"
+   ],
+   "info": "Tests asked whether the motif match was more conserved than neighbouring sequence and whether per-position conservation correlated with that base's contribution to predicted affinity.",
+   "concl": "This strongly supports that Codebook TF-binding sites in the genome are functional."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "How do CTOP sites cluster, and do they overlap known conserved elements?",
+   "a": "Grouping CTOPs within 100 bp gave 41,529 clusters: 24,733 singletons and 16,796 with several CTOPs. Most (35,583; 85.7%) overlapped UCSC PhastCons elements, and the remaining 5,946 look like new functional annotations.",
+   "kw": [
+    "PhastCons",
+    "CTOP clusters"
+   ],
+   "info": "For known conserved elements, Codebook TF binding gives a possible biochemical function. Motifs can also explain complex conservation patterns, such as degenerate positions, that comparative genomics alone misses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "Where in the genome are CTOP clusters concentrated?",
+   "a": "In promoters (36.9% of CTOP clusters) and CpG islands (47.3%). Most CpG islands overlapping protein-coding promoters (60.4%; 8,111 of 13,427) contained CTOP sites, with an average of 4.55 per island.",
+   "kw": [
+    "CpG islands",
+    "promoters"
+   ],
+   "info": "56 of the 101 Codebook TFs analysed had at least one CTOP in a CpG island. Many of these TFs recognize elaborate CG-rich motifs with degenerate positions and long gaps between invariant bases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "Why was conserved TF binding in CpG islands surprising?",
+   "a": "CpG islands usually show little deep conservation, and their high CG content has been attributed mainly to lack of germline methylation, not to sequence constraint or TF binding. Yet many TFs from diverse classes show specific, conserved, intrinsic occupancy of CpG islands.",
+   "kw": [
+    "CpG islands",
+    "CXXC"
+   ],
+   "info": "As expected, the CXXC proteins KDM2A, CXXC4, FBXL19 and TET3 predominantly bind CpG islands. Known CpG island binders (SP1, NRF1, E2F, ETS families) were also seen.",
+   "concl": "The Codebook data give a new lens for studying CpG islands."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "What did CTOPs look like outside CpG island promoters?",
+   "a": "678 of 6,606 non-CpG protein-coding promoters (-1,000 to +500 relative to the TSS) had CTOP clusters, and no single TF dominated them. Clusters outside promoters and CpG islands often held only one or two CTOP sites.",
+   "kw": [
+    "non-CpG promoters",
+    "TSPAN31",
+    "ZNF689"
+   ],
+   "info": "More frequent TFs included ELF3 and CTCF among controls and ZNF648 among Codebook TFs. One cluster early in the first intron of TSPAN31 shows conserved spacing and orientation of several Codebook sites. A strongly conserved ZNF689 site sits in a lncRNA intron, overlapping an L1M4 transposon.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of genomic binding sites",
+   "q": "How many CTOP clusters overlap enhancers?",
+   "a": "1,825 overlapped HEK293 enhancers defined by ChromHMM, and 4,057 fell in GeneHancer annotations, far fewer than in promoters.",
+   "kw": [
+    "enhancers",
+    "GeneHancer",
+    "ChromHMM"
+   ],
+   "info": "Possible reasons given: enhancers evolve relatively fast, enhancer annotation is incomplete, Codebook TFs may be depleted for enhancer functions, or the conserved sites have non-enhancer roles such as heterochromatin control or chromosome architecture.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook motifs predict gene expression",
+   "q": "How did they link Codebook motifs to gene expression?",
+   "a": "With motif activity response analysis (MARA), which models promoter activity as a function of promoter motif occurrences. They scanned FANTOM5 promoters with 632 representative motifs and predicted CAGE promoter activity in 583 samples using matrix-variate Bayesian regression.",
+   "kw": [
+    "MARA",
+    "FANTOM5",
+    "CAGE"
+   ],
+   "info": "For each motif cluster they correlated (PCC) the inferred motif activity with the expression of the corresponding TFs across samples. The r distribution for the 130 Codebook-only clusters was similar to that of known-motif clusters.",
+   "concl": "This supports Codebook proteins being bona fide regulatory factors."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook motifs predict gene expression",
+   "q": "What groups emerged from the most variable Codebook motif activities?",
+   "a": "Biclustering the 25 most variable Codebook-only motif clusters gave four groups: (1) immune-cell targets, (2) TFs active in immune cells and cancer, (3) nervous-tissue targets and (4) TFs mostly restricted to mesodermal primary cells.",
+   "kw": [
+    "ZFTA",
+    "CAMTA1",
+    "MYRFL"
+   ],
+   "info": "Group 1 includes the repressors ZBTB8A and ZFTA (targets repressed in brain and often activated in ZFTA-RELA ependymomas). Group 2 includes CGGBP1, CXXC4, SP140, ZNF131 and MBD1. Group 3 includes CAMTA1, ZNF292, MBD3, DNTTIP1 and MYRFL (active only in adult nervous tissue). Group 4 includes TTF1, ZBTB41 and ZBTB5. In a PCA of all 130 Codebook-only clusters, PC1 separated nervous system from other samples and PC2 separated developing from adult nervous system.",
+   "concl": "Codebook motif activities distinguish tissues and cell types and point to new candidate regulators of inflammation, cell cycle and nervous system development."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook TFs and the dark matter genome",
+   "q": "What does Codebook show about KRAB zinc fingers (KZNFs) and retroelements?",
+   "a": "KZNFs are known to bind specific classes of endogenous retroelements and nucleate H3K9me3 regions. The GHT-SELEX data show that their precise binding to specific retroelement subtypes is defined by the KZNF's own sequence specificity.",
+   "kw": [
+    "KZNF",
+    "retroelements",
+    "H3K9me3"
+   ],
+   "info": "A companion paper reports that roughly half of the examined TFs bind mainly outside promoters and enhancers in ChIP-seq, with sites supported by GHT-SELEX and motif matches.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook TFs and the dark matter genome",
+   "q": "How many successful Codebook TFs have transposon-derived DBDs?",
+   "a": "Sixteen Codebook TFs (and two controls) that produced motifs have a DBD derived from a DNA transposase. These are CGGBP1, six BED-zf proteins, six CENPB or Brinker domain proteins, three with transposon-derived MYB/SANT/MADF domains, and FLYWCH1.",
+   "kw": [
+    "transposons",
+    "BED-zf",
+    "CENPB"
+   ],
+   "info": "PWMs for CENPB/Brinker TFs were often long and information-rich, consistent with an ancestral role in binding transposons specifically in a large genome.",
+   "concl": "Transposons contribute to the TF repertoire itself."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Codebook TFs and the dark matter genome",
+   "q": "Why is JRK a notable example?",
+   "a": "JRK comes from an ancient domesticated Tigger DNA transposon, and its genomic binding is enriched on the same Tigger family. Its PWM predicts binding sites in the terminal repeats of the Tigger consensus, consistent with its ancestral role in transposition.",
+   "kw": [
+    "JRK",
+    "Tigger",
+    "SETMAR"
+   ],
+   "info": "DNA transposons have been inactive in the human lineage for over 40 million years. JRK is only the second human protein known to retain this property, after SETMAR. JRK binding was shown on Tigger15a.",
+   "concl": "The same transposon introduced both many potential cis-regulatory elements and a TF that binds them."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How many human TFs now have characterized sequence specificity?",
+   "a": "1,421. Curating external databases added 33 TFs beyond the 177 Codebook successes, and 175 proteins, mostly with conventional DBDs, still have no known motif.",
+   "kw": [
+    "human TF motif collection"
+   ],
+   "info": "Of the 175 without motifs, the re-curation suggests 83 (nearly half) are unlikely to be bona fide TFs. Representative PWMs for all 1,421 TFs are in Supplementary Data 1.",
+   "concl": "A motif for every human TF is much closer, but the list of probable human TFs keeps changing."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "Only five assays were used, and ChIP-seq was done in a single cell line (HEK293). Some TFs may bind only methylated DNA, and new DBD classes continue to be found (for example WH).",
+   "kw": [
+    "limitations",
+    "HEK293"
+   ],
+   "info": "For ASB: the data were not designed for it, read counts were low, SNVs are linked, and HEK293 has an abnormal karyotype from a single individual. Methylation-dependent binding is explored in a separate meSMiLE-seq paper. Protein and protein-DNA structure prediction may reveal more candidates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main technical lesson of Codebook?",
+   "a": "Using multiple experimental strategies and multiple motif-derivation and scoring strategies together was highly beneficial. No method dominated and none was dispensable.",
+   "kw": [
+    "benchmarking"
+   ],
+   "info": "Combining in vivo and in vitro genomic binding with binding to random sequences helps separate direct from indirect binding, the effect of the cellular environment, and the non-random nature of the genome. Only a handful of the 1,000+ previously characterized TFs have such rich data.",
+   "concl": "Many Codebook TFs are now among the best-characterized human DNA-binding proteins."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Plasmids, inserts and protein production",
+   "q": "What construct types and vectors were used?",
+   "a": "Inserts were full-length ORFs (-FL), all predicted DBDs plus 50 flanking amino acids (-DBD), or manually designed DBD subsets (-DBD1/2/3, mainly for large C2H2-zf arrays). They were recoded synthetic ORFs (BioBasic) subcloned into up to three plasmids.",
+   "kw": [
+    "constructs",
+    "eGFP",
+    "GST"
+   ],
+   "info": "The plasmids were pTH13195 (tetracycline-inducible N-terminal eGFP with Flp-In sites), pTH6838 (T7-driven N-terminal GST) and pTH16500 (SP6-driven N-terminal eGFP, modified from pF3A-eGFP). TFs and DBDs were taken from the 2018 human TF census (humantfs.ccbr.utoronto.ca).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Plasmids, inserts and protein production",
+   "q": "How were the proteins produced?",
+   "a": "In one of three systems: Flp-In HEK293 cells induced with doxycycline for 24 h, PURExpress T7 recombinant IVT (NEB), or SP6-driven wheat germ extract IVT (Promega).",
+   "kw": [
+    "HEK293",
+    "IVT"
+   ],
+   "info": "Anti-eGFP antibody Ab290 (Abcam) was used across ChIP-seq, GHT-SELEX and western blots. ChIP used 2 µl antiserum (10 µg IgG) on 60 µl protein G Dynabeads. (G)HT-SELEX used about 0.06 µl antiserum (300 ng IgG) per selection. ChIP-seq target depth was 20M reads.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DNA-binding assays",
+   "q": "How were the PBM and SMiLE-seq assays set up?",
+   "a": "PBMs used two universal arrays (HK and ME) with different probes; most C2H2-zfs were not run because of low success, probably due to long binding sites. SMiLE-seq was run for 278 TFs (388 constructs).",
+   "kw": [
+    "PBM",
+    "SMiLE-seq"
+   ],
+   "info": "Proteins were run twice by ChIP-seq (full-length only) and once by default by HT-SELEX and GHT-SELEX. Controls were mostly omitted from SMiLE-seq because they already had published data. A random subset of 82 constructs was repeated to check SMiLE-seq reproducibility. For PBM success, both arrays had to give the same motif.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Motif derivation and artefact filtering",
+   "q": "How were motifs derived and benchmarked?",
+   "a": "After preprocessing, each experiment gave a set of likely bound sequences; 721 of 4,873 experiments were dropped for too few bound sequences or other technical problems. A suite of tools derived motifs on training subsets, which were tested on held-out data and on all other experiments for the same TF.",
+   "kw": [
+    "AUROC",
+    "MEX portal"
+   ],
+   "info": "Motifs were scored as binary classifiers using AUROC and the area under the precision-recall curve. All PWMs are on Zenodo and browsable at mex.autosome.org. Details are in the companion Vorontsov et al. paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Motif derivation and artefact filtering",
+   "q": "How were artefactual motifs removed?",
+   "a": "They compiled a list of recurrent artefact motifs and removed motifs highly similar to them using MACRO-APE. They also removed motifs matching the constant regions of the SELEX and SMiLE-seq DNA.",
+   "kw": [
+    "artefacts",
+    "MACRO-APE"
+   ],
+   "info": "Examples: ACGACG in HT-SELEX (matches the constant flank), and motifs of abundant native HEK293 proteins (NFI, YY1, ETS) in lysate experiments. ETS motifs were kept for ETS positive controls (ELF3, FLI1, GABPA). Tool success rates were checked with MACRO-APE v3.06 ScanCollection (-c 0.05 --rough-discretization 10 --precise 100500).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Expert curation",
+   "q": "How did expert curation of experiments work?",
+   "a": "Each experiment was reviewed by at least three annotators who voted on success. A subcommittee (A.J., I.V.K., T.R.H.) resolved around 300 disagreements and reviewed all successful experiments.",
+   "kw": [
+    "expert curation"
+   ],
+   "info": "Annotators considered similarity of PWMs across experiments, cross-experiment scores, consistency with the protein family (for example BHLHA9 giving an E-box-like CAnCTG) and with paralogues, the number and reproducibility of ChIP-seq/GHT-SELEX peaks, similarity to public PWMs, and contaminant motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Peak processing and representative PWM selection",
+   "q": "How were final peak sets generated?",
+   "a": "ChIP-seq peaks were re-called with MACS2 v2.2.9.1 against experiment-specific backgrounds, and replicates were merged with BEDTools v2.30.0 merge. GHT-SELEX peaks were called with MAGIX, which computes read enrichment per cycle and treats experiments as independent samples to give one enrichment coefficient per peak.",
+   "kw": [
+    "MACS2",
+    "MAGIX",
+    "BEDTools"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Peak processing and representative PWM selection",
+   "q": "How was the single representative PWM per TF chosen?",
+   "a": "They took the union of the top 20 PWMs by AUROC on any successful ChIP-seq, GHT-SELEX and HT-SELEX experiment. These were re-scored on the merged, thresholded peak sets, and a committee picked one PWM with high performance on all scores, reasonable fit to the DBD class and sufficient IC.",
+   "kw": [
+    "AffiMX",
+    "MOODS",
+    "Jaccard index"
+   ],
+   "info": "AUROC was computed with AffiMX v1 on ChIP-seq peaks at P < 1e-10 and GHT-SELEX peaks (kneedle specificity 30), against BEDTools shuffle -noOverlapping backgrounds. In parallel, the Jaccard overlap between MOODS v1.9.4 matches (p 0.001) and peaks was maximized over peak thresholds.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Motif similarity and clustering",
+   "q": "How were distinct motifs counted?",
+   "a": "PWM similarity was the correlation of predicted affinities to 150,000 random 100-bp sequences (MoSBAT v1). The 177 Codebook PWMs were clustered (PCC, average linkage), and the optimal silhouette gave 129 clusters at distance 0.76. The same cutoff applied to 1,582 PWMs (177 Codebook plus 1,405 for 1,211 known TFs) gave 613 clusters.",
+   "kw": [
+    "MoSBAT",
+    "silhouette"
+   ],
+   "info": "Analysis used the R cluster package v2.1.8.1 in R v4.3.2. Known PWMs were the 'best' from the 2018 census, with MTF2 and PHF1 taken from CisBP. The second approach merged HOCOMOCO v12 with Codebook motifs (preferring ChIPMunk motifs), computed similarity with MACRO-APE v3.0.6 at P 0.0005, and clustered with sklearn v1.8.0 average linkage, discarding low-quality HOCOMOCO D clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Motif degeneracy analysis",
+   "q": "How did they artificially increase motif IC?",
+   "a": "They iteratively rescaled base probabilities at each position until the PWM reached an average IC of 1 bit per base pair. They then compared original and IC-increased PWMs on ChIP-seq and GHT-SELEX peaks.",
+   "kw": [
+    "logo_rescale.pl",
+    "IC"
+   ],
+   "info": "The script logo_rescale.pl is on the SIB pwmscan GitLab. The comparison used the 52 PWMs with no position above IC 1.4, by AUROC and by maximum Jaccard index.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - MARA",
+   "q": "What data and settings went into MARA?",
+   "a": "FANTOM5 CAGE promoter TPMs, log2-transformed with pseudocount 0.05: 209,374 promoters and 1,020 samples (583 unique: 142 tissues, 187 primary cells, 254 cell lines). Promoters were scanned from -250 to +10 bp around the TSS with SPRY-SARUS v2.2.3 sum-occupancy scores, and the model was fitted with MARADONER v0.13 at default settings.",
+   "kw": [
+    "MARADONER",
+    "SPRY-SARUS",
+    "FANTOM5"
+   ],
+   "info": "There were 632 clusters (130 Codebook-only, 471 known, 31 mixed) for TFs expressed in at least one sample. Time courses, perturbations and total RNA samples were excluded. MARADONER is a matrix-variate linear mixed model fitted by four-stage REML. Modelling a motif-wise mean activity lets it distinguish activators from repressors, and a Wald test gives per-motif significance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TOP and CTOP analyses",
+   "q": "How were TOP and CTOP sites computed?",
+   "a": "For each TF, thresholds on ChIP-seq peaks, GHT-SELEX peaks and PWM 'peaks' were chosen to maximize the three-way Jaccard index, and TOPs were sites passing all three and overlapping. Zoonomia 241-mammal phyloP scores were then tested over the motif match with a PCC test, a likelihood-ratio test and a Wilcoxon test.",
+   "kw": [
+    "phyloP",
+    "Zoonomia",
+    "Jaccard"
+   ],
+   "info": "PWM matches (MOODS v1.9.4, P < 0.001) within 200 bp were merged and re-scored by sum-occupancy. Sites in the ENCODE Blacklist or coding sequence (codons skew phyloP) were removed. The PCC and likelihood-ratio tests relate per-position IC to phyloP. Scripts are at github.com/imyellan/Codebook_CTOP_scripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TOP and CTOP analyses",
+   "q": "How were CTOP clusters assigned to genomic features?",
+   "a": "CTOPs within 100 bp were merged with BEDTools and intersected with GENCODE v44 canonical protein-coding promoters (-1,000 to +500 bp), unmasked CpG islands, PhastCons elements, RepeatMasker and HEK293 ChromHMM enhancers. A promoter counted as a CpG island promoter if its TSS was within ±50 bp of a CpG island.",
+   "kw": [
+    "GENCODE",
+    "RepeatMasker"
+   ],
+   "info": "Each cluster got one feature in priority order: promoter-associated CpG island, other CpG island, non-CpG protein-coding promoter, enhancer, CTCF-only, transposable element, non-TE repeat, other.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Allele-specific binding",
+   "q": "How were variants and ASBs called from ChIP-seq and GHT-SELEX reads?",
+   "a": "Reads were mapped to hg38 with bwa-mem and filtered (at most 2 mismatches, MAPQ 10 or higher). SNVs were called with bcftools v1.10.2, reference bias was corrected with WASP v0.3.4, and allelic imbalance was tested with MIXALIME after BABACHI v2.0.26 corrected for aneuploidy and copy number.",
+   "kw": [
+    "MIXALIME",
+    "WASP",
+    "BABACHI"
+   ],
+   "info": "Kept heterozygous dbSNP v151 common SNPs with GQ 20 or higher, depth 10 or higher and at least 5 reads per allele. This gave 924,997 calls at 122,364 locations. MIXALIME used the MCNB model with window size 1,000 for GHT-SELEX and 10,000 for ChIP-seq. Version is given as v2.14.17 in Methods but v2.14.7 in the reporting summary.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Allele-specific binding",
+   "q": "How was motif concordance of ASBs scored?",
+   "a": "3,564 ASBs overlapped a PWM hit (P < 0.001) for their TF. PERFECTOS-APE v3.0.6 gave PWM score P values for both alleles, and ASBs with |log2(Alt/Ref P value)| > 1 were labelled concordant or discordant depending on whether the read-preferred allele matched the PWM prediction.",
+   "kw": [
+    "PERFECTOS-APE",
+    "motif concordance"
+   ],
+   "info": "ASBs without a PWM hit may be marker variants linked to causal SNVs. The joint set of 22,064 ASBs used for enrichment came from MIXALIME v2.28.0 multiple_combine.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Motif diversity and degeneracy",
+   "text": "Why do degenerate, low-IC motifs predict binding better than sharpened versions? Is it multiple related motifs forced into one PWM, or selection for tolerance of binding-site mutations?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Conservation of genomic binding sites",
+   "text": "What is the function of conserved, specific binding of many diverse TFs inside CpG island promoters, given that CpG islands are thought to have little deep conservation?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Which of the 155 unsuccessful proteins are real false negatives that need a partner, methylated DNA or modifications? Check the companion meSMiLE-seq paper."
+  }
+ ]
+}

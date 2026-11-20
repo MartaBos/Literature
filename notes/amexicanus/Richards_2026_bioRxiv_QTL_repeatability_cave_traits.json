@@ -1,0 +1,519 @@
+{
+ "id": "Richards_2026",
+ "title": "Cave evolution on repeat: reuse of the same genomic regions across lineages but not across traits in Astyanax mexicanus",
+ "link": "https://doi.org/10.1093/genetics/iyag223",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Richards_2026_bioRxiv_QTL_repeatability_cave_traits.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Notes are from the bioRxiv preprint (version 1, Feb 2026), not from the peer-reviewed Genetics version (no access). The title and some results may differ in the journal version.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "Whether independent cave populations of Astyanax mexicanus evolved the same cave traits (sleep loss, more feeding, early fat deposition, eye loss) through shared or independent genetic architecture, and whether QTL for these traits co-localize in the genome.",
+   "kw": [
+    "repeated evolution",
+    "QTL"
+   ],
+   "info": "They used QTL mapping in three cave x surface F2 mapping populations (Pachón, Tinaja, Molino) that share one surface female.",
+   "concl": "Genetic repeatability is common but varies by trait, and there is little evidence that sleep, eye and metabolic QTL co-localize across the genome."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which trait had the most genetic repeatability across lineages, and how much?",
+   "a": "Eye loss, with about 43% of QTL shared across lineages. Sleep loss and metabolic traits (feeding, adiposity) were less repeatable, with only about 25-33% of QTL shared.",
+   "kw": [
+    "eye loss",
+    "genetic repeatability"
+   ],
+   "info": "",
+   "concl": "Repeatability shows up at the level of genomic regions rather than specific genes."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is repeated evolution?",
+   "a": "Independent lineages shifting to similar phenotypes in response to similar environments. These systems act as natural replicates for studying the genetic and developmental mechanisms of evolutionary change.",
+   "kw": [
+    "repeated evolution"
+   ],
+   "info": "Examples of gene reuse: stickleback armor plates and pelvic spines (eda, pitx1), Heliconius red patterns (optix enhancers) and Mimulus red floral spots (rto). Other systems reach similar phenotypes through different genetic paths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why might gene flow favour pleiotropic or linked genetic architectures?",
+   "a": "Theory suggests that when adaptation happens despite gene flow, pleiotropic or tightly linked loci behave like large-effect loci, which selection can more easily drive to fixation. If only a few loci can produce such architectures, independent populations may reuse the same loci.",
+   "kw": [
+    "pleiotropy",
+    "linkage",
+    "gene flow"
+   ],
+   "info": "Pleiotropic mutations were once thought unlikely to contribute to adaptation because of their potential negative fitness effects.",
+   "concl": "Whether repeatedly evolved suites of traits share genomic regions through pleiotropy or linkage is central to understanding repeated evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is A. mexicanus a good system for this question?",
+   "a": "The cave morph is found in at least 35 caves and evolved independently from at least two surface lineages. Across these origins it repeatedly evolved eye and pigment loss, altered circadian rhythms, reduced sleep and increased adiposity, and many cave populations still hybridize with surface fish.",
+   "kw": [
+    "Astyanax mexicanus",
+    "cavefish"
+   ],
+   "info": "Earlier evidence for co-localized architectures includes oca2 affecting both sleep and pigmentation, and genomic hotspots where many cave-trait QTL map (Wiese et al. 2025).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the gap in earlier cavefish genotype-to-phenotype studies?",
+   "a": "Most were done with a single cave population, mostly Pachón, so it was unclear how repeatable the genetic architectures are across independent cave populations.",
+   "kw": [],
+   "info": "Cave populations also differ in sleep duration, fat deposition, fasting responses and early eye morphology, which suggests a mix of shared and lineage-specific mechanisms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why would sleep, eye and metabolic traits be expected to co-evolve?",
+   "a": "They are phenotypically correlated across many systems: eye loss reduces metabolic demand, metabolism influences sleep, sleep and circadian genes affect energy balance, and eye disorders affect circadian function. Feeding and sleep also share neuropeptides, neurocircuitry and circadian controllers.",
+   "kw": [
+    "sleep",
+    "metabolism",
+    "circadian rhythm"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What were the three specific aims?",
+   "a": "To test whether the genetic basis of the traits is repeatable across independent populations, whether suites of traits co-localize in the genome, and whether any co-localization is repeated across populations.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - crosses and phenotyping",
+   "q": "How were the mapping populations built?",
+   "a": "A single lab-reared surface female was crossed with one male from each of three cave populations (Pachón, Tinaja, Molino), giving three F1 families. F1 siblings were intercrossed within each family to produce three F2 mapping populations.",
+   "kw": [
+    "F2 intercross"
+   ],
+   "info": "Figure 1 indicates that the surface fish are Río Choy. Molino is Lineage 1; Tinaja and Pachón are Lineage 2. The cladogram shows a split of about 260 Kya.",
+   "concl": "The shared surface grandmother made joint mapping across all three crosses possible."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - crosses and phenotyping",
+   "q": "How was sleep measured in the larvae?",
+   "a": "Larvae at 20 dpf were placed in 24-well plates, acclimated for about 15 h, fed Artemia for 10 min, and recorded for 24 h (14 h light : 10 h dark) starting at ZT0. A sleep bout was any period of inactivity longer than 60 s, with inactivity defined as velocity not exceeding 6 mm/s.",
+   "kw": [
+    "sleep assay"
+   ],
+   "info": "Measured traits were bout length, bout number and total sleep, also split into day and night. Earlier work showed these inactivity periods correlate with a higher arousal threshold. F0 parental fish were assayed at 21 dpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - crosses and phenotyping",
+   "q": "How were feeding and early adiposity measured?",
+   "a": "Feeding: at 21 dpf each fish got about 70 Artemia nauplii for 2 h, and the leftovers were counted in Fiji/ImageJ v1.5. Adiposity: after a 20 h fast, 22 dpf fish were stained with Nile red (1 µg/mL, 30 min at 28°C), imaged on a Nikon SMZ25 with a GFP filter, and scored for presence and area of staining.",
+   "kw": [
+    "Nile red",
+    "Artemia",
+    "Fiji"
+   ],
+   "info": "Eye diameter was divided by standard length to correct for body size. The feeding-assay paragraph says 'we also measured sleep behaviors' in F0 fish, which looks like a copy error for feeding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - crosses and phenotyping",
+   "q": "How did they test for phenotypic correlations among traits in the hybrids?",
+   "a": "They used Spearman's rank correlation (rcorr in Hmisc v5.2-3) because most trait pairs were roughly linear or monotonic. Adiposity versus sleep was non-monotonic, so they compared median sleep between hybrids with and without adipose tissue using a Kruskal-Wallis test (base R v4.5.0).",
+   "kw": [
+    "Spearman correlation",
+    "Kruskal-Wallis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing and genotyping",
+   "q": "How were the F2 hybrids genotyped?",
+   "a": "Single-digest RAD-seq with the restriction enzyme SbfI, predicted to give about 40k cut sites. The first 384 samples were sequenced at Floragenex (150 bp SE, HiSeq) and the remaining 977 at the University of Minnesota Genomics Center (100 bp SE, NovaSeq S1 SP).",
+   "kw": [
+    "RAD-seq",
+    "SbfI"
+   ],
+   "info": "Read totals were 2.64, 1.69 and 1.73 billion for 582 Surface x Pachón, 386 Surface x Molino and 393 Surface x Tinaja F2s. Removing the first 384 samples did not change the QTL detected.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing and genotyping",
+   "q": "What read processing and alignment pipeline did they use?",
+   "a": "Stacks v2.54 process_radtags removed cut sites and low-quality reads (window average phred below 10). Reads were then mapped with bwa-mem v0.7.17 to AstMex3_surface (GCA_023375975.1), and duplicates were marked with Picard v2.0.1.",
+   "kw": [
+    "Stacks",
+    "bwa-mem",
+    "AstMex3"
+   ],
+   "info": "The reference is 1.4 Gbp with 25 chromosomes, 109 extra scaffolds and a scaffold N50 of 51.8 Mbp. Median read depth was 69.2 (Molino), 73.3 (Pachón) and 69.9 (Tinaja) reads per locus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing and genotyping",
+   "q": "How were variants called and filtered?",
+   "a": "With GATK v3.5 HaplotypeCaller and GenotypeGVCFs, using hard filters (QD < 2.0, FS > 60, MQRankSum < -12.5, ReadPosRankSum < -8) because no high-quality known-allele resource exists. They removed SNPs in WindowMasker repeats or within 3 bp of indels and genotypes with GQ < 20, and kept only biallelic sites (vcftools v0.1.16).",
+   "kw": [
+    "GATK",
+    "vcftools"
+   ],
+   "info": "This left 326,073 (Pachón), 135,672 (Molino) and 158,326 (Tinaja) biallelic sites. After requiring complete parental genotypes and no more than 200 missing hybrids: 102,399, 64,311 and 76,499 SNPs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing and genotyping",
+   "q": "Which markers were kept for linkage mapping?",
+   "a": "Only sites fixed for alternative alleles in the two F0 parents of each cross, and only individuals with at least 1,000 genotyped markers. Markers with strong segregation distortion from 1:2:1 (Bonferroni p < 10^-5) were set aside.",
+   "kw": [
+    "R/qtl",
+    "segregation distortion"
+   ],
+   "info": "Fixed-difference sites: 2,979 (Pachón), 4,306 (Molino), 3,126 (Tinaja). Individuals retained: 572, 367 and 389. Map input after the distortion filter: 2,319, 3,664 and 2,439 markers, with median spacing of 0.220, 0.301 and 0.398 Mb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - linkage maps and QTL mapping",
+   "q": "How were the linkage maps built and what did they look like?",
+   "a": "In R/qtl they removed likely genotyping errors (error.lod with LOD > 4, assuming a 0.01 error rate), estimated maps with the Kosambi function and 0.05 error probability, fixed misplaced markers, and dropped markers that expanded a group by 20 cM or more (qtlTools dropByDropone). Each final map had 25 linkage groups, matching the 25 chromosomes.",
+   "kw": [
+    "linkage map",
+    "Kosambi",
+    "qtlTools"
+   ],
+   "info": "Pachón: 2,308 markers, 3,550 cM. Molino: 2,656 markers, 3,099 cM. Tinaja: 1,884 markers, 3,127 cM. Average inter-marker distance was 1.2-1.7 cM, and 213 markers were shared by all three maps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - linkage maps and QTL mapping",
+   "q": "Which traits were mapped and why those?",
+   "a": "Eight traits: total 24 h sleep, night sleep, night bout number, night and day average bout length, total Artemia eaten, eye size, and early-onset adiposity. These were the traits that differed significantly between at least one cave and the surface parent population at 21 dpf.",
+   "kw": [
+    "lme4"
+   ],
+   "info": "The parental comparison used lmer (lme4 v1.1-32), with population and day period as fixed effects and individual ID and well position as random effects.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - linkage maps and QTL mapping",
+   "q": "What is the joint mapping approach and why was it used?",
+   "a": "Because all three crosses share one F0 surface female, all hybrids were combined in a single scan with statgenMPP v1.0.2. This method combines identity-by-descent from each parent with linear mixed models that estimate random QTL effects while accounting for polygenic and family background, which increases power to find small-effect QTL shared across crosses.",
+   "kw": [
+    "statgenMPP",
+    "joint mapping",
+    "IBD"
+   ],
+   "info": "It needs one map, so a consensus map was made with LPmerge v1.7. LOD was computed in 10 cM windows, with significance at -log10 P > 2 (Bonferroni, alpha 0.10). Run on the 7 traits variable in all three crosses.",
+   "concl": "Single-population mapping found fewer shared QTL peaks than the joint approach."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - linkage maps and QTL mapping",
+   "q": "How was early-onset adiposity mapped differently?",
+   "a": "Adipose tissue at 22 dpf varied only among Surface x Pachón F2s, so it was mapped in that population alone. They used a binary (logistic) multi-QTL model with R/qtl2 scan1, and a 10% permutation threshold from scan1perm with 1000 permutations.",
+   "kw": [
+    "R/qtl2",
+    "binary trait"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - repeatability and selective sweeps",
+   "q": "How did they define co-localization of QTL for different traits?",
+   "a": "QTL from two or more trait categories were counted as overlapping if they had the same peak and boundary markers, or if one QTL's interval was nested inside another's.",
+   "kw": [
+    "co-localization"
+   ],
+   "info": "Changing the minimum spacing between QTL (10 vs 20 cM) did not change the conclusions, except for two consecutive sleep QTL on chromosome 5 (Table S13).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - repeatability and selective sweeps",
+   "q": "How did they find out which cave parent drove each joint QTL?",
+   "a": "With a drop-one strategy: they removed one cross at a time and reran statgenMPP. A QTL that disappeared when a cross was dropped meant that cave parent's ancestry contributed significantly. They also compared statgenMPP parental effect estimates, where effects near zero mean no contribution.",
+   "kw": [
+    "drop-one",
+    "parental effects"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - repeatability and selective sweeps",
+   "q": "How were selective sweeps detected in wild populations?",
+   "a": "They reused a published dataset of wild genomes from Molino (n=14), Pachón (n=19), Tinaja (n=21), Río Choy surface (n=9) and Rascón surface (n=13, representing Lineage 2 surface). Sweeps were classified in 5 kb windows with diploS/HIC v1.0.6, a neural network trained on simulations that include demographic history.",
+   "kw": [
+    "diploS/HIC",
+    "selective sweep"
+   ],
+   "info": "Hard and soft sweeps were pooled, since cave bottlenecks make them hard to tell apart. Only sweeps called under both the cave and surface demographic models were kept, a conservative filter against model misspecification.",
+   "concl": "Genes with sweeps in caves from both lineages but not in either surface population were treated as candidates for repeated, independent selection."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - tgfa validation",
+   "q": "How did they functionally test a candidate sleep gene?",
+   "a": "They made surface-fish crispants for tgfa, a gene in the chromosome 5 sleep and eye QTL that reduces sleep when disrupted in zebrafish. At 22 dpf, crispants and uninjected wild-type siblings were compared in a 24 h sleep assay using Kruskal-Wallis tests.",
+   "kw": [
+    "tgfa",
+    "CRISPR-Cas9",
+    "crispant"
+   ],
+   "info": "Fish were injected with Cas9 protein and a gRNA targeting tgfa. Full details are in supplementary methods S6.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - trait correlations",
+   "q": "Which traits differed between cave and surface parents at 21 dpf?",
+   "a": "Eight: eye size, total 24 h sleep, average bout length over 24 h, night bout length, day bout length, night bout number, night sleep, and total Artemia eaten.",
+   "kw": [],
+   "info": "Per Figure 1B, Tinaja was the only cave population that ate more than surface fish, and only Pachón showed early-onset adipose.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - trait correlations",
+   "q": "Were sleep, feeding and eye traits correlated in the F2 hybrids?",
+   "a": "Weakly and depending on the population. Sleep metrics were most strongly correlated with each other. Total sleep was weakly positively correlated with Artemia eaten (Molino and Tinaja F2s) and with eye size (Molino and Pachón F2s), and eye size correlated with feeding only in Molino F2s.",
+   "kw": [
+    "genetic correlation"
+   ],
+   "info": "Pachón F2s with and without adipose tissue did not differ significantly in sleep.",
+   "concl": "The traits seem only partially correlated at the genetic level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - QTL architecture",
+   "q": "How many QTL were found and how were they distributed?",
+   "a": "Joint mapping found 48 QTL for the traits variable in all three crosses, and the Pachón-only scan found 1 adiposity QTL. Together they fall in 31 distinct regions on 19 of the 25 chromosomes.",
+   "kw": [
+    "polygenic"
+   ],
+   "info": "15 regions were associated with eye size, 10 only with sleep, 3 only with Artemia eaten, and 1 only with adiposity. The text says 15 eye-size regions here but '16' later, and Table 1 lists ES1-ES16.",
+   "concl": "Sleep, feeding and eye development have highly polygenic architectures."
+  },
+  {
+   "type": "qa",
+   "section": "Results - repeatability across lineages",
+   "q": "How repeatable were the eye size QTL?",
+   "a": "The text says 9 of 16 eye-size regions (43%) were associated with cave genotypes from both Lineage 1 (Molino) and Lineage 2 (Tinaja and/or Pachón). Adding Molino-specific QTL ES4 and ES5, which overlap earlier Pachón eye QTL, up to 56% may be repeatedly involved.",
+   "kw": [
+    "eye size",
+    "ES QTL"
+   ],
+   "info": "The numbers do not add up: 9 of 16 is 56%, not 43%. Table 1 lists 7 regions as parallel across lineages (ES1, ES2, ES6, ES8, ES9, ES11, ES12), which fits 43%, and 7 plus ES4/ES5 gives 56%. The strongest QTL was ES2 on chr1 (LOD 18.54).",
+   "concl": "Eye loss is the most genetically repeatable trait."
+  },
+  {
+   "type": "qa",
+   "section": "Results - repeatability across lineages",
+   "q": "How repeatable were the sleep and feeding QTL?",
+   "a": "Of the 12 sleep QTL regions, 33% were shared across lineages, 25% only within Lineage 2, and 42% unique to one population. For Artemia eaten, 1 QTL was shared across lineages (TE3), 1 within Lineage 2, and 2 were Tinaja-only.",
+   "kw": [
+    "sleep QTL",
+    "hyperphagia"
+   ],
+   "info": "Tinaja was the only population significantly more hyperphagic than surface fish at this stage. Early-onset adiposity was not a repeated trait, so it was not assessed for repeatability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - selective sweeps",
+   "q": "Did shared QTL contain genes repeatedly swept in caves?",
+   "a": "Rarely. Of 2,433 genes in QTL regions, only 2 had sweeps in all three wild cave populations but not in surface fish (klhl43 in sleep QTL S3 and zbtb17 in feeding QTL TE1), and both were in lineage-specific QTL. Allowing at least one cave per lineage raised this to 30 genes, 11 of them in three shared eye QTL and two shared sleep QTL.",
+   "kw": [
+    "klhl43",
+    "zbtb17"
+   ],
+   "info": "The Discussion gives 3,331 genes in QTL regions (30 of 3,331 = 0.9%), not 2,433, so the denominator is unclear. Only 2 of 31 QTL regions had no cave-unique sweeps, and in the other 29, 7-47% of protein-coding genes were under cave-only selection.",
+   "concl": "Genetic repeatability is probably not constrained by a need for rare, singularly advantageous mutations in a few large-effect genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - co-localization",
+   "q": "Where did QTL for different traits co-localize?",
+   "a": "In only two regions: chromosome 25, where sleep and total eaten overlap (S11 and TE4, driven only by Tinaja ancestry), and chromosome 5, where eye size and sleep overlap (ES5 and S4).",
+   "kw": [
+    "chromosome 25",
+    "chromosome 5"
+   ],
+   "info": "At chr25, Tinaja ancestry was linked to shorter total sleep, fewer night bouts and less Artemia eaten. The single adiposity QTL (EOA1, chr23, LOD 20.11) overlapped no other trait, though an eye QTL lies about 6 Mb upstream.",
+   "concl": "There is limited shared genetic architecture between these co-evolving cave traits."
+  },
+  {
+   "type": "qa",
+   "section": "Results - co-localization",
+   "q": "Which candidate genes are in the chromosome 25 and adiposity QTL?",
+   "a": "At chr25: acsl1a and mtnr1aa. In the adiposity QTL: cebpa and arhgap1.",
+   "kw": [
+    "acsl1a",
+    "mtnr1aa",
+    "cebpa"
+   ],
+   "info": "Results says only Río Choy and Rascón surface show sweeps in acsl1a, but the Discussion says acsl1a is under selection in Pachón, Tinaja and Rascón (Lineage 2), so the paper is inconsistent. mtnr1aa shows sweeps in Molino, Tinaja, Río Choy and Rascón. The adiposity gene is written 'cepba' in the text, likely meaning cebpa.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - co-localization",
+   "q": "What did the tgfa crispant experiment show?",
+   "a": "tgfa crispant surface fish slept a median of 36% less than wild-type siblings over 24 h. Their sleep bouts were significantly shorter, but bout number was similar.",
+   "kw": [
+    "tgfa",
+    "sleep"
+   ],
+   "info": "On chr5, sleep was associated with all three cave ancestries, but eye size only with Molino ancestry. Earlier Pachón crosses also mapped eye size to this region. Other candidates there include oca2, ube3a and ghrl.",
+   "concl": "Natural variation in tgfa can plausibly modify sleep in A. mexicanus."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the three main findings according to the authors?",
+   "a": "Genetic repeatability differs between traits, with eye size most consistent across lineages. Sleep and metabolic traits have more population-specific architectures. QTL for multiple traits rarely co-localize, which suggests pleiotropy or linkage generally do not shape these cave traits.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might eye loss be more genetically repeatable than sleep and metabolism?",
+   "a": "Perpetual darkness is the same in every cave and vision needs light, so the visual system is affected uniformly. Circadian rhythms can also be entrained by food and other organisms (such as bats moving in and out of caves), and diets and hydrology differ among caves, which may open more evolutionary paths for sleep and metabolic traits.",
+   "kw": [
+    "circadian cues",
+    "cave environment"
+   ],
+   "info": "This is a hypothesis; the paper does not test it directly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Is repeatability driven by the same genes or by genomic regions?",
+   "a": "By regions. Only 0.9% (30 of 3,331) of genes in QTL regions show repeated strong selection across both lineages, while 6% (214 of 3,331) show sweeps in individual cave populations. A previous study found about 30% of sweeps in one cave were also found in the other lineage, far more than seen here.",
+   "kw": [
+    "genomic regions",
+    "clustering"
+   ],
+   "info": "Unequal power to detect selection, from differences in demography and selection intensity, could partly explain the low overlap.",
+   "concl": "The authors propose that clusters of functionally related loci with a range of effect sizes, rather than repeated mutations in single genes, underlie repeated sleep and eye loss."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How might gene flow explain the regional repeatability?",
+   "a": "Theory predicts that large-effect architectures underlying locally favoured traits are easier to maintain under divergent selection with gene flow. Both lineages have experienced or still experience introgression from surface fish, so similar gene flow histories may have favoured reuse of the same regions.",
+   "kw": [
+    "migration-selection balance",
+    "introgression"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is mtnr1aa an interesting candidate for the Tinaja chr25 QTL?",
+   "a": "mtnr1aa is a homolog of the MT1 melatonin receptor gene, which is linked to sleep/wake cycles and glucose homeostasis. Tinaja is the only cave population that appears to have lost melatonin rhythms entirely, which matches the Tinaja-only sleep and feeding QTL.",
+   "kw": [
+    "mtnr1aa",
+    "melatonin"
+   ],
+   "info": "acsl1a, the other chr25 candidate and an ortholog of the fatty acid metabolism gene acsl1, is upregulated in Tinaja and Pachón livers and associated with a cave-specific open chromatin region near the gene.",
+   "concl": "Tinaja-specific mutations or expression patterns in mtnr1aa may help explain why circadian loss differs among caves."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does the rare co-localization compare with earlier cavefish QTL work?",
+   "a": "It contrasts with a synthesis of earlier QTL studies, mostly Surface x Pachón crosses, where co-localization was frequent across the genome. None of those studies mapped sleep or feeding, but eye size there co-localizes with pigmentation, taste buds, tooth count and body condition.",
+   "kw": [
+    "QTL hotspots"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which chromosome 5 gene best explains the eye-sleep co-localization?",
+   "a": "None clearly. tgfa affects sleep, but its crispants had only subtly smaller eyes, not significant after FDR correction. ghrl had no feeding association, is not differentially expressed in the degenerating Pachón eye, and shows no cave sweeps. oca2 null fish sleep less and lack pigment but do not have smaller eyes.",
+   "kw": [
+    "tgfa",
+    "ghrl",
+    "oca2"
+   ],
+   "info": "tgfa is downregulated in degenerating 54 hpf Pachón eyes, so regulatory changes are possible. No cave population has strong intragenic sweeps in tgfa, but one surface population does.",
+   "concl": "The evidence favours linkage of several variants, each affecting a separate trait, over a single pleiotropic mutation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which CRISPR-validated sleep genes fall inside the sleep QTL?",
+   "a": "Three: tgfa, oca2 and rorca. rorca is a circadian clock gene whose crispants sleep less at night, and both cave lineages have lost its rhythmic expression.",
+   "kw": [
+    "rorca",
+    "oca2",
+    "tgfa"
+   ],
+   "info": "The text says the nighttime sleep QTL containing rorca is on chromosome 16, but Table 2 lists rorca under S5 (ASN3, chr12:6.5-8.8), so the location is inconsistent in the paper.",
+   "concl": "The authors say these are the highest marker density and largest sample size QTL maps in A. mexicanus to date."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall conclusion?",
+   "a": "Extending QTL mapping to several populations revealed extensive genetic repeatability at the level of genomic regions, but not of specific genes. Eye loss, sleep loss and metabolic shifts do not co-evolve through widespread genetic correlation, and co-localized architectures are not strongly repeated across caves.",
+   "kw": [],
+   "info": "The authors describe this as the first mapping of the genetic basis of sleep in a natural system.",
+   "concl": "Genetic repeatability through correlation among co-evolving traits is not a highly predictable outcome of repeated evolution."
+  },
+  {
+   "type": "note",
+   "section": "Results - repeatability across lineages",
+   "text": "Check the eye QTL repeatability numbers against Table 1 and Tables S14-S16. The text says 9 of 16 = 43%, but the table lists 7 parallel regions. Also check 2,433 vs 3,331 genes in QTL regions and the rorca chromosome (16 vs 12)."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could non-coding or structural variation (e.g. cis-regulatory changes near tgfa or acsl1a) explain regional repeatability where coding-region sweeps do not? The sweep analysis only covered coding regions and conservative calls."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Why is QTL co-localization frequent in earlier Surface x Pachón studies but rare here? Is it trait choice (sleep and feeding were never mapped before), larval stage, or population?"
+  }
+ ]
+}

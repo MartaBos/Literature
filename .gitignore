@@ -1,0 +1,18 @@
+# --- Papers: copyrighted and large, never pushed ---
+*.pdf
+*.PDF
+# text sources made from papers (PubMed abstracts, PMC full text)
+papers/**/*.txt
+
+# --- Downloads and intermediate files ---
+notes_builder/batches/*_files/
+notes_builder/work/
+notes_builder/logs/
+*.tmp
+__pycache__/
+
+# --- Security-sensitive / runtime files ---
+notes_builder/.server_token
+notes_builder/.server.pid
+notes_builder/.lock
+notes/_failed/

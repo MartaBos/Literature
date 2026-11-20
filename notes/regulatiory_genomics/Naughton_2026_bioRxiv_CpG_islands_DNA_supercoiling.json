@@ -1,0 +1,511 @@
+{
+ "id": "Naughton_2026",
+ "title": "CpG islands are topological sinks for transcription-induced DNA supercoiling",
+ "link": "https://doi.org/10.64898/2026.08.24.746546",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Naughton_2026_bioRxiv_CpG_islands_DNA_supercoiling.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main question of this paper?",
+   "a": "Topoisomerases relax supercoiling caused by transcription, yet negative supercoiling still builds up at active gene promoters. The question is how promoter sequence and chromatin architecture organise and regulate this torsional stress.",
+   "kw": [
+    "DNA supercoiling",
+    "promoters"
+   ],
+   "info": "They combined Twist-seq, a new genome-wide supercoiling assay, with coarse-grained molecular dynamics simulations and published ssDNA, TOP1, G4, R-loop, nucleosome and mutation datasets.",
+   "concl": "CGIs act as sequence-encoded topological sinks that buffer transcription-induced torsional stress, possibly at a cost to genome stability."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did Twist-seq show about CGI versus non-CGI promoters?",
+   "a": "Highly transcribed CpG island (CGI) promoters build up more negative supercoiling than highly transcribed non-CGI promoters.",
+   "kw": [
+    "Twist-seq",
+    "CpG island"
+   ],
+   "info": "Simulations suggest the extra capacity comes from the intrinsic physical properties of CGI DNA. CGIs favour local melting at AT-rich pockets and DNA writhe within promoter-proximal nucleosome-free regions. In vivo, CGI promoters show less active Top1 and more ssDNA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is DNA supercoiling?",
+   "a": "It is a shift away from relaxed B-DNA (right-handed helix, about 10.5 bp per turn) to an overwound state (positive supercoiling) or an underwound state (negative supercoiling).",
+   "kw": [
+    "supercoiling",
+    "B-DNA"
+   ],
+   "info": "It happens when transcription, replication or repair machinery unwinds and rewinds the duplex.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the difference between twist and writhe?",
+   "a": "Twist is a change in the number of base pairs per helical turn. Writhe is the coiling of the double helix in space. Together they define the overall topology of supercoiled DNA.",
+   "kw": [
+    "twist",
+    "writhe"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does transcription generate supercoiling in eukaryotes?",
+   "a": "RNA polymerase II overwinds DNA ahead of itself (positive supercoils) and leaves underwound DNA behind it (negative supercoils). Topoisomerases relieve this strain by making transient DNA breaks.",
+   "kw": [
+    "Pol II",
+    "topoisomerase"
+   ],
+   "info": "This group previously showed that negative supercoils made by Pol II accumulate at the TSSs of active genes (Naughton et al. 2013).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do CGI and non-CGI promoters differ?",
+   "a": "CGI promoters make up about 70% of human promoters. They are CpG-rich, usually have broad TSSs and are often found at ubiquitously expressed housekeeping genes. Non-CGI promoters make up about 30%, often contain TATA boxes with sharp TSSs, and are linked to tissue-specific, tightly regulated genes.",
+   "kw": [
+    "CGI",
+    "TATA box",
+    "housekeeping genes"
+   ],
+   "info": "The sequence composition of CGIs contributes to reduced nucleosome occupancy. Earlier in vitro work showed that how DNA responds to torsional stress depends on its sequence.",
+   "concl": "This led the authors to ask whether CGI and non-CGI promoters handle transcription-induced supercoiling differently."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Twist-seq profiles DNA supercoiling at promoters",
+   "q": "How does Twist-seq work?",
+   "a": "Live cells are treated with biotinylated 4,5,8-trimethylpsoralen (bTMP), which preferentially intercalates into underwound DNA, and the bTMP is UV-crosslinked to the DNA. The DNA is then sonicated, bTMP-bound DNA is enriched on avidin/streptavidin magnetic beads, eluted as ssDNA, made into ssDNA-specific libraries and sequenced.",
+   "kw": [
+    "bTMP",
+    "psoralen",
+    "Twist-seq"
+   ],
+   "info": "Twist-seq is an NGS adaptation of the group's earlier psoralen method. It reads out a continuum of topological states, from negative to positive supercoiling. Topology-independent bTMP effects were corrected by normalising to bTMP-treated genomic DNA, and the signal is shown as log2(control/genomic).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Twist-seq profiles DNA supercoiling at promoters",
+   "q": "Which cells were used, and how deeply were they sequenced?",
+   "a": "Human RPE1 cells. Each sample had at least 200 million PE150 reads, and the four combined control replicates gave more than 1.5 billion reads, about one fragment per 1.8 bp of genome.",
+   "kw": [
+    "RPE1",
+    "sequencing depth"
+   ],
+   "info": "This depth was needed because bTMP binds DNA globally, so dense sampling is required for quantitative profiling at TSSs. The control replicates had 215, 269, 575 and 452 million reads, with 83%, 91%, 93% and 94% mapping.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Twist-seq profiles DNA supercoiling at promoters",
+   "q": "How did they show that the bTMP signal reflects torsional stress?",
+   "a": "bTMP was enriched at highly transcribed genes such as EEF1A1 and SERPINE1. Treating cells with bleomycin, which introduces DNA strand breaks, abolished this signal.",
+   "kw": [
+    "bleomycin",
+    "EEF1A1",
+    "SERPINE1"
+   ],
+   "info": "Bleomycin was used at 100 µM for 10 min at 37 °C before bTMP, in 2 replicates (681 and 275 million reads, 96% mapping).",
+   "concl": "Pol II activity generates substantial torsional stress at these loci."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Twist-seq profiles DNA supercoiling at promoters",
+   "q": "How does promoter supercoiling relate to gene expression?",
+   "a": "Promoter bTMP enrichment correlated strongly with nascent transcription (TT-seq, genes split into off, low, medium and high quartiles). There seemed to be a threshold of expression above which negative supercoils accumulate at promoters.",
+   "kw": [
+    "TT-seq",
+    "expression quartiles"
+   ],
+   "info": "The authors suggest the threshold may reflect the maximum topoisomerase activity at TSSs. Highly expressed genes also had high Pol II binding. A bTMP peak was also seen at transcription end sites, coinciding with Pol II pausing. Group comparisons used two-sided Wilcoxon tests.",
+   "concl": "Negative supercoiling accumulates at the promoters of highly transcribed genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI promoters accumulate and buffer negative supercoiling",
+   "q": "Do CGI promoters have more negative supercoiling than non-CGI promoters at the same expression level?",
+   "a": "Yes. In the high-expression group, mean expression was comparable between the two classes, but CGI promoters had more than 20% excess bTMP signal by area-under-the-curve analysis.",
+   "kw": [
+    "CGI",
+    "AUC"
+   ],
+   "info": "Overall, CGI genes had higher expression than non-CGI genes. The CGI excess held across expression levels, and the difference was GC-sequence independent (Fig. S2b). Despite similar transcriptional output, CGI promoters also had more engaged Pol II. Statistics used a two-sided Welch's t-test.",
+   "concl": "CGI promoters carry a more negatively supercoiled state that cannot be explained by expression level alone."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI promoters accumulate and buffer negative supercoiling",
+   "q": "Is the supercoiled domain at CGI promoters larger?",
+   "a": "No. The TSS-proximal negatively supercoiled domain was about 3 kbp at both CGI and non-CGI promoters. Upstream of the TSS, negative supercoiling was equal or slightly higher at non-CGI promoters.",
+   "kw": [
+    "supercoiling domain"
+   ],
+   "info": "",
+   "concl": "CGI promoters fit more negative supercoiling into a domain of the same size, which suggests they work as local topological sinks."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI promoters accumulate and buffer negative supercoiling",
+   "q": "What does the reaction-diffusion model predict?",
+   "a": "Changing the rate of supercoil relaxation changes both the size and the spatial extent of the supercoiling domain. Higher TOP1 activity reduces both.",
+   "kw": [
+    "reaction-diffusion model",
+    "TOP1"
+   ],
+   "info": "They tested kTOP1 values of 0.1, 1.0 and 3.0. The domain size is lambda = sqrt(D/kTOP1). Since CGIs have more supercoiling in a domain of the same size, other promoter-specific properties must affect how torsional stress is accommodated locally.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TOP1 depletion and G-quadruplexes at CGIs",
+   "q": "Is TOP1 responsible for the CGI supercoiling difference?",
+   "a": "Probably not. TOP1 ChIP-seq showed more TOP1 protein at CGI TSSs, but TOP1-seq, which maps catalytically engaged TOP1, showed markedly less TOP1 activity there.",
+   "kw": [
+    "TOP1",
+    "TOP1-seq",
+    "ChIP-seq"
+   ],
+   "info": "Both datasets were published (Baranello et al. 2016). TOP1 activity was enriched at highly expressed non-CGI promoters, so these may rely more directly on topoisomerase relaxation. Lower TOP1 activity should make the supercoiling domain longer, yet CGI domains were not longer.",
+   "concl": "TOP1 is recruited to CGIs but is less active there. Something specific to CGIs constrains torsional stress locally."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TOP1 depletion and G-quadruplexes at CGIs",
+   "q": "What are G-quadruplexes, and do they explain the CGI effect?",
+   "a": "G4s are non-canonical structures formed in G-rich sequences by stacked guanine tetrads. They are enriched at CGI promoters, but highly expressed genes with and without a G4 peak had comparable negative supercoiling.",
+   "kw": [
+    "G-quadruplex",
+    "G4access"
+   ],
+   "info": "Negative supercoiling is proposed to promote G4s, which can inhibit TOP1. G4 status was defined by a G4access peak within ±500 bp of the TSS. The G4access data came from K562 cells, not RPE1.",
+   "concl": "G4 formation alone does not explain the elevated, localised negative supercoiling at CGIs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Simulations and ssDNA-seq show localised melting at CGIs",
+   "q": "What is oxDNA, and how was it used?",
+   "a": "oxDNA (oxDNA2) is a coarse-grained, sequence-dependent DNA model in which each nucleotide is a rigid body with interactions for hydrogen bonding, stacking, cross-stacking, excluded volume and backbone connectivity. They simulated 1 kb fragments centred on the TSS from 12 human promoters under fixed negative supercoiling.",
+   "kw": [
+    "oxDNA",
+    "molecular dynamics"
+   ],
+   "info": "The 7 CGI promoters were ACTB, ATF4, CCND1, EEF1A1, F3, RCC1 and TAF1D. The 5 non-CGI promoters were CCDC80, GLIPR1, RGS4, SERPINE1 and SRGN. They were chosen for strong experimental supercoiling signal and were mostly highly expressed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - oxDNA simulations",
+   "q": "What were the key simulation parameters?",
+   "a": "Superhelical densities were sigma = -0.03, -0.06 and -0.09 (low, intermediate, high), with a 1 pN stretching force to mimic tension from transcribing Pol II. Ends were rotationally fixed and held by repulsive walls, and each run was 10^8 integration steps.",
+   "kw": [
+    "superhelical density",
+    "oxDNA2"
+   ],
+   "info": "They used the GPU oxDNA code, started from fully base-paired stretched DNA, discarded equilibration and sampled about 1000 configurations per trajectory, with 20 independent simulations per sequence and condition. The simulated time is about 1.5 ms in vivo (timestep 1.5 ps in water or 15 ps in the nucleoplasm).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - oxDNA simulations",
+   "q": "How was melting defined and quantified in the simulations?",
+   "a": "A base pair counted as melted when its absolute hydrogen-bonding energy fell below 20% of the maximum. Melting probability was the fraction of sampled configurations in which a base pair was denatured.",
+   "kw": [
+    "melting probability",
+    "Gini coefficient",
+    "Shannon entropy"
+   ],
+   "info": "Spatial concentration was measured with the Gini coefficient (0 = uniform, 1 = concentrated) and Shannon entropy (lower = more localised). Twist and writhe were calculated with standard geometric definitions, and structures were visualised in oxView.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Simulations and ssDNA-seq show localised melting at CGIs",
+   "q": "How does melting differ between CGI and non-CGI sequences in the simulations?",
+   "a": "At sigma = -0.06 and -0.09, denaturation bubbles formed in both classes. In CGIs, melting was confined to short regions of up to about 20 bp at discrete AT-rich pockets within a GC-rich background. Non-CGI sequences showed dispersed, low-probability melting at many sites.",
+   "kw": [
+    "denaturation bubbles",
+    "AT-rich pockets"
+   ],
+   "info": "CGI sequences had significantly higher Gini coefficients and lower Shannon entropy. This fits an earlier in vitro finding that, under low negative supercoiling, GC-rich DNA melts more readily than GC-poor DNA. Bubbles formed at plectoneme tips.",
+   "concl": "CGI sequence architecture focuses melting into a few preferred sites."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Simulations and ssDNA-seq show localised melting at CGIs",
+   "q": "Is there in vivo evidence for more ssDNA at CGI promoters?",
+   "a": "Yes. Published ssDNA-seq data showed denatured ssDNA significantly enriched at CGI promoters, with the most active CGI promoters having the most ssDNA.",
+   "kw": [
+    "ssDNA-seq"
+   ],
+   "info": "The ssDNA-seq data come from Kouzine et al. 2013 (naive lymphocytes, according to the reference title). The paper's text does not state the cell type explicitly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Simulations and ssDNA-seq show localised melting at CGIs",
+   "q": "Could R-loops explain the ssDNA at CGI promoters?",
+   "a": "Only partly. DRIP-seq in RPE1 showed more R-loop signal at highly expressed CGI promoters. Strand-resolved bisDRIP-seq in MCF-7 showed strong signal on both strands at CGIs, with a localised non-template-strand bias just downstream of the TSS.",
+   "kw": [
+    "R-loop",
+    "DRIP-seq",
+    "bisDRIP-seq"
+   ],
+   "info": "Conventional DRIP-seq has limited spatial resolution, and S9.6 can pick up non-R-loop ssDNA structures, which is why bisDRIP-seq was also used.",
+   "concl": "R-loops contribute to strand exposure at active CGIs but sit within a broader region of CGI-associated ssDNA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Simulations and ssDNA-seq show localised melting at CGIs",
+   "q": "Did the naked-DNA simulations fully explain the in vivo ssDNA difference?",
+   "a": "No. The simulations predicted only modest differences in overall melting between classes, while in vivo, highly expressed non-CGI promoters had far less ssDNA and R-loop signal than CGIs.",
+   "kw": [],
+   "info": "So sequence determines where melting happens, but other features of the promoter environment must add to the CGI ssDNA excess.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "What evidence shows that CGI promoters are more nucleosome-depleted?",
+   "a": "Fiber-seq nucleosome occupancy maps showed distinct profiles at CGI and non-CGI promoters. DNAcycP2 predicted a substantial drop in intrinsic DNA cyclizability around CGI TSSs that was not seen at non-CGI promoters.",
+   "kw": [
+    "Fiber-seq",
+    "DNAcycP2",
+    "cyclizability"
+   ],
+   "info": "DNAcycP2 is trained on loop-seq data. Earlier in vitro work showed that CGI sequence intrinsically disfavours nucleosome formation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - simulations with nucleosome constraints",
+   "q": "How were nucleosomes added to the oxDNA simulations?",
+   "a": "Nucleosome configurations were drawn by Monte Carlo sampling from Fiber-seq occupancy profiles. Nucleosomal DNA was given greater resistance to melting, bending and twisting, rather than modelling histone octamers explicitly.",
+   "kw": [
+    "Monte Carlo",
+    "mechanical constraints"
+   ],
+   "info": "These constraints mimic a longer effective persistence length and lower torsional flexibility. They strongly suppress writhe and denaturation in nucleosome-bound DNA while keeping its connectivity and topology.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "What changed when nucleosome constraints were included?",
+   "a": "Occupancy alone confined melting to nucleosome-free regions. The experimental CGI vs non-CGI ssDNA difference only appeared once mechanical constraints were added: CGIs kept TSS-proximal nucleosome-depleted regions that melted, while at non-CGI promoters many AT-rich sites sat in constrained nucleosomal DNA, leaving only scattered melting in distal linker DNA.",
+   "kw": [
+    "nucleosome-depleted region",
+    "linker DNA"
+   ],
+   "info": "Adding nucleosome organisation amplified the differences seen in the unconstrained simulations.",
+   "concl": "Nucleosome architecture plus sequence produces focused promoter-proximal melting at CGIs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "How is negative torsional stress accommodated in nucleosome-free CGI DNA?",
+   "a": "Through both undertwist and writhe. The simulations predict local writhe (plectonemes) coupled to focused melting of 10 to 20 bp AT-rich pockets at or near plectoneme apices.",
+   "kw": [
+    "plectoneme",
+    "writhe",
+    "undertwist"
+   ],
+   "info": "A nucleosome constrains about one negative unit of linking number. Undertwist favours bTMP intercalation and so may add to the Twist-seq signal. Under 1 pN, CGI sequences shortened more than non-CGI sequences, consistent with more writhe. Melting at CGIs was accompanied by larger, localised changes in internal energy.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "Does supercoiling-induced melting overlap transcription factor motifs?",
+   "a": "It tends to avoid them. In all 12 nucleosome-positioned simulations, predicted TF motifs had lower melting probability than the DNA flanking them. In ATF4 and EEF1A1, high-probability melting regions overlapped TF motifs less than expected by chance.",
+   "kw": [
+    "FIMO",
+    "JASPAR",
+    "TF motifs"
+   ],
+   "info": "Motifs were predicted with FIMO (MEME Suite v5.5.9) and JASPAR 2026 CORE vertebrate non-redundant (P < 1e-4); they were not taken as evidence of TF occupancy. Delta melting was the motif mean minus the mean of 25 bp flanks on each side. High-probability regions were contiguous positions with probability ≥0.1, tested against 10,000 within-promoter positional randomisations.",
+   "concl": "Melting is spatially organised and mostly falls outside predicted TF motifs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "Is the higher strand separation at CGIs linked to somatic mutations?",
+   "a": "In PCAWG data, the CGI/non-CGI mutation-rate ratio depended on expression (interaction P = 4.8e-7). Inactive CGI promoters had relatively fewer mutations, but highly expressed CGI promoters had a 10.6% higher rate within ±500 bp of the TSS (rate ratio 1.106, 95% CI 1.026 to 1.192, P = 0.0083).",
+   "kw": [
+    "PCAWG",
+    "somatic mutations"
+   ],
+   "info": "The text says 'somatic TES frequency' at one point, which looks like a typo for somatic mutation frequency.",
+   "concl": "ssDNA exposure caused by torsional stress may raise mutation rates at highly expressed CGI promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - somatic mutation analysis",
+   "q": "How was the mutation analysis done?",
+   "a": "They used 21,599,452 PCAWG consensus somatic SNVs from 1,950 tumours across 25 projects, lifted over from GRCh37 to GRCh38. Counts within ±500 bp of strand-aware TSSs were modelled with negative-binomial mixed-effects models.",
+   "kw": [
+    "negative-binomial mixed model",
+    "liftover"
+   ],
+   "info": "Promoter sequence opportunity and total tumour SNV burden were offsets, and tumour was a random intercept. The CGI status x expression interaction was tested with a likelihood-ratio test.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "What happens to CGI promoter supercoiling during heat-shock activation, with and without topoisomerase inhibitors?",
+   "a": "Heat shock alone did not significantly change CGI promoter Twist-seq signal (P = 0.071). TOP2 inhibition with ICRF-193 during heat shock increased it (P = 3.0e-8), while TOP1 inhibition with camptothecin had no significant effect (P = 0.144).",
+   "kw": [
+    "heat shock",
+    "ICRF-193",
+    "camptothecin"
+   ],
+   "info": "There were 554 heat-shock-induced CGI promoters, compared using the mean signal within ±250 bp of the TSS and paired two-sided Wilcoxon signed-rank tests (unadjusted P). The figure numbering in the text is a bit inconsistent (Fig. 7 vs Supplementary Fig. 8).",
+   "concl": "TOP2, possibly by resolving writhe, helps relax torsional stress at CGIs. TOP1 does not, consistent with the TOP1-seq data."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CGI sinks via melting and writhe at nucleosome-depleted regions",
+   "q": "Does the TOP2 effect hold after matching CGI and non-CGI genes for expression?",
+   "a": "Yes. With 129 expression-matched genes per group, ICRF-193 still increased CGI promoter Twist-seq signal (P = 0.046). Heat shock alone (P = 0.49) and camptothecin (P = 0.42) had no significant effect.",
+   "kw": [
+    "expression matching"
+   ],
+   "info": "Each non-CGI gene was matched without replacement to the CGI gene with the closest log10(RPKM + 0.01) after heat shock. The effect is much weaker after matching (P = 0.046, unadjusted).",
+   "concl": "The TOP2 response is not just due to differences in transcriptional output."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - heat shock and topoisomerase inhibition",
+   "q": "How was the heat-shock experiment set up?",
+   "a": "RPE1 cells were pretreated for 3 h with ICRF-193 (35 µM) or camptothecin (5 µM), heat-shocked at 42 °C for 15 min, then labelled with bTMP for 20 min on ice for Twist-seq, or recovered at 37 °C for 15 min before TT-seq.",
+   "kw": [
+    "heat shock",
+    "TOP2",
+    "TOP1"
+   ],
+   "info": "Heat-shock-induced genes (log2FC > 1, adjusted P < 0.05) were taken from earlier TT-seq: 713 genes, of which 554 were CGI, 143 non-CGI and 16 unclassified. Expression under the treatment conditions was checked with new TT-seq covering 523 CGI and 132 non-CGI genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Twist-seq",
+   "q": "What are the key Twist-seq wet-lab steps and parameters?",
+   "a": "500 µg/ml bTMP for 20 min on ice in the dark, then UV crosslinking at 360 nm for 10 min. DNA was purified by SDS/proteinase K and phenol-chloroform, then sonicated (13 cycles of 30 s on/off, Bioruptor Pico).",
+   "kw": [
+    "bTMP",
+    "avidin beads"
+   ],
+   "info": "Biotin was checked by dot blot. Capture was on avidin magnetic beads (2 h at RT, then overnight at 4 °C), followed by stringent TSE I, TSE II and LiCl washes. Elution was by boiling in 95% formamide/10 mM EDTA at 90 °C for 10 min, then EtOH precipitation. Libraries used the IDT xGen ssDNA and Low-Input kit with about 16 PCR cycles, sequenced PE150 on a NovaSeq X Plus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Twist-seq",
+   "q": "Which tools processed the Twist-seq data?",
+   "a": "Reads were trimmed with TrimGalore v0.6.6, aligned to hg38 with Bowtie2 v2.5.3 and processed with Samtools v1.6. Coverage was made with deepTools bamCoverage (RPKM, 1 bp bins, blacklist removed).",
+   "kw": [
+    "Bowtie2",
+    "deepTools",
+    "TrimGalore"
+   ],
+   "info": "Profiles around TSSs were made with deepTools computeMatrix and plotProfile. Published datasets were converted to hg38 where needed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TT-seq",
+   "q": "How was nascent transcription measured?",
+   "a": "With TT-seq: a 10 min pulse of 500 µM 4-thiouridine, TRIzol extraction, fragmentation to under 1.5 kb, biotinylation with EZ-Link Biotin-HPDP, and capture on µMACS streptavidin beads.",
+   "kw": [
+    "TT-seq",
+    "4sU"
+   ],
+   "info": "Libraries were made with the NEBNext Ultra II Directional kit and sequenced PE150 on NovaSeq. Reads were aligned with Bowtie2 v2.5.3 to hg38, and coverage was RPKM in 20 bp bins. The two replicates had 146 and 71 million reads, with 86% mapping.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - reaction-diffusion model",
+   "q": "What are the reaction-diffusion model and its parameter estimates?",
+   "a": "It is a 1D equation for supercoiling density sigma(x,t) with a polymerase flux spread over the gene, diffusion D and TOP1 relaxation rate kTOP1. The steady state decays exponentially with domain size lambda = sqrt(D/kTOP1).",
+   "kw": [
+    "supercoiling diffusion",
+    "kTOP1"
+   ],
+   "info": "With D of about 1 kbp^2/s (chromatin or writhed DNA) and kTOP1 of about 0.1 to 1 s^-1, lambda is about 1 to 3 kbp, matching the experimental domain. It generalises an earlier model (Brackley et al. 2016), which used a delta-like flux at the polymerase position.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the authors' overall model?",
+   "a": "CGI promoters are topological sinks, or shock absorbers. Their GC-rich, nucleosome-depleted context lets transcription-induced torsional stress be absorbed by underwinding, writhe (plectonemes) and localised melting at embedded AT-rich pockets, while topoisomerases provide a route for relaxation.",
+   "kw": [
+    "topological sink",
+    "shock absorber"
+   ],
+   "info": "They suggest the resulting promoter topology could favour polymerase engagement and transcription initiation. This is proposed, not tested directly.",
+   "concl": "CGI sequence may encode mechanical properties, in addition to its known roles in open chromatin, histone marks and resistance to DNA methylation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What might CpG methylation do in this model?",
+   "a": "Cytosine methylation stabilises the duplex against melting and generally stabilises nucleosomes. Aberrant CGI methylation in ageing or disease could therefore reduce a promoter's ability to melt and absorb torsional stress.",
+   "kw": [
+    "DNA methylation",
+    "DNMT1"
+   ],
+   "info": "Unmethylated CpGs recognised by the DNMT1 CXXC domain inhibit methyltransferase activity, which protects CGIs. This implication was not tested in the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What evolutionary implication do the authors suggest?",
+   "a": "CGI promoters evolve more slowly and sit at genes under strong constraint. The authors propose that the ability to buffer negative supercoiling may be an extra selective pressure on CGI sequence.",
+   "kw": [
+    "evolutionary conservation"
+   ],
+   "info": "This comes with a trade-off: transient strand exposure may promote DNA damage and mutation, as the higher somatic mutation rate at highly expressed CGI promoters suggests.",
+   "concl": "CGIs balance topological homeostasis during sustained transcription against genome-stability costs."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main limitations of this study?",
+   "a": "Several key datasets come from other cell types or studies (G4access from K562, bisDRIP-seq from MCF-7, published TOP1 and ssDNA data), and the mutation data come from cancers. The simulations cover only 12 promoters of 1 kb and represent nucleosomes as mechanical constraints rather than explicit histones.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "Without nucleosome constraints, the simulations could not reproduce the size of the in vivo ssDNA difference. The mutation link is correlational. The expression-matched TOP2 effect is modest (P = 0.046). The GEO accession is still pending, and the text contains placeholders such as Supplementary Table X. The authors do not list these limitations explicitly.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Does aberrant CGI methylation reduce supercoil-induced melting and the topological sink capacity of CGI promoters, and does that affect transcription? Proposed but not tested."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could the sink idea apply to fish CGIs and non-methylated islands, for example in zebrafish or cavefish? Supercoiling could be profiled with Twist-seq at promoters of differentially expressed genes. This is not in the paper; it's an idea worth exploring."
+  },
+  {
+   "type": "note",
+   "section": "Results - TOP1 depletion and G-quadruplexes at CGIs",
+   "text": "Why is TOP1 recruited to CGI promoters but catalytically inactive there? The TOP2 inhibition result suggests TOP2 is the main relaxase at CGIs, which is worth following up."
+  }
+ ]
+}

@@ -1,0 +1,543 @@
+{
+ "id": "Gross_2013",
+ "title": "Albinism in phylogenetically and geographically distinct populations of Astyanax cavefish arises through the same loss-of-function Oca2 allele",
+ "link": "https://doi.org/10.1038/hdy.2013.26",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Gross_2013_Heredity_albinism_cavefish_populations.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "Where the albinism that appeared in a captive stock of originally pigmented Micos cavefish comes from. The fish were collected in 1970, and albinos appeared over the past two decades.",
+   "kw": [
+    "albinism",
+    "Micos",
+    "Oca2"
+   ],
+   "info": "They combined new coloration analyses, comparisons of coding sequence and measurements of mRNA expression level.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding?",
+   "a": "Albino Micos cavefish carry two copies of the same loss-of-function Oca2 allele that was first found in the geographically distant Pachón cave population.",
+   "kw": [
+    "Oca2",
+    "Pachón"
+   ],
+   "info": "Micos is phylogenetically young (younger stock, about 2.8 MYa) and Pachón is phylogenetically old (older stock, about 6.7 MYa).",
+   "concl": "Geographically and phylogenetically distinct cave populations can evolve the same troglomorphic phenotype from standing genetic variation in the ancestral surface fish."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How many cave populations does A. mexicanus have, and when did the ancestral surface stocks invade?",
+   "a": "There are 29 cave-adapted populations in a karst region of northeastern Mexico. They descend from an 'old' surface stock that invaded about 6.7 MYa and a 'young' stock that invaded about 2.8 MYa.",
+   "kw": [
+    "old and young stocks"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are regressive phenotypes, and how might they evolve?",
+   "a": "Regressive phenotypes are traits that are reduced or lost in a derived lineage. Proposed mechanisms are direct selection, neutral forces, or indirect effects through pleiotropy.",
+   "kw": [
+    "regressive evolution",
+    "pleiotropy",
+    "neutral forces"
+   ],
+   "info": "Past studies give mixed support for each hypothesis. It is unclear whether one mechanism governs all regressive traits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where are the Astyanax cave populations located geographically?",
+   "a": "In northeastern Mexico, in three main regions: the eastern Sierra de El Abra, the northern Sierra de Guatemala and the western Sierra de Colmena.",
+   "kw": [
+    "El Abra",
+    "Guatemala",
+    "Colmena"
+   ],
+   "info": "La Cueva Chica, a southern El Abra cave, was the first locality where Astyanax cavefish were discovered. Many populations have converged on eye loss and reduced pigmentation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which ancestral stock colonized which caves?",
+   "a": "The older stock colonized the El Abra caves, including Pachón, about 6.7 MYa. The younger stock, related to the extant local surface population, colonized the northern Guatemala and western Colmena caves about 2.8 MYa.",
+   "kw": [
+    "two-wave colonization"
+   ],
+   "info": "The authors call this the consensus view.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is special about the Micos cave population?",
+   "a": "It is the most geographically isolated Astyanax cave population. Its three cave entrances to an underground river (Río Subterráneo) lie about 35 km west of the southern El Abra cave network, separated by the Sierra de Nicolás Perez and Sierra de Colmena ranges.",
+   "kw": [
+    "Micos"
+   ],
+   "info": "The population was discovered in the late 1960s. The founding captive stock was uniformly pigmented, with as many melanophores under daylight as surface fish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about the genetics of albinism in Astyanax?",
+   "a": "Albinism is recessive and was mapped to Oca2 (ocular and cutaneous albinism type II). Oca2 encodes a 12-transmembrane domain channel protein that is thought to transport small molecules in pigment cells.",
+   "kw": [
+    "Oca2",
+    "recessive"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which cave populations are albino in the wild, and what Oca2 lesions do they carry?",
+   "a": "Four populations are albino in the wild: Pachón, Molino, Yerbaniz and Japonés. Pachón and Molino carry different coding mutations that each abolish Oca2 function in a melan-P cell assay. Yerbaniz and Japonés are presumed to carry cis-regulatory changes that affect Oca2 transcript levels.",
+   "kw": [
+    "melan-P assay",
+    "cis-regulatory",
+    "convergence"
+   ],
+   "info": "The cis-regulatory inference comes from complementation: all offspring of albino Pachón x Japonés crosses were albino.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Fish collection and husbandry",
+   "q": "Where did the Micos fish come from, and how were they kept?",
+   "a": "15 pigmented fish were collected in the Micos cave in 1970 and kept at the Zoological Museum, University of Hamburg. All fish studied descend from this wild-caught stock.",
+   "kw": [],
+   "info": "To avoid contamination with other populations, they were kept in separate, unconnected tanks and observed daily. Conditions: Middle European light:dark cycle, 24 degrees C, fed once daily (flake food, Artemia, Daphnia).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Fish breeding",
+   "q": "How was the Micos stock bred, and when did albinos appear?",
+   "a": "The stock was kept as one group and bred naturally by group mating roughly once every 4 years. Albinos first appeared within a single generation in the 1990s, after about six or seven generations in the lab.",
+   "kw": [
+    "group mating"
+   ],
+   "info": "Astyanax is sexually mature at about 1 year. The Micos stock was bred less often, only to maintain it.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Fish breeding",
+   "q": "Which crosses produced the albinos used in this study, and how many albinos appeared?",
+   "a": "Four females and five males were used in two group breedings. The first gave about 1000 offspring, 8 of them albino. The second gave roughly the same number of offspring, with three or four albinos.",
+   "kw": [],
+   "info": "All fish were raised under the same lighting in the same 100-liter glass tanks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Coloration analysis",
+   "q": "How did they measure coloration quantitatively?",
+   "a": "This was a new method. They bound protein extract from caudal fin clips, including melanin, onto the filter of a DNeasy spin column. The filter was imaged at x13.7, and its color was scored digitally in Adobe Photoshop (CMYK) and ImageJ (grayscale darkness).",
+   "kw": [
+    "DNeasy",
+    "CMYK",
+    "ImageJ"
+   ],
+   "info": "Fin clips were digested in 180 ul Buffer ATL plus 20 ul proteinase K. Because the kit gives variable DNA yields, several parameters were standardized before imaging (Supplementary Figure S1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Coloration analysis",
+   "q": "Which groups were compared in the coloration analysis, and with how many fish?",
+   "a": "Seven individuals from each of five groups: surface fish, Pachón cavefish, surface x Pachón F1 hybrids, pigmented Micos and albino Micos.",
+   "kw": [],
+   "info": "The dorsal part of the caudal fin was cut from live, anesthetized fish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Coloration analysis",
+   "q": "How exactly were the CMYK and grayscale values obtained?",
+   "a": "For CMYK, a circular grid of 13 dots was overlaid on each filter image, and the Photoshop eyedropper recorded 0 to 100 percent for each channel at each dot; the values were then averaged. For grayscale, images were converted to grayscale and inverted, and mean darkness (0 = white, 255 = black) was measured three times in ImageJ and averaged.",
+   "kw": [
+    "Photoshop",
+    "ImageJ"
+   ],
+   "info": "Statistics were done in SPSS v18.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Quantitative PCR",
+   "q": "How did they measure Oca2 expression?",
+   "a": "By qPCR on cDNA from tail fin RNA of albino Micos (n = 5) and surface fish (n = 5). Expression was normalized to GAPDH, with EvaGreen supermix on a Bio-Rad MiniOpticon.",
+   "kw": [
+    "qPCR",
+    "GAPDH",
+    "EvaGreen"
+   ],
+   "info": "RNA was extracted with RNeasy, and 1 ug was reverse transcribed with oligo dT and the Roche Transcriptor RT kit (50 degrees C for 1 h). The Oca2 primers give a 96-bp product. There were 40 cycles with annealing at 55.1 degrees C. Each template was run in triplicate in two experiments, with genomic DNA as a positive amplification control. Analysis used CFX Manager v1.6. The listed step times (95 degrees C for 30 min initially, then 5 min and 10 min steps) are as printed in the paper and look unusually long.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Oca2 genotyping and sequencing",
+   "q": "How did they sequence the Oca2 coding sequence in Micos fish?",
+   "a": "They amplified Oca2 cDNA with full-length primers and four overlapping tiling primer sets, subcloned the products into pGEM-T Easy, Sanger sequenced them with M13F/M13R, and assembled the sequences in LaserGene (DNAStar).",
+   "kw": [
+    "Sanger",
+    "pGEM-T Easy",
+    "LaserGene"
+   ],
+   "info": "n = 6 individuals each from pigmented and albino Micos were sequenced. LaserGene v9.1.1 (EditSeq, SeqMan, MegAlign) was used for assembly and analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Oca2 genotyping and sequencing",
+   "q": "How did they test for the known Molino and Pachón deletions in genomic DNA?",
+   "a": "With PCR using the diagnostic primers from the earlier Oca2 mapping study: exon 14 and exon 23 as controls, exon 21 for the Molino deletion, and exon 24 to 3' UTR for the Pachón deletion.",
+   "kw": [
+    "exon deletion",
+    "diagnostic PCR"
+   ],
+   "info": "The control regions were expected to amplify in every specimen because they showed no changes in earlier work. The Figure 4 legend describes set C as intron 23, while the methods call it exon 23.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Oca2 genotyping and sequencing",
+   "q": "How was the A1252G SNP genotyped?",
+   "a": "The SNP region was PCR amplified and sequenced directly by Sanger sequencing with the reverse primer. They genotyped n = 6 fish from each of four groups: surface, Pachón, albino Micos and pigmented Micos.",
+   "kw": [
+    "A1252G",
+    "SNP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Microscopy and imaging",
+   "q": "Which imaging setup did they use?",
+   "a": "A Leica M205 FA stereomicroscope with a DFC310FX camera. Images were taken with the MultiFocus module of Leica Application Suite v3.8, which merges multiple focal planes into one image.",
+   "kw": [
+    "Leica M205 FA"
+   ],
+   "info": "Figures were assembled in Adobe Photoshop CS3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Albino individuals in captive Micos stock",
+   "q": "Are the depigmented Micos fish truly albino or just weakly pigmented?",
+   "a": "They are truly albino. Light microscopy of tail fins found no pigmented melanophores or eumelanin at all, while pigmented Micos fins from the same stock had spindly melanophores.",
+   "kw": [
+    "melanophores",
+    "eumelanin"
+   ],
+   "info": "None of the fish collected in 1970 were albino.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Digital coloration analysis",
+   "q": "What were the mean CMYK values for each group?",
+   "a": "Surface: C 51.65, M 45.25, Y 54.08, K 16.68. F1 hybrid: 46.59, 40.75, 49.62, 9.40. Pigmented Micos: 24.68, 20.90, 27.24, K 0.05. Albino Micos: 18.58, 13.51, 17.58, K 0.00. Albino Pachón: 17.97, 13.33, 18.30, K 0.00.",
+   "kw": [
+    "CMYK"
+   ],
+   "info": "Surface and F1 profiles were very similar. Pigmented Micos was lower than surface. Albino Micos and albino Pachón were nearly identical in all channels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Digital coloration analysis",
+   "q": "Which statistical tests did they use for coloration, and what did they show?",
+   "a": "One-way ANOVA was significant for every channel: cyan F(4,30) = 130.53, magenta F(4,30) = 133.63, yellow F(4,30) = 144.88, all P < 0.0001. In Tukey HSD post hoc tests, albino Micos and albino Pachón did not differ from each other in any of the three channels.",
+   "kw": [
+    "ANOVA",
+    "Tukey HSD"
+   ],
+   "info": "The K channel could not be tested by ANOVA because all albino Micos and albino Pachón fish had K = 0, so there was no variance in those groups.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Digital coloration analysis",
+   "q": "What did the grayscale darkness analysis show?",
+   "a": "Surface fish were darkest, F1 hybrids slightly lower, and pigmented Micos lower again. Albino Micos and albino Pachón were very similar. ANOVA gave F(4,30) = 109.48, P < 0.0001, and Tukey HSD found no difference between the two albino groups.",
+   "kw": [
+    "grayscale",
+    "melanin"
+   ],
+   "info": "Grayscale was used instead of the K channel to measure overall darkness. Exact group means appear only as bars in Figure 2l.",
+   "concl": "Depigmented Micos cavefish are formally albino and match albino Pachón in coloration."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Oca2 expression",
+   "q": "Is albinism in Micos caused by reduced Oca2 expression, as presumed for Japonés?",
+   "a": "No. Albino Micos fins expressed slightly more Oca2 than surface fins, a more than 1.7-fold difference normalized to GAPDH (n = 5 per group).",
+   "kw": [
+    "Oca2",
+    "qPCR"
+   ],
+   "info": "They expected lower expression if a cis-regulatory change were responsible. Because expression was not reduced, they examined the coding sequence next.",
+   "concl": "A cis-regulatory loss of Oca2 expression is not the cause of Micos albinism."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Oca2 coding deletion",
+   "q": "Do albino Micos carry the Molino exon 21 deletion?",
+   "a": "No. The 102-bp exon 21 amplicon (B) was missing in Molino fish, as expected, but was present in both albino and pigmented Micos.",
+   "kw": [
+    "exon 21",
+    "Molino"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Oca2 coding deletion",
+   "q": "Do albino Micos carry the Pachón exon 24 to 3' UTR deletion?",
+   "a": "Yes. The exon 24 to 3' UTR amplicon (D) failed to amplify in albino Micos, just as in Pachón. It did amplify in pigmented Micos, surface fish and Japonés fish.",
+   "kw": [
+    "exon 24",
+    "3' UTR deletion",
+    "Pachón allele"
+   ],
+   "info": "Amplicon size is reported inconsistently: 235 bp in the results text and about 300 bp in the Figure 4 legend. Ladder: Roche VIII (110 to 1114 bp).",
+   "concl": "Albino Micos carry the same Oca2 deletion as albino Pachón."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Oca2 coding deletion",
+   "q": "What does the Pachón Oca2 deletion do to the protein?",
+   "a": "It produces an Oca2 protein truncated at the C-terminus, missing 19 amino acids compared with the surface protein. In the earlier melan-P cell assay, this allele could not produce melanin.",
+   "kw": [
+    "truncation",
+    "melan-P"
+   ],
+   "info": "The functional data come from the earlier Oca2 study, not this paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Oca2 coding deletion",
+   "q": "How large is the Oca2 gene?",
+   "a": "Based on the zebrafish (Danio rerio) genome, Oca2 is predicted to be a multi-exon gene of more than 170 kb, about 171.707 kb in the figure.",
+   "kw": [
+    "Oca2 gene structure"
+   ],
+   "info": "This is an estimate extrapolated from zebrafish, not measured in Astyanax.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A1252G SNP genotyping",
+   "q": "What is the A1252G SNP?",
+   "a": "A nonsynonymous SNP at nucleotide 1252 in exon 13 of the Pachón Oca2 allele, causing a valine/methionine substitution at amino acid 418. This position is highly conserved across vertebrates.",
+   "kw": [
+    "A1252G",
+    "exon 13"
+   ],
+   "info": "Unlike the exon 24 deletion, this SNP did not impair Oca2 function in the melan-P assay of the earlier study. The paper's wording ('substitution of a valine residue for a methionine residue') does not make the direction of the change clear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A1252G SNP genotyping",
+   "q": "What genotypes did they find at position 1252?",
+   "a": "Albino Micos and albino Pachón were all homozygous 1252G. Pigmented Micos were either homozygous 1252A or heterozygous A/G.",
+   "kw": [
+    "genotype",
+    "heterozygote"
+   ],
+   "info": "This assumes that 1252G and the exon 24 deletion are on the same allele, as reported for Pachón.",
+   "concl": "One intact Oca2 allele is enough for pigmentation. Heterozygous pigmented Micos explain how albinos arose through random matings."
+  },
+  {
+   "type": "qa",
+   "section": "Results - A1252G SNP genotyping",
+   "q": "How far apart are the SNP and the deletion, and is their phase known?",
+   "a": "About 44.1 kb apart, estimated from zebrafish Oca2 structure. Their gametic phase in the Micos parents is unknown because the albinos came from group breedings of few fish.",
+   "kw": [
+    "linkage",
+    "gametic phase"
+   ],
+   "info": "The authors presume a cis configuration, as in Pachón. The text cites Figure 3 for the zebrafish structure, but this is shown in Figure 4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors explain finding the same Oca2 allele in Micos and Pachón?",
+   "a": "The allele was standing genetic variation in the ancestral surface fish. It came into Micos with the young colonizing stock and introgressed into the old Pachón population.",
+   "kw": [
+    "standing genetic variation",
+    "introgression"
+   ],
+   "info": "",
+   "concl": "Shared loss-of-function allele from the ancestral surface population, not convergent new mutation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is mitochondrial capture, and why does it matter for Pachón?",
+   "a": "Early mtDNA data clustered Pachón with the distant Micos population, while geography and microsatellites grouped it with the old El Abra caves. The conflict is explained by introgressive hybridization with surface fish, which led to capture of surface mtDNA by Pachón.",
+   "kw": [
+    "mitochondrial capture",
+    "gene flow"
+   ],
+   "info": "Together with the Oca2 result, this suggests historical and/or recent gene flow between the populations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is this result surprising compared with earlier work?",
+   "a": "Earlier studies found different lesions in the same genes behind convergent pigment loss (Oca2 for albinism, Mc1r for the brown phenotype), and different genes behind eye loss in different caves. None of these studies found the cave alleles in surface populations.",
+   "kw": [
+    "convergent evolution",
+    "Mc1r",
+    "complementation"
+   ],
+   "info": "Pachón x Sabinos hybrids had larger, more differentiated eyes. Pachón x Tinaja hybrids had a functional visual system. Both crosses, however, involved El Abra populations from the same old stock.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Appearance of albinism in Micos",
+   "q": "Do eye loss and loss of pigmentation evolve by the same mechanism?",
+   "a": "Possibly not. In an earlier QTL polarity analysis, every eye and lens QTL cave allele reduced size, which suggests selection. QTL for melanophore number had mixed polarities, which suggests drift or pleiotropy.",
+   "kw": [
+    "QTL polarity",
+    "genetic drift"
+   ],
+   "info": "Eye reduction might also be a pleiotropic result of selection on constructive traits such as lateral line sensitivity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Appearance of albinism in Micos",
+   "q": "What does it suggest that Micos carry the allele but are not albino in the wild?",
+   "a": "That pigmentation may not be under selection in Micos. Albinism may give no selective advantage there and may be evolving neutrally.",
+   "kw": [
+    "neutral evolution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Standing variation vs de novo mutation",
+   "q": "Why do they reject a de novo origin of Micos albinism?",
+   "a": "A de novo origin would require the identical exon 24 deletion and A1252G SNP to arise independently in each cave population, which they consider unlikely.",
+   "kw": [
+    "de novo mutation"
+   ],
+   "info": "This argument assumes that both changes are on the same chromosome in all individuals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Standing variation vs de novo mutation",
+   "q": "Why is direct transfer of the allele from Pachón to Micos considered unlikely?",
+   "a": "Because of geography. The caves are about 64 km apart in a straight line, Pachón fish live in isolated perched pools, and Micos lies three valleys and two mountain ranges further west.",
+   "kw": [
+    "geographic barriers"
+   ],
+   "info": "Pachón entrance is about 210 m above sea level and Micos about 230 m. Pachón water drains into the Río Choy, more than 40 km from Micos. Whether an underground connection exists is unknown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Standing variation vs de novo mutation",
+   "q": "Which parallel from another fish do they cite?",
+   "a": "Stickleback. Repeated loss of lateral plate armor in freshwater populations comes from selection on ancient Eda alleles present at low frequency in marine fish.",
+   "kw": [
+    "Eda",
+    "stickleback"
+   ],
+   "info": "They also cite Bradic et al. 2012, who argued that cavefish genetic variation mostly reflects standing variation and gene flow rather than new mutations.",
+   "concl": "The authors present this as the first evidence that a causal regressive allele in different caves was inherited from surface populations."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Alternative explanations",
+   "q": "What is the main caveat about the A1252G SNP?",
+   "a": "The SNP is used as a marker linked to the deletion, but it does not itself impair Oca2 function. If the two changes are not fully linked, the association could be misleading.",
+   "kw": [
+    "linkage disequilibrium"
+   ],
+   "info": "If they are unlinked, one change might be standing variation while the other arose independently, or each cave might have gained one change and exchanged it through gene flow. At about 44.1 kb apart they could recombine, and the small sample size prevents estimating linkage disequilibrium.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Alternative explanations",
+   "q": "What does the allele's presence in the founders imply about its frequency?",
+   "a": "The allele must have been common enough in the ancestral surface fish to be captured in each colonization or hybridization event, despite founder effects. This raises the possibility that it is not rare in caves and may have a 'cryptic' selective value there.",
+   "kw": [
+    "founder effect",
+    "cryptic selection"
+   ],
+   "info": "If so, the assumption that this allele is rare and deleterious may need revising. They call for more sampling of wild Micos, Pachón and surface fish to measure allele frequencies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "What are the authors' overall conclusions?",
+   "a": "Micos albinism is caused by the same Oca2 allele as Pachón albinism. Cave traits in young populations can arise from ancestral standing variation, and rare ancestral polymorphisms offer a route to rapid evolution in caves.",
+   "kw": [
+    "rapid evolution"
+   ],
+   "info": "Albinism appeared very quickly (about 6 to 7 generations) in captive fish from a population that is not albino in nature. It is unclear whether other traits such as eye loss can appear as quickly after a bottleneck.",
+   "concl": "First demonstration of regressive phenotypic change in Astyanax through standing genetic variation in the ancestral population."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "Where are the raw data deposited?",
+   "a": "In Dryad (doi:10.5061/dryad.jh8j7). The deposit includes coloration measurements and statistics, filter images with and without the grid, raw qPCR values for Oca2 and GAPDH, and fin clip images.",
+   "kw": [
+    "Dryad"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Did younger cave populations get other regressive traits, such as eye loss, from ancestral standing variation, or does this apply only to albinism?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion - Alternative explanations",
+   "text": "Is the exon 24 deletion really in cis with 1252G in Micos? Phase was not resolved, and the zebrafish-based 44.1 kb estimate leaves room for recombination. Direct haplotype data would resolve this."
+  },
+  {
+   "type": "note",
+   "section": "Conclusions",
+   "text": "How common are loss-of-function Oca2 alleles in wild Micos, Pachón and surface populations? Could they have a cryptic selective value in caves?"
+  }
+ ]
+}

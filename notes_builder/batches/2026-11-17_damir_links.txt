@@ -1,0 +1,43 @@
+# Papers shared by Damir (2026), given in the Claude session of 2026-11-17.
+# One link per line, as provided (the duplicate 2026.05.11.724207 link appeared twice and is kept once).
+# The first five were given earlier in the same session.
+https://www.nature.com/articles/s41467-026-77758-9
+https://www.biorxiv.org/content/10.64898/2026.06.19.733352v1.full
+https://www.biorxiv.org/content/10.64898/2026.01.31.703033v1.full
+https://www.biorxiv.org/content/10.64898/2026.10.29.762743v1.abstract
+https://academic.oup.com/mbe/article/43/11/msag261/9001931
+https://www.biorxiv.org/content/10.64898/2026.08.24.746546v1.full
+https://www.biorxiv.org/content/10.1101/2025.01.09.632168v1.full
+https://www.nature.com/articles/s41586-026-10798-9
+https://www.nature.com/articles/s41588-026-02670-3
+https://www.nature.com/articles/s41588-026-02695-8
+https://x.com/i/status/2084836326000746855
+https://www.biorxiv.org/content/10.64898/2026.07.24.740649v2
+https://www.nature.com/articles/s41586-026-10781-4
+https://doi.org/10.1093/nar/gkag637
+https://www.nature.com/articles/s41576-022-00532-2
+https://link.springer.com/article/10.1186/s13059-023-02985-y
+https://www.biorxiv.org/content/10.64898/2026.05.11.724207v1
+https://www.biorxiv.org/content/10.64898/2026.04.16.718233v1
+https://doi.org/10.1038/s41586-026-10326-9
+https://www.sciencedirect.com/science/article/pii/S1532045625002170
+https://www.nature.com/articles/s41592-026-03036-7
+https://www.nature.com/articles/ng.2963
+https://www.science.org/doi/10.1126/science.add8394
+https://www.nature.com/articles/s41592-026-03007-y
+https://www.sciencedirect.com/science/article/pii/S0012160621000749
+https://www.nature.com/articles/s41467-025-60246-x
+https://www.nature.com/articles/s41467-025-67427-8
+https://www.cell.com/trends/genetics/fulltext/S0168-9525(25)00111-8
+https://www.cell.com/trends/genetics/fulltext/S0168-9525(25)00112-X
+https://www.nature.com/articles/s41576-026-00935-5
+https://www.science.org/doi/10.1126/science.ads7373
+https://academic.oup.com/nar/article/54/D1/D982/8237891
+https://www.nature.com/articles/s41580-025-00895-4
+https://arxiv.org/abs/2412.05430
+https://www.biorxiv.org/content/10.64898/2026.02.05.703637v2.full
+https://www.nature.com/articles/s44222-025-00280-y
+https://www.sciencedirect.com/science/article/pii/S266729012500049X
+https://www.nature.com/articles/s41467-025-64569-7
+https://www.biorxiv.org/content/10.64898/2026.02.02.703275v1
+https://www.biorxiv.org/content/10.64898/2026.02.01.703142v2.abstract

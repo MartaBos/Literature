@@ -1,0 +1,575 @@
+{
+ "id": "Nepal_2020",
+ "title": "Dual-initiation promoters with intertwined canonical and TCT/TOP transcription start sites diversify transcript processing",
+ "link": "https://doi.org/10.1038/s41467-019-13687-0",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Nepal_2020_NatCommun_dual_initiation_promoters.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main discovery of this paper?",
+   "a": "In zebrafish, thousands of genes, including snoRNA host genes, have dual-initiation (DI) promoters. In these, non-canonical 5'-TOP/TCT (YC) start sites are intertwined with canonical YR start sites in the same core promoter.",
+   "kw": [
+    "dual-initiation promoter",
+    "5'-TOP/TCT",
+    "zebrafish"
+   ],
+   "info": "YC initiation is used divergently from YR initiation in hundreds of DI promoters during the maternal to zygotic transition (MZT). DI promoters are also widespread in human and fruit fly.",
+   "concl": "Dual-initiation on shared promoters is a composite promoter architecture that can work coordinately or divergently to diversify RNAs."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Why does TSS selection matter beyond where transcription starts?",
+   "a": "Differences in TSS selection reflect different preinitiation complexes and can affect what happens to the RNA after transcription.",
+   "kw": [
+    "TSS selection",
+    "preinitiation complex"
+   ],
+   "info": "In snoRNA host genes, dual initiation selectively generates the host RNA and the snoRNA, which often have different spatio-temporal expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the core promoter and does it have universal elements?",
+   "a": "The core promoter is the region where Pol II initiates transcription, typically -40 to +40 nt around the TSS. There are no universal core promoter elements, because core promoters vary in sequence and function.",
+   "kw": [
+    "core promoter",
+    "Pol II"
+   ],
+   "info": "The structure-function relationship of core promoters is still poorly understood.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the canonical (YR) initiator?",
+   "a": "CAGE showed that most TSSs have a purine at +1 and a pyrimidine at -1 (consensus Y-1R+1). This YR initiation is the canonical initiator in mammals and in teleosts (zebrafish and tetraodon).",
+   "kw": [
+    "YR initiator",
+    "CAGE"
+   ],
+   "info": "Drosophila has a related but more motif-like TC-1A+1GT initiator.",
+   "concl": "This suggests the initiator is conserved across vertebrates."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the non-canonical YC initiator (5'-TOP / TCT)?",
+   "a": "Initiation at a C at +1, flanked by a polypyrimidine stretch. It is typical of translation-associated genes: ribosomal proteins, snoRNA host genes, and translation initiation and elongation factors. It is called 5'-TOP (terminal oligopyrimidine) in mammals and TCT in Drosophila.",
+   "kw": [
+    "5'-TOP",
+    "TCT",
+    "YC initiator"
+   ],
+   "info": "In Drosophila, ribosomal protein genes with TCT promoters use a TFIID-independent initiation mechanism and are bound by TRF2 (TBP-related factor 2) instead of TBP.",
+   "concl": "Non-canonical initiation seems to use an initiation complex different from TBP/TFIID."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is 5'-TOP initiation functionally interesting?",
+   "a": "mTOR-pathway targets that are regulated at the translational level are enriched for 5'-TOP/TCT initiators. The polypyrimidine stretch near the 5' end is a target for translational regulation.",
+   "kw": [
+    "mTOR",
+    "translational regulation"
+   ],
+   "info": "This regulation has been linked to oxidative stress, metabolic stress and cancer. The introduction defines the 5'-TOP motif as a minimum of 4-15 pyrimidines, but the Discussion says 4-13.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "It was unclear how widespread non-canonical initiation is, how it relates to canonical initiation, and why it evolved and was kept in distant species.",
+   "kw": [],
+   "info": "Other rare non-canonical initiators, TGTT and GAA(+1)G, were not studied because they lack independent biochemical validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Non-canonical YC-initiation",
+   "q": "What data did they use to map initiation events?",
+   "a": "They reanalyzed their published zebrafish CAGE data from 12 developmental stages, from the maternal stages through the MZT to organogenesis. They pooled CAGE TSSs (CTSSs) with at least 1 TPM.",
+   "kw": [
+    "CAGE",
+    "CTSS",
+    "TPM"
+   ],
+   "info": "CTSSs were classified by the -1/+1 dinucleotide. 71.6% were canonical YR, and a substantial share were Y-1C+1. The rest included GG dinucleotides from post-transcriptional processing, Drosha processing sites on pre-miRNAs, snoRNA 5'-end capping events and uncharacterized starts. These were excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Non-canonical YC-initiation",
+   "q": "How did they check that YC sites are real transcription starts?",
+   "a": "Most YR (85.97%) and YC (83.05%) initiation sites fell inside expected promoter regions, defined as 500 bp upstream to 300 bp downstream of Ensembl transcripts. Both initiation types were highly reproducible across replicates.",
+   "kw": [
+    "promoter region"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Non-canonical YC-initiation",
+   "q": "How many promoters have YC, YR or both initiation types?",
+   "a": "After filtering, 4201 promoters had YC initiation and 12,056 had YR initiation. Only 50 genes (1.2%) were YC-only and 7905 (65.5%) were YR-only. So 98.8% of YC-containing promoters also have YR sites, which the authors call dual-initiation promoters.",
+   "kw": [
+    "dual-initiation promoter"
+   ],
+   "info": "Filter: expressed in at least 2 developmental stages, with summed YC and YR each at least 3 TPM. This gives 4151 DI genes.",
+   "concl": "Almost all YC initiation happens inside promoters that also use canonical YR initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Non-canonical YC-initiation",
+   "q": "How were DI promoters validated independently?",
+   "a": "With nAnTi-CAGE from seven developmental stages, which showed high overlap. They also used capped mRNA-seq at prim 5 (24 hpf), which showed significant overlap with CAGE and nAnTi-CAGE DI genes.",
+   "kw": [
+    "nAnTi-CAGE",
+    "capped RNA-seq"
+   ],
+   "info": "Capped RNA-seq is less sensitive than CAGE and misses low YC initiation levels. This disproportionately affects detection of the YC component.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Non-canonical YC-initiation",
+   "q": "How far apart are the dominant YR and YC TSSs in DI promoters?",
+   "a": "Mostly within 30 bases. At prim 5 there is a clear spike of YC directly upstream of the YR CTSS, seen in 18.1% (n = 512) of 2826 DI promoters.",
+   "kw": [
+    "dominant TSS"
+   ],
+   "info": "Example: in sumo2b the dominant YR TSS is 4 nt downstream of the dominant YC TSS. The upstream enrichment was also seen in capped RNA-seq.",
+   "concl": "The two initiation machineries likely recognize the same core promoter region."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Non-canonical YC-initiation",
+   "q": "How much does YC initiation contribute to DI promoter activity?",
+   "a": "Usually only a small share. At prim 5, only 8.3% (n = 251) of genes were YC-dominant, although YC can dominate in individual genes, even at lowly expressed promoters.",
+   "kw": [
+    "YC-dominant",
+    "YR-dominant"
+   ],
+   "info": "A gene was called YR- or YC-dominant by comparing the summed expression of all its YR and YC CTSSs. The paper does not state the denominator for 8.3%: 251/2826 would be about 8.9%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "Why did they annotate new zebrafish snoRNAs?",
+   "a": "Zebrafish snoRNA annotation is incomplete. Using a size-selected small RNA library enriched for full-length snoRNAs, they annotated 176 novel zebrafish snoRNAs.",
+   "kw": [
+    "snoRNA annotation"
+   ],
+   "info": "The Results give the size range as 18-250 nt, but the Methods say 18-350 nt.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "Do translation-associated genes have single or dual initiation in zebrafish?",
+   "a": "Most ribosomal protein genes (N = 72), snoRNA host genes and translation initiation/elongation factor genes carry dual initiation, not pure YC initiation.",
+   "kw": [
+    "ribosomal protein genes",
+    "snoRNA host genes"
+   ],
+   "info": "In Fig. 2a, the rest of the genes are mostly YR-only.",
+   "concl": "Genes previously described as 5'-TOP/TCT genes are, in zebrafish, mainly DI genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "Which GO terms are enriched in DI genes compared with YR-only genes?",
+   "a": "DI genes are enriched for translation machinery, cotranslational protein targeting to membrane, RNA stability and nonsense-mediated decay. YR-only genes are enriched for morphogenesis, pattern specification and embryonic development.",
+   "kw": [
+    "gene ontology"
+   ],
+   "info": "With ribosomal protein and translational genes removed, DI genes are still enriched for mRNA splicing via spliceosome, telomerase RNA localization, chromosome organization and mitotic cell cycle.",
+   "concl": "DI promoters are used by a wider range of genes than translation-associated genes alone."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "What sequence features surround YC initiation sites?",
+   "a": "YC sites are surrounded by more pyrimidines (C/T), mostly as an uninterrupted stretch of at least 4 pyrimidines, which is typical of the 5'-TOP motif. The longer the stretch, the higher the expression of the dominant YC CTSS.",
+   "kw": [
+    "polypyrimidine stretch"
+   ],
+   "info": "Translation-associated genes have longer pyrimidine stretches. Base frequencies of CC and TC are similar between single- and dual-initiation promoters, so base composition does not explain the YC usage.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "How do 5'UTR lengths differ between DI and YR-only genes?",
+   "a": "DI genes have shorter 5'UTRs than single-initiation YR genes. Among DI genes, ribosomal genes have the shortest.",
+   "kw": [
+    "5'UTR"
+   ],
+   "info": "The authors suggest this may reflect efficient translation, because longer 5'UTRs tend to lower translational efficiency.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "What promoter shapes do the YR and YC components have?",
+   "a": "The YR component of DI promoters has more CTSSs (average 6) than its YC component (average 2) or YR-only genes (average 3). It therefore forms wider tag clusters, while YC forms narrow ones.",
+   "kw": [
+    "promoter shape",
+    "tag cluster"
+   ],
+   "info": "CAGE defines three promoter shapes: broad, sharp and bimodal. 5'-TOP/TCT promoters had been associated with sharp promoters of highly expressed genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of dual-initiation gene promoters",
+   "q": "Are positionally constrained promoter motifs associated with YC initiation?",
+   "a": "The WW dinucleotide (W-box) is enriched around both YR and YC initiation in the fertilized egg but depleted at prim 5. TATA, CCAT and GC box motifs were not enriched for either initiation type at either stage.",
+   "kw": [
+    "W-box",
+    "TATA box"
+   ],
+   "info": "They plotted YR, YY, SS and WW dinucleotides, plus TATA, GC box and CCAT motifs, around the initiation sites at the fertilized egg and prim 5 stages.",
+   "concl": "YC initiation seems able to use the same promoter regulation mechanisms described for YR initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Differential regulation of YC and YR-initiation",
+   "q": "How did they test whether YR and YC components are regulated independently during development?",
+   "a": "They ran self-organizing map (SOM) clustering of YR and YC expression across development for the 4151 DI genes.",
+   "kw": [
+    "SOM clustering",
+    "MZT"
+   ],
+   "info": "The hypothesis came from their earlier finding that two independent promoter codes (the W-box and +1 nucleosome positioning signals) overlap in individual promoters. Also, TCT and canonical initiators may use different initiation complexes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Differential regulation of YC and YR-initiation",
+   "q": "Do the YR and YC components follow the same developmental trend?",
+   "a": "In most clusters, yes. But in one cluster of 264 genes, YR is mainly maternal and YC rises zygotically. In another cluster of 259 genes, YC is mainly maternal and YR is mainly zygotic.",
+   "kw": [
+    "maternal",
+    "zygotic",
+    "eef1g"
+   ],
+   "info": "Individual CTSSs follow these opposing trends, for example in eef1g (dominant YC and YR 22 nt apart) and psmd6. The independent regulation was confirmed by nAnTi-CAGE at representative MZT stages.",
+   "concl": "YR and YC components of the same promoter can respond to different regulatory inputs, and this is visible during the transcriptome overhaul at the MZT."
+  },
+  {
+   "type": "qa",
+   "section": "Results - YC components regulate snoRNA expression",
+   "q": "Why are snoRNA host genes a good test case for dual initiation?",
+   "a": "Host genes produce two functional products: the host RNA and snoRNAs spliced out of its introns. A previous study showed that a 5'-TOP element sets the snoRNA to mRNA ratio, and that an artificial canonical YR Pol II promoter does not release snoRNA efficiently.",
+   "kw": [
+    "snoRNA host gene",
+    "GAS5"
+   ],
+   "info": "The non-coding host gene GAS5 was also shown to help maintain nodal signalling.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - YC components regulate snoRNA expression",
+   "q": "Which component of host gene initiation correlates better with snoRNA levels?",
+   "a": "The YC component. In CAGE data, YC fold changes correlated with snoRNA fold changes at r = 0.63, compared with r = 0.36 for YR. In nAnTi-CAGE data, the values were r = 0.61 for YC and r = 0.32 for YR.",
+   "kw": [
+    "correlation",
+    "small RNA-seq"
+   ],
+   "info": "The text says 88 host genes containing 246 snoRNAs, but the Fig. 4a legend says 94 DI snoRNA host genes across six developmental stages. The YR r = 0.36 is only given in the figure.",
+   "concl": "YC initiation explains snoRNA expression better than YR initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - YC components regulate snoRNA expression",
+   "q": "What does the nop56 example show?",
+   "a": "From maternal to zygotic stages, nop56 snoRNA expression rises together with YC initiation, while YR initiation trends downward.",
+   "kw": [
+    "nop56"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - YC components regulate snoRNA expression",
+   "q": "How did they control for total host gene expression?",
+   "a": "They compared YR-dominant and YC-dominant host genes with comparable total expression (p = 0.77, 0.67 and 0.77 at the egg, 30% epiboly and prim 5 stages). snoRNA levels were significantly higher in the YC-dominant group (p = 0.002, 0.002 and 0.017).",
+   "kw": [
+    "YC-dominant host genes"
+   ],
+   "info": "Group sizes were N = 40/18, 39/20 and 31/16 (YR-dominant/YC-dominant). In the bulk analysis, total expression varied too much across stages to separate the contributions.",
+   "concl": "The authors note that snoRNAs sit in ribosomal and translation factor genes, so snoRNA and host protein production are probably also co-regulated."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expression and localization of snoRNA and host RNA in embryos",
+   "q": "Where are the nanog intronic snoRNA and the nanog mRNA expressed?",
+   "a": "An antisense snoRNA probe was detected in some, but not all, nuclei. A nanog exonic probe detected cytoplasmic signal in most cells.",
+   "kw": [
+    "nanog",
+    "in situ hybridization"
+   ],
+   "info": "The snoRNA is newly annotated, conserved among teleosts and validated by RT-PCR. nanog is YR-dominant with low, mostly zygotic YC initiation and low snoRNA levels. The text says sphere stage, but the Fig. 5 legend says 30% epiboly.",
+   "concl": "The two RNA products of one DI promoter have different transcriptional and/or post-transcriptional fates."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expression and localization of snoRNA and host RNA in embryos",
+   "q": "How do the dkc1 snoRNA and its host RNA compare?",
+   "a": "Their expression patterns are largely similar. The snoRNA co-localizes with Fibrillarin in nucleoli, and at long-pec stage it is seen in the epiphysis, somitic muscle and retinal ganglion cell layer. The dkc1 exonic probe is ubiquitous and cytoplasmic, but differs from the snoRNA in the retinal pigmented epithelium.",
+   "kw": [
+    "dkc1",
+    "Fibrillarin",
+    "pseudouridylation"
+   ],
+   "info": "dkc1 is YR-dominant at maternal and zygotic stages, and 3 of its 4 minor YC sites rise at zygotic stages. A shared pattern is expected from their probable shared role in rRNA pseudouridylation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Differential fates of YR and YC-initiation products",
+   "q": "Why and how did they block translation with cycloheximide?",
+   "a": "Some snoRNA host RNAs are degraded by nonsense-mediated decay (NMD), so blocking translation/NMD could reveal different fates for YR and YC products. Embryos were treated from the 22-somite stage (22 hpf) for 2 h until prim 5 (24 hpf) and profiled by CAGE.",
+   "kw": [
+    "cycloheximide",
+    "NMD"
+   ],
+   "info": "This stage was chosen because YC initiation is broadly active and maternal mRNAs are already cleared. This excludes indirect effects of maternal mRNA stability. Zebrafish gas5 increased mildly, with YC up and YR down.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Differential fates of YR and YC-initiation products",
+   "q": "What happened to YR and YC products of ribosomal protein genes after cycloheximide?",
+   "a": "In rps13, YC products went up and YR products went down (Fisher exact test P = 1.27e-07). Across all ribosomal protein genes, YC was upregulated in 59.7% (43/72) and YR was downregulated in 77.8% (56/72) (KS test P = 3.5e-05).",
+   "kw": [
+    "rps13",
+    "ribosomal protein genes"
+   ],
+   "info": "At the single-gene level, only 6 genes were individually significant (5 up, 1 down; Fisher exact test, adjusted P at most 0.05). The Fig. 6c label gives p < 3.02e-05, which differs from the 3.5e-05 in the text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Differential fates of YR and YC-initiation products",
+   "q": "Is the cycloheximide response different between YR-dominant and YC-dominant genes?",
+   "a": "A significantly different response was seen in YC-dominant genes (n = 241; KS test P = 4.44e-05) but not in YR-dominant genes (n = 1774).",
+   "kw": [
+    "YC-dominant"
+   ],
+   "info": "The number of individually significant genes was negligible.",
+   "concl": "The fate or transcription of RNAs with different initiation bases can be regulated differently in the YC-dominant subset of DI genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dual-initiation promoter genes are conserved across metazoans",
+   "q": "What did human GAS5 show in FANTOM5 data?",
+   "a": "GAS5, a classic 5'-TOP snoRNA host gene, uses YC as its dominant initiator in pooled FANTOM5 CAGE. It unexpectedly also has YR initiation at a comparable level, and in multiple cell types YR is higher than YC.",
+   "kw": [
+    "GAS5",
+    "FANTOM5"
+   ],
+   "info": "",
+   "concl": "This is a DI promoter with differential dynamics in mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dual-initiation promoter genes are conserved across metazoans",
+   "q": "How common are DI promoters in human and Drosophila?",
+   "a": "Among expressed genes, 3920 (45%) promoters in HepG2 CAGE and 1701 (16%) in Drosophila S2 CAGE are DI. GRO-cap data gave 3899 (42.0%) in K562 and 4362 (45.5%) in GM12878.",
+   "kw": [
+    "HepG2",
+    "S2 cells",
+    "GRO-cap"
+   ],
+   "info": "YC is dominant in 11.8% (HepG2) and 8.0% (S2) of DI promoters. The Fig. 7c Venn diagram shows 3604 dual promoters for HepG2, which does not match the 3920 in the text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dual-initiation promoter genes are conserved across metazoans",
+   "q": "Are DI genes conserved between human and zebrafish?",
+   "a": "Yes. 1171 (38.5%) of human-zebrafish orthologous DI promoter genes share the DI feature. Human DI genes are enriched for translation regulation, mRNA stability and RNA splicing, as in zebrafish.",
+   "kw": [
+    "orthologs",
+    "conservation"
+   ],
+   "info": "",
+   "concl": "Promoters previously classed as 5'-TOP/TCT are better described as DI promoters, so non-canonical initiator promoters should be redefined."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dual-initiation promoter genes are conserved across metazoans",
+   "q": "Which DI promoter features are shared across the three species?",
+   "a": "DI promoters have higher C+T content than YR-only but lower than YC-only promoters. They are more highly expressed than YR-only and YC-only promoters, and they have broad YR and narrow YC tag clusters.",
+   "kw": [
+    "RPL38",
+    "C+T content"
+   ],
+   "info": "The RPL38 orthologs in human, Drosophila and zebrafish show similar intertwined YR and YC initiation.",
+   "concl": "DI promoters are pervasive and evolutionarily ancient."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What model do the authors propose for DI promoters?",
+   "a": "A composite promoter architecture in which the YC and YR components share one sequence platform. They can be coregulated, or uncoupled as seen at the MZT, possibly by two different preinitiation complexes.",
+   "kw": [
+    "composite promoter",
+    "PIC"
+   ],
+   "info": "This is based on TCT promoters being activated by distinct core promoter-binding factors, regulated by TRF2 and having distinct enhancer specificity. Fig. 8 models shared regulation, distinct RNA fates (for example, YC products processed into snoRNA or subject to NMD) and distinct regulation in different cells.",
+   "concl": "Which initiation mode is used in which DI promoter at the MZT seems to alternate by rules that are not yet understood."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might DI genes be so highly expressed?",
+   "a": "Not only because of the YC part: the YR component alone is also higher than in YR-only or YC-only genes. The authors suggest that two initiation mechanisms may boost expression, or that YC initiation was co-opted in highly expressed genes.",
+   "kw": [
+    "expression level"
+   ],
+   "info": "Highly expressed DI promoters might help coordinate transcription and translation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main limitations the authors mention?",
+   "a": "CAGE and short-read RNA-seq cannot unequivocally assign post-transcriptional secondary products, such as snoRNAs, to one of the two initiation sites. It is also unknown whether both initiations are used in the same cell.",
+   "kw": [
+    "limitations",
+    "single-cell CAGE"
+   ],
+   "info": "The link between pyrimidine stretch length and YC expression cannot be separated into RNA stability versus transcription effects with CAGE. The snoRNA evidence is correlational, supported by an earlier promoter-swap study.",
+   "concl": "Single-cell CAGE will be needed to test co-regulation within one cell."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does this work change the 5'-TOP definition and why was DI missed before?",
+   "a": "The current 5'-TOP definition (minimum 4-13 pyrimidines) is based only on translation-associated genes and may be too strict. Using a 1 TPM threshold, they found thousands of YC sites. Earlier genome-wide studies focused on dominant TSSs, which are mostly YR, so YC initiation went unnoticed.",
+   "kw": [
+    "5'-TOP definition"
+   ],
+   "info": "Ribosome profiling shows that translationally regulated genes often start with C but have only short pyrimidine stretches. The authors argue for single-nucleotide-resolution transcriptomics when studying responses such as mTOR-linked metabolic stress.",
+   "concl": "Many more genes should be considered potential targets of 5'-TOP-type translational regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Cycloheximide CAGE",
+   "q": "How was the cycloheximide CAGE experiment done?",
+   "a": "Embryos were treated with 100 µg/ml cycloheximide (Sigma-Aldrich) or 0.1% DMSO for 2 h from 22 hpf. Total RNA was extracted at 24 hpf with TRIzol.",
+   "kw": [
+    "cycloheximide",
+    "CAGE"
+   ],
+   "info": "CAGE libraries followed their earlier protocol but used an oligo-dT primer instead of random primers for first-strand synthesis. They were sequenced on an Illumina Genome Analyzer IIx.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - nAnTi-CAGE and capped RNA-seq",
+   "q": "How were the nAnTi-CAGE libraries made and processed?",
+   "a": "RNA came from the fertilized egg, 128-cell, 512-cell, 30% epiboly, 4-somite, prim 5 and high pec stages, extracted with miRNeasy. Libraries used the CAGE Preparation Kit (DNAFORM). Reads were trimmed to 27 bp and mapped to Zv9 with bowtie1 (2 mismatches in the seed, unique reads only, -m 1), and CTSSs were called with CAGEr.",
+   "kw": [
+    "nAnTi-CAGE",
+    "bowtie1",
+    "CAGEr"
+   ],
+   "info": "Sequenced on HiSeq2500, except the high pec library, which was sequenced on NextSeq500.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - nAnTi-CAGE and capped RNA-seq",
+   "q": "How was capped RNA-seq done and normalized?",
+   "a": "24 hpf total RNA was DNase-treated, and full-length cDNA was made with the TeloPrime kit (Lexogen), which captures 5'-capped, polyadenylated RNAs. Two technical replicates (14 and 16 PCR cycles) were sequenced 2 x 100 bp on HiSeq 2500.",
+   "kw": [
+    "TeloPrime",
+    "cutadapt",
+    "power-law normalization"
+   ],
+   "info": "Only reads starting with the TeloPrime adapter were kept, trimmed to 27 bp with cutadapt and mapped with bowtie1 as for nAnTi-CAGE. Capped RNA-seq and nAnTi-CAGE were normalized in CAGEr to a power-law distribution with slope 1.22 between 10 and 1000 tags, to match the published CAGE data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Public CAGE and GRO-cap data",
+   "q": "Which public datasets were used and how were they mapped?",
+   "a": "Zebrafish: their earlier mapped CAGE data. Human: FANTOM5 CAGE, including HepG2 with 3 replicates merged and converted to TPM. Drosophila: modENCODE CAGE. Human K562 and GM12878: GRO-cap from GEO.",
+   "kw": [
+    "FANTOM5",
+    "modENCODE",
+    "bowtie2"
+   ],
+   "info": "Drosophila CAGE and GRO-cap were mapped with bowtie2, allowing 2 mismatches and keeping only uniquely mapped reads. CAGE reads with a G mismatch at the first nucleotide were corrected and the TSS adjusted.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Downstream analysis of CAGE data",
+   "q": "How were CTSSs clustered and genes classified?",
+   "a": "CTSSs had to reach at least 1 TPM in one of the 12 stages, and then CTSSs of at least 0.5 TPM were included. YR and YC CTSSs within 20 nt on the same strand were clustered separately into tag clusters. Gene expression summed the tag clusters in the -500/+300 promoter region.",
+   "kw": [
+    "tag clusters",
+    "dominant TSS"
+   ],
+   "info": "The highest CTSS in a cluster is the dominant TSS, and the cluster width defines a sharp or broad shape. A gene is YR-dominant if YR makes up more than 50% of the summed YR plus YC expression, and YC-dominant otherwise.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Annotation of zebrafish snoRNAs",
+   "q": "How were zebrafish snoRNAs annotated and quantified?",
+   "a": "They used public size-selected small RNA-seq from 6 stages (egg, high, 30% epiboly, 12 somites, prim 5, prim 16), mapped with bowtie2 to Zv9 after removing rRNA reads (up to 4 multimapping positions). Only reads longer than 50 nt were kept. snoRNAs were predicted with Infernal (Rfam covariance models, e-value 0.05), snoReport, snoGPS and snoscan.",
+   "kw": [
+    "Infernal",
+    "snoscan",
+    "snoGPS"
+   ],
+   "info": "snoRNAs with fewer than 5 reads or located on exons or repeats were removed. Of 312 Ensembl v79 snoRNAs, 270 had at least 5 reads and 264 of these were predicted, along with 176 novel ones. Expression was counted with BEDTools and converted to RPM using SAMtools totals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - GO, validation and imaging",
+   "q": "How were GO enrichment and snoRNA validation done?",
+   "a": "GO enrichment used GOstats (Bioconductor) with Benjamini-Hochberg correction and P at most 0.05. snoRNAs were validated by RT-PCR (miRNeasy RNA, iScript cDNA from 200 ng RNA, 4% MetaPhor agarose gel).",
+   "kw": [
+    "GOstats",
+    "RT-PCR",
+    "FISH"
+   ],
+   "info": "Riboprobes were made with T3 polymerase and DIG or DNP labelling for single and double fluorescent whole-mount ISH. Anti-Fibrillarin (Abcam 38F3, 1:10) immunofluorescence was done after ISH. Confocal imaging used a Leica TCS SP5 with a 63x glycerol objective and 1-2 µm z-steps.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Are YR and YC initiation used in the same cell at the same time, or in different cells? The authors say single-cell CAGE is needed to test this."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Does the 5' polypyrimidine stretch act at the transcription level (a distinct PIC) or only at translation (for example eIF4F binding)? CAGE cannot tell whether the stretch length to YC expression link is due to stability or transcription."
+  },
+  {
+   "type": "note",
+   "section": "Results - Differential regulation of YC and YR-initiation",
+   "text": "What rules decide which DI promoters switch between YR and YC dominance across the MZT (the 264-gene and 259-gene clusters)? Worth checking whether stage-specific YC/YR switching can be seen in other fish CAGE datasets."
+  }
+ ]
+}

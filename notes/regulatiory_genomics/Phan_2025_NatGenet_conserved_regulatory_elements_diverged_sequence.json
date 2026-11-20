@@ -1,0 +1,581 @@
+{
+ "id": "Phan_2025",
+ "title": "Conservation of regulatory elements with highly diverged sequences across large evolutionary distances",
+ "link": "https://doi.org/10.1038/s41588-025-02202-5",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Phan_2025_NatGenet_conserved_regulatory_elements_diverged_sequence.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this paper address?",
+   "a": "Developmental gene expression is highly conserved, yet most cis-regulatory elements (CREs) lack sequence conservation, especially at large evolutionary distances. It is unclear how many CREs stay functionally conserved at the same genomic position even though their sequence has diverged.",
+   "kw": [
+    "cis-regulatory elements",
+    "positional conservation"
+   ],
+   "info": "Some earlier evidence suggested that CREs at the same genomic position can remain functionally conserved independent of sequence conservation, but how widespread this is was unknown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they do and what did they find, in short?",
+   "a": "They profiled the regulatory genome of mouse and chicken embryonic hearts at equivalent stages and introduced interspecies point projection (IPP), a synteny-based algorithm. IPP finds up to fivefold more orthologous CREs than alignment-based approaches.",
+   "kw": [
+    "IPP",
+    "mouse",
+    "chicken"
+   ],
+   "info": "Positionally conserved orthologs without sequence conservation are called indirectly conserved (IC). They have chromatin signatures and sequence composition similar to sequence-conserved CREs, but more shuffling of TF binding sites. Chicken IC enhancers were validated with in vivo reporter assays in mouse.",
+   "concl": "Functional conservation of sequence-divergent CREs is widespread and is hidden from alignment-based methods."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is heart development a good system for comparing regulatory genomes across species?",
+   "a": "Heart patterning and morphological changes are conserved across vertebrates, and the same key cardiac mesoderm TFs are needed in the two-chambered fish heart and the four-chambered bird and mammal hearts.",
+   "kw": [
+    "heart development",
+    "phylotypic stage"
+   ],
+   "info": "During the phylotypic stage and organogenesis, tissue-specific gene expression is similar even between distantly related organisms, which points to a common gene regulatory basis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Is there earlier evidence that enhancers can be functionally conserved without sequence conservation?",
+   "a": "Yes. The best-known example is the even-skipped stripe 2 enhancer, which is functionally conserved among insects despite highly divergent sequence. Weakly conserved heart enhancers and weakly conserved TFBS in vertebrate livers have also been reported.",
+   "kw": [
+    "eve stripe 2",
+    "functional conservation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is it hard to find orthologous CREs in distantly related species?",
+   "a": "First, fast turnover of noncoding sequence makes pairwise alignment ineffective. Second, alignment-free methods such as TFBS clusters, sequence words or ML models struggle to pair orthologs. Third, multiple-genome alignments need large computational resources and many genome assemblies.",
+   "kw": [
+    "alignment-free methods",
+    "Cactus"
+   ],
+   "info": "Cactus multispecies alignments of hundreds of genomes currently cannot bridge distances as large as chicken to mouse.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a bridged alignment and how has it been used before?",
+   "a": "A bridged alignment goes through an intermediate species to link two genomes that cannot be aligned directly. For example, the zebrafish ortholog of a human limb enhancer was found through human to spotted gar and spotted gar to zebrafish alignments.",
+   "kw": [
+    "bridged alignment",
+    "spotted gar"
+   ],
+   "info": "Using Xenopus as a single bridging species uncovered hundreds of covert ortholog pairs between human and zebrafish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are synteny, CNEs and genomic regulatory blocks (GRBs)?",
+   "a": "Synteny is the maintenance of colinear genomic sequence on chromosomes of different species. Developmental genes are often flanked by conserved noncoding elements (CNEs), many of which are enhancers. Their syntenic arrangement reflects conserved regulatory environments called GRBs.",
+   "kw": [
+    "synteny",
+    "CNE",
+    "GRB"
+   ],
+   "info": "The authors' framework combines two underused features: synteny and functional genomic data from matched tissues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Embryonic heart CREs in mouse and chicken",
+   "q": "Which samples and data types did they generate?",
+   "a": "Mouse embryonic hearts at E10.5 and E11.5 and chicken hearts at the equivalent stages HH22 and HH24. They generated ChIPmentation, ATAC-seq, RNA-seq and Hi-C data, plus forelimb samples for comparison.",
+   "kw": [
+    "ChIPmentation",
+    "ATAC-seq",
+    "Hi-C"
+   ],
+   "info": "E10.5 and HH22 represent equivalent stages of heart formation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Embryonic heart CREs in mouse and chicken",
+   "q": "Is tissue-specific gene expression conserved between mouse and chicken hearts?",
+   "a": "Yes. Heart and limb differential expression was conserved, including key heart and limb TF genes such as Nkx2-5, Tbx5, Gata4, Hand2, Tbx20 and Mef2c.",
+   "kw": [
+    "RNA-seq",
+    "DESeq2"
+   ],
+   "info": "Shared upregulated genes were enriched for GO terms such as muscle system process and cardiac muscle tissue development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Embryonic heart CREs in mouse and chicken",
+   "q": "How much of the mouse heart accessible chromatin can be aligned to chicken?",
+   "a": "Mouse E10.5 heart ATAC-seq peaks overlapping exons were mostly alignable to chicken with LiftOver, but most noncoding peaks (intronic and intergenic) were not.",
+   "kw": [
+    "LiftOver",
+    "sequence alignability"
+   ],
+   "info": "LiftOver was run with minMatch = 0.1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Embryonic heart CREs in mouse and chicken",
+   "q": "What did Hi-C show about 3D chromatin between the species?",
+   "a": "3D chromatin structures overlapping developmental GRBs were conserved, and synteny breaks were enriched at TAD boundaries. At loci such as Hand2/HAND2, chromatin marks were placed similarly relative to the target gene even though the locus sizes differ.",
+   "kw": [
+    "TAD",
+    "GRB",
+    "Hand2"
+   ],
+   "info": "This suggested that CRE position relative to target genes might be conserved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Embryonic heart CREs in mouse and chicken",
+   "q": "How many high-confidence CREs did they call, and how many are sequence-conserved?",
+   "a": "They called 20,252 promoters and 29,498 enhancers in mouse and 14,806 promoters and 21,641 enhancers in chicken hearts. Fewer than 50% of promoters and only about 10% of enhancers were sequence-conserved between mouse and chicken (LiftOver minMatch = 0.1).",
+   "kw": [
+    "CRUP",
+    "enhancers",
+    "promoters"
+   ],
+   "info": "These are union sets across the two stages per species, because stage-specific sets largely overlapped. CRUP predictions were combined with accessibility and expression data to reduce false positives.",
+   "concl": "Even in a stringently filtered CRE set, most enhancers cannot be aligned between mouse and chicken."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP algorithm",
+   "q": "What is the core idea behind interspecies point projection (IPP)?",
+   "a": "A nonalignable element that sits between flanking alignable blocks in one genome should sit at the same relative position in the other genome. IPP interpolates the element's position relative to nearby alignable regions (anchor points), and the interpolated coordinates in the target genome are called projections.",
+   "kw": [
+    "IPP",
+    "anchor points",
+    "projection"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP algorithm",
+   "q": "Why does IPP use multiple bridging species?",
+   "a": "Projection accuracy drops with distance to the nearest anchor point. Bridged alignments through many species add anchor points and shorten that distance.",
+   "kw": [
+    "bridging species",
+    "anchor points"
+   ],
+   "info": "Going from direct alignments only to 1 and then 14 bridging species clearly increased anchor point density in an example mouse region.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP algorithm",
+   "q": "How does IPP classify projections into DC, IC and NC?",
+   "a": "Directly conserved (DC) projections lie within 300 bp of a direct alignment. Indirectly conserved (IC) projections are more than 300 bp from a direct alignment, or only possible through bridged alignments, with a summed distance to anchor points of at most 2.5 kb. Everything with a larger summed distance is nonconserved (NC).",
+   "kw": [
+    "DC",
+    "IC",
+    "NC"
+   ],
+   "info": "Extended data define these cut-offs as projection scores (summed distance scaled by genome size): DC at or above 0.979 and IC at or above 0.841. Parameterization is described in the Supplementary Note.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP improves ortholog detection",
+   "q": "Which species did they use for the mouse to chicken projections?",
+   "a": "16 species: mouse, chicken and 14 bridging species from reptilian and mammalian lineages, with ancestral vertebrate or chordate genomes as outgroups.",
+   "kw": [
+    "bridging species"
+   ],
+   "info": "The main text does not list the individual species. Fig. 2 shows them as silhouettes, including human, pig, opossum, emu, lizard, snake, turtle, frog and fish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP improves ortholog detection",
+   "q": "How does the fraction of DC mouse CREs change with evolutionary distance?",
+   "a": "More than 90% of mouse CREs were DC in rat, 50 to 70% within placental mammals, and fewer in nonmammalian vertebrates. In chicken only 22% of promoters and 10% of enhancers were DC.",
+   "kw": [
+    "DC",
+    "evolutionary distance"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP improves ortholog detection",
+   "q": "How much does IPP increase putative orthologs between mouse and chicken?",
+   "a": "Positionally conserved promoters increased more than threefold, from 18.9% (DC) to 65% (DC + IC), and enhancers more than fivefold, from 7.4% to 42%. This paired an additional 8,138 promoters and 9,699 enhancers with candidate chicken orthologs.",
+   "kw": [
+    "IPP",
+    "IC"
+   ],
+   "info": "The DC percentages here (18.9% and 7.4%) differ from the 22% and 10% given one paragraph earlier for chicken. The paper does not explain the difference.",
+   "concl": "IPP gains the most at large evolutionary distances, such as in nonmammalian vertebrates."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP improves ortholog detection",
+   "q": "How do IPP projections compare with LiftOver orthologs?",
+   "a": "In numbers, LiftOver performed similarly to IPP DC. More than 84% of LiftOver orthologs were also found by IPP as DC or IC, but only 53% of promoters and 24% of enhancers found by IPP matched LiftOver orthologs.",
+   "kw": [
+    "LiftOver",
+    "IPP"
+   ],
+   "info": "DC and LiftOver are not interchangeable. LiftOver considers the whole 500-bp CRE and calls an ortholog if more than 10% of it maps, whereas IPP uses only distance to anchor points. LiftOver thresholds below 10% did not substantially improve detection.",
+   "concl": "IPP-unique matches are not detectable through pairwise alignment. They are not just regions of lower alignability."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP improves ortholog detection",
+   "q": "How does IPP compare with halLiftover/HALPER multiple-genome alignments?",
+   "a": "Within placental mammals, IPP performed similarly or better than halLiftover/HALPER. IPP needed only 16 species and spanned far greater evolutionary distances.",
+   "kw": [
+    "halLiftover",
+    "HALPER"
+   ],
+   "info": "The comparison covered the four placental mammals in their collection.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - IPP improves ortholog detection",
+   "q": "Do IPP projections land on evolutionarily conserved regions in chicken?",
+   "a": "Yes. DC projections had the highest phastCons77way scores, and IC projections scored higher than NC even though they lack direct mouse to chicken alignability.",
+   "kw": [
+    "phastCons77way"
+   ],
+   "info": "Scores were taken for 500-bp windows centered on projections. Promoters: n = 4,461 DC, 9,237 IC, 6,532 NC. Enhancers: n = 2,588 DC, 10,162 IC, 16,712 NC. Enhancer DC scores varied more than promoter DC scores.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reanalysis of published CREs",
+   "q": "What happened when they applied IPP to published mouse CRE sets?",
+   "a": "IPP increased orthologs in all datasets. Heart enhancers went from 8.8% DC to 43.3% DC + IC, limb enhancers from 13.3% to 49.8%, and adult liver enhancers from 6.2% to 38.9%.",
+   "kw": [
+    "IPP",
+    "liver",
+    "limb"
+   ],
+   "info": "Heart enhancers were slightly less conserved than limb enhancers, confirming earlier trends, and slightly more conserved than adult liver enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reanalysis of published CREs",
+   "q": "What did the CEBP/A binding site reanalysis show?",
+   "a": "Only 5.7% of mouse CEBP/A ChIP-seq sites were DC in chicken, and 173 of these overlapped a chicken CEBP/A peak. Including IC raised positionally conserved sites to 32% and added 579 sites that were also CEBP/A-bound in chicken liver.",
+   "kw": [
+    "CEBP/A",
+    "ChIP-seq",
+    "liver"
+   ],
+   "info": "The original study had reported that only 2% of murine CEBP/A peaks were conserved in chicken.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional chromatin marks at projected CREs",
+   "q": "Do DC, IC and NC CREs differ in the mouse genome itself?",
+   "a": "No major differences. They showed comparable histone modification and accessibility enrichment, similar binding by heart TFs in ReMap data, and similar distances to the nearest TSS.",
+   "kw": [
+    "ReMap",
+    "chromatin marks"
+   ],
+   "info": "DC and IC enhancers were more often genic than NC enhancers, but 63% of genic DC versus 23% of genic IC enhancers overlapped exons, as expected from the higher sequence conservation of exons.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional chromatin marks at projected CREs",
+   "q": "How often do projected mouse heart CREs hit an accessible region in the chicken heart?",
+   "a": "DC: 74% of promoter and 33% of enhancer projections overlapped a chicken ATAC-seq peak. LiftOver orthologs were similar (76% and 31%). IC: 60% and 23%, but in much larger absolute numbers.",
+   "kw": [
+    "ATAC-seq",
+    "DC+IC+"
+   ],
+   "info": "Overlapping projections were labelled DC+ or IC+, and the rest DC- or IC-. At DC+ and IC+ sites, H3K27ac was enriched, with H3K4me3 at promoters and H3K4me1 at enhancers.",
+   "concl": "IPP IC regions identify functional chicken orthologs of mouse heart CREs. The authors estimate that up to 80% of conserved CREs may have been missed in most analyses to date."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional chromatin marks at projected CREs",
+   "q": "Does the same hold for adult liver CREs between mouse and opossum?",
+   "a": "Yes. 93% of DC promoters and 34% of DC enhancers overlapped an opossum H3K27ac peak, similar to LiftOver orthologs. IC was slightly lower (65% of promoters, 18% of enhancers) but in the same range as the heart data.",
+   "kw": [
+    "opossum",
+    "H3K27ac",
+    "liver"
+   ],
+   "info": "This used published mouse and opossum liver H3K4me3 and H3K27ac ChIP-seq data.",
+   "concl": "Sequence homology is an incomplete indicator of conserved regulatory activity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heart-specific SVM validates IPP",
+   "q": "What machine learning model did they use, and does it transfer from mouse to chicken?",
+   "a": "They used a gapped k-mer SVM (gkm-SVM) trained on mouse embryonic heart ATAC-seq peaks (no promoters) against nonheart peaks. It separated chicken heart-specific enhancers (AUC 0.90), heart and limb shared enhancers (AUC 0.83) and limb enhancers (AUC 0.72).",
+   "kw": [
+    "gkm-SVM",
+    "AUC"
+   ],
+   "info": "On held-out mouse chromosomes 1 and 2, the weighted RBF kernel model reached AUC 0.87 (Extended Data).",
+   "concl": "Sequence features learned in mouse predict heart-specific enhancers in chicken."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heart-specific SVM validates IPP",
+   "q": "How does tissue specificity relate to sequence alignability?",
+   "a": "There was a clear inverse relationship. Chicken heart ATAC-seq peaks that the SVM predicted as more heart-specific were less alignable to mouse than pleiotropic peaks.",
+   "kw": [
+    "tissue specificity",
+    "pleiotropic CREs"
+   ],
+   "info": "This matches a recent study showing lower sequence conservation of tissue-specific CREs.",
+   "concl": "Sequence alignability is a poor estimator of conserved regulatory activity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heart-specific SVM validates IPP",
+   "q": "How did the SVM classify DC, IC and NC projections in chicken?",
+   "a": "DC and IC projections were equally likely to be classified as heart-specific enhancers (AUC 0.74 and 0.76), while NC projections were not (AUC 0.58).",
+   "kw": [
+    "gkm-SVM",
+    "IC"
+   ],
+   "info": "Only projections overlapping chicken ATAC-seq peaks (DC+ or IC+) were included.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heart-specific SVM validates IPP",
+   "q": "Which sequence motifs drive the heart-enhancer prediction?",
+   "a": "Known motifs of master regulators of heart development, for example GATA, TEAD and HAND. Other top patterns matched CTCF, TCF12, Zic3, MAF, MEF2D, ZNF263, FOXO1::FLI1, NFIB and CREB1.",
+   "kw": [
+    "GkmExplain",
+    "TF-MoDISco",
+    "GATA"
+   ],
+   "info": "Contribution scores came from GkmExplain, and seqlets were consolidated into motifs with TF-MoDISco. Mouse and chicken patterns largely overlapped.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS conservation",
+   "q": "Do IPP ortholog pairs share TF binding sites?",
+   "a": "Yes. Promoter orthologs shared more TFBS than enhancer orthologs. DC+ and IC+ promoters shared similar numbers, distinct from DC- and IC- promoters. Among enhancers, DC+ shared the most, and IC+ pairs shared as many as DC- pairs.",
+   "kw": [
+    "TFBS",
+    "FIMO",
+    "301 heart TF motifs"
+   ],
+   "info": "They scanned with a curated set of 301 motifs from heart-expressed TFs. Orthologs with conserved chromatin activity always shared more TFBS than those without.",
+   "concl": "Functionally conserved orthologs are more likely to retain important TFBS."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS conservation",
+   "q": "What did ATAC-seq footprinting add?",
+   "a": "Functionally conserved DC and IC pairs shared more TF footprints than NC pairs or control pairs. DC and IC promoters were equal, and DC enhancers were slightly more likely to share footprints than IC enhancers.",
+   "kw": [
+    "TOBIAS",
+    "footprinting"
+   ],
+   "info": "The control was a nonorthologous ATAC-seq peak in the same TAD. This separates true orthologs from other enhancers of the same gene.",
+   "concl": "IPP identifies orthologous CREs that carry shared regulatory information independent of alignability."
+  },
+  {
+   "type": "qa",
+   "section": "Results - In vivo enhancer assays",
+   "q": "Which enhancers did they test in vivo, and how?",
+   "a": "They tested 2 DC and 6 IC mouse and chicken enhancer pairs (16 elements) near Hand2, Tbx20, Nkx2-5, Gata4, Pakap, Miga1 (mm72) and Auts2 (mm131). Each element drove a LacZ reporter integrated at a safe-harbor locus, and embryos were stained at E10.5.",
+   "kw": [
+    "LacZ",
+    "enhancer-reporter",
+    "H11"
+   ],
+   "info": "The empty vector gave background signal in somites, the otic vesicle and weakly in the outflow tract (OFT). So only LacZ in the ventricles or atria counted as conserved expression. Two IC pairs were smaller fragments of known mouse enhancers without sequence conservation in chicken.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - In vivo enhancer assays",
+   "q": "How many enhancer pairs drove conserved heart expression?",
+   "a": "Six of eight pairs: Hand2-DC, Tbx20-DC, Gata4-IC, Pakap-IC, Miga1-IC (mm72) and Auts2-IC (mm131). They drove conserved expression and also boosted the OFT signal.",
+   "kw": [
+    "Gata4",
+    "Pakap",
+    "Miga1"
+   ],
+   "info": "The two pairs that did not drive conserved ventricle or atrium expression were Nkx2-5-IC and Tbx20-IC (Extended Data Fig. 7). The intronic Pakap-IC enhancer (Pakap encodes Akap2) drove broad cardiac expression. The Miga1-mm72 fragments reproduced the known ventricle-specific pattern.",
+   "concl": "IPP can identify functional orthologs in vivo despite absent sequence conservation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - In vivo enhancer assays",
+   "q": "Were mouse and chicken orthologs ever different in activity?",
+   "a": "Yes. The mouse Auts2-mm131 fragment boosted OFT expression and was also active in the right ventricle and developing ear. The chicken ortholog reproduced OFT and ventricle expression but not ear expression.",
+   "kw": [
+    "Auts2"
+   ],
+   "info": "The Miga1-mm72 and Auts2-mm131 IC elements were 500-bp fragments of known enhancers of 2.7 kb and 1.2 kb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS shuffling",
+   "q": "What is the Kendall tau rank distance and why did they use it?",
+   "a": "It measures how similar two ranked lists are by counting the transpositions needed to turn one order into the other. A smaller distance means more similar lists. They used it to compare the 5 prime to 3 prime order of shared TFBS between mouse and chicken orthologs.",
+   "kw": [
+    "Kendall tau distance",
+    "TFBS order"
+   ],
+   "info": "Hypothesis: with similar numbers of shared TFBS, DC pairs keep motif order better, while IC pairs are more shuffled, which would make alignment harder. Example: a DC pair with 7 shared TFBS had Kd 0.14 (3 swaps), and an IC pair with 7 shared TFBS had Kd 0.43 (9 swaps).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS shuffling",
+   "q": "Are TFBS more shuffled in IC than in DC enhancers?",
+   "a": "Yes. In functionally conserved enhancer pairs with at least 6 shared TFBS, DC pairs had lower normalized Kd (median 0.27) than IC (median 0.33) and NC (median 0.33) pairs.",
+   "kw": [
+    "Kendall tau distance",
+    "Cohen's d"
+   ],
+   "info": "n = 373 DC, 554 IC and 520 NC pairs. The effect size (Cohen's d) for DC versus IC is marked as medium. The DC versus NC comparison is marked with three asterisks, but the legend defines only one and two asterisks, so its exact size category is unclear.",
+   "concl": "Conserved regulatory function depends less on exact sequence than on keeping the right balance of TFBS within the element."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude about earlier estimates of enhancer conservation?",
+   "a": "Their reanalysis suggests that published studies underestimate the number of chicken-conserved enhancers by about fivefold. The general trends do not change, but the interpretation of how strongly enhancers are conserved does.",
+   "kw": [
+    "indirect conservation"
+   ],
+   "info": "They argue that this reconciles divergent noncoding sequences with conserved 3D chromatin structure and gene expression.",
+   "concl": "Functional conservation of CREs across large evolutionary distances is much more common than currently appreciated."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations of IPP?",
+   "a": "IPP assumes orthology for any pair of positions within conserved synteny, whatever the DNA sequence. It may therefore miss orthologous elements in nonsyntenic regions or in very distantly related genomes.",
+   "kw": [
+    "IPP",
+    "synteny"
+   ],
+   "info": "Advantages: multiple bridging species can be chosen to suit the phylogeny of each species pair, and IPP needs only 16 genomes to perform like hierarchical alignments of hundreds.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What does the small fraction of DC+IC+ elements suggest?",
+   "a": "Even with stage-matched, high-confidence CREs, only a small fraction of orthologs keep conserved chromatin activity. The same holds for LiftOver orthologs and liver data, which suggests that alternative activity of orthologous enhancers may be more widespread than currently appreciated.",
+   "kw": [
+    "functional conservation"
+   ],
+   "info": "Functional conservation (chromatin state, TFBS content and predicted tissue specificity) appears relatively uncoupled from sequence conservation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future applications do the authors propose?",
+   "a": "IPP-identified ortholog pairs could be used as training input for ML models to learn which sequence changes are compatible with conserved function. IPP could also be applied to single-cell ATAC-seq or ChIP-seq from equivalent tissues, and IC elements could help interpret human disease noncoding variants, for example in congenital heart disease.",
+   "kw": [
+    "machine learning",
+    "congenital heart disease"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Samples and functional genomics",
+   "q": "How were the functional genomic data generated and processed?",
+   "a": "Hearts and forelimbs were dissected from C57BL/6 mouse (E10.5, E11.5) and chicken (HH22, HH24) embryos. They ran RNA-seq, Omni-ATAC-seq, ChIPmentation for H3K27ac, H3K4me1 and H3K4me3, and in situ Hi-C (DpnII), in two biological replicates each.",
+   "kw": [
+    "ChIPmentation",
+    "Omni-ATAC",
+    "Hi-C"
+   ],
+   "info": "Tools: STAR v2.7.9a for RNA-seq, bowtie2 v2.3.5.1 with Genrich v0.6.1 (-j ATAC mode) for peak calling, Juicer v1.6.0 with BWA-MEM v0.7.17 for Hi-C, and DESeq2 v1.36 for heart versus limb expression. Genomes were mm10/mm39 and galGal6. Some mouse heart RNA-seq data came from ENCODE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CRE calling, alignability and GRBs",
+   "q": "How were CREs defined and sequence conservation estimated?",
+   "a": "CRUP predicted promoter-like and enhancer-like regions from histone marks. Promoters had to overlap the TSS of a transcribed gene (at least 1 TPM), and enhancers had to be accessible (ATAC) and more than 2 kb from a promoter. Alignability was measured with UCSC LiftOver (minMatch = 0.1) in rtracklayer.",
+   "kw": [
+    "CRUP",
+    "LiftOver",
+    "CNEr"
+   ],
+   "info": "For the GRB analysis, CNEs (at least 70% identity over 50 bp) were called with CNEr v1.40.0, and GRBs were defined with a two-state HMM on CNE density. IPP code is available at github.com/tobiaszehnder/ipp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TFBS and machine learning analyses",
+   "q": "Which tools were used for motif, footprint and ML analyses?",
+   "a": "JASPAR 2022 vertebrate motifs were filtered to heart-expressed TFs (520) and reduced to 301 nonredundant motifs. They were scanned with FIMO (memes) in 500-bp windows, and footprints were called with TOBIAS v0.3.3. The heart-enhancer classifier was an lsgkm gkm-SVM, interpreted with GkmExplain, TF-MoDISco and TOMTOM.",
+   "kw": [
+    "FIMO",
+    "TOBIAS",
+    "gkm-SVM"
+   ],
+   "info": "TFBS order shuffling was quantified as Kendall tau distance with the R package rankdist, and effect sizes with Cohen's d (effsize).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - In vivo enhancer-reporter assays",
+   "q": "How were the transgenic enhancer-reporter embryos made?",
+   "a": "Each enhancer was integrated through PhiC31 recombination into mouse ES cells carrying an Hsp68::LacZ cassette at the H11 safe-harbor locus. Embryos were generated by tetraploid complementation and stained for LacZ at E10.5.",
+   "kw": [
+    "PhiC31",
+    "tetraploid complementation",
+    "LacZ"
+   ],
+   "info": "At least three independent embryos were stained per construct. Site-specific integration avoids the variable position effects of random transgenesis.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - IPP improves ortholog detection",
+   "text": "The DC fractions for mouse to chicken differ within the same section (22% and 10% versus 18.9% and 7.4%). Check the Supplementary Note to see which CRE set or threshold explains this."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could IPP with fish bridging species (for example spotted gar) find positionally conserved cavefish or zebrafish CREs for mammalian enhancers? IPP depends on conserved synteny, which may be limited after the teleost genome duplication."
+  },
+  {
+   "type": "note",
+   "section": "Results - TFBS shuffling",
+   "text": "If TFBS balance matters more than order, which grammar constraints (spacing, orientation) still limit enhancer function? The Kd differences are modest (median 0.27 vs 0.33)."
+  }
+ ]
+}

@@ -1,0 +1,626 @@
+{
+ "id": "Haberle_2016",
+ "title": "Promoter architectures and developmental gene regulation",
+ "link": "https://doi.org/10.1016/j.semcdb.2016.01.014",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Haberle_2016_SeminCellDevBiol_promoter_architectures.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is a core promoter?",
+   "a": "The minimal region that is sufficient to direct accurate initiation of transcription. It is crucial for the regulation of gene expression.",
+   "kw": [
+    "core promoter"
+   ],
+   "info": "Core promoters are highly diverse in their core promoter motifs, underlying sequence composition and patterns of transcription initiation. They also have distinct chromatin features, such as nucleosome positioning patterns and specific histone modifications.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does this review cover?",
+   "a": "The methods and results of genome-wide studies on the diversity of RNA polymerase II promoter architectures in vertebrates and other Metazoa, and how these architectures link to distinct modes of regulation in embryonic development and differentiation.",
+   "kw": [
+    "promoter architecture",
+    "RNAPII"
+   ],
+   "info": "This is a review (Haberle and Lenhard), not a primary research paper, so there are no new data or methods of its own.",
+   "concl": "Next-generation sequencing-based promoter mapping made it possible to classify promoters into functional groups that are regulated in different ways."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How large is the core promoter, and what assembles there?",
+   "a": "It typically extends about 40 bp upstream and downstream of the TSS. It is where the transcriptional machinery assembles: general transcription factors recognise core promoter elements and recruit RNAPII.",
+   "kw": [
+    "TSS",
+    "core promoter"
+   ],
+   "info": "TSSs are the individual nucleotides at the beginning of the gene where RNAPII starts transcription.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the general transcription factors, and what is the PIC?",
+   "a": "There are six GTFs: TFIIA, TFIIB, TFIID, TFIIE, TFIIF and TFIIH. They assemble on the core promoter step by step to form the pre-initiation complex (PIC).",
+   "kw": [
+    "GTF",
+    "PIC",
+    "TFIID"
+   ],
+   "info": "TFIID has the central role in recognising and binding specific core promoter elements, and it creates an environment that helps transcription start.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which core promoter elements are known, and are they universal?",
+   "a": "TATA-box, Initiator (Inr), DPE, DCE, BRE and MTE. None of them is universal: each occurs only in a fraction of promoters, in different combinations, and many promoters have none of them.",
+   "kw": [
+    "TATA-box",
+    "Inr",
+    "DPE"
+   ],
+   "info": "Some elements are tied to specific functions. For example, the TCT motif is found only in promoters of genes that encode parts of the translational machinery. The Fig. 1 legend stresses that hardly any real promoter has most of these elements, and that they co-occur in single promoters much less often than expected by chance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How many promoters overlap CpG islands, and why does the number look lower in fish?",
+   "a": "About 70% of human promoters are associated with a CGI, with similar proportions in mouse and chicken. The proportion looks much lower in amphibians and fish, probably because the CGI definition uses arbitrary thresholds optimised for mammalian genomes.",
+   "kw": [
+    "CpG island",
+    "CGI"
+   ],
+   "info": "CGIs are regions with higher C+G content and CG dinucleotide frequency than the bulk genome. The thresholds are set on C+G content, observed/expected CpG ratio and region length, and they do not work well for genomes with very different nucleotide composition.",
+   "concl": "CGI association splits vertebrate promoters into two main classes, high-CpG and low-CpG, which differ in promoter features and in the functions of the associated genes."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Are core promoters just passive docking sites for RNAPII?",
+   "a": "No. They receive and integrate regulatory inputs and turn them into a precise rate of transcription initiation, so they are central, active parts of transcriptional regulation.",
+   "kw": [],
+   "info": "Core promoter elements can decide how a promoter responds to cis-regulatory elements and trans-acting factors in multicellular organisms. In yeast they are major determinants of expression level.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TSS mapping",
+   "q": "Why can't PIC binding, histone marks or open chromatin map promoters precisely?",
+   "a": "They can identify loci that act as promoters, but they cannot map exact TSSs or measure how much transcription each promoter produces.",
+   "kw": [],
+   "info": "The alternative is to use expression data, but you need 5'-complete cDNAs to do it.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TSS mapping",
+   "q": "Why are standard transcriptome data (ESTs, RNA-seq) not good enough for finding TSSs?",
+   "a": "A typical EST is only a random short piece of the full cDNA, and RNA-seq coverage is uneven along the transcript and often misses the 5' end. Precise promoter mapping needs 5'-complete cDNAs.",
+   "kw": [
+    "RNA-seq",
+    "5' end"
+   ],
+   "info": "The FANTOM Consortium first sequenced full-length mouse cDNAs genome-wide. Later methods sequence short 5' tags (5' SAGE, oligo-capping, CAGE). With high-throughput sequencing these give quantitative, single-nucleotide TSS maps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TSS mapping",
+   "q": "What did 1 bp resolution TSS mapping show about motif positions?",
+   "a": "The distance between the TSS and motifs such as the TATA-box or DPE is much more constrained than earlier thought. Promoters with a single well-defined TSS usually sit at a fixed distance from their defining motif.",
+   "kw": [
+    "CAGE",
+    "motif spacing"
+   ],
+   "info": "In promoters with broader initiation patterns, even weak signals such as nucleosome positioning sequences and overall GC composition line up precisely with the most-used TSS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE",
+   "q": "How does CAGE work?",
+   "a": "The 7-methylguanosine cap is biotinylated and the RNA is reverse transcribed. RNase I digestion makes sure only 5'-complete cDNAs keep the biotin tag, and these are pulled down with streptavidin beads. A linker with a type III restriction site is ligated to the 5' end, a short tag (typically 27 bp) is cut off, then amplified, sequenced and mapped to the genome.",
+   "kw": [
+    "CAGE",
+    "EcoP15I",
+    "7-methylguanosine cap"
+   ],
+   "info": "Fig. 2 shows EcoP15I as the restriction enzyme and random primers for reverse transcription. Mapped tags give individual TSSs, which group into TSS clusters (promoters).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE",
+   "q": "What two kinds of information does CAGE give?",
+   "a": "First, a genome-wide single base-pair map of TSSs. Second, the relative level of transcripts started at each CAGE-detected TSS (CTSS), measured as the number of supporting tags.",
+   "kw": [
+    "CTSS"
+   ],
+   "info": "These data can be used for 5'-end-centred expression profiling and for studying promoter architecture.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE",
+   "q": "What has CAGE been used for beyond finding TSSs?",
+   "a": "FANTOM used it to find promoter classes based on TSS distribution, to reconstruct the regulatory networks behind differentiation and cell identity, and, because CAGE signal is enriched at enhancers, to build an atlas of active enhancers across the human body.",
+   "kw": [
+    "FANTOM",
+    "enhancers"
+   ],
+   "info": "CAGE TSSs are a more precise, cell-type-specific alternative to TSS positions from annotation databases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE",
+   "q": "Are all CAGE-detected TSSs real RNAPII initiation sites?",
+   "a": "No. Many CTSSs fall in internal exons, with tags spanning exon-exon junctions. They probably come from processed RNAs that are broken down into short RNAs with cap-like 5' structures.",
+   "kw": [
+    "CAGE artefacts"
+   ],
+   "info": "These short RNAs come only from a discrete subset of genes, and their abundance often does not track host gene expression. This argues against them being simple degradation intermediates. Their function is still unknown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - nascent TSS mapping",
+   "q": "What is the limitation of CAGE in time-course experiments, and what overcomes it?",
+   "a": "CAGE works on total mature RNA, so it reflects transcripts accumulated over an undefined time before isolation. This favours long-lived transcripts and lowers temporal resolution. GRO-cap combines GRO-seq nascent transcript detection with cap capture to map nascent TSSs at single base-pair resolution.",
+   "kw": [
+    "GRO-cap",
+    "GRO-seq",
+    "nascent RNA"
+   ],
+   "info": "Because GRO-cap maps both stable and unstable RNAs, it revealed the precise architecture of pervasive divergent transcription initiation in the human genome, along with its sequence and chromatin features.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - nucleosome positioning",
+   "q": "What is the typical nucleosome organisation at the start of a gene?",
+   "a": "A nucleosome-free region (NFR) flanked by two well-positioned nucleosomes (-1 and +1), followed by an array of nucleosomes over the gene body. The +1 nucleosome is the most tightly positioned, and phasing weakens further downstream.",
+   "kw": [
+    "NFR",
+    "+1 nucleosome"
+   ],
+   "info": "A nucleosome is a histone octamer wrapped by about 147 bp of DNA. The pattern was first shown genome-wide in yeast and later in metazoans. The +1 nucleosome carries various histone variants and modifications, which points to a role in regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - nucleosome positioning",
+   "q": "Which DNA sequence features favour nucleosome positioning?",
+   "a": "G/C usage rises where the nucleosome centre sits and A/T usage rises toward the flanks. Such 'container' sites can produce a strongly positioned nucleosome that acts as a barrier for phasing its neighbours.",
+   "kw": [
+    "container sites",
+    "10 bp periodicity"
+   ],
+   "info": "A finer 10 bp periodicity in A/T and G/C dinucleotides along nucleosome-bound DNA may help with precise positioning or rotational setting. How much primary sequence decides positioning in vivo is still debated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - nucleosome positioning",
+   "q": "Is the promoter nucleosome pattern set by sequence or by transcription?",
+   "a": "This is still debated. There is evidence both for transcription-independent, sequence-driven organisation and for organisation helped by transcription.",
+   "kw": [],
+   "info": "",
+   "concl": "There may be no single mechanism for all promoters. It may depend on the promoter type."
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - DNA methylation and CpG islands",
+   "q": "Where is DNA methylated in vertebrates, and how does it silence promoters?",
+   "a": "Mostly at CpG dinucleotides. Most CpGs are methylated except those in CGIs, and a small share of CGIs become methylated during development, permanently silencing their promoters. Methylation silences by blocking activator binding, recruiting methyl-CpG-binding domain proteins and co-repressors, and directly raising nucleosome affinity and stability.",
+   "kw": [
+    "DNA methylation",
+    "CGI"
+   ],
+   "info": "Methylation of a subset of CGIs helps ensure lineage-specific expression of developmental regulator genes. De novo methylation happens mainly during embryonic development, but also with ageing and carcinogenesis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - histone modifications",
+   "q": "Which histone marks distinguish promoters, enhancers, gene bodies and repressed regions?",
+   "a": "H3K4me3 marks promoters, H3K4me1 marks enhancers, H3K36me3 marks transcribed gene bodies, and H3K27ac marks active promoters and distal elements. H3K9me3 and H4K20me3 mark constitutive heterochromatin, and broad H3K27me3 domains cover silent developmental regulator genes in ESCs.",
+   "kw": [
+    "H3K4me3",
+    "H3K27ac",
+    "H3K27me3"
+   ],
+   "info": "Lysine acetylation almost always correlates with accessibility and transcriptional activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - histone modifications",
+   "q": "What are bivalent domains?",
+   "a": "In ESCs, developmental gene loci carry broad H3K27me3 together with punctate H3K4me3 at their promoters, even though they are not transcribed. This keeps them silent but poised for activation.",
+   "kw": [
+    "bivalent domains"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Chromatin - histone modifications",
+   "q": "Do histone marks reliably reflect activity?",
+   "a": "Not always. Transcription can happen without the canonical active marks in Drosophila and worm, and actual modification levels do not necessarily match predicted regulatory activity.",
+   "kw": [
+    "histone code",
+    "chromatin states"
+   ],
+   "info": "Combinations of marks were proposed as a 'histone code' and are used to divide the genome into chromatin states.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - core promoter elements",
+   "q": "How does the 'textbook' TATA promoter set the TSS?",
+   "a": "An A/T-rich TATA-box about 30 bp upstream is bound by TBP within TFIID, which starts PIC assembly. The DNA melts and initiation happens 25 to 30 bp downstream of the TATA-box in all eukaryotic models studied, except budding yeast where this distance varies.",
+   "kw": [
+    "TATA-box",
+    "TBP",
+    "TFIID"
+   ],
+   "info": "TFIID is made of TBP plus more than 10 TBP-associated factors (TAFs). Where a TATA-box is present it seems to be the only determinant of TSS position, whatever the sequence at the initiation site.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - core promoter elements",
+   "q": "How common is the TATA-box, and what is the Initiator?",
+   "a": "The TATA-box is in fewer than 15% of mammalian promoters. The Inr is more common: it overlaps the TSS and has a pyrimidine/purine (YR) dinucleotide at -1/+1, with the purine as the first transcribed base.",
+   "kw": [
+    "Inr",
+    "YR dinucleotide"
+   ],
+   "info": "The Inr consensus differs somewhat between Drosophila and vertebrates, but in both it is bound by homologous TAFs (including TAF1 and TAF2). Inr often occurs with a TATA-box or a DPE and acts synergistically with them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - core promoter elements",
+   "q": "What is the DPE and why is its spacing important?",
+   "a": "The DPE was found in TATA-less Drosophila promoters, and its core lies at exactly +28 to +32 relative to the Inr +1. This strict spacing is needed for cooperative TFIID binding, so Inr and DPE work as one unit.",
+   "kw": [
+    "DPE",
+    "TAF6",
+    "TAF9"
+   ],
+   "info": "Transcription from DPE promoters depends on TAF6 and TAF9, which bind the DPE. The DPE was suggested to be conserved in humans.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - core promoter elements",
+   "q": "What is special about the BRE and TFIIB?",
+   "a": "BRE is the only well-characterised core promoter motif bound by a factor other than TFIID. There is an upstream BRE and a downstream BRE flanking the TATA-box. TFIIB plays a central role in TSS selection in yeast and human.",
+   "kw": [
+    "BRE",
+    "TFIIB"
+   ],
+   "info": "TFIIB mutations shift TSS selection. The TATA-TSS spacing comes from interactions between TBP, TFIIB and RNAPII, with TFIIB central to setting the spacing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - core promoter elements",
+   "q": "How might CpG island promoters choose their TSS without canonical motifs?",
+   "a": "The mechanism is not well understood. CGIs often have several Sp1 sites, and TSSs often lie 40 to 80 bp downstream of them, suggesting Sp1 guides PIC formation into a loosely defined downstream window. TFIID subunits might then pick the sequences that best match their recognition motifs, such as an Inr.",
+   "kw": [
+    "Sp1",
+    "CGI promoters"
+   ],
+   "info": "Sp1 also helps keep CGIs hypomethylated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - core promoter elements",
+   "q": "Is the basal transcription machinery the same in all cells?",
+   "a": "No. There are tissue-specific TAF isoforms and TBP-related factors (TRFs) that form distinct TFIID-related complexes acting at distinct core promoters. Many of them are involved in germ cell development.",
+   "kw": [
+    "TRF",
+    "TAF isoforms"
+   ],
+   "info": "Variable machinery may need different core promoter recognition mechanisms, leading to different TSS selection patterns.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - chromatin features",
+   "q": "How does the +1 nucleosome relate to the PIC in different promoter types?",
+   "a": "In yeast, the TFIID-TAF complex is positioned by the +1 nucleosome at TATA-less promoters. TATA promoters are mostly depleted of TAFs and position the PIC through TBP and TFIIB contacts with DNA, so their +1 nucleosome can overlap the TSS.",
+   "kw": [
+    "+1 nucleosome",
+    "NFR",
+    "RNAPII pausing"
+   ],
+   "info": "In Drosophila, the +1 nucleosome sits more than 50 bp downstream of the TSS at many promoters, where it engages paused RNAPII. The NFR is DNase I hypersensitive, and promoter accessibility correlates with mRNA abundance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - chromatin features",
+   "q": "Which histone variants mark promoters?",
+   "a": "H2A.Z: in yeast it is in both the -1 and +1 nucleosomes, in Drosophila only in the +1 and further downstream ones. H3.3 is enriched at promoters almost always together with H2A.Z, and these double-variant nucleosomes are found inside NFRs.",
+   "kw": [
+    "H2A.Z",
+    "H3.3"
+   ],
+   "info": "H3.3/H2A.Z nucleosomes are very unstable, so standard nucleosome preparations miss them. This instability may help transcription factors reach promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - chromatin features",
+   "q": "How are H3K4me3 and H3K27ac linked to the transcription machinery?",
+   "a": "H3K27ac level correlates positively with expression, while H3K4me3 can also mark poised, non-transcribing promoters. TFIID binds H3K4me3 directly through a TAF3 domain, and this matters more for activating TATA-less promoters.",
+   "kw": [
+    "TAF3",
+    "H3K4me3"
+   ],
+   "info": "In Drosophila and worm, lack of H3K4me3 and H3K27ac during transcription seems typical of temporally regulated developmental genes, while ubiquitously transcribed genes have high levels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - chromatin features",
+   "q": "How could the TSS be positioned at promoters without known core elements?",
+   "a": "In a proposed model, TFIID binds methylated and acetylated nucleosomes and recruits TBP. TBP then binds TFIIB and places it just downstream toward the TSS. Since TFIIB dictates TSS selection, nucleosome-bound TFIID would partly direct TSS positioning.",
+   "kw": [
+    "TFIID",
+    "TFIIB"
+   ],
+   "info": "This is a proposed model, not one shown directly in the review.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "What are sharp versus broad promoters?",
+   "a": "Sharp (focused) promoters have a single well-defined TSS, often with a TATA-box about 30 bp upstream; they are a minority and are linked to tissue-specific, highly conserved genes. Broad (dispersed) promoters, the majority in mammals, have multiple equally used TSSs over a wider region and are strongly linked to CpG islands and ubiquitously expressed genes.",
+   "kw": [
+    "sharp promoters",
+    "broad promoters",
+    "CAGE"
+   ],
+   "info": "Promoters of key developmental regulators are also in the broad class. Many TFs show spatial biases relative to the TSS and help predict single-peak TSSs.",
+   "concl": "Broad promoters challenge the traditional idea of a gene having one precisely defined TSS."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "Do sharp and broad promoter classes also exist in Drosophila?",
+   "a": "Yes. PET and CAGE mapping showed the same split, even though flies have no CpG islands. Canonical positioned elements (TATA, Inr, DPE, MTE) are enriched in sharp promoters, and elements in broad promoters are less conserved across Drosophila genomes.",
+   "kw": [
+    "Drosophila",
+    "PET"
+   ],
+   "info": "The fly classes match the same functional gene categories and expression specificity as in mammals, which suggests conservation across Metazoa. They also respond to different enhancer sets that separate housekeeping and developmental programmes.",
+   "concl": "Unlike the vertebrate-specific CGI/non-CGI split, the sharp/broad classes are conserved across Metazoa."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "How do CGI and non-CGI promoters differ in regulation in mammals?",
+   "a": "In ES cells most CGI promoters have H3K4me3 (trithorax targets) and can drive transcription unless Polycomb represses them with H3K27me3. CpG-poor promoters seem inactive by default and are switched on selectively by cell-type- or tissue-specific factors.",
+   "kw": [
+    "Polycomb",
+    "trithorax",
+    "CGI promoters"
+   ],
+   "info": "CpG promoters are bound by RNAPII across many cell types, while non-CpG promoters get active marks and RNAPII only in some tissues. The two classes also differ in nucleosome occupancy and in needing remodelling complexes for induction.",
+   "concl": "CpG and non-CpG promoters in mammals are regulated in distinct ways."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "How does chromatin differ between sharp and broad promoters?",
+   "a": "Broad promoters have well-positioned nucleosomes with active marks downstream of the TSS and a clearer NFR upstream. Sharp promoters have less organised nucleosomes and more RNAPII present.",
+   "kw": [
+    "nucleosome organisation"
+   ],
+   "info": "Shown in both fly and mammals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "What defines Type I promoters?",
+   "a": "Genes specifically expressed in terminally differentiated adult tissues. They have sharp initiation, often a TATA-box or other positionally fixed elements, low CpG content in mammals, key regulatory inputs close to the promoter, and less ordered nucleosomes that can cover the TSS.",
+   "kw": [
+    "Type I",
+    "tissue-specific"
+   ],
+   "info": "When active they generally have H3K4me3 downstream of the TSS, and when inactive no RNAPII. A recent study suggests they may be active without canonical marks, so TF regulation may matter more than chromatin marks for them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "What defines Type II promoters?",
+   "a": "Ubiquitously active housekeeping genes. They have broad initiation; in mammals usually a single CGI covers the initiation region, and in Drosophila there is a distinct set of weaker core elements. TSSs lie in an NFR flanked by two well-positioned nucleosomes with active marks in all cell types.",
+   "kw": [
+    "Type II",
+    "housekeeping"
+   ],
+   "info": "There is no context-specific regulatory input (Fig. 3). The constant active marks seem linked to stable RNA production.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "What defines Type III (developmental) promoters, and how do they differ from Type II?",
+   "a": "Genes regulated during development and coordinated across many cells. Like Type II, they have broad initiation and a well-defined NFR, but their initiation region is even broader, and their CGIs are longer or multiple and often extend into the gene body. They carry PcG-related features (bivalent H3K27me3/H3K4me3 in ESCs) and integrate input from distal enhancers.",
+   "kw": [
+    "Type III",
+    "HCNEs",
+    "Polycomb"
+   ],
+   "info": "They are often surrounded by arrays of highly conserved non-coding elements (HCNEs) that act as enhancers and give precise spatial and temporal expression. The biggest differences from Type II are at the chromatin level.",
+   "concl": "Developmental promoters are built to receive long-range regulatory input."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter classes",
+   "q": "Is there a fourth promoter type?",
+   "a": "Possibly. Translational machinery genes (ribosomal proteins, translation elongation and initiation factors) have a sharp architecture with a pyrimidine-rich TCT initiator, in both Drosophila and mammals. At these promoters TBP is replaced in the PIC by TRF2.",
+   "kw": [
+    "TCT",
+    "TRF2",
+    "ribosomal protein genes"
+   ],
+   "info": "In Drosophila they lack a TATA-box or other fixed-spacing motifs. Mammalian TCT promoters sometimes have a canonical TATA-box, but this may reflect overlapping architectures used independently.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter usage dynamics",
+   "q": "How do alternative TSSs and bidirectional promoters add complexity?",
+   "a": "Many genes use alternative promoters to make different transcripts in spatial, temporal or lineage-specific ways, and CAGE showed many closely spaced TSSs within one promoter. Bidirectional promoters make up more than 10% of human promoters; they have broad initiation over a CGI and mirror-image sequence composition.",
+   "kw": [
+    "alternative promoters",
+    "bidirectional promoters"
+   ],
+   "info": "Bidirectional promoters can be regulated differently in each direction. The authors use them as an example of overlapping initiation codes read differently in different contexts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - promoter usage dynamics",
+   "q": "Does promoter usage change across development and tissues?",
+   "a": "Yes. In Drosophila embryos, promoters of maternally inherited transcripts differ in motif composition from zygotic promoters, and many maternal genes have alternative promoters used later. In human and mouse tissues, TSS selection inside many CGI broad promoters varies between tissues.",
+   "kw": [
+    "maternal transcripts",
+    "TSS dynamics"
+   ],
+   "info": "The authors suggest this fine-scale, single-base-pair regulation of initiation is likely related to epigenetic regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - overlapping codes",
+   "q": "What did the zebrafish study find about transcription initiation codes?",
+   "a": "The initiation code in the transcribing oocyte differs from the one in somatic cells of the developing embryo. Thousands of promoters active in both, including housekeeping promoters, carry both sets of determinants, mostly intertwined on the same stretch of DNA.",
+   "kw": [
+    "zebrafish",
+    "oocyte",
+    "overlapping codes"
+   ],
+   "info": "Earlier FANTOM data had shown context-dependent TSS preferences in broad promoters but no clear rules.",
+   "concl": "Vertebrate core promoters can hold two independent '2-in-1' initiation codes."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - overlapping codes",
+   "q": "How is the TSS chosen in the zebrafish oocyte?",
+   "a": "Selection depends on a motif: transcription always starts at a fixed distance (about 30 bp downstream) from a weak TATA-like A/T-rich element, the W-box. Several W-boxes give a composite sharp architecture that looks like a broad promoter.",
+   "kw": [
+    "W-box"
+   ],
+   "info": "Oocyte initiation shares its main features with canonical TATA-dependent initiation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - overlapping codes",
+   "q": "How is the TSS chosen in zebrafish somatic (embryonic) cells?",
+   "a": "The stable position of the +1 nucleosome defines a 'catchment area' in which many TSSs can fire, giving a broad architecture. Initiation favours YR dinucleotides at -1/+1, and the TSS about 50 bp upstream of the +1 nucleosome is used most (the dominant peak).",
+   "kw": [
+    "+1 nucleosome",
+    "catchment area",
+    "dominant TSS"
+   ],
+   "info": "The dominant TSS position alone strongly predicts the +1 nucleosome position and reveals a nucleosome-bound DNA sequence pattern downstream, in both zebrafish and human.",
+   "concl": "Nucleosome positioning and TSS selection are tightly linked in broad promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - overlapping codes",
+   "q": "How general are overlapping codes, and what are they for?",
+   "a": "This is unclear because precise TSS data are lacking for other cell types and organisms. There is unpublished evidence of an oocyte-specific code in another fish species and a smaller code change in mouse spermatogenesis, while global TSS use is very stable across somatic cell types.",
+   "kw": [
+    "germline"
+   ],
+   "info": "The purpose of a separate oocyte code is unknown. It might be an efficient way to switch the transcriptional repertoire genome-wide between oocyte and somatic cells.",
+   "concl": "New methods are needed to detect and separate overlapping sets of promoter elements before promoters are classified."
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - long-range regulation",
+   "q": "How do enhancers reach their target promoters?",
+   "a": "The most plausible model is looping: the distant enhancer loops out the intervening DNA to contact the promoter. Loop formation depends on sequence-specific TFs bound at both enhancer and promoter.",
+   "kw": [
+    "enhancers",
+    "looping",
+    "3C"
+   ],
+   "info": "Enhancer loops seem to form before gene activation and associate stably with paused RNAPII, ready for fast activation. Chromosome conformation capture methods exploit this proximity. How enhancer-promoter specificity is achieved is still poorly understood.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Promoter architecture - long-range regulation",
+   "q": "Does the promoter type decide which enhancers a gene responds to?",
+   "a": "There is growing evidence that it does. In Drosophila, specific core elements make promoters respond to distinct enhancers, and genome-wide work showed enhancers prefer either housekeeping or developmental core promoters.",
+   "kw": [
+    "bystander genes",
+    "syntenic blocks",
+    "HCNEs"
+   ],
+   "info": "In vertebrates, key developmental genes in large syntenic blocks differ in promoter sequence, chromatin and transcriptional features from neighbouring bystander genes. This likely marks them as the targets of the surrounding HCNEs (Fig. 5).",
+   "concl": "The core promoter is an active participant in long-range gene regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What does promoter architecture determine about a gene, according to the authors?",
+   "a": "Whether it responds to long-range regulatory input, where most of its regulatory input lies relative to the TSS, whether its output is stable or bursty, and which epigenetic marks it has when active or repressed.",
+   "kw": [
+    "promoter architecture"
+   ],
+   "info": "The architectural differences look ancient (different promoter types are seen in yeast) and separate constitutive from regulated or inducible genes. The authors propose developmental promoters evolved from an ancestral class by gaining the ability to integrate many regulatory inputs in a way selection can easily shape.",
+   "concl": "Core promoter architecture is central to how a gene is regulated in development and differentiation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What remains to be done?",
+   "a": "Promoter architectures still need to be classified, and functionally equivalent architectures identified in distantly related species. Wider use of CAGE and comparative promoterome analysis should help find a finite number of promoter classes for functional and mechanistic study.",
+   "kw": [
+    "comparative promoteromics",
+    "CAGE"
+   ],
+   "info": "It is also unknown how widespread the oocyte versus somatic overlapping codes are, and when in Metazoan evolution (or earlier) they appeared.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Introduction",
+   "text": "CGI definitions use mammal-optimised thresholds, so CpG promoter proportions in fish look artificially low. Worth checking which CGI definition to use for Astyanax or zebrafish promoter analyses."
+  },
+  {
+   "type": "note",
+   "section": "Promoter architecture - overlapping codes",
+   "text": "How widespread are oocyte-specific versus somatic transcription initiation codes in other fish and other Metazoa, and what is the oocyte code for? The authors mention unpublished evidence in another fish species."
+  },
+  {
+   "type": "note",
+   "section": "Methods - CAGE",
+   "text": "What do the CAGE-sensitive short capped RNAs that map to internal exons and introns do? They come from a discrete subset of genes and do not track host gene expression."
+  }
+ ]
+}

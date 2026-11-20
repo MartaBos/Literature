@@ -1,0 +1,594 @@
+{
+ "id": "Amblard_2025",
+ "title": "A dual enhancer-attenuator element ensures transient Cdx2 expression during mouse posterior body formation",
+ "link": "https://doi.org/10.1016/j.devcel.2025.06.006",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Amblard_2025_DevCell_Cdx2_enhancer_attenuator.txt",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Notes from the full text in PubMed Central (text version; figures not included), not the journal PDF.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this paper address?",
+   "a": "How cells control the onset, maintenance and termination of Cdx2 expression during posterior body formation, since the duration of this transcription factor is critical for assembling the trunk of the body plan.",
+   "kw": [
+    "Cdx2",
+    "cis-regulatory logic"
+   ],
+   "info": "They combined CRISPR deletion of regulatory elements with in vitro ESC models and in vivo validation in mouse embryos.",
+   "concl": "Distinct enhancers plus a repressive element embedded at the Cdx2 locus act sequentially to drive transient Cdx2 expression."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is an 'attenuator' as defined here?",
+   "a": "A minimal cis-regulatory region that relies on a nuclear receptor motif to extinguish Cdx2, i.e. a transiently repressive element that limits the duration of expression rather than fully silencing it.",
+   "kw": [
+    "attenuator",
+    "silencer"
+   ],
+   "info": "Changing a single nuclear receptor motif converts the attenuator into an enhancer with the opposite regulatory behaviour.",
+   "concl": "Dual cis-regulatory logic (enhancer plus attenuator) gives precise spatiotemporal control of gene expression."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What do CDX transcription factors do in development?",
+   "a": "CDX1, CDX2 and CDX4 are partially redundant homeobox TFs central to caudal body plan development; removing them causes loss of most post-occipital tissues, in part through their regulation of Hox genes.",
+   "kw": [
+    "CDX",
+    "Hox"
+   ],
+   "info": "Reduced or prolonged CDX expression respectively truncates or expands the spinal cord territory at the expense of hindbrain fates, in multiple species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why focus on Cdx2 rather than Cdx1 or Cdx4?",
+   "a": "Unlike Cdx1 and Cdx4, genetic removal of Cdx2 alone demonstrates an indispensable role in posterior body formation.",
+   "kw": [
+    "Cdx2"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where and when is Cdx2 expressed in the mouse embryo?",
+   "a": "Cdx2 is detected during gastrulation in the caudal epiblast (CEpi), which harbours neuromesodermal progenitors (NMPs), and is maintained later in the hindgut, but is only transiently expressed in NMP derivatives such as spinal cord and somites.",
+   "kw": [
+    "caudal epiblast",
+    "NMPs"
+   ],
+   "info": "NMPs contribute to the developing spinal cord and somites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which signals regulate Cdx2?",
+   "a": "WNT and FGF signalling promote caudal development and Cdx2 expression, while retinoic acid (RA) signalling restricts Cdx2 in the spinal cord in vivo and in vitro.",
+   "kw": [
+    "WNT",
+    "FGF",
+    "retinoic acid"
+   ],
+   "info": "The transition from caudal epiblast to spinal cord progenitor coincides with a switch from FGF to RA signalling.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What classes of cis-regulatory elements (CREs) are mentioned?",
+   "a": "Promoters, enhancers, silencers and insulators, plus more recently described elements such as tethers and facilitators, whose genome-wide prevalence is still unclear.",
+   "kw": [
+    "CRE",
+    "silencer"
+   ],
+   "info": "Predicting the cellular context and function of individual CREs remains challenging.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about Cdx2 regulatory elements?",
+   "a": "Several Cdx2 enhancers partially recapitulate the trophectoderm, caudal epiblast or intestinal expression pattern, and an 11 kb region flanking Cdx2 recapitulates caudal tailbud expression between E7.5 and E10.5.",
+   "kw": [
+    "enhancer reporter"
+   ],
+   "info": "Individual elements within this region show enhancer activity in transgenic reporter embryos but none recapitulates the full Cdx2 expression pattern.",
+   "concl": "How multiple CREs in their native context control Cdx2 initiation, maintenance or termination was unresolved."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use an in vitro ESC model instead of straight knockouts in embryos?",
+   "a": "To dissect the mechanisms controlling Cdx2 without compromising axial elongation or trophectoderm specification, which are disrupted by Cdx2 loss in the embryo.",
+   "kw": [
+    "mESC",
+    "directed differentiation"
+   ],
+   "info": "They combined genome engineering with directed differentiation of pluripotent ESCs to model posterior body formation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transient CRE accessibility",
+   "q": "How did they look for candidate Cdx2 CREs?",
+   "a": "They combined an in vitro bulk ATAC-seq time course of mouse ESCs differentiating into spinal cord progenitors (days 2-5) with pseudobulk snATAC-seq profiles of matching cell types from E7.5-E8.75 whole mouse embryos (10x multiome).",
+   "kw": [
+    "ATAC-seq",
+    "snATAC-seq"
+   ],
+   "info": "In vitro data from Metzis et al. (E-MTAB-6337); in vivo multiome from Argelaguet et al. (GSE205117).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transient CRE accessibility",
+   "q": "Which Cdx2 CREs were transiently accessible?",
+   "a": "Three elements: the Cdx2 promoter, an Intron1 CRE and a 5' CRE upstream of the TSS. They are accessible in Cdx2-positive caudal epiblast-like (CEpiL) cells and in the CEpi in vivo, but not in Cdx2-lacking spinal cord progenitors.",
+   "kw": [
+    "Intron1",
+    "5' CRE"
+   ],
+   "info": "By contrast, the intestinal enhancer (Iee) was constitutively accessible and the trophectoderm enhancer (Tee) largely lacked accessibility in these conditions.",
+   "concl": "A defined set of Cdx2 CREs is transiently accessible exactly when Cdx2 is expressed."
+  },
+  {
+   "type": "qa",
+   "section": "Results - onset vs maintenance",
+   "q": "How were CEpiL versus AEpiL cells generated in vitro?",
+   "a": "Caudal epiblast-like (CEpiL) cells were made with a pulse of bFGF plus the GSK3 inhibitor CHIR99021 and express Cdx2; anterior epiblast-like (AEpiL) control cells were induced by bFGF alone and do not express Cdx2.",
+   "kw": [
+    "CHIR99021",
+    "bFGF"
+   ],
+   "info": "Cdx2 induction was read out by RT-qPCR, immunofluorescence and flow cytometry (quantitative, single-cell).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - onset vs maintenance",
+   "q": "Which deletion blocked Cdx2 induction in CEpiL cells?",
+   "a": "Deletion of the Intron1 CRE severely impaired Cdx2 induction at transcript and protein level; removal of the promoter had the same effect.",
+   "kw": [
+    "dIntron1",
+    "CRISPR-Cas9"
+   ],
+   "info": "Delta-5', Delta-Iee and Delta-Tee cells were indistinguishable from WT in CEpiL conditions.",
+   "concl": "The intronic CRE is indispensable for Cdx2 onset despite the presence of other accessible CREs at the locus."
+  },
+  {
+   "type": "qa",
+   "section": "Results - onset vs maintenance",
+   "q": "Do Intron1-deleted cells lose caudal identity altogether?",
+   "a": "No. Immunofluorescence showed that Delta-Intron1 cells still express TBXT (T/BRA) in CEpiL conditions despite the loss of CDX2.",
+   "kw": [
+    "TBXT"
+   ],
+   "info": "n = 3 biological replicates; scale bar 500 micrometres.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - onset vs maintenance",
+   "q": "Is Intron1 required for Cdx2 in paraxial mesoderm conditions?",
+   "a": "No. Although Cdx2 is initially lost in CEpiL cells lacking Intron1, CDX2 recovers by day 4 under presomitic mesoderm (PSM) conditions to levels comparable to WT.",
+   "kw": [
+    "PSM"
+   ],
+   "info": "CDX2 is normally sustained longer in PSM (days 3-5) than in spinal cord (days 3-4).",
+   "concl": "Intron1 plays a cell-type-specific role, implying an alternative CRE operates in PSM."
+  },
+  {
+   "type": "qa",
+   "section": "Results - onset vs maintenance",
+   "q": "What does the 5' CRE do?",
+   "a": "Delta-5' cells induce CDX2 normally in CEpiL conditions but show reduced CDX2 at day 4 in both spinal cord and PSM conditions, so Cdx2 is downregulated earlier and its expression window is shortened.",
+   "kw": [
+    "5' CRE",
+    "maintenance"
+   ],
+   "info": "RT-qPCR for spliced versus nascent transcripts confirmed the reduction occurs at the level of transcription. The 5' CRE is also preferentially bound by CDX2 itself in CEpiL cells, suggesting a positive feedback loop.",
+   "concl": "Onset (Intron1) and maintenance (5') of Cdx2 are controlled by separate, nonredundant CREs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - P1 and P2 subregions",
+   "q": "What did WNT effector ChIP-seq reveal at the Cdx2 locus?",
+   "a": "Despite TCF/LEF motifs in multiple accessible CREs, CTNNB1 (beta-catenin), LEF1 and TCF3 occupy only the intronic CRE, and they bind two distinct subregions called P1 and P2 depending on the cell state.",
+   "kw": [
+    "LEF1",
+    "CTNNB1",
+    "TCF3"
+   ],
+   "info": "Data from naive mouse ESCs versus CEpiL cells (Blassberg et al., GSE162774).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - P1 and P2 subregions",
+   "q": "How does occupancy at P1 versus P2 differ between naive ESCs and CEpiL cells?",
+   "a": "In naive pluripotency (Cdx2 repressed), P2 is occupied by CTNNB1 and TCF3; in CEpiL cells (Cdx2 expressed), LEF1 preferentially occupies P1 while TCF3 and, to a lesser extent, CTNNB1 are depleted at P2.",
+   "kw": [
+    "P1",
+    "P2"
+   ],
+   "info": "HDAC3 accumulates at P2 in naive pluripotency, whereas the co-activator p300 occupies P1 in CEpiL cells.",
+   "concl": "P1 and P2 were hypothesised to mediate opposing functions: activation at P1 and repression at P2."
+  },
+  {
+   "type": "qa",
+   "section": "Results - P1 and P2 subregions",
+   "q": "What is the H3K27me3 pattern at Cdx2?",
+   "a": "H3K27me3 is deposited broadly across Cdx2 in both anterior and caudal (Cdx2-expressing) epiblast in vivo and in ESCs and spinal cord progenitors in vitro, contrasting with the sharply defined P1/P2 subregions.",
+   "kw": [
+    "H3K27me3",
+    "Polycomb"
+   ],
+   "info": "Data from Yang et al. (GSE98101), Mazzoni et al. (GSE39433) and Kanellopoulou et al. (GSE60397).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - P1 and P2 subregions",
+   "q": "How big are P1 and P2 relative to the whole intronic CRE?",
+   "a": "P1 encompasses about 225 bp within the 990 bp Intron1 CRE; deleting P1 alone recapitulated the effect of deleting the entire intronic CRE, blocking Cdx2 induction despite active WNT signalling.",
+   "kw": [
+    "P1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - P1 and P2 subregions",
+   "q": "What happens when P2 is deleted?",
+   "a": "Delta-P2 cells still induce Cdx2 normally, but in spinal cord conditions they prolong Cdx2: higher spliced and nascent transcript at day 3.5, and at day 4 higher spliced transcript and protein, with a persisting CDX2-positive population unlike WT.",
+   "kw": [
+    "dP2",
+    "nascent transcription"
+   ],
+   "info": "At day 4 nascent transcription was comparable between WT and Delta-P2, so the effect on transcription is transient.",
+   "concl": "P2 is a critical region for extinguishing Cdx2 in spinal cord progenitors."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RARE composition",
+   "q": "What motif difference distinguishes P1 from P2?",
+   "a": "Both carry SOX and TCF/LEF sites, but P1 contains three separate conserved RXRG motifs while P2 lacks any recognisable RXRG motif and instead contains a single, rodent-specific RARB motif.",
+   "kw": [
+    "RARE",
+    "RXRG",
+    "RARB"
+   ],
+   "info": "Motifs were predicted with TFBStools against JASPAR2022 matrices (Table S3).",
+   "concl": "RA response element (RARE) composition is the key difference between the activating and repressive subregions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RARE composition",
+   "q": "How do RA receptor levels change along the differentiation?",
+   "a": "Rarg is detected throughout the differentiation, whereas Rxrg levels drop and Rarb levels rise as single cells progress from CEpiL to spinal cord identity.",
+   "kw": [
+    "Rarb",
+    "Rxrg",
+    "Rarg"
+   ],
+   "info": "Based on reanalysis of single-cell data from Gouti et al.",
+   "concl": "The combination of nuclear receptor subtypes present in each cell type may determine Cdx2 regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RARE composition",
+   "q": "What did the ATRA dose response show?",
+   "a": "CEpiL cells exposed to increasing ATRA showed increased Rarb in the resulting day 4 spinal cord cells, with a significant reduction in Cdx2 at 1 micromolar ATRA relative to the no-ATRA control.",
+   "kw": [
+    "ATRA"
+   ],
+   "info": "ATRA concentrations tested ranged from 1 nM to 1 microM; standard spinal cord differentiation uses 10 nM ATRA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - RARE composition",
+   "q": "What happened when only the RARB motif was disrupted?",
+   "a": "ESCs in which 75% of the P2 RARB motif was disrupted (Delta-Rarb) mimicked Delta-P2 cells: day 4 spinal cord cells showed increased Cdx2 transcript and protein relative to WT.",
+   "kw": [
+    "dRarb"
+   ],
+   "info": "Generated by HDR with recombinant oligos plus Cas9 protein.",
+   "concl": "The repressive activity of P2 depends on the RARB motif."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RARE composition",
+   "q": "What are the RAswitch cells and what do they show?",
+   "a": "RAswitch ESCs have the single P2 RARB motif replaced by one copy of the highest-affinity RXRG site from P1. They show increased Cdx2 transcript and protein in CEpiL cells and maintain CDX2 as they progress to spinal cord identity, whereas control cells downregulate it.",
+   "kw": [
+    "RAswitch",
+    "motif switch"
+   ],
+   "info": "RAswitch cells therefore carry one extra RXRG site relative to control.",
+   "concl": "A single nuclear receptor motif substitution converts the attenuator P2 into an enhancer; the number and composition of RAREs determine the regulatory effect."
+  },
+  {
+   "type": "qa",
+   "section": "Results - RARE composition",
+   "q": "How do RA receptors connect to the WNT and SOX2 machinery at P2?",
+   "a": "AlphaFold-Multimer predictions indicate both RARB and RXRG can interact with LEF1 and SOX2, and ChIP-qPCR showed that in day 4 spinal cord RAswitch cells RARB enrichment at P2 is reduced together with LEF1 and SOX2, while LEF1 and SOX2 at P1 are unchanged.",
+   "kw": [
+    "AlphaFold-Multimer",
+    "SOX2",
+    "LEF1"
+   ],
+   "info": "SOX2 levels in CEpiL cells are known to dictate genome-wide occupancy of WNT effectors, including at the Cdx2 intronic CRE.",
+   "concl": "Loss of Cdx2 in spinal cord cells coincides with accumulation of LEF1 and SOX2 at P2 in an RARB-dependent manner."
+  },
+  {
+   "type": "qa",
+   "section": "Results - in vivo validation",
+   "q": "How was P2 tested in vivo?",
+   "a": "CRISPR-Cas9 with the same gRNA pairs used in vitro was microinjected into fertilised mouse zygotes to delete P2 or disrupt the RARB site; somite-matched transient transgenic embryos were collected at about E9 (harvested 9.5 dpc).",
+   "kw": [
+    "transient transgenic",
+    "zygote injection"
+   ],
+   "info": "Mutants carried mutations and deletions within P2; control littermates had an entirely intact P2 (WT P2).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - in vivo validation",
+   "q": "What phenotype did P2-dRarb mutant embryos show?",
+   "a": "CDX2 was expanded rostrally, most notably in the mesoderm, compared with the tailbud- and caudal-neural-tube-restricted pattern in P2-WT embryos, and mutants had abnormal tailbud morphology.",
+   "kw": [
+    "CDX2",
+    "tailbud"
+   ],
+   "info": "The abnormal tailbud phenotype resembles that caused by prolonged Cdx2 expression in mouse embryos.",
+   "concl": "P2 is required to restrict CDX2 activity in vivo."
+  },
+  {
+   "type": "qa",
+   "section": "Results - in vivo validation",
+   "q": "Was regional identity altered in the mutants?",
+   "a": "Yes. The caudal limit of HOXB4 reached somite 9 in P2-dRarb mutants versus somite 10 in controls, indicating a shift in somite regional identity.",
+   "kw": [
+    "HOXB4",
+    "somite"
+   ],
+   "info": "Assessed by whole-mount immunofluorescence on somite-matched embryos; scale bar 500 micrometres.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main model proposed for Cdx2 control?",
+   "a": "Multiple functionally discrete CREs convert extrinsic cues into a finite window of expression: Intron1 (specifically P1) drives onset in CEpiL conditions, the 5' CRE maintains expression in spinal cord and paraxial mesoderm progenitors, and P2 attenuates Cdx2 to terminate it.",
+   "kw": [
+    "dual enhancer-attenuator"
+   ],
+   "info": "Single CRE deletions were sufficient to perturb the expression window and were not compensated by other accessible CREs.",
+   "concl": "Nonredundant, sequentially used CREs ensure transient Cdx2 expression."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why call P2 an attenuator rather than a silencer?",
+   "a": "Because P2 represses Cdx2 only in a limited, context-specific way: its removal transiently alters nascent transcription in spinal cord progenitors but not in CEpi conditions, and Cdx2 is still eventually extinguished without it.",
+   "kw": [
+    "attenuator"
+   ],
+   "info": "The authors suggest additional, potentially long-range CREs may explain the eventual extinction of Cdx2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do these results sit with earlier reporter assays of the same region?",
+   "a": "Earlier transgenic mouse reporter studies found that a fragment containing P2 shows enhancer activity, so the authors cannot exclude that P2 is bifunctional in another context.",
+   "kw": [
+    "bifunctional element"
+   ],
+   "info": "They argue that targeted base pair substitutions at CREs in their native context help identify repressive elements that reporter assays can miss.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is chromatin accessibility not enough to predict CRE function here?",
+   "a": "TCF/LEF motifs are present and accessible in multiple Cdx2 CREs, yet these do not compensate for loss of the intronic CRE in Delta-Intron1 or Delta-P1 cells, so an additional mechanism such as context-specific TF cooperation must operate.",
+   "kw": [
+    "accessibility",
+    "TCF/LEF"
+   ],
+   "info": "TCF/LEF binding specificity is driven by context-specific TFs and their expression level; SOX2 levels dictate WNT effector occupancy at the Cdx2 intronic CRE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is known about RAREs genome-wide?",
+   "a": "Of roughly 14,000 predicted potential RAREs in the mouse genome, only a handful have been experimentally validated, as both enhancers and silencers, and what determines which activity they have remains unclear.",
+   "kw": [
+    "RARE"
+   ],
+   "info": "Here the authors identify both activating (RXRG, P1) and repressive (RARB, P2) RAREs for Cdx2, suggesting RARB and RXRG exert opposing roles.",
+   "concl": "Differences in nuclear receptor recruitment at individual RAREs may underpin the pleiotropic role of RA in development."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which cofactors are implicated in repressive versus activating RAREs?",
+   "a": "RARG recruits pCIP/p300 co-activators at a Hoxa1 RARE, whereas RARB/RARA occupancy abolishes p300 and promotes SUZ12 recruitment; NCOR1/2, HDAC and Polycomb complexes are associated with RA-dependent repression.",
+   "kw": [
+    "p300",
+    "HDAC3",
+    "PRC"
+   ],
+   "info": "In this study HDAC3 accumulates at P2 in repressive conditions, but how this relates to RARB is unresolved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might short-range silencing be a general principle?",
+   "a": "Predicted and validated silencers tend to lie close to transcription start sites and adjacent to enhancers, as for Cdx1, which is regulated by a silencer about 400 bp upstream of its promoter and about 500 bp from an enhancer.",
+   "kw": [
+    "silencer",
+    "Cdx1"
+   ],
+   "info": "Physical obstruction of enhancers or of enhancer-promoter contact could silence expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - limitations",
+   "q": "What do the authors state as the main limitation?",
+   "a": "How P2 attenuates Cdx2 is not resolved; future work must determine how RARB occupancy at P2 affects transcription.",
+   "kw": [],
+   "info": "They also note it is undetermined whether P2 acts in part at the level of splicing or transcript stability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell lines and genome editing",
+   "q": "Which ESC line and editing strategy were used?",
+   "a": "All lines derive from the male XY HM1 mouse ESC line (129/Ola strain) used as WT control. Deletion lines were made by electroporating pairs of CRISPRs targeting both ends of the region (PX459 SpCas9-2A-Puro), with puromycin selection at 1.5 ug/mL.",
+   "kw": [
+    "HM1",
+    "PX459"
+   ],
+   "info": "Ten clones were picked per line, genotyped and validated by DNA sequencing for biallelic deletion; most knockouts were confirmed with a second clone (dIntron1, dTee, dProm, dP2, dIee).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell lines and genome editing",
+   "q": "How were the RAswitch and dRarb point-edited lines made?",
+   "a": "By electroporating HDR recombinant oligos together with the sgRNA and Cas9 protein into HM1 cells, with Alt-R Cas9 electroporation enhancer and Alt-R HDR EnhancerV2 during recovery, then picking and sequencing 10 clones.",
+   "kw": [
+    "HDR",
+    "Alt-R Cas9"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - differentiation",
+   "q": "What is the differentiation protocol for spinal cord and PSM progenitors?",
+   "a": "ESCs are plated at 40,000 cells per 35 mm gelatin-coated dish in N2B27 with 10 ng/ml bFGF; CEpiL cells get bFGF for 2 days then bFGF plus 5 uM CHIR99021 for one day; spinal cord cells then receive 10 nM ATRA to day 5, while PSM cells get 5 uM CHIR for 2 further days.",
+   "kw": [
+    "N2B27",
+    "ATRA",
+    "CHIR99021"
+   ],
+   "info": "EpiL and AEpiL cells are grown 2 and 3 days respectively in N2B27 plus bFGF alone. PSM differentiation uses B27 without vitamin A. Media refreshed daily from day 2 to 5.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - assays",
+   "q": "How were CDX2 levels quantified?",
+   "a": "By flow cytometry on fixed cells stained with a live/dead dye and antibodies (overnight primary at 4 C, 2 h secondary), acquired on a BD SymphonyA3 with FACSDiva and analysed in FlowJo, alongside RT-qPCR normalised to beta-actin by the delta-delta CT method.",
+   "kw": [
+    "flow cytometry",
+    "RT-qPCR"
+   ],
+   "info": "Two technical replicates per sample were averaged before normalisation; RT-qPCR used at least three independent experiments per primer pair, with Superscript III and PowerUp SYBR-Green.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - assays",
+   "q": "What ChIP-qPCR protocol was used?",
+   "a": "Dual fixation with 2 mM DSG for 45 min then 1% PFA for 10 min, shearing of about 5 x 10^6 cells with a Diagenode Bioruptor Plus (20 cycles of 30 s on/30 s off, high setting), overnight IP with 5 ug antibody on protein G Dynabeads, and enrichment normalised against a no-antibody control.",
+   "kw": [
+    "ChIP-qPCR",
+    "DSG"
+   ],
+   "info": "1/20 of the chromatin was kept as input; each ChIP was repeated in at least three independent experiments.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryos",
+   "q": "How were the CRISPR mutant embryos produced?",
+   "a": "sgRNA at 25 ng/ul plus recombinant Cas9 protein at 75 ng/ul were microinjected into pronuclei of C57Bl/6 one-cell embryos in two rounds, transferred to B6CBAF1 recipients at 0.5 dpc, and embryos were harvested at 9.5 dpc.",
+   "kw": [
+    "pronuclear injection"
+   ],
+   "info": "Donors were superovulated with 50 IU PMSG and 50 IU HCG. Embryos were genotyped from amnion using the HotSHOT protocol and sequencing of the Intron1 PCR fragment. No distinction was made between male and female embryos.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational",
+   "q": "How were transcription factor binding sites predicted?",
+   "a": "JASPAR2022 matrices were scanned with TFBStools version 1.40.0 at an 80% identity match threshold, chosen deliberately to capture low-affinity sites, then filtered to remove TFs not expressed in EpiL, CEpiL, D4 SC and D5 SC mRNA-seq data.",
+   "kw": [
+    "TFBStools",
+    "JASPAR2022"
+   ],
+   "info": "Conservation profiles of P1 and P2 and the RARB motif alignment were visualised in the UCSC genome browser.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational",
+   "q": "How were the public sequencing data processed?",
+   "a": "mRNA-seq was processed with the nf-core/rnaseq pipeline version 2.0 with default parameters (TrimGalore!, Salmon) against mouse mm10 from AWS iGenomes; ChIP-seq used the nf-core chipseq pipeline, and tracks were viewed in IGV.",
+   "kw": [
+    "nf-core",
+    "mm10",
+    "IGV"
+   ],
+   "info": "ATAC-seq signal was taken as the mean within each element, normalised to 1 over all analysed regions, and expressed as fold change relative to the final condition (D5 SC in vitro, SC in vivo).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - computational",
+   "q": "How were protein-protein interactions predicted?",
+   "a": "Full TF protein sequences were retrieved from InterPro and run through ColabFold version 1.3.0, an interface to AlphaFold-Multimer, to predict complexes between RARB or RXRG and LEF1 or SOX2.",
+   "kw": [
+    "ColabFold",
+    "AlphaFold-Multimer"
+   ],
+   "info": "These are in silico predictions only; experimental support comes from the ChIP-qPCR enrichment data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - statistics",
+   "q": "What were the statistical and design practices?",
+   "a": "No statistical method predetermined sample size, no data were excluded, experiments were not randomised and investigators were not blinded; each experiment used a minimum of three independent experiments, with mean +/- SEM and tests run in GraphPad Prism.",
+   "kw": [],
+   "info": "Technical and biological replicates were pooled; no method was used to check normality of the data. Replicate numbers and tests are in Table S4.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "P2 was reported as an enhancer in earlier transgenic reporter assays but behaves as an attenuator in its native context. Worth checking how often reporter-based enhancer calls (including in cavefish/zebrafish CRE screens) miss repressive function that only shows up after endogenous deletion."
+  },
+  {
+   "type": "note",
+   "section": "Results - RARE composition",
+   "text": "The RARB motif in P2 is described as rodent-specific while the P1 RXRG motifs are conserved. Does the attenuator function exist in non-rodent vertebrates through a different motif, and is there an equivalent element at cdx4/cdx1 loci in teleosts?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Open question from the paper: whether P2 acts at the level of transcription only, or also via splicing or transcript stability, since nascent and spliced Cdx2 behaved differently at day 4 in dP2 cells."
+  }
+ ]
+}

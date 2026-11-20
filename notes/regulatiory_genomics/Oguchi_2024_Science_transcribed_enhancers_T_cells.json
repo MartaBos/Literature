@@ -1,0 +1,634 @@
+{
+ "id": "Oguchi_2024",
+ "title": "An atlas of transcribed enhancers across helper T cell diversity for decoding human diseases",
+ "link": "https://doi.org/10.1126/science.add8394",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Oguchi_2024_Science_transcribed_enhancers_T_cells.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Profiling transcribed enhancers in single human cells can explain cell type-specific gene regulation and genetic predisposition to disease, but comprehensive maps of enhancer RNAs (eRNAs) in disease-relevant cell types are still lacking.",
+   "kw": [
+    "eRNA",
+    "enhancer"
+   ],
+   "info": "Active enhancers produce bidirectional eRNAs. eRNA transcription can be used to measure enhancer activity and to delineate enhancer architecture at nucleotide resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is ReapTEC and what did they apply it to?",
+   "a": "ReapTEC (read-level prefiltering and transcribed enhancer call) uses the 5' cap signature in 5'-end single-cell RNA-seq to profile gene expression and enhancer activity at the same time. They applied it together with snATAC-seq to about 1 million single human CD4+ T cells.",
+   "kw": [
+    "ReapTEC",
+    "5' scRNA-seq",
+    "snATAC-seq"
+   ],
+   "info": "Result: a CD4+ T cell type-resolved multimodal atlas with 62,803 bidirectionally transcribed candidate enhancers (btcEnhs), 218,508 accessible chromatin regions and expression of about 130 surface proteins (CITE-seq).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the headline findings?",
+   "a": "Cell type specificity was higher for RNA transcription than for chromatin accessibility at both promoters and enhancers, and immune-disease heritability was enriched more in btcEnhs than in open chromatin. btcEnhs carrying disease SNPs were often active in specific CD4+ T cell subsets. They were generally conserved across mammals, but some were primate specific.",
+   "kw": [
+    "heritability",
+    "cell type specificity"
+   ],
+   "info": "Target genes were assigned with ultradeep Micro-C contact maps and validated by CRISPR activation. Rare cell types were characterized, including GPR25-expressing Tregs.",
+   "concl": "5' scRNA-seq plus ReapTEC is a platform that links CD4+ T cell diversity to the genetic risk of immune-mediated diseases."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are ATAC-seq and histone marks not enough to identify active enhancers?",
+   "a": "ATAC-seq accessible regions include active, inactive and poised enhancers, as well as other elements such as insulators. H3K27ac separates active enhancers from inactive or poised ones (which carry only H3K4me1), but histone modifications often span several kilobases.",
+   "kw": [
+    "ATAC-seq",
+    "H3K27ac",
+    "H3K4me1"
+   ],
+   "info": "Recent snATAC-seq studies have produced cell type-resolved maps of accessible chromatin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do 5'-end RNA methods identify active enhancers?",
+   "a": "Methods such as CAGE and PRO-CAP map the transcription start sites (TSSs) of eRNAs. This identifies active enhancers at high resolution (about 150 bp).",
+   "kw": [
+    "CAGE",
+    "PRO-CAP",
+    "TSS"
+   ],
+   "info": "Enhancers with bidirectional eRNAs are more functional than untranscribed ones.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why focus on CD4+ T cells?",
+   "a": "CD4+ T cells orchestrate the immune system. Many immune-mediated diseases are strongly associated with class II MHC, which CD4+ T cells specifically recognize, so these cells probably play key roles in disease. Disease variants are concentrated in enhancers active in disease-relevant cell types.",
+   "kw": [
+    "CD4+ T cells",
+    "MHC class II"
+   ],
+   "info": "Canonical subsets are Th1, Th2, Th17, Tfh and Treg, but single-cell transcriptomics has revealed a broader spectrum, including rare but functionally important types. CD4+ T cell heterogeneity and its effect on disease are incompletely characterized.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the cap signature?",
+   "a": "It is an unencoded guanine (G) at the start of reads. The G comes from the 7-methylguanosine cap at bona fide RNA 5' ends, so it marks true TSSs.",
+   "kw": [
+    "7-methylguanosine cap",
+    "unencoded G"
+   ],
+   "info": "In 5' scRNA-seq the unencoded G is soft-clipped in read 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5' scRNA-seq of human CD4+ T cells",
+   "q": "What did the initial 5' scRNA-seq of bulk CD4+ T cells show?",
+   "a": "Chromium 5' scRNA-seq detected genes as well as Chromium 3' scRNA-seq. In circulating CD4+ T cells from 3 healthy donors it found many distinct clusters (198,681 cells, 15 clusters), and all clusters were present in all three donors.",
+   "kw": [
+    "CITE-seq",
+    "CD45RA"
+   ],
+   "info": "Besides naive, effector and regulatory cells, rare clusters included naive-like cells highly expressing NSF (cluster 12), exhausted cells expressing TIGIT, CTLA4, HAVCR2, TOX and MAF (cluster 13) and cycling cells (cluster 14). CITE-seq measured about 130 surface proteins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5' scRNA-seq of human CD4+ T cells",
+   "q": "How did they get exact TSSs from Chromium 5' scRNA-seq?",
+   "a": "Read 1 is normally 26 bp and only gives the cell barcode and UMI, while read 2 covers the area near the TSS but not the TSS itself. They sequenced a long read 1 (150 bp) through the template switch oligo to reach the real 5' end of each cDNA.",
+   "kw": [
+    "template switching",
+    "TSO",
+    "read 1"
+   ],
+   "info": "Chromium 5' is often used for immune repertoire analysis alongside the transcriptome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5' scRNA-seq of human CD4+ T cells",
+   "q": "Where does background in 5' scRNA-seq come from, and how did they remove it?",
+   "a": "Background comes mainly from strand invasion and premature template switching. Keeping only reads with an unencoded G raised the fraction of reads in TSS regions from 82.1% (all reads) to 88.3% (G-start reads) and 98.1% (unencoded G reads).",
+   "kw": [
+    "strand invasion",
+    "unencoded G"
+   ],
+   "info": "A TSS region was defined as +/-300 bp around transcript 5' ends (GENCODE v39). Example: the SOCS7 promoter.",
+   "concl": "Filtering on unencoded G gives confident TSS mapping."
+  },
+  {
+   "type": "qa",
+   "section": "Results - btcEnhs identified by ReapTEC",
+   "q": "Can 5' scRNA-seq detect eRNAs as well as dedicated methods?",
+   "a": "Yes. Pseudobulk 5' scRNA-seq detected eRNAs at levels comparable to NET-CAGE (r = 0.67 across 12,433 bulk CD4+ T cell enhancers).",
+   "kw": [
+    "NET-CAGE",
+    "eRNA"
+   ],
+   "info": "NET-CAGE (native elongating transcript-cap analysis of gene expression) identifies eRNAs with high sensitivity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - btcEnhs identified by ReapTEC",
+   "q": "eRNAs are generally not polyadenylated, so how are they captured?",
+   "a": "They were captured efficiently by oligo(dT) priming at internal adenine-rich regions.",
+   "kw": [
+    "oligo(dT)",
+    "MAS-seq"
+   ],
+   "info": "Shown with MAS-seq (multiplexed arrays sequencing), which allows accurate long-read sequencing of full-length cDNA before fragmentation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - btcEnhs identified by ReapTEC",
+   "q": "How does ReapTEC differ from earlier TSS peak-calling methods?",
+   "a": "Earlier tools filter after peak calling: Paraclu clusters signals, CapFilter keeps peaks by their percentage of unencoded-G reads, and newer methods use logistic regression classifiers. ReapTEC filters for unencoded G at the read level before peak calling, merges these reads into high-confidence TSS peaks, and then calls divergent TSS peak pairs as btcEnhs.",
+   "kw": [
+    "ReapTEC",
+    "Paraclu",
+    "CapFilter"
+   ],
+   "info": "RNA transcription rarely starts at a single nucleotide, so 5'-end signals appear as peaks of various widths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - btcEnhs identified by ReapTEC",
+   "q": "How did they show that ReapTEC calls real enhancers?",
+   "a": "Most btcEnhs matched DNase I hypersensitive sites, H3K27ac and H3K4me1 in CD4+ T cells (ENCODE data). Without ReapTEC filtering, the overlap dropped sharply.",
+   "kw": [
+    "DHS",
+    "ENCODE"
+   ],
+   "info": "The comparison shown is for the Treg cluster 11 of circulating bulk CD4+ T cells.",
+   "concl": "Extensive noise reduction is essential for calling enhancers from 5' scRNA-seq."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcription and chromatin accessibility at cis-regulatory elements",
+   "q": "How well did chromatin accessibility correlate with RNA transcription?",
+   "a": "Only modestly. Pseudobulk accessibility correlated with transcription at r = 0.59 at gene promoters and r = 0.42 at distal DHSs.",
+   "kw": [
+    "Multiome"
+   ],
+   "info": "They ran 10x Multiome ATAC + Gene Expression (snATAC-seq + 3' snRNA-seq) on bulk CD4+ T cells and integrated it with the 5' data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcription and chromatin accessibility at cis-regulatory elements",
+   "q": "Give examples where transcription and accessibility disagree.",
+   "a": "The GZMA transcript was strongly expressed only in clusters 7, 10 and 13, yet the GZMA promoter was open in all clusters. At GPR68 the promoter and nearby enhancers were transcribed in a cell type-specific way, while accessibility was similar across clusters.",
+   "kw": [
+    "GZMA",
+    "GPR68"
+   ],
+   "info": "In contrast, at the CCL5 and DTHD1 promoters accessibility tracked transcription in a cell type-specific way.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Highly diverse CD4+ T cells",
+   "q": "Which sorted CD4+ T cell groups did they profile?",
+   "a": "Five FACS groups: A CD4+CD25+ including Tregs (128,748 cells), B LAG3+ (60,746), C Tfh (95,248), D including Th1/Th2 (184,909) and E Th17 (117,362). Each was profiled with 5' scRNA-seq, Multiome and CITE-seq.",
+   "kw": [
+    "FACS",
+    "CITE-seq"
+   ],
+   "info": "Using CITE-seq, group D was split into CXCR3high CCR4low Th1 (clusters 0, 1, 7; 61,090 cells) and CXCR3low CCR4high Th2 (clusters 4, 6; 29,424 cells), which were then reclustered.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Highly diverse CD4+ T cells",
+   "q": "How was the Treg-containing group A structured?",
+   "a": "Group A split into 13 clusters, 9 of which expressed FOXP3. These Tregs were divided into naive (clusters 1, 5, 7) and effector Tregs (clusters 0, 3, 9, 10, 11, 12) using surface proteins. scVelo velocity predicted differentiation from naive into effector Tregs (clusters 0, 3, 10).",
+   "kw": [
+    "FOXP3",
+    "scVelo",
+    "Treg"
+   ],
+   "info": "Many rare populations made up less than 0.5% of bulk CD4+ T cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Highly diverse CD4+ T cells",
+   "q": "What is special about the GPR25-expressing Treg cluster?",
+   "a": "Group A cluster 9 was predicted by velocity to have a different origin from the other effector Tregs. It highly expressed the Th17 transcription factor RORC, the immune checkpoint gene LAG3 and GPR25, an uncharacterized G protein-coupled receptor gene associated with ankylosing spondylitis.",
+   "kw": [
+    "GPR25",
+    "LAG3",
+    "RORC"
+   ],
+   "info": "",
+   "concl": "This is one of the new rare cell types highlighted by the atlas."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Highly diverse CD4+ T cells",
+   "q": "What did group E (Th17) contain?",
+   "a": "Group E had 13 clusters, including RORChigh Th17 cells (cluster 6), CCR4+CCR6+CCR10+ Th22 cells (clusters 0, 1, 7) and uncharacterized RORC+ cells expressing GNLY, GZMA and GZMK (cluster 11). Velocity suggested the Th17 and Th22 cells may differentiate from cluster 8, which had high ribosomal protein gene expression.",
+   "kw": [
+    "Th22",
+    "granzyme",
+    "GNLY"
+   ],
+   "info": "Clusters expressing perforin (PRF1), granzymes or granulysin were present in every CD4+ T cell group. Granzyme-producing CD4+ T cells are described as emerging players in aging, autoimmunity and cancer immunotherapy.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Highly diverse CD4+ T cells",
+   "q": "What other datasets went into the atlas, and how big was it in total?",
+   "a": "They added public 5' scRNA-seq (2 x 150 bp) of memory CD4+ T cells from a COVID-19 study (40 patients, 13 healthy donors) stimulated with viral peptides (0 h n = 24,100, 6 h n = 102,970, 24 h n = 45,367). They also added bulk CD4+ T cells stimulated through CD3/CD28 for 48 h (n = 8007). In total, 962,944 cells formed 136 clusters.",
+   "kw": [
+    "COVID-19",
+    "stimulation"
+   ],
+   "info": "Caveat: some of the 136 clusters may partly overlap because FACS sorting is not completely exclusive.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "q": "How many btcEnhs did they find, and how new are they?",
+   "a": "Running ReapTEC on each of the 136 clusters gave 62,803 btcEnhs. About 82% were not identified in FANTOM5.",
+   "kw": [
+    "btcEnh",
+    "FANTOM5"
+   ],
+   "info": "btcEnhs in exons were excluded unless they overlapped a CD4+ T cell DHS. btcEnhs were enriched for ENCODE3 enhancer-like signatures, and the paper says 34% of these were newly identified. It is unclear from the text whether the 34% refers to btcEnhs or to the ENCODE signatures.",
+   "concl": "The atlas considerably expands the catalogue of transcribed enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "q": "Is there functional evidence that btcEnhs act as enhancers?",
+   "a": "Yes. Intersected with a published MPRA for autoimmune disease variants in Jurkat cells, btcEnhs showed a significant increase in reporter signal (P < 2.2e-16).",
+   "kw": [
+    "MPRA",
+    "Jurkat"
+   ],
+   "info": "Jurkat is an immortalized human CD4+ T cell line.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "q": "How were the ATAC peaks classified?",
+   "a": "Of 218,508 ATAC peaks, about 88% were distal (dATAC), and the rest were proximal (pATAC, within +/-300 bp of a GENCODE v39 transcript 5' end). dATAC peaks were further split into bidirectionally transcribed, unidirectionally transcribed and untranscribed, based on all 5' reads in the study.",
+   "kw": [
+    "dATAC",
+    "pATAC"
+   ],
+   "info": "There were 103,558 transcribed and 88,637 untranscribed dATAC peaks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "q": "Which motifs distinguish the classes of regulatory regions?",
+   "a": "The CTCF motif was much more strongly enriched in dATAC peaks than in btcEnhs, which suggests dATAC peaks contain more insulators. Motifs for ETS-related transcription factor families were most strongly enriched in bidirectionally transcribed dATAC peaks.",
+   "kw": [
+    "CTCF",
+    "ETS",
+    "TFBM"
+   ],
+   "info": "The heatmap shows 150 motifs that met -log10(E value) >= 100 in at least one category. Overall, motif enrichment in btcEnhs correlated with that in dATAC peaks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "q": "How do bidirectional, unidirectional and untranscribed dATAC peaks compare in ChIP signal and conservation?",
+   "a": "Mediator and transcription factors (BRD4, CEBPB, CREBBP, ETS1) and H3K27ac bound most strongly to bidirectionally transcribed peaks, then unidirectional ones, and only weakly to untranscribed ones. btcEnhs and transcribed dATAC peaks were also more conserved (phastCons) than untranscribed dATAC peaks.",
+   "kw": [
+    "Mediator",
+    "phastCons",
+    "MENTR"
+   ],
+   "info": "Fisher's exact test, P < 2.2e-16. The MENTR machine learning models predicted these peak classes from the surrounding +/-100 kb of sequence, which supports intrinsic sequence differences.",
+   "concl": "These results point to bidirectionally transcribed enhancers being the functional ones."
+  },
+  {
+   "type": "qa",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "q": "Which features are most cell type-specific?",
+   "a": "eRNA expression at btcEnhs was more cell type-specific than mRNA at promoters, and dATAC accessibility was more specific than pATAC. RNA transcription was more specific than chromatin accessibility at both promoters and enhancers (P < 2.2e-16, Mann-Whitney U).",
+   "kw": [
+    "cell type specificity"
+   ],
+   "info": "Computed across the 136 clusters. They also tracked dynamic eRNA expression along RNA velocity trajectories.",
+   "concl": "Capturing eRNAs is important for understanding cell type specificity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CD4+ T cell heterogeneity at the TSS level",
+   "q": "What does TSS-level resolution show at IL2?",
+   "a": "In CD3/CD28-activated CD4+ T cells, a sharp TSS was seen for the IL-2 mRNA isoform from which the entire signal peptide can be translated (the secreted form). In unstimulated cells, transcription started further downstream.",
+   "kw": [
+    "IL-2",
+    "alternative promoter"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CD4+ T cell heterogeneity at the TSS level",
+   "q": "How many robust TSS peaks were found, and were they annotated?",
+   "a": "They defined 46,108 robustly expressed TSS peaks (log2CPM >= 2 in at least one cluster). A substantial fraction were not annotated in GENCODE or FANTOM5, but they overlapped strongly with ENCODE DHSs, H3K27ac and H3K4me3.",
+   "kw": [
+    "TSS",
+    "H3K4me3",
+    "GENCODE"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CD4+ T cell heterogeneity at the TSS level",
+   "q": "What did clustering on TSSs instead of genes reveal?",
+   "a": "Clustering bulk CD4+ T cells on robust TSSs (including alternative promoters and btcEnhs) gave 17 clusters. Naive cells split into subsets marked by TSS expression at CISH, ID2, TPR, ARMH1, IFIT1, MX1 and STAT1, which suggests latent naive diversity.",
+   "kw": [
+    "TSS usage",
+    "ARHGAP15",
+    "DUT"
+   ],
+   "info": "The short ARHGAP15 isoform was mainly in Th1, Th2 and Th17 cells, and the shortest DUT isoform only in MKI67+ cycling cells. Combining 5' data with MAS-seq long reads found 492 de novo transcripts not overlapping GENCODE in the same direction (for example MSTRG.3154 near AL137025.1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Micro-C analysis of human CD4+ T cells",
+   "q": "What did the ultradeep Micro-C show about enhancer-promoter loops?",
+   "a": "About 40 billion Micro-C reads (resting 18.0 billion, activated 21.2 billion) gave 103,038 loops, enriched for btcE-btcE, btcE-P and P-P contacts. Loops connected 11,296 btcEnh-promoter pairs, most often to the nearest gene but sometimes to distant genes, with a median distance of about 10,000 bp.",
+   "kw": [
+    "Micro-C",
+    "chromatin loops"
+   ],
+   "info": "Micro-C resolves interactions at nucleosome resolution. Loops were partly shared and partly different between resting and activated cells (for example at CCR7 and MAF). dA-P and dA-dA loop enrichment was strongest for bidirectionally transcribed dATAC peaks.",
+   "concl": "Bidirectionally transcribed elements have more chromatin interactions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Micro-C analysis of human CD4+ T cells",
+   "q": "Why did they also do promoter-capture Micro-C (RCMC)?",
+   "a": "To detect fine-scale promoter-centred interactions more sensitively. They profiled resting, stimulated, CD25+, LAG3+, Tfh and Th17 CD4+ T cells at saturation depth.",
+   "kw": [
+    "RCMC",
+    "promoter-capture Micro-C"
+   ],
+   "info": "btcE-P and P-P loops were highly enriched among RCMC loops. Loops differed between cell types, which implies the same gene can be driven by different sets of enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Substantial enrichment of disease heritability in btcEnhs",
+   "q": "How strongly is disease heritability enriched in btcEnhs?",
+   "a": "With LD score regression, many immune-mediated diseases showed 40- to 120-fold heritability enrichment in SNPs in CD4+ T cell btcEnhs. Neurological diseases and physical traits did not.",
+   "kw": [
+    "LD score regression",
+    "heritability"
+   ],
+   "info": "Computed with ldsc v1.0. The background is that most GWAS variants map to noncoding regions where regulatory elements are poorly annotated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Substantial enrichment of disease heritability in btcEnhs",
+   "q": "How do btcEnhs compare with other annotations for multiple sclerosis?",
+   "a": "MS heritability was considerably higher in btcEnhs than in ENCODE DHSs, histone marks or all ATAC peaks. Among ATAC peaks, enrichment was strongest for bidirectionally transcribed peaks, then unidirectional ones, with no enrichment in untranscribed peaks.",
+   "kw": [
+    "multiple sclerosis"
+   ],
+   "info": "Comparisons included ENCODE H3K27ac, H3K4me1, H3K36me3 and DHS, as well as FANTOM5 enhancers.",
+   "concl": "Identifying bidirectionally transcribed regions matters most for disease heritability."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional interpretation of noncoding risk variants",
+   "q": "How many btcEnhs carry disease SNPs?",
+   "a": "btcEnhs contained 3 to 9 times more immune disease-associated SNPs (lead SNPs plus linked SNPs with R2 > 0.8) than random matched SNPs. In total, 606 disease-relevant btcEnhs carried SNPs for 18 immune-mediated diseases and COVID-19.",
+   "kw": [
+    "GWAS",
+    "GREGOR",
+    "fine-mapping"
+   ],
+   "info": "Random SNPs were not trait-associated and were matched for allele frequency and distance to coding regions. Enrichment was calculated with GREGOR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional interpretation of noncoding risk variants",
+   "q": "How were allelic effects of the risk SNPs validated?",
+   "a": "In luciferase reporter assays in Jurkat cells, enhancer fragments showed activity that changed with the risk allele, possibly by creating or disrupting TF motifs. 96 SNPs were also expression-modulating variants in a published Jurkat MPRA.",
+   "kw": [
+    "luciferase",
+    "MENTR",
+    "in silico mutagenesis"
+   ],
+   "info": "MENTR in silico mutagenesis predicted effects on enhancer transcription for about 30% of fine-mapped risk variants, compared with 2.8% of unfiltered variants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional interpretation of noncoding risk variants",
+   "q": "In which cells are disease-relevant btcEnhs active?",
+   "a": "They were often activated in only a limited subset of the 136 clusters, and about two-thirds were active in subsets of stimulated CD4+ T cells. Some Treg btcEnhs were active mainly in LAG3+GPR25+ effector Tregs (group A clusters 9 and 12), others in other effector Tregs (3, 10), in naive Tregs (1, 5) or in combinations.",
+   "kw": [
+    "Treg",
+    "stimulated T cells"
+   ],
+   "info": "",
+   "concl": "Specific CD4+ T cell types and states may contribute differently to different diseases."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Systematic analysis of immune-mediated disease pathways",
+   "q": "How did they predict target genes of disease-relevant btcEnhs?",
+   "a": "They combined Micro-C loops, RCMC loops, the activity-by-contact (ABC) model and 25,178 btcE-P links from eRNA-mRNA covariation across 136 clusters (adjusted P < 0.05). Together these predicted targets for 550 of the 606 disease-relevant btcEnhs.",
+   "kw": [
+    "ABC model",
+    "covariation",
+    "target genes"
+   ],
+   "info": "The ABC model used their Micro-C, snATAC-seq and ENCODE histone data. Micro-C-supported pairs had higher covariation than all possible pairs (P < 2.2e-16). Targets were enriched for immune response and cytokine signalling pathways, and IBD and MS targets differed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Systematic analysis of immune-mediated disease pathways",
+   "q": "What did CRISPRa of disease-relevant btcEnhs show?",
+   "a": "Of 12 targeted btcEnhs where CRISPRa induced bidirectional eRNA, 7 up-regulated a target gene (FDR < 0.05), which the authors call a good validation rate. For example, activating an IBD SNP-containing btcEnh specifically up-regulated IL7R.",
+   "kw": [
+    "CRISPRa",
+    "IL7R",
+    "CAGE"
+   ],
+   "info": "Done in Jurkat cells with guide RNAs in btcEnh regions. The readout was promoter-level expression by CAGE. The IL7R btcEnh is at chr5:35830423-35831044 and is linked to the IL7R promoter by RCMC loops.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary landscape of disease-relevant btcEnhs",
+   "q": "How do primate-specific and mammal-conserved btcEnhs differ?",
+   "a": "Using a 24-species alignment, primate-specific btcEnhs (n = 11,181) overlapped transposable elements far more often than mammal-conserved btcEnhs (n = 9183) (P < 2.2e-16), and many overlapped LINEs.",
+   "kw": [
+    "transposable elements",
+    "LINE",
+    "conservation"
+   ],
+   "info": "Transposable element composition differed slightly in ATAC peaks. In human-specific ATAC peaks, retroposons made up about 30%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary landscape of disease-relevant btcEnhs",
+   "q": "Are disease-relevant btcEnhs conserved?",
+   "a": "btcEnhs were more often mammal-conserved than random regions, and more so when they carried disease SNPs. About 25% of disease-relevant btcEnhs had at least 90% human-mouse sequence identity. One example sits in an ACOXL intron with RA and T1D SNPs, and CRISPRa of it up-regulated BCL2L11 but not the closest gene ACOXL.",
+   "kw": [
+    "ACOXL",
+    "BCL2L11",
+    "mouse"
+   ],
+   "info": "A previous enhancer knockout in mice showed this enhancer regulates the proapoptotic gene BCL2L11 in a context-specific manner. The btcEnh is at chr2:110858277-110859299.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary landscape of disease-relevant btcEnhs",
+   "q": "Give an example of a primate-specific disease enhancer.",
+   "a": "A primate-specific btcEnh overlapping a LINE, about 1.5 kb upstream of ITGAL, carries the IBD SNPs rs11150589 and rs12598978. CRISPRa of this enhancer induced ITGAL, which the ABC model had also predicted.",
+   "kw": [
+    "ITGAL",
+    "IBD",
+    "primate-specific"
+   ],
+   "info": "Integrins are implicated in IBD pathogenesis.",
+   "concl": "Enhancer function should be examined in an appropriate species."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the authors' main conclusions?",
+   "a": "5' scRNA-seq with ReapTEC (which does not work with 3' scRNA-seq) allows accurate TSS analysis of mRNAs, lncRNAs and eRNAs. Disease heritability is much higher in btcEnhs than in accessible chromatin, and eRNA transcription is more cell type-specific than accessibility.",
+   "kw": [
+    "5' scRNA-seq"
+   ],
+   "info": "The atlas (TSSs, 62,803 btcEnhs, 218,508 ATAC peaks, 962,944 cells, 136 clusters) is available through the Human Cell Atlas. Raw data are in the NBDC Human Database (hum0350) and JGA, and code is on GitHub (MurakawaLab/ReapTEC).",
+   "concl": "The multimodal atlas helps with variant-to-function challenges that limit the translational use of GWAS."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "First, eRNAs are lowly expressed, so btcEnhs could only be called from pseudobulk clusters, whereas snATAC-seq is more sensitive. Second, circulating CD4+ T cells came from a limited number of healthy donors, plus public stimulated memory cell data. Third, they did not identify which transcription factors bind disease btcEnhs or how variants alter that binding.",
+   "kw": [
+    "limitations",
+    "pseudobulk"
+   ],
+   "info": "The authors present 5' scRNA-seq and snATAC-seq as complementary approaches.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future work do the authors propose?",
+   "a": "Profile tissue-resident CD4+ T cells in health and disease and other cell types and tissues. Test mammal-conserved enhancers in enhancer-knockout mice and primate-specific enhancers in in vitro systems such as organoids. Use base editing to reveal variant function.",
+   "kw": [
+    "base editing",
+    "organoids"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Samples and sequencing",
+   "q": "How were samples obtained and libraries sequenced?",
+   "a": "CD4+ T cells were isolated by immunomagnetic negative selection and sorted on a FACSAria IIu. They were processed with the Chromium Next GEM Single Cell 5' kit and sequenced on an Illumina NovaSeq 6000 with 2 x 150 bp paired-end reads.",
+   "kw": [
+    "Chromium 5'",
+    "NovaSeq 6000"
+   ],
+   "info": "Ethics approval: RIKEN H30-9(13), with written informed consent. Multiome libraries were sequenced the same way with 10 cycles for i7 and 24 for i5. Micro-C used the Dovetail Micro-C Kit (Cantata Bio, Cat#21006).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data processing",
+   "q": "Which tools and versions processed the single-cell data?",
+   "a": "scRNA-seq, snRNA-seq and CITE-seq were processed with Cell Ranger 5.0.1 and Seurat v5 (4.9.9.9067). Multiome data were processed with Cell Ranger ARC 2.0.0, Seurat v5 and Signac 1.10.0, and datasets were integrated by canonical correlation analysis.",
+   "kw": [
+    "Cell Ranger",
+    "Seurat",
+    "Signac"
+   ],
+   "info": "snATAC peaks were called per cluster from fragment files with MACS2 2.2.6 (default settings) through Signac.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ReapTEC pipeline",
+   "q": "What are the computational steps of ReapTEC?",
+   "a": "Paired-end reads are remapped with STARsolo, which tags the unencoded G as a soft-clipped G. Reads are then deduplicated and split by cell-type barcodes, TSS counts are made with BEDTools 2.30.0 bamToBed, and TSSs within 10 bp are merged into peaks. Divergent peak pairs are called as btcEnhs with the Andersson bidir_enhancers scripts, with minor modifications.",
+   "kw": [
+    "STARsolo",
+    "BEDTools",
+    "bidir_enhancers"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Micro-C and CRISPRa",
+   "q": "How were Micro-C loops called and CRISPRa performed?",
+   "a": "Micro-C data were processed with dovetail_tools. Loops were called at 1-kb resolution with HiCCUPS (Juicer Tools 2.20.0, SCALE-normalized) and Mustache (ICE-normalized), then filtered at FDR < 0.05. For CRISPRa, a 130-base sgRNA with an MS2 stem-loop was transfected into Jurkat cells expressing dCas9-VP64 and MS2-P65-HSF1, followed by CAGE.",
+   "kw": [
+    "HiCCUPS",
+    "Mustache",
+    "dCas9-VP64"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - A CD4+ T cell type-resolved atlas of cis-regulatory elements",
+   "text": "The statement that 34% were newly identified is ambiguous: does it refer to btcEnhs or to the ENCODE3 enhancer-like signatures? Check fig. S11."
+  },
+  {
+   "type": "note",
+   "section": "Results - Evolutionary landscape of disease-relevant btcEnhs",
+   "text": "How do LINE-derived primate-specific enhancers gain T cell-specific activity, and how can their disease role be tested without a mouse model?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Because btcEnh calling depends on pseudobulk, how many enhancers are missed in very rare clusters? Which transcription factors do the risk alleles disrupt?"
+  }
+ ]
+}

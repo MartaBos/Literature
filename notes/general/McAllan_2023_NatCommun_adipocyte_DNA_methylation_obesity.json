@@ -1,0 +1,642 @@
+{
+ "id": "McAllan_2023",
+ "title": "Integrative genomic analyses in adipocytes implicate DNA methylation in human obesity and diabetes",
+ "link": "https://doi.org/10.1038/s41467-023-38439-z",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/McAllan_2023_NatCommun_adipocyte_DNA_methylation_obesity.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "DNA methylation variations are prevalent in human obesity, but evidence that they cause disease is limited. The authors combine epigenome-wide association with integrative genomics to test the impact of adipocyte DNA methylation in human obesity.",
+   "kw": [
+    "DNA methylation",
+    "obesity",
+    "EWAS"
+   ],
+   "info": "",
+   "concl": "DNA methylation is an important determinant of human obesity and its metabolic complications."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How many loci were robustly associated with obesity?",
+   "a": "In 190 samples they found 691 loci in subcutaneous and 173 loci in visceral adipocytes at P < 1 x 10-7.",
+   "kw": [
+    "sentinel 5mC"
+   ],
+   "info": "Methylation variations were connected to transcriptomic changes at more than 500 target genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What causal evidence did they generate?",
+   "a": "Through Mendelian Randomisation they inferred causal effects of methylation on obesity and obesity-induced metabolic disturbances at 59 independent loci.",
+   "kw": [
+    "Mendelian Randomisation"
+   ],
+   "info": "Targeted methylation sequencing, CRISPR-activation and gene silencing added regional methylation detail, regulatory elements and cellular metabolic effects.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is blood a poor tissue for obesity methylation studies?",
+   "a": "Obesity-associated DNA methylation changes in human blood are primarily a consequence rather than a cause of disease.",
+   "kw": [
+    "tissue selection"
+   ],
+   "info": "Methylation in whole metabolic tissues also cannot be confidently linked to phenotype because of cellular and therefore epigenetic heterogeneity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why study adipocytes specifically?",
+   "a": "Adipocytes are the major cell type in adipose tissue and have roles in energy storage and expenditure, whole-body energy and glucose homoeostasis, and obesity and T2D pathogenesis.",
+   "kw": [
+    "adipocytes"
+   ],
+   "info": "Adipocytes from different anatomical depots differ in methylation, transcriptome, function and impact on metabolic health; visceral adipocytes are considered more harmful than subcutaneous.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What proof-of-principle work motivated the study?",
+   "a": "Experimental manipulation of DNA methylation enzymes in adipocytes can induce or prevent obesity and T2D through effects on energy expenditure and insulin sensitivity.",
+   "kw": [
+    "DNMT",
+    "TET"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What were the three aims of the integrated genomic strategy?",
+   "a": "To identify robust adipocyte methylation changes in extreme obesity, to predict the effector transcripts (cis-target genes) of these changes, and to infer the mechanisms underlying the methylation-expression relationships.",
+   "kw": [],
+   "info": "A subset of sites was then followed up with genetic association, targeted methylation sequencing and adipocyte genetic and epigenomic manipulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - study design and samples",
+   "q": "What was the study design and sample size?",
+   "a": "Case-control DNA methylation analyses in 95 subcutaneous and 95 visceral adipocyte samples from people with extreme obesity and healthy controls, split into separate discovery and replication cohorts.",
+   "kw": [
+    "discovery",
+    "replication"
+   ],
+   "info": "44 participants in discovery and 42 in replication gave both subcutaneous and visceral samples; the rest came from distinct individuals. RNA sequencing was done in the replication cohort.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - study design and samples",
+   "q": "Who were the participants?",
+   "a": "Morbidly obese individuals (mean BMI 44.8, sd 7.2 kg/m2) undergoing laparoscopic bariatric surgery and controls (mean BMI 24.9, sd 3.3 kg/m2) undergoing non-bariatric laparoscopic abdominal surgery.",
+   "kw": [
+    "BMI"
+   ],
+   "info": "Aged 20-70, multi-ethnic, unrelated, matched for age within 3.5 years, sex and ethnicity. People with treated T2D were excluded because hypoglycaemic drugs can affect adipose metabolism.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - study design and samples",
+   "q": "How were adipocytes isolated?",
+   "a": "Tissue was cut to 1-2 mm3, washed in HBSS, digested with type 1 collagenase (1 mg/ml) at 37 C shaking 100 rpm for about 30 min, filtered through 300-micron mesh and centrifuged at 500 g for 5 min at 4 C.",
+   "kw": [
+    "collagenase"
+   ],
+   "info": "Floating mature adipocytes were collected after removal of the oil layer, washed three times and snap frozen at -80 C. Polypropylene plastics were used to minimise cell lysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - methylation quantification",
+   "q": "Which arrays were used and how was data processed?",
+   "a": "Illumina Infinium HumanMethylation450 (96 discovery samples) and EPIC (96 replication samples) beadchips, processed with Minfi version 1.36.0 for signal retrieval and background correction.",
+   "kw": [
+    "Minfi",
+    "EPIC"
+   ],
+   "info": "Detection P >= 0.01 signals removed; samples with <95% detected CG sites excluded; quantile normalisation with limma. Methylation quantified 0-1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - methylation quantification",
+   "q": "How did they control technical variation on the arrays?",
+   "a": "Separate PCAs on the 450K and EPIC positive control probe intensities; the resulting principal components, which capture technical variability, were included as covariates.",
+   "kw": [
+    "control probe PCs"
+   ],
+   "info": "The first 4 control probe PCs explained >95% of control probe technical variation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA sequencing",
+   "q": "How was RNA-seq done given poor RNA quality?",
+   "a": "RIN values ranged 2.5 to 7.9 (median 5.8), so libraries were made with SMARTer Stranded Total RNA-Seq Kits (v2 Pico input), which use template switching and random priming for low-quality, low-input RNA.",
+   "kw": [
+    "SMARTer",
+    "RIN"
+   ],
+   "info": "10 ng total RNA input; libraries pooled at 4 nM; sequenced on HiSeq 4000 (16 lanes) to >80 million 100-bp paired-end reads per sample.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA sequencing",
+   "q": "Which aligner and counting tools were used?",
+   "a": "STAR version 2.6.0 against Ensembl GRCh37 v87 (options -outFilterMultimapNmax 20 -outFilterMismatchNoverReadLmax 0.04), with FeatureCounts (subread 1.6.2, options -M -fraction) for raw counts.",
+   "kw": [
+    "STAR",
+    "FeatureCounts"
+   ],
+   "info": "Samtools 1.9, Picard 2.18.12, RseQC 2.6.4 and MultiQC 1.9 for QC. After exclusions, 43 subcutaneous and 46 visceral samples and 24,187 genes remained.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - EWAS",
+   "q": "How many CG sites were tested and how were associations modelled?",
+   "a": "401,595 single CG sites present on both 450K and EPIC arrays, tested by linear regression with obesity status as predictor and methylation as outcome.",
+   "kw": [
+    "linear regression"
+   ],
+   "info": "44,101 probes were removed for cross-hybridisation or a common SNP in the probe. Covariates: age, sex, ethnicity and the first 4 control probe PCs. Discovery and replication combined by inverse variance weighted meta-analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - EWAS",
+   "q": "What significance criteria defined a replicated locus?",
+   "a": "FDR < 0.01 in discovery, then FDR < 0.01 in replication with consistent direction, plus combined P < 1 x 10-7 (epigenome-wide significance).",
+   "kw": [
+    "FDR",
+    "EWS"
+   ],
+   "info": "Markers within 5000 bp of each other were treated as one locus; the CG site with lowest P at each locus was the sentinel. 5 kb reflects known CpG island sizes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome-wide alterations",
+   "q": "How many obesity-associated sites were found in subcutaneous adipocytes?",
+   "a": "4485 5mC sites at FDR < 1% in discovery, of which 905 replicated, giving 691 sentinel sites.",
+   "kw": [
+    "sentinels"
+   ],
+   "info": "4363 of 4485 sites (97%) showed directional consistency in the replication sample (binomial sign test P < 1 x 10-300), suggesting these are only the strongest of a larger set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome-wide alterations",
+   "q": "How big were the methylation differences in subcutaneous adipocytes?",
+   "a": "Median 5.8% difference between obese cases and controls (range 1.1-17.9%), with systematic hypomethylation in obese cases (binomial sign test P < 6.4 x 10-33).",
+   "kw": [
+    "hypomethylation"
+   ],
+   "info": "More sentinels had intermediate (20-80%) methylation than low (<20%) or high (>80%).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome-wide alterations",
+   "q": "Which loci had the largest differentially methylated regions?",
+   "a": "RUNX3 (19 sites, 1174 bp), TBX5 (17 sites, 3187 bp) and ISLR2 (14 sites, 4050 bp) in subcutaneous adipocytes.",
+   "kw": [
+    "RUNX3",
+    "TBX5",
+    "ISLR2"
+   ],
+   "info": "24 subcutaneous loci had at least 5 differentially methylated sites within 5 kb of the sentinel with consistent direction (Bonferroni adjusted P < 0.05).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome-wide alterations",
+   "q": "What was found in visceral adipocytes?",
+   "a": "445 sites at FDR < 1%, 220 replicated, giving 173 sentinels with median methylation difference 7.9% (range 2.9-21.5%), also preferentially hypomethylated in obesity (P = 3.8 x 10-7).",
+   "kw": [
+    "visceral"
+   ],
+   "info": "Two visceral loci showed extended differential methylation: NFIA (5 sites, 2081 bp) and near ATG5 (5 sites, 831 bp). 440 of 445 sites (99%) were directionally concordant.",
+   "concl": "Many fewer obesity-associated sites in visceral than subcutaneous adipocytes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome-wide alterations",
+   "q": "Were the methylation differences driven by genetics or cell impurity?",
+   "a": "No. Most sentinels remained associated after correction for genetic effects, fewer than 1% showed SNP-like methylation distributions, and adjusting for contaminating cell gene expression did not systematically change results.",
+   "kw": [
+    "Gaphunting",
+    "SVA"
+   ],
+   "info": "Purity was assessed with immune and stromovascular marker genes (PTPRC, CD68, ITGAM, CD14, CD19, CD4, CD8A, NCAM1, CD31, DLK1, CD34) and with surrogate variable analysis.",
+   "concl": "The identified methylation differences are predominantly environmentally driven."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome-wide alterations",
+   "q": "How depot-specific were the changes?",
+   "a": "Only 23 subcutaneous sentinels replicated in visceral adipocytes and 11 visceral sentinels in subcutaneous (consistent direction, Bonferroni P < 0.05).",
+   "kw": [
+    "depot specificity"
+   ],
+   "info": "Directional concordance was weak: 374 of 671 subcutaneous in visceral (P = 0.003) and 105 of 173 visceral in subcutaneous (P = 0.006). In 538 whole subcutaneous adipose samples, 80% of subcutaneous versus 21% of visceral sentinels were enriched for BMI association.",
+   "concl": "Most extreme obesity-associated methylation changes are adipose depot specific."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genomic annotation",
+   "q": "Where in the genome did the subcutaneous sentinels sit?",
+   "a": "They were significantly enriched in adipose tissue and adipocyte enhancers (Roadmap chromatin states, Reg2Map, FANTOM5) and in GeneHancer-predicted enhancers, and under-represented at promoter CpG islands.",
+   "kw": [
+    "enhancers",
+    "GeneHancer"
+   ],
+   "info": "Hypomethylated sentinels were also weakly enriched at regions flanking active TSS, bivalent enhancers and polycomb repressed regions; hypermethylated sentinels were enriched in actively transcribed genic regions.",
+   "concl": "Obesity-associated methylation localises to cis-regulatory regions rather than CG-dense housekeeping promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genomic annotation",
+   "q": "Did the sentinel regions overlap obesity GWAS signals?",
+   "a": "There was no evidence of enrichment, but 11 loci contained variants associated with BMI, 8 with waist-hip ratio adjusted for BMI and 4 with T2D at P < 5 x 10-8.",
+   "kw": [
+    "GWAS"
+   ],
+   "info": "These included NRXN3 (BMI/adiposity), TBX15 (WHR) and TCF7L2 (T2D). Limited power and the known modest EWAS-GWAS overlap are offered as explanations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - target genes",
+   "q": "How were sentinel sites assigned to target genes?",
+   "a": "Three ways: direct overlap for sentinels in promoters (within 5 kb), 5/3'UTRs and exons; functional assignment of intronic/intergenic sentinels using adipocyte promoter capture Hi-C and GeneHancer; and otherwise all genes within a shared adipocyte TAD.",
+   "kw": [
+    "promoter capture Hi-C",
+    "TAD"
+   ],
+   "info": "TADs were called with Arrowhead at 25-kb resolution from day 3 adipocyte differentiation Hi-C, giving 5323 domains of median 425 kb (range 125 kb to 4025 kb). Median 7 (range 1-46) target genes per TAD-assigned sentinel.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - target genes",
+   "q": "How many methylation-expression associations were found at genic sentinels?",
+   "a": "121 subcutaneous sentinels were associated with 126 unique cis-genes and 29 visceral sentinels with 32 cis-genes at FDR < 0.01.",
+   "kw": [
+    "cis-genes"
+   ],
+   "info": "P ranges 9.1 x 10-3 to 1.9 x 10-24 (subcutaneous) and 4.6 x 10-3 to 1.6 x 10-12 (visceral). Effects on transcription were predominantly negative (binomial P = 0.004).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - target genes",
+   "q": "How many distal and TAD-based associations were found?",
+   "a": "84 subcutaneous and 14 visceral sentinels were linked to 135 and 16 distal target genes; 91 subcutaneous sentinels to 177 cis-genes and 21 visceral sentinels to 34 cis-genes within shared TADs (all FDR < 0.01).",
+   "kw": [],
+   "info": "Functionally assigned sentinels were enriched in enhancers (subcutaneous 1.8-fold, P = 8.4 x 10-4 in adipocytes), whereas TAD-assigned sentinels were enriched in polycomb repressed regions (1.5-fold, P = 0.007).",
+   "concl": "Genomic context-specific regulatory mechanisms underlie the methylation-expression associations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - target genes",
+   "q": "Were the target genes themselves differentially expressed in obesity?",
+   "a": "Yes: 34% of subcutaneous target genes (background 6%, binomial P = 7 x 10-75) and 32% of visceral target genes (background 9%, P = 6 x 10-37) were differentially expressed at FDR < 0.01.",
+   "kw": [
+    "DESeq2"
+   ],
+   "info": "Verified in GTEx whole adipose tissue (663 subcutaneous and 541 visceral samples) with consistent depot-specific enrichment against BMI.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - target genes",
+   "q": "Which biologically notable target genes were identified?",
+   "a": "Insulin signalling and metabolism genes such as IRS2, ADIPOR2, PLIN5, FABP3, SOCS3, RBP4 and AKT3 (subcutaneous), and KLF6, TULP3, DOC2B, ACOT11, PRKD2, SLC22A3 and KIF5C (visceral).",
+   "kw": [
+    "IRS2",
+    "KLF6"
+   ],
+   "info": "Also browning/beigeing genes PRDM16, EBF2, FGF9 and IL10RA, and neurite/axon genes NRN1, SEMA6B, SEMA4B, NRXN3. Most potential effector genes have unknown adipocyte functions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - target genes",
+   "q": "What novel micro-RNA finding was reported?",
+   "a": "Methylation of the shared promoter of the MIR23A, MIR24-2 and MIR27A cluster in subcutaneous adipocytes was associated with expression of this adipogenesis-implicated cluster.",
+   "kw": [
+    "MIR27A",
+    "adipogenesis"
+   ],
+   "info": "Lower methylation in obesity was linked to increased expression of the cluster, whose members inhibit PPARG signalling, suppress adipogenesis and induce insulin resistance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pathway enrichment",
+   "q": "Which pathways were enriched for genes near the sentinels?",
+   "a": "Subcutaneous nearest genes were enriched in growth and development, inflammatory, metabolic and apoptosis pathways including TLR4 signalling, sphingolipid binding and vitamin D metabolism (FDR < 0.01 empirical).",
+   "kw": [
+    "TLR4",
+    "MSigDB"
+   ],
+   "info": "Visceral nearest genes were over-represented in endoderm development, body pattern formation and cell motility. gProfiler analyses of associated cis-genes highlighted transcriptional control and cell/tissue development gene sets.",
+   "concl": "Target genes map to canonical enhancer functions: cell lineage and fate, tissue development, inflammation and metabolism."
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription factors",
+   "q": "How were transcription factor motifs identified at the sentinels?",
+   "a": "De novo motif enrichment with Homer version 4.11.1 (findMotifsGenome.pl) in the plus/minus 150 bp around each sentinel, using permuted sentinel-matched regions and GC-matched regions as backgrounds.",
+   "kw": [
+    "Homer"
+   ],
+   "info": "At each motif the 10 best-matching TFs were taken and then restricted to those expressed in the adipocyte RNA-seq data (counts >= 5 in >= 20% of samples).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription factors",
+   "q": "How many motifs were enriched and in which depot?",
+   "a": "Seven distinct motifs were enriched around the subcutaneous sentinels (P range 1 x 10-9 to 1 x 10-13); 5 at hypomethylated and 2 at hypermethylated sentinels, with a median of 28 (range 16-86) sentinels per motif.",
+   "kw": [
+    "motif enrichment"
+   ],
+   "info": "49 TFs able to bind these motifs were expressed in subcutaneous adipocytes (median 8, range 4-11 per motif). No visceral motif reached the stringent de novo threshold.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription factors",
+   "q": "Which motifs sat in which chromatin states?",
+   "a": "Motif 1 was preferentially at tissue-specific enhancers, Motif 4 at regions flanking active TSS, and Motif 5 at both enhancers and active TSS flanking regions.",
+   "kw": [
+    "Roadmap chromatin states"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription factors",
+   "q": "What evidence suggested TF binding alters methylation?",
+   "a": "TF expression correlated with sentinel methylation at each motif, most strongly for HOXA11 and HOXA13 (Motif 7), with weaker correlations for ATF3, FOSL1, JUN, SNAI1, KLF3/4/5, ELF1, ELK1, RUNX1, RUNX3, SPI1, SOX4, SOX6 and SOX10.",
+   "kw": [
+    "HOXA13",
+    "KLF4"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcription factors",
+   "q": "What evidence suggested methylation alters TF activity?",
+   "a": "Motifs 2 and 4 contained CG sites in their binding sequences, Motif 4 was strongly enriched for genomic CG sites, and adjusting for sentinel methylation changed TF-target gene co-expression, most strongly for ELK1, ELK3 and ELF4.",
+   "kw": [
+    "ELK1",
+    "ELF4"
+   ],
+   "info": "ELK1 and ELF4 have been shown to be methylation-sensitive in vitro. Array coverage of CG sites around motifs was sparse (median 22%, IQR 14-33%), limiting direct testing.",
+   "concl": "DNA methylation and TFs may act reciprocally at obesity-associated regulatory sites."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Mendelian Randomisation",
+   "q": "Why was whole adipose tissue used for the MR instruments?",
+   "a": "They used 588 whole subcutaneous adipose tissue samples from Twins UK rather than isolated adipocytes to increase power to find independent cis-SNPs associated with each sentinel.",
+   "kw": [
+    "Twins UK",
+    "mQTL"
+   ],
+   "info": "Cis-SNPs within 500 kb, clumped at LD R2 < 0.01, Bonferroni-corrected P < 0.05 to reduce weak instrument bias. mQTLs called in MatrixEQTL version 2.1.0; MR run with TwoSampleMR version 0.5.1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Mendelian Randomisation",
+   "q": "Which GWAS were used as outcomes?",
+   "a": "BMI (GIANT, N up to 795,640), WHR adjusted for BMI (GIANT, N up to 694,649), T2D and T2D adjusted for BMI (DIAGRAM, N up to 231,422), fasting glucose and insulin (MAGIC, N up to 138,589), HbA1c (MAGIC, N up to 159,940) and lipids (Global Lipids Genetics Consortium).",
+   "kw": [
+    "GIANT",
+    "DIAGRAM"
+   ],
+   "info": "Wald Ratio for single-SNP instruments, inverse variance weighted for multiple SNPs; Steiger directionality test for cause-consequence direction; both required at FDR < 0.01.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - causal inference",
+   "q": "How many loci showed causal effects on obesity traits?",
+   "a": "Causal effects on BMI at 10 subcutaneous and 4 visceral loci, on WHR at 12 loci, on T2D at 4 loci, and on fasting glucose, insulin and HbA1c at 3 loci (all subcutaneous).",
+   "kw": [
+    "Steiger test"
+   ],
+   "info": "Only 191 subcutaneous and 34 visceral sentinels had significantly associated cis-SNPs, so causation could not be assessed at most sites.",
+   "concl": "Causal effects were inferred at up to 28 independent loci for adiposity and metabolic traits, plus 31 further lipid loci."
+  },
+  {
+   "type": "qa",
+   "section": "Results - causal inference",
+   "q": "Which sites were causally linked to several phenotypes?",
+   "a": "cg26906217 (BMI and WHR, near PIK3C2A), cg15809217 (WHR, T2D and fasting insulin, linked to PRRC2A expression) and cg05941027 (BMI, WHR and T2D, linked to LIMD2 expression in visceral adipocytes).",
+   "kw": [
+    "PRRC2A",
+    "LIMD2"
+   ],
+   "info": "cg21681030 was causally associated with BMI and with expression of RHOQ, a glucose receptor trafficking gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - causal inference",
+   "q": "What did the MR sensitivity analyses show?",
+   "a": "Of 44 loci with at least 3 correlated instrument SNPs, 30 replicated by MR IVW and 10 by the less powerful MR Egger; only 11 loci violated the assumption of no horizontal pleiotropy (MR Egger intercept P < 0.05).",
+   "kw": [
+    "horizontal pleiotropy"
+   ],
+   "info": "Of 61 whole-adipose cis-SNPs, 21 replicated in adipocytes at P < 0.05 (binomial P = 8.2 x 10-13) and 50 had consistent direction (P = 4.6 x 10-7).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - functional screens",
+   "q": "How were PRRC2A and LIMD2 silenced?",
+   "a": "3T3-L1 mouse pre-adipocytes were differentiated and reverse transfected at day 2 with two Silencer Select siRNAs per target (Prrc2a s79278/s79279; Limd2 s85672/s85674) or a non-silencing control, then assayed at day 6.",
+   "kw": [
+    "3T3-L1",
+    "siRNA"
+   ],
+   "info": "Lipid accumulation measured by Oil Red O eluted at 500 nm and normalised to crystal violet cell number; qPCR normalised to the geometric mean of Nono and Ywhaz. Each siRNA was also tested alone to exclude off-target effects, with cell viability checked by RealTime-Glo.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional screens",
+   "q": "What happened when Prrc2a or Limd2 was knocked down?",
+   "a": "Both knockdowns significantly reduced lipid accumulation during adipocyte differentiation (Prrc2a P = 3.5 x 10-5, Limd2 P = 0.0047), with a more marked effect for Prrc2a.",
+   "kw": [
+    "Oil Red O",
+    "adipogenesis"
+   ],
+   "info": "Results were independently replicated because adipocyte differentiation models are prone to variability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional screens",
+   "q": "How did the two knockdowns differ mechanistically?",
+   "a": "Prrc2a knockdown consistently reduced Pparg, the master adipogenic transcription factor, and the lipid metabolism and insulin signalling genes it regulates, while Limd2 silencing did not change Pparg.",
+   "kw": [
+    "Pparg"
+   ],
+   "info": "Limd2 silencing instead altered fat mobilising and lipid synthesis genes, but inconsistently across replicates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - targeted methylation sequencing",
+   "q": "How was the targeted methylation sequencing done?",
+   "a": "TWIST Bioscience Methylation Detection System with a custom panel covering 71 genomic regions (58.9 kb), on 94 adipocyte samples (23 obese and 24 control per depot), aiming for median coverage >100X.",
+   "kw": [
+    "TWIST",
+    "EM-seq"
+   ],
+   "info": "20 ng DNA fragmented to ~265 bp, enzymatic methylation conversion (NEB EM-seq), sequenced 100-bp paired-end on NovaSeq 6000 (pilot) and NextSeq 2000 P2. Aligned with bwameth 0.2.5, methylation called with MethylDackel (--minDepth 10 --maxVariantFrac 0.25).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - fine-mapping",
+   "q": "What threshold defined differential methylation in the targeted sequencing?",
+   "a": "A change greater than 5% at P < 0.05 at sites tagged by robust sentinel associations, chosen because targeted sequencing lacked the precision of arrays or whole-genome bisulphite sequencing.",
+   "kw": [],
+   "info": "Sentinels were enriched for obesity association in the sequencing data and effect sizes were highly concordant with the arrays.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - fine-mapping",
+   "q": "What was found at the PRRC2A and LIMD2 loci?",
+   "a": "At PRRC2A, several differentially methylated sites lay in an open chromatin region annotated as an intronic enhancer with Hi-C connectivity to PRRC2A; at LIMD2 an extended differentially methylated region covered a proximal enhancer and several exons and splice sites.",
+   "kw": [
+    "enhancer",
+    "ATAC"
+   ],
+   "info": "At PRRC2A, expression of 2 predicted TFs (ELK1 and ESSR) correlated with PRRC2A expression and explained over 30% of its variance. The open chromatin was specific to adipocyte precursors, absent in mature adipocytes and whole tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - fine-mapping",
+   "q": "What did the Motif 4 CG sites show in targeted sequencing?",
+   "a": "The CG dinucleotides within Motif 4 were systematically hypomethylated in obesity (18 of 24, 75%, P = 0.01) and concordant with the adjacent sentinel differences (R = 0.63, P = 0.001).",
+   "kw": [
+    "Motif 4"
+   ],
+   "info": "This supports the idea that binding motifs of methylation-sensitive TFs are enriched for obesity-associated methylation changes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CRISPR-activation",
+   "q": "How was CRISPR-activation performed?",
+   "a": "Immortalised human adipose-derived stromal (ihASC) cells were transduced with lenti-dCAS9-VP64 then with dual guide RNA LentiGuide-Hygro vectors targeting a 150-bp window at the peak of the open chromatin sites, with AAVS1 guides as controls.",
+   "kw": [
+    "dCas9-VP64",
+    "AAVS1"
+   ],
+   "info": "Guides designed in CRISPOR and CHOPCHOP, 3 per gene paired in 3 combinations (F1/R2, F1/R3, F2/R3); selection with blasticidin then hygromycin left 2 PRRC2A, 3 LIMD2 and 2 AAVS1 guide pairs. Expression normalised to ACTB and GAPDH.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRISPR-activation",
+   "q": "What did targeted activation show?",
+   "a": "Activation at the LIMD2 regulatory region increased LIMD2 expression more than 2-fold (P < 0.0001) without affecting neighbouring genes, while activation at the PRRC2A region did not change PRRC2A or the TAD-sharing gene BAG6.",
+   "kw": [
+    "LIMD2"
+   ],
+   "info": "The LIMD2 increase was seen with two of three guide pairs. The authors note the PRRC2A null result may be technical and does not exclude an effect there.",
+   "concl": "The differentially methylated region at LIMD2 regulates LIMD2 transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRISPR-activation",
+   "q": "What integrated model did the authors propose for the two genes?",
+   "a": "Lower methylation at cg15809217 in obese subcutaneous adipocytes may promote insulin resistance and T2D through reduced PRRC2A expression and impaired adipogenesis, while reduced methylation at cg05941027 in obese visceral adipocytes may raise LIMD2 expression and lipid storage.",
+   "kw": [
+    "m6A"
+   ],
+   "info": "PRRC2A was recently reported as a reader of N6-methyladenosine (m6A) that stabilises transcripts and regulates cell specification; LIMD2 is a structural protein needing further study.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors explain the depot specificity?",
+   "a": "They surmise it is due to the local tissue microenvironment, since technical, genetic and other known confounding factors were excluded.",
+   "kw": [
+    "depot specificity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What fraction of sites were causally implicated and what is the caveat?",
+   "a": "Up to 26% of extreme obesity-associated 5mC sites were causally implicated, but the MR findings are causal estimates only for effects under genetic control.",
+   "kw": [
+    "Mendelian Randomisation"
+   ],
+   "info": "Absence of MR evidence does not indicate absence of causation at environmentally determined loci, which make up the majority of the dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations and future directions do the authors raise?",
+   "a": "The TF-methylation reciprocal relationships require experimental validation, and single-cell methylation and transcription technologies will be needed to address cellular epigenetic heterogeneity, dynamics and spatial microenvironment in obese adipose remodelling.",
+   "kw": [
+    "single cell"
+   ],
+   "info": "They argue array-scale studies in many individuals remain valuable and should be combined with precision epigenome editing tools.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - transcription factors",
+   "text": "Array coverage of CG sites inside TF motifs was sparse (median 22%), so direct tests of methylation at TF binding sites were underpowered; worth checking whether whole-genome bisulphite or long-read methylation data would resolve this."
+  },
+  {
+   "type": "note",
+   "section": "Results - genome-wide alterations",
+   "text": "Why are there far fewer obesity-associated sites in visceral than subcutaneous adipocytes? Note that the Roadmap adipose/adipocyte chromatin states used for enrichment are derived from the subcutaneous depot, which may bias the comparison."
+  },
+  {
+   "type": "note",
+   "section": "Results - CRISPR-activation",
+   "text": "The PRRC2A CRISPR-activation negative result is attributed to technical factors; the open chromatin there was specific to adipocyte precursors, so cell state at the time of activation may matter."
+  }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "id": "Jaganathan_2025",
+ "title": "Predicting expression-altering promoter mutations with deep learning",
+ "link": "https://doi.org/10.1126/science.ads7373",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Jaganathan_2025_Science_promoter_mutations_deep_learning.txt",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Not the full paper: no access to the full text, so these notes are based only on the publicly available abstract and metadata (PubMed). Details from the main text and figures are missing.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Exome sequencing currently diagnoses only a minority of patients with rare genetic diseases. This suggests that other, unrecognized pathogenic variants may sit in noncoding sequence.",
+   "kw": [
+    "rare disease",
+    "exome sequencing",
+    "noncoding variants"
+   ],
+   "info": "This file has only the abstract and PubMed/Crossref metadata. The full text was not available.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is PromoterAI?",
+   "a": "PromoterAI is a deep neural network that identifies noncoding promoter variants that dysregulate gene expression.",
+   "kw": [
+    "PromoterAI",
+    "deep learning",
+    "promoter variants"
+   ],
+   "info": "The abstract does not give the model's architecture, training data or input features.",
+   "concl": "PromoterAI accurately identifies promoter variants that alter gene expression."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How did they show that PromoterAI predictions match real expression changes?",
+   "a": "Promoter variants predicted to alter expression produced outlier expression at both the RNA and protein levels in thousands of individuals.",
+   "kw": [
+    "outlier expression",
+    "RNA",
+    "protein"
+   ],
+   "info": "The abstract does not name the cohorts or datasets used, or the exact number of individuals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does population genetics say about predicted expression-altering promoter variants?",
+   "a": "These variants experience strong negative selection in human populations.",
+   "kw": [
+    "negative selection",
+    "population genetics"
+   ],
+   "info": "The abstract does not say how selection was measured.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Are these variants enriched in patients with rare diseases?",
+   "a": "Yes. In patients with rare diseases, clinically relevant genes are enriched for promoter variants predicted to alter expression.",
+   "kw": [
+    "rare disease",
+    "enrichment"
+   ],
+   "info": "The abstract does not give the patient cohort or the effect sizes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How did they test the functional impact of the variants experimentally?",
+   "a": "They validated the functional impact of the variants with reporter assays.",
+   "kw": [
+    "reporter assay"
+   ],
+   "info": "The abstract does not give the assay type, cell lines or number of variants tested.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How much of the rare disease genetic burden comes from promoter variation?",
+   "a": "The authors estimate that promoter variation accounts for 6% of the genetic burden associated with rare diseases.",
+   "kw": [
+    "genetic burden",
+    "promoter variation"
+   ],
+   "info": "This is an estimate. The abstract does not explain how it was calculated.",
+   "concl": "Promoter variants are a meaningful but minor part of rare disease genetics, and exome sequencing misses them."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which organism was studied?",
+   "a": "Humans. The study covers human populations and patients with rare diseases.",
+   "kw": [
+    "Humans"
+   ],
+   "info": "The MeSH terms are Humans, Deep Learning, Exome Sequencing, Gene Expression Regulation, Mutation, Promoter Regions, Genetic, and Rare Diseases.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Abstract",
+   "text": "Read the full text for the PromoterAI architecture, training data, how the promoter region was defined, the cohorts used for RNA and protein outliers, and how the 6% burden estimate was calculated. Could the approach be applied to non-human genomes such as zebrafish or Astyanax?"
+  }
+ ]
+}

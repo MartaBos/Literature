@@ -1,0 +1,146 @@
+{
+ "id": "Li_2026",
+ "title": "Transcriptomic profiling reveals tetrabromobisphenol A-induced dysregulation of hepatic lipid homeostasis in common carp (Cyprinus carpio).",
+ "link": "https://doi.org/10.1016/j.cbpc.2025.110336",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Li_2026_CBPC_TBBPA_carp_hepatic_lipids.txt",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Not the full paper: no access to the full text, so these notes are based only on the publicly available abstract and metadata (PubMed). Details from the main text and figures are missing.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is TBBPA and why is it a concern?",
+   "a": "TBBPA (tetrabromobisphenol A) is a brominated flame retardant found almost everywhere in the environment. It is an ecological risk because it can bioaccumulate and is toxic.",
+   "kw": [
+    "TBBPA",
+    "brominated flame retardant"
+   ],
+   "info": "These notes are based only on the abstract and metadata. The full text was not available.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this study address?",
+   "a": "Earlier work mostly used untargeted metabolomics and lipidomics to describe how TBBPA changes metabolic end products. There is little data on the mechanisms by which TBBPA disrupts lipid metabolism in aquatic organisms.",
+   "kw": [
+    "lipid metabolism",
+    "metabolomics",
+    "lipidomics"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What organism and exposure design did they use?",
+   "a": "They used common carp (Cyprinus carpio). The fish were exposed for 14 days to TBBPA at 0, 0.005, 0.05 and 0.5 mg/L, which the authors describe as environmentally relevant concentrations.",
+   "kw": [
+    "Cyprinus carpio",
+    "dose-response"
+   ],
+   "info": "The abstract does not give sample sizes, the exposure route or which tissues were sequenced beyond liver and serum.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which approaches did they combine?",
+   "a": "They combined serum biochemistry, histochemistry of the liver (Oil Red O staining) and transcriptomic profiling to study dose-dependent effects on lipid metabolism.",
+   "kw": [
+    "transcriptomics",
+    "Oil Red O"
+   ],
+   "info": "The abstract gives no sequencing platform, software or analysis parameters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did serum biochemistry show after TBBPA exposure?",
+   "a": "There was dose-dependent hyperlipidemia, with higher TG and T-CHO. SOD and CAT activities went down and MDA went up.",
+   "kw": [
+    "hyperlipidemia",
+    "oxidative stress"
+   ],
+   "info": "The abstract does not spell out these abbreviations and does not give exact values or fold changes. The SOD, CAT and MDA results match the paper's keyword 'oxidative stress'.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did liver histology and hepatic lipid content show?",
+   "a": "Oil Red O staining showed lipid droplets building up in the liver. Even so, TG and T-CHO content inside the liver did not change significantly (P > 0.05). The 0.5 mg/L group had the most severe histopathology.",
+   "kw": [
+    "Oil Red O",
+    "lipid droplets",
+    "liver"
+   ],
+   "info": "Lipid droplets accumulated even though bulk hepatic TG and T-CHO did not change. The abstract does not explain this mismatch.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which pathways did the transcriptomics point to?",
+   "a": "The AMPK and PPAR signaling pathways came out as the key regulators of TBBPA-induced metabolic dysregulation.",
+   "kw": [
+    "AMPK",
+    "PPAR"
+   ],
+   "info": "The abstract gives no numbers of differentially expressed genes and no thresholds.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What happened at the low dose (0.05 mg/L)?",
+   "a": "Lipid accumulation set off a compensatory activation of the AMPK/PPAR-alpha/CPT1 axis. This boosted fatty acid beta-oxidation and partly offset lipid deposition.",
+   "kw": [
+    "AMPK",
+    "PPAR-alpha",
+    "CPT1"
+   ],
+   "info": "The abstract calls 0.05 mg/L 'low-dose' even though 0.005 mg/L was the lowest concentration tested. It does not report results for the 0.005 mg/L group.",
+   "concl": "Low-dose TBBPA triggers an adaptive increase in beta-oxidation."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What happened at the high dose (0.5 mg/L)?",
+   "a": "Genes for lipid synthesis, transport and storage were upregulated together. This disrupted lipid metabolism and led to pathological lipid deposition.",
+   "kw": [
+    "lipid synthesis",
+    "lipid storage"
+   ],
+   "info": "The abstract does not name the specific genes.",
+   "concl": "High-dose TBBPA overwhelms compensation and drives pathological hepatic lipid deposition."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the authors' overall conclusion?",
+   "a": "TBBPA disrupts hepatic lipid homeostasis in carp in a dose-dependent way. The study sheds light on the molecular cascades behind TBBPA-induced metabolic dysregulation in aquatic species.",
+   "kw": [
+    "lipid homeostasis",
+    "dose-dependent"
+   ],
+   "info": "",
+   "concl": "Response switches with dose: compensatory AMPK/PPAR-alpha/CPT1 beta-oxidation at low dose, and coordinated lipogenic, transport and storage gene upregulation at high dose."
+  },
+  {
+   "type": "note",
+   "section": "Abstract",
+   "text": "Why did Oil Red O show lipid droplet accumulation when intrahepatic TG and T-CHO did not change significantly? Check the full text for how lipids were measured and for statistical power."
+  },
+  {
+   "type": "note",
+   "section": "Abstract",
+   "text": "What happened in the 0.005 mg/L group, and were the AMPK/PPAR-alpha/CPT1 changes confirmed at the protein level or only seen in the transcriptome?"
+  }
+ ]
+}

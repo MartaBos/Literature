@@ -1,0 +1,613 @@
+{
+ "id": "Warren_2021",
+ "title": "A chromosome-level genome of Astyanax mexicanus surface fish for comparing population-specific genetic differences contributing to trait evolution",
+ "link": "https://doi.org/10.1038/s41467-021-21733-z",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Warren_2021_NatCommun_surface_fish_genome.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does this paper present, and why use the surface fish?",
+   "a": "A high-resolution, chromosome-level genome of A. mexicanus surface fish. It allows the first genome-wide comparison between surface fish and cavefish populations. Surface populations serve as a proxy for the ancestral form.",
+   "kw": [
+    "chromosome-level genome",
+    "surface fish"
+   ],
+   "info": "Many cave populations appear to have evolved troglomorphic traits independently.",
+   "concl": "The surface fish reference is a more complete resource for comparative, functional and genetic studies of drastic trait differences within one species."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings named in the abstract?",
+   "a": "QTL mapping found new candidate genes for eye loss, such as dusp26. CRISPR editing confirmed that rx3, a gene within an eye size QTL, is essential for eye formation. They also made the first genome-wide evaluation of deletion variability across cavefish populations.",
+   "kw": [
+    "dusp26",
+    "rx3",
+    "deletions"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is the surface-to-cave transition a tractable system for studying trait evolution?",
+   "a": "The direction (polarity) of evolutionary change is known. Subterranean animals worldwide have converged on reduced metabolic rate, eye size and pigmentation, so the strong phenotypic differences from surface relatives can be used to study the mechanisms of evolution.",
+   "kw": [
+    "convergence",
+    "polarity of change"
+   ],
+   "info": "Examples of subterranean animals: fish, salamanders, rodents and many invertebrates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How many cave populations of A. mexicanus are there, and where do they live?",
+   "a": "At least 30 cave-dwelling populations in the Sierra de El Abra, Sierra de Colmena and Sierra de Guatemala regions of northeastern Mexico. Surface fish of the same species live in rivers and lakes throughout Mexico and southern Texas.",
+   "kw": [
+    "Astyanax mexicanus"
+   ],
+   "info": "Cavefish differ in traits relevant to human disease: sleep duration, circadian rhythmicity, anxiety, aggression, heart regeneration, eye and retina development, craniofacial structure, insulin resistance, appetite and obesity. Fertile surface-cave hybrids made in the lab allow genetic mapping.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "The earlier Pachón cavefish genome (Astyanax mexicanus 1.0.2) was fragmented because it was built from short reads. Also, without a surface fish genome, surface and cave populations could not be compared directly at the genomic level.",
+   "kw": [
+    "Astyanax mexicanus 1.0.2",
+    "short-read fragmentation"
+   ],
+   "info": "As a proof of principle, they first confirmed known mutations for pigmentation and eye loss. They then looked for novel QTL and for coding and deletion mutations.",
+   "concl": "First de novo surface fish genome assembly using long-read sequencing."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "Which fish was sequenced, and how was the genome assembled?",
+   "a": "A single lab-reared female descended from wild-caught surface fish. The genome was sequenced with PacBio SMRT at about 73x coverage and assembled with wtdbg2 to an ungapped size of 1.29 Gb.",
+   "kw": [
+    "PacBio SMRT",
+    "wtdbg2"
+   ],
+   "info": "Methods: the female (Asty152) came from a lab cross of Río Sabinas and Río Valles surface fish. It was sequenced on a PacBio RSII with an average read length of about 12 kb. Methods give coverage as more than 50-fold for an estimated 1.3 Gb genome, while Results say about 73x.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "How were the contigs scaffolded into chromosomes, and what are the final assembly stats?",
+   "a": "Contigs were scaffolded with a BioNano physical map. Then 70% of the assembly scaffolds were assigned by hand to 25 chromosomes using genetic linkage map markers. The final assembly, Astyanax mexicanus 2.0, has 2415 scaffolds, a contig N50 of 1.7 Mb and a scaffold N50 of 35 Mb.",
+   "kw": [
+    "BioNano",
+    "linkage map",
+    "N50"
+   ],
+   "info": "These stats are comparable to other teleost genomes sequenced and assembled in a similar way.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "Why could 394 Mb of the assembly not be assigned to chromosomes?",
+   "a": "Mostly because 3.36% of the linkage markers (out of 2235 total) did not align to the surface genome. Other reasons: some contigs had only one marker, so their orientation could not be set, and some markers mapped to several places.",
+   "kw": [
+    "synteny",
+    "GBS markers"
+   ],
+   "info": "Uniquely mapped markers showed few ordering discrepancies and significant synteny with the linkage map. This validates the order and orientation of most of the assembly. Fig. 1 reports synteny based on 96.6% of genotype markers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "How repetitive is the A. mexicanus genome compared with other teleosts?",
+   "a": "Total interspersed repeats estimated with WindowMasker are 41%. This is intermediate between Xiphophorus maculatus (27%) and Danio rerio (50%). Astyanax mexicanus 2.0 has 11% more total masked repeats than 1.0.2.",
+   "kw": [
+    "WindowMasker",
+    "repeats"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "How did they test for mapping bias between the cave and surface references?",
+   "a": "They mapped population resequencing reads from Herman et al. to both genomes. Every population had fewer unmapped reads and more properly paired reads on Astyanax mexicanus 2.0, and also more nonprimary alignments with greater variation.",
+   "kw": [
+    "mapping bias",
+    "resequencing"
+   ],
+   "info": "The best-fit lines for the two references have similar slopes, so population identity affects the mapping rate to each genome in a similar way. The authors expect phased assembly approaches to resolve more chromosomal sequence in the future.",
+   "concl": "Astyanax mexicanus 2.0 has more resolved sequence regions than 1.0.2."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "How many genes were annotated?",
+   "a": "The NCBI pipeline predicted 25,293 protein-coding genes and Ensembl predicted 26,698. Compared with 1.0.2, 1665 new protein-coding genes were added, and lncRNA genes rose from 1062 to 5314.",
+   "kw": [
+    "NCBI",
+    "Ensembl",
+    "lncRNA"
+   ],
+   "info": "Annotation used transcript data from whole adult fish, embryos and 12 tissues in the NCBI short-read archive. Targeted noncoding RNA sequencing is still needed to reach zebrafish-level noncoding annotation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and annotation",
+   "q": "How complete is the gene annotation?",
+   "a": "By BUSCO (benchmarking universal single-copy orthologs) with vertebrate genes, 94.6% of genes are complete, 4% are missing and 4.2% are duplicated. With NCBI Splign, same-species RefSeq or GenBank transcripts show 98.4% coverage.",
+   "kw": [
+    "BUSCO",
+    "Splign"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - albinism and oca2",
+   "q": "What did the new albinism QTL mapping in surface/Pachón F2 hybrids show?",
+   "a": "Each of the two F2 groups had a single albinism QTL. Group A: LOD 47.31 on LG 3, 69% of variance. Group B: LOD 22.56 on LG 21, 37.8% of variance. Both mapped to surface fish chromosome 13, and F2 fish homozygous for the cave allele were albino.",
+   "kw": [
+    "QTL",
+    "albinism",
+    "oca2"
+   ],
+   "info": "Earlier QTL studies in Pachón and Molino, done before any reference genome existed, had found one major QTL colocalizing with oca2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - albinism and oca2",
+   "q": "Why is the albinism QTL easier to interpret on the surface genome?",
+   "a": "LG 3 from group A corresponds almost completely to surface chromosome 13, but in 1.0.2 it is split across many contigs. The group B QTL is a 2.8 Mb region on chromosome 13 that contains oca2.",
+   "kw": [
+    "contiguity",
+    "1.5-LOD interval"
+   ],
+   "info": "The region was found by using sequences flanking the 1.5-LOD support interval as Ensembl BLAST queries.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - albinism and oca2",
+   "q": "How did they confirm that oca2 causes albinism in the mapping population?",
+   "a": "They crossed an albino surface/Pachón F2 fish with an engineered surface fish heterozygous for an oca2 exon 21 deletion. In this complementation test, 46.5% of offspring (40/86) completely lacked pigment.",
+   "kw": [
+    "complementation test",
+    "oca2"
+   ],
+   "info": "Methods: the engineered allele is a 4 bp deletion (oca2 delta4bp/+). Larvae were scored at 5 dpf. All 8 genotyped albino larvae carried the engineered deletion, and all 8 genotyped pigmented larvae had the wild-type allele.",
+   "concl": "A change at the oca2 locus causes pigment loss in this mapping population."
+  },
+  {
+   "type": "qa",
+   "section": "Results - albinism and oca2",
+   "q": "What oca2 deletions were found in wild-caught fish?",
+   "a": "9 of 10 Pachón fish carried the exon 24 deletion, and no other population did. Exon 21 was absent in all Molino fish (n = 9). Smaller heterozygous or homozygous exon 21 deletions occurred in some Pachón (5/9), Río Choy (1/9) and Tinaja (5/9) fish.",
+   "kw": [
+    "oca2",
+    "exon 24",
+    "exon 21"
+   ],
+   "info": "These could not have been found with 1.0.2, because exon 24 is missing in the Pachón reference, so no reads aligned there. The text says 'nine out of ten' Pachón fish but n = 9 elsewhere.",
+   "concl": "A surface reference lets you see regions that are deleted in cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Results - remapping published QTL",
+   "q": "How many published QTL markers mapped to the surface genome?",
+   "a": "With BLAST, 1060 of 1124 markers (94.3%) mapped and went into the surface fish QTL database. 77 mapped only to the surface genome, 52 only to the cavefish genome, and 12 to neither.",
+   "kw": [
+    "QTL database",
+    "BLAST"
+   ],
+   "info": "Methods give 1156 markers, 687 of which had previously been mapped to the cavefish genome. The counts do not match the Results, and the paper does not explain why.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - remapping published QTL",
+   "q": "Give an example of a QTL region found only with the surface genome.",
+   "a": "Markers Am205D and Am208E map to a region of about 1 Mb on surface chromosome 6 (46,516,926-47,425,713 bp) but not to 1.0.2. This region is linked to feeding angle, eye size, vibration attraction behavior (VAB), suborbital neuromasts and maxillary tooth number.",
+   "kw": [
+    "rhodopsin",
+    "ubiad1",
+    "GABA A receptor delta"
+   ],
+   "info": "Candidate genes here: rhodopsin (vision), ubiad1 (eye development) and GABA A receptor delta (behavior, possibly VAB). In 1.0.2, the scaffold with these genes (KB871939.1) was not linked to this QTL.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - remapping published QTL",
+   "q": "How did the new assembly link rx3 to an eye QTL?",
+   "a": "rx3 falls inside the QTL for eye size, third suborbital bone size and body condition. In 1.0.2, the QTL marker Am55A and rx3 were on separate scaffolds, so their proximity could not be seen.",
+   "kw": [
+    "rx3",
+    "Am55A"
+   ],
+   "info": "rx3 had also been suggested to lie in a QTL for the outer plexiform layer of the eye. Older studies had low marker density and low power, which gave broad QTL intervals. There are no amino acid changes in rx3 between cave and surface fish, but its expression is reduced in Pachón.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - remapping published QTL",
+   "q": "How does rx3 expression differ between surface fish, Pachón and F1 hybrids?",
+   "a": "By in situ hybridization at tailbud stage, the rx3 expression area was 34876.3 square micrometers in surface fish (n = 17), 28674.8 in Pachón (n = 14) and 32617.8 in F1 hybrids (n = 11). Surface vs Pachón was significant (p = 0.004), and surface vs F1 was not (p = 0.294).",
+   "kw": [
+    "rx3",
+    "in situ hybridization",
+    "eye field"
+   ],
+   "info": "Expression is restored in F1 hybrids, which points to recessive inheritance in cavefish. In zebrafish, rx3 is expressed in the eye field of the anterior neural plate during gastrulation and is essential for the eye vs telencephalon fate decision.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - remapping published QTL",
+   "q": "What happened when rx3 was mutated in surface fish?",
+   "a": "Adult CRISPR/Cas9 crispant surface fish completely lacked externally visible eyes (n = 5). At 6 days post fertilization, crispants already had smaller eyes than Cas9-only injected or uninjected siblings.",
+   "kw": [
+    "CRISPR/Cas9",
+    "crispant",
+    "rx3"
+   ],
+   "info": "This matches other species, where rx3 (fish) or Rx (mouse) mutations cause a complete lack of eyes.",
+   "concl": "rx3's role in eye development is conserved in A. mexicanus. Regulatory changes in rx3 may contribute to eye loss through a smaller eye field."
+  },
+  {
+   "type": "qa",
+   "section": "Results - remapping published QTL",
+   "q": "What did rescreening the locomotor activity QTL find?",
+   "a": "They confirmed 20 previously reported candidate genes and found 96 more with relevant GO terms, including rx3. New candidates include opsins (opn7a, opn8a, opn8b, tmtopsa and two putative green-sensitive opsins) and circadian genes (id2b, nfil3-5, cipcb, clocka, npas2).",
+   "kw": [
+    "activity QTL",
+    "clocka",
+    "npas2"
+   ],
+   "info": "Marker locations came from the high-density GBS linkage map anchored to the surface genome. Expression and sequence-variation data are still needed to see which candidates actually differ between morphs.",
+   "concl": "clocka and npas2 matter because the earlier 1.0.2 analysis gave no evidence for core circadian clock genes in Pachón vs surface activity differences."
+  },
+  {
+   "type": "qa",
+   "section": "Results - eye size QTL mapping",
+   "q": "What eye size QTL was found in F2 population A?",
+   "a": "In group A (n = 188), normalized eye perimeter had QTLs spread across four LGs. The QTL on LG 1 was significant at p < 0.01, and the surface allele looked dominant. LG 1 markers fall on surface chromosome 3, but on separate contigs in 1.0.2.",
+   "kw": [
+    "eye size QTL",
+    "shisa2a",
+    "eya1"
+   ],
+   "info": "This region was identified before and contains shisa2a, shisa2b and eya1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - eye size QTL mapping",
+   "q": "Which new candidate gene lies between the highest-LOD markers in group A?",
+   "a": "ENSAMXG00000005961, in region 3:9301997-9505868. It is homologous to orofacial cleft 1 (ofcc1), also called ojoplano (opo). In medaka, knocking out opo impairs optic cup folding, giving an abnormal lens and neural retina.",
+   "kw": [
+    "opo",
+    "ofcc1",
+    "ojoplano"
+   ],
+   "info": "Pachón and surface opo differ by several coding changes, but none affect evolutionarily conserved residues. Future studies are needed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - eye size QTL mapping",
+   "q": "What eye size QTL was found in F2 population B?",
+   "a": "In group B (n = 219), there was a single QTL for normalized left eye diameter on LG 13: LOD 11.98, explaining 24.3% of variance. Cave homozygotes had the smallest eyes and heterozygotes were intermediate. The QTL is a 633 kb region with 22 genes.",
+   "kw": [
+    "eye size QTL",
+    "LG 13"
+   ],
+   "info": "The same peak appeared for right eye diameter and when eye phenotype was coded as binary (eyed vs eyeless). None of the earlier Pachón eye size QTL map here. Inconsistency: the text places the region on surface chromosome 13, but Fig. 3h labels it chromosome 20.",
+   "concl": "This is a new eye size QTL."
+  },
+  {
+   "type": "qa",
+   "section": "Results - eye size QTL mapping",
+   "q": "Why is dusp26 a candidate for eye loss?",
+   "a": "In zebrafish, morpholino knockdown of dusp26 gives small eyes with defective retina development and a less developed lens. There are no dusp26 coding changes among surface, Tinaja, Pachón and Molino fish. However, its expression is reduced in Pachón at 36 hpf (p < 0.05) and 72 hpf (p < 0.01).",
+   "kw": [
+    "dusp26"
+   ],
+   "info": "Expression data come from previously published embryonic transcriptomes. The authors say they cannot rule out other genes or regions in the interval.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - deletion structural variants",
+   "q": "How were deletions identified across populations?",
+   "a": "Population samples from Herman et al. were aligned to Astyanax mexicanus 2.0, and deletions were called with Manta and LUMPY. Only deletions called by both tools were kept and then classified as coding, intronic, regulatory or intergenic.",
+   "kw": [
+    "Manta",
+    "LUMPY",
+    "structural variation"
+   ],
+   "info": "LUMPY called more short deletions and Manta fewer long ones, but per-sample call counts correlated well (R2 = 0.78).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - deletion structural variants",
+   "q": "How do the populations differ in deletions?",
+   "a": "412 genes had deletions with allele frequency above 5%. Molino had the fewest heterozygous deletions and Río Choy surface fish the fewest homozygous ones, mirroring SNP heterozygosity. Tinaja showed the most individual variability (SD 427). Pachón and Tinaja had the most protein-coding genes altered by a deletion, and Río Choy the fewest.",
+   "kw": [
+    "deletions",
+    "heterozygosity"
+   ],
+   "info": "Regulatory sequence was defined as 1000 bp up- or downstream of annotated protein-coding genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - deletion structural variants",
+   "q": "What do the per3 and ephx2 examples show?",
+   "a": "Deletions that likely alter these protein-coding genes varied between populations in how common they were, how many bases they removed and whether they were heterozygous or homozygous. per3 is a circadian rhythm gene and ephx2 a cholesterol regulatory gene.",
+   "kw": [
+    "per3",
+    "ephx2"
+   ],
+   "info": "Discussion: per3 has low-frequency deletions and ephx2 high-frequency ones. Every sampled Molino fish carries a heterozygous per3 deletion.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - deletion structural variants",
+   "q": "What pathways are enriched among genes hit by deletions?",
+   "a": "109 of the 412 genes had GO annotation, and WebGestalt found significant enrichment (p < 0.05) for AMPK, Wnt and MAPK signaling (each p = 0.01), metabolism (p = 0.02) and circadian clock (per3, p = 0.05). Disease terms included hypercholesterolemia (ephx2), diabetes mellitus (hnf4a), albinism (oca2) and sialorrhea.",
+   "kw": [
+    "WebGestalt",
+    "AMPK",
+    "hnf4a"
+   ],
+   "info": "The enrichment recovered oca2, the known main cause of pigment loss. The authors say these disease and pathway inferences need further validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - hcrtr2 coding changes",
+   "q": "Why look at hcrtr2 in cavefish?",
+   "a": "Hypocretin is a wake-promoting hypothalamic neuropeptide that regulates sleep. It was previously found elevated in Pachón, and blocking hypocretin signaling restores sleep in cavefish. In teleosts, hypocretin signals through a single receptor, Hcrtr2.",
+   "kw": [
+    "hypocretin",
+    "hcrtr2",
+    "sleep loss"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - hcrtr2 coding changes",
+   "q": "What hcrtr2 mutations were found in cavefish?",
+   "a": "Pachón has two missense mutations, S293V and E295K, and E295K is shared with Tinaja. Molino has a 6 bp deletion that removes amino acids 140 and 141 (S140, V141).",
+   "kw": [
+    "hcrtr2",
+    "missense",
+    "Molino"
+   ],
+   "info": "The variants were validated by PCR and Sanger sequencing in lab populations. E295K and the Molino deletion affect evolutionarily conserved amino acids.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - hcrtr2 coding changes",
+   "q": "What effect are the hcrtr2 variants predicted to have on the protein?",
+   "a": "iStable predicted that E295K destabilizes the protein (confidence 0.842) and that S293V stabilizes it (0.772), and MUpro agreed. Homology models in SWISS-MODEL suggest the Molino deletion breaks an alpha helix in the transmembrane region, while the Tinaja and Pachón models differ only slightly from surface.",
+   "kw": [
+    "iStable",
+    "MUpro",
+    "SWISS-MODEL"
+   ],
+   "info": "Models were based on the human HCRTR2 crystal structure (PDB 5wqc) and overlaid in VMD. iStable and MUpro cannot handle deletions, which is why the Molino variant was analyzed by modeling. In situ and in vivo protein work is needed to confirm.",
+   "concl": "Coding changes in three cave populations suggest hypocretin signaling is under selection at the receptor level. hcrtr2 is also in the top 5% of FST outliers between Rascon surface fish and Pachón."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How much better is the surface assembly than the cavefish assembly?",
+   "a": "It has 40-fold fewer assembled contigs (an indirect measure of gaps) and a 71-fold longer contig N50. It shows high synteny with the linkage map and adds 1665 protein-coding genes.",
+   "kw": [
+    "chromonome",
+    "contiguity"
+   ],
+   "info": "The authors credit updated long-read and mapping technology.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limited the contiguity of the surface assembly?",
+   "a": "High heterozygosity in surface fish populations, plus the use of two surface populations for de novo assembly. This prevented sequence connectivity as complete as in genomes like Xiphophorus maculatus, which come from a lab-reared lineage.",
+   "kw": [
+    "heterozygosity",
+    "limitation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the new eye QTL fit with earlier work?",
+   "a": "Earlier multi-QTL models found eight eye size QTL in Pachón, so eye loss probably involves many genes. Here a single-QTL model shifted a known LOD peak just outside the earlier region, revealing opo. A second population gave a new QTL containing dusp26.",
+   "kw": [
+    "single-QTL model",
+    "opo",
+    "dusp26"
+   ],
+   "info": "Next steps are to identify regulatory changes linked to these candidates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do structural variants matter for adaptation, and what are the limits of this study?",
+   "a": "SVs are a significant source of standing variation, and studies in some teleosts show they outnumber single-nucleotide variants. This is the first study of cavefish SVs, but it only looked at deletions.",
+   "kw": [
+    "structural variation",
+    "standing variation"
+   ],
+   "info": "Example cited: rampant copy number variation during population differentiation in stickleback. Some disrupted genes fit cave phenotypes, while others are of unknown significance (e.g., sms, beta-alanine metabolism).",
+   "concl": "A catalog of thousands of cave population deletions awaits investigation and validation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future work do the authors propose?",
+   "a": "Genome-wide analysis of GPCR differences between surface fish and cavefish, combined with allele-swapping functional studies. Also, better assemblies of both cave and surface genomes to understand the population-genetic processes behind cave colonization.",
+   "kw": [
+    "GPCR",
+    "allele swapping"
+   ],
+   "info": "Shared synteny with zebrafish, proven gene editing and interbreeding should help reveal both genic and regulatory contributions to troglomorphic traits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome sequencing and assembly",
+   "q": "How was the assembly built and error-corrected?",
+   "a": "HMW DNA was extracted with the Qiagen MagAttract kit. The assembly used wtdbg (fuzzy de Bruijn graph), then indel-dominated base errors were corrected by mapping raw reads with minimap2. Pilon with default settings and about 60x of Illumina PCR-free 150 bp reads from Asty152 then corrected homozygous indels and single-base errors.",
+   "kw": [
+    "wtdbg2",
+    "minimap2",
+    "Pilon"
+   ],
+   "info": "SMRT data: NCBI BioProject PRJNA533584. The Data availability section gives PRJNA89115 for the raw and final assembly data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome sequencing and assembly",
+   "q": "How was the BioNano optical map made?",
+   "a": "A BioNano Irys restriction map was made from another surface fish, Asty168, the offspring of a Río Valles fish (Asty02) and a Río Sabinas fish (Asty04). It was used to order and orient contigs and to find possible misassemblies.",
+   "kw": [
+    "BioNano Irys",
+    "optical map"
+   ],
+   "info": "Nicked sites were labeled with Alexa Fluor 546 and DNA was counterstained with YOYO-1. Fragments over 150 kbp were assembled into a whole-genome optical map with BioNano's proprietary algorithm.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome sequencing and assembly",
+   "q": "What is a chromonome, and which tool builds it?",
+   "a": "Chromonomer aligns scaffolds to the high-density linkage map. It picks the best set of nonconflicting markers that places the most scaffolds while minimizing ordering discrepancies. Its FASTA output, giving scaffold locations by chromosome, is called a chromonome.",
+   "kw": [
+    "Chromonomer",
+    "chromonome"
+   ],
+   "info": "Run with default parameters after chimeric contig correction and BioNano scaffolding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome sequencing and assembly",
+   "q": "How were syntenic regions between the cave and surface assemblies defined?",
+   "a": "2235 GBS markers were mapped to 1.0.2 with the Ensembl BLAST/BLAT web tool and to 2.0 with Magic-BLAST v1.3.0. Marker positions were visualized with Circos.",
+   "kw": [
+    "Magic-BLAST",
+    "Circos",
+    "GBS markers"
+   ],
+   "info": "Chromonome errors found through these synteny alignments were corrected by hand where orthologous data (e.g., 1.0.2 scaffold alignments) were available. Assembly-to-assembly coordinates are in Supplementary Data 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome sequencing and assembly",
+   "q": "How was reference bias assessed with population samples?",
+   "a": "100 bp resequencing reads from Herman et al. were aligned to both references. RepeatMasker and WindowMasker repeat BED files were intersected with BEDTools v2.27.1, and alignments were filtered and summarized with SAMtools 1.9.",
+   "kw": [
+    "BEDTools",
+    "SAMtools",
+    "RepeatMasker"
+   ],
+   "info": "Plots were made in R 3.6. Annotation followed the NCBI RefSeq and Ensembl release 98 pipelines with RNA-seq evidence from cave and surface tissues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genetic mapping",
+   "q": "How was QTL mapping done in the two surface x Pachón F2 populations?",
+   "a": "R/qtl v1.44-9 in R v3.5.3, with scanone using a binary model for albinism and a normal model for normalized eye size. Significance was the 95th percentile of 1000 permutations, and confidence intervals were 1.5-LOD support intervals (lodint). Marker sequences were aligned to both references with Bowtie v2.2.6 in sensitive mode.",
+   "kw": [
+    "R/qtl",
+    "scanone",
+    "Bowtie"
+   ],
+   "info": "Fig. 3 uses Haley-Knott regression. Group A: 188 F2 fish from an earlier study, eye perimeter divided by body length, measured in ImageJ. Group B: 219 F2 fish from three clutches of paired F1 siblings, eye diameter normalized to standard length (length correlated with eye diameter). Eyeless fish were excluded (21/195 left, 22/172 right).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genetic mapping",
+   "q": "How was the database of published QTL built for the surface genome?",
+   "a": "Markers from earlier QTL studies were placed by BLAST, taking the top hit ranked by e-value, then bitscore, then alignment length. Genes inside the regions were pulled out with BEDTools intersect and the surface annotation.",
+   "kw": [
+    "QTL database",
+    "BEDTools intersect"
+   ],
+   "info": "Genes were called candidates only because they lie in the QTL confidence interval. A gene with no known relevant function was not excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - rx3 functional work",
+   "q": "How were rx3 crispants made and phenotyped?",
+   "a": "A gRNA against exon 2 (5'-GTGTAGCTGAAACGTGGTGA-3') was made with T7 Megascript, and nls-Cas9-nls mRNA with mMessage mMACHINE T3. Single-cell embryos were injected with 25 pg gRNA and 150 pg Cas9 mRNA (about 1 nl). Mutagenesis was checked by PCR and gel electrophoresis.",
+   "kw": [
+    "CRISPR/Cas9",
+    "gRNA",
+    "rx3"
+   ],
+   "info": "Adult eye size: crispants vs uninjected siblings, n = 5 each. Larvae at 6 dpf: crispants vs Cas9-only vs uninjected, n = 10 each, measured in Fiji and corrected for standard length; ANOVA with Tukey post hoc test in GraphPad Prism. In situ: DIG-labeled full-length rx3 probe, 65% formamide at 65 C, area measured in NIS Elements F 2.30.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - SV detection",
+   "q": "What was the SV calling pipeline, and what filters were used?",
+   "a": "Reads were aligned with BWA-MEM v0.7.17 and processed with SAMtools v1.9 (view, fixmate -m, sort, markdup -r). Calls came from manta v1.6.0 and from lumpy via smoove v0.2.3. Because coverage was low (about 9x per sample), only deletions called by both tools, with 50% reciprocal overlap, in the 500-100 kb size range were kept.",
+   "kw": [
+    "BWA-MEM",
+    "smoove",
+    "Nextflow"
+   ],
+   "info": "The size range is written as '500-100 kb', presumably 500 bp to 100 kb, but the paper does not say. Enrichment: WebGestalt with zebrafish protein-coding genes as reference; KEGG, Panther, OMIM and DisGeNET; hypergeometric test with Benjamini-Hochberg correction. Workflows were run in Nextflow.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - eye size QTL mapping",
+   "text": "Check the group B eye size QTL location: the text says surface chromosome 13 (633 kb, 22 genes), but Fig. 3h labels it chromosome 20. Look in Supplementary Table 4 and 6."
+  },
+  {
+   "type": "note",
+   "section": "Results - eye size QTL mapping",
+   "text": "Which regulatory changes reduce rx3 (recessive, restored in F1) and dusp26 expression in Pachón, given that neither gene has coding changes?"
+  },
+  {
+   "type": "note",
+   "section": "Results - hcrtr2 coding changes",
+   "text": "Do the hcrtr2 variants (destabilizing E295K, stabilizing S293V, helix-breaking Molino deletion) really change receptor function in different ways in vivo? This remains untested beyond in silico predictions."
+  }
+ ]
+}

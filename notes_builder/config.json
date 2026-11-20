@@ -1,0 +1,48 @@
+{
+  "papers_root": "/home/mbosnjak/literature/papers",
+  "notes_root": "/home/mbosnjak/literature/notes",
+  "html_name": "paper_notes_{folder}.html",
+
+  "claude_model": null,
+  "timeout_minutes": 25,
+  "max_new_papers_per_run": 15,
+  "server_port": 21060,
+
+  "_comment_folders": "category = default subcategory for new papers; subcategories = name -> colour (mex blue, emb orange, gen green, dam pink, oth purple, ali yellow). Folders starting with _ (e.g. papers/_superseded_preprints) are ignored.",
+  "folders": {
+    "amexicanus": {
+      "label": "Astyanax mexicanus", "category": "Genetics of cave traits",
+      "subcategories": {"Genetics of cave traits": "mex", "Eye loss": "ali", "Genomes & structural variation": "gen",
+                        "Gene regulation & metabolism": "emb", "Brain & behaviour": "oth"}
+    },
+    "drerio": {
+      "label": "Danio rerio", "category": "ZGA & early embryo",
+      "subcategories": {"ZGA & early embryo": "mex", "Embryo development & nutrition": "gen", "Toxicology & exposures": "emb", "Genomic resources": "oth"}
+    },
+    "general": {
+      "label": "General", "category": "Genome & chromosome evolution",
+      "subcategories": {"Genome & chromosome evolution": "gen", "Computational methods": "oth", "RNA & transcriptomics": "mex", "Human genetics": "dam", "Genomic resources & assembly": "ali"}
+    },
+    "signaling": {
+      "label": "Signaling pathways", "category": "TGF-β / Nodal",
+      "subcategories": {"TGF-β / Nodal": "emb", "Wnt": "oth"}
+    },
+    "regulatiory_genomics": {
+      "label": "Regulatory genomics", "category": "Transcription initiation & promoters",
+      "subcategories": {"Transcription initiation & promoters": "mex", "Enhancers & enhancer–gene maps": "emb",
+                        "Deep learning & sequence models": "oth", "TF binding & DNA structure": "gen",
+                        "Regulatory variants & atlases": "dam", "Regulatory evolution": "ali"}
+    }
+  },
+
+  "_comment_categories": "extra names you can put in a paper's \"category\" by hand, any folder",
+  "categories": {
+    "Mexican tetra":       "mex",
+    "Zebrafish":           "emb",
+    "Embryo exposures":    "emb",
+    "General":             "gen",
+    "Other group members": "oth",
+    "Damir":               "dam",
+    "Alignment":           "ali"
+  }
+}

@@ -1,0 +1,573 @@
+{
+ "id": "Nepal_2023",
+ "title": "Alternative promoters in CpG depleted regions are prevalently associated with epigenetic misregulation of liver cancer transcriptomes",
+ "link": "https://doi.org/10.1038/s41467-023-38272-4",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Nepal_2023_NatCommun_alternative_promoters_CpG_depleted.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Many genes are regulated through alternative promoters, but it was not clear what regulatory architecture alternative promoters have or how it differs from reference promoters. The authors studied this in hepatocellular carcinoma (HCC).",
+   "kw": [
+    "alternative promoters",
+    "HCC"
+   ],
+   "info": "The introduction says the mechanism that activates alternative promoters in cancer, and their impact on gene expression, was unknown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the headline numbers of the study?",
+   "a": "From 100 CAGE-seq libraries of HCC patients they annotated 4083 alternative promoters in 2926 multi-promoter genes. Most of these are not detected in normal livers.",
+   "kw": [
+    "CAGE-seq",
+    "multi-promoter genes"
+   ],
+   "info": "These genes are enriched in oncogenic processes and are mostly associated with overall survival.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which mechanism do the authors propose for activating alternative promoters in tumors?",
+   "a": "Tumors lose DNA methylation globally, but intragenic methylation is lost in a hierarchy. CG-poor regions lose methylation quickly while CG-rich regions keep it, because SETD2, H3K36me3, DNMT3B and TET1 bind these regions differently.",
+   "kw": [
+    "SETD2",
+    "H3K36me3",
+    "DNMT3B"
+   ],
+   "info": "They validated the mechanism in SETD2 knockdown cells and in SETD2-mutated patients.",
+   "concl": "Selective loss of DNA methylation in CG-poor regions opens the chromatin, which allows alternative transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use HCC as a model?",
+   "a": "HCC makes up about 90% of primary liver cancers and is the third leading cause of cancer-related death. Little is known about how promoters are regulated in cancer.",
+   "kw": [
+    "HCC"
+   ],
+   "info": "Genome-wide profiling of HCC already exists for mutations, dysregulated genes, DNA methylomes, histone marks, chromatin accessibility, transposon activation and m6A.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a reference promoter?",
+   "a": "The region next to the transcription start site (TSS) that integrates cis-regulatory elements so the gene is regulated precisely.",
+   "kw": [
+    "reference promoter",
+    "TSS"
+   ],
+   "info": "Many genes also use alternative promoters, for example in cell fate transitions in yeast and mammalian cells, in vertebrate embryogenesis, and possibly in cancer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is CAGE-seq suitable for detecting alternative promoters?",
+   "a": "CAGE-seq finds the 5' ends of TSSs at single-nucleotide resolution and measures expression much like RNA-seq. It also picks up differently regulated initiation events within the same core promoter.",
+   "kw": [
+    "CAGE-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about intragenic DNA methylation and alternative promoters?",
+   "a": "Intragenic DNA methylation at alternative promoters varies across human tissues. In mouse ES cells, loss of DNMT3B caused spurious initiation from alternative promoters.",
+   "kw": [
+    "DNMT3B",
+    "intragenic methylation"
+   ],
+   "info": "Alternative promoter transcription was known to be widespread in cancer, but how it is activated was not.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "Which samples were analysed?",
+   "a": "Published CAGE-seq data from 50 HCC tumors and 50 matched tumor-adjacent normal liver tissues, 100 libraries in total, mapped to hg19.",
+   "kw": [
+    "CAGE-seq",
+    "tumor-adjacent"
+   ],
+   "info": "In total there were 1.4 billion mapped CAGE tags. The authors call the tumor-adjacent tissue cirrhotic liver parenchyma. The data come from dbGaP phs000885.v1.p1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "How did they define high-confidence transcript clusters (TCs)?",
+   "a": "CAGE TSSs (CTSSs) on the same strand within 20 nucleotides were clustered into TCs. They kept TCs with more than 1 TPM in at least 15 samples and at least 3 TPM in at least one sample, which gave 42,804 consensus TCs.",
+   "kw": [
+    "transcript clusters",
+    "TPM"
+   ],
+   "info": "About 90% of TCs were supported by FANTOM5 CAGE peaks and/or open chromatin from ENCODE (DHS) and TCGA (ATAC). The figure gives 37,658 TCs supported by the combined set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "How did they find novel alternative TSSs?",
+   "a": "Of the CAGE TCs, 10,492 (24.5%) were intragenic and therefore candidate alternative promoters. They removed TCs that came from small RNA processing, GG-initiation or exon post-transcriptional processing, enhancer RNAs, or that lacked an initiator motif. Clustering what remained within 300 bases gave 1031 novel alternative TSSs.",
+   "kw": [
+    "novel TSS",
+    "intragenic TCs"
+   ],
+   "info": "Numbers removed (Fig. 1c): small RNAs 71, GG initiation/exons 7888, enhancers 1105, no initiation motif 351, clustering 46. Most novel TSSs were supported by spliced transcripts from RNA-seq and ESTs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "How many alternative TSSs and multi-promoter genes are there in total?",
+   "a": "There are 4083 alternative TSSs, 3052 annotated in GENCODE and 1031 novel. Of the 15,419 expressed genes, 12,493 (80.3%) are single-promoter (SP) genes and 2926 (19.7%) are multi-promoter (MP) genes.",
+   "kw": [
+    "single-promoter",
+    "multi-promoter"
+   ],
+   "info": "Novel alternative TSSs tended to fall in genes that had no active annotated alternative promoter (Venn: 1905 known-only, 411 shared, 715 novel-only genes).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "How were reference and alternative promoters assigned, and where do alternative promoters sit?",
+   "a": "The promoter with the highest mean expression across the cohort was called the reference (major) promoter, and the others were called alternative (minor). 65% of alternative promoters are downstream of the reference and 35% are upstream.",
+   "kw": [
+    "reference promoter"
+   ],
+   "info": "Because so many are upstream, simply taking the most upstream TSS as the reference is suboptimal. Two-thirds of alternative promoters use a different N terminus or sit downstream of the protein N terminus, for example in CDKN2A and ERBB2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "Which functions are enriched in MP genes compared with SP genes?",
+   "a": "MP genes are enriched for metabolic processes, signaling pathways, apoptosis, regulation of cell migration and programmed cell death. SP genes are over-represented in translation, DNA repair, gene expression and mRNA splicing.",
+   "kw": [
+    "functional enrichment"
+   ],
+   "info": "Hepatocyte markers, Hoshida HCC signature genes, oncogenes, transcription factors and protein kinases (from GSEA) were also over-represented in MP genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Widespread transcription of alternative promoters in HCC",
+   "q": "Are MP genes clinically relevant?",
+   "a": "Yes. Genes associated with overall survival are strongly over-represented among MP genes, and outcome was significantly associated with expression of the alternative promoters (P = 5.2E-24). Alternative promoters associated with survival had shorter OS times (P = 2.8E-8).",
+   "kw": [
+    "overall survival",
+    "sorafenib"
+   ],
+   "info": "The text gives P = 3.2E-78 (Fisher's exact test) for the OS over-representation, but the Fig. 1h legend gives P = 1.06E-247, so the two disagree. MP genes were also enriched for sorafenib resistance genes, and the cohort-level enrichment held in 55% of individual samples. SULF2 is an example not previously known to switch promoters.",
+   "concl": "Alternative promoter usage matters for hepatocarcinogenesis and patient outcome."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Impact of alternative promoters on gene expression",
+   "q": "Are HCC alternative promoters active in normal liver?",
+   "a": "Many are not. At a threshold of at least 3 TPM in at least one of 8 independent normal livers, about 50% of alternative promoters were unexpressed, compared with 15% of reference promoters.",
+   "kw": [
+    "normal liver",
+    "tumor-specific"
+   ],
+   "info": "Some alternative promoters that were undetected in normal liver were already expressed in tumor-adjacent cirrhotic liver. Lowering the threshold made the fraction of undetected alternative promoters even larger.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Impact of alternative promoters on gene expression",
+   "q": "Which pathways are linked to tumor-specific alternative promoters?",
+   "a": "MP genes whose alternative promoters are expressed in normal liver are enriched for metabolic pathways. Tumor-specific alternative promoter genes are enriched for oncogenic pathways such as WNT/beta-catenin signaling, E2F targets and Myc targets.",
+   "kw": [
+    "WNT/beta-catenin",
+    "E2F",
+    "Myc"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Impact of alternative promoters on gene expression",
+   "q": "How do alternative and reference promoters differ in expression across patients?",
+   "a": "Reference promoters are expressed in all samples. Alternative promoters are expressed either constitutively or only in a subset of patients, and their mean expression is lower.",
+   "kw": [
+    "expression variability",
+    "CTNNBL1"
+   ],
+   "info": "Despite the lower mean, 1489 (36.4%) alternative promoters were expressed above their reference in one or more tumor-adjacent samples, and 1716 (42%) in tumors. CTNNBL1 is the example given.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Impact of alternative promoters on gene expression",
+   "q": "How was differential expression tested, and what did it find?",
+   "a": "They used DESeq2 with adjusted P < 0.05 and absolute log2 fold change of 0.5, comparing tumor with tumor-adjacent tissue. This found 5223 differentially expressed promoters and 4480 differentially expressed genes.",
+   "kw": [
+    "DESeq2"
+   ],
+   "info": "99% of the differentially expressed promoters overlapped differentially expressed genes. Fold changes were larger for alternative promoters. For gene-level analysis, reference and alternative promoter counts were summed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Impact of alternative promoters on gene expression",
+   "q": "How does activating an alternative promoter affect the reference promoter?",
+   "a": "Reference promoters generally go down in tumors while alternative promoters go up (P = 0.00012). Most downregulated promoters belong to MP genes, while SP genes tend to be upregulated.",
+   "kw": [
+    "transcriptional interference"
+   ],
+   "info": "Reference promoters were more strongly downregulated when one or more alternative promoters lay upstream (KS test P = 0.0009). The authors suggest that upstream transcription may interfere with the elongating polymerase. The pattern held across gene classes except KEGG signaling pathways.",
+   "concl": "Many alternative promoters in tumors affect cancer pathways and lead to downregulation of the reference promoter."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct underlying DNA sequences and promoter architecture",
+   "q": "How often do alternative promoters overlap CpG islands (CGIs)?",
+   "a": "Only 48.6% (1987 of 4083) of alternative promoters overlap CGIs, compared with 80% of reference promoters. 1170 of those 1987 CGIs are shared with the reference promoter.",
+   "kw": [
+    "CpG islands"
+   ],
+   "info": "Novel alternative promoters are even more CGI-depleted than annotated ones (known: 1708 CGI vs 1344 non-CGI; novel: 279 vs 752). The text gives P = 1.9E-61, but Fig. 3c shows P = 1.3E-59.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct underlying DNA sequences and promoter architecture",
+   "q": "Does CG content differ even among non-CGI promoters?",
+   "a": "Yes. Among non-CGI promoters, novel alternative promoters had a significantly lower observed/expected CG ratio (P = 9.1E-21, t-test). This points to preferential activation of alternative promoters from CG-poor regions.",
+   "kw": [
+    "O/E CG ratio"
+   ],
+   "info": "Alternative promoters that do overlap CGIs have lower O/E CG ratios and shorter CGIs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct underlying DNA sequences and promoter architecture",
+   "q": "What are broad and sharp promoters, and which kind are alternative promoters?",
+   "a": "Broad promoters have wide TCs with many initiation sites, and sharp promoters have one dominant TSS. Reference promoters are mostly broad, while alternative promoters are narrower, with a higher proportion of sharp shapes.",
+   "kw": [
+    "promoter shape",
+    "TATA box"
+   ],
+   "info": "Both types have a well-defined initiation motif. The TATA box was positionally constrained upstream of sharp promoters. Width was measured as the interquartile width (0.1 to 0.9) of the TC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct underlying DNA sequences and promoter architecture",
+   "q": "Is chromatin at alternative promoters accessible across other cancers?",
+   "a": "Using TCGA pan-cancer ATAC-seq, most CGI promoters, reference and alternative, were uniformly accessible across cancers. Accessibility of non-CGI promoters varied by tumor type.",
+   "kw": [
+    "ATAC-seq",
+    "TCGA"
+   ],
+   "info": "The authors take this to mean that CG-poor alternative promoters have tissue-specific accessibility and expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct underlying DNA sequences and promoter architecture",
+   "q": "Which transcription factors are enriched at alternative promoters?",
+   "a": "Non-CGI promoters, both reference and alternative, were enriched for liver-specific TFs such as HNF1A and HNF4A. NFATC2 was enriched only at non-CGI alternative promoters.",
+   "kw": [
+    "HNF4A",
+    "HNF1A",
+    "NFATC2"
+   ],
+   "info": "ENCODE HepG2 TF ChIP-seq peaks were more frequent at reference than at alternative promoters (P = 0.026). De novo motif analysis used HOMER. Hepatic NFAT signaling has been reported to regulate inflammatory cytokines in cholestasis.",
+   "concl": "Alternative promoters have low CG content, a sharp shape, and are enriched for liver-specific TFs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct underlying DNA sequences and promoter architecture",
+   "q": "What did Pol2 profiling show for SP and MP genes?",
+   "a": "In HepG2 cells, total Pol2 was at similar levels in SP and MP genes. Initiating Pol2 (Ser5-phosphorylated) and elongating Pol2 (Ser2-phosphorylated) were higher in MP genes.",
+   "kw": [
+    "Pol2-Ser5",
+    "Pol2-Ser2",
+    "GRO-seq"
+   ],
+   "info": "The result was validated with GRO-seq. The text cites Fig. 2j for this, but the Pol2 data are shown in Fig. 3j.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct chromatin architecture",
+   "q": "How do histone marks differ between CGI and non-CGI promoters?",
+   "a": "CGI promoters have divergent H3K4me3 and H3K27ac around the nucleosome-depleted region (NDR), with H3K4me1 peaks further out at the CGI and H3K4me3 boundaries. Non-CGI promoters have low H3K4me3 placed asymmetrically downstream of the TSS, and H3K4me1 that is not divergent and sits at the TSS.",
+   "kw": [
+    "H3K4me3",
+    "H3K4me1",
+    "NDR"
+   ],
+   "info": "This was seen both in 4 HCC patients and in HepG2. Non-CGI alternative promoters had even less H3K4me3 and lower CG density than non-CGI reference promoters, which makes them look like enhancers. CGI promoters were enriched for H2A.Z and had a well-defined NDR and phased +1 nucleosome, while non-CGI promoters had an undefined NDR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct chromatin architecture",
+   "q": "How did they test whether the enhancer-like marks are explained by CG density?",
+   "a": "They split ChromHMM HepG2 enhancers (promoters excluded) into 791 CGI enhancers and 20,891 non-CGI enhancers. CGI enhancers had H3K4me3 and H3K4me1 patterns like CG-rich promoters, and non-CGI enhancers had low H3K4me3 and high H3K4me1 like non-CGI promoters.",
+   "kw": [
+    "ChromHMM",
+    "enhancers"
+   ],
+   "info": "An enhancer was called a CGI enhancer if at least 10% of its length overlapped a CGI.",
+   "concl": "H3K4me3 is linked to CG density. Low H3K4me3 at non-CGI promoters and enhancers is due to low CG density, and two chromatin architectures coexist within MP genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters have distinct chromatin architecture",
+   "q": "Why is there no alternative transcription from intragenic CGIs?",
+   "a": "Intragenic CGIs showed no enrichment of H3K4me3, H3K4me1 or H3K27ac, which explains why they are not transcribed.",
+   "kw": [
+    "intragenic CGIs"
+   ],
+   "info": "Active promoters, both CG-rich and CG-poor, had divergent H3K27ac and lacked H3K27me3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dynamic DNA (de)methylation landscapes around alternative promoters",
+   "q": "What do promoter methylation patterns look like in tumor versus adjacent tissue?",
+   "a": "CGI promoters have low methylation at the TSS compared with non-CGI promoters. Methylation at the TSS falls as CG density rises. CGI promoter hypermethylation was common in unexpressed genes but not seen globally in expressed genes.",
+   "kw": [
+    "450K array",
+    "hypermethylation"
+   ],
+   "info": "Data: TCGA HCC Illumina 450K, 379 tumors and 51 tumor-adjacent tissues, CpG probes within 500 bases of the TSS. Results were validated with HepG2 RRBS. Regions with higher CpG density were more hypermethylated and CpGs in non-CGI promoters more hypomethylated. H2A.Z, which is antagonistic to DNA methylation, may explain the low methylation at CGI promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dynamic DNA (de)methylation landscapes around alternative promoters",
+   "q": "How does gene body methylation change in tumors?",
+   "a": "Gene body methylation is high in both MP and SP genes and decreases globally in tumors, most clearly in downregulated genes. Methylation of intragenic CGIs stays high and mostly unchanged, while the regions flanking them lose methylation.",
+   "kw": [
+    "gene body methylation"
+   ],
+   "info": "Intragenic CGIs are highly methylated, which is the opposite of promoter CGIs. SKI is the example locus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dynamic DNA (de)methylation landscapes around alternative promoters",
+   "q": "Why do intragenic CGIs keep their methylation in tumors?",
+   "a": "Intragenic CGIs have high DNMT3B binding, low 5hmC and low TET1 binding. Without active demethylation they stay methylated and repressed, while CG-poor intragenic regions are sensitive to demethylation.",
+   "kw": [
+    "DNMT3B",
+    "TET1",
+    "5hmC"
+   ],
+   "info": "5hmC came from TAB-RRBS (GSE112221: 4 tumors and 4 tumor-adjacent tissues). DNMT3B and TET1 binding were measured in human ES cells, not liver.",
+   "concl": "Demethylation of CG-poor regions may open chromatin and allow transcription initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deregulation of SETD2, H3K36me3, and DNA methylation facilitates open chromatin",
+   "q": "Why did they look at SETD2?",
+   "a": "SETD2 deposits H3K36me3 after Pol2 passes, and H3K36me3 recruits DNMT3B to keep chromatin repressive. Since gene body methylation drops in tumors, they reasoned that impaired SETD2 could speed up loss of repression and allow alternative transcription.",
+   "kw": [
+    "SETD2",
+    "H3K36me3"
+   ],
+   "info": "Background they cite: old yeast cells have less H3K36me3 and more intragenic transcripts, and DNA methylation decreases with age in humans.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deregulation of SETD2, H3K36me3, and DNA methylation facilitates open chromatin",
+   "q": "What happened to H3K36me3 after SETD2 knockdown?",
+   "a": "In HepG2 cells, SETD2 knockdown decreased H3K36me3 across gene bodies, with relatively more retained in CG-rich regions.",
+   "kw": [
+    "SETD2 knockdown",
+    "HepG2"
+   ],
+   "info": "HepG2 cells had less H3K36me3 than normal hepatocyte-like HepaRG cells. Gene body H3K36me3 coincided with DNMT3B coverage. Data: GSE110323, shCtrl vs shSETD2, 2 replicates each, merged.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deregulation of SETD2, H3K36me3, and DNA methylation facilitates open chromatin",
+   "q": "What did SETD2-mutant HCC patients show?",
+   "a": "SETD2-mutant tumors (n = 15) were significantly hypomethylated compared with SETD2 wild-type tumors (n = 362). Demethylated CpGs were enriched in gene bodies overlapping CGIs, and mutants had more intronic reads.",
+   "kw": [
+    "SETD2 mutation",
+    "hypomethylation"
+   ],
+   "info": "The Results and figures say 15 vs 362, but the Methods say 16 mutants vs 352 wild type, so the paper is inconsistent. Mean beta differences: reference promoters P = 8.4E-6, alternative promoters P = 0.01, intragenic regions P = 4.1E-8.",
+   "concl": "SETD2 loss weakens maintenance of DNA methylation, which favors activation of alternative promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Deregulation of SETD2, H3K36me3, and DNA methylation facilitates open chromatin",
+   "q": "What is the overall model (Fig. 6g)?",
+   "a": "In liver cancer, intragenic CG-rich regions keep 5mC, H3K36me3 and DNMT3B and stay repressed. CG-poor regions lose methylation, gain 5hmC, H3K4me1 and ATAC accessibility, and start sharp alternative transcription.",
+   "kw": [
+    "model"
+   ],
+   "info": "",
+   "concl": "DNA methylation, chromatin accessibility and histone modifications together favor alternative transcription from CG-poor regions in cancer."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the caveat in defining reference versus alternative promoters?",
+   "a": "There is no consensus definition. They called the most highly expressed promoter the reference and also required it to be expressed in normal liver, so tumor-specific promoters count as alternative.",
+   "kw": [
+    "reference promoter"
+   ],
+   "info": "When an alternative promoter is expressed at a similar level to the reference, the two labels can swap between cohorts or studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do HCC alternative promoters differ from those in development?",
+   "a": "CG density is the main feature that separates reference promoters (high) from alternative promoters (low). In HCC, alternative promoters are depleted from intragenic CGIs, unlike in development, where intragenic CGIs can act as alternative promoters.",
+   "kw": [
+    "CG density",
+    "development"
+   ],
+   "info": "Upstream CGIs can also act as alternative promoters in adult tissues.",
+   "concl": "Two distinct promoter architectures within one gene are widespread in cancer."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which limitation do the authors raise about bulk data?",
+   "a": "Bulk CAGE cannot tell whether alternative promoters come from particular cell types. That needs single-cell methods that capture 5' ends, because current single-cell methods are 3'-biased.",
+   "kw": [
+    "single-cell",
+    "5' end capture"
+   ],
+   "info": "A single-cell 5' study in mouse neurons suggested that most alternative promoters may be co-expressed in the same cell.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How could alternative promoters benefit tumor cells?",
+   "a": "Through transcriptional interference they can downregulate reference promoters of important genes, including hepatocyte markers, which may help cells lose hepatocyte identity. Signaling pathway genes may use both promoters, so tumor cells can use these pathways differently, as in CDKN2A and ERBB2.",
+   "kw": [
+    "cell identity",
+    "signaling"
+   ],
+   "info": "Tumor-only alternative promoters were enriched in signaling pathways and generally did not downregulate the reference promoter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What clinical implications and open points do the authors give?",
+   "a": "Tumor-specific alternative promoters could be early diagnostic biomarkers, and targeting tumor-specific alternative transcripts might improve drug specificity. Their role across the full spectrum of liver cancer has not been explored.",
+   "kw": [
+    "biomarkers"
+   ],
+   "info": "Standard RNA-seq analysis often misses alternative promoter use, so the authors recommend checking whether genes of interest are under alternative promoter regulation. They expect similar mechanisms in other tumors, at demethylated sites enriched for that tissue's TFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Mapping of HCC CAGE-seq reads",
+   "q": "How were the CAGE reads processed?",
+   "a": "Reads were mapped to hg19 with bowtie2, allowing up to 2 mismatches. Reads with MAPQ below 20 (low quality or multi-mapping) were removed with SAMtools, and CTSSs in the 421 ENCODE blacklisted regions were excluded.",
+   "kw": [
+    "bowtie2",
+    "SAMtools"
+   ],
+   "info": "On average 80 to 90% of reads mapped, giving 15 to 16 million mapped reads per library. The CAGE protocol often adds an unmapped extra G at the 5' end, so those TSSs were shifted by 1 nucleotide.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TCs and consensus TCs",
+   "q": "How were TC expression, dominant TSS and width defined?",
+   "a": "The CTSS with the highest expression in a TC is the dominant CTSS, and TC expression is the sum of all its CTSSs. Width is the interquartile width, trimming TC edges to the 0.1 to 0.9 percentile range.",
+   "kw": [
+    "dominant CTSS",
+    "interquartile width"
+   ],
+   "info": "For the consensus set, TCs from all patients were clustered, and the 15-sample threshold equals 15% of the cohort.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Annotation of novel alternative promoters",
+   "q": "How were enhancer RNAs and non-promoter TCs filtered out?",
+   "a": "A directionality score DS = (Forward - Reverse)/(Forward + Reverse) was computed for each TC, and TCs with DS between -0.5 and 0.5 were called enhancer RNAs. Only TCs with a YR or YC initiation motif were kept, leaving 1077 TCs, which clustered within 300 bases into 1031 novel alternative TSSs.",
+   "kw": [
+    "directionality score",
+    "YR initiator"
+   ],
+   "info": "TCs with GG-initiation, overlapping coding exons or annotated enhancers were also removed. RNA-seq and EST support was counted only for transcripts whose 5' ends were more than 300 bases from annotated Ensembl 5' ends and within 300 bases of a novel TSS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Datasets and DNA methylation analysis",
+   "q": "Which public datasets and methylation methods were used?",
+   "a": "DNA methylation came from TCGA HCC Illumina 450K data (UCSC Xena) as beta values, with HepG2 RRBS from ENCODE and TAB-RRBS of patients from GSE112221. Differential CpGs were found with t-tests and adjusted P < 0.05.",
+   "kw": [
+    "UCSC Xena",
+    "TAB-RRBS",
+    "deepTools"
+   ],
+   "info": "Histone ChIP-seq for 4 HCC patients came from GSE112221, hESC DNMT3B from GSE150072, HepG2 shSETD2 H3K36me3 from GSE110323, and normal liver CAGE from FANTOM5 (DRA000991). Metaplots were made with deepTools (RPKM, genes and CGIs scaled between start and end).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TF motif analysis",
+   "q": "How was motif enrichment done?",
+   "a": "HOMER findMotifsGenome.pl was run on 500 bases around the TSS with -chopify -len 8,10,12 -S 25 -size -500,500. It was rerun with -mcheck -mknown to match known motifs.",
+   "kw": [
+    "HOMER",
+    "bedtools"
+   ],
+   "info": "HOMER chose GC-matched background regions by default. TF density per promoter was the count of ENCODE HepG2 TF ChIP-seq peaks overlapping it, computed with bedtools.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Survival, N-terminus and CGI classification",
+   "q": "How were survival, N-terminus changes and CG content analysed?",
+   "a": "Survival: each TCGA LIHC transcript was split into high- and low-expression groups and tested with Kaplan-Meier, separately for reference and alternative transcripts of MP genes. N-terminus: transcripts with UniProt domains were compared, and a different start codon counted as a different N terminus.",
+   "kw": [
+    "Kaplan-Meier",
+    "O/E CG"
+   ],
+   "info": "CGIs from UCSC were classed as promoter, intragenic or intergenic. O/E CG = (CG count x window length)/(C count x G count), calculated with bedtools nuc. The N-terminus analysis excluded noncoding transcripts and novel promoters.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Dynamic DNA (de)methylation landscapes around alternative promoters",
+   "text": "DNMT3B and TET1 binding data come from human ES cells, not liver or HCC. Check whether the intragenic CGI vs CG-poor binding difference holds in liver tissue."
+  },
+  {
+   "type": "note",
+   "section": "Results - Deregulation of SETD2, H3K36me3, and DNA methylation facilitates open chromatin",
+   "text": "Is demethylation of CG-poor regions a cause or a consequence of alternative promoter activation? The SETD2 knockdown measured H3K36me3, not alternative promoter transcription directly."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Why are intragenic CGIs used as alternative promoters in development but avoided in cancer? Do the CG-density rules for alternative promoter use differ between developmental and disease contexts?"
+  }
+ ]
+}

@@ -1,0 +1,522 @@
+{
+ "id": "Romeijn_2026",
+ "title": "LncRNA-BERT: an RNA language model for classifying coding and long non-coding RNA",
+ "link": "https://doi.org/10.1080/09540091.2026.2624131",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Romeijn_2026_ConnectSci_LncRNA-BERT.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is lncRNA-BERT?",
+   "a": "An RNA language model that is pre-trained and fine-tuned on human RNAs from GENCODE, RefSeq and NONCODE. It classifies transcripts as protein-coding (mRNA) or long non-coding RNA (lncRNA).",
+   "kw": [
+    "lncRNA-BERT",
+    "nucleotide language model"
+   ],
+   "info": "It is implemented in the Python package lncRNA-Py (github.com/luukromeijn/lncRNA-Py). The trained models are on Hugging Face.",
+   "concl": "It matches or beats state-of-the-art classifiers on three test sets, including the cross-species RNAChallenge benchmark."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the three main claims of the paper?",
+   "a": "(1) lncRNA-BERT reaches state-of-the-art classification and does best on the hard RNAChallenge set. (2) Pre-training alone, with no labels, already separates mRNA from lncRNA, which shows that coding potential is a sequence-intrinsic property. (3) A new Convolutional Sequence Encoding (CSE) is more efficient and works better than K-mer tokenization and BPE for long RNAs.",
+   "kw": [
+    "coding potential",
+    "CSE"
+   ],
+   "info": "Pre-training on human GENCODE/RefSeq/NONCODE data works better than pre-training on the commonly used RNAcentral.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How are non-coding RNAs split by length?",
+   "a": "Into short ncRNAs (miRNA, piRNA, snoRNA, tRNA) and long non-coding RNAs (lncRNAs), which are at least 200 nt long.",
+   "kw": [
+    "lncRNA"
+   ],
+   "info": "NONCODE v6 holds 173,112 human lncRNA transcripts, compared with 197,151 mRNAs in RefSeq r225.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is it important to tell lncRNAs apart from mRNAs?",
+   "a": "Their length ranges overlap and they are often detected together in RNA-seq. Novel transcripts need a correct biotype for good curation.",
+   "kw": [
+    "biotype classification"
+   ],
+   "info": "Downstream uses the authors name: cancer biomarker discovery, modelling disease mechanisms, and understanding cell and tissue development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do classical coding-potential classifiers work?",
+   "a": "They are machine learning models trained on RefSeq or GENCODE annotations. They use predefined features such as ORF length, protein database alignment hits and k-mer frequencies.",
+   "kw": [
+    "CPC",
+    "CPAT",
+    "CNCI"
+   ],
+   "info": "CPC, CPC2 and CNCI use support vector machines and CPAT uses logistic regression. More than 40 algorithms exist. CPAT also provides a widely used benchmark of 4,000 human mRNAs and 4,000 lncRNAs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is mRNA versus lncRNA classification inherently ambiguous?",
+   "a": "Some lncRNAs contain short ORFs that are translated into small peptides, and some mRNA genes have non-coding isoforms.",
+   "kw": [
+    "small ORFs",
+    "micro-peptides"
+   ],
+   "info": "This ambiguity has driven the continued development of new classifiers: feature selection, boosting and neural networks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What limits earlier sequence-only deep learning classifiers?",
+   "a": "They use CNNs, which have limited receptive fields, or RNNs, which suffer from exploding or vanishing gradients. In a recent benchmark (Singh and Roy 2022) they were beaten by feature-based or hybrid methods.",
+   "kw": [
+    "CNN",
+    "RNN",
+    "transformer"
+   ],
+   "info": "Transformers solve these problems with an attention mechanism and a non-recurrent design.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a nucleotide language model (NLM)?",
+   "a": "A large language model that is pre-trained and fine-tuned on genomic data. DNA NLMs can predict chromatin features, find promoters and prioritise variants. RNA NLMs can predict splice sites, secondary structure, interactions and modifications.",
+   "kw": [
+    "NLM",
+    "LLM"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why might existing RNA language models be poor at detecting coding potential?",
+   "a": "Most are trained on RNAcentral, which contains no mRNA, and their context length is limited to under 1024 nt.",
+   "kw": [
+    "RNAcentral",
+    "context length"
+   ],
+   "info": "An open question is which sequence encodings are least sensitive to frameshifts, because classical features such as ORF length depend on the reading frame.",
+   "concl": "This is the gap: an RNA language model built specifically for mRNA versus lncRNA classification of long transcripts."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data",
+   "q": "What data was used for pre-training?",
+   "a": "All RNA sequences from GENCODE v46, NONCODE v6 and RefSeq, combined: 297,724 mRNAs and 238,470 lncRNAs, with an average length of 2,835 nt. A random 5% of GENCODE sequences was held out for validation.",
+   "kw": [
+    "GENCODE",
+    "NONCODE",
+    "RefSeq"
+   ],
+   "info": "The RefSeq version is inconsistent in the paper: v255 in Methods, but r225 in the Introduction and the data availability statement. As an alternative, they also tried RNAcentral v24 for multi-species pre-training (about 37.9 million ncRNAs, average length 659, 2,500 held out for validation).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data",
+   "q": "How did they build a non-redundant fine-tuning set?",
+   "a": "They ran CD-HIT at 90% sequence identity on the combined GENCODE and RefSeq human mRNA/lncRNA data. The representative sequences were split at random into 90% training, 5% validation and 5% test.",
+   "kw": [
+    "CD-HIT",
+    "redundancy removal"
+   ],
+   "info": "Fine-tuning set: 101,270 mRNAs and 48,785 lncRNAs. NONCODE was left out at this stage because its annotation reliability varies, and its well-supported entries are already in GENCODE/RefSeq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data",
+   "q": "Which test sets were used?",
+   "a": "(1) A GENCODE/RefSeq held-out set (5,650 mRNAs and 2,686 lncRNAs). (2) The CPAT benchmark (4,000 RefSeq mRNAs and 4,000 human lncRNAs). (3) RNAChallenge: 27,283 hard-to-classify RNAs (16,243 mRNA and 11,040 ncRNA) from animals, plants and fungi.",
+   "kw": [
+    "CPAT dataset",
+    "RNAChallenge"
+   ],
+   "info": "The authors expect the CPAT set to overlap partly with the training sets of the evaluated classifiers. RNAChallenge tests cross-species generalisation to ambiguous RNAs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Encoding methods",
+   "q": "Why does the choice of sequence encoding matter for transformers?",
+   "a": "Attention has quadratic memory complexity, so standard GPUs only allow about 512 to 1024 input positions. Long RNAs have to be compressed to fit.",
+   "kw": [
+    "context window",
+    "attention"
+   ],
+   "info": "With most encodings, a medium context window of 768 tokens covers the majority of transcripts in the human pre-training set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Encoding methods",
+   "q": "What is the problem with nucleotide-level tokenization (NUC)?",
+   "a": "It uses one token per nucleotide (vocabulary of 4). That works for short RNAs, but only 25% of the human pre-training sequences fit in a context of 768.",
+   "kw": [
+    "NUC"
+   ],
+   "info": "By comparison, within 768 positions: 3-mer 58%, 6-mer 82%, 9-mer 92%, BPE 256/1024/4096 at 64/71/76%, CSE k=9 92%, CSE k=10 94%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Encoding methods",
+   "q": "What are the drawbacks of K-mer tokenization?",
+   "a": "Non-overlapping k-mers shorten the sequence k-fold, but the vocabulary is 4^k. Large k leads to poor token sampling efficiency and a parameter explosion in the embedding layer.",
+   "kw": [
+    "k-mer tokenization"
+   ],
+   "info": "Similar k-mers are learned independently, and the model has to learn every signal in k alternative reading frames.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Encoding methods",
+   "q": "What is Byte Pair Encoding (BPE) for nucleotides?",
+   "a": "A tokenizer that repeatedly merges the most frequent token pairs until a set vocabulary size is reached. This gives a fixed-size vocabulary of variable-length tokens.",
+   "kw": [
+    "BPE"
+   ],
+   "info": "Compared with K-mer it compresses length more for the same vocabulary size, samples tokens more efficiently and is more robust to frameshifts. It still needs a large vocabulary to compress strongly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Encoding methods",
+   "q": "How does Convolutional Sequence Encoding (CSE) work?",
+   "a": "The sequence is converted to a 4 x l position weight matrix (e.g. A = [1,0,0,0], N = [0.25 each]). A ReLU-activated 1D convolution with d_model learnable kernels of size k, and stride k, then embeds it into d_model dimensions. This shortens the sequence k-fold.",
+   "kw": [
+    "CSE",
+    "position weight matrix",
+    "convolution"
+   ],
+   "info": "The idea comes from the Vision Transformer. Zero-padding is masked in attention. It keeps nucleotide-level resolution with few parameters and treats each input position as a combination of nucleotides, not as an independent token.",
+   "concl": "This is the paper's new encoding method."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Language model architecture",
+   "q": "What is the model architecture?",
+   "a": "A BERT-medium transformer encoder with 12 blocks, d_model 768, 3072 feedforward nodes, 12 attention heads and a context length of 768. It has 85 M trainable parameters.",
+   "kw": [
+    "BERT",
+    "CLS token"
+   ],
+   "info": "Classification head: one sigmoid-activated linear node on the CLS embedding. CSE models replace the CLS token with a learnable CLS embedding (as in ViT). Their MLM head uses a softmax-activated transposed convolution (stride and kernel k) to predict at nucleotide resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Training",
+   "q": "What compute did training need?",
+   "a": "Pre-training took 7 days on an A100 MIG 4g.40GB GPU (Leiden ALICE cluster). Fine-tuning took about 20 h on the same GPU, or about 30 h on an L4 24 GB GPU.",
+   "kw": [],
+   "info": "The published models can classify on a CPU or a GPU with 6 GB memory. Checkpoints were chosen by validation performance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Training",
+   "q": "How was pre-training done?",
+   "a": "With masked language modelling (MLM). 15% of tokens or nucleotides were selected; of these, 80% were masked and 10% randomly replaced. The model was trained with cross-entropy loss, batch size 8, Adam and the Vaswani learning-rate schedule with 32,000 warmup steps.",
+   "kw": [
+    "MLM",
+    "self-supervised"
+   ],
+   "info": "CSE models mask with the IUPAC symbol N, which means equal probability for all four bases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Training",
+   "q": "How was fine-tuning done?",
+   "a": "All parameters were fine-tuned on 101,270 coding and 48,785 lncRNA sequences for 100 epochs of 10,000 random samples each. They used Adam at a fixed learning rate of 1e-5 and batch size 8.",
+   "kw": [
+    "fine-tuning",
+    "class imbalance"
+   ],
+   "info": "Binary cross-entropy loss was weighted by reciprocal class sizes to correct the imbalance. The small epoch size gives more frequent checks on progress.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Training",
+   "q": "What is probing?",
+   "a": "A test of how much coding potential the pre-trained embeddings already hold, without changing the network weights. A small MLP with one hidden layer of 256 nodes is trained on mean-pooled output embeddings.",
+   "kw": [
+    "probing",
+    "MLP"
+   ],
+   "info": "Same settings as fine-tuning, except the learning rate is 1e-4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Experimental setup",
+   "q": "What feature types do existing lncRNA classifiers use?",
+   "a": "Five types: ORF (e.g. ORF length), sequence patterns (k-mer frequencies, Fickett score), database alignment (BLASTX hits), physicochemical (isoelectric point) and secondary structure (frequency of unpaired versus paired bases).",
+   "kw": [
+    "ORF",
+    "Fickett score",
+    "BLASTX"
+   ],
+   "info": "ORF and sequence patterns are purely sequence-intrinsic, and most physicochemical and structural features can be inferred from sequence. Database alignment is extrinsic information that an NLM cannot learn.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Experimental setup",
+   "q": "Which tools was lncRNA-BERT compared against?",
+   "a": "Three classical ML tools: CPAT (logistic regression), LncFinder (SVM) and PredLnc-GFStack (random forest). Three deep learning tools: LncADeep (feature-based DBN), mRNN (sequence-only RNN) and RNAsamba (hybrid IGLOO).",
+   "kw": [
+    "LncADeep",
+    "RNAsamba",
+    "mRNN"
+   ],
+   "info": "Out-of-the-box models were used for the main comparison. CPAT, RNAsamba and mRNN were also retrained on the authors' fine-tuning data. Configurations were selected after 500 pre-training epochs. The main metric was macro-averaged F1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Benchmark against existing classifiers",
+   "q": "How did lncRNA-BERT score on the GENCODE/RefSeq test set?",
+   "a": "Macro F1 was 0.940 with 3-mer and 0.943 with CSE k=9, the best value. Close competitors were PredLnc-GFStack (0.941) and LncADeep (0.930). CPAT scored 0.889.",
+   "kw": [
+    "macro F1"
+   ],
+   "info": "The CSE model had the highest mRNA recall (0.971) and ncRNA precision (0.937).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Benchmark against existing classifiers",
+   "q": "How did it do on the CPAT test set?",
+   "a": "All methods scored between 0.950 and 0.970 macro F1. lncRNA-BERT 3-mer scored 0.963 and CSE 0.947, while LncADeep was highest at 0.970.",
+   "kw": [
+    "CPAT dataset"
+   ],
+   "info": "The CPAT set has been in use for years and has easier-to-separate sequences, so it hardly distinguishes the methods. LncADeep also uses protein database alignments, which lncRNA-BERT cannot access.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Benchmark against existing classifiers",
+   "q": "How did it do on the cross-species RNAChallenge set?",
+   "a": "Macro F1 was 0.235 (3-mer) and 0.242 (CSE). The best out-of-the-box competitor was PredLnc at 0.173, and the others scored 0.005 to 0.155.",
+   "kw": [
+    "RNAChallenge",
+    "generalisation"
+   ],
+   "info": "Absolute scores are very low for every tool, and ncRNA precision and recall are about 0.05 to 0.07 even for lncRNA-BERT. The retrained mRNN (0.392) and retrained CPAT (0.321) scored higher than lncRNA-BERT on this set.",
+   "concl": "The authors say lncRNA-BERT generalises across species better than out-of-the-box tools."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Benchmark against existing classifiers",
+   "q": "How did they check for overfitting on the CPAT test set?",
+   "a": "Using CD-HIT, they made a CPAT subset of 2,321 mRNAs and 527 lncRNAs that differ by more than 10% from every fine-tuning training sequence. On it, lncRNA-BERT reached a weighted average F1 of 0.954 (3-mer) and 0.932 (CSE).",
+   "kw": [
+    "CD-HIT",
+    "overfitting"
+   ],
+   "info": "Note that this is a weighted F1, not the macro F1 used elsewhere.",
+   "concl": "Performance holds on independent human data."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Benchmark against existing classifiers",
+   "q": "Does lncRNA-BERT use ORF information even though it is never given ORF features?",
+   "a": "Indirectly, yes. mRNAs it classified correctly had higher ORF coverage (mean 0.502, SD 0.239) than misclassified mRNAs (mean 0.342, SD 0.211).",
+   "kw": [
+    "ORF coverage",
+    "explainability"
+   ],
+   "info": "This was their only interpretability check, because NLMs are hard to explain.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Benchmark against existing classifiers",
+   "q": "What happened when CPAT, RNAsamba and mRNN were retrained on the authors' data?",
+   "a": "RNAsamba stayed about the same (e.g. 0.918 on GENCODE/RefSeq). CPAT and mRNN dropped from 0.889 to 0.962 down to 0.534 to 0.630 on the GENCODE/RefSeq and CPAT sets. On RNAChallenge, however, they improved to 0.321 and 0.392.",
+   "kw": [
+    "retraining"
+   ],
+   "info": "The authors found this somewhat surprising. It matches the RNAChallenge study's observation that generally weaker tools can do relatively well on that benchmark. The paper does not explain the collapse further.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Pre-training data",
+   "q": "Can pre-training alone separate mRNA from lncRNA?",
+   "a": "Yes. After MLM pre-training on human data, t-SNE of the embeddings already separates mRNA from ncRNA. Pre-training on human data also gives faster convergence and 0.01 to 0.08 higher fine-tuning F1 than RNAcentral or no pre-training.",
+   "kw": [
+    "self-supervised",
+    "t-SNE"
+   ],
+   "info": "The authors say this is the first method that can partly separate mRNA from lncRNA through a self-supervised pre-training step.",
+   "concl": "Coding potential is a prominent sequence-intrinsic signal."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Pre-training data",
+   "q": "What goes wrong when pre-training on RNAcentral?",
+   "a": "The model becomes biased toward other ncRNA types. MLM accuracy is 70% on RNAcentral sequences but only 15% on human lncRNAs, compared with 18% for the human model, and mRNA and ncRNA are less clearly separated in its embeddings.",
+   "kw": [
+    "RNAcentral",
+    "MLM accuracy"
+   ],
+   "info": "On the ArchiveII dataset (multi-species ncRNAs from 10 structural families), the RNAcentral model separates the families and the human model does not. Possible causes: RNAcentral has many specific ncRNAs and no mRNA, and lncRNAs are poorly conserved across species.",
+   "concl": "General-purpose RNA language models trained on RNAcentral may not suit lncRNA classification. Compare them with domain- and species-specific models."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Encoding methods",
+   "q": "Which encodings worked best?",
+   "a": "3-mer tokenization and CSE with k=9. Both reach a probing F1 of 0.93, and 3-mer reaches the highest fine-tuning F1 (0.94).",
+   "kw": [
+    "3-mer",
+    "CSE k=9"
+   ],
+   "info": "On validation fine-tuning, 3-mer scored 0.944 and CSE k=9 scored 0.941.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Encoding methods",
+   "q": "Why does CSE beat K-mer tokenization at large k?",
+   "a": "Probing F1 for CSE versus K-mer was 0.93 vs 0.91 at k=6 and 0.93 vs 0.79 at k=9. K-mer suffers from its 4^9 vocabulary and an embedding layer of 4^9 x d_model parameters, while CSE uses only 4 x d_model x k parameters.",
+   "kw": [
+    "CSE",
+    "k-mer tokenization"
+   ],
+   "info": "BPE also treats tokens as independent, which helps explain why probed CSE beats it at vocabulary sizes 256, 1024 and 4096. The text cites Figure 3C for fine-tuning scores, but this is probably Figure 4C.",
+   "concl": "CSE is the best choice when strong compression (6-fold or more) is needed."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Encoding methods",
+   "q": "When is CSE worse than tokenizers?",
+   "a": "With small token sizes and full fine-tuning. CSE k=3 reached 0.93 fine-tuning F1, compared with 0.94 for 3-mer, 0.93 for BPE 256 and 0.94 for BPE 1024.",
+   "kw": [],
+   "info": "Short, predefined tokens give higher-resolution attention. CSE has to learn its patterns before BERT can use them, which makes it less stable. Tokenizers gain more from probing to fine-tuning.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Encoding methods",
+   "q": "How many nucleotides are needed to judge coding potential?",
+   "a": "With 3-mer tokenization the context is 3 x 768 = 2304 nt, and that was enough.",
+   "kw": [
+    "context length"
+   ],
+   "info": "Longer coverage explains why 3-mer beats NUC. Too long a context may hurt learning of local signals, as seen for CSE k=10.",
+   "concl": "Coding potential of long transcripts can usually be inferred from the first 2304 nucleotides."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Three-base periodicity",
+   "q": "How does three-base periodicity affect the encodings?",
+   "a": "Encodings whose k is a multiple of 3 match the codon reading frame and separate mRNA from lncRNA better (CSE k=6 and 9 beat k=7 and 10). The drawback is that their mRNA embeddings jump between three positions when the reading frame shifts.",
+   "kw": [
+    "reading frame",
+    "frameshift",
+    "three-base periodicity"
+   ],
+   "info": "After trimming 0 to 9 nt from the start of a sequence, BPE and CSE k=10 embeddings stayed stable. K-mer, CSE with k divisible by 3 and Nucleotide Transformer (6-mer) shifted. No such effect was seen in non-coding sequences.",
+   "concl": "Choosing k not divisible by 3 breaks the periodicity and reduces frameshift sensitivity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Three-base periodicity",
+   "q": "Why do three-base periodic models favour in-frame signals?",
+   "a": "Signals whose periodicity lines up with the model's input positions are easier to learn. For example, from ACT TGA ACT it is easier to learn that TGA follows ACT than that GAA follows CTT.",
+   "kw": [],
+   "info": "lncRNAs show weaker three-base periodicity, which gives lower MLM accuracy but more consistent embeddings than mRNA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Comparison with other NLMs",
+   "q": "How do other nucleotide language models compare in separating mRNA and ncRNA?",
+   "a": "Embedding silhouette scores: RiNALMo 0.1001, HyenaDNA 0.0797, lncRNA-BERT 3-mer 0.0783, lncRNA-BERT CSE 0.0713, DNABERT-2 0.0622, BiRNA-BERT 0.0551, GENA-LM 0.0429, Nucleotide Transformer 0.0350.",
+   "kw": [
+    "RiNALMo",
+    "HyenaDNA",
+    "silhouette score"
+   ],
+   "info": "RiNALMo separates best but has 650 M parameters (7.6 times more than lncRNA-BERT's 85 M) and a context under 1024 nt. ERNIE-RNA, RNABERT, RNAErnie and RNA-FM were left out because they were trained only on non-coding RNAcentral data.",
+   "concl": "lncRNA-BERT is competitive and the most parameter-efficient. DNA NLMs, especially long-context HyenaDNA, show promise for RNA tasks."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why didn't lncRNA-BERT clearly beat existing tools on human data?",
+   "a": "Binary coding-potential classification may have hit a performance plateau. Even logistic regression (CPAT) reaches F1 0.89 on GENCODE/RefSeq.",
+   "kw": [
+    "performance plateau"
+   ],
+   "info": "mRNA and lncRNA are not cleanly separable (lncRNAs encoding micro-peptides, mRNAs with lncRNA-like regulatory functions). So 100% accuracy is impossible without overfitting to the human annotation system.",
+   "concl": "Because lncRNA-BERT works without annotations, it could support a more nuanced view of the two RNA classes in the future."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude about encodings and pre-training data?",
+   "a": "Both choices are critical. BPE's frequency-based vocabulary may not be biologically meaningful and breaks the three-base periodicity, while CSE compresses most strongly and keeps nucleotide resolution. Pre-training needs human mRNA and lncRNA data.",
+   "kw": [
+    "BPE",
+    "CSE",
+    "pre-training data"
+   ],
+   "info": "They expect CSE to do better on tasks that need long context and nucleotide resolution, such as secondary structure or RNA-protein binding. They suggest de-redundancing RNAcentral (CD-HIT, MMSeqs2) and pre-training on a balanced set of all RNA types, including mRNA.",
+   "concl": "The best encoding depends on the task. Finding a universal one needs systematic tests across many fine-tuning tasks."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main limitations?",
+   "a": "Compute limits meant they could not repeat training and evaluation over different splits, so there are no robust statistical estimates of performance. The model is also a black box, and it is unclear which sequence patterns drive classification.",
+   "kw": [
+    "explainability",
+    "limitations"
+   ],
+   "info": "They propose attention maps and Layer-Wise Relevance Propagation for future interpretability. They also suggest large centres train foundation models (possibly with federated learning) and smaller groups fine-tune them.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Benchmark against existing classifiers",
+   "text": "The claim that lncRNA-BERT 'significantly outperformed all other methods' on RNAChallenge holds only for out-of-the-box tools. Retrained mRNN (0.392) and retrained CPAT (0.321) beat it there, and no significance test is reported. Also, ncRNA precision and recall are only about 0.05 on this set for all tools."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "The model is human-only, and lncRNAs are poorly conserved. How well would lncRNA-BERT classify novel transcripts in non-model fish (cavefish, zebrafish)? Would species-specific pre-training be needed, given how much worse it did on cross-species RNAChallenge?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Encoding methods",
+   "text": "If 2304 nt is enough to call coding potential, is the signal mostly near the 5' end or the start codon? It is worth checking whether the 5' UTR length of a transcript affects misclassification."
+  }
+ ]
+}

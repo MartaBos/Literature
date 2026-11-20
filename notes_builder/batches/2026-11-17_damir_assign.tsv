@@ -1,0 +1,45 @@
+# Folder / subcategory / file name for each link in 2026-11-17_damir_links.txt (n = link order).
+# Decided by hand from titles + abstracts (batches/2026-11-17_damir_resolved.json).
+# doi_override: used when the resolver could not give the right DOI (X post -> paper it announces;
+#   peer-reviewed versions found only by 12_check_published_versions.py: Richards -> Genetics, DART-Eval -> NeurIPS).
+n	folder	subcategory	filename	doi_override
+1	regulatiory_genomics	Transcription initiation & promoters	Alcantara_2026_NatCommun_TFIID_cofactors_promoter_binding.pdf
+2	amexicanus	Brain & behaviour	Ricemeyer_2026_bioRxiv_cavefish_brain_cell_atlas.pdf
+3	amexicanus	Genetics of cave traits	Richards_2026_Genetics_cave_evolution_on_repeat.pdf	10.1093/genetics/iyag223
+4	regulatiory_genomics	Transcription initiation & promoters	He_2026_bioRxiv_human_transcription_initiation_sequence_map.pdf
+5	general	Genome & chromosome evolution	Sudasinghe_2026_MolBiolEvol_Cypriniformes_phylogenomics.pdf
+6	regulatiory_genomics	TF binding & DNA structure	Naughton_2026_bioRxiv_CpG_islands_DNA_supercoiling.pdf
+7	general	Computational methods	Romeijn_2026_ConnectSci_LncRNA-BERT.pdf
+8	regulatiory_genomics	TF binding & DNA structure	Jolma_2026_Nature_human_TF_DNA_binding_codebook.pdf
+9	regulatiory_genomics	Deep learning & sequence models	Nagai_2026_NatGenet_AI_in_regulatory_genomics.pdf
+10	regulatiory_genomics	Enhancers & enhancer–gene maps	Sheth_2026_NatGenet_enhancer_gene_maps_single_cell.pdf
+11	regulatiory_genomics	Deep learning & sequence models	Yun_2026_Zenodo_ENCODE_GRAMMAR.pdf	10.5281/zenodo.21795359
+12	regulatiory_genomics	Enhancers & enhancer–gene maps	McGee_2026_bioRxiv_locus_scale_MPRA.pdf
+13	regulatiory_genomics	Enhancers & enhancer–gene maps	Gschwind_2026_Nature_enhancer_gene_encyclopedia.pdf
+14	regulatiory_genomics	TF binding & DNA structure	Monti_2026_NAR_G4_map_Trypanosoma_chromatin.pdf
+15	regulatiory_genomics	Deep learning & sequence models	Novakovsky_2022_NatRevGenet_explainable_AI_genomics.pdf
+16	regulatiory_genomics	Deep learning & sequence models	Novakovsky_2023_GenomeBiol_ExplaiNN.pdf
+17	regulatiory_genomics	Transcription initiation & promoters	Einarsson_2026_bioRxiv_CREs_from_transcription_initiation.pdf
+18	drerio	ZGA & early embryo	CampoBes_2026_bioRxiv_ZGA_timing_DNA_cytoplasm_ratio.pdf
+19	regulatiory_genomics	Deep learning & sequence models	Liu_2026_Nature_human_development_multiome_regulatory_syntax.pdf
+20	drerio	Toxicology & exposures	Li_2026_CBPC_TBBPA_carp_hepatic_lipids.pdf
+21	general	Computational methods	Zhang_2026_NatMethods_ANNEVO_gene_annotation.pdf
+22	general	Human genetics	Dhandapany_2014_NatGenet_RAF1_dilated_cardiomyopathy.pdf
+23	regulatiory_genomics	Enhancers & enhancer–gene maps	Oguchi_2024_Science_transcribed_enhancers_T_cells.pdf
+24	general	Computational methods	Zhao_2026_NatMethods_DECODE_omics_deconvolution.pdf
+25	drerio	Embryo development & nutrition	Riddle_2021_DevBiol_fish_nutrition_embryo_development.pdf
+26	drerio	ZGA & early embryo	Fukushima_2025_NatCommun_histone_marks_ZGA_teleost.pdf
+27	general	Genome & chromosome evolution	Liu_2025_NatCommun_amniote_chromosome_evolution.pdf
+28	general	Genome & chromosome evolution	Schoenle_2025_TrendsGenet_protist_genomics.pdf
+29	drerio	ZGA & early embryo	Xu_2025_TrendsGenet_epigenetics_ZGA_to_lineage.pdf
+30	general	Genome & chromosome evolution	Cisneros_2026_NatRevGenet_gene_duplication.pdf
+31	regulatiory_genomics	Deep learning & sequence models	Jaganathan_2025_Science_promoter_mutations_deep_learning.pdf
+32	regulatiory_genomics	Regulatory variants & atlases	Hou_2025_NAR_ChickenGTEx_portal.pdf
+33	general	RNA & transcriptomics	AlfonsoGonzalez_2025_NatRevMCB_RNA_processing_sequencing.pdf
+34	regulatiory_genomics	Deep learning & sequence models	Patel_2024_NeurIPS_DART-Eval.pdf	10.52202/079017-1981
+35	regulatiory_genomics	Deep learning & sequence models	Patel_2026_bioRxiv_ARSENAL.pdf
+36	regulatiory_genomics	Enhancers & enhancer–gene maps	DeWinter_2025_NatRevBioeng_enhancer_modelling_design.pdf
+37	drerio	Embryo development & nutrition	Neaverson_2025_CellsDev_gastrula_organiser.pdf
+38	regulatiory_genomics	Transcription initiation & promoters	Mann_2025_NatCommun_paused_PolII_ERalpha.pdf
+39	regulatiory_genomics	Deep learning & sequence models	Consens_2026_bioRxiv_evolutionary_rate_genome_LM.pdf
+40	regulatiory_genomics	Transcription initiation & promoters	BerrocalRubio_2026_bioRxiv_alternative_promoters_myeloid.pdf

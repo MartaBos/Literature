@@ -1,0 +1,571 @@
+{
+ "id": "Novakovsky_2022",
+ "title": "Obtaining genetics insights from deep learning via explainable artificial intelligence",
+ "link": "https://doi.org/10.1038/s41576-022-00532-2",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Novakovsky_2022_NatRevGenet_explainable_AI_genomics.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this review address?",
+   "a": "Deep learning models are now the state of the art for functional predictions in genomics, but the basis on which they make predictions is often unknown. For genomics researchers this explanatory information is often worth more than the predictions themselves.",
+   "kw": [
+    "explainable AI",
+    "deep learning"
+   ],
+   "info": "The review groups model interpretation approaches and explains how each works, along with its assumptions and limitations for typical high-throughput biological datasets.",
+   "concl": "Explainable AI (xAI) can help life science researchers gain mechanistic insights from complex deep learning models."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What kinds of patterns could a deep learning model learn when predicting which DNA sequences drive cell-type-specific transcription?",
+   "a": "Sequence composition such as GC content, presence or absence of TF binding motifs, local chromatin accessibility, biophysical DNA properties such as bendability, positional differences (edges versus middle of a region), positive or negative interactions between features, or attributes beyond current knowledge.",
+   "kw": [
+    "features",
+    "TF motifs"
+   ],
+   "info": "Models learn millions of parameters without explaining how a given prediction was made. Interpreting a complex dataset therefore becomes the task of interpreting a complex model, which has the advantage that probing the model is limited only by computation cost.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is post-hoc interpretation?",
+   "a": "A class of xAI algorithms that work on an already trained model. They identify relevant combinations of input features and quantify how much each feature, or combination of features, contributes to the model's performance.",
+   "kw": [
+    "post-hoc interpretation"
+   ],
+   "info": "The authors present it as a systematic way to generate hypotheses and to help researchers decide which experiments to do first.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the difference between local and global interpretation?",
+   "a": "Local interpretation explains the model's prediction for a single input, such as one DNA sequence. Global interpretation looks across all inputs to find the feature combinations that drive the model's overall performance.",
+   "kw": [
+    "local interpretation",
+    "global interpretation"
+   ],
+   "info": "When the review was written, there was no general framework for aggregating local interpretations into a global one.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which four approaches to interpretation does the review describe?",
+   "a": "Model-based interpretation, mathematical propagation of influence, identification of interactions between features, and use of prior knowledge to build transparent models.",
+   "kw": [
+    "xAI categories"
+   ],
+   "info": "Examples come from regulatory genomics, but the concepts are said to generalize. Insights from xAI depend heavily on experimental design, dataset properties and the accuracy of the trained model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Deep learning in regulatory genomics",
+   "q": "What are sequence-to-activity models?",
+   "a": "Neural network models that take a putative regulatory DNA sequence, usually 100 to 10,000 bp, as input and predict a dynamic, cell- or context-specific property of its activity. An example is whether a TF binds the sequence in a given cell type, as measured by ChIP-seq.",
+   "kw": [
+    "sequence-to-activity models"
+   ],
+   "info": "Other common prediction targets are chromatin accessibility, RNA binding, gene expression, splicing and aspects of 3D chromatin organization.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Deep learning in regulatory genomics",
+   "q": "How do CNNs and RNNs differ as sequence-to-activity architectures?",
+   "a": "CNNs start with convolutional nodes (filters) that scan the input for patterns, usually 3 to 20 bp long, followed by fully connected layers. RNNs arrange nodes in a chain along the DNA sequence, and each node takes one DNA letter and passes a value to the next node.",
+   "kw": [
+    "CNN",
+    "RNN",
+    "convolutional filters"
+   ],
+   "info": "The two are often combined, with one or more convolutional layers feeding into a recurrent layer. There is no consensus on how to design the best architecture for a task, so researchers usually try several.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Deep learning in regulatory genomics",
+   "q": "Why is it hard to interpret a DNN?",
+   "a": "State-of-the-art DNNs have tens of millions of free parameters. Their high capacity gives good accuracy but makes it hard to identify which features and feature combinations were learned, and interpretation means searching a huge combinatorial space.",
+   "kw": [
+    "feature removal",
+    "combinatorial search space"
+   ],
+   "info": "Almost all post-hoc methods can be seen as a feature removal recipe, in which the trained model is probed to see how important a feature is. Gradient-based, perturbation-based and game theory-based frameworks all exist. Each has its own assumptions, so no single strategy is best.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Deep learning in regulatory genomics",
+   "q": "Besides the search space, what other difficulties does model interpretation face?",
+   "a": "Going from local interpretations to a global understanding across a whole dataset, and being unable to evaluate interpretation strategies systematically.",
+   "kw": [
+    "benchmarking"
+   ],
+   "info": "Evaluation is hard because there are no benchmark datasets in which the true important features are known in advance, and because whether an algorithm's assumptions hold depends on both the dataset and the underlying biology.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Neural networks for high-throughput genomics",
+   "q": "How is a DNA sequence given to a neural network as input?",
+   "a": "By one-hot encoding. A sequence of length L becomes a 4 x L binary matrix in which each column has a single 1 marking the base (A, C, G or T), so the network has 4L input nodes.",
+   "kw": [
+    "one-hot encoding"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Neural networks for high-throughput genomics",
+   "q": "How does a single node compute its value, and what does training do?",
+   "a": "A node computes sigma(w1x1 + ... + wnxn + b), where x are its inputs, w the weights, b the bias and sigma the activation function. Training adjusts the weights and biases so that the output nodes agree as closely as possible with the training labels.",
+   "kw": [
+    "activation function",
+    "weights",
+    "bias"
+   ],
+   "info": "Networks with several output nodes solve several tasks at once, for example binding of many TFs, or one TF across many cell types. The objective function is what training optimizes, for example mean squared error for continuous outputs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Neural networks for high-throughput genomics",
+   "q": "What makes a DNN nonlinear, and what do pooling and flattening do?",
+   "a": "Nonlinear activation functions such as ReLU in at least some layers make it nonlinear. Pooling takes the maximum or average of nearby elements in a convolutional activation map to reduce the number of parameters in later layers. Flattening joins the activation maps into one vector that feeds the fully connected layers.",
+   "kw": [
+    "ReLU",
+    "pooling",
+    "flattening"
+   ],
+   "info": "A DNN with only linear activations is still equivalent to linear regression. A single-layer network can be equivalent to linear or logistic regression, depending on the activation function.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "What is the idea behind model-based interpretation?",
+   "a": "To look at individual parts of the network and work out which hidden patterns they represent. In sequence models, first-layer neurons may learn short subsequences that represent TF motifs, and deeper layers combine them into composite features.",
+   "kw": [
+    "hidden neurons"
+   ],
+   "info": "The analogy is face recognition, where first-layer neurons detect edges and deeper layers detect ears, nose and mouth. There are two categories: examining hidden neuron activity directly, or training with an attention mechanism that gives relevance weights per input feature. Fully interpreting modern large DNNs this way is not feasible, but partial interpretation helps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "How do you turn a first-layer convolutional filter into a PWM?",
+   "a": "Applying a convolutional weight matrix to a sequence is mathematically the same as scanning it with a PWM. A softmax transform of the weight matrix gives a PFM, and further scaling and log-transformation give a PWM. In practice it is more common to collect the subsequences that activate the filter above a threshold and build the PWM from their alignment.",
+   "kw": [
+    "PWM",
+    "PFM",
+    "convolutional filters"
+   ],
+   "info": "Directly transforming the weights can fail because weights learned without constraints cause scaling issues. Instead of scanning the dataset, one can also solve an optimization problem over all possible length-m subsequences to find those that activate a filter most strongly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "How are filter-derived PWMs annotated, and do they look like real TF motifs?",
+   "a": "They are compared with known TF binding profiles in databases such as JASPAR and Cis-BP. There is no guarantee they will match, but learned PWMs usually do resemble known motifs.",
+   "kw": [
+    "JASPAR",
+    "Cis-BP"
+   ],
+   "info": "In CNNs trained on ATAC-seq across immune cells, most learned PWMs matched known motifs of TFs important in immune differentiation, including PAX5, EBF1 and LEF1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "How do you test whether a learned filter actually matters for predictions?",
+   "a": "Nullify (ablate) each filter in turn and measure how much the model's predictions change. The effect on each input example is a local interpretation, and the simplest global interpretation is the average of these effects.",
+   "kw": [
+    "filter ablation"
+   ],
+   "info": "This is needed because networks are over-parameterized by design, so the presence of a PWM does not mean it is predictive or useful.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "What are the limitations of node-based interpretation?",
+   "a": "It assumes each unit can be interpreted on its own. Because DNNs are trained to be robust to drop-out, the same pattern can be captured by several redundant neurons, so ablating one neuron understates its importance. A single biological pattern can also be split across nodes, for example a long TF motif learned by two filters.",
+   "kw": [
+    "drop-out",
+    "redundancy"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "What is an attention mechanism?",
+   "a": "An extra module in the network that learns weights during training to prioritize the input positions most likely to hold relevant information. It can be viewed as a form of weight regularization, and the learned attention vector can be inspected directly.",
+   "kw": [
+    "attention mechanism",
+    "regularization"
+   ],
+   "info": "Attention can improve both performance and interpretability, and in particular it addresses the drop in RNN performance as input sequences get longer. Simpler weight regularization adds a term to the objective that pushes weights to be small or sparse, which helps prevent overfitting.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model-based interpretation",
+   "q": "Can attention weights be trusted as feature importance?",
+   "a": "The evidence is mixed. Attention weights have been shown to correlate with the expected location of TF binding sites and to coincide with DNase footprints, but other studies warn against interpreting them directly.",
+   "kw": [
+    "attention weights"
+   ],
+   "info": "Redundancy and multicollinearity among input features, which are common in high-throughput data, can make attention weight estimates unstable.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "How do propagation-based methods differ from model-based ones?",
+   "a": "Instead of probing parts of the network, they pass perturbed inputs through the model and observe how the predictions change. They are thought to be more model-agnostic, partly avoiding architecture artefacts such as redundant filters, and they identify features and quantify their importance at the same time.",
+   "kw": [
+    "feature attribution"
+   ],
+   "info": "There are two groups: forward propagation (perturbation) and backward propagation (gradients).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "What is in silico mutagenesis (ISM), and how is it done?",
+   "a": "At each position of a length-L sequence, the base is changed to each of the three alternatives. The difference between the prediction for the mutated sequence and for the original is the attribution score. Doing this for all positions gives a 4 x L attribution map that can be shown as a sequence logo.",
+   "kw": [
+    "ISM",
+    "attribution map"
+   ],
+   "info": "It is the sequence version of pixel flipping in computer vision. ISM has been shown to give better results than other attribution-based approaches. It is usually applied to the final output but can also be used on hidden neurons.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "How expensive is ISM, and how can it be made faster?",
+   "a": "Single-nucleotide ISM costs on the order of 3L forward passes per sequence. Options are to run it only on the most informative sequences (for example, those with strong predictions) or to use fastISM or accelerated ISM, which skip redundant computation by working only within a filter's receptive field.",
+   "kw": [
+    "fastISM",
+    "accelerated ISM"
+   ],
+   "info": "Even with these speed-ups, testing all combinations of nucleotides exhaustively is not practical.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "What are occlusion and motif mutagenesis?",
+   "a": "Occlusion alters longer stretches of sequence at once, similar to scanning mutagenesis in the lab, to find motifs that depend on several important base pairs. Motif mutagenesis mutates known TF motif sites, for example high-scoring PWM hits, which makes results easier to interpret but requires knowing the motifs in advance.",
+   "kw": [
+    "occlusion",
+    "motif mutagenesis"
+   ],
+   "info": "Occlusion has been used to find enhancer-gene pairs, CTCF sites with particular orientations, and boundaries of cis-regulatory elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "How are synthetic sequences used to probe a model?",
+   "a": "Specific k-mers are inserted at defined positions in synthetic sequences, and the model is scanned on them to test the importance of motif position, spacing and flanking sequence, without relying on incomplete knowledge of TF binding patterns.",
+   "kw": [
+    "k-mers",
+    "synthetic sequences"
+   ],
+   "info": "The background sequence affects the results. Keeping the dinucleotide composition and motif positional information in the synthetic sequences gives less biased results.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "How do gradient-based (backward) attribution methods work?",
+   "a": "They approximate ISM with the derivative of the model at the input, computed in one backward pass using back-propagation (the chain rule). Multiplying the gradient vector element-wise by the input gives a gradient-based attribution map.",
+   "kw": [
+    "gradient",
+    "back-propagation",
+    "GradCAM"
+   ],
+   "info": "They were developed because forward methods need many forward passes. GradCAM and its variants add local weighting to improve the gradient approximation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "What is the saturation problem, and how do integrated gradients solve it?",
+   "a": "When features are redundant, for example several copies of the same motif, the model's sensitivity is spread across the copies and each one's importance is underestimated. Integrated gradients integrate the gradient along a straight path from a baseline (reference) sequence to the actual input, so importance is measured relative to a baseline that lacks the motifs.",
+   "kw": [
+    "saturation problem",
+    "integrated gradients"
+   ],
+   "info": "For genomic sequences, a mononucleotide- or dinucleotide-shuffled version of the input is a reasonable baseline.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "What is enhanced integrated gradients (EIG)?",
+   "a": "A variant of integrated gradients that also considers all nonlinear paths between the baseline and the sample.",
+   "kw": [
+    "EIG",
+    "A1CF"
+   ],
+   "info": "EIG was benchmarked against different baseline types and used to identify A1CF as a novel regulator of the liver splicing programme.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "What problem does DeepLIFT solve, and how does it work?",
+   "a": "Gradients can be numerically unstable and discontinuous, for example with ReLU activations, so small input changes can cause large jumps. DeepLIFT instead propagates differences between the input and a reference at every node, back-propagating them in a single pass from output to input.",
+   "kw": [
+    "DeepLIFT",
+    "ReLU"
+   ],
+   "info": "DeepLIFT was used to reveal key markers of pluripotency and to identify novel TF motifs that contribute to epidermal differentiation. One of its attribution rules can be shown to approximate Shapley values.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "What are Shapley values in this context?",
+   "a": "A concept from cooperative game theory that assigns each feature an importance proportional to its marginal contribution to a prediction. Adapted for feature attribution, they provide a theoretical basis that unifies several methods, including DeepLIFT and DeepSHAP.",
+   "kw": [
+    "Shapley values",
+    "DeepSHAP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Mathematical propagation of influence",
+   "q": "How do you move from per-sequence attribution maps to globally important motifs?",
+   "a": "By aggregating results across many sequences. TF-MoDISco (written TFMoDisco in the text) was designed for DNA and clusters attribution maps to find globally important motifs. It was used, for example, to find sequence features important for TERT promoter function.",
+   "kw": [
+    "TF-MoDISco",
+    "TERT"
+   ],
+   "info": "The usual clustering problems remain: choosing the number of clusters, the similarity metric and the clustering resolution. Some newer methods aggregate partial occlusion results with added statistical guarantees, and Koo and colleagues used them to find features that predict RNA-protein interactions.",
+   "concl": "There is still no general framework for aggregating local interpretations into global ones."
+  },
+  {
+   "type": "qa",
+   "section": "Identifying interactions between features",
+   "q": "Why look for interactions between features?",
+   "a": "The power of neural networks comes from modelling nonlinear interactions. In gene regulation, interactions such as cooperativity between TFs can explain activity beyond each TF acting alone, so researchers want to find network-learned interactions that may reflect cooperative TF behaviour.",
+   "kw": [
+    "TF cooperativity",
+    "nonlinear interactions"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Identifying interactions between features",
+   "q": "How can model-based methods reveal interactions?",
+   "a": "By examining deeper-layer neurons, which assemble lower-layer features. Bogard and colleagues examined sequences that activate second-layer filters and identified and validated interactions between RNA binding proteins involved in alternative polyadenylation.",
+   "kw": [
+    "deeper layers",
+    "alternative polyadenylation"
+   ],
+   "info": "In computer vision, optimization methods that search many random inputs for those that maximally activate a hidden neuron tend to work best for this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Identifying interactions between features",
+   "q": "How does self-attention represent interactions?",
+   "a": "Self-attention compares every part of the input with every other part. It can replace the pooling layer in a CNN and produces an L x L attention matrix, where each entry is the attention between a pair of base pairs and can represent cooperativity between them.",
+   "kw": [
+    "self-attention"
+   ],
+   "info": "In a model that predicts expression from a wide region (for example 200 kb) around a TSS, self-attention may capture enhancer-promoter interactions. In TF binding models it may capture cooperative TF binding, or more generally highlight regions important for binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Identifying interactions between features",
+   "q": "How can ISM be used to test motif interactions without testing every pair?",
+   "a": "Exhaustive pairwise ISM grows quadratically with the number of features, so it is used in a restricted way. Two motifs are placed in a sequence (or inserted into random sequence), one or both are mutated, and the change in prediction for the joint mutation is compared with the sum of the single mutations to find additive versus non-additive effects.",
+   "kw": [
+    "ISM",
+    "motif spacing",
+    "NANOG-SOX2"
+   ],
+   "info": "For spacing, one motif is fixed (for example at the centre) and the other is slid across the sequence. This found position-dependent interactions between NANOG and SOX2 during stem cell differentiation (the text spells it NANONG, apparently a typo). Using two identical motifs tests multimerization, and repeating over many sequences reduces noise.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Identifying interactions between features",
+   "q": "What are deep feature interaction maps (DFIM)?",
+   "a": "A method that combines forward and backward propagation. The feature interaction score (FIS) between a source and a target feature is the change in the target's importance score when the source is perturbed while all other features stay intact.",
+   "kw": [
+    "DFIM",
+    "feature interaction score"
+   ],
+   "info": "The number of passes through the network grows linearly with the number of features, compared with quadratic growth for naive second-order ISM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Identifying interactions between features",
+   "q": "What are integrated Hessians, and what are their limitations?",
+   "a": "An extension of integrated gradients that uses second-order derivatives and gives a matrix H, where a high H(i, j) means feature i modulates the influence of feature j, indicating an interaction. They could in principle score every pair of base pairs efficiently.",
+   "kw": [
+    "integrated Hessians"
+   ],
+   "info": "They cannot be used with activation functions that lack an informative second derivative, such as the widely used ReLU. They had not yet been systematically tested in genomics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Using prior knowledge for transparent models",
+   "q": "What is a transparent neural network model, and how is one built?",
+   "a": "A model whose hidden nodes are designed to correspond to biological units at a level that humans can understand. Prior knowledge shapes the architecture, for example by initializing filters with known TF motifs, or by using Gene Ontology to hard-code edges between neurons or to encourage such edges through regularization.",
+   "kw": [
+    "transparent models",
+    "Gene Ontology"
+   ],
+   "info": "Deeper layers could represent co-binding of motifs, and higher layers pathways. Reasons to build transparent models with neural networks rather than, for example, probabilistic graphical models: the optimization algorithms can learn nonlinear interactions between interpretable units, and the computational infrastructure scales to large datasets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Using prior knowledge for transparent models",
+   "q": "What is DCell, and what did it show?",
+   "a": "One of the first transparent neural networks in biology. It models genotype to growth rate in yeast, with genes as first-layer nodes and higher nodes for functional groups arranged by the Gene Ontology hierarchy. It helped explain how mutations in PMT1 and IRE1 affect growth.",
+   "kw": [
+    "DCell",
+    "PMT1",
+    "IRE1"
+   ],
+   "info": "Both genes were linked to more than 200 GO subsystems, but only the endoplasmic reticulum unfolded protein response node was substantially affected compared with wild type. Experiments confirmed the link between this subsystem and the double mutants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Using prior knowledge for transparent models",
+   "q": "What is P-NET?",
+   "a": "A transparent model that builds representations of molecular variables from multi-omic datasets. Its transparency helped identify novel biomarkers of metastatic prostate cancer, such as MDM4.",
+   "kw": [
+    "P-NET",
+    "MDM4"
+   ],
+   "info": "Other groups have built neural networks whose units and parameters have a biophysical interpretation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Using prior knowledge for transparent models",
+   "q": "What are neural additive models (NAMs)?",
+   "a": "A simplified architecture that gives up some capacity so that parameters can be interpreted directly. Early genomics applications show performance competitive with more complex models in some settings.",
+   "kw": [
+    "NAMs",
+    "ExplaiNN"
+   ],
+   "info": "They can only detect linear relationships between features (although these features can still be learned de novo), so they cannot learn interactions such as nonlinear motif pairs or effects of spacing and flanking sequence. The genomics application cited is ExplaiNN, a preprint by the same group.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Using prior knowledge for transparent models",
+   "q": "What are the limitations of transparent models?",
+   "a": "They need systematic prior information, so they suit poorly characterized or non-assayable entities badly. Nodes may not stay equivalent to biological entities; for example, filters initialized with TF motifs can drift away from them during training. Enforcing transparency can also lower accuracy.",
+   "kw": [
+    "prior knowledge"
+   ],
+   "info": "Hard-coding TF-TF or gene-pathway edges is likely to reduce accuracy compared with an unconstrained model. The loss may be smaller with softer regularization.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion and future perspectives",
+   "q": "How should you choose between global and local interpretation?",
+   "a": "Based on the application. Global interpretation suits understanding a whole biological process, for example to make testable mechanistic hypotheses. Local interpretation suits understanding an individual prediction, for example a person's genetic risk of disease.",
+   "kw": [
+    "local interpretation",
+    "global interpretation"
+   ],
+   "info": "The methods also apply to models of phenotype, gene expression, multi-omics and single-cell data. Interpretation may be harder when, unlike in sequence models, the direction of causality is unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion and future perspectives",
+   "q": "How can spurious correlations in training data affect interpretation?",
+   "a": "On small or artefact-containing datasets, a model can reach high accuracy by learning non-biological shortcuts, and then its interpretation will not show meaningful biology. Interpretation can also detect such shortcuts, so it doubles as a debugging tool.",
+   "kw": [
+    "shortcuts",
+    "batch effects"
+   ],
+   "info": "In a medical imaging study, model interpretation revealed hidden batch effects that the model was using to make predictions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion and future perspectives",
+   "q": "Why does the model's prediction accuracy matter for interpretation?",
+   "a": "The quality of insight depends heavily on accuracy. A perfect model would give the true effect of a mutation in ISM, while a low-accuracy model can give spurious inferences, so care is needed for tasks like predicting gene expression or phenotype, where accuracy is far from perfect.",
+   "kw": [
+    "model accuracy"
+   ],
+   "info": "This is worst for higher-order effects such as feature interactions, because any given combination of feature values appears in only a few training examples.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion and future perspectives",
+   "q": "What is the un-identifiability problem?",
+   "a": "DNNs usually have far more parameters than training examples, so training is not guaranteed to find the best model, and the parameters depend on which training examples were sampled and on the initialization. Some learned features may therefore arise by chance.",
+   "kw": [
+    "un-identifiability",
+    "reproducibility"
+   ],
+   "info": "Model-based interpretations are the most sensitive, but the authors think all techniques are affected to some degree. Comparing several datasets and training initializations helps but can be too costly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion and future perspectives",
+   "q": "Is there a consensus on which xAI approach works best?",
+   "a": "No. Users have different goals, different methods can give different insights even for the same goal, and some methods sometimes produce biologically nonsensical results.",
+   "kw": [],
+   "info": "The authors expect best practices to become established as the field matures and to be built into accessible analysis tools.",
+   "concl": "As biological datasets grow, xAI will become increasingly central to genomics."
+  },
+  {
+   "type": "note",
+   "section": "Deep learning in regulatory genomics",
+   "text": "There are no benchmark datasets with known true important features. How could xAI outputs, such as TF-MoDISco motifs or ISM maps, be validated in a non-model system without such ground truth?"
+  },
+  {
+   "type": "note",
+   "section": "Identifying interactions between features",
+   "text": "Integrated Hessians could score all base-pair interactions but do not work with ReLU and have not been tested in genomics. Worth checking whether later work has applied them to regulatory sequence models."
+  },
+  {
+   "type": "note",
+   "section": "Using prior knowledge for transparent models",
+   "text": "Go back to ExplaiNN (Novakovsky et al. 2022, bioRxiv), the authors' own NAM-style transparent model for genomics, cited as competitive with more complex models in some settings."
+  }
+ ]
+}

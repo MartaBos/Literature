@@ -1,0 +1,639 @@
+{
+ "id": "McGee_2026",
+ "title": "Locus-Scale Massively Parallel Reporter Assays",
+ "link": "https://doi.org/10.64898/2026.07.24.740649",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/McGee_2026_bioRxiv_locus_scale_MPRA.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is a LAMPRA?",
+   "a": "A long massively parallel reporter assay that integrates combinatorial cloning, molecular barcoding and long- plus short-read sequencing to measure how CRE identities, numbers, spacings, orders, orientations and interactions shape regulatory output at multi-kilobase scales.",
+   "kw": [
+    "LAMPRA",
+    "MPRA"
+   ],
+   "info": "The authors write the acronym as 'Long @$$ massively parallel reporter assays'.",
+   "concl": "It extends the classic MPRA concept from single short fragments to whole synthetic loci."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is an sCRL?",
+   "a": "A synthetic cis-regulatory locus: here a 5-kb construct built as a random combination of five 1-kb elements (enhancers, insulators and spacers).",
+   "kw": [
+    "sCRL"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What was the scale of the proof-of-concept experiment?",
+   "a": "About 36,000 sCRLs of 5 kb each, assayed to model how locus composition drives gene expression.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why have most MPRAs assayed sub-300 bp fragments?",
+   "a": "Because fragment length was set by the technical limits of microarray-based DNA synthesis rather than by biology, with fragments placed closely upstream or downstream of a minimal promoter.",
+   "kw": [
+    "MPRA",
+    "oligo synthesis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "In which three ways are conventional MPRAs mismatched to mammalian gene regulation?",
+   "a": "Length (in vivo-validated developmental enhancers are overwhelmingly larger than 300 bp and super-enhancers span kilobases), distance (enhancer-promoter distances range from about 10^1 to 10^6 bp), and combinatorial logic (output depends on interactions among multiple CRE types).",
+   "kw": [
+    "super-enhancer",
+    "combinatorial logic"
+   ],
+   "info": "CRE types listed: enhancers, promoters, insulators, silencers, facilitators.",
+   "concl": "These define a locus-scale regime of regulatory grammar that conventional MPRAs cannot probe."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is enhancer-level grammar tractable for deep learning but locus-scale grammar is not?",
+   "a": "Enhancer grammar works because chromatin accessibility is a reasonable proxy for enhancer activity and evolution has produced thousands of independent training examples per cell type; neither advantage holds at the locus scale.",
+   "kw": [
+    "deep learning",
+    "chromatin accessibility"
+   ],
+   "info": "The authors are explicitly skeptical that locus-scale models will reach their potential without fundamentally new kinds of data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the problem with using Hi-C contact frequency as a stand-in for regulatory interaction?",
+   "a": "Hi-C supports useful heuristics such as activity-by-contact, but 3D proximity tracks poorly with functional enhancer-promoter communication.",
+   "kw": [
+    "Hi-C",
+    "activity-by-contact"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why can't we learn locus-scale grammar just by sequencing more genomes?",
+   "a": "Because evolution varies enhancer sequence much more freely than locus architecture, so the arrangements needed to disentangle identities, numbers, spacings, orders and orientations independently are largely absent from any mammalian genome.",
+   "kw": [
+    "locus architecture"
+   ],
+   "info": "Natural loci reflect evolutionary history rather than an independent sampling of the possible.",
+   "concl": "Synthetic combinatorial loci are needed to sample architecture space."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What earlier approaches tried to extend MPRAs beyond short fragments?",
+   "a": "Libraries from sheared or digested genomic DNA, multiplex assembly of short oligos, combinatorial MPRAs of CRE pairs or triplets (e.g. NeMECiS fusing triplets of about 200 bp into about 600 bp synthetic CREs), and landing-pad integration with FACS readouts.",
+   "kw": [
+    "NeMECiS",
+    "STARR-seq",
+    "landing pad"
+   ],
+   "info": "All of these remained at sub-kilobase scale, or sacrificed throughput and generality because the landing pads sit in only one or a few genomic contexts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - LAMPRA workflow",
+   "q": "How are sCRLs assembled in LAMPRA?",
+   "a": "A CRE library is synthesized with identical flanking Type IIS restriction sites, cloned bidirectionally into slot-specific intermediate vectors, then the slot libraries are combinatorially assembled upstream of a fixed minP-BC-GFP reporter cassette.",
+   "kw": [
+    "Type IIS",
+    "Golden Gate",
+    "minP-BC-GFP"
+   ],
+   "info": "The 1:1 correspondence between intermediate vectors and slots means distinct CRE libraries can optionally be directed to specific slots (slot-addressability).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - LAMPRA workflow",
+   "q": "What is the barcode for, and how is it linked to the construct?",
+   "a": "A degenerate barcode in the reporter cassette uniquely tags each construct; barcode-to-locus association is established by long-read sequencing (PacBio Vega).",
+   "kw": [
+    "barcode",
+    "PacBio"
+   ],
+   "info": "Short reads cannot span a 5-kb sCRL, so long reads are needed for the association dictionary.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - LAMPRA workflow",
+   "q": "Why deliver the library by piggyBac transposition?",
+   "a": "Random piggyBac integration gives a chromatinized genomic context while accommodating larger sCRL lengths than lentiviral or safe-harbor delivery.",
+   "kw": [
+    "piggyBac"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - LAMPRA workflow",
+   "q": "How is sCRL activity quantified?",
+   "a": "As DNA-normalized RNA barcode abundance, measured by short-read amplicon sequencing: the activity score is the RNA barcode count divided by the DNA barcode count.",
+   "kw": [
+    "activity score"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "Which genomic locus was used for the proof-of-concept?",
+   "a": "Five distal candidate enhancers of the human NMU gene, located 30-98 kb upstream of its TSS, originally identified by CRISPRi screening in K562 cells and named e-NMU(i) to e-NMU(v).",
+   "kw": [
+    "NMU",
+    "K562",
+    "CRISPRi"
+   ],
+   "info": "They broadly correspond to F1, F2, e1, e2 and F3 in the nomenclature of Zhou et al., but are centred on coordinates from Gasperini et al.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "What were the eleven 1-kb elements in the library?",
+   "a": "Five e-NMU candidate enhancers, five spacers made by dinucleotide-matched shuffling of those enhancers (Ctrl(i)-(v)), and one synthetic insulator Insu(i) that concatenates five documented insulators.",
+   "kw": [
+    "Insu(i)",
+    "dinucleotide shuffle"
+   ],
+   "info": "Each element was cloned in both orientations into all five slots, so the library is 11 elements x 2 orientations per slot.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "What does the naming e-NMU(iv)R-S1 mean?",
+   "a": "The reverse orientation (R) of the e-NMU(iv) element placed in slot 1, the slot furthest from the minP-BC-GFP cassette.",
+   "kw": [
+    "nomenclature"
+   ],
+   "info": "Slots are numbered S1-S5 in the orientation of the reporter cassette, so S5 is the promoter-proximal slot.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "How many sCRLs were recovered and out of how many possible?",
+   "a": "36,922 uniquely barcoded 5-kb sCRLs passed QC with sufficient representation, out of 5.2 million possible combinations ([11 elements x 2 orientations]^5 slots).",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "What is the cost per sCRL assayed?",
+   "a": "About $0.30 per sCRL, given roughly $1,000 synthesis cost per 1-kb element.",
+   "kw": [
+    "cost"
+   ],
+   "info": "This is an upper bound, because synthesis is a one-time cost and deeper sampling of the 5.2-million space adds only cheap assembly and transformation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "How uniform was the library?",
+   "a": "Elements spanned a 7.3-fold abundance range and were 51% forward / 49% reverse; among 5-kb sCRLs, 59% were within 4-fold and 79% within 10-fold of each other.",
+   "kw": [],
+   "info": "PacBio coverage per sCRL was approximately log-normal with a left tail of low-coverage sCRLs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - e-NMU library design and composition",
+   "q": "What was the average composition of an sCRL?",
+   "a": "On average 1.95 enhancers, 2.45 spacers and 0.60 insulators per sCRL, with 3.14 independent barcodes each.",
+   "kw": [],
+   "info": "8% of sCRLs lacked any enhancer, 3% lacked any spacer and 51% lacked an insulator (the last because only one insulator element was included).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sCRL activity and promoter groups",
+   "q": "How reproducible were the replicates?",
+   "a": "Activity scores were obtained for 36,033 of 36,922 sCRLs (98%) in at least two replicates, and log-transformed scores correlated at Pearson r = 0.91 between replicates.",
+   "kw": [
+    "reproducibility"
+   ],
+   "info": "Three replicate nucleofections; minimum 2 DNA UMIs per score; mean 549 +/- 490 DNA UMIs per sCRL per replicate. Downstream analyses use the replicate mean.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sCRL activity and promoter groups",
+   "q": "What was the dynamic range of sCRL activity?",
+   "a": "Activity scores spanned nearly three orders of magnitude, from 0 to 669.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sCRL activity and promoter groups",
+   "q": "Which single element configuration dominated the variation in activity?",
+   "a": "sCRLs carrying e-NMU(iii)F in the promoter-proximal slot S5 had mean activity 32.7 (s.d. 38.2, range 0.07-669, n = 1,665) versus 0.296 for all other sCRLs (s.d. 1.62, range 0-85, n = 34,368), a 110-fold difference.",
+   "kw": [
+    "e-NMU(iii)"
+   ],
+   "info": "sCRLs with e-NMU(iii)R-S5 or e-NMU(iv)R-S5 were also elevated but less so; all other S5 identities gave similar low-mean, long-tailed distributions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sCRL activity and promoter groups",
+   "q": "Why did the authors split the data into four promoter groups?",
+   "a": "Because e-NMU(iii)F, e-NMU(iii)R and e-NMU(iv)R in S5 act as the effective promoter, driving the barcoded reporter strongly enough to overwhelm the weak minP.",
+   "kw": [
+    "effective promoter",
+    "minP"
+   ],
+   "info": "Group sizes: e-NMU(iii)F-S5 n = 1,665; e-NMU(iii)R-S5 n = 1,035; e-NMU(iv)R-S5 n = 2,271; minP group n = 31,062.",
+   "concl": "The element in S5 defines which promoter the upstream elements are acting on."
+  },
+  {
+   "type": "qa",
+   "section": "Results - sCRL activity and promoter groups",
+   "q": "Why does the number of enhancer-occupiable slots differ between groups?",
+   "a": "In the three alternative-promoter groups the promoter sits in S5, leaving S1-S4 (up to four slots) for enhancers, whereas in the minP group the promoter is in the fixed downstream cassette and all five slots S1-S5 are free.",
+   "kw": [],
+   "info": "Dose-response is therefore assessed over the relevant range for each group.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer dose-response",
+   "q": "How much did baseline activity differ between promoter groups?",
+   "a": "About 130-fold: e-NMU(iii)F-S5 = 7.85, e-NMU(iii)R-S5 = 0.62, e-NMU(iv)R-S5 = 0.15, minP = 0.061, measured with no upstream e-NMU element present.",
+   "kw": [
+    "baseline"
+   ],
+   "info": "Mean activity rose with the copy number of upstream e-NMU elements in all four groups.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer dose-response",
+   "q": "Which of the five e-NMU elements behaved as true enhancers?",
+   "a": "Only e-NMU(iii) and e-NMU(iv): raising their copy number in S1-S4 increased activity, while e-NMU(i), (ii) and (v) showed no dose-response.",
+   "kw": [
+    "e-NMU(iii)",
+    "e-NMU(iv)"
+   ],
+   "info": "These two were designated 'active enhancers' for all downstream analyses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer dose-response",
+   "q": "How did they argue that e-NMU(iii)/(iv) activity upstream is real enhancer function and not leftover promoter activity?",
+   "a": "First, activity increased log-additively with the copy number of the two active elements but not the two inactive ones; second, their contributions were orientation-independent in S1-S3 but orientation-dependent in S5.",
+   "kw": [
+    "orientation"
+   ],
+   "info": "Promoter activity is directional whereas classical enhancer activity is orientation-independent, so losing orientation dependence when moved upstream supports bona fide enhancer function.",
+   "concl": "The same sequence can act as a promoter in S5 and as an enhancer in upstream slots."
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer dose-response",
+   "q": "What model describes sCRL activity?",
+   "a": "A multiplicative model in which log-activity equals a promoter-specific baseline plus a dose-dependent contribution from active upstream enhancers.",
+   "kw": [
+    "multiplicative model",
+    "log-additive"
+   ],
+   "info": "Per-copy enhancer gain (slope of the log-additive dose-response): e-NMU(iii)F-S5 = 1.87, e-NMU(iii)R-S5 = 1.22, e-NMU(iv)R-S5 = 2.04, minP = 1.25.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer dose-response",
+   "q": "Do promoter baseline and enhancer responsiveness go together?",
+   "a": "No, they are independent: e-NMU(iii)R-S5 pairs a high baseline with one of the shallowest gains, while e-NMU(iv)R-S5 pairs the lowest baseline with one of the steepest gains.",
+   "kw": [
+    "responsiveness"
+   ],
+   "info": "Caveat: only four promoters were sampled.",
+   "concl": "Baseline output and enhancer-responsiveness are separable, promoter-specific properties; knowing one does not predict the other."
+  },
+  {
+   "type": "qa",
+   "section": "Results - insulator positional logic",
+   "q": "Did enhancer contribution depend on distance from the promoter?",
+   "a": "No: within the e-NMU(iii)F-S5 group, the two active enhancers behaved in a distance-invariant manner across the 1-5 kb range, raising activity about 1.83-fold (e-NMU(iii)) and about 1.43-fold (e-NMU(iv)) regardless of slot.",
+   "kw": [
+    "distance-invariant"
+   ],
+   "info": "Analysis used log2 fold-difference versus pooled Ctrl elements at the same slot, computed from insulator-free sCRLs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - insulator positional logic",
+   "q": "What effect did the synthetic insulator have?",
+   "a": "sCRLs carrying one or more Insu(i) elements were more than 2-fold less active than those with none, and the effect was strongly position-dependent, with larger decreases for insulators closer to the promoter.",
+   "kw": [
+    "insulator"
+   ],
+   "info": "Analysed in the highest-activity promoter group (e-NMU(iii)F-S5, n = 1,665) for maximum dynamic range.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - insulator positional logic",
+   "q": "Is the insulator's position effect intrinsic, or does it reflect interposition?",
+   "a": "Interposition: among e-NMU(iii)F-S5 sCRLs with exactly one insulator and one active enhancer in S1-S4 (n = 113), activity was 2.9-fold higher when the insulator lay upstream of the enhancer than when it sat between the enhancer and the promoter.",
+   "kw": [
+    "interposition"
+   ],
+   "info": "The effect was independent of the insulator's orientation.",
+   "concl": "Enhancers act similarly wherever they sit upstream, whereas the insulator suppresses activity specifically when interposed between enhancer and promoter."
+  },
+  {
+   "type": "qa",
+   "section": "Results - modeling",
+   "q": "How were sCRLs featurized for the predictive models?",
+   "a": "Each sCRL was described by the identity (11 levels) and orientation (2 levels) of the element in each of the five slots.",
+   "kw": [
+    "featurization"
+   ],
+   "info": "One-hot encoding for linear models (55 features without interactions, 1,485 with); categorical encoding retained for ensembles (10 features).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - modeling",
+   "q": "How well did the different model classes predict activity?",
+   "a": "Linear models with main effects only reached r = 0.57 regardless of regularization; adding pairwise interaction terms raised this to r = 0.81-0.82; random forest and gradient boosting reached r = 0.90 on held-out data.",
+   "kw": [
+    "random forest",
+    "XGBoost"
+   ],
+   "info": "The jump with interaction terms implicates element interactions; the further gain with trees suggests structure beyond pairwise interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - modeling",
+   "q": "Why is the overall r = 0.90 partly misleading?",
+   "a": "Much of it comes from trivially predicted differences between promoter groups; modelling each group separately gave r = 0.81 (e-NMU(iii)F-S5), 0.56 (minP), 0.47 (e-NMU(iv)R-S5) and 0.39 (e-NMU(iii)R-S5).",
+   "kw": [],
+   "info": "Performance tracks dynamic range: the best-predicted group is the one with the largest spread of activities.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - modeling",
+   "q": "What did the downsampling analysis show?",
+   "a": "31% of the training data was enough to recover 95% of the maximum Pearson r.",
+   "kw": [
+    "downsampling"
+   ],
+   "info": "Suggests that more complex libraries will be not only measurable but also modelable with this framework.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What three separable quantities did LAMPRA resolve?",
+   "a": "A promoter-specific baseline, a promoter-specific responsiveness to enhancer dose (the per-copy gain of a log-additive dose-response), and an enhancer-intrinsic effect set by element identity rather than orientation or position.",
+   "kw": [],
+   "info": "",
+   "concl": "Promoter baseline and responsiveness varied independently, at least across the four promoters sampled."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which independent study supports the baseline-independent responsiveness finding?",
+   "a": "A preprint by Tan et al. assaying about 25,000 enhancer-promoter pairs, which also found responsiveness to be an intrinsic promoter property independent of basal output, with multiplicative, power-law scaling whose exponent is promoter-specific.",
+   "kw": [
+    "Tan et al."
+   ],
+   "info": "Caveat noted by the authors: both studies were done in K562, a single cancer cell line.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are e-NMU(iii) and e-NMU(iv) in other nomenclature?",
+   "a": "They correspond to the 'e1' enhancer and the 'e2' facilitator described by Lis and colleagues; e1 harbours divergent TSSs at a putative LTR boundary.",
+   "kw": [
+    "facilitator",
+    "e1",
+    "e2"
+   ],
+   "info": "The divergent TSSs fit e-NMU(iii) acting in S5 as a strong promoter in one orientation (high baseline, high gain) and a weaker one in the other (moderate baseline, low gain).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is unresolved about e-NMU(iv)?",
+   "a": "No TSS was identified in the e2 orientation matching e-NMU(iv)R-S5, yet it defined its own promoter group with the lowest baseline but the steepest enhancer responsiveness; the authors suspect it reflects direct promoter activity in some architectures and position-dependent enhancer/facilitator activity in others.",
+   "kw": [],
+   "info": "Possibly related to the copy-number-dependent activity seen when two otherwise inactive e2 elements were fused in tandem. Requires further experiments to resolve.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What caveat do the authors raise about the minimal promoter?",
+   "a": "Whether minP is a bona fide promoter has been questioned, and conventional MPRA signal may partly reflect eRNA production or cryptic initiation within CREs; their data do not resolve this, but minP is the lowest-baseline group and is overridden whenever a promoter-capable element occupies S5.",
+   "kw": [
+    "minP",
+    "eRNA"
+   ],
+   "info": "Proposed remedy: drop minP and restrict S5 to a defined library of endogenous or designed promoters, turning promoter identity into a systematically varied dimension.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the data say about whether enhancer activity decays with genomic distance?",
+   "a": "Their data favour the interpretation that greater distance simply raises the chance that a boundary element intervenes, since the synthetic insulator suppressed activity when interposed between enhancer and promoter rather than as a function of distance alone.",
+   "kw": [
+    "activity-by-contact"
+   ],
+   "info": "Relevant to the activity-by-contact heuristic, where genomic distance often substitutes for Hi-C contact.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors see LAMPRA scaling beyond this proof-of-concept?",
+   "a": "Distinct element libraries (enhancers, promoters, synthetic circuit parts, gene bodies) can be addressed to specific slots; constructs larger than 5 kb are reachable by sequential combinatorial cloning and deliverable by piggyBac; and libraries scale in slot number, element length and combinatorial complexity.",
+   "kw": [
+    "slot-addressability"
+   ],
+   "info": "They argue deep learning models of gene regulation at long length scales are now limited by data rather than GPUs, and LAMPRA is suited to generating such training sets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - element design",
+   "q": "How were the 1-kb elements designed?",
+   "a": "1-kb regions were centred on each e-NMU peak from Gasperini et al., shifted as needed to avoid overlapping tiles, and any BsmBI or BbsI sites were removed by single-base mutation.",
+   "kw": [
+    "BsmBI",
+    "BbsI"
+   ],
+   "info": "All 11 regions were synthesized as gBlocks (IDT) with flanking BsmBI sites and defined left/right adaptors for bidirectional assembly, resuspended at 10 ng/ul and pooled equally.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - element design",
+   "q": "How were the negative-control spacers and the insulator made?",
+   "a": "Spacers were generated with Fasta-uShuffle using the -k 2 option, preserving dinucleotide frequencies while randomizing sequence order; the synthetic insulator concatenated insulator elements A2, A4, B2, C3 and F1 from Liu et al. with random stuffer DNA to reach 1 kb.",
+   "kw": [
+    "Fasta-uShuffle",
+    "insulator"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library cloning",
+   "q": "How was the final pooled five-slot library assembled?",
+   "a": "Elements were cloned into five Golden Gate-compatible intermediate vectors with BsmBI-v2, then released with SpeI-HF/BbsI (library 1), BbsI (libraries 2-4) and BbsI/SbfI-HF (library 5) and ligated in order into the SpeI/SbfI-digested PB-MPRA backbone.",
+   "kw": [
+    "Golden Gate",
+    "PB-MPRA"
+   ],
+   "info": "Ligation used 50 ng backbone plus 8.8 ng of each of the 5 inserts with T4 ligase at 16 C overnight; vectors were dephosphorylated with Antarctic Phosphatase.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library cloning",
+   "q": "How was the barcode introduced?",
+   "a": "The assembled library was digested with AgeI-HF and a 16-mer degenerate double-stranded barcode (made by a single extension cycle from two oligos) was ligated in with NEBuilder HiFi DNA Assembly.",
+   "kw": [
+    "16-mer barcode"
+   ],
+   "info": "The barcode sits in the 5' UTR, downstream of the minimal promoter in the minP-BC-GFP cassette.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PacBio barcode association",
+   "q": "How was the PacBio library prepared and sequenced?",
+   "a": "5 ug of plasmid library was linearized with SpeI-HF, ligated to snap-cooled hairpin oligos, treated with Exonuclease III and VII, AMPure PB purified, then run through the PacBio ABC workflow and sequenced on the Vega platform for 24 hours.",
+   "kw": [
+    "PacBio Vega"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PacBio barcode association",
+   "q": "How was the sCRL-barcode dictionary built from long reads?",
+   "a": "Reads were oriented consistently, then fiducials (known fixed sequences flanking each insert and the barcode) were used to extract the five element sequences and the 16-bp barcode; sequences exactly matching the first 12 bp of a designed element were annotated with that element name and orientation.",
+   "kw": [
+    "fiducial"
+   ],
+   "info": "Each read became a slot1-5 element combination plus its barcode, and reads were collapsed by unique element-barcode combination.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and MPRA",
+   "q": "How was the library delivered into cells?",
+   "a": "K562 cells (ATCC CCL-243) were nucleofected on a Lonza 4D-Nucleofector (SF kit, program FF-120), 2 x 10^6 cells per replicate with 2 ug plasmid DNA, mixing cargo plasmid and hyPBase transposase plasmid at a 2.5:1 mass ratio.",
+   "kw": [
+    "K562",
+    "hyPBase"
+   ],
+   "info": "Cells were passaged for 10 days after nucleofection to dilute out non-integrated plasmid before harvesting DNA and RNA with the AllPrep DNA/RNA Mini Kit.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and MPRA",
+   "q": "How were the barcode amplicon libraries made?",
+   "a": "Two-step OneTaq PCR from about 10 ug genomic DNA per replicate, and from 40 ug DNase-treated RNA reverse transcribed with SuperScript IV; PCR1 was only three cycles and PCR2 was qPCR-monitored to the inflection point.",
+   "kw": [
+    "UMI",
+    "amplicon"
+   ],
+   "info": "The P7-pLSmp-assUMI-gfp primer carries ten random nucleotides as a pseudo-UMI to correct for PCR jackpotting; final pools were gel size-selected at 156 bp and sequenced paired-end on a NextSeq 2000 loaded at a 2:1 RNA:DNA ratio.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data processing",
+   "q": "How were barcode reads processed and activity scores computed?",
+   "a": "Reads were demultiplexed with bcl2fastq, forward and reverse barcode reads merged and error-corrected with PEAR v0.9.11 (-v 16 -m 16 -n 16 -t 16), barcodes with fewer than 2 DNA UMIs excluded, UMI counts normalized within sample type and winsorized at the 99th percentile, then normalized RNA divided by normalized DNA.",
+   "kw": [
+    "PEAR",
+    "winsorization"
+   ],
+   "info": "Scores were assigned to sCRLs via the a priori barcode association, filtered for presence in at least 2 replicates and averaged; a pseudocount of 0.05 was added before log-transformation to retain zero-activity sCRLs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - modeling",
+   "q": "What were the data splits and software used for modeling?",
+   "a": "Of 36,033 sCRLs, 15% (n = 5,405) were held out for testing and the rest split 90:10 into training (n = 27,565) and validation (n = 3,063); linear models and random forest used scikit-learn v1.6.1, gradient-boosted trees used XGBoost v3.1.2.",
+   "kw": [
+    "scikit-learn",
+    "XGBoost"
+   ],
+   "info": "Hyperparameters were tuned to minimize mean squared error on the validation set; exact search grids are on the LAMPRA GitHub.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - modeling",
+   "q": "How was the downsampling analysis run?",
+   "a": "The random forest was re-fit with fixed hyperparameters on 100 nested fractions of the training set (1% to 100% in 1% increments, i.e. 276 to 27,565 sCRLs), evaluated each time on the same held-out test set and averaged over 50 subsampling replicates.",
+   "kw": [],
+   "info": "Only the original training set was subsampled, so the split corresponded exactly to the main analysis; the validation set was excluded.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "The same two elements act as orientation-dependent promoters in S5 and orientation-independent enhancers in S1-S4. Worth thinking about for cavefish candidate CREs: does our MPRA design let a cryptic promoter masquerade as an enhancer depending on where it sits relative to the reporter?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Their claim that distance effects may really be interposed-boundary effects rather than true distance decay is testable in our own loci - would need insulator/boundary position varied independently of enhancer-promoter distance."
+  },
+  {
+   "type": "note",
+   "section": "Results - modeling",
+   "text": "Only 31% of training data was needed for 95% of maximum r, with just 10 categorical features. Check how this scales when element libraries are large and sequence (not just identity) has to be modeled."
+  }
+ ]
+}

@@ -1,0 +1,566 @@
+{
+ "id": "Baudement_2026",
+ "title": "Developmental contexts of gene-regulatory evolution following whole genome duplication in salmonids",
+ "link": "https://doi.org/10.1038/s41559-026-03171-6",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Baudement_2026_NatEcolEvol_salmonid_WGD_regulatory_evolution.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Vertebrate whole genome duplications (WGDs) are so old that it is hard to see how gene regulation evolved during rediploidization, the process that produces diverged duplicate genes and regulatory elements. Salmonids had a more recent autotetraploid WGD and are still at an earlier stage of rediploidization, so they offer a window into this process.",
+   "kw": [
+    "whole genome duplication",
+    "rediploidization"
+   ],
+   "info": "They generated 771 multiomics datasets from embryos and adult tissues of Atlantic salmon and rainbow trout.",
+   "concl": "Regulatory evolution after the salmonid WGD was shaped by the same developmental and tissue-specific constraints known to act across vertebrate species."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings in short?",
+   "a": "Within-genome regulatory constraint peaks at the vertebrate phylotypic period. This peak is associated with retained duplicated enhancer pairs that carry deeply conserved non-coding elements enriched in motifs for master developmental TFs. Enhancers and transposable elements also contribute to the expression divergence of duplicated genes.",
+   "kw": [
+    "phylotypic period",
+    "CNE",
+    "transposable elements"
+   ],
+   "info": "The data are also presented as an open resource for vertebrate comparative genomics and for salmonid aquaculture and conservation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are ohnologues and which ones tend to be retained?",
+   "a": "Ohnologues are duplicate genes created by WGD. Many are lost, but the retained ones are enriched for roles in development, signalling and transcriptional regulation.",
+   "kw": [
+    "ohnologues"
+   ],
+   "info": "Vertebrate ohnologues have gained more complex regulation and have specialized in expression during evolution. Vertebrate WGD rounds: 1R (about 530 Ma, vertebrate ancestor), 2R (jawed vertebrates), 3R (teleosts, about 275 Ma).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is autotetraploidization and what does rediploidization mean?",
+   "a": "In autotetraploidization a diploid genome doubles within a species. This gives four homologous chromosome sets that pair non-preferentially in meiosis, so inheritance is tetrasomic. Rediploidization is the return to stable bivalent pairing with disomic inheritance, after which the ohnologue pairs can diverge in sequence and function.",
+   "kw": [
+    "autotetraploidy",
+    "tetrasomic inheritance",
+    "rediploidization"
+   ],
+   "info": "The vertebrate 1R and teleost 3R are proposed to have been autotetraploidizations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the salmonid 4R WGD and what is asynchronous rediploidization?",
+   "a": "The salmonid ancestor underwent autotetraploidization 80 to 100 Ma (the 4R WGD). About half of salmonid genes are retained as ohnologue pairs in large collinear regions that differ widely in how far their sequences have diverged. This is because different regions rediploidized at different times (asynchronous rediploidization), so ohnologue divergence times are stratified within the genome.",
+   "kw": [
+    "4R WGD",
+    "asynchronous rediploidization"
+   ],
+   "info": "Asynchronous rediploidization also followed the teleost 3R and the WGDs ancestral to acipenseriforms and to snow carp.",
+   "concl": "This stratification lets you study ohnologue functional divergence at different stages of evolution within one genome."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional and comparative annotation of salmonid genomes",
+   "q": "What samples and assays were used (DevMap and BodyMap)?",
+   "a": "Species-matched samples from Atlantic salmon and rainbow trout. DevMap covers key stages of embryogenesis. BodyMap is a tissue panel from males and females at sexually immature and mature stages. Assays were RNA-seq, ATAC-seq, and ChIP-seq for H3K27ac, H3K4me1, H3K4me3 and H3K27me3.",
+   "kw": [
+    "AQUA-FAANG",
+    "ATAC-seq",
+    "ChIP-seq"
+   ],
+   "info": "771 datasets in total, 77.7 billion read pairs. Raw data are on the FAANG data portal and processed data on SalmoBase. The work was done within AQUA-FAANG, part of the FAANG initiative and modelled on ENCODE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional and comparative annotation of salmonid genomes",
+   "q": "How many open chromatin regions and regulatory elements did they find?",
+   "a": "They found 319,718 robust open chromatin regions in salmon and 194,002 in trout, defined as reproducible ATAC-seq peaks using IDR. ChromHMM identified 45,802 and 28,138 unique active promoters and 78,424 and 42,164 unique active enhancers in salmon and trout, respectively.",
+   "kw": [
+    "IDR",
+    "ChromHMM"
+   ],
+   "info": "ChromHMM models combined ATAC-seq with the four histone marks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional and comparative annotation of salmonid genomes",
+   "q": "How did they validate the ChromHMM promoter annotation?",
+   "a": "With CAGE. Most regions annotated as Active TSS overlapped CAGE-defined promoters: 83 to 91% in salmon and 53 to 70% in trout.",
+   "kw": [
+    "CAGE",
+    "Active TSS"
+   ],
+   "info": "Some elements without Ensembl transcript support still had CAGE support, which suggests novel unannotated transcripts. Active elements were also enriched for TF motifs that fit the sample type. For example, the Pou5f1(Oct4):Sox2 motif was enriched in elements most active at stages when this complex acts in zebrafish zygotic genome activation and gastrulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional and comparative annotation of salmonid genomes",
+   "q": "What comparative dataset did they build for the duplicated genome?",
+   "a": "They identified 10,521 ohnologue pairs conserved in both species and 5,832 singletons (one ohnologue lost). Cactus was used to align duplicated and orthologous regions within and between salmon and trout, with northern pike as an outgroup that did not undergo the 4R. The final dataset covers 26,157 genes and 194,528 unique regulatory elements.",
+   "kw": [
+    "Cactus",
+    "northern pike",
+    "singletons"
+   ],
+   "info": "Ohnologue pairs were identified with a phylogenomic pipeline that uses the collinearity retained after WGD. The paper uses the mex3b ohnologues as an example where regulatory elements are conserved between ohnologues and gene expression is also conserved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Dynamic genome regulation across ontogeny and tissues",
+   "q": "How did they summarise expression and chromatin dynamics across embryogenesis?",
+   "a": "They used self-organizing maps (SOM) to cluster genes or ATAC regions with similar stage-specific profiles and UMAP for visualisation. The maternal-to-zygotic transition (MZT) appeared as maternal mRNA clusters peaking at late cleavage or early blastula and declining afterwards. Chromatin openness peaked at blastula and gastrula stages.",
+   "kw": [
+    "SOM",
+    "UMAP",
+    "MZT"
+   ],
+   "info": "Maternal clusters were enriched for GO terms such as cell cycle and chromosome segregation. Segmentation and pharyngula clusters were enriched for organogenesis and energy production. Closely related clusters in the two species shared more orthologous genes and syntenic regions than expected.",
+   "concl": "The datasets capture a clear developmental trajectory that is conserved between salmon and trout."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ohnologue expression divergence mirrors constraints observed across species",
+   "q": "What are early versus late rediploidization ohnologue pairs?",
+   "a": "Early pairs (n = 8,757) started diverging before the salmon and trout lineages split about 25 Ma. Late pairs (n = 1,103) diverged independently in salmon and in trout after speciation.",
+   "kw": [
+    "AORe",
+    "LORe"
+   ],
+   "info": "In the Methods these are called AORe (ancestral ohnologue resolution, early) and LORe (lineage-specific ohnologue resolution, late) regions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ohnologue expression divergence mirrors constraints observed across species",
+   "q": "How does ohnologue expression divergence change across embryogenesis?",
+   "a": "Early pairs were more diverged than late pairs in every sample type. Divergence was highest before the MZT and fell to its lowest at pharyngula stages, which are thought to correspond to the vertebrate phylotypic period. The trend was highly correlated between early and late pairs (Pearson R = 0.97, P = 1.1 x 10^-8).",
+   "kw": [
+    "Jensen-Shannon distance",
+    "phylotypic period"
+   ],
+   "info": "Late pairs showed a sharper drop in divergence at advanced segmentation and pharyngula stages.",
+   "concl": "Rediploidization timing is the main factor in ohnologue expression divergence, and there is a constraint peak at the phylotypic period."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ohnologue expression divergence mirrors constraints observed across species",
+   "q": "How does ohnologue expression divergence differ across adult tissues?",
+   "a": "Brain had the lowest divergence for early pairs. Sexual maturation had little effect in most tissues, but divergence was higher in mature than in immature testis. For late pairs, divergence was increased in ovary and reduced in muscle.",
+   "kw": [
+    "brain",
+    "testis"
+   ],
+   "info": "Tissue patterns were not correlated between early and late pairs. The authors interpret ovary and muscle as having the weakest and strongest purifying selection, respectively, on the dosage of young ohnologues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ohnologue expression divergence mirrors constraints observed across species",
+   "q": "How often do both ohnologues fall into the same SOM cluster?",
+   "a": "Early pairs co-clustered less often than late pairs (DevMap 26.0 vs 44.9%; BodyMap 28.7 vs 49.1%; Fisher's exact test, both P < 10^-35). Co-clustering of early pairs rose from 19.5% at maternal stages to 41.1% at pharyngula stages (Cochran-Armitage chi2 = 269, P = 2 x 10^-60). Across tissues it varied 2.4-fold, from 15.8% in testes to 38.2% in brain.",
+   "kw": [
+    "co-clustering",
+    "SOM"
+   ],
+   "info": "Early pairs were split across stage or tissue cluster groups more often than late pairs (55 vs 36% for DevMap, 63 vs 52% for BodyMap). Early rediploidization genes were enriched in gastrulation and pharyngula clusters and depleted in maternal and blastulation clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ohnologue expression divergence mirrors constraints observed across species",
+   "q": "Does within-genome ohnologue divergence mirror between-species orthologue divergence?",
+   "a": "During embryogenesis it does: salmon-trout orthologue divergence for genes retained as ohnologues correlated strongly with salmon ohnologue divergence (R = 0.96, P = 1.0 x 10^-7). Across tissues the correlation was weak (R = 0.54, P = 0.037). Orthologues from the ohnologue group were less diverged than singleton orthologues during segmentation.",
+   "kw": [
+    "orthologues",
+    "dosage sensitivity"
+   ],
+   "info": "8,661 orthologue pairs of retained ohnologues were compared with 5,099 orthologue pairs of singletons. In gill, head kidney and distal intestine, ohnologue-group orthologues were less diverged than singletons. In brain the two groups were similar. In ovary, maturation stage mattered more than retention status.",
+   "concl": "Genes expressed from mid-to-late segmentation are enriched for dosage-sensitive functions, and this property selects for ohnologue retention. Pleiotropic constraints act after WGD and drive ohnologue retention."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional evolution of regulatory elements retained from autotetraploidization",
+   "q": "What are shared, alignable only and exclusive regulatory elements?",
+   "a": "Shared: both duplicated sequences retained from the WGD align and both are active. Alignable only: the duplicated sequences align but only one copy is active. Exclusive: the active element is on one chromosome only, with no evidence of a retained duplicate sequence.",
+   "kw": [
+    "shared",
+    "alignable only",
+    "exclusive"
+   ],
+   "info": "Categories were assigned from the whole genome alignment. Early and late rediploidization regions share 88.6% (s.d. 1.51%) and 95.1% (s.d. 2.67%) nucleotide identity between duplicates, respectively.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional evolution of regulatory elements retained from autotetraploidization",
+   "q": "How do promoters and enhancers split into these categories?",
+   "a": "Active promoters: 53.5% shared, 21.6% alignable only, 24.9% exclusive. Active enhancers: 33.3% shared, 43.8% alignable only, 22.9% exclusive. Enhancers have fewer shared and more alignable-only elements than promoters (both P < 0.0001, Fisher's exact test).",
+   "kw": [
+    "enhancer turnover"
+   ],
+   "info": "The proportion of shared promoters matches the estimated 55% retention rate of salmonid 4R ohnologue pairs. Early rediploidization regions had fewer shared and more exclusive elements.",
+   "concl": "Enhancers turn over faster than promoters after WGD, as is also seen across species. A longer time since divergence allowed both loss of duplicated elements and gain of new ones."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Developmental and tissue-specific constraints on regulatory element evolution",
+   "q": "How does retention of duplicated regulatory elements vary across sample types?",
+   "a": "Promoters were active in more sample types than enhancers, and promoter category proportions varied little, with shared promoters most common. Enhancers varied more. Shared enhancers peaked at late somitogenesis, at a level similar to brain, which had the highest proportion among adult tissues. Mature testis had the most exclusive enhancers, and liver, ovary and testis had the fewest shared enhancers.",
+   "kw": [
+    "late somitogenesis",
+    "brain"
+   ],
+   "info": "As with expression, rediploidization timing was the dominant factor in the proportion of shared promoters and enhancers.",
+   "concl": "Functional retention of enhancers after the 4R was strongly shaped by developmental and tissue context, whereas promoter evolution was less dynamic."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhancer evolution is coupled to ohnologue expression regulation",
+   "q": "Does the proportion of shared enhancers track ohnologue expression divergence across sample types?",
+   "a": "The trend was in the expected direction (fewer shared, more alignable only and exclusive enhancers with higher divergence), but it was not significant (Pearson R = -0.41, 0.39, 0.37; Padj > 0.17). The equivalent tests for promoters were significant (R = -0.72, 0.78, 0.59; Padj = 0.004, 0.002, 0.02).",
+   "kw": [
+    "promoters",
+    "enhancers"
+   ],
+   "info": "A previous salmon study proposed that enhancers contribute to ohnologue divergence, but it was based on a single histone mark in a single tissue and ignored retained duplicated enhancer sequences.",
+   "concl": "At this aggregate level, promoters have the stronger role in ohnologue expression evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhancer evolution is coupled to ohnologue expression regulation",
+   "q": "How did they assign enhancers to genes and define conserved versus diverged ohnologues?",
+   "a": "Enhancers were assigned to genes using cis-regulatory domains: an exclusive region from -5 to +1 kb around the TSS, plus an overlapping region that extends to the neighbouring gene's exclusive region or up to 1 Mb. Ohnologue groups were then classed as conserved (3,146) or diverged (1,346) by expression correlation.",
+   "kw": [
+    "cis-regulatory domain",
+    "regulatory domains"
+   ],
+   "info": "Expression levels did not differ clearly between the two classes, so expression level was not a confounder. The authors note that some gene-to-enhancer assignments may be wrong because of long-distance regulation, but enhancer proximity to promoters is a good predictor of physical interaction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhancer evolution is coupled to ohnologue expression regulation",
+   "q": "How do enhancers differ between ohnologues with conserved and diverged regulation?",
+   "a": "Conserved pairs had more active enhancers (Wilcoxon P = 10^-20), more shared enhancers (P = 10^-25, odds ratio 2.04) and fewer exclusive enhancers (P = 10^-36, odds ratio 0.62). Diverged pairs had higher enhancer-usage distances (medians 1.15 vs 0.89, P = 1.6 x 10^-28).",
+   "kw": [
+    "enhancer-usage distance"
+   ],
+   "info": "Alignable-only enhancers were equally common in both classes. In the Fig. 5 legend the odds ratios are given from the diverged side (exclusive 1.61, shared 0.49), which is the inverse of the main-text numbers. Enhancer-usage distance is the Euclidean distance between the per-sample enhancer activity profiles of the two ohnologues.",
+   "concl": "Ohnologue expression divergence closely tracks the loss of shared enhancers and the gain of exclusive enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Enhancer evolution is coupled to ohnologue expression regulation",
+   "q": "Is enhancer-usage distance coupled to expression distance in embryos and in adult tissues?",
+   "a": "In embryos it is not. Expression distance narrowed across embryogenesis (Kruskal-Wallis chi2 = 36.6, P = 10^-7), but enhancer-usage distance did not (chi2 = 2.26, P = 0.685). In adult tissues the two were strongly coupled (expression P = 10^-35; enhancer usage P = 10^-16). Brain had the lowest values, and liver, ovary and testis had the broadest ranges.",
+   "kw": [
+    "Kruskal-Wallis",
+    "embryogenesis"
+   ],
+   "info": "",
+   "concl": "In embryos, the whole enhancer repertoire seems unimportant, which points to promoters and/or a specific subset of shared enhancers. In adult tissues, ohnologue divergence is coupled to remodelling of the whole cis-proximal enhancer repertoire."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TEs shape enhancer evolution after WGD",
+   "q": "How are transposable elements linked to enhancer evolution after WGD?",
+   "a": "Exclusive enhancers overlapped TEs more than 2-fold more than shared enhancers. In exclusive enhancers, TE content was weakly higher in diverged ohnologues (P = 0.0031), with stronger effects 2 to 50 kb from the TSS than beyond 100 kb. TE overlap of shared enhancers was not linked to expression divergence.",
+   "kw": [
+    "transposable elements",
+    "exclusive enhancers"
+   ],
+   "info": "The authors say the higher TE content could come from TE insertions creating new enhancers or from weaker purifying selection on exclusive enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TEs shape enhancer evolution after WGD",
+   "q": "Which TE group is involved and in which samples?",
+   "a": "DNA transposons, specifically Tc1/mariner (DNA/TcMar), the most active TE group after the salmonid 4R. Their overlap with exclusive enhancers was higher in diverged ohnologue pairs (P = 0.038 for all DNA TEs, P = 0.0051 for TcMar), but retrotransposons showed no such effect. The effect was seen in early somitogenesis, liver and testis.",
+   "kw": [
+    "DNA/TcMar",
+    "Tc1/mariner"
+   ],
+   "info": "Enhancers active in brain and late embryogenesis had the lowest TE overlap. Higher TE overlap across sample types went with more alignable-only and exclusive enhancers and fewer shared ones. Effect sizes are small (rank-biserial r of about 0.04 to 0.06).",
+   "concl": "TEs both disabled duplicated enhancers and created new ones. Selection against TE insertions was strongest for enhancers retained as duplicates, especially in the most constrained sample types."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ontogeny governs the evolution of enhancer-CNEs following WGD",
+   "q": "What are enhancer-CNEs and how are they distributed across the categories?",
+   "a": "Enhancer-CNEs are conserved non-coding elements, defined in northern pike and stratified by phylogenetic age, that lie within salmon active enhancers. Of 24,007 enhancer-CNEs, 61.4% were shared, 31.2% alignable only and 7.3% exclusive.",
+   "kw": [
+    "CNE",
+    "enhancer-CNE"
+   ],
+   "info": "An exclusive enhancer-CNE is a singleton: one copy of the duplicated pair was lost after the WGD and the retained copy is still conserved with pike. The oldest age category, Euteleostomi, predates the split of ray- and lobe-finned fish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ontogeny governs the evolution of enhancer-CNEs following WGD",
+   "q": "How do CNE age and sequence conservation relate to enhancer retention?",
+   "a": "Shared enhancer-CNEs were enriched in the two oldest age categories (Euteleostomi and Actinopteri). Exclusive enhancer-CNEs were enriched among the youngest CNEs and underrepresented in Teleostei. Shared pairs were more conserved in sequence than alignable-only pairs (median identity 95.0 vs 92.9%, P = 2.2 x 10^-16).",
+   "kw": [
+    "phylogenetic age"
+   ],
+   "info": "In alignable-only pairs, the CNE copy that lost activity evolved faster, and the youngest CNEs were most affected.",
+   "concl": "The phylogenetic age and functional retention of enhancer-CNEs reflect their ongoing evolution after the WGD."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ontogeny governs the evolution of enhancer-CNEs following WGD",
+   "q": "Where in the genome are shared enhancer-CNEs concentrated?",
+   "a": "Enhancer-CNEs were strongly overrepresented in late rediploidization regions, and this was driven by shared enhancer-CNEs. Shared enhancer-CNEs in late regions made up 39.9% of all shared enhancer-CNE base pairs, twice what is expected by chance. Alignable-only and exclusive enhancer-CNEs were enriched in early regions.",
+   "kw": [
+    "late rediploidization"
+   ],
+   "info": "Late regions span 649,544,050 bp and early regions 2,023,914,877 bp of the salmon genome.",
+   "concl": "This suggests selection against divergence of these elements in the early stages of post-WGD evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ontogeny governs the evolution of enhancer-CNEs following WGD",
+   "q": "Which TF motifs are enriched in old versus young and shared versus exclusive enhancer-CNEs?",
+   "a": "Old (Euteleostomi and Actinopteri) enhancer-CNEs were enriched for motifs of master developmental regulators, especially homeodomain and Sox. Younger CNEs were enriched for C2H2 zinc finger, bZIP and nuclear receptor motifs linked to stress, hormones, metabolism and immunity. Old shared enhancer-CNEs carried motifs such as POU5F1, Sox10/9 and TFAP2 that were depleted in exclusive ones of the same age.",
+   "kw": [
+    "Sox",
+    "homeodomain",
+    "GimmeMotifs"
+   ],
+   "info": "Euteleostomi shared enhancer-CNEs were specifically enriched for Pax3/7, Ikzf2 and RAR motifs. Euteleostomi exclusive ones were enriched for Irf7, Spic, Nfatc1, Stat1/3, Hand1/Tcf3, Zfp28, Elk4 and Etv5. Teleostei shared: Rfx, EGR, CTCF, CTCFL. Teleostei exclusive: SRF, Stat5b, Pax4, Mef2. Protacanthopterygii shared: glucocorticoid and androgen receptors, Jun, FoxO1, Ets, DBP, HLF, NFIL3. Protacanthopterygii exclusive: THRB, NR1H3, Hbp1, TP63/TP73, Foxp3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ontogeny governs the evolution of enhancer-CNEs following WGD",
+   "q": "In which sample types are the oldest shared enhancer-CNEs most active?",
+   "a": "Shared enhancer-CNEs from the two oldest age categories were strongly enriched at late somitogenesis in both early and late regions (Padj = 0). For Euteleostomi, the proportion at late somitogenesis was even higher than in brain. Among adult tissues, brain had the highest proportion of enhancer-CNEs, with more shared Teleostei and Protacanthopterygii enhancer-CNEs.",
+   "kw": [
+    "late somitogenesis"
+   ],
+   "info": "",
+   "concl": "Ancient duplicated enhancers active in late somitogenesis and carrying motifs for master regulators probably help explain the limited ohnologue divergence at this stage. The exclusive enhancer-CNEs are candidates for ohnologue regulatory subfunctionalization."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall conclusion and how does it differ from earlier work?",
+   "a": "Ohnologue regulatory evolution after the 4R was governed by developmental and tissue-specific constraints, with high within-genome constraint at the phylotypic period. A previous study concluded that post-WGD regulatory evolution in salmon was selectively neutral, but it analysed a single histone mark in testis. Here, brain shows maximal constraint, while gonads and liver evolve rapidly.",
+   "kw": [
+    "phylotypic period",
+    "pleiotropy"
+   ],
+   "info": "Rapid evolution in gonads and liver may reflect relaxed purifying selection, positive selection, or both. The authors say the phylotypic constraint may reflect the limited evolvability of pleiotropic networks that govern organogenesis.",
+   "concl": "WGD also created opportunities for regulatory diversification through the loss of duplicated enhancer-CNEs."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations and future directions do the authors mention?",
+   "a": "Future work should add data on 3D chromatin architecture and specific cell types. Because asynchronous rediploidization also followed other vertebrate WGDs, similar stratified regulatory divergence probably happened earlier in vertebrate evolution, where WGD may have helped traits such as brain complexity evolve.",
+   "kw": [
+    "3D chromatin",
+    "cell types"
+   ],
+   "info": "The analyses are bulk tissue and whole embryo. Enhancer-to-gene assignment is based on proximity only.",
+   "concl": "The resource can support precision breeding in aquaculture and studies of regulatory adaptation in wild salmonids."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sampling",
+   "q": "How were embryos sampled for DevMap?",
+   "a": "For each species, embryos came from a single male x single female cross. Salmon were from AquaGen (commercial strain, November 2019) and trout from Northern trout (anadromous aquaculture strain, February 2020). Eggs were incubated at 8 C (salmon) or 9 C (trout), with n = 3 biological replicates per stage for ATAC-seq and ChIP-seq.",
+   "kw": [
+    "DevMap"
+   ],
+   "info": "Embryos per replicate: 40 at blastula, 30 at gastrula, 20 at early somitogenesis, 10 at mid-to-late somitogenesis, 5 at eyed/pharyngula. For RNA, three eggs per tube in TRIzol, 27 tubes per stage. Embryos for ATAC were trypsinized and cryopreserved, and ChIP material was crosslinked with 1% formaldehyde.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sampling",
+   "q": "How were adult tissues sampled for BodyMap?",
+   "a": "12 salmon and 12 trout: 3 fish per sex at each of two stages (immature and mature), with maturation confirmed by gonad histology. Salmon were AquaGen fish aged 9 or 16 months. Trout were the INRAE autumn strain aged 13 or 19 months. Tissues were brain, liver, gonads, distal intestine, head kidney, gill and fast-twitch skeletal muscle.",
+   "kw": [
+    "BodyMap"
+   ],
+   "info": "Fish were fasted for 24 h before sampling. The Methods say seven tissues, but the list in that sentence names only six; head kidney is described separately. Gonad sections were eosin-stained to stage maturation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Functional assays and sequencing",
+   "q": "How were ATAC-seq libraries made?",
+   "a": "With Omni-ATAC-seq, which is optimized for frozen tissue, plus tissue-specific nuclei preparation. Transposition used 50,000 nuclei per 2.5 ul transposase (25,000 for gill) for 30 min at 37 C, followed by 8 to 13 PCR cycles and 180 to 700 bp size selection. DevMap used 75,000 nuclei, with nuclei isolation adapted from a single-nucleus RNA-seq protocol.",
+   "kw": [
+    "Omni-ATAC-seq"
+   ],
+   "info": "Mature testis needed extra washes and a second gradient centrifugation to remove sperm. Muscle was ground on dry ice. Sequencing was on NovaSeq 6000.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Functional assays and sequencing",
+   "q": "How was ChIP-seq done for embryos versus tissues?",
+   "a": "Embryos (and trout brain) were profiled with ChIPmentation using the Diagenode uChIPmentation kit for low input: 100 ng sheared chromatin (about 37,000 cells) and 0.8 to 1 ug antibody. Other tissues used an optimized classic ChIP protocol with probe sonication to 100 to 600 bp fragments and MicroPlex v3 libraries. The target was 45 M reads per ChIP and 90 M per input.",
+   "kw": [
+    "ChIPmentation",
+    "Diagenode antibodies"
+   ],
+   "info": "All antibodies were from Diagenode. Classic ChIP used 1 ug for H3K4me1 and H3K4me3 and 2 ug for H3K27ac and H3K27me3. Sequencing was 150 bp paired-end.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Functional assays and sequencing",
+   "q": "How was RNA-seq done?",
+   "a": "Novogene made libraries with the NEBNext Ultra Directional kit after poly(A) selection and sequenced them on NovaSeq 6000 as 150 bp paired-end reads.",
+   "kw": [
+    "RNA-seq"
+   ],
+   "info": "Extraction differed by sample. DevMap: TRIzol with 1-bromo-3-chloropropane. Salmon BodyMap: miRNeasy columns. Trout BodyMap: phenol-chloroform.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Primary data analyses",
+   "q": "Which genomes and processing pipelines were used?",
+   "a": "Genomes were Ssal_v3.1 (salmon) and USDA_OmykA_1.1 (trout) from Ensembl rapid release. Pipelines were nf-core rnaseq v3.8.1 (Trim Galore, STAR, RSEM), nf-core atacseq v1.2.1 (BWA, MACS2 narrow peaks) and nf-core chipseq v1.2.2 (BWA, MACS2). Broad peaks were called for H3K4me1 and H3K27me3, narrow peaks for H3K4me3 and H3K27ac.",
+   "kw": [
+    "nf-core",
+    "MACS2",
+    "STAR"
+   ],
+   "info": "Effective genome sizes: 2,756,563,003 (salmon) and 2,070,645,207 (trout). Blacklists were built with Umap (75, 100 and 150-mers) and Blacklist using 32 salmon and 29 trout input controls. The pipeline versions cited in the reference list (for example rnaseq v3.21.0, atacseq 2.1.2) do not match those in the Methods text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Primary data analyses",
+   "q": "How were ChromHMM models and robust open chromatin regions defined?",
+   "a": "ChromHMM (v1.27) binarized ATAC-seq and four histone marks in 200 bp bins. Salmon got separate 12-state models for DevMap and BodyMap. Trout got a 12-state DevMap model and separate 10-state models for brain, liver and muscle, because trout data quality varied more between tissues. Robust peaks were those reproducible between replicate pairs by IDR (rank p.value, soft-idr-threshold 0.1), merged with bedtools.",
+   "kw": [
+    "ChromHMM",
+    "IDR"
+   ],
+   "info": "When a peak overlapped several states, a priority order was used to assign one state. Peaks were merged across conditions into one unified set per species. Motif enrichment used GimmeMotifs Maelstrom v0.17.1 with JASPAR2022 and 200 bp regions; motifs with correlation of at least 0.9 were treated as one for cross-species comparison.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Homology prediction",
+   "q": "How were ohnologues and their rediploidization class identified?",
+   "a": "From Ensembl Compara 106 gene trees, they extracted Protacanthopterygii clades (salmonids plus northern pike). They used 2:2 clades (two genes per species) to define syntenic blocks, keeping chromosome combinations seen in more than 20 clades. Early (AORe) regions have two sister clades each containing one salmon and one trout gene. Late (LORe) regions have ohnologues that are monophyletic within each species.",
+   "kw": [
+    "Ensembl Compara",
+    "AORe",
+    "LORe"
+   ],
+   "info": "The 2:2 synteny was then used to check 1:1, 2:1 and 2:0 clades, which arise from gene loss.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Whole genome alignment",
+   "q": "Why did they not simply run Cactus on whole genomes?",
+   "a": "Cactus was not designed for genomes with a recent WGD. A default six-teleost Cactus run captured duplicated regions poorly, especially the more diverged early (AORe) regions. Instead they extracted collinear WGD blocks (found with minimap2 v2.18-r1015 and manual dot-plot inspection) and aligned them per salmon chromosome with Cactus as independent sequences: Ssal_A, Ssal_B, Omyk_A, Omyk_B and Eluc (pike).",
+   "kw": [
+    "Cactus",
+    "minimap2",
+    "hal2maf"
+   ],
+   "info": "This was first tested on Ssa03-Ssa14 (early) and Ssa03-Ssa06 (late) blocks. The gain was largest for AORe regions. HAL output was converted to MAF (hal2maf -maxRefGap 20000 -noAncestors -noDupes) and coordinates were fixed with a custom script.",
+   "concl": "Aligning extracted syntenic blocks markedly improved capture of duplicated sequence."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - SOM and expression divergence",
+   "q": "What SOM settings and thresholds were used?",
+   "a": "They used the kohonen R package with grids of 4x4 for DevMap RNA-seq, 6x6 for BodyMap RNA-seq, and 5x5 for both ATAC-seq sets. Clusters were called constitutive if the s.d. of mean values across conditions was below 0.4. A BodyMap cluster was called tissue-specific if its highest per-condition mean exceeded 2.165.",
+   "kw": [
+    "kohonen",
+    "uwot"
+   ],
+   "info": "The thresholds were set empirically by visual inspection, with manual curation of edge cases. Cross-species cluster overlap was compared with 10,000 permutations of cluster assignments. GO enrichment used clusterProfiler with a background of genes above 1 TPM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - SOM and expression divergence",
+   "q": "How was ohnologue expression divergence quantified?",
+   "a": "As the Jensen-Shannon distance (JSD) between the quantile-normalized TPM profiles of the two genes in a pair, calculated with the philentropy R package. Uncertainty came from 100 bootstrap resamples of gene pairs per stage or tissue.",
+   "kw": [
+    "Jensen-Shannon distance",
+    "philentropy"
+   ],
+   "info": "Four gene-pair categories: 8,757 early pairs, 1,103 late pairs, 8,661 orthologue pairs of retained ohnologues, and 5,099 orthologue pairs of singletons. Per-cluster early:late gene ratios were tested against genome-wide ratios of 7.22 (DevMap) and 6.96 (BodyMap).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evolution of regulatory elements",
+   "q": "How were robust open chromatin regions mapped onto the alignment and classified?",
+   "a": "The 319,718 salmon regions were extracted from the MAFs with mafExtractor. Spurious alignments were removed (9,250 nested and 4,996 double-overlap regions), leaving 225,801 reference regions. Shared elements required the ATAC summits of both duplicates to fall inside the overlapping aligned region.",
+   "kw": [
+    "mafTools"
+   ],
+   "info": "Counts as active promoters/enhancers: shared 16,938/14,836, alignable only 6,845/19,546, exclusive 7,873/10,232.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evolution of regulatory elements",
+   "q": "How were the pike CNEs defined and filtered?",
+   "a": "CNEs were called in the northern pike genome (fEsoLuc1) from a 46-species Multiz alignment. Columns were kept if they had a significant GERP++ score (FDR 0.2), did not overlap exons or pike repeats, and formed blocks of at least 10 bp. Blocks less than 100 bp apart that targeted the same genes were merged, giving 416,589 CNEs covering 21,136,463 bp.",
+   "kw": [
+    "GERP++",
+    "Multiz"
+   ],
+   "info": "Ages were assigned from the most recent common ancestor of all species with the CNE (Euteleostomi to Protacanthopterygii). For salmon enhancer-CNEs, the filters were: at least 90% of the CNE present, no gaps, and at least one salmon copy with more than 80% similarity to pike. This reduced 21,928/14,040/2,565 initial shared/alignable/exclusive CNEs to the final set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Linking enhancer evolution to ohnologue regulatory divergence",
+   "q": "What were the exact thresholds for conserved and diverged ohnologues?",
+   "a": "Of 10,366 2:2 ohnologue groups, 3,146 were conserved: Pearson R > 0.7 between ohnologues in both species and R > 0.5 between salmon-trout orthologues. 1,346 were diverged: R of 0.3 or less between ohnologues in both species. Correlations used scaled TPM across all DevMap and BodyMap conditions.",
+   "kw": [
+    "Pearson correlation"
+   ],
+   "info": "Category proportions were compared with binomial GLMs with robust standard errors clustered by ohnologue (Holm-adjusted). Other comparisons used Wilcoxon tests with bootstrapped CIs. TEs were annotated with RepeatMasker v4.1.5 and a curated salmon TE library. Mclust was used to test for one versus two peaks in the distance plots.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Enhancer evolution is coupled to ohnologue expression regulation",
+   "text": "In embryos, enhancer-usage distance does not track ohnologue expression divergence. Which promoters, or which specific subset of shared enhancers, actually drives the phylotypic convergence?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Ontogeny governs the evolution of enhancer-CNEs following WGD",
+   "text": "Exclusive enhancer-CNEs are proposed as candidates for ohnologue subfunctionalization, but no functional test (for example reporter assays) is done here. Worth going back to if these elements are validated later."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Would cell-type resolved and 3D chromatin data change the picture of brain as the tissue with maximal post-WGD constraint, and of gonads and liver as rapidly evolving?"
+  }
+ ]
+}

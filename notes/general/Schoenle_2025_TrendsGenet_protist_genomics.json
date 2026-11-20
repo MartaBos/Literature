@@ -1,0 +1,573 @@
+{
+ "id": "Schoenle_2025",
+ "title": "Protist genomics: key to understanding eukaryotic evolution",
+ "link": "https://doi.org/10.1016/j.tig.2025.05.004",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Schoenle_2025_TrendsGenet_protist_genomics.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are protists?",
+   "a": "Protists are all eukaryotes other than animals, plants and fungi. They are highly diverse, live in nearly all environments, have key roles in planetary health and biogeochemical cycles, and make up most of eukaryotic diversity.",
+   "kw": [
+    "protists"
+   ],
+   "info": "The glossary calls them a polyphyletic group that is morphologically and ecologically diverse, mostly microbial, and collectively the majority of eukaryotic life.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this review address?",
+   "a": "Protists are understudied, and protist genome generation lags far behind most multicellular lineages. Current genomic methods were designed mainly for animals and plants and are poorly suited to protists.",
+   "kw": [
+    "genomic standards"
+   ],
+   "info": "This is a review and perspective paper from a large consortium of protistologists, not an original research paper.",
+   "concl": "Advancing protist genomics requires re-evaluating plant- and animal-centric genomic standards and using emerging technologies and bioinformatics tools."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which international genome initiatives are driving the increase in genomic data?",
+   "a": "The Earth BioGenome Project (EBP), Darwin Tree of Life (DToL) and the European Reference Genome Atlas (ERGA). They aim to catalog and characterize the genomes of Earth's eukaryotic biodiversity.",
+   "kw": [
+    "EBP",
+    "DToL",
+    "ERGA"
+   ],
+   "info": "EBP aims to sequence all described eukaryotic species within 10 years (started 2020). DToL aims to sequence 70 000 eukaryotic species in Britain and Ireland. ERGA is the pan-European partner of EBP. Both DToL and ERGA are affiliated with EBP.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How has the view of protists changed?",
+   "a": "Protists were once seen as simple organisms. Advances in microscopy, transcriptomics and comparative genomics have revealed their genetic diversity and complex evolution in the Tree of Life.",
+   "kw": [],
+   "info": "The authors argue that protist genomics should be prioritized within genome initiatives such as the Aquatic Symbiosis Genomics Project. This would help explain protist biology and give context to fungi, plants and animals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - tree of life",
+   "q": "Why are single-gene markers not enough to reconstruct the eukaryotic tree?",
+   "a": "Single-gene markers such as rRNA genes often fail to recover deep eukaryotic relationships, for example because their regions are too variable or too conserved. Phylogenomic approaches that use hundreds to thousands of loci and protein-coding genes are less prone to these biases.",
+   "kw": [
+    "phylogenomics",
+    "rRNA genes"
+   ],
+   "info": "Molecular sequence data started to replace morphology and metabolism for building trees in the 1970s. Phylogenomics has given insights into the acquisition and reduction of plastids and mitochondria, the origin of animals and the root of eukaryotes.",
+   "concl": "Because protists make up nearly all eukaryotic phylogenetic diversity, more protist genomes and transcriptomes are needed to resolve eukaryotic evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - evolutionary transitions",
+   "q": "What did genomes of free-living relatives of parasitic protists reveal about the evolution of parasitism?",
+   "a": "Kinetoplastids, apicomplexans and holomycotans each evolved intracellular parasitism independently, with different adaptations. They still share common themes: flagellar loss, expansion of transporter gene families, and genome rearrangements that help diversification and faster proliferation.",
+   "kw": [
+    "parasitism",
+    "symbiosis"
+   ],
+   "info": "Most available protist genomes come from human or livestock parasites, which often have extreme genomic adaptations and host dependency. Parasitism is defined as a symbiosis in which one partner lowers the fitness of the other.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - evolutionary transitions",
+   "q": "How did endosymbiosis shape organelle genomes?",
+   "a": "Mitochondria and plastids came from one cell merging into another. Gene transfer from the organelles to the host nucleus greatly reduced organelle genome size, so these compartments now depend on importing nucleus-encoded proteins.",
+   "kw": [
+    "endosymbiosis",
+    "organelles",
+    "gene transfer"
+   ],
+   "info": "Genomic data have blurred the line between what counts as an endosymbiont and what counts as an organelle.",
+   "concl": "More organellar and nuclear genomes are needed to identify the interacting partners and the order of steps that turns an endosymbiont into a true organelle."
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - evolutionary transitions",
+   "q": "What have protist genomes shown about the evolution of multicellularity?",
+   "a": "Phylogenomics found simple clonal or aggregative stages in protists related to complex multicellular organisms, and back-and-forth switches between unicellular and multicellular states in streptophyte algae and fungi. Comparative genomics showed that gene family expansion, lateral gene transfer and domain shuffling were important drivers.",
+   "kw": [
+    "multicellularity",
+    "domain shuffling",
+    "lateral gene transfer"
+   ],
+   "info": "Eukaryotic multicellularity evolved independently several times, in plants, animals, fungi and algae, alongside simpler clonal forms. The machinery for cell differentiation, adhesion and communication differs between multicellular lineages.",
+   "concl": "Many genes once thought specific to multicellular organisms are found in unicellular relatives, so they predate multicellularity. Their patchy distribution means protist diversity must be considered when reconstructing ancestral multicellular states."
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - evolutionary transitions",
+   "q": "Which lineages moved onto land, and what challenges did they face?",
+   "a": "Terrestrialization happened independently in algae and plants, fungi, ciliates, rhizarians and stramenopiles, among others. These lineages faced unbuffered stressors (large temperature changes, more light and UV) and water scarcity (osmotic stress).",
+   "kw": [
+    "terrestrialization"
+   ],
+   "info": "Comparative genomics of terrestrialization is just beginning, mostly by comparing plants with their closest streptophyte algal relatives.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - evolutionary transitions",
+   "q": "How can protist genomes help study eukaryogenesis?",
+   "a": "By comparing protist genomes with their prokaryotic relatives, archaea and bacteria. This helps explain the origin of eukaryotes and of eukaryotic cell structures.",
+   "kw": [
+    "eukaryogenesis"
+   ],
+   "info": "The paper covers this in one short paragraph without detail.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - molecular features",
+   "q": "Which molecular features were first discovered in protists?",
+   "a": "RNA editing, trans-splicing, polycistronic transcription and variant surface proteins were all discovered in protists and later found in various multicellular organisms. Ciliates are well known for deviating from the standard genetic code, and the list of protists with noncanonical codes is growing fast.",
+   "kw": [
+    "noncanonical genetic code",
+    "RNA editing",
+    "trans-splicing"
+   ],
+   "info": "A noncanonical genetic code is one where codon-to-amino-acid assignments differ from the canonical code. These codes are most common in certain protist lineages, mitochondria and plastids.",
+   "concl": "Sequencing more protist genomes is expected to reveal further departures from what are considered typical features of the eukaryotic cell."
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - molecular features",
+   "q": "What is a nitroplast?",
+   "a": "A nitrogen-fixing organelle derived from a cyanobacterium that evolved independently of canonical plastids. The authors give it as an example of previously unrecognized organelles that protists may still reveal.",
+   "kw": [
+    "nitroplast"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Protist genomes in eukaryotic evolution - ecosystem dynamics",
+   "q": "How can protist genomes help decode ecosystem dynamics?",
+   "a": "Metagenomics and metatranscriptomics show community composition, genomic potential and gene expression in mixed protist assemblages. These studies are currently limited by scarce, discontinuous and incomplete reference genomes.",
+   "kw": [
+    "metagenomics",
+    "metatranscriptomics"
+   ],
+   "info": "Metagenomics sequences DNA from multispecies samples, and metatranscriptomics sequences RNA. Combining high-quality genomes with omics data would allow tracing allele frequencies, community dynamics and food webs.",
+   "concl": "Better reference genomes are needed to identify the key players in ecosystem function and to understand how global change affects ecosystem structure and stability."
+  },
+  {
+   "type": "qa",
+   "section": "Particularities of protist genome research",
+   "q": "How many protist species can be cultured?",
+   "a": "About 3000 protist species were culturable as of 2014, which is only 0.03% of the predicted protist diversity. Many species remain uncultured and belong to previously unrecognized lineages.",
+   "kw": [
+    "culturing"
+   ],
+   "info": "Two culture-independent approaches are emerging, single-cell genomics and metagenomics. Both are in their infancy for protists but benefit from developments in fields such as clinical research.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Particularities of protist genome research - life strategies",
+   "q": "Why are symbiotic protists hard to sequence?",
+   "a": "Many protists are symbionts of animals (e.g., apicomplexans) or plants (e.g., oomycetes), or host endosymbionts themselves (e.g., parabasalids). In vitro culture methods are mostly lacking, so isolates come from field-collected infected hosts and are often contaminated with host cells or environmental microbes.",
+   "kw": [
+    "symbionts",
+    "contamination"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Particularities of protist genome research - life strategies",
+   "q": "What strategies separate symbiont DNA from host DNA?",
+   "a": "First, in vivo isolation or enrichment of symbiont biomass: micropipetting, differential filtration, density gradient centrifugation, FACS followed by MDA, or microfluidics such as 10x Genomics Chromium. Second, in silico separation of reads using k-mer-based methods, GC content, trinucleotide composition, or mapping to the host genome when one is available.",
+   "kw": [
+    "FACS",
+    "MDA",
+    "in silico decontamination"
+   ],
+   "info": "FACS (fluorescence-activated cell sorting) uses flow cytometry to sort cells one at a time by fluorescence (including natural autofluorescence) and light scattering. MDA (multiple displacement amplification) is isothermal whole-genome amplification with a high-fidelity polymerase, used for small inputs such as single cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Particularities of protist genome research - life strategies",
+   "q": "Why are heterotrophic protists underrepresented in genomic data?",
+   "a": "They need food, usually bacteria or other protists, which makes them harder to culture than algae or fungi. Not all can be grown with a single defined food organism, and not all prey are equivalent, even for bacterivores.",
+   "kw": [
+    "heterotrophic protists"
+   ],
+   "info": "Bacteria release secondary metabolites to defend against predators, which selects for protists with specific resistances. As a result, food requirements can differ even between closely related protist species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Particularities of protist genome research - life strategies",
+   "q": "What is the culturing situation for radiolarians and foraminiferans?",
+   "a": "Radiolarians make up to 5% of total planktonic biomass in surface oceans, but culturing them is rudimentary and only keeps them alive long enough to observe. Their life cycles have never been closed. Foraminiferans are similar, with some recent successes.",
+   "kw": [
+    "radiolarians",
+    "foraminiferans"
+   ],
+   "info": "Many large protists (>100 µm) host several symbionts. The paper says symbiont presence is obligatory for protists like dinoflagellates and haptophytes, but this sentence is ambiguous about which partner depends on which.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Particularities of protist genome research - life strategies",
+   "q": "Why are phototrophic protists easier to sequence?",
+   "a": "Phototrophs are generally easier to cultivate with the right nutrients and light, and many cultures are axenic. These cultures are easy to maintain long term and give plenty of fresh material for high-molecular-weight DNA and RNA extraction.",
+   "kw": [
+    "phototrophs",
+    "axenic culture",
+    "HMW DNA"
+   ],
+   "info": "Archaeplastids got plastids from an ancient endosymbiosis with cyanobacteria. Secondary or higher-order endosymbioses spread red algal-derived plastids to cryptophytes, haptophytes, alveolates and stramenopiles. Some deep-branching plastid lineages remain completely uncultivated. Marine green algae (Viridiplantae) with fast division and complete genomes are models for land plant features.",
+   "concl": "Thick cell walls with specialized compounds can still reduce nucleic acid extraction efficiency in some photosynthetic taxa."
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Beginner's guide to protists",
+   "q": "How has the classification of protists changed over history?",
+   "a": "In 1818 Goldfuß introduced Protozoa as a class of the simplest animals, grouped with bryozoans and rotifers. In 1866 Haeckel described Protista as a sister clade to animals and plants, uniting photoautotrophic and heterotrophic microbial eukaryotes. Their polyphyletic nature remained unclear until the late 20th century.",
+   "kw": [
+    "Protozoa",
+    "Protista"
+   ],
+   "info": "Better microscopy later challenged the view of protists as prototypes of multicellular organisms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Beginner's guide to protists",
+   "q": "How many protist species are described compared with the predicted total?",
+   "a": "76 904 protist species had been described by 2007, against a predicted richness of up to 10.5 million species. Over 1 million species are predicted for apicomplexans alone.",
+   "kw": [
+    "18S rDNA",
+    "diversity"
+   ],
+   "info": "Mass sequencing of 18S rDNA amplicons revealed many unknown protist lineages in soil and marine habitats that culturing would have missed. Protists range from <1 µm to tens of centimeters and live in all environments, including the deep sea and the Atacama Desert. Their trophic modes include autotrophy, heterotrophy, mixotrophy, saprotrophy, parasitism and many symbioses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Beginner's guide to protists",
+   "q": "Which supergroups appear in the eukaryotic tree in Box 1, Figure I?",
+   "a": "Stramenopiles, alveolates, rhizarians, haptists, cryptists, archaeplastids, opisthokonts, amoebozoans, discobids, metamonads and CRuMs. Several orphan lineages are also shown, such as telonemids, provorids, hemimastigotes, ancyromonads, malawimonads, breviates and apusomonads.",
+   "kw": [
+    "eukaryotic tree of life",
+    "supergroups"
+   ],
+   "info": "Fungi, animals and land plants are drawn with broken lines and no further resolution. The name charophytes was changed to streptophyte algae. At least two groups were proposed within the last decade, and the deeper phylogeny of several groups is still unresolved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Snapshot of available protist genomes",
+   "q": "When was the first protist genome sequenced, and how has the number grown?",
+   "a": "One of the first was the genome of the apicomplexan parasite Plasmodium, published in 2002. The number of public protist genomes has risen steeply since 2022, especially for oomycete plant pathogens and diatoms, both stramenopiles.",
+   "kw": [
+    "Plasmodium"
+   ],
+   "info": "Initiatives scaling up protist sequencing include the Protist 10,000 Genome Project, the Aquatic Symbiosis Genomics Project and DToL.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Snapshot of available protist genomes",
+   "q": "How many protist genomes are available compared with all eukaryotes?",
+   "a": "As of February 2025, GoaT lists 1 843 386 eukaryotic species, of which 72 599 are protists. There are 46 184 eukaryotic assemblies for 20 004 species, but only 2743 of these assemblies belong to 1121 protist species.",
+   "kw": [
+    "GoaT"
+   ],
+   "info": "The Key figure (Figure 1) is labeled as retrieved in November 2024, while the text numbers are as of February 2025, so the two may not match exactly.",
+   "concl": "Protists are strongly underrepresented among sequenced eukaryotic genomes."
+  },
+  {
+   "type": "qa",
+   "section": "Snapshot of available protist genomes",
+   "q": "Which protist groups dominate the available genomes, and why?",
+   "a": "Most primary assemblies come from the SAR clade, mainly stramenopiles (mostly oomycetes such as Phytophthora) and alveolates (mostly apicomplexans such as Plasmodium, and ciliates), plus discobids (euglenozoans such as Leishmania). This reflects research focused on crop and livestock or human diseases.",
+   "kw": [
+    "SAR clade",
+    "taxonomic bias"
+   ],
+   "info": "Rhizarian genome assemblies are relatively few. A primary assembly is the best-resolved haplotype assembly for a taxon, and alleles that cannot be placed in it go into an alternate assembly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Snapshot of available protist genomes",
+   "q": "What is the assembly quality of current protist genomes?",
+   "a": "Most protist genomes are assembled only to contig or scaffold level. Chromosome-level assemblies exist mainly for phototrophs (chlorophytes, diatoms) and parasitic groups (apicomplexans, euglenozoans, oomycetes).",
+   "kw": [
+    "assembly level"
+   ],
+   "info": "Assembly spans vary widely. Figure 1B bins range from 10.0 kb to 4.12 Gb. Large genomes are especially common in dinoflagellates with a dinokaryon.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Snapshot of available protist genomes",
+   "q": "How complete are protist genomes according to BUSCO?",
+   "a": "BUSCO completeness varies a lot, and only about 2.7% of protist genomes are more than 90% complete.",
+   "kw": [
+    "BUSCO"
+   ],
+   "info": "The authors note that BUSCO itself is limited for protists because protist genomic resources are scarce. Long-read protist genomes are also still rare.",
+   "concl": "The protistology community is not yet fully benefiting from recent advances in sequencing technology."
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Practices with protist genomes",
+   "q": "What are the three starting points for getting protist genomes?",
+   "a": "Single cells, cultures and environmental samples (meta approaches). Single cells and cultures need cell isolation by manual methods (micromanipulation, pipetting) or high-throughput methods (FACS), followed by amplification and sequencing. Meta approaches extract DNA or RNA directly from the environment.",
+   "kw": [
+    "single-cell",
+    "culture",
+    "metagenomics"
+   ],
+   "info": "For heterotrophic cultures, prey bacteria must be reduced, or axenic cultures made, by filtration, antibiotic treatment and repeated washing with FACS. PacBio HiFi and Arima Hi-C data are given as successful examples for assembly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Practices with protist genomes",
+   "q": "What are the pros and cons of single-cell versus meta approaches?",
+   "a": "Single-cell approaches can analyze individual protists from minimal input, and co-assembly improves genome recovery up to 80%. However, single genomes are often partial (10-40% recovery for small protists) and less contiguous than telomere-to-telomere quality. Meta approaches are culture-independent and capture broad genetic diversity, but eukaryotic sequences make up less than 2% of reads.",
+   "kw": [
+    "co-assembly",
+    "genome recovery"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Practices with protist genomes",
+   "q": "What are the pros and cons of culture-based approaches, and which future developments do the authors flag?",
+   "a": "Cultures can give high-quality, complete genomes, and sample preparation can increase protist abundance and reduce bacteria. However, prokaryotic contamination can lead to poor gene annotation, and novel or small protists can be hard to culture.",
+   "kw": [
+    "Hi-C",
+    "nuclei sorting"
+   ],
+   "info": "The four long-term development ideas, marked with yellow stars in the figure, are nuclei sorting, protist-specific pipelines, low-input Hi-C libraries and protist BUSCO core sets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Databases for protist genomes",
+   "q": "What is Genomes on a Tree (GoaT)?",
+   "a": "A platform built to support EBP that provides genome-related metadata and sequencing project information for eukaryotic species. It collects validated metadata such as genome sizes, karyotypes and sequencing status, and fills in missing values by phylogenetic comparison.",
+   "kw": [
+    "GoaT"
+   ],
+   "info": "It can be used through an API, a web interface and command-line tools.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Databases for protist genomes",
+   "q": "Which other databases hold protist genomic data?",
+   "a": "P10K aims to sequence 10 000 protist species and offers a single-cell pipeline with protist-specific decontamination and annotation. EnsemblProtists is an annotated genome browser with Perl and REST APIs. VEuPathDB covers vector-borne and zoonotic pathogens, and EukProt holds predicted protein sets across eukaryotic supergroups.",
+   "kw": [
+    "P10K",
+    "VEuPathDB",
+    "EukProt"
+   ],
+   "info": "EukProt places species within the UniEuk taxonomic framework and is designed for phylogenomics and gene family evolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - sequencing from cultures",
+   "q": "Which genome standards do the authors challenge?",
+   "a": "Current reference genome standards expect chromosome-level resolution and maximal completeness for every species, and best practices and software are built around animals and plants. Protist genomes processed with current pipelines often fall short of these standards.",
+   "kw": [
+    "reference genome standards"
+   ],
+   "info": "The authors say no single approach is likely to give high-quality genomes across all protist diversity.",
+   "concl": "Both concepts and methods need to advance, in the wet lab and in bioinformatics."
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - sequencing from cultures",
+   "q": "How can contamination in protist cultures be reduced?",
+   "a": "Antibiotic treatment (to get axenic or monoxenic cultures), size fractionation by filtration, and FACS. Bacterial sequences often persist in non-axenic cultures, which reduces sequencing depth and assembly accuracy. Targeting life-cycle stages with higher DNA or RNA yields and removing contaminants bioinformatically can help, as shown for the marine gregarine Porospora gigantea.",
+   "kw": [
+    "axenic culture",
+    "decontamination"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - sequencing from cultures",
+   "q": "What can be done when full genome sequencing is not yet feasible?",
+   "a": "Combine transcriptomics with genome skimming, a cheap shallow sequencing approach. It captures high-copy regions, coding sequences and conventional DNA barcodes.",
+   "kw": [
+    "genome skimming"
+   ],
+   "info": "Better high-molecular-weight DNA extraction (e.g., nuclei extraction) and high-quality Hi-C libraries from minimal input are urgently needed to study chromatin in few or single cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 4 - Complexity of protist genomes",
+   "q": "What is the kinetoplast?",
+   "a": "A massive body of mitochondrial DNA in kinetoplastids. In trypanosomatids it contains maxicircles (20-25 kb, encoding mitoribosomal RNAs and oxidative phosphorylation proteins) and thousands of minicircles (0.5-10 kb).",
+   "kw": [
+    "kinetoplast",
+    "maxicircles",
+    "minicircles"
+   ],
+   "info": "Diplonemids have large, circular, non-catenated mtDNA that makes up to 60% of total cell DNA, the most DNA-rich organelles known. Both groups have extensive RNA editing: uridine insertions and deletions in kinetoplastids, nucleotide substitutions in diplonemids. Their Euglenida relatives have streamlined mitochondrial genomes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 4 - Complexity of protist genomes",
+   "q": "What is nuclear dualism in ciliates?",
+   "a": "Ciliates have a small, diploid germline micronucleus (MIC) and a large, polyploid somatic macronucleus (MAC). The MIC is active during mating and holds internally eliminated sequences (IESs). The MAC carries out gene expression during vegetative growth.",
+   "kw": [
+    "micronucleus",
+    "macronucleus",
+    "IESs"
+   ],
+   "info": "During sexual reproduction the old MAC is destroyed, and some daughter MICs become new MACs. In this process IESs are removed and chromosomes are fragmented, rearranged and amplified. In some ciliates the MAC genome encodes 18 500 genes on 16 000 chromosomes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 4 - Complexity of protist genomes",
+   "q": "What is unusual about dinoflagellate genomes?",
+   "a": "Core dinoflagellates have a unique nucleus, the dinokaryon. They have abandoned histones for DNA packaging and use proteins of viral and bacterial origin instead, with liquid-crystalline chromosomes that stay condensed throughout the cell cycle. Their genomes range from 1000 to 215 000 Mb, with some genes in tandem arrays.",
+   "kw": [
+    "dinokaryon",
+    "Symbiodinium"
+   ],
+   "info": "Some of the smallest core dinoflagellate genomes (1100-1500 Mb) belong to the coral endosymbiont Symbiodinium. Noncore dinoflagellates such as the parasite Amoebophrya have much smaller genomes, around 100 Mb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - single-cell genomics",
+   "q": "What has single-cell genomics achieved for protists so far?",
+   "a": "Genomes of four ciliate species were sequenced from individual cells using two whole-genome amplification methods. Genomes of uncultured, dominant microeukaryotes have also been obtained.",
+   "kw": [
+    "single-cell genomics",
+    "whole-genome amplification"
+   ],
+   "info": "Single cells can be isolated by micromanipulation, FACS or laser-based methods (confocal microscopy, laser capture microdissection). These are technically demanding and need time, expertise and costly equipment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - single-cell genomics",
+   "q": "What is selective lysis, and what problems remain for single-cell data?",
+   "a": "Selective lysis is a cheaper, accessible way to enrich eukaryotic DNA by taking advantage of the protection the nuclear envelope gives. Combined with scRNA-seq, it helps with uneven genome amplification and with resolving repetitive regions.",
+   "kw": [
+    "selective lysis",
+    "scRNA-seq"
+   ],
+   "info": "Single-cell omics data can still contain prokaryotic contamination from ingested, endosymbiotic or surface-attached bacteria, which must be removed bioinformatically.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - metagenomics",
+   "q": "How far has metagenomics gone in recovering eukaryotic genomes?",
+   "a": "Only a few eukaryotic MAGs have been reported, often from low-diversity communities. Hundreds of planktonic marine eukaryote MAGs were recently assembled from massive sequencing data and combined with single-cell amplified genomes (SAGs) to build a high-quality genomic repository.",
+   "kw": [
+    "MAG",
+    "SAG",
+    "EukHeist"
+   ],
+   "info": "Metagenomics pipelines were first built for bacterial communities. Specialized pipelines such as EukHeist are being developed for eukaryotic genomes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - metagenomics",
+   "q": "What are the limits of short-read eukaryotic MAGs, and what could solve them?",
+   "a": "MAGs built from short reads are discontinuous, fragmented, contaminated or unphased. They cannot resolve gene synteny, repeats, polyploidy or large introns, and binning can miss parts of the genome such as organellar genomes. Long-read sequencing, now feasible for metagenomics with PacBio Revio and improved Oxford Nanopore chemistry, can overcome many of these problems.",
+   "kw": [
+    "long-read metagenomics",
+    "binning"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - assembly and annotation",
+   "q": "What do the authors say about decontaminating protist assemblies?",
+   "a": "Software like Tiara can reduce bacterial contamination. Decontamination pipelines must also recognize horizontal and endosymbiotic gene transfer between protists and bacteria, so that real transferred genes are not removed.",
+   "kw": [
+    "Tiara",
+    "horizontal gene transfer"
+   ],
+   "info": "Assembly tools can produce high-quality assemblies from high-quality data, including giant and polyploid genomes. Chromatin-capture techniques are key to assembly quality and need low-input protocols.",
+   "concl": "The authors call for protist group-specific decontamination tools."
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - assembly and annotation",
+   "q": "Why does BUSCO underestimate the completeness of protist genomes?",
+   "a": "Quality is usually assessed with the general eukaryotic BUSCO core set, and few core sets exist for specific protist groups (e.g., stramenopiles, euglenozoans, apicomplexans, chlorophytes, alveolates). The cause is the scarcity and bias of available protist genomes and their high genetic divergence.",
+   "kw": [
+    "BUSCO",
+    "core gene sets"
+   ],
+   "info": "",
+   "concl": "Expanding and refining taxon-specific BUSCO core gene sets is essential for evaluating assembly completeness properly."
+  },
+  {
+   "type": "qa",
+   "section": "Opportunities - assembly and annotation",
+   "q": "Why is gene annotation poor for protists, and what do the authors propose?",
+   "a": "Annotation pipelines are built for the gene architectures of animal and plant model organisms, so they predict protist gene models poorly. Many protist genes also remain unclassified because databases and reference genomes are limited.",
+   "kw": [
+    "gene annotation"
+   ],
+   "info": "The authors argue for publishing fragmented or incomplete transcriptome and genome assemblies to grow databases. They see these lower-quality resources as a necessary intermediate step.",
+   "concl": "Incomplete databases are a major obstacle to high-quality annotation, so releasing suboptimal assemblies should be encouraged."
+  },
+  {
+   "type": "qa",
+   "section": "Concluding remarks",
+   "q": "What do the authors conclude?",
+   "a": "Protist genomics needs global collaboration under EBP, ongoing funding, and taxonomists for taxonomic validation alongside molecular biologists and bioinformaticians. Since most protists cannot be cultured, priorities are better methods for small samples and optimized single-cell genomics and transcriptomics.",
+   "kw": [
+    "EBP",
+    "referential genomes"
+   ],
+   "info": "Single-cell genomes may not meet the strict EBP criteria for reference genomes, but the authors argue they can serve as valuable 'referential genomes'. Higher-quality MAGs from long-read metagenomics can also help.",
+   "concl": "The long-term goal stays the highest-quality protist assemblies. The route there goes through releasing incomplete assemblies, better databases and taxon-specific BUSCO sets."
+  },
+  {
+   "type": "note",
+   "section": "Concluding remarks",
+   "text": "Is the current EBP definition of a reference genome too strict, and would broadening it speed up biodiversity genomics for difficult organism groups?"
+  },
+  {
+   "type": "note",
+   "section": "Concluding remarks",
+   "text": "How can chromatin-capture techniques such as Hi-C be adapted to ultra-low input or single-cell scale for protists?"
+  },
+  {
+   "type": "note",
+   "section": "Concluding remarks",
+   "text": "How much gene transfer, from endosymbionts (EGT) and from other sources (LGT), happened in different eukaryotic lineages, and how should decontamination pipelines tell transferred genes apart from contamination?"
+  }
+ ]
+}

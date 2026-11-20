@@ -1,0 +1,557 @@
+{
+ "id": "Clark_2026",
+ "title": "Establishing the ELIXIR Domestic Animals Genome and Phenome Community",
+ "link": "https://doi.org/10.12688/f1000research.177500.1",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Clark_2026_F1000Res_ELIXIR_domestic_animals.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the ELIXIR DAGP Community?",
+   "a": "The ELIXIR Domestic Animals Genome and Phenome (DAGP) Community supports genome-to-phenome analyses for farmed and companion animal species. It aims to coordinate, discuss and explore data technology solutions for animal welfare, behaviour, health, infectious diseases, metabolism, nutritional efficiency, and the preservation of genetic diversity and the environment.",
+   "kw": [
+    "DAGP",
+    "ELIXIR",
+    "genome-to-phenome"
+   ],
+   "info": "The paper frames animal well-being as part of sustainable agroecosystems, companionship and the One Health approach, which links the health of people, animals and the environment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What kind of paper is this?",
+   "a": "It is an opinion article (white paper) written by the ELIXIR DAGP Focus Group. It summarises the current data infrastructure, resources and tools for domestic animal genomics and phenomics, and sets out community-led plans and priorities.",
+   "kw": [
+    "white paper"
+   ],
+   "info": "It has no data of its own (the data availability statement says there is no data associated with the manuscript). Version 1 had one peer review, which approved it.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the three key priority areas named in the abstract?",
+   "a": "i) Expanding the FAANG Data Portal to hold phenotype data, together with ELIXIR Data Platforms. ii) Supporting submissions of new data types across ELIXIR Core Data Resources, including proprietary data from industry partners. iii) Strengthening connections to existing ELIXIR Communities and international consortia.",
+   "kw": [
+    "FAANG Data Portal",
+    "ELIXIR Core Data Resources"
+   ],
+   "info": "",
+   "concl": "The community's main focus is linking omics data with phenotype data, including industry data, in shared ELIXIR infrastructure."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which research fields is the community meant to strengthen?",
+   "a": "Genome-enabled breeding, population genomics, pangenome analysis, functional genomics, genome editing, paleogenomics, phenotyping and bio-banking.",
+   "kw": [
+    "pangenome",
+    "paleogenomics",
+    "bio-banking"
+   ],
+   "info": "This will be done through data standards, coordination, workflows and visualisation. The standards will follow the FAIR principles and use established ontologies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does the paper define domestic animals?",
+   "a": "Animals that have been bred and adapted to meet human needs, for example as sources of food, workforce, transportation, leisure and companionship, and as parts of many human cultures.",
+   "kw": [
+    "domestic animals"
+   ],
+   "info": "They also contribute to agroecosystems: they shape rural landscapes, improve soil fertility through manure and maintain biodiversity on marginal and grazing lands.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What challenges do domestic animals face, according to the paper?",
+   "a": "Seven: sustainable production in a changing climate, emerging diseases and the need for genomic resilience, robustness, welfare problems caused by breeding and management, maintaining genetic diversity, meeting societal expectations, and implementing the 3Rs in research.",
+   "kw": [
+    "resilience",
+    "robustness",
+    "welfare"
+   ],
+   "info": "On climate, the stated challenge is to produce the same amount of food from fewer, highly productive animals that need less input. Climate change also raises the risk of contagious and vector-borne diseases (some zoonotic), and increasing antimicrobial resistance adds to this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is genetic diversity a concern in domestic animals?",
+   "a": "Several companion animal breeds have high inbreeding and founder effects, which make genetic diseases more common and lead to more morbidity or early death. The same has been seen in some highly selected livestock breeds, including Holstein-Friesian dairy cattle.",
+   "kw": [
+    "inbreeding",
+    "founder effect"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the 3Rs?",
+   "a": "Replacement, Reduction and Refinement: the principle for the use of live animals in research. Adopting it requires advanced in silico, in vitro and in vivo methods, which involve complex technology and protocol development.",
+   "kw": [
+    "3Rs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What opportunities does the paper list for addressing these challenges?",
+   "a": "FAIR data infrastructure such as the FAANG Data Portal; breeding for feed efficiency and smaller rumen size; using microbiome profiling in breeding; conserving locally adapted breeds; genetic screening in species that do not yet use it; paleogenomics; cellular technologies linking in vitro and in vivo; genome-wide CRISPR screens in vitro; and sensor-based, high-throughput phenotyping.",
+   "kw": [
+    "CRISPR screens",
+    "microbiome",
+    "high-throughput phenotyping"
+   ],
+   "info": "Breeding for smaller rumen size in ruminants is aimed at lowering input use and greenhouse gas emissions. CRISPR screens are meant to find genome-editing targets for disease resistance and welfare traits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does the paper spell out FAIR?",
+   "a": "Findable, Accessible, Interoperable, Reproducible.",
+   "kw": [
+    "FAIR"
+   ],
+   "info": "This is the paper's own wording. The R is given as Reproducible.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper want to address?",
+   "a": "Genome sequencing and functional annotation have improved, but much remains to be done to link genome information to real-world outcomes such as trait improvement. A holistic approach has been hard because data, tools and resources are shared poorly across fields.",
+   "kw": [
+    "genotype-to-phenotype"
+   ],
+   "info": "The authors call for new collaborations across genetics, biochemistry, microbiology, physiology, nutrition, immunology and data science (quantitative biology, statistics, computer science, mathematics).",
+   "concl": "The field needs to shift from descriptive to predictive work, which is a primary goal of data science."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is ELIXIR?",
+   "a": "A European life sciences infrastructure that supports the management of public research data and coordinates access to life science resources. Its goal is to maximise the impact of research on public health, the environment and the economy.",
+   "kw": [
+    "ELIXIR"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "q": "How was domestic animal research organised before EuroFAANG?",
+   "a": "It was highly divided, mostly by specialisation on a single species. From 2018, six H2020 projects came together under the EuroFAANG umbrella. They were the first to connect species-specific projects, with the shared aim of providing genomic resources for precision breeding.",
+   "kw": [
+    "EuroFAANG"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "q": "Which EuroFAANG projects covered which species?",
+   "a": "GENE-SWitCH and GEroNIMO covered pig and chicken, BovReg and Rumigen covered cattle, AQUA-FAANG covered six teleost fish species, and HoloRuminant covered the ruminant microbiome.",
+   "kw": [
+    "AQUA-FAANG",
+    "GENE-SWitCH",
+    "BovReg"
+   ],
+   "info": "Together they produced very large omics datasets. The paper does not name the six teleost species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "q": "What infrastructure grew out of the EuroFAANG projects?",
+   "a": "The nf-core special interest group in animal genomics and the Horizon Europe INFRA-DEV EuroFAANG Research Infrastructure concept development project. That project led to GenoPHEnix, a proposal to the 2026 update of the ESFRI Road Map.",
+   "kw": [
+    "nf-core",
+    "GenoPHEnix",
+    "ESFRI"
+   ],
+   "info": "GenoPHEnix merges the EuroFAANG concepts with existing H2020 INFRAIA phenotyping infrastructures: PigWeb, SmartCow and AquaExcel 3.0. Figure 1 shows the INFRA-DEV project starting in January 2023.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "q": "What are the three main aims of the FAANG initiative?",
+   "a": "1. Standardise core assays and experimental protocols. 2. Coordinate and facilitate data sharing through its Data Portal. 3. Establish suitable infrastructure for data analysis.",
+   "kw": [
+    "FAANG"
+   ],
+   "info": "FAANG (Functional Annotation of Animal Genomes) is a global initiative that studies genome function to decipher the genotype-to-phenotype link in farmed animals (Table 1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "q": "Which other projects with ELIXIR Node involvement does Table 1 list?",
+   "a": "Examples: SalmoCode (single-cell RNA-seq map of organs and cells in developing salmon), SalmoStrong (salmon robustness), the DoGA Consortium Expression Atlas (promoter and gene expression atlas for the dog), the EB2 Engineering Biology Hub (genome-wide CRISPR screens) and Ensembl in a new era (pangenomes and breed-specific assemblies).",
+   "kw": [
+    "SalmoCode",
+    "DoGA",
+    "Ensembl"
+   ],
+   "info": "SalmoStrong's long-term goal is to cut mortality during seawater production by 50% over the next ten years. Other entries: MuDiS4LS (holobiont data), BReIF (FAIR biobanks, pangenome pipelines), NFDI (Germany), and the COST Actions EU-LI-PHE (CA22112) and Insect-IMP (CA22140).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "q": "Which activities are planned as the Focus Group becomes a Community?",
+   "a": "(1) Cataloguing ELIXIR Services that support domestic animal genomics and phenomics. (2) Developing recommendations for connecting genomics and phenomics infrastructures through ELIXIR. (3) Coordinating ELIXIR Node participation in Horizon Europe proposals such as GenoPHEnix, Cluster 6 calls and COST Actions.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - connections with ELIXIR platforms and communities",
+   "q": "When was the DAGP Focus Group set up, and which communities does it already work closely with?",
+   "a": "It was set up in 2024. Its synergies are well established with the Biodiversity, Plant Sciences, Single-cell Omics and Federated Human Data communities.",
+   "kw": [
+    "Focus Group"
+   ],
+   "info": "Table 2 also lists links with the Data, Interoperability, Tools and Training platforms, and with the Food and Nutrition, Galaxy, Human CNV, Metabolomics, Microbiome, Research Data Management and Systems Biology communities.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - connections with ELIXIR platforms and communities",
+   "q": "How do they plan to improve phenotyping metadata standards?",
+   "a": "Recording standards for phenotyping studies in domestic animals, such as longitudinal observational studies, are minimal. They are aligning with the Plant Science Community's ISA standardisation for minimal information and adapting the Biodiversity community's ABCD (Access to Biological Collection Data) standard to domestic animals.",
+   "kw": [
+    "ISA",
+    "ABCD",
+    "MIAPPE"
+   ],
+   "info": "Table 2 proposes developing an animal equivalent of the plant community's MIAPPE minimal information standard, partly through a shared biohackathon.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - connections with ELIXIR platforms and communities",
+   "q": "What is the problem with single-cell data submission?",
+   "a": "The community cannot yet submit directly to the Single Cell Expression Atlas (scEA), and metadata gaps limit interoperability with other ELIXIR resources. The proposed fix is to align metadata standards between Annotare and the FAANG Data Portal before archiving.",
+   "kw": [
+    "scRNA-seq",
+    "Single Cell Expression Atlas",
+    "Annotare"
+   ],
+   "info": "The aim is to find concrete opportunities for harmonisation between FAANG and scEA. A single-cell ingestion case study is planned with the Interoperability platform. The text writes 'DAGF Community' here, which looks like a typo for DAGP.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - connections with ELIXIR platforms and communities",
+   "q": "Why are they exploring data encryption?",
+   "a": "Industry is reluctant to share genotype and phenotype data because of intellectual property and privacy concerns. This limits data reuse and joint analysis and slows food-security-relevant genomics. They are evaluating encryption as a solution for secure G2P data sharing, building on frameworks from the Federated Human Data community.",
+   "kw": [
+    "data encryption",
+    "proprietary data",
+    "Federated Human Data"
+   ],
+   "info": "Table 2 lists a homomorphic data encryption case study and expanding the FAANG Data Portal to hold encrypted data. No technical details or results are given.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "DAGP community - connections with ELIXIR platforms and communities",
+   "q": "Which genomics links are planned with the Human CNV, Microbiome and Metabolomics communities?",
+   "a": "Human CNV: pangenome methods and workflows, and interaction with EVA for structural variants and their functional consequences (for example with Ensembl VEP). Microbiome: MGnify and cataloguing ruminant MAGs for greenhouse gas research, plus antimicrobial resistance (AMR). Metabolomics: metadata standards and sharing animal data via MetaboLights.",
+   "kw": [
+    "structural variants",
+    "MGnify",
+    "MAGs"
+   ],
+   "info": "From Table 2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - overview",
+   "q": "Which ELIXIR priority area will DAGP contribute to, and what are its objectives?",
+   "a": "The Biodiversity, Food Security and Pathogens (BFSP) priority area. Its five broad objectives are Federation, FAIR Data, Analysis, Standards and Training.",
+   "kw": [
+    "BFSP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - FAIR data and the FAANG Data Portal",
+   "q": "What does the FAANG Data Portal currently do?",
+   "a": "It automatically collects all FAANG data submitted to ELIXIR core resources into one searchable resource and allows direct download from repositories such as ENA and BioSamples. It offers predefined filters, predictive search, a catalogue of sampling and analysis protocols, and automatic linking of publications.",
+   "kw": [
+    "FAANG Data Portal",
+    "ENA",
+    "BioSamples"
+   ],
+   "info": "It also validates metadata in context and brokers submissions to the underlying ELIXIR repositories. Options have been explored to add emerging species (including insects) and encrypted proprietary genotype and phenotype data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - FAIR data and the FAANG Data Portal",
+   "q": "What is the key strategic aim for expanding the FAANG Data Portal?",
+   "a": "To include observational data such as phenotypic measurements and image data, bringing BioStudies and the BioImage Archive into the portal. This would mean fewer submissions to scattered repositories and one standardised submission system for all animal agriculture data.",
+   "kw": [
+    "phenotype data",
+    "BioImage Archive",
+    "BioStudies"
+   ],
+   "info": "This needs new metadata standards for animal phenotypes in BioSamples, building on the FAANG standards, the Vertebrate Breed Ontology and the ELIXIR Plant Science standards. They also want to capture key information during data production to make pre-archive curation easier.",
+   "concl": "The goal is a unified, searchable view that combines omics data with phenotypic and image data."
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - analysis tools and pipelines",
+   "q": "Why is ENCODE used as a model for FAANG?",
+   "a": "One of ENCODE's main achievements is producing huge amounts of data that are fully comparable across sites and assays for human and mouse. Integration across datasets, experiments and species is crucial, so the initial FAANG white paper presented ENCODE and similar distributed projects as models.",
+   "kw": [
+    "ENCODE"
+   ],
+   "info": "The challenge is that many sequencing technologies, acquisition methods and interpretation algorithms now coexist.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - analysis tools and pipelines",
+   "q": "Why should domestic animal genomic data stay interoperable with wider animal genomics efforts such as the Earth BioGenome Project?",
+   "a": "To identify evolutionary constraints, to understand how traits arose in wild species and were then harnessed through domestication (especially with paleogenomic time transects), and to use closely related wild species to study disease resistance and manage genetic diversity.",
+   "kw": [
+    "Earth BioGenome Project",
+    "domestication",
+    "interoperability"
+   ],
+   "info": "Example: the DoGA Atlas provides an expression atlas of promoters and genes for 100 tissues from domestic dog breeds and wolves, which enables high-resolution disease mapping.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - analysis tools and pipelines",
+   "q": "How is FAIR software being adopted in animal genomics?",
+   "a": "The Darwin Tree of Life uses Nextflow pipelines that follow the nf-core standard, and the six EuroFAANG H2020 projects have jointly adopted nf-core. The transition is gradual, so fragmented ecosystems keep working while interoperability improves.",
+   "kw": [
+    "nf-core",
+    "Nextflow",
+    "Darwin Tree of Life"
+   ],
+   "info": "Limitation: large-scale funding for a uniform move to one computational framework is unlikely, so DAGP must offer a pragmatic path to computational FAIRification with minimal constraints.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - analysis tools and pipelines",
+   "q": "What are the four purposes of the EuroFAANG computational framework?",
+   "a": "1. Practical solutions for managing data and getting the most value from it. 2. Datasets that can be compared and combined across consortia and species. 3. Long-term interoperability as sequencing improves, since older datasets still hold key information. 4. Compatibility with industrial developments.",
+   "kw": [
+    "computational framework"
+   ],
+   "info": "",
+   "concl": "Robust community-wide standards, developed bottom-up as with nf-core and the FAANG metadata standards, are a key mission of DAGP."
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - standards for in vitro systems",
+   "q": "Which in vitro systems are considered, and how are organoids and Organ-on-Chip defined?",
+   "a": "Immortalised cell lines, primary cells, stem cell lines, organoids and microphysiological systems such as Organ-on-Chip (OoC). Organoids are miniaturised, simplified 3D versions of organs derived from adult or embryonic stem cells. OoCs are microfluidic devices with living cells arranged to simulate tissue- and organ-level physiology.",
+   "kw": [
+    "organoids",
+    "Organ-on-Chip"
+   ],
+   "info": "Organoids have been developed in the main farm animal species, but OoC development is still in its infancy. These systems can be perturbed (including by genome editing) and phenotyped with bulk and single-cell omics and imaging.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - standards for in vitro systems",
+   "q": "What holds back the use of 3D and complex cell models in farm animal science?",
+   "a": "Lab methods need to be adapted to each species, reproducibility needs to improve, and methods change quickly while biological and technical variation must be controlled.",
+   "kw": [
+    "reproducibility",
+    "cryobanking"
+   ],
+   "info": "One specific need for G2P research is cryobanking non-sterile tissues in a way that still allows organoids to be derived, so that 'in vitro populations' can be preserved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - standards for in vitro systems",
+   "q": "What are CRISPR screens in cell lines good for, and what are the limits of immortalised cell lines?",
+   "a": "CRISPR screens can identify genetic determinants of host response to infectious diseases, nutrient uptake or other environmental challenges, including traits that are virtually impossible to study in vivo or very complex traits such as feed efficiency. However, immortalised cell lines represent the physiology of the target tissue poorly and do not capture genetic background differences between individuals or populations.",
+   "kw": [
+    "CRISPR screens",
+    "cell lines"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - standards for in vitro systems",
+   "q": "Which in vitro metadata rule sets does the FAANG Data Portal currently have?",
+   "a": "Purified cells, cell culture, cell lines and organoid. These link each cell model to its original organism and tissue, and to the data generated at all levels.",
+   "kw": [
+    "metadata",
+    "FAANG"
+   ],
+   "info": "Expanding these rules is ongoing and draws on requirements from other species, for example the Organoid network of the Human Cell Atlas portal.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - standards for in vitro systems",
+   "q": "What has the EuroFAANG RI done for in vitro model users since 2023?",
+   "a": "Promoted best practices (sharing protocols, identifying new metadata), mapped European animal biobanks and set biobanking rules for tissues, germplasm, stem cells and edited cell lines, supported bilateral competitive research for breeding industry stakeholders, and documented state-of-the-art technologies for the in vitro to in vivo challenge.",
+   "kw": [
+    "biobanks",
+    "EuroFAANG RI"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - standards for in vitro systems",
+   "q": "What are digital twins in livestock?",
+   "a": "AI-based in silico virtual models of individual animals, herds or populations. They use real-time sensor data (for example from wearables) to monitor and predict phenotypes such as health and behaviour, and to simulate management strategies before they are applied.",
+   "kw": [
+    "digital twins",
+    "in silico"
+   ],
+   "info": "Examples: anticipating disease outbreaks in poultry, and optimising dairy cattle feeding based on pasture health. Caveat: as data-derived entities they depend heavily on accurate metadata.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - real-world outcomes",
+   "q": "What example shows multi-omics revealing host-pathogen mechanisms in livestock?",
+   "a": "In vitro macrophage infection models for the mycobacteria that cause bovine tuberculosis (bTB) and Johne's disease. Combining transcriptomics (RNA-seq, microRNA-seq) with epigenomics (ChIP-seq) revealed how bovine alveolar macrophages are profoundly reprogrammed after infection with Mycobacterium bovis.",
+   "kw": [
+    "bovine tuberculosis",
+    "ChIP-seq",
+    "Mycobacterium bovis"
+   ],
+   "info": "Such multi-omics work could guide breeding for disease resilience through biology-driven selection and genome editing, including high-throughput CRISPR screens to find functional variants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "BFSP contribution - real-world outcomes",
+   "q": "What other real-world outcomes are proposed?",
+   "a": "Data standards for biobanking to conserve biodiversity, tools for pangenome analysis and structural variant effect prediction (such as Ensembl Compara), and using MGnify and Ensembl microbes to characterise the microbiomes of low- and high-methane-emitting ruminants.",
+   "kw": [
+    "Ensembl Compara",
+    "methane",
+    "pangenome"
+   ],
+   "info": "The microbiome datasets could help industry breed efficient, low-methane-emitting animals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Global network of projects and infrastructures",
+   "q": "What are the five aims of the GenoPHEnix ESFRI proposal?",
+   "a": "1. Produce healthier farmed animals with the highest welfare standards. 2. Exploit animal variability through better phenotyping and genotyping. 3. Contribute to the 3Rs with in vitro and in vivo models for deep phenotyping. 4. Advance genome function analysis together with deep phenotyping from cell to farm and population level. 5. Provide tools for precise breeding, sustainable management and conservation of genetic diversity.",
+   "kw": [
+    "GenoPHEnix"
+   ],
+   "info": "Its data infrastructure would expand the FAANG Data Portal to include phenotype data, in line with ELIXIR BFSP priorities.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Global network of projects and infrastructures",
+   "q": "Which international initiatives is DAGP linked to?",
+   "a": "ICAR (animal recording standards), the Ruminant T2T genome project, the Bovine PanGenome Project, and the steering committees of FAANG and FarmGTEx. After a workshop at ELIXIR All Hands 2025, there were discussions with AG2PI (USA) on encryption and sharing proprietary data.",
+   "kw": [
+    "FarmGTEx",
+    "AG2PI",
+    "ICAR"
+   ],
+   "info": "Over the next five years they also expect shared training with the US Animal Breeding RCN: Farm Animal Genomics Collective. The COST Actions EU-LI-PHE and Insect-IMP could bring in additional species and European countries not yet represented.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "What are the six initial key priorities of the DAGP Community?",
+   "a": "1. Standardise phenomic data and metadata, including longitudinal behavioural and image data. 2. Consolidate data and metadata across submission platforms (for example single-cell data). 3. Share proprietary industry data with secure encryption. 4. Harmonise biobanking best practices. 5. Establish Persistent Unique Identifiers (PUIDs) for all data types from a given animal. 6. Better integrate omics with phenotype data, for example through the FAANG Data Portal.",
+   "kw": [
+    "PUIDs",
+    "phenomics",
+    "biobanking"
+   ],
+   "info": "",
+   "concl": "The core aim is to connect omics and phenotype data for domestic animals in ELIXIR core resources, so that the data are more visible, accessible and interoperable."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "Which Focus Group activities took place in 2025?",
+   "a": "A workshop at the ELIXIR All Hands Meeting in June 2025 on expanding the FAANG Data Portal, an ELIXIR BioHackathon in November 2025 on minimal reporting standards for farmed animals based on the Plant Science standards, and an industry day with ELIXIR Norway in Oslo in October 2025 on big data in aquaculture.",
+   "kw": [
+    "BioHackathon",
+    "aquaculture"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "What is the timeline for setting up the community (Figure 1)?",
+   "a": "The idea came in April 2022 and the INFRA-DEV project started in January 2023. The Focus Group was approved in May 2024, GenoPHEnix was submitted in April 2025, and the Community was approved in December 2025. The white paper and roadmap were published in February 2026.",
+   "kw": [
+    "timeline"
+   ],
+   "info": "Also: the idea was discussed at All Hands in Dublin (June 2023), the group was presented at All Hands in Uppsala (June 2024), and intent to become a community was formally notified to ELIXIR Heads of Nodes in May 2025. The GenoPHEnix outcome is expected in late 2026.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "How will the priorities be funded and carried out?",
+   "a": "Through ELIXIR implementation calls, development of the BFSP Science Tier Work Programme, other EU and international funding, and the GenoPHEnix proposal to the 2026 ESFRI Road Map update.",
+   "kw": [
+    "roadmap"
+   ],
+   "info": "A separate RoadMap for 2025 to 2030 describes the main objectives and example tasks.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "DAGP community - organisational opportunities and role of ELIXIR",
+   "text": "AQUA-FAANG produced omics data for six teleost species, but the paper does not name them. Worth checking the FAANG Data Portal for teleost regulatory and functional annotation datasets that could be compared with zebrafish and cavefish."
+  },
+  {
+   "type": "note",
+   "section": "DAGP community - connections with ELIXIR platforms and communities",
+   "text": "How would homomorphic encryption work in practice for joint G2P analysis of proprietary industry genotype and phenotype data? The paper names a case study but gives no method or results."
+  },
+  {
+   "type": "note",
+   "section": "Conclusions",
+   "text": "Follow up on the outcome of the GenoPHEnix ESFRI proposal (expected late 2026) and on the separate DAGP RoadMap 2025-2030 document."
+  }
+ ]
+}

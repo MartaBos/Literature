@@ -1,0 +1,570 @@
+{
+ "id": "BerrocalRubio_2026",
+ "title": "Alternative promoters used during myeloid differentiation and upon activation change the gene products available for innate immune programs",
+ "link": "https://doi.org/10.64898/2026.02.01.703142",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/BerrocalRubio_2026_bioRxiv_alternative_promoters_myeloid.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Macrophage subsets have been described in many tissues at single-cell resolution, but little is known about the transcript isoforms and proteoforms behind macrophage differentiation and function.",
+   "kw": [
+    "isoforms",
+    "proteoforms",
+    "macrophages"
+   ],
+   "info": "Macrophages enter developing tissues from the earliest embryonic stages and support organogenesis with trophic factors such as WNT, VEGF and PDGF.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they do and what did they find overall?",
+   "a": "They measured enhancer, promoter, transcript and protein variation as iPSCs differentiate into macrophages. They found over 200 previously uncharacterised genes and over 20,000 new mRNA isoforms.",
+   "kw": [
+    "iPSC",
+    "multi-omics"
+   ],
+   "info": "New myeloid transcripts and proteins were enriched for secreted-protein motifs. These included new growth factor isoforms with predicted N-terminal changes.",
+   "concl": "When primary monocytes and macrophages are activated, they express many isoforms, mostly from alternative transcription start sites."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are macrophages interesting from a developmental point of view?",
+   "a": "Macrophages are present from the earliest stages of human embryonic development (Carnegie Stage 7), where they have a morphogenic and reparative phenotype. In tissue homeostasis they are characterised by the expression of many growth factors.",
+   "kw": [
+    "Carnegie Stage 7",
+    "tissue-resident macrophages"
+   ],
+   "info": "In animal models, macrophage-derived growth factors have been linked to lymphatic development, skin development and heart homeostasis. How macrophage-derived factors differ from other stromal signals is not well understood.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use iPSC-derived macrophages as a model?",
+   "a": "Early human embryo data are scarce. iPSC-derived macrophages are efferocytotic and share many molecular features with yolk-sac-derived tissue-resident macrophages.",
+   "kw": [
+    "iMac",
+    "yolk sac"
+   ],
+   "info": "The authors argue that long-read RNA sequencing gives the molecular resolution needed for this question.",
+   "concl": "Alternative TSS usage and isoform switching appear important both for iPSC plasticity and for myeloid differentiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - multi-omic discovery of new transcripts",
+   "q": "Which cell stages and which techniques did they use?",
+   "a": "They profiled three stages: iPSCs, myeloid progenitors and iPSC-derived macrophages (iMacs). They used CAGE for promoter and enhancer usage, CFC-seq (cap-trap full-length cDNA long-read sequencing) for isoforms, and mass spectrometry to confirm translation of predicted ORFs.",
+   "kw": [
+    "CAGE",
+    "CFC-seq",
+    "mass spectrometry"
+   ],
+   "info": "In PCA of all three datasets, PC1 separated myeloid cells from iPSCs, PC2 separated adherent from suspension cells, and a smaller PC3 reflected replicate differences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - multi-omic discovery of new transcripts",
+   "q": "How well did CAGE and CFC-seq agree?",
+   "a": "Most long-read isoforms had a CAGE peak overlapping their TSS or within 100 bp upstream. CFC-seq detected the most genes (23,625 called by Bambu). 73% of these had a CAGE cluster within 500 bp, and 54% of the CAGE plus CFC-seq supported genes had supporting MS/MS peptides.",
+   "kw": [
+    "Bambu",
+    "TSS"
+   ],
+   "info": "The Venn diagram shows 18,219 CAGE genes, 23,635 CFC-seq genes and 9,289 MS/MS genes, with 9,249 shared by all three. The text gives 23,625 and the figure gives 23,635 for CFC-seq. Marker genes: NANOG and POU5F1 in iPSCs, CD14 and TLR4 in myeloid cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - multi-omic discovery of new transcripts",
+   "q": "How many new transcripts did they find?",
+   "a": "In a high-confidence set of CAGE-supported CFC-seq isoforms they found 21,219 previously uncharacterised transcripts in 9,277 genes, over 52% of all genes passing filters. 1,105 of these transcripts (5.2%) map to genes not annotated in GENCODE v39.",
+   "kw": [
+    "GENCODE v39",
+    "novel isoforms"
+   ],
+   "info": "Many of the transcripts from unannotated genes sit antisense to known genes, as at the RELA locus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - multi-omic discovery of new transcripts",
+   "q": "In which cell types are the new transcripts expressed?",
+   "a": "46% are expressed in all three cell types, 18% only in iPSCs and 12% only in myeloid cells (progenitors plus iMacs).",
+   "kw": [
+    "cell-type specificity"
+   ],
+   "info": "Treemap: iPSC + Prog 10%, iPSC + iMac 6%, Prog only 5%, iMac only 3%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - multi-omic discovery of new transcripts",
+   "q": "How many new transcripts are predicted to code for new proteins?",
+   "a": "New, previously unannotated ORFs were predicted to expand the proteome output of 1,759 genes, which is 19% of the genes that gained new transcripts.",
+   "kw": [
+    "ORF prediction"
+   ],
+   "info": "The graphical abstract summarises this as 7% of transcripts from known genes predicted to encode new proteins, plus 3% from newly discovered genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - multi-omic discovery of new transcripts",
+   "q": "Which functional categories are enriched among genes with new isoforms?",
+   "a": "In myeloid cells: immune responses (including GTP-regulated molecules such as cytokines) and integrins. In iPSCs: mostly tight junctions and ion exchange.",
+   "kw": [
+    "PANTHER",
+    "integrins",
+    "GO"
+   ],
+   "info": "PANTHER protein-class enrichment against a background of all expressed, filtered genes. Myeloid hits included integrin (4.23-fold), immunoglobulin receptor (4.19), ABC transporter (3.34) and defense/immunity protein (2.68). iPSC hits included ligand-gated ion channels (3.85).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - uncharacterised genes",
+   "q": "What do the newly described genes look like?",
+   "a": "Over 1,100 isoforms map to 506 genes absent from GENCODE v39. Most sit antisense to an annotated gene (overlapping, intronic or divergent), and 45 are intergenic.",
+   "kw": [
+    "antisense genes",
+    "intergenic"
+   ],
+   "info": "Most new genes express several isoforms, and most of those isoforms share a TSS. Some show cell-type-specific isoform expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - uncharacterised genes",
+   "q": "Do the new genes have protein-coding potential, and are they really new?",
+   "a": "Over 90% contain ORFs longer than 30 amino acids. About half have some annotation in GENCODE v47, some were predicted by RefSeq (XR_ accessions), and over 100 had not been reported by any source.",
+   "kw": [
+    "GENCODE v47",
+    "RefSeq"
+   ],
+   "info": "This study shows the RefSeq-predicted genes as full-length transcripts for the first time.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - uncharacterised genes",
+   "q": "What kinds of proteins are the new genes predicted to encode in each cell type?",
+   "a": "Isoforms of new genes were mostly found in iPSCs (42%), then in all cell types (18%) and in myeloid cells (18%). iPSC ORFs were enriched for transmembrane, cytosolic and extracellular domains. Most myeloid predictions matched extracellular proteins with a signal peptide.",
+   "kw": [
+    "signal peptide",
+    "InterPro",
+    "secreted proteins"
+   ],
+   "info": "Top 5 InterPro motif combinations from 478 coding genes (988 coding transcripts). PR02045 is described as a highly conserved N-terminal domain.",
+   "concl": "Newly described myeloid genes look like secreted factors."
+  },
+  {
+   "type": "qa",
+   "section": "Results - mass spectrometry validation",
+   "q": "How much of the new ORF space was confirmed by mass spectrometry?",
+   "a": "MS detected over 79,000 peptides mapping to 9,289 genes. Translation was confirmed for 985 transcripts with putative novel ORFs in 470 genes.",
+   "kw": [
+    "proteogenomics",
+    "peptides"
+   ],
+   "info": "Examples include new proteoforms of CD163, a myeloid transmembrane protein involved in tissue regeneration and inflammation, and CD1C, which presents antigen to T cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - mass spectrometry validation",
+   "q": "How many peptides were isoform-specific?",
+   "a": "Only 150 peptides mapped uniquely to a single isoform, partly because proteoforms can differ by only a few amino acids. Based on unique peptides, they identified 35 transcripts as high-confidence new proteoforms of known genes, including CD1C.",
+   "kw": [
+    "unique peptides",
+    "CD1C"
+   ],
+   "info": "Most newly described ORFs were still supported by multiple peptides.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - mass spectrometry validation",
+   "q": "Did any 'lncRNA' genes turn out to make protein?",
+   "a": "Yes. Peptides mapped uniquely to six genes with transcripts annotated as lncRNA, including lncPRESS1, a p53 target that helps maintain pluripotency by preventing differentiation.",
+   "kw": [
+    "lncPRESS1",
+    "lncRNA",
+    "p53"
+   ],
+   "info": "Two unique peptides map to ORF_4863 in a lncPRESS1 transcript. Both the peptide and the transcript are most highly expressed in iPSCs.",
+   "concl": "Some annotated lncRNAs may encode proteins relevant to pluripotency and differentiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative TSS and isoform switching",
+   "q": "What structural change most often distinguishes a new isoform from its reference?",
+   "a": "Changes in the first or last exon. These alone account for 64% of isoforms compared with the most similar Ensembl transcript.",
+   "kw": [
+    "alternative first exon",
+    "isoform switching"
+   ],
+   "info": "Because the methods are 5'-biased and 3' ends are hard to define, they focused on alternative first exons. The graphical abstract gives 79.9% changes in 5' or 3' ends, which differs from the 64% in the text; it is not clear whether the two numbers measure the same thing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative TSS and isoform switching",
+   "q": "Does an alternative 5' exon relate to internal splicing?",
+   "a": "Yes. Use of an alternative 5' exon predicted internal splicing events: for example, 84% of cassette exon inclusions were preceded by an alternative 5' exon.",
+   "kw": [
+    "cassette exon",
+    "5' exon"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative TSS and isoform switching",
+   "q": "How are CAGE tags distributed across cell types and regulatory elements?",
+   "a": "Of 57,747 CAGE tags, about 80% were seen in all three cell types, and progenitors and macrophages were highly concordant. Distal transcribed CREs (potential enhancers) made up about 10% of CAGE tags in SCAFE-predicted CREs, and the distal-to-proximal ratio was similar across cell types.",
+   "kw": [
+    "SCAFE",
+    "CRE",
+    "enhancers"
+   ],
+   "info": "46,607 tags were shared by all three cell types. About 68 to 69% of CAGE tags fell in promoter CREs, 10 to 11% in distal CREs, and 21 to 22% were unannotated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative TSS and isoform switching",
+   "q": "How do TF motifs differ between iPSC and myeloid enhancers and promoters?",
+   "a": "iPSC enhancers were highly plastic: 25 TF binding motifs were unique to them and 20 more were shared with promoters, mostly pluripotency factors such as POU5F1 and SOX. Myeloid enhancers had only 2 unique motifs, while myeloid promoters had 53 unique motifs plus 9 shared with enhancers, including PU.1, SPIB, MEF2D, RUNX and AP-1.",
+   "kw": [
+    "TFBM",
+    "PU.1",
+    "POU5F1"
+   ],
+   "info": "Motifs were called as significantly enriched at q < 0.01. The figure names TCF3 and TCF7 as the 2 unique myeloid enhancer motifs.",
+   "concl": "Enhancer remodelling matters in pluripotent cells, which are primed for differentiation. Committed myeloid cells are instead poised for fast responses at the promoter level, including choosing alternative promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - growth factor isoforms",
+   "q": "Why did they look at growth factors, and how many new isoforms did they find?",
+   "a": "Most predicted ORFs of new myeloid genes looked secreted, and the iMacs resemble reparative yolk-sac tissue-resident macrophages. Among genes with the GO term 'Growth factor' (from QuickGO) they found 62 undescribed growth factor isoforms, 23 of them predominantly myeloid.",
+   "kw": [
+    "growth factors",
+    "QuickGO"
+   ],
+   "info": "The graphical abstract gives 65 novel growth factor isoforms, which does not match the 62 in the text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - growth factor isoforms",
+   "q": "What happens to the protein when myeloid growth factors use an alternative TSS?",
+   "a": "The alternative TSS changes the ORF and affects essential functional domains. The resulting isoforms are generally shorter and lack the positional or binding domains of the canonical propeptides made by stromal cells.",
+   "kw": [
+    "alternative TSS",
+    "N-terminus",
+    "bioavailability"
+   ],
+   "info": "Their prediction is that the myeloid isoforms are more bioavailable because they bypass control mechanisms such as proteolytic release.",
+   "concl": "Myeloid cells may produce more directly available growth factor forms through alternative promoter use."
+  },
+  {
+   "type": "qa",
+   "section": "Results - growth factor isoforms",
+   "q": "Which growth factor examples did they highlight?",
+   "a": "IGF1 class II, a previously reported case; NRG1 class VII, recently described by the same group; and a new TGF-beta1 isoform, tentatively called class II. They also found myeloid alternative-TSS isoforms of pleiotrophin (PTN denovoTx15581).",
+   "kw": [
+    "IGF1",
+    "NRG1",
+    "TGFB1"
+   ],
+   "info": "IGF1 class II is described as using a different signal peptide, giving fast long-range secretion. The TGFB1 class II isoform is predicted to lack the regions for LTBP and ECM-dependent latency, but how it is processed is shown with question marks, so it is unresolved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "Does the iPSC-macrophage model reflect primary myeloid cells?",
+   "a": "Yes. Over 80% of gene-annotated FANTOM5 TSSs expressed at baseline in primary monocytes and macrophages were supported, within 50 bp, by long-read transcripts from the iPSC-macrophage series.",
+   "kw": [
+    "FANTOM5",
+    "validation"
+   ],
+   "info": "FANTOM5 data included LPS-stimulated monocyte-derived macrophages (0 to 48 h time course) and monocytes activated with a panel of stimuli.",
+   "concl": "The iPSC-macrophage model recapitulates the primary cell state."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "How much of the TSS repertoire depends on activation?",
+   "a": "Monocytes and macrophages expressed about 70% of their gene-annotated TSSs in both resting and activated states, while 25 to 28% were specific to the activated state. Activation was a major driver of TSS-level variation.",
+   "kw": [
+    "activation",
+    "promoterome"
+   ],
+   "info": "Activated iPSC-macrophages were not profiled by CFC-seq. Even so, more than 67% of monocyte and 77% of macrophage activation-induced TSSs had long-read support from this data combined with GENCODE v39.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "Does activation increase the use of multiple TSSs per gene?",
+   "a": "Yes. Isoform usage decreases from iPSC to macrophage, but the number of genes using multiple TSSs rises substantially after bacterial or fungal challenge. Resting monocytes had 9,995 genes and 18,056 TSSs, versus 11,283 genes and 24,680 TSSs in activated monocytes.",
+   "kw": [
+    "multi-TSS genes"
+   ],
+   "info": "Multi-TSS inflammatory genes were expressed at higher levels than single-TSS genes (Welch t-test, p < 0.001).",
+   "concl": "Using multiple TSSs may be a way to boost key inflammatory outputs in the acute phase of infection."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "Does the type of stimulus shape TSS use?",
+   "a": "Yes. They analysed primary monocytes after 2 h with ten stimuli, and the TSS profiles formed four groups that match receptor pathways: BC (beta-glucan, C. neoformans), CS (C. albicans, S. pyogenes; TLR2-CLEC4E), LS (LPS, S. typhimurium; TLR4) and ITB (IFNg, IFNg plus TDM, IFNg plus BCG). ITB had the most uniquely induced TSSs, followed by LS and CS.",
+   "kw": [
+    "TLR4",
+    "IFNg",
+    "CLEC4E"
+   ],
+   "info": "Thresholds: adjusted p < 0.05 and minimum log2 fold change of 1. LS downregulated the most unique TSSs, followed by CS and ITB.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "What is the core activation network and how much of it uses multiple TSSs?",
+   "a": "The core is 516 genes upregulated from at least one TSS in at least two response groups. Over 83% of these are expressed from multiple TSSs, including 38 of the 41 TFs in the network.",
+   "kw": [
+    "core response network",
+    "transcription factors"
+   ],
+   "info": "The TSSs of one gene often had different expression patterns.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "Which core TFs are predicted to make several proteoforms?",
+   "a": "Seven core TFs are predicted to make several proteoforms from different start methionines: CREB5, CREM, RELA, TSC22D1, FOSL1, ARID5B and SP110. Other factors, such as HIVEP1, IRF1, NFATC1, NFKB1, STAT1, STAT5A, NR4A1 and NR4A2, use TSSs linked to several GENCODE transcripts, but CAGE alone cannot tell which protein is made.",
+   "kw": [
+    "RELA",
+    "CREM",
+    "proteoforms"
+   ],
+   "info": "The text says 'a further seven factors' but lists eight names.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "How could alternative TSS use in TFs spread through the network?",
+   "a": "iRegulon top-50 target predictions for 11 multi-proteoform TFs showed that 72.8% of the expressed targets use multiple TSSs, and 30 of those targets are TFs themselves.",
+   "kw": [
+    "iRegulon",
+    "gene regulatory network"
+   ],
+   "info": "No iRegulon predictions were available for HIVEP1, SP110, TSC22D1 and CREB5.",
+   "concl": "Alternative TSS use at even a few key genes could greatly expand and fine-tune the innate immune network."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune activation and TSS use",
+   "q": "How do single-TSS and multi-TSS genes differ in function and regulation?",
+   "a": "Single-TSS genes are enriched for housekeeping functions and are driven by a restricted set of housekeeping TFs, including Ronin. Multi-TSS genes are enriched for immune responsiveness and for over 350 motifs from broad TF families (NFkB/REL, STAT, IRF, bZIP).",
+   "kw": [
+    "Ronin",
+    "housekeeping genes",
+    "HOMER"
+   ],
+   "info": "Among core-network TFs with enrichment support, 2 came from single-TSS genes and 30 from multi-TSS genes. Multi-TSS genes covered 40 TF families across 19,365 TSSs from 5,576 genes.",
+   "concl": "Changes in TSS use may drive and shape innate immune responsiveness."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main interpretation of the differentiation results?",
+   "a": "Alternative transcription, mostly from alternative promoters, is a feature of myeloid differentiation. It comes with a shift in TF motif diversity, from being spread equally across enhancers and promoters in iPSCs to being concentrated at promoters in committed myeloid cells.",
+   "kw": [
+    "alternative promoters",
+    "motif diversity"
+   ],
+   "info": "Open questions in the field include 'seed vs soil' and how much macrophage subsets overlap in function.",
+   "concl": "Macrophage plasticity derives from molecular diversity, and alternative promoter and isoform usage are leading mechanisms producing myeloid-specific products."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why may this diversity have been underestimated before?",
+   "a": "Proteomic methods have limited sensitivity, analyses are biased toward whole-cell lysates rather than the secretome, and high sequence overlap prevents isoform-specific antibodies and accurate short-read transcript assembly.",
+   "kw": [
+    "secretome",
+    "short reads"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations and next steps?",
+   "a": "They profiled few cell types with a conservative approach, yet still found 21,219 transcripts and 506 genes not in GENCODE v39. Other studies with relaxed thresholds report an order of magnitude more. New annotations still need validation and functional characterisation.",
+   "kw": [
+    "limitations",
+    "annotation"
+   ],
+   "info": "Activated iPSC-macrophages were not sequenced with CFC-seq. Also, 3' ends could not be defined reliably.",
+   "concl": "Annotation is only a necessary first step toward functional characterisation."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and differentiation",
+   "q": "Which iPSC line was used and how was it maintained?",
+   "a": "PB001.1 (MCRIi001-A) from the Murdoch Children's Research Institute, cultured on growth-factor-reduced Matrigel in Essential 8 medium at 37 C and 5% CO2.",
+   "kw": [
+    "PB001.1",
+    "Essential 8"
+   ],
+   "info": "Cells were passaged at 70 to 80% confluency with 0.5 mM EDTA in PBS, then spun at 350 x g for 5 min.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and differentiation",
+   "q": "How were myeloid progenitors and iMacs generated?",
+   "a": "Embryoid bodies were grown in MAGIC medium on an orbital shaker. From day 11, non-adherent myeloid progenitors were collected from the suspension, and samples from days 11, 13, 15 and 17 were pooled. Macrophages were matured in RPMI-1640 with 10% FBS and 100 ng/mL CSF-1 for 4 to 7 days.",
+   "kw": [
+    "embryoid body",
+    "CSF-1",
+    "MAGIC medium"
+   ],
+   "info": "Progenitors were separated from embryoid bodies by settling. Before proteomics, iMacs were switched to serum-free RPMI one day before collection.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE",
+   "q": "How were replicates and RNA split between CAGE and CFC-seq?",
+   "a": "Three samples per cell type, each with more than 10 ug RNA (RIN 9.6 to 9.9), were split into two 5 ug aliquots. This made two sets of three biological replicate libraries per condition, one per method.",
+   "kw": [
+    "replicates",
+    "RIN"
+   ],
+   "info": "One macrophage sample was a pool of two that reached only 7.6 ug and was split into 3.8 ug aliquots. The text also mentions four replicates per condition being assessed; only three per condition were used.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE",
+   "q": "How was direct cDNA CAGE (dsCAGE) done and filtered?",
+   "a": "RNA was reverse transcribed with random N6+TCT primers and SuperScript III. Caps were biotinylated and pulled down with M-270 streptavidin beads, and non-amplified dual-indexed libraries were sequenced on an Illumina NextSeq2000. Peaks had to exceed 0.25 CPM in all 3 replicates of at least one cell type and were then RLE-normalised.",
+   "kw": [
+    "dsCAGE",
+    "NextSeq2000",
+    "RLE"
+   ],
+   "info": "Peaks were annotated to GENCODE v39 genes within 500 bp, and peaks on scaffolds or alternative chromosomes were removed. The final set was 57,747 CAGE peaks in 17,701 genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CFC-seq",
+   "q": "How was the CFC-seq library made and sequenced?",
+   "a": "It is a modified CapTrap-seq. RNA was first poly(A)-tailed with E. coli Poly(A) Polymerase so that all capped RNAs are captured, whatever their poly-A status. First-strand synthesis used SuperScript IV plus Induro RT with an oligo-dT16VN primer carrying an ONT native barcode (NB07). After cap-trapping and 5' linker ligation, libraries were amplified with 10 cycles of LongAmp PCR and sequenced with ONT SQK-LSK110 on R9.4.1 flow cells on a MinION Mk1C.",
+   "kw": [
+    "CapTrap-seq",
+    "Oxford Nanopore",
+    "cap-trapping"
+   ],
+   "info": "No spike-ins. The 5' linker contains a T7 promoter. 200 fmol per library, each on its own flow cell.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - isoform identification and filtering",
+   "q": "How were isoforms called with Bambu?",
+   "a": "Reads were basecalled with Dorado (dna_r9.4.1_e8_sup@v3.3) and filtered at mean qscore 10 or higher and MAPQ 60. A two-pass Bambu v3.2.5 approach followed: a de novo run without annotation, comparison to GENCODE v39 with GffCompare v0.12.6, then a second Bambu run on the merged hybrid annotation.",
+   "kw": [
+    "Bambu",
+    "GffCompare",
+    "Dorado"
+   ],
+   "info": "Novel isoforms excluded GffCompare class codes '=' and 'c', and GENCODE won where they overlapped. Antisense Bambu genes were renamed with an -AS suffix. 27 transcripts in 8 genes wrongly called novel antisense were corrected. 31 gene names (rRNAs, snoRNAs, U RNAs and others; 1,198 gene IDs) were removed.",
+   "concl": "The de novo first pass avoids the reference forcing reads onto known isoforms."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - isoform identification and filtering",
+   "q": "How were long-read isoforms filtered with CAGE support?",
+   "a": "With BEDtools v2.26.0, each isoform was matched to the nearest of the ten CAGE tags overlapping or upstream of its start, and kept if that tag was within 1 kb. Transcripts also needed a summed CPM of at least 0.1 in at least one cell type.",
+   "kw": [
+    "BEDtools",
+    "CAGE support"
+   ],
+   "info": "Several isoforms could share the same CAGE tag. The result is the transcript master table used throughout.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - isoform identification and filtering",
+   "q": "How were novel isoform types classified?",
+   "a": "Each novel isoform was compared with the best-matching GENCODE reference transcript, chosen for exon structure similarity. Changes were classified as novel 5' or 3' flanking exons, 5' UTR extension (over 200 bp) or shortening (over 100 bp), cassette exon inclusion, exon skipping, retained intron, or extended or truncated 5' and 3' junctions.",
+   "kw": [
+    "isoform classification",
+    "UTR"
+   ],
+   "info": "3' UTR changes were not analysed because transcript ends could not be determined.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - proteogenomics",
+   "q": "How was the mass spectrometry and proteogenomic search done?",
+   "a": "Cells were lysed in 4% sodium deoxycholate, and proteins were digested with trypsin plus LysC and run in DIA mode on an Orbitrap Eclipse (90 min gradient, 13.7 m/z windows). GenomeProt built a custom ORF database from the Bambu GTF using ORFik and UniProt/OpenProt cross-matching. Spectra were searched in FragPipe (DIA-NN workflow) at 1% FDR, and peptides were mapped back to spliced genomic coordinates.",
+   "kw": [
+    "GenomeProt",
+    "FragPipe",
+    "DIA"
+   ],
+   "info": "MS1 range 350 to 1,400 m/z at 120,000 resolution. HCD MS/MS at 30,000 resolution, NCE 30.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - FANTOM5 reanalysis",
+   "q": "How were the FANTOM5 activation data analysed?",
+   "a": "They used hg38 RLE-normalised FANTOM5 CAGE peaks: 209,278 TSSs after removing those mapped to multiple genes, and a myeloid subset of 83,096 TSSs in 16,037 genes. Differential TSS expression versus PBS-treated monocytes used R v4.3.1 and limma v3.56.2 (voom plus treat, minimum log2FC 1, adjusted p < 0.05).",
+   "kw": [
+    "limma",
+    "voom",
+    "FANTOM5"
+   ],
+   "info": "Genes with one detected TSS were called single-TSS and those with more were multi-TSS. 'Abundant' meant above 2.43 TPM in all samples. Networks were built in Cytoscape v3.10.3 with ClueGO and Human Protein Atlas locations, pathway enrichment used InnateDB (BH adjusted p < 0.05), and CREs were called with SCAFE.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - growth factor isoforms",
+   "text": "Are the shorter myeloid growth factor isoforms (TGFB1 class II, NRG1 class VII) actually secreted and more bioavailable? This is only predicted; how TGFB1 class II is processed is unresolved."
+  },
+  {
+   "type": "note",
+   "section": "Results - immune activation and TSS use",
+   "text": "Activated iPSC-macrophages were not profiled by long reads, so for activation-induced TSSs it is unknown which transcript or proteoform is actually made. Worth checking whether activation-specific TSSs in TFs (RELA, CREM, NFKB1) give functionally different proteins."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Numbers are inconsistent across the preprint (CFC-seq genes 23,625 vs 23,635; growth factor isoforms 62 vs 65; 64% vs 79.9% end changes; 'over 200' vs 506 new genes). Check the supplementary tables before citing exact values."
+  }
+ ]
+}

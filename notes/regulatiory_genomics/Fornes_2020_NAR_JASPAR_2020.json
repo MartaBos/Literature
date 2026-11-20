@@ -1,0 +1,367 @@
+{
+ "id": "Fornes_2020",
+ "title": "JASPAR 2020: update of the open-access database of transcription factor binding profiles",
+ "link": "https://doi.org/10.1093/nar/gkz1001",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Fornes_2020_NAR_JASPAR_2020.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is JASPAR?",
+   "a": "An open-access database of curated, non-redundant transcription factor (TF) binding profiles. The profiles are stored as position frequency matrices (PFMs) for TFs from multiple species in six taxonomic groups.",
+   "kw": [
+    "JASPAR",
+    "PFM"
+   ],
+   "info": "Website: jaspar.genereg.net. JASPAR 2020 is the 8th release.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main new things in JASPAR 2020?",
+   "a": "The CORE collection gained 245 new PFMs and 156 updated PFMs, an 18% expansion over the previous release. There is also a new collection of unvalidated profiles with a community curation web form, and a Q&A forum. Genomic tracks, the inference tool and the profile similarity clusters were updated.",
+   "kw": [
+    "CORE collection",
+    "unvalidated collection"
+   ],
+   "info": "The 245 new PFMs were 169 vertebrate, 42 plant, 17 nematode, 10 insect and 7 fungal. The 156 updated PFMs were 125 vertebrate, 28 plant and 3 insect.",
+   "concl": "A major expansion of CORE, plus a new route for the community to help validate profiles."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How can the JASPAR data be accessed?",
+   "a": "Through the JASPAR website, its RESTful API, and the JASPAR2020 R/Bioconductor package.",
+   "kw": [
+    "RESTful API",
+    "JASPAR2020",
+    "Bioconductor"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are transcription factors and how are they classified?",
+   "a": "TFs are proteins that regulate gene expression at the transcriptional level. They bind DNA in a sequence-specific way through their DNA-binding domains (DBDs), and the DBDs are used to group TFs into structural families.",
+   "kw": [
+    "transcription factor",
+    "DBD"
+   ],
+   "info": "JASPAR follows the TFClass classification for DBD class and family.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a TFBS and what does it typically look like?",
+   "a": "A TF binding site (TFBS) is the genomic location where a TF binds DNA. TFBSs are typically short (6 to 20 bp) and show sequence variability.",
+   "kw": [
+    "TFBS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why do we need computational models of TF binding specificity?",
+   "a": "It is not possible to identify every TFBS experimentally for every cell type and condition, so computational models are used to predict TFBSs in the genome.",
+   "kw": [
+    "TFBS prediction"
+   ],
+   "info": "These models can predict where TFs bind, which TFs have enriched TFBSs in a set of sequences, and how mutations affect TF binding. They aim to capture both nucleotide readout and DNA shape readout.",
+   "concl": "Genome-wide identification of TFBSs is key to understanding transcriptional regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a position frequency matrix (PFM)?",
+   "a": "A TF binding profile that models a TF's DNA-binding specificity by summarizing the frequency of each nucleotide at each position, based on observed TF-DNA interactions.",
+   "kw": [
+    "PFM"
+   ],
+   "info": "PFMs are one of the simplest and still most commonly used models. More complex models, for example hidden Markov models or deep learning, are becoming more common.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where does the TF-DNA interaction data for building PFMs come from?",
+   "a": "From in vitro assays that measure TF binding affinity to DNA sequences, such as SELEX and protein binding microarrays. It also comes from in vivo ChIP-based experiments such as ChIP-seq, ChIP-exo and ChIP-nexus, where over-represented sequences are found in regions bound by the ChIP'ed TF.",
+   "kw": [
+    "SELEX",
+    "PBM",
+    "ChIP-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which other databases of TF binding profiles exist besides JASPAR?",
+   "a": "CIS-BP and HOCOMOCO, among others. Many were created as high-throughput sequencing greatly increased the number of PFMs from in vivo and in vitro experiments.",
+   "kw": [
+    "CIS-BP",
+    "HOCOMOCO"
+   ],
+   "info": "JASPAR has been maintained for over 15 years, since 2004.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which tools use JASPAR profiles?",
+   "a": "Many gene regulation tools, for example TFBSshape, RSAT, MEME and i-cisTarget.",
+   "kw": [
+    "RSAT",
+    "MEME",
+    "i-cisTarget"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What criteria must a profile meet to be in the JASPAR CORE collection?",
+   "a": "It must be (i) manually curated, meaning it is supported by orthogonal evidence from the literature; (ii) non-redundant, meaning one profile per TF; (iii) linked to a TF from one of six taxa; and (iv) freely available.",
+   "kw": [
+    "CORE collection",
+    "manual curation"
+   ],
+   "info": "The six taxa are vertebrates, nematodes, insects, plants, fungi and urochordata. TFs with multiple DNA-binding sequence preferences are the exception to the one-profile-per-TF rule.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "How much did each taxon grow in the CORE collection?",
+   "a": "Vertebrates gained 169 profiles (29% expansion), plants 42 (9%), nematodes 17 (65%), insects 10 (8%) and fungi 7 (4%). Urochordata gained none.",
+   "kw": [
+    "CORE collection"
+   ],
+   "info": "Non-redundant PFMs in JASPAR 2018: vertebrates 579, plants 489, insects 133, nematodes 26, fungi 176, urochordata 1, for a total of 1404.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "Which experiment types and data sources were the new PFMs built from?",
+   "a": "From HT-SELEX, PBMs, ChIP-seq and DAP-seq experiments. The data came from CistromeDB, ReMap, GTRD, ChIP-atlas and ModERN.",
+   "kw": [
+    "HT-SELEX",
+    "DAP-seq",
+    "ReMap"
+   ],
+   "info": "The details of profile building are in the Supplementary Text, which is not part of the main paper. The main text does not give the methods, software versions or parameters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "What evidence do new CORE profiles need?",
+   "a": "Each new profile was manually curated to have an orthogonal supporting reference from the literature. That reference is given in the profile metadata.",
+   "kw": [
+    "orthogonal evidence"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "What metadata does each profile include?",
+   "a": "Where possible: the supporting literature reference, the TF DBD class and family (following TFClass), the TF UniProt ID, and links to the TFBSshape, ReMap and UniBind databases.",
+   "kw": [
+    "TFClass",
+    "UniProt",
+    "UniBind"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "Which profiles were removed from CORE, and why?",
+   "a": "The profiles for ID2, ID4 and TRB2 were removed because these proteins are not TFs.",
+   "kw": [
+    "ID2",
+    "ID4",
+    "TRB2"
+   ],
+   "info": "Table 1 lists 3 removed profiles: 2 vertebrate and 1 plant.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "How many profiles are in JASPAR 2020 CORE in total?",
+   "a": "1646 non-redundant PFMs: 746 vertebrate, 530 plant, 183 fungal, 143 insect, 43 nematode and 1 urochordate. Counting all versions, there are 1964 PFMs.",
+   "kw": [
+    "CORE collection"
+   ],
+   "info": "Counts of all versions per taxon: vertebrates 1011, plants 572, insects 153, nematodes 43, fungi 184, urochordata 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "q": "What are TFFMs and how many were added?",
+   "a": "Transcription factor flexible models (TFFMs) are hidden Markov-based models that capture dinucleotide dependencies in TF-DNA interactions. New TFFMs were added for 217 TFs and updated for 20 vertebrate TFs, a 50% increase in the number of TFFMs available.",
+   "kw": [
+    "TFFM",
+    "hidden Markov model"
+   ],
+   "info": "The 217 new TFFMs were 136 vertebrate, 38 plant, 21 insect, 17 nematode and 5 fungal.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Unvalidated collection",
+   "q": "What is the new unvalidated collection?",
+   "a": "A new collection of 337 high-quality TF binding profiles that passed multiple quality controls but for which curators found no independent supporting evidence in the literature.",
+   "kw": [
+    "unvalidated collection"
+   ],
+   "info": "The quality controls are described in the Supplementary Text. The authors recommend using this collection with caution.",
+   "concl": "Good-quality profiles without literature support are kept separate from CORE rather than discarded."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Unvalidated collection",
+   "q": "What example of an unvalidated profile do they show?",
+   "a": "ZNF793 (UN0232.1, a C2H2 zinc finger factor from human). It is a high-quality PFM from ChIP-seq, built from thousands of potential TFBSs that are enriched around ChIP-seq peak summits, but curators found no orthogonal evidence for it.",
+   "kw": [
+    "ZNF793",
+    "ChIP-seq centrality"
+   ],
+   "info": "The profile page reports ChIP-seq centrality as log(P-value) = -5775.96, with motif occurrences peaking at the peak centre.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Unvalidated collection",
+   "q": "How can the community help curate unvalidated profiles?",
+   "a": "Each unvalidated profile has its own submission form (a 'Community curation' box) where users can send supporting evidence from their own work or others'. A Q&A forum (Google Groups) was also set up for questions, suggestions and error reports.",
+   "kw": [
+    "community curation",
+    "Q&A forum"
+   ],
+   "info": "Significant contributions are acknowledged in the next JASPAR release manuscript.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Clustered profiles, genomic tracks and inference tool",
+   "q": "What does the profile inference tool do, and how was it improved?",
+   "a": "It predicts which TF binding profiles are likely recognized by TFs that are not in JASPAR CORE. It was improved with the authors' own implementation of a recently described similarity regression method.",
+   "kw": [
+    "profile inference",
+    "similarity regression"
+   ],
+   "info": "Details are in the Supplementary Text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Clustered profiles, genomic tracks and inference tool",
+   "q": "Which genomes have JASPAR TFBS prediction tracks?",
+   "a": "Human (hg19, hg38), mouse (mm10), zebrafish (danRer11), Drosophila melanogaster (dm6), Caenorhabditis elegans (ce10), Arabidopsis thaliana (araTha1) and baker's yeast (sacCer3). They are available through a UCSC Genome Browser data hub.",
+   "kw": [
+    "genomic tracks",
+    "UCSC data hub",
+    "danRer11"
+   ],
+   "info": "The introduction says tracks are available for 8 genomes, and this section says 7 organisms. Both are consistent, because human has two assemblies. Zebrafish danRer11 is directly useful for zebrafish regulatory work.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - Clustered profiles, genomic tracks and inference tool",
+   "q": "How were the profile similarity clusters made?",
+   "a": "Hierarchical clusters of the available TF binding profiles were built for each taxon with RSAT matrix-clustering. Users can browse the CORE and unvalidated collections through the trees and click a TF name to go to its profile.",
+   "kw": [
+    "RSAT matrix-clustering",
+    "hierarchical clustering"
+   ],
+   "info": "No RSAT version or clustering parameters are given in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why was the unvalidated collection created?",
+   "a": "The authors processed more than 18,000 ChIP-seq datasets for this release. Many of the high-quality profiles they obtained had no orthogonal supporting evidence.",
+   "kw": [
+    "ChIP-seq"
+   ],
+   "info": "They expect future experiments and publications to supply evidence so that some of these profiles can move into CORE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How well does JASPAR CORE cover human TFs?",
+   "a": "637 of the 746 vertebrate profiles belong to human TFs with known DNA-binding profiles. That is 58% of the 1,107 such TFs reported by Lambert et al. The original JASPAR had only 81 profiles, about 7% coverage of human TFs.",
+   "kw": [
+    "human TFs",
+    "coverage"
+   ],
+   "info": "",
+   "concl": "Targeted experiments to find the binding preferences of the remaining TFs will be important."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why does JASPAR not include computationally inferred profiles in CORE?",
+   "a": "The JASPAR approach is conservative: CORE only includes profiles supported by at least two experiments in the literature, to keep the data reliable. Computational inference can fill gaps, especially for non-model organisms, but it is offered separately (the inference tool).",
+   "kw": [
+    "conservative curation"
+   ],
+   "info": "Relevant to non-model fish such as Astyanax: CORE has no cavefish-specific profiles, so you would use the inference tool or orthologous vertebrate profiles. This is my inference, not a statement in the paper.",
+   "concl": "JASPAR puts reliability (manual curation, non-redundancy) ahead of completeness."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What newer kinds of profile might JASPAR add in the future?",
+   "a": "Profiles with expanded alphabets that represent methylated bases, profiles that model binding energy, and profiles derived from deep learning importance scores. They will be considered depending on how popular they become.",
+   "kw": [
+    "methylation",
+    "binding energy",
+    "deep learning"
+   ],
+   "info": "PFMs have dominated gene regulation for decades.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations of JASPAR 2020 does the paper admit?",
+   "a": "CORE covers only 58% of human TFs with known DNA-binding profiles. Many high-quality profiles have no orthogonal validation, so the unvalidated collection should be used with caution. PFMs are a simple model compared with newer representations.",
+   "kw": [],
+   "info": "The main text gives no methods detail (profile building, quality controls, track generation). That is all in the Supplementary Text.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - Expansion and update of the CORE collection",
+   "text": "Read the Supplementary Text for the actual profile-building pipeline, the quality control thresholds for the unvalidated collection, and how the genomic tracks were generated (scanning tool and score threshold)."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "How well do JASPAR vertebrate profiles, mostly from human, transfer to non-model fish like Astyanax? Is the similarity-regression inference tool reliable for teleost TF paralogs?"
+  }
+ ]
+}

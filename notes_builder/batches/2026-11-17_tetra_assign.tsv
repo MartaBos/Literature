@@ -1,0 +1,13 @@
+# Mexican tetra papers from Marta's Drive folder. Files/subfolders marked "D" (Lal_2025_D, both subfolders) were shared by Damir (2026; confirmed by Marta), the rest are her own.
+# Note: Warren_2026.pdf is Roback et al. 2026 Genome Research (Warren is a co-author).
+# The two subfolders ("gubitak funkcije oka D", "publikacije genoma meksicke tetre D") were missed by the first
+# version of 14_fetch_drive_folder.py (no recursion); added after the fix. Silva_2023 metadata DOI was wrong (page 1 used).
+source	folder	subcategory	filename	doi	tags
+Gross_2013.pdf	amexicanus	Genetics of cave traits	Gross_2013_Heredity_albinism_cavefish_populations.pdf	10.1038/hdy.2013.26	
+Krishnan_2022.pdf	amexicanus	Gene regulation & metabolism	Krishnan_2022_NatGenet_cis_regulatory_metabolic_adaptation.pdf	10.1038/s41588-022-01049-4	
+Lal_2025_D.pdf	amexicanus	Genomes & structural variation	Lal_2025_GBE_conserved_noncoding_element_loss.pdf	10.1093/gbe/evaf211	
+Warren_2026.pdf	amexicanus	Genomes & structural variation	Roback_2026_GenomeRes_pangenome_deletions_cave_traits.pdf	10.1101/gr.281719.125	
+gubitak funkcije oka D/Gore_2018.pdf	amexicanus	Eye loss	Gore_2018_NatEcolEvol_epigenetic_eye_degeneration.pdf	10.1038/s41559-018-0569-4	
+gubitak funkcije oka D/Silva_2023.pdf	amexicanus	Eye loss	daSilva_2023_SciRep_eye_lncRNAs.pdf	10.1038/s41598-023-34198-5	
+publikacije genoma meksicke tetre D/McGaugh_2014.pdf	amexicanus	Genomes & structural variation	McGaugh_2014_NatCommun_cavefish_genome.pdf	10.1038/ncomms6307	
+publikacije genoma meksicke tetre D/Warren_2021.pdf	amexicanus	Genomes & structural variation	Warren_2021_NatCommun_surface_fish_genome.pdf	10.1038/s41467-021-21733-z	

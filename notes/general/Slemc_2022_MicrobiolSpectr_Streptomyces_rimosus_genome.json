@@ -1,0 +1,518 @@
+{
+ "id": "Slemc_2022",
+ "title": "Reference-Grade Genome and Large Linear Plasmid of Streptomyces rimosus: Pushing the Limits of Nanopore Sequencing",
+ "link": "https://doi.org/10.1128/spectrum.02434-21",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Slemc_2022_MicrobiolSpectr_Streptomyces_rimosus_genome.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is Streptomyces rimosus ATCC 10970 and why does it matter?",
+   "a": "It is the parental strain of the industrial strains used to produce the antibiotic oxytetracycline (OTC) commercially.",
+   "kw": [
+    "Streptomyces rimosus",
+    "oxytetracycline"
+   ],
+   "info": "Also known as NRRL 2234, WT5260 and R7. It is a Gram-positive, aerobic, filamentous actinobacterium. OTC was the first broad-spectrum antibiotic and is also the intermediate for making doxycycline semisynthetically.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Why are Streptomyces genomes hard to assemble?",
+   "a": "They have a large linear chromosome with many long repeat regions, high GC content, rearrangements and extrachromosomal elements such as giant linear plasmids (GLPs).",
+   "kw": [
+    "giant linear plasmid",
+    "repeats",
+    "GC content"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What was the overall approach of the paper?",
+   "a": "Hybrid sequencing with short reads (Illumina) and long reads (PacBio), plus whole-genome restriction analysis by pulsed-field gel electrophoresis (PFGE). PFGE was also used to isolate GLP DNA away from the chromosome, and the GLP was then sequenced with Nanopore reads alone.",
+   "kw": [
+    "PFGE",
+    "Nanopore",
+    "hybrid assembly"
+   ],
+   "info": "They sequenced the GLPs of three strains: the parent ATCC 10970 and two semi-industrial progenitor strains, R6-500 and M4018.",
+   "concl": "Rearrangements on the GLPs came with transposase genes, which suggests transposases drive plasmid and genome plasticity in S. rimosus."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What genome sequences of S. rimosus existed before this study?",
+   "a": "The first ATCC 10970 genome came out in 2013 (Roche 454 shotgun), followed by the industrial strain R6. Over 38 S. rimosus genome projects are now in GenBank, but most are low quality and fragmented into several hundred contigs.",
+   "kw": [
+    "GenBank",
+    "draft genomes"
+   ],
+   "info": "The authors' earlier PacBio plus Illumina assembly is GCF_006229535.1. KAIST (GCF_008704655.1) and the University of Strathclyde (GCF_000331185.2) also produced genomes of this strain with similar approaches.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does a typical Streptomyces genome look like?",
+   "a": "It is mostly linear, can exceed 10 Mb and often has more than 70% GC. A highly syntenic central region is flanked by variable chromosomal arms.",
+   "kw": [
+    "linear chromosome",
+    "chromosomal arms"
+   ],
+   "info": "These genomes are known for plasticity and extensive DNA rearrangements. Repetitive DNA often sits in the terminal parts of the chromosome, next to simple telomeric structures.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a giant linear plasmid (GLP)?",
+   "a": "A linear plasmid in Streptomyces that can reach more than 1 Mb. OTC-producing S. rimosus strains carry a single GLP of about 300 kb.",
+   "kw": [
+    "GLP"
+   ],
+   "info": "GLP size differs between strains. Examples: pSRM of about 43 kb in RCC 133, about 255 kb in strain NCL, 370 kb in the R6-501 derivatives MBVI and MBV14. Pfizer's strain also carries the sex-factor plasmid SRP1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about GLPs in the Pliva R6 strains?",
+   "a": "R6-500 carries pPZG101 (387 kb), which has long inverted repeats of at least 95 kb. Its ancestor R6-65 carries the smaller pPZG102 (310 kb) without these repeats, so the repeats must have arisen during strain development.",
+   "kw": [
+    "pPZG101",
+    "inverted repeats"
+   ],
+   "info": "Among 20 morphological variants and 17 auxotrophic mutants of R6, two lost the plasmid completely and four integrated parts of it into the chromosome. One OTC-overproducing strain had a plasmid of about 1 Mb (pPZG103) because a chromosomal region containing the OTC BGC had integrated into it.",
+   "concl": "There are strong plasmid-genome interactions, and plasmid instability correlates with mutant phenotypes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and validation",
+   "q": "How much sequencing data did they get for ATCC 10970?",
+   "a": "PacBio gave 155,548 reads (35 to 44,649 nt, average GC 69%, many reads of 1,000 to 2,999 bp). Illumina gave 186,867,024 short reads, 94.16% of them at Q20 or above and 86.78% at Q30 or above.",
+   "kw": [
+    "PacBio",
+    "Illumina"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and validation",
+   "q": "What did the final ATCC 10970 assembly look like?",
+   "a": "One complete linear chromosome of 9,365,899 bp (72.0% GC, 8,085 CDS, 68 tRNAs, 21 rRNAs) and one linear plasmid of 292,604 bp (69.6% GC, 282 CDS). The total is 9,658,503 bp at 71.9% GC.",
+   "kw": [
+    "genome assembly"
+   ],
+   "info": "The best result came from combining Hybrid SPAdes and Canu.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and validation",
+   "q": "How did PFGE validate the assembly?",
+   "a": "In silico DraI digestion predicted 14 fragments, and all were seen on the gel except three under 30 kb that the run conditions could not resolve. All 17 fragments predicted for AseI were detected on the gel.",
+   "kw": [
+    "PFGE",
+    "DraI",
+    "AseI"
+   ],
+   "info": "This agreed with the PFGE analysis by Algora-Gallardo et al.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and validation",
+   "q": "How complete was the assembly by BUSCO?",
+   "a": "99.7%, the highest of all public S. rimosus assemblies, matched by GCF_000331185.2. Of 35 S. rimosus genomes, 20 were above 99%, but only four had complete genome status in NCBI.",
+   "kw": [
+    "BUSCO"
+   ],
+   "info": "The Discussion says a third assembly (GCF_000717285.1) also reached 99.7%, which the Results section does not mention.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and validation",
+   "q": "How did their assembly compare with the other ATCC 10970 assemblies?",
+   "a": "All three ATCC 10970 assemblies aligned globally along the whole chromosome, and theirs was the largest. Compared with GCF_000331185.2, theirs had 14.6 kb more, including a 10-kb fragment with 13 CDS and a reversed 6.7-kb section with TnsA-like and Mn transposases.",
+   "kw": [
+    "dot plot",
+    "transposase"
+   ],
+   "info": "The 10-kb fragment (4,424,878 to 4,434,878 bp) encodes a GntR family regulator, conjugal transfer protein TraS, mobile element transfer, a replication initiation protein and a site-specific integrase. GCF_008704655.1 lacks the plasmid entirely. The R6-500 assembly (GCF_000707925.2) showed many rearrangements and inversions relative to ATCC 10970.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - genome assembly and validation",
+   "q": "What did their assembly miss compared with GCF_000331185.2?",
+   "a": "The complete chromosome telomeres: 324 bp at the right end and 1,771 bp at the left. On the plasmid, the right arm had a complete telomere but the left arm was missing a 20-bp terminal fragment.",
+   "kw": [
+    "telomeres"
+   ],
+   "info": "The Discussion gives the missing plasmid telomere as 22 bp, not 20 bp. The paper is internally inconsistent here.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GLP comparison with public genomes",
+   "q": "How did other public assemblies cover the GLP?",
+   "a": "Only GCF_000331185.2 had a plasmid sequence comparable to theirs. Several contig-level assemblies covered the whole plasmid but broke at certain points, and every one of those junctions contained a transposase gene.",
+   "kw": [
+    "transposase",
+    "contig breaks"
+   ],
+   "info": "The example shown is GCF_000716745.1 (strain NRRL B-8076), with junctions near 166.8, 196.0, 241.1 and 260.8 kb of their plasmid. The Discussion says 19 of 33 assemblies had a similar distribution of aligned contigs.",
+   "concl": "Transposases are both rearrangement hotspots and the places where assemblies break."
+  },
+  {
+   "type": "qa",
+   "section": "Results - PFGE plasmid isolation and Nanopore sequencing",
+   "q": "How did they isolate the GLP for sequencing?",
+   "a": "Total DNA was embedded in low-melting-point agarose blocks and run on PFGE without restriction digestion. This separated the plasmid band from chromosomal DNA, and the band was cut out and extracted.",
+   "kw": [
+    "PFGE",
+    "plasmid isolation"
+   ],
+   "info": "The extracted DNA was very dilute (below 5 ng/µL) but still enough for Nanopore sequencing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PFGE plasmid isolation and Nanopore sequencing",
+   "q": "How did plasmid sizes compare on the PFGE gel?",
+   "a": "The ATCC 10970 and M4018 plasmids looked about the same size. The R6-500 plasmid was about 48 kb larger, judged against a lambda PFG ladder.",
+   "kw": [
+    "lambda PFG ladder"
+   ],
+   "info": "Earlier PFGE work estimated 312 kb for both the ATCC 10970 and M4018 plasmids. The assemblies here give 292.6 kb and 299.3 kb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PFGE plasmid isolation and Nanopore sequencing",
+   "q": "What did the Canu assembly of the Nanopore plasmid reads give?",
+   "a": "One large contig per strain: 299,081 bp for M4018 (39.35x), 291,520 bp for ATCC 10970 (53.11x) and 189,364 bp for R6-500 (86.45x). A few small low-coverage contigs (7, 14 and 3) were BLASTn-identified as chromosomal debris and removed.",
+   "kw": [
+    "Canu",
+    "Nanopore"
+   ],
+   "info": "Longest reads were 25,954 bp (M4018), 39,848 bp (ATCC 10970) and 253,123 bp (R6-500). Lambda control reads were removed before assembly.",
+   "concl": "The ATCC 10970 Nanopore plasmid was identical to the PacBio plus Illumina hybrid plasmid, which validates the hybrid assembly."
+  },
+  {
+   "type": "qa",
+   "section": "Results - PFGE plasmid isolation and Nanopore sequencing",
+   "q": "Why was the R6-500 plasmid contig so short (189.4 kb)?",
+   "a": "The assemblers could not separate the two copies of a long inverted repeat. The proposed 167-kb repeat had twice the read coverage of the central region (about 6000x versus about 3000x), so the plasmid is predicted to be about 356 kb with a central region of over 20 kb.",
+   "kw": [
+    "inverted repeat",
+    "coverage"
+   ],
+   "info": "Their PFGE estimate was about 340 kb and an earlier study said 387 kb. The central region is mostly scattered duplications. Its only non-duplicated CDS is an IS5 family transposase (R6500_083610) at 173.6 kb. Table 3 gives the R6 length as 189,563 bp, slightly different from the 189,364-bp contig in Table 2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - comparison of linear plasmids",
+   "q": "What are the general features of the three GLPs?",
+   "a": "WT5260 (ATCC 10970): 292,604 bp, 282 CDS, 21 transposases, 148 hypothetical proteins. M4018: 299,299 bp, 291 CDS, 23 transposases. R6: 189,563 bp assembled (about 356 kb in total), 202 CDS (386 counting the inverted repeat), 14 transposases (24).",
+   "kw": [
+    "plasmid features"
+   ],
+   "info": "GC content is about 69.5 to 69.8% for all three. More than half of the ATCC 10970 plasmid CDS are hypothetical proteins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - comparison of linear plasmids",
+   "q": "Does the GLP carry metabolic genes?",
+   "a": "No. None of the ATCC 10970 plasmid genes matched predicted metabolism-related enzymes in an unpublished genome-scale metabolic model of S. rimosus.",
+   "kw": [
+    "genome-scale metabolic model"
+   ],
+   "info": "",
+   "concl": "GLPs do not seem to carry homologues of essential genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - comparison of linear plasmids",
+   "q": "How does the R6-500 plasmid differ from the parent plasmid?",
+   "a": "The left arm (positions 1 to 168,654) is nearly identical to the first half of the ATCC 10970 plasmid, with only 14 mutations: none changed a protein and 9 disrupted a reading frame. The 20,910-bp central region shows rearrangements and inversions and contains 24 CDS, including 7 transposase genes (two of them duplicates).",
+   "kw": [
+    "R6-500",
+    "rearrangements"
+   ],
+   "info": "The conserved left arm ends in a transposase-dense region of the ATCC 10970 plasmid (160 to 200 kb) that holds 11 of 23 plasmid transposase genes. Table 3 lists 21 transposases for the ATCC 10970 plasmid, so the count of 23 is unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - comparison of linear plasmids",
+   "q": "Why is the M4018 plasmid larger than the parent plasmid?",
+   "a": "It keeps all ATCC 10970 plasmid CDS and has an extra 6,708-bp chromosomal fragment inserted at position 204,853. The fragment has 9 CDS, including a Mu transposase domain.",
+   "kw": [
+    "Mu transposase",
+    "M4018"
+   ],
+   "info": "The ATCC 10970 chromosome has two copies of this region, at 4,680,190 to 4,686,883 and at 6,119,904 to 6,113,211 bp. progressiveMauve alignment found SNPs in M4018: six change the protein and two disrupt a reading frame.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - biosynthetic gene clusters",
+   "q": "How many biosynthetic gene clusters (BGCs) does ATCC 10970 have, and where are they?",
+   "a": "antiSMASH 6.0 plus manual curation found 46 putative BGCs on the chromosome and 2 on the plasmid. They make up about 14% of the genome and are enriched on both chromosome arms, which is typical of actinomycetes.",
+   "kw": [
+    "antiSMASH",
+    "BGC"
+   ],
+   "info": "The M4018 plasmid also has two BGCs. The R6-500 plasmid has only one, present in two copies because of the inverted repeat.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - biosynthetic gene clusters",
+   "q": "Which known metabolites match BGCs in ATCC 10970?",
+   "a": "Oxytetracycline (BGC 9, type II PKS, 100% similarity), rimocidin (BGC 6, type I PKS, called nystatin A1 by antiSMASH), rimosamide (BGC 14), tyrobetaine (BGC 23) and desferrioxamine (BGC 31). New compared with earlier work: geosmin (BGC 29) and ectoine (BGC 30), both with 100% similarity.",
+   "kw": [
+    "oxytetracycline",
+    "geosmin",
+    "ectoine"
+   ],
+   "info": "BGCs fall into three groups: products already identified; very high similarity to clusters with known products in other actinomycetes; little or no homology to known BGCs. The phrase 'All 48 putative metabolites (2)' in the text is unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - biosynthetic gene clusters",
+   "q": "Which metabolites did they actually detect in ATCC 10970 extracts?",
+   "a": "Major: oxytetracycline, rimocidin and CE108. Minor: rimosamides A to D, ectoine and hydroxyectoine, chymostatins A to C, tyrobetaines, pseudouridimycin and guanipiperazines A and B.",
+   "kw": [
+    "LC-MS",
+    "LC-UV-HRMS"
+   ],
+   "info": "The text links chymostatins to BGC 18, but Table 4 puts them under BGC 35 (deimino-antipain, 66%). The text also lists dichlorotyrobetaine, while Table 4 lists chlorotyrobetaine-2. Both look like internal inconsistencies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - biosynthetic gene clusters",
+   "q": "What was odd about pseudouridimycin production?",
+   "a": "BGC 44 is only 68% similar to the known pseudouridimycin (PUM) cluster and lacks homologues of pumA, pumB, pumC and pumD. PUM was still detected.",
+   "kw": [
+    "pseudouridimycin",
+    "pum genes"
+   ],
+   "info": "PumA has unknown function, PumB is a putative exporter, PumC is a predicted DeoR regulator and PumD is a putative HAD hydrolase thought to act early in biosynthesis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - biosynthetic gene clusters",
+   "q": "How did they find the guanipiperazine cluster?",
+   "a": "They purified guanipiperazines A and B and solved the structures by 1D and 2D NMR. A BLAST search with the noncanonical NRPS LnaA then found a 6,254-bp region (90,930 to 97,183), called rms, that antiSMASH had missed.",
+   "kw": [
+    "guanipiperazine",
+    "rms",
+    "LnaA"
+   ],
+   "info": "rms (BGC 1) is nearly identical to the gup cluster. It encodes a noncanonical NRPS, two P450s and an F420H2-dependent reductase. Purification used SP207SS column chromatography and preparative reversed-phase HPLC.",
+   "concl": "Manual analysis is needed on top of antiSMASH."
+  },
+  {
+   "type": "qa",
+   "section": "Results - biosynthetic gene clusters",
+   "q": "What are the two plasmid BGCs?",
+   "a": "1P is a type I PKS present in all three strains. It has a single standalone PKS (KS-AT-DH-ER-KR-PCP) and is predicted to act iteratively. 2P is an NRPS (C-A-PCP-C-A-PCP-TE) predicted to incorporate Ser and Pro, found only in ATCC 10970 and M4018.",
+   "kw": [
+    "PKS",
+    "NRPS",
+    "iterative PKS"
+   ],
+   "info": "1P (WT5260_008341): most BLAST hits are mycocerosic acid synthase-like PKSs from Myxobacteria, while MIBiG hits point to thaxteramide, chondramide and epothilone. 2P genes share 66 to 69% nucleotide identity with chromosomal cluster 46 at the right chromosome end.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How did their PFGE results fit with older PFGE studies?",
+   "a": "Pandza et al. saw 14 AseI fragments from the chromosome. That fits their 17, because three of their fragments come from the plasmid.",
+   "kw": [
+    "PFGE"
+   ],
+   "info": "Sizes of bands above 500 kb differed, probably because high GC content makes size estimation against markers harder. Small differences from Algora-Gallardo et al. come from the 10-kb fragment missing in GCF_000331185.2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What BUSCO completeness should future S. rimosus assemblies be measured against?",
+   "a": "99.7%, based on the Streptomycetales lineage. The three ATCC 10970 assemblies reached it with only marginal differences in duplicated, fragmented and missing BUSCOs.",
+   "kw": [
+    "BUSCO"
+   ],
+   "info": "The reads showed marked redundancy and duplicated k-mers, which the authors attribute to long repeats in Streptomyces genomes.",
+   "concl": "99.7% should serve as the reference value for judging future S. rimosus assemblies."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which metabolites were found in S. rimosus ATCC 10970 for the first time?",
+   "a": "The rimocidin analogues CE108 and amide CE108, previously known only from S. diastaticus var. 108; the osmolytes ectoine and hydroxyectoine; and guanipiperazines A and B, previously obtained only by heterologous expression in S. lividans.",
+   "kw": [
+    "CE108",
+    "ectoine",
+    "guanipiperazine"
+   ],
+   "info": "Chymostatins were already reported from S. rimosus NRRL B-8076. Isorenieratene (BGC 3, 85%) and isocomplestatin (BGC 18, 93%) are hypothesised but not shown.",
+   "concl": "The guanipiperazine cluster, cryptic in many Streptomyces, is expressed in ATCC 10970."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How enriched are transposase genes on the GLPs compared with the chromosome?",
+   "a": "About 10-fold. The plasmids have about 78.9 (ATCC 10970), 83.6 (M4018) and 59.0 (R6-500) transposase genes per Mbp, against 5.7 per Mbp on the chromosome.",
+   "kw": [
+    "transposase density"
+   ],
+   "info": "The chromosome (9.37 Mbp) has only 53 transposase homologues, while the at least 20-kb central region of the R6-500 plasmid has seven.",
+   "concl": "Transposons and IS elements play a central role in plasmid and genome plasticity in S. rimosus."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Is the GLP essential?",
+   "a": "Not under laboratory conditions. Gravius et al. isolated GLP-free mutants. Still, the GLP is stably kept through years of industrial strain selection despite drastic rearrangements, so the authors suggest it matters for the cell somehow.",
+   "kw": [
+    "plasmid stability"
+   ],
+   "info": "Chromosome-plasmid recombination is common in Streptomyces. Examples: SCP1 integrating into the S. coelicolor chromosome, and SLP2 recombining with the S. lividans chromosome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does their R6-500 plasmid model compare with Pandza et al.?",
+   "a": "Pandza et al. used an ordered cosmid library and Southern hybridisation to find inverted repeats of about 180 kb and a unique central region of about 30 to 32 kb. In silico digestion of the new assembly with the same enzymes (AseI, BfrI, XbaI) gave a very similar fragment pattern.",
+   "kw": [
+    "cosmid library",
+    "in silico digestion"
+   ],
+   "info": "",
+   "concl": "One whole plasmid side was deleted while the other end was duplicated, which explains the doubled coverage."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main limitations?",
+   "a": "Neither Canu nor Flye could assemble the full R6-500 plasmid because they could not separate the large inverted repeats. The PFGE plus Nanopore approach also did not recover complete telomere sequences.",
+   "kw": [
+    "Canu",
+    "Flye",
+    "limitations"
+   ],
+   "info": "The authors note there are few assemblers that handle large duplications.",
+   "concl": "PFGE plus Nanopore gives high-quality sequence from a few nanograms of high-GC DNA. It could also be used to sequence individual fragments from rare-cutter digests."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - strains and DNA extraction",
+   "q": "Which strains were used and how were they grown?",
+   "a": "Wild-type ATCC 10970 (NRRL 2234, WT5260, R7), M4018 (DSM 105900, a Pfizer strain) and R6-500 (derived from Pliva R6-65). Spores were grown on soya-mannitol agar at 28°C for 7 days.",
+   "kw": [
+    "strains"
+   ],
+   "info": "For gDNA, cultures in 5 mL TSB at 28°C and 220 rpm were harvested in mid-exponential phase (18 to 22 h) and extracted with the GenElute bacterial genomic DNA kit (Sigma-Aldrich). M4018 is a prototrophic medium OTC producer used commercially by Pfizer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing and assembly",
+   "q": "Which platforms and libraries were used for the ATCC 10970 genome?",
+   "a": "Illumina GAIIx short reads (TruSeq DNA PCR-free LT, at least 1 µg gDNA) and PacBio RS II long reads (20-kb SMRTbell, at least 2 µg gDNA), both run at Macrogen. Nanopore was used only for the plasmids.",
+   "kw": [
+    "Illumina GAIIx",
+    "PacBio RS II"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sequencing and assembly",
+   "q": "What was the assembly pipeline?",
+   "a": "QC with FastQC 0.11.5, subsampling with seqtk and trimming with Trimmomatic 0.36. They then tested SPAdes, Velvet 1.2.10, SOAPdenovo 2.04-r240 and Canu 1.6 across parameters such as k-mer and seed size, and assessed results with QUAST 4.4.",
+   "kw": [
+    "SPAdes",
+    "Canu",
+    "QUAST"
+   ],
+   "info": "Runs were done on AWS r4.8xlarge (32 cores, 244 GB RAM) and a local workstation. Hybrid SPAdes plus Canu gave the best result.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PFGE",
+   "q": "How was PFGE set up for genome validation and for plasmid extraction?",
+   "a": "DNA blocks were digested overnight with AseI or DraI and run on a CHEF Mapper in 1% low-melting-point agarose with 0.5x TBE, then stained with ethidium bromide. For plasmid extraction, undigested blocks were run and the plasmid band was cut from at least 10 lanes, pooled and purified with the E.Z.N.A. gel extraction kit.",
+   "kw": [
+    "CHEF Mapper",
+    "Geneious"
+   ],
+   "info": "Virtual in silico gels were made in Geneious 11.1.5. Undigested blocks were stored at 4°C in 0.5 M EDTA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Nanopore sequencing of plasmids",
+   "q": "How were the isolated plasmids sequenced and assembled?",
+   "a": "Libraries were made with ligation kit SQK-LSK109 and a long fragment buffer wash. They ran on reused MinION R9 flow cells (M4018, R6-500) or a Flongle (ATCC 10970) for 20 h. Basecalling used Guppy 4.2.2, lambda reads were removed with NanoLyse, and assembly used Canu 2.1.1 with Flye 2.6 as an alternative.",
+   "kw": [
+    "SQK-LSK109",
+    "Guppy",
+    "Flongle"
+   ],
+   "info": "MinION flow cells were preloaded (24 h), washed with EXP-WSH003 and run at -210 mV. Flongle used default settings in MinKNOW.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation and BGC prediction",
+   "q": "How was the genome annotated?",
+   "a": "With NCBI PGAP v4.1 at submission, then re-annotated with local PGAP 4.3 and manually curated for 65 genes. The M4018 and R6-500 plasmids were annotated by transferring annotations at over 90% nucleotide identity to ATCC 10970 in Geneious Prime.",
+   "kw": [
+    "PGAP",
+    "MORF"
+   ],
+   "info": "The 65 curated genes cover OTC cluster and resistance genes, orthologues of S. coelicolor secondary-metabolism regulators and Pho regulon orthologues. Annotations are stored on MORF. BGCs were found with antiSMASH 6.0 and checked with BLAST and MIBiG, and the circular plot was made with Circa 1.2.2. Data: GCF_006229535.1, SRA PRJNA731353, plasmids MZ502218 (M4018) and MZ502219 (R6-500).",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - biosynthetic gene clusters",
+   "text": "How is pseudouridimycin made without pumA to pumD homologues? Are these functions supplied by genes elsewhere in the genome?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Why is the GLP kept stably through years of industrial selection if it carries no essential or metabolic genes and GLP-free mutants survive? Does it have an unseen role in fitness or in OTC production?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could PFGE isolation followed by Nanopore sequencing of single fragments help resolve repeat-rich or extrachromosomal regions in other high-GC or complex genomes? Assemblers still fail on large inverted repeats."
+  }
+ ]
+}

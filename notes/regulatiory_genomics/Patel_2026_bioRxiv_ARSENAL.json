@@ -1,0 +1,621 @@
+{
+ "id": "Patel_2026",
+ "title": "Short-Context Regulatory DNA Language Models with Motif-Discovery Regularization",
+ "link": "https://doi.org/10.64898/2026.02.05.703637",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Patel_2026_bioRxiv_ARSENAL.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem with current DNA language models does the paper address?",
+   "a": "DNA language models are usually trained at massive scale on whole genomes with long contexts, but regulatory features are sparse, heterogeneous and built from short motifs with poorly conserved flexible syntax. Annotation-agnostic long-context models therefore struggle with regulatory syntax and can underperform simpler baselines.",
+   "kw": [
+    "DNALM",
+    "regulatory syntax"
+   ],
+   "info": "",
+   "concl": "Scale alone does not guarantee learning of motif-scale regulatory grammar."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is ARSENAL?",
+   "a": "ARSENAL is a short-context masked DNA language model trained on a functionally enriched regulatory corpus and augmented with a novel regularizer that encourages motif discovery.",
+   "kw": [
+    "ARSENAL"
+   ],
+   "info": "The name stands for A Regulatory SEquence Nucleic Acid Learner. Code at github.com/kundajelab/regulatory_lm; models and data at sageb.io.",
+   "concl": "It improves de novo TF motif recovery, zero-shot regulatory variant effect prediction, supervised chromatin accessibility prediction, and serves as a generative prior for sequence design."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How much of the human genome is coding versus regulatory?",
+   "a": "About 20,000 protein-coding genes make up roughly 1.5% of the genome, while non-coding cis-regulatory elements are estimated to cover roughly 5 to 20%.",
+   "kw": [
+    "cis-regulatory elements"
+   ],
+   "info": "The human genome spans about 3 x 10^9 bp and much of it is neutrally evolving DNA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do regulatory elements act at the sequence level?",
+   "a": "Promoters and enhancers act through short binding sites of 6 to 20 bp for transcription factors and other DNA-binding proteins, where motif affinity, spacing and combinatorial arrangement together determine regulatory output.",
+   "kw": [
+    "TF binding sites",
+    "motif syntax"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is regulatory DNA harder for genome-wide self-supervision than coding DNA?",
+   "a": "Coding sequence has dense regular constraints, whereas regulatory syntax is sparse, combinatorial, diverse and strongly context dependent. Functional motif-scale patterns are rare relative to background composition and repetitive structure, so learning can be dominated by non-functional sequence statistics.",
+   "kw": [
+    "self-supervision"
+   ],
+   "info": "Benchmarking studies report limited DNALM performance on variant effect prediction and regulatory activity inference, and failure to capture nucleotide co-dependencies typical of functional motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which existing DNALMs are cited as representative large-scale models?",
+   "a": "Nucleotide Transformer, HyenaDNA, DNABERT-2, Caduceus, GENA-LM, Evo and Evo2. They scale masked and autoregressive architectures to long contexts trained on one or more whole genomes.",
+   "kw": [
+    "HyenaDNA",
+    "Caduceus",
+    "Nucleotide Transformer"
+   ],
+   "info": "This line of work was motivated by the success of protein language models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do GPN-style models inject biology, and what is their drawback?",
+   "a": "GPN-MSA and GPN-Star use evolutionary information via multiple sequence alignments and/or upsampling of conserved regions, improving variant effect prediction. However, MSA-based formulations are less flexible when alignments are unavailable and complicate generation and synthetic design.",
+   "kw": [
+    "GPN-MSA",
+    "MSA"
+   ],
+   "info": "This motivates alternatives that bias learning toward regulatory function while keeping single-sequence modelling and generation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the two key principles behind ARSENAL?",
+   "a": "Targeted pretraining on ENCODE candidate cis-regulatory elements, and a frequency-domain auxiliary objective that encourages predicted likelihood profiles to emphasize motif-scale structure.",
+   "kw": [
+    "cCREs",
+    "Fourier prior"
+   ],
+   "info": "The regularizer adapts Fourier-transform attribution priors the group previously introduced for supervised regulatory models, which penalized high-frequency components in attributions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The ARSENAL model",
+   "q": "What corpus is ARSENAL trained on?",
+   "a": "The ENCODE consortium set of about 2.3 million candidate cis-regulatory elements (cCREs), a curated collection enriched for promoters, enhancers and other regulatory loci.",
+   "kw": [
+    "ENCODE cCREs"
+   ],
+   "info": "Training on this distribution greatly increases the density of functional signal relative to whole-genome pretraining.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The ARSENAL model",
+   "q": "What is the rationale for the frequency-domain auxiliary loss?",
+   "a": "Regulatory motifs are typically 6 to 20 bp, while non-informative genomic patterns are either very low-frequency (long repeats) or overly high-frequency (noise-like). The loss encourages the per-base likelihood landscape to emphasize motif-scale variation.",
+   "kw": [
+    "auxiliary loss",
+    "motif scale"
+   ],
+   "info": "It is added on top of the standard masked language modelling objective.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot motif discovery",
+   "q": "How were per-base likelihood reconstructions computed?",
+   "a": "Each position was masked in turn and the model predicted the probability of the true nucleotide given the remaining sequence context.",
+   "kw": [
+    "likelihood reconstruction"
+   ],
+   "info": "For HyenaDNA, which is autoregressive, likelihoods came from a single forward pass without masking.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot motif discovery",
+   "q": "Which example loci were used, and which motifs did ARSENAL recover?",
+   "a": "A beta-globin enhancer on chr11 and a promoter-like cCRE on chr3. At the enhancer ARSENAL detected two evolutionarily conserved MAFK/NFE motifs previously reported there; at the chr3 promoter-like region it recovered multiple SP1, USF and NRF family motifs.",
+   "kw": [
+    "MAFK/NFE",
+    "SP1",
+    "NRF"
+   ],
+   "info": "Coordinates in Fig. 2 are chr11 5280543-5280893 and chr3 4868333-4868683.",
+   "concl": "ARSENAL (No Prior) failed to recover these motifs, so the Fourier objective adds benefit beyond regulatory-region targeting alone."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot motif discovery",
+   "q": "How did ARSENAL compare to HyenaDNA and Caduceus on these loci?",
+   "a": "Both showed substantially weaker or less structured reconstructions. They were chosen because they are the two single-nucleotide tokenized models evaluated in the DART-EVAL DNALM benchmark.",
+   "kw": [
+    "HyenaDNA",
+    "Caduceus"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot motif discovery",
+   "q": "What is a nucleotide dependency map and what did it show?",
+   "a": "It quantifies how much each prediction depends on nucleotides at other positions. ARSENAL dependency matrices showed clear diagonal blocks aligned to the recovered motifs, consistent with learning motif-scale features.",
+   "kw": [
+    "nucleotide dependency"
+   ],
+   "info": "Weaker off-diagonal blocks linking distinct motifs were often seen, which the authors suggest may reflect motif co-occurrence, though they phrase this cautiously.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot motif discovery",
+   "q": "What does the DART-EVAL motif identification task measure?",
+   "a": "It measures how many known binding motifs a model assigns higher likelihood to than shuffled versions of the same motifs, reported as the proportion of motifs identified with high (over 70%) accuracy.",
+   "kw": [
+    "DART-EVAL"
+   ],
+   "info": "Exact values are not given in the text; Fig. 3A shows roughly 0.6 for ARSENAL and roughly 0.5 for ARSENAL (No Prior), above Caduceus, DNABERT-2, GENA-LM, HyenaDNA, Mistral-DNA and Nucleotide Transformer.",
+   "concl": "ARSENAL substantially outperforms other DNALMs; No Prior already exceeds them, and the Fourier regularizer adds a further gain."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot motif discovery",
+   "q": "What did TF-MoDISco on ARSENAL likelihood contribution scores recover?",
+   "a": "In K562 promoters it discovered canonical promoter motifs including NRF, NFY and ETS. In HepG2 DNase peaks it recovered a broader repertoire including cell-type-associated families such as HNF, TEAD and MEF2 alongside general regulatory motifs.",
+   "kw": [
+    "TF-MoDISco",
+    "HNF",
+    "TEAD"
+   ],
+   "info": "Motifs were compared to canonical models from HOCOMOCO. Fig. 3B also shows CTCF, SP1, ATF, YY1, ZNF143 and composite patterns such as ETS/ETS, SP1/SP1 and NFY/SP1.",
+   "concl": "ARSENAL learns a rich and biologically meaningful motif syntax purely self-supervised, both at single loci and in aggregate."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot variant effect prediction",
+   "q": "Why is variant effect prediction a stringent test for a DNALM?",
+   "a": "It tests counterfactual generalization and calibration: the model must assign quantitatively meaningful probabilities at single-nucleotide resolution so a single base change produces an appropriate shift in likelihood, and this must emerge from sequence learning alone without variant or allele-specific training labels.",
+   "kw": [
+    "counterfactual",
+    "calibration"
+   ],
+   "info": "High-effect regulatory variants often act by creating, disrupting or weakening TF motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot variant effect prediction",
+   "q": "Which QTL datasets were used?",
+   "a": "Two DART-EVAL regulatory QTL datasets in lymphoblastoid cell lines: dsQTLs measured by DNase-seq (Yoruba population) and caQTLs measured by ATAC-seq (African population cohorts).",
+   "kw": [
+    "dsQTL",
+    "caQTL"
+   ],
+   "info": "These give a realistic distribution of common regulatory variation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot variant effect prediction",
+   "q": "How did ARSENAL perform on zero-shot variant scoring?",
+   "a": "Across both dsQTL and caQTL settings ARSENAL achieved substantially higher correlation with experimentally measured effect sizes than the other DNALMs evaluated in the same framework, while using only 350 bp of context around each variant versus the 2,114 bp windows in the original DART-EVAL evaluation.",
+   "kw": [
+    "Pearson R",
+    "350 bp context"
+   ],
+   "info": "Numeric values are not stated in the text; Fig. 4 shows Pearson R near 0.38 for dsQTLs and near 0.15 for caQTLs for ARSENAL, with other models close to zero or negative.",
+   "concl": "Robust regulatory variant scoring does not necessarily require long-context modelling when motif-scale syntax is captured well."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot variant effect prediction",
+   "q": "What did the ablation of the Fourier regularizer show for variant scoring?",
+   "a": "ARSENAL (No Prior) showed a marked drop in performance and approached the behaviour of other DNALMs, so the regularizer is critical for variant sensitivity.",
+   "kw": [
+    "ablation"
+   ],
+   "info": "",
+   "concl": "The frequency-regularized likelihood landscape is what makes zero-shot variant prioritization accurate."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Supervised chromatin accessibility models",
+   "q": "Why are supervised sequence-to-function models still needed?",
+   "a": "Regulatory mechanisms are context dependent: different cell types express distinct transcription factors and cofactors, giving partially distinct motif lexicons and grammars, and the same sequence features can have different quantitative effects across assays such as accessibility, TF binding and transcription initiation.",
+   "kw": [
+    "sequence-to-function"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Supervised chromatin accessibility models",
+   "q": "How were ARSENAL embeddings combined with ChromBPNet?",
+   "a": "They replaced ChromBPNet's one-hot input encoding with ARSENAL per-base embeddings, keeping the overall architecture and task unchanged.",
+   "kw": [
+    "ChromBPNet",
+    "embeddings"
+   ],
+   "info": "ChromBPNet predicts accessibility profiles over 1,000 bp bins overlapping peaks and background regions using 2,114 bp of local sequence context.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Supervised chromatin accessibility models",
+   "q": "Did ARSENAL embeddings improve accessibility prediction?",
+   "a": "Yes. Across DNase-seq data from five cell lines, the embedding-based model beat the matched one-hot ChromBPNet-style baseline on counts prediction for held-out test chromosomes.",
+   "kw": [
+    "DNase-seq"
+   ],
+   "info": "Cell lines were GM12878, K562, HepG2, IMR90 and H1-hESC. Fig. 5 shows Pearson R rising from about 0.60 to 0.64 (GM12878), 0.67 to 0.70 (K562), 0.61 to 0.64 (HepG2), 0.61 to 0.65 (IMR90) and 0.80 to 0.83 (H1-hESC); exact values are not printed in the text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Supervised chromatin accessibility models",
+   "q": "Did the supervised gains carry over to variant scoring?",
+   "a": "Yes. For GM12878 DNase-seq models, ARSENAL+ChromBPNet reached Pearson R 0.754 vs 0.720 and AUROC 0.896 vs 0.883 on Yoruba LCL dsQTLs, and Pearson R 0.654 vs 0.633 and AUROC 0.764 vs 0.750 on African caQTLs.",
+   "kw": [
+    "dsQTL",
+    "caQTL",
+    "AUROC"
+   ],
+   "info": "Spearman R was 0.757 vs 0.744 (dsQTL) and 0.678 vs 0.656 (caQTL). This matters because supervised training performance does not necessarily correlate with counterfactual variant effect performance.",
+   "concl": "ARSENAL's self-supervised representations are informative enough to improve both supervised regulatory modelling and downstream variant interpretation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequence generation and design",
+   "q": "What is targeted generation and why is it the harder setting?",
+   "a": "Targeted generation means producing sequences that satisfy user-specified functional constraints, not just sequences that resemble the training distribution. DNALMs suit this because they define an explicit sequence distribution that can be sampled or optimized.",
+   "kw": [
+    "targeted generation"
+   ],
+   "info": "Applications include therapeutic vector design, functional screening and systematic probing of cis-regulatory grammar.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequence generation and design",
+   "q": "How does the ARSENAL design procedure work?",
+   "a": "ARSENAL is combined with a user-defined objective function and run as iterative sequence optimization with beam search: candidate edits are generated by masking and resampling a fraction of positions for a fixed number of steps, then the highest-scoring candidates under the objective are retained.",
+   "kw": [
+    "beam search"
+   ],
+   "info": "Masking rate and resampling depth tune how similar optimized sequences stay to the starting sequence, trading off exploration against fidelity. Objectives here were predicted accessibility from pretrained ChromBPNet oracle models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequence generation and design",
+   "q": "What happened when sequences were optimized for graded accessibility in HepG2?",
+   "a": "The resulting sequences showed a clear progression in predicted coverage, and ChromBPNet contribution scores showed that higher-activity designs preferentially introduced stronger or more numerous motif instances, including prominent CTCF binding motifs.",
+   "kw": [
+    "CTCF",
+    "contribution scores"
+   ],
+   "info": "Fig. 6A shows designs targeting predicted count values of 5.00, 6.00, 7.00 and 8.00 starting from an original sequence at 6.37.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sequence generation and design",
+   "q": "What motifs appeared in cell-type-specific designed sequences?",
+   "a": "HepG2-specific sequences were enriched for FOX, HNF and C/EBP family motifs, while H1-hESC-specific sequences preferentially contained OCT4 and SOX2 motifs, including combinatorial occurrences of both.",
+   "kw": [
+    "FOX",
+    "HNF",
+    "OCT4/SOX2"
+   ],
+   "info": "The two optimized sequence sets showed clear separation in predicted accessibility across the two cell lines (Fig. 6D).",
+   "concl": "ARSENAL plus pretrained oracles supports flexible targeted design with motif-level interpretability of what drives the designed profile."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which two design choices do the authors say are central to ARSENAL's success?",
+   "a": "Pretraining on ENCODE cCREs, which concentrates learning on functional regulatory sequence instead of genome-wide background, and the frequency-domain regularizer, which provides an inductive bias toward motif discovery.",
+   "kw": [
+    "inductive bias"
+   ],
+   "info": "These gains come from sequence-only self-supervision, without cell-type-specific functional labels, alignments or explicit motif labels.",
+   "concl": "A compact short-context DNALM can learn meaningful regulatory syntax when training is regularized with prior knowledge about regulatory biology."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the methodological contribution the authors highlight?",
+   "a": "Importing Fourier-based attribution priors into DNA language modelling: instead of penalizing high-frequency components in attribution maps during supervised training, they constrain masked reconstruction so that learned likelihoods emphasize motif-length features.",
+   "kw": [
+    "Fourier attribution prior"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the stated limitations of ARSENAL?",
+   "a": "It is cell-type agnostic and uses a 350 bp window, so it captures local motif grammar but not long-range dependencies such as enhancer-promoter coupling. DNALMs can also learn non-functional patterns like repeats with high confidence, sequence-only learning is constrained by motif frequency and context in the training distribution, and the generation results are mostly in silico and need experimental validation.",
+   "kw": [
+    "limitations",
+    "350 bp"
+   ],
+   "info": "Supervised models trained on cell-type-specific functional tracks can more directly emphasize rare but active motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future directions do the authors propose?",
+   "a": "Adding further priors as regularizers (for example repeat-aware penalties), extending analogous priors to other non-coding regimes such as splice regions or UTRs, combining ARSENAL with conservation or MSA-based objectives as in GPN-style models, and initializing or augmenting long-context DNALMs with motif-regularized short-context representations.",
+   "kw": [
+    "future work"
+   ],
+   "info": "They caution that careful specification is needed so that priors do not suppress relevant biology.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Pretraining data",
+   "q": "How were the ENCODE cCREs defined and how was the data split?",
+   "a": "The roughly 2.3 million cCREs are defined from chromatin accessibility (DNase-seq and ATAC-seq), histone marks (H3K27ac and H3K4me3 ChIP-seq) and TF binding (CTCF and other TF ChIP-seq). Validation was chromosomes 6 and 21, test was chromosomes 5, 10, 14, 18, 20 and 22, and the rest of the genome was training.",
+   "kw": [
+    "ENCODE",
+    "chromosome split"
+   ],
+   "info": "The same splits were later used for the supervised ChromBPNet-style models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Objective function",
+   "q": "How is the Fourier prior loss computed?",
+   "a": "The discrete Fourier transform is applied to the vector of predicted probabilities, positive frequencies excluding the DC component are taken, and these are L1 normalized to give a. Position weights are 1 between the cutoffs and decay outside them, and the loss is Latt = 1 minus the weighted sum of a.",
+   "kw": [
+    "FFT",
+    "Latt"
+   ],
+   "info": "For sequence length L the high cutoff is CH = L/6 and the low cutoff is CL = L/20, matching motifs of 6 to 20 bp. Outside the band the weight is 1/(1+distance^s) with s a smoothing hyperparameter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Objective function",
+   "q": "How is the Fourier loss combined with masked language modelling?",
+   "a": "Ltotal = LMLM + lambda x Latt, where lambda is a loss weight hyperparameter. In this work lambda was 0.002 with a smoothing factor s of 5.",
+   "kw": [
+    "MLM loss"
+   ],
+   "info": "Unlike the earlier supervised work, the prior is applied to the model's output likelihoods rather than to gradients, since likelihoods are the main feature attributions for a language model. A low-frequency penalty was added to discourage learning long repeats at high confidence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Architecture",
+   "q": "What is the ARSENAL architecture?",
+   "a": "An embedder mapping tokens A, T, G, C, N and MASK to size-768 embeddings; an encoder of 8 transformer blocks with embedding size 768, 8 heads and feed-forward dimension 3072 with RoPE positional information in all layers; and an LM head of a linear layer of size 768, GeLU, LayerNorm and a final linear layer of size 4.",
+   "kw": [
+    "transformer",
+    "RoPE"
+   ],
+   "info": "The embedding for the N token is initialized as zeros and never updated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Architecture",
+   "q": "What input length and data augmentation were used?",
+   "a": "Sequences of length 350, which is the maximum size of any cCRE; shorter cCREs were expanded to that length. Augmentation was reverse-complementing with probability 0.5 and random shifts between -50 bp and +50 bp.",
+   "kw": [
+    "data augmentation",
+    "reverse complement"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Architecture",
+   "q": "What was the masking scheme during pretraining?",
+   "a": "Weights were updated on predictions for 15% of training tokens: 80% of these were masked in the input, 10% randomly mutated and 10% left unchanged. No predictions were made on N positions.",
+   "kw": [
+    "masking",
+    "BERT-style"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Architecture",
+   "q": "How were repeat regions handled during training?",
+   "a": "No weights were updated based on predictions inside contiguous repeat stretches of at least 30 bp, defined by lowercase letters in the reference genome. For the model without the Fourier loss, no repeat nucleotide was used at all.",
+   "kw": [
+    "repeats",
+    "soft-masking"
+   ],
+   "info": "The authors note that language models naturally learn repeats with high confidence, which can obscure regulatory features, and that more work is needed to find the best way to handle them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Architecture",
+   "q": "What were the training hyperparameters?",
+   "a": "150 epochs with a learning rate of 1e-4, Fourier loss weight 0.002 and smoothing factor 5.",
+   "kw": [
+    "learning rate",
+    "epochs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Zero-shot visualization and motif discovery",
+   "q": "How were likelihoods normalized before visualization and TF-MoDISco?",
+   "a": "Each predicted likelihood p was divided by the average predicted likelihood for that nucleotide over the sequence, following the species-aware DNALM normalization of Karollus et al.",
+   "kw": [
+    "normalization"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Zero-shot visualization and motif discovery",
+   "q": "Which ENCODE datasets were used for TF-MoDISco and how were they preprocessed?",
+   "a": "K562 PRO-cap promoter peaks (ENCSR261KBX) and HepG2 DNase-seq peaks (ENCSR149XIL). Peaks are variable length, so the central 350 bp of each region was used, and sequences with contiguous repeat stretches of at least 50 bp were omitted.",
+   "kw": [
+    "PRO-cap",
+    "ENCODE IDs"
+   ],
+   "info": "TF-MoDISco was run from the official repository with window size 350 and up to 1,000,000 seqlets per metacluster. The repeat filter is not strictly necessary but yields the most extensive results since TF-MoDISco depends on feature enrichment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Nucleotide dependency analysis",
+   "q": "How is the dependency between two positions defined?",
+   "a": "The dependency e(i,j) is the maximum over k in {A,C,G,T} of the absolute log2 odds ratio of predicting nucleotide k at position j when position i is not the reference base versus when it is the reference base.",
+   "kw": [
+    "odds ratio"
+   ],
+   "info": "The method follows Tomaz da Silva et al.; importantly, no positions are masked when computing dependencies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Zero-shot variant effect prediction",
+   "q": "What exactly was done per variant in the zero-shot benchmark?",
+   "a": "The 350 bp sequence centered on the variant was extracted, the variant position was masked, and the score was the log ratio of the model probability of the alternate allele to that of the reference allele.",
+   "kw": [
+    "log-likelihood ratio"
+   ],
+   "info": "Correlation metrics were computed only on variants with significant observed effect, following the ChromBPNet paper and the DART-EVAL benchmark.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Supervised model training",
+   "q": "What is ChromBPNet and what does it output?",
+   "a": "ChromBPNet is a dilated CNN that is state of the art for chromatin accessibility prediction and variant scoring from local sequence context. It takes 2,114 bp one-hot input and outputs total accessibility read counts over the central 1,000 bp plus the read distribution over that stretch.",
+   "kw": [
+    "ChromBPNet",
+    "dilated CNN"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Supervised model training",
+   "q": "What changed in the ChromBPNet-style model using ARSENAL embeddings?",
+   "a": "Only two things: the first convolutional layer accepts 768 input channels instead of 4, and the learning rate is 1e-4 instead of 1e-3. Architecture and training scheme were otherwise identical.",
+   "kw": [
+    "transfer learning"
+   ],
+   "info": "Baseline ChromBPNet models were retrained in the authors' own codebase for a fair comparison, with predicted counts correlation used for early stopping.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Supervised model training",
+   "q": "How were 768-dimensional embeddings produced for a 2,114 bp input?",
+   "a": "Embeddings were the average of the outputs of the last six encoder layers. The 2,114 bp input was split into 350 bp chunks with the central chunk at the center, embeddings were computed per chunk and concatenated, and positions outside full chunks used the first or last 350 bp of the sequence.",
+   "kw": [
+    "chunking"
+   ],
+   "info": "2,114 is not evenly divisible by 350, hence the edge handling. Three sets of models were trained per cell line.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Supervised variant effect prediction",
+   "q": "How were variants scored with the supervised models?",
+   "a": "The 2,114 bp sequence centered on the variant was built with the reference and with the alternate allele, and the score was log2 of the ratio of predicted accessibility counts for the alternate over the reference sequence.",
+   "kw": [
+    "log fold-change"
+   ],
+   "info": "GM12878 models were used for these calculations, and scores were evaluated as in the zero-shot setting.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequence generation",
+   "q": "What parameters define the untargeted generation loop?",
+   "a": "Ni, the number of generation iterations; pm, the probability of masking a token in an iteration; and tau, the temperature scaling the model logits. Each iteration masks tokens with probability pm, predicts temperature-scaled probabilities at masked positions, and samples new tokens there while keeping unmasked tokens fixed.",
+   "kw": [
+    "temperature",
+    "sampling"
+   ],
+   "info": "Ni and pm control deviation from the original sequence; tau adjusts the confidence of the model's predictions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequence generation",
+   "q": "How does the targeted beam search add to the generation loop?",
+   "a": "Two more parameters are added: Ng, the number of generation and evaluation steps, and k, the number of sequences retained per step. Starting from one seed sequence, each step runs untargeted generation on every sequence in the pool, scores all sequences with the objective function h, and keeps the top k.",
+   "kw": [
+    "beam search",
+    "objective function"
+   ],
+   "info": "h is flexible and task-dependent and may call supervised models. Generation operated on the central 350 bp of the ChromBPNet input because of the input size mismatch.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequence generation",
+   "q": "Which specific objectives were used in the design experiments?",
+   "a": "Minimizing absolute error between predicted counts and a target value in HepG2, and enforcing cell-type specificity by targeting high predicted counts in HepG2 with low counts in H1-hESC, or the reverse.",
+   "kw": [
+    "cell-type specificity"
+   ],
+   "info": "For the TF-MoDISco analyses of cell-type-specific generations they ran 5 generation runs in each direction with 100 sequences per run, then computed contribution scores and ran TF-MoDISco following the ChromBPNet protocol.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could the cCRE-targeted plus Fourier-regularized pretraining recipe be transferred to non-human genomes such as Astyanax mexicanus or zebrafish, where no ENCODE-scale cCRE registry exists? The paper only uses human ENCODE cCREs and does not discuss species with sparse regulatory annotation."
+  },
+  {
+   "type": "note",
+   "section": "Results - Zero-shot motif discovery",
+   "text": "The off-diagonal blocks in the nucleotide dependency maps are interpreted as possible motif co-occurrence, but no quantification is given. Worth going back to Tomaz da Silva et al. for how these dependencies are validated."
+  },
+  {
+   "type": "note",
+   "section": "Results - Sequence generation and design",
+   "text": "All design results are scored by ChromBPNet oracles in silico, with no experimental validation (e.g. MPRA). The oracle and the generator share motif assumptions, so improvements could partly reflect oracle-specific biases."
+  }
+ ]
+}

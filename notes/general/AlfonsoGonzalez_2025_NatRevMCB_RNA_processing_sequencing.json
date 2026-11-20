@@ -1,0 +1,628 @@
+{
+ "id": "AlfonsoGonzalez_2025",
+ "title": "Elucidating the coordination of RNA processing using short-read and long-read RNA-sequencing methods",
+ "link": "https://doi.org/10.1038/s41580-025-00895-4",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/AlfonsoGonzalez_2025_NatRevMCB_RNA_processing_sequencing.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this review address?",
+   "a": "Short-read RNA-seq can accurately measure alternative TSS usage, alternative splicing and alternative polyadenylation. However, the timing, coordination and functional outcomes of alternative RNA processing are hard to work out, especially in vivo.",
+   "kw": [
+    "ATSS",
+    "AS",
+    "APA"
+   ],
+   "info": "The review covers short-read and long-read methods that measure transcripts in their nascent and mature state and at single-cell resolution. It links ATSS, AS and APA to cancer and to neurodevelopmental and neurodegenerative disorders, and it discusses CRISPR tools for manipulating RNA processing.",
+   "concl": "Long-read sequencing makes it possible to characterize co-transcriptional RNA processing, and each LRS method has its own perspectives and limitations."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the three types of alternative RNA processing the review focuses on?",
+   "a": "Alternative transcription start site usage (ATSS), alternative splicing (AS) and alternative cleavage and polyadenylation (APA). Together they define where transcription begins, which exons are included and where transcription ends.",
+   "kw": [
+    "ATSS",
+    "AS",
+    "APA"
+   ],
+   "info": "The review focuses on processing steps that change exon structure. RNA editing and chemical modifications are mentioned only briefly, in relation to detectability and alternative processing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How much do ATSS, AS and APA contribute to transcriptome diversity?",
+   "a": "Through AS alone, about 95% of multi-exonic genes generate multiple isoforms. APA affects more than 70% of human genes, and ATSS contributes to around 50% of transcriptome diversity.",
+   "kw": [
+    "transcriptome diversity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why do the authors think that different RNA processing steps are co-regulated?",
+   "a": "The number of possible exon combinations of a gene is far larger than the number of mRNA isoforms that gene actually expresses.",
+   "kw": [
+    "co-regulation"
+   ],
+   "info": "How the regulatory elements converge to produce distinct isoforms in a context-specific manner is still poorly understood, especially in vivo.",
+   "concl": "Different RNA processing steps are co-regulated, not independent."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does ATSS change in the mRNA, and what regulates it?",
+   "a": "ATSS produces isoforms with a different 5' UTR or protein-coding sequence. It is regulated by promoter sequence, promoter-enhancer interactions, transcription factor availability and chromatin modifications.",
+   "kw": [
+    "ATSS",
+    "5' UTR"
+   ],
+   "info": "Box 1: TSS choice affects the sequence of the first exon or first few exons, and it also modulates AS and APA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the possible outcomes of AS and APA?",
+   "a": "AS joins different exon combinations, so one gene can encode different proteins. It can also change the ratio of functional to incorrectly spliced transcripts that are removed by nonsense-mediated decay. APA usually produces longer 3' UTRs, but when the alternative PAS lies upstream of the stop codon (typically in an intron), the isoforms differ in coding potential.",
+   "kw": [
+    "NMD",
+    "intronic PAS"
+   ],
+   "info": "Box 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What determines which method to use for quantifying RNA processing?",
+   "a": "The temporal and spatial dynamics of the biological events being studied and the type of intermediates they produce. In developmental transitions RNA regulation happens over minutes to hours, whereas in established lineages RNA signatures represent a ground state.",
+   "kw": [],
+   "info": "Steady-state measurements (nascent RNA-seq, LRS, scRNA-seq) give snapshots. Combining many snapshots is compared to assembling still frames into a movie.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - alternative TSS, splicing and 3' end",
+   "q": "How does a typical short-read RNA-seq experiment work?",
+   "a": "Ribosomal RNA is depleted, and the RNA is fragmented, reverse-transcribed into cDNA, amplified and sequenced. This gives millions of reads, usually 50 to 300 bp long, which are aligned to a reference genome to determine transcript abundance and exon structure.",
+   "kw": [
+    "RNA-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - alternative TSS, splicing and 3' end",
+   "q": "How is alternative TSS usage measured from short reads?",
+   "a": "One approach compares exon-exon junction reads spanning the first and second exons. Another detects differences in coverage between the first and later exons. Methods that sequence from the capped 5' end, such as cap analysis of gene expression, distinguish TSSs more precisely.",
+   "kw": [
+    "CAGE",
+    "5'-end reads"
+   ],
+   "info": "Junction and coverage approaches depend heavily on exon annotation and can be confounded by exons that act as either exons or TSSs depending on context. Single-cell TSS profiling showed that most genes use multiple TSSs within the same cell.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - alternative TSS, splicing and 3' end",
+   "q": "Which tools detect alternative splicing from RNA-seq, and how do they differ?",
+   "a": "DEXseq and DSGseq test for significant differences in total exon read counts. rMATS and MISO quantify exon-exon junctions relative to total gene expression.",
+   "kw": [
+    "DEXseq",
+    "rMATS",
+    "MISO"
+   ],
+   "info": "These tools were used to characterize cell-type-specific AS, especially in neural tissue, and to find RBP targets by comparing exon expression after RBP perturbation. Recent studies model RBP motifs near splice sites to improve target identification.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - alternative TSS, splicing and 3' end",
+   "q": "What example of RBP-dependent neuronal RNA processing is shown in Fig. 1b?",
+   "a": "In fruit fly embryos, neurons express longer 3' UTRs than non-neuronal cells. This neuronal 3' UTR extension is lost in embryos lacking the RBP ELAV, and hundreds of exons and 3' UTRs are deregulated in Delta-elav neurons.",
+   "kw": [
+    "ELAV",
+    "3' UTR extension"
+   ],
+   "info": "Shown as RNA-seq heat maps of Delta-elav neurons compared with normal neurons, one line per gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - alternative TSS, splicing and 3' end",
+   "q": "How can non-canonical splicing be detected in total RNA-seq?",
+   "a": "Intron lariats are detected by reads that span the branchpoint and the 3' splice site. Recursive splicing gives a sawtooth pattern in read coverage. CircRNAs from back-splicing (a splice donor joined to an upstream acceptor) are detected by back-splice junction reads.",
+   "kw": [
+    "recursive splicing",
+    "circRNA",
+    "back-splicing"
+   ],
+   "info": "The large amount of available RNA-seq data has made it possible to characterize thousands of circRNAs, including their expression, tissue specificity and RBP regulators.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - alternative TSS, splicing and 3' end",
+   "q": "What are the strengths and limitations of 3'-end sequencing for APA?",
+   "a": "Because 3'-end sequencing targets specific regions, it reaches high coverage with fewer reads and needs little RNA input, which made large 3'-end atlases possible. However, it relies on oligo(dT) priming, which can cause internal priming at A-rich regions, and it cannot capture ATSS or AS in the same experiment.",
+   "kw": [
+    "3'-end sequencing",
+    "oligo(dT)",
+    "internal priming"
+   ],
+   "info": "An alternative is 3'-end-centric computational analysis of ordinary RNA-seq data. It infers 3' ends indirectly from read density, so it has lower resolution and accuracy, but it can be applied to any dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "Why is steady-state RNA-seq not enough to study processing mechanisms?",
+   "a": "Nascent pre-mRNA intermediates are short-lived, while mature polyadenylated RNAs accumulate until they are degraded. This imbalance hides the sequence of processing events.",
+   "kw": [
+    "nascent RNA"
+   ],
+   "info": "Nascent RNA methods fall into two groups. Nucleotide labelling gives temporal resolution (time since transcription started). Chromatin fractionation enriches Pol II-associated RNA and reports distance from the site of transcription.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "What are nuclear run-on assays and what have they shown?",
+   "a": "In assays such as GRO-seq and PRO-seq, isolated nuclei continue transcription in the presence of modified nucleotides. The labelled RNAs are biotinylated and pulled down. These methods are sensitive enough to detect Pol II pausing at 3'-end processing sites, and they revealed 3'-end cleavage dynamics and links to splicing efficiency.",
+   "kw": [
+    "NRO",
+    "GRO-seq",
+    "PRO-seq"
+   ],
+   "info": "NRO has been adapted to whole organisms: C. elegans (RNA stability), Drosophila embryos (zygotic genome activation), Arabidopsis (stress response) and mouse liver (circadian activation). The main in vivo challenge is isolating enough high-quality nuclei.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "How does metabolic labelling measure splicing dynamics?",
+   "a": "Modified nucleotides (4sU in 4sUDRB-seq and TT-seq, bromouridine in BrU-seq) are added to the medium and incorporated into new RNA. Comparing early and late labelling periods gives processing rates: intron-exon (pre-mRNA) reads decrease over the labelling time, while exon-exon (mRNA) reads increase.",
+   "kw": [
+    "4sU",
+    "TT-seq",
+    "BrU-seq"
+   ],
+   "info": "Unlike NRO, these methods label RNA without compromising cell integrity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "What is SLAM-seq and what does it add?",
+   "a": "SLAM-seq is an enrichment-free method. 4sU is incorporated into nascent RNA and then chemically converted, which creates mutations that show up in sequencing (T-to-C mismatches, per the glossary). Comparing labelled and unlabelled RNA gives synthesis and decay rates for each gene.",
+   "kw": [
+    "SLAM-seq",
+    "RNA decay"
+   ],
+   "info": "It is sensitive enough to detect changes in transient RNA species and to assess causal links between transcription factor binding and gene expression. Because mutations accumulate without bias, it also helps measure isoform-specific and region-specific transcript stability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "What do NET-seq and mNET-seq measure?",
+   "a": "Nascent RNA is immunoprecipitated with Pol II antibodies or co-purified with chromatin. Sequencing the 3'-most nucleotide gives the position of the elongating polymerase. Nucleotide frequency in a region estimates Pol II pausing.",
+   "kw": [
+    "NET-seq",
+    "mNET-seq",
+    "Pol II CTD"
+   ],
+   "info": "Targeting specific post-translational modifications of the Pol II C-terminal domain shows where modified Pol II sits at splice sites, 3'-end processing sites and termination sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "How can metabolic labelling be made to work in whole animals and in specific tissues?",
+   "a": "Whole tissues take up and incorporate modified nucleotides poorly. A solution is targeted expression of uracil phosphoribosyltransferase (UPRT), which converts 4-thiouracil (4tU) into 4sU monophosphate, so nascent RNA is labelled only in the chosen tissue or developmental stage.",
+   "kw": [
+    "UPRT",
+    "4tU",
+    "SLAM-ITseq"
+   ],
+   "info": "In many systems, the pathways that process and convert modified nucleotides are inactive, which is another reason labelling in vivo is hard.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "q": "What zebrafish examples of in vivo metabolic labelling are discussed?",
+   "a": "SLAMseq around the maternal-to-zygotic transition showed that mir430 mutant embryos, which lack transcription bodies, first transcribe some genes prematurely and then transcribe hundreds of zygotic genes at reduced levels. In a second example, SLAM-ITseq with UPRT expressed in hepatocytes and 3'-end sequencing after liver injury found distinct groups of metabolic genes upregulated at different times.",
+   "kw": [
+    "zebrafish",
+    "mir430",
+    "SLAM-ITseq"
+   ],
+   "info": "The liver injury study identified transcriptional programmes involved in the injury response and the start of regeneration.",
+   "concl": "Transcription bodies are important for zygotic genome activation. The authors suggest these methods could be applied to rapid changes in RNA processing and isoform switching."
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - platforms",
+   "q": "How does PacBio long-read sequencing work, and how long are its reads?",
+   "a": "PacBio uses single-molecule real-time sequencing, in which zero-mode waveguides track fluorescent nucleotides during DNA synthesis in real time. Reads are typically 1 to 2 kb, with some 10 to 25 kb. MAS-ISO-seq concatenates cDNAs to maximize throughput.",
+   "kw": [
+    "PacBio",
+    "SMRT",
+    "MAS-ISO-seq"
+   ],
+   "info": "Table 1: Iso-seq has low throughput, 5'-end bias and high cost. HiFi reaches more than 99.9% accuracy by repeatedly sequencing circularized cDNA (circular consensus sequencing).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - platforms",
+   "q": "How does Oxford Nanopore sequencing work, and how long are its reads?",
+   "a": "Protein pores measure changes in ionic current as DNA or RNA passes through them. ONT can produce reads of hundreds of kilobases, but cDNA reads typically have a median of about 1 kb, which size selection raises to an average of 4 to 5 kb. Direct RNA-seq needs no reverse transcription or amplification and detects base modifications on native RNA.",
+   "kw": [
+    "ONT",
+    "dRNA-seq",
+    "cDNA-seq"
+   ],
+   "info": "Box 2: R10.4.1 pores with Bonito or Dorado base-calling reach about 98 to 99% accuracy, and about 99.6 to 99.8% when both DNA strands are sequenced. Table 1: dRNA-seq has a median read length under 1,000 bases and a 3'-end bias.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - platforms",
+   "q": "How does LRS differ from short-read RNA-seq for transcript quantification?",
+   "a": "Each long read represents a single RNA molecule or a large fragment of one. In principle this removes the need to assemble reads to reconstruct the transcript, and keeping several exon-exon junctions in one read allows accurate isoform detection.",
+   "kw": [
+    "full-length isoforms"
+   ],
+   "info": "LRS finds rare and context-specific isoforms that short reads miss or mis-annotate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - poly(A) tails, modifications and editing",
+   "q": "How is poly(A) tail length measured with long reads, and what has it shown?",
+   "a": "In dRNA-seq, base-callers estimate tail length from how long the A-stretch dwells in the pore. FLAM-seq and PAiso-seq (PacBio) ligate anchors to the tail end. Three main findings: tail length correlates positively with 3' UTR length, polyadenylated but unspliced transcripts are abundant on chromatin (so post-transcriptional splicing is common), and tail length is regulated in an allele-dependent way.",
+   "kw": [
+    "poly(A) tail",
+    "FLAM-seq",
+    "PAiso-seq"
+   ],
+   "info": "The key advantage over short-read methods such as TAIL-seq is that the tail and the transcript isoform are read in the same molecule.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - poly(A) tails, modifications and editing",
+   "q": "How does nanopore dRNA-seq detect RNA modifications, and how reliable is it?",
+   "a": "Each modification shifts the ionic current signal, the 'wiggle', and machine-learning models trained on modification-specific patterns detect these shifts. m6A detection is promising, but other modifications remain hard to detect, especially when they are rare, because the signal is variable and patterns overlap.",
+   "kw": [
+    "m6A",
+    "dRNA-seq",
+    "epitranscriptomics"
+   ],
+   "info": "m6A-LAIC-seq, an RNA immunoprecipitation-based method, showed that m6A at specific sites is associated with AS and APA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - poly(A) tails, modifications and editing",
+   "q": "What has LRS shown about A-to-I RNA editing and splicing?",
+   "a": "Both dRNA-seq and PacBio can find editing and processing in the same transcript. This revealed editing within introns and a correlation between how close an editing site is to a splice junction and AS at that junction.",
+   "kw": [
+    "A-to-I editing",
+    "ADAR"
+   ],
+   "info": "",
+   "concl": "Adenosine-to-inosine editing promotes alternative splicing."
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - splicing coordination",
+   "q": "What are the exon definition model and the 'polar' splicing mechanism?",
+   "a": "The exon definition model proposes that splice sites pair across an exon, so recognizing one exon helps adjacent exons get spliced. In the Fn1 gene, mutations that affected splicing of one exon also changed splicing of a distant exon. This is called 'polar' because it acts in the 5' to 3' direction, and it is enhanced when transcription elongation is inhibited.",
+   "kw": [
+    "exon definition",
+    "Fn1",
+    "polar mechanism"
+   ],
+   "info": "The elongation effect suggested that splice site selection is coordinated co-transcriptionally. Earlier EST, microarray and short-read studies found co-expressed exons, but they could not show that the coordination happens within the same molecule.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - splicing coordination",
+   "q": "What has steady-state and single-cell LRS shown about co-splicing?",
+   "a": "Specific splicing patterns are over-represented, and more than 60% of multi-exon genes show consistent co-splicing of specific exon pairs. Single-cell LRS of mouse and human brain found exon connectivity and cell-type-specific splicing that changes with developmental stage.",
+   "kw": [
+    "co-splicing",
+    "SnISOr-seq",
+    "single-cell LRS"
+   ],
+   "info": "Fig. 2b: CADM1 exon inclusion differs between human brain cell types (SnISOr-seq). For Dnm2 in mouse visual cortex excitatory neurons (postnatal days 14, 21, 28 and 56), inclusion of specific exons increases during development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - splicing coordination",
+   "q": "What did long-read sequencing of chromatin-associated nascent RNA reveal?",
+   "a": "It showed both elongation state and splicing status of a single pre-mRNA in one read. Introns are not removed in the order they are transcribed, splicing events in the same molecule are coordinated even across large distances, and fully elongated but incompletely spliced pre-mRNAs are common.",
+   "kw": [
+    "nano-COP",
+    "POINT-nano",
+    "post-transcriptional splicing"
+   ],
+   "info": "nano-COP uses 4sU labelling, chromatin enrichment and dRNA-seq. POINT-nano uses chromatin enrichment, Pol II pulldown and cDNA-seq. The 3' end of each read marks the active Pol II position. Caveat: introns are usually longer than 1,000 nt, so a read rarely contains more than one intron.",
+   "concl": "Post-transcriptional splicing is more common than previously thought."
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - splicing coordination",
+   "q": "Is splicing order random?",
+   "a": "No. dRNA-seq of chromatin-associated polyadenylated transcripts in human cells showed that post-transcriptional splicing largely follows a predetermined order. An analysis of adjacent introns in short-read and long-read datasets found that most genes are spliced in one of a few predominant patterns.",
+   "kw": [
+    "splicing order"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - splicing coordination",
+   "q": "What do Nano-ID and Nanodynamo add?",
+   "a": "Both combine nucleotide labelling with dRNA-seq, so RNA synthesis and decay can be measured per isoform and with modifications preserved. Nano-ID follows RNA from nascent to mature and identifies transcript features linked to stability. Nanodynamo compares subcellular fractions, including 4sU-labelled and polysome-associated RNA, and found extensive crosstalk between stages of the RNA life cycle.",
+   "kw": [
+    "Nano-ID",
+    "Nanodynamo",
+    "4sU"
+   ],
+   "info": "Both are limited by dRNA-seq read length, so transcripts are incompletely covered. Nanodynamo is conceptually similar to the short-read subcellular TimeLapse-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - technical considerations (Box 2)",
+   "q": "Why does RNA integrity matter more for LRS than for short-read RNA-seq?",
+   "a": "In LRS, isoform annotation and quantification depend directly on intact molecules, and degradation is harder to correct computationally. In ONT dRNA-seq, degradation causes severe 3' bias and false 5' ends, so reliable results need a RIN above 7. In cDNA-based LRS, small 3' fragments are over-amplified, which distorts isoform quantification.",
+   "kw": [
+    "RIN",
+    "3' bias"
+   ],
+   "info": "These effects are worst for long genes with many isoforms, where degradation can mask ATSS, AS and APA sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - technical considerations (Box 2)",
+   "q": "How can 3' and 5' ends of transcripts be annotated accurately with LRS?",
+   "a": "For 3' ends, reading from the poly(A) tail into the templated sequence (dRNA-seq, FLAM-seq, PAiso-seq) avoids false ends caused by oligo(dT) internal priming. For 5' ends, CapTrap-seq combines cap-trapping with oligo(dT) priming on ONT or PacBio.",
+   "kw": [
+    "CapTrap-seq",
+    "internal priming"
+   ],
+   "info": "Internal priming is a particular problem for transcripts with long AU-rich 3' UTRs. CapTrap-seq improves 5'-to-3' coverage but needs a lot of input and gives shorter reads. FLEP-seq, nano-COP and NERD-seq can capture 3' ends of non-adenylated RNA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - technical considerations (Box 2)",
+   "q": "How can LRS transcript annotation and quantification be improved?",
+   "a": "The SQANTI framework compares detected transcripts with existing annotations and corrects them. Adding data from other LRS platforms, CAGE, chromatin profiling and Pol II binding improves exon-structure resolution, and comparing with RNA-seq and using error correction improves expression estimates and splice junction mapping.",
+   "kw": [
+    "SQANTI",
+    "error correction"
+   ],
+   "info": "LRS generally has higher per-base error rates than short-read RNA-seq. The authors call for more robust computational frameworks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - coordination between maturation steps",
+   "q": "Why were short-read models insufficient to show coordination between ATSS, AS and APA?",
+   "a": "Short-read studies found evidence that the steps are coordinated, and probabilistic models reconstructed isoforms. However, the fragmented reads made these models struggle with complex or rare isoforms, and they could not confirm that the processing events occur together in the same transcript.",
+   "kw": [
+    "isoform reconstruction"
+   ],
+   "info": "LRS reads the 5' end, exon combination and 3' end of the same molecule. This provides a way to validate the short-read models and has revealed previously unseen isoforms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - coordination between maturation steps",
+   "q": "How are splicing and 3'-end processing coordinated?",
+   "a": "Through terminal-exon definition, splicing of the last intron is coupled to cleavage and polyadenylation. In erythrocyte differentiation, nascent LRS showed that readthrough reads beyond the PAS usually still contain introns, while spliced reads rarely extend past the PAS.",
+   "kw": [
+    "terminal-exon definition",
+    "readthrough"
+   ],
+   "info": "RNA-seq and nanopore cDNA-seq showed that, for a subset of genes, transcripts cleaved at the distal 3' end stay at or near chromatin. There they serve as substrates for proximal 3'-end processing, terminal-intron splicing and m6A methylation (sequential polyadenylation).",
+   "concl": "Splicing affects the efficiency of 3'-end processing, or vice versa."
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - coordination between maturation steps",
+   "q": "How did targeted LRS overcome the bias towards short, abundant transcripts, and what did it find?",
+   "a": "Pull-a-long-seq enriches specific genes and 3' UTR isoforms with biotinylated probes. In fruit fly embryos and adult brain, it found complex isoforms for about 30 genes, with specific AS events (cassette exon inclusion or exclusion) linked to specific APA events such as 3' UTR extension.",
+   "kw": [
+    "PL-seq",
+    "TEQUILA-seq"
+   ],
+   "info": "This gave the first direct evidence of cooperativity between AS and APA. TEQUILA-seq captures transcripts with probes amplified from array-synthesized oligos and is cheaper and more scalable. An alternative is cDNA size selection above 3 kb, which loses most of the sample and so needs a lot of input.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - coordination between maturation steps",
+   "q": "What is promoter dominance?",
+   "a": "Promoter dominance means the TSS used influences which 3' end is chosen and, to a lesser extent, which splice sites are used. About 60% of genes show it in fruit fly and human neural tissues. Dominant promoters have p300 (CBP) binding, depletion of the histone variant H2A.Z and enrichment of H3K18ac.",
+   "kw": [
+    "promoter dominance",
+    "H3K18ac",
+    "H2A.Z"
+   ],
+   "info": "Based on size-selected RNA and cDNA giving reads with a median of 4 to 5 kb (standard methods give 1 to 2 kb), plus ONT dRNA-seq to identify true 3' ends. How TSSs impose this constraint is unknown.",
+   "concl": "TSS choice shapes downstream splicing and polyadenylation."
+  },
+  {
+   "type": "qa",
+   "section": "Long-read sequencing - coordination between maturation steps",
+   "q": "What is the positional initiation-termination axis?",
+   "a": "TSS and PAS choices are paired by position along the gene: upstream TSSs pair with upstream PASs, and downstream TSSs with downstream PASs.",
+   "kw": [
+    "TSS-PAS coupling"
+   ],
+   "info": "This coupling coincides with chromatin structural domains and fast Pol II elongation. It comes from a recent study that, per the reference list, includes a bioRxiv preprint.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - disease-associated QTLs",
+   "q": "What are molecular QTLs, and what has GTEx contributed?",
+   "a": "Molecular QTL studies map associations between DNA sequence variants (such as SNPs) and molecular traits such as expression, TSS usage, exon inclusion or 3' UTR extension in large cohorts. Using more than 15,000 RNA-seq samples from 838 individuals, GTEx built a large catalogue of eQTLs, many of which affect expression and splicing in highly tissue-specific patterns.",
+   "kw": [
+    "eQTL",
+    "GTEx"
+   ],
+   "info": "Glossary: QTL types include eQTLs (expression), sQTLs (splicing), 3'aQTLs (APA) and puQTLs (promoter usage).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - disease-associated QTLs",
+   "q": "What is known about sQTLs and 3'aQTLs?",
+   "a": "sQTLs are a primary link between genetic variation and phenotype, often altering protein function independently of expression level. Many affect RBP binding sites rather than the splice sites themselves. About 1.49 million SNPs are associated with APA, and many 3'aQTLs respond strongly to cellular challenges.",
+   "kw": [
+    "sQTL",
+    "3'aQTL"
+   ],
+   "info": "Deep learning that places PAS usage in its genomic context showed an interaction between 3'aQTLs and sQTLs. LRS atlases are starting to link isoform changes to risk loci in neurodegenerative disease.",
+   "concl": "3'aQTLs may drive cellular adaptation, so genetic variants should be studied in different physiological contexts."
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - disease-associated QTLs",
+   "q": "What is special about promoter-usage QTLs (puQTLs)?",
+   "a": "puQTLs rarely overlap with eQTLs and are missed by analyses at the gene level rather than the exon level. They sit in active enhancers and TSS regions, unlike 3'aQTLs, which are distributed symmetrically around 3' UTRs. Across 49 tissues, most puQTLs were tissue-specific and fell into two main clusters: brain-related and non-neural tissues.",
+   "kw": [
+    "puQTL",
+    "enhancers"
+   ],
+   "info": "The authors take this as evidence for the importance of ATSS in regulating neuronal genes, with possible implications for neurological disease.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - disease-associated QTLs",
+   "q": "How complete is the human isoform catalogue?",
+   "a": "It is not complete. GTEx short reads found more than 260,000 transcripts from protein-coding genes, double the number in RefSeq. LRS added more than 70,000 isoforms, and microglia samples alone added another 35,000.",
+   "kw": [
+    "isoform annotation",
+    "allele-specific expression"
+   ],
+   "info": "Allele-specific LRS analyses show that variants affect isoform structure and expression in an allele-dependent way. sQTLs associated with tissue-specific isoforms are linked to ATSS.",
+   "concl": "QTLs should be interpreted in the broader context of coordinated RNA processing."
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - CRISPR manipulation",
+   "q": "What have CRISPR-Cas9 deletions and prime editing shown about RNA processing?",
+   "a": "Deletions of intronic elements, specific TSSs and 3' UTR sequences showed, for individual genes, that 3' UTR editing can strongly change expression, that promoter usage influences splice site and PAS selection, and that distal PAS use is coupled to specific exon skipping. Prime editing introduces precise mutations at splice sites without double-strand breaks, which can disrupt splicing or switch isoforms.",
+   "kw": [
+    "Cas9",
+    "prime editing"
+   ],
+   "info": "Prime editing reduces off-target effects and repair errors. The authors expect LRS to soon describe the outcomes of these manipulations at the level of full-length isoforms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - CRISPR manipulation",
+   "q": "How has dCas9 been used to manipulate RNA processing?",
+   "a": "Activating a dominant promoter with CRISPR switched 3' end use towards the PAS associated with that promoter, usually the distal one. dCas9 placed at proximal polyadenylation signals acted as a Pol II roadblock, promoting proximal and cryptic PASs and inhibiting extended 3' UTRs, with little effect on splicing.",
+   "kw": [
+    "dCas9",
+    "Pol II roadblock",
+    "CD44"
+   ],
+   "info": "Recruiting the catalytic domain of DNA methyltransferase 3B to CD44 increased exon inclusion, showing that DNA methylation modulates AS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - CRISPR manipulation",
+   "q": "Why is Cas13 useful for studying RNA processing?",
+   "a": "Cas13 targets RNA without touching DNA. Dead Cas13 (dCas13) can block regulatory elements in nascent RNA: recruiting splicing factors to change exon inclusion, blocking polyadenylation signals to induce APA, or blocking splice sites. With multiple gRNAs, several processing sites can be perturbed in parallel.",
+   "kw": [
+    "Cas13",
+    "dCas13",
+    "circRNA"
+   ],
+   "info": "Targeting back-splice junctions knocked down thousands of circRNAs without affecting their linear counterparts, revealing roles in human cell proliferation and mouse preimplantation development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "In vivo function - CRISPR manipulation",
+   "q": "What have genome-wide CRISPR screens contributed to RNA processing research?",
+   "a": "Screens with single-cell RNA-seq readouts (Perturb-seq, TAP-seq, CROP-seq, CaRPool-seq) link each perturbation to transcriptome changes. A screen that exploited the 3'-end bias of scRNA-seq found that knocking out regulators of Pol II elongation, RNA export, translation and splicing all changed PAS usage. CHyMErA, which uses Cas9 plus Cas12a to excise exons, found more than 2,000 frame-preserving exons that affect cell fitness.",
+   "kw": [
+    "Perturb-seq",
+    "CHyMErA"
+   ],
+   "info": "Limitations are the high cost of single-cell sequencing and the limited coverage of mRNA 5' and 3' ends. A dCas13 gRNA library tiling the introns of a dual-colour splicing reporter (RFP for inclusion, GFP for exclusion) identified new splicing regulatory elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Future perspective",
+   "q": "What do the authors see as the most important future directions?",
+   "a": "Two things: integrating observations from different methods, both protein-centric and RNA-centric, and studying gene expression in vivo in the context of genetic variation. Combining RNA LRS with single-molecule DNA footprinting such as FIBER-seq and DiMeLo-seq could capture 'coordination states' at single-allele level.",
+   "kw": [
+    "FIBER-seq",
+    "DiMeLo-seq",
+    "LR-Ribo-STAMP"
+   ],
+   "info": "FIBER-seq combined with PacBio Iso-Seq linked allele-specific chromatin changes in an unresolved Mendelian condition to transcriptional readthrough and harmful isoforms. LR-Ribo-STAMP links isoform features to translation rates.",
+   "concl": "Coordination of RNA processing should be studied from chromatin through to the encoded protein."
+  },
+  {
+   "type": "qa",
+   "section": "Future perspective",
+   "q": "Why are timescales a key limitation in studying RNA processing?",
+   "a": "The processes run on very different timescales. TF binding takes milliseconds, elongation seconds to hours, splicing minutes to hours, and export minutes. Cell cycles range from under 10 minutes (fly embryos before the MZT) to days (human somatic cells), while ageing-related processing changes take decades. Current sequencing gives snapshots that miss intermediates.",
+   "kw": [
+    "timescales",
+    "RNA velocity",
+    "scRNA-seq"
+   ],
+   "info": "The authors suggest combining LRS with scRNA-seq and using RNA velocity (comparing pre-mRNA with mRNA) to reconstruct trajectories of processing regulation.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Long-read sequencing - coordination between maturation steps",
+   "text": "How do TSSs constrain splicing and polyadenylation choices? The mechanism of promoter dominance is still unknown, despite its chromatin signature (p300, low H2A.Z, H3K18ac)."
+  },
+  {
+   "type": "note",
+   "section": "Short-read RNA-seq - nascent RNA dynamics",
+   "text": "Tissue-specific UPRT/4tU labelling (SLAM-ITseq) has been used in zebrafish only for transcription. The authors suggest it could also capture rapid changes in RNA processing and isoform switching. Worth revisiting for in vivo work in fish."
+  },
+  {
+   "type": "note",
+   "section": "Future perspective",
+   "text": "DNA LRS (chromatin fibre footprinting) has not yet been directly compared with RNA LRS from the same samples to define 'coordination states' at single-allele level."
+  }
+ ]
+}

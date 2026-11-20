@@ -1,0 +1,2 @@
+# Literature paper-notes: weekly update, Wednesday 06:00
+0 6 * * 3 /home/mbosnjak/literature/notes_builder/run_weekly.sh

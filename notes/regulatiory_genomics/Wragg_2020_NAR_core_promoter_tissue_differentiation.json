@@ -1,0 +1,542 @@
+{
+ "id": "Wragg_2020",
+ "title": "Embryonic tissue differentiation is characterized by transitions in cell cycle dynamic-associated core promoter regulation",
+ "link": "https://doi.org/10.1093/nar/gkaa563",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Wragg_2020_NAR_core_promoter_tissue_differentiation.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "How core promoter variation shapes transcriptional output in embryonic cells moving from a proliferative state to a lineage-specifying state with slower cell cycling. The role of promoter-associated gene regulatory networks in these developmental cell cycle transitions was poorly understood.",
+   "kw": [
+    "core promoter",
+    "cell cycle dynamics"
+   ],
+   "info": "Studied in vivo in zebrafish embryos at the segmentation stage.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding in one sentence?",
+   "a": "Genes upregulated in slowly cycling, differentiating (G1) cells have sharper TSS usage with more TATA-box and Sp1 sites, while genes upregulated in rapidly cycling (S/G2/M) cells have broad TSS usage and are enriched for the CCAAT-box.",
+   "kw": [
+    "TATA-box",
+    "CCAAT-box",
+    "Sp1"
+   ],
+   "info": "These promoter features follow cell cycle dynamics rather than tissue or lineage origin. The same motifs also mark genes that change TSS distribution and genes that switch alternative promoters.",
+   "concl": "Core promoters take part in cell-cycle-dependent transcription regulation during embryo development."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the core promoter?",
+   "a": "A stretch of DNA surrounding the transcription start site (TSS) of every gene. It integrates regulatory signals from multiple cis-regulatory elements and is a key site of transcriptional regulation.",
+   "kw": [
+    "core promoter",
+    "TSS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are sharp and broad promoters?",
+   "a": "Sharp promoters have a narrow TSS distribution with a single dominant base-pair site. Broad promoters spread TSS usage across the promoter, and there is a spectrum of architectures in between.",
+   "kw": [
+    "promoter shape",
+    "CAGE"
+   ],
+   "info": "These patterns were revealed by single-base-pair TSS mapping with CAGE (cap analysis of gene expression). Distinct promoter architectures are thought to indicate distinct regulatory networks acting on the core promoter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was known about promoter grammar at the zebrafish midblastula transition (MBT)?",
+   "a": "The authors had previously shown that the change from rapid synchronous divisions before MBT to slower asynchronous divisions after MBT coincides with a switch in initiation grammar. It moves from defined, W-box mediated initiation to a broader, unrestricted grammar constrained by nucleosome positioning.",
+   "kw": [
+    "MBT",
+    "W-box",
+    "zygotic genome activation"
+   ],
+   "info": "Before MBT, embryonic behaviour is controlled by maternally deposited factors. The zygotic genome activates at MBT.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the FUCCI system?",
+   "a": "The Fluorescent Ubiquitination-based Cell Cycle Indicator, which shows cell cycle progression in living cells by fusing fluorescent markers to cell-cycle-phase-restricted factors, usually Cdt1 and Geminin. In zebrafish it marks G1 cells red (Cdt1) and S/G2/M cells green (Geminin).",
+   "kw": [
+    "FUCCI",
+    "Cdt1",
+    "Geminin"
+   ],
+   "info": "Because rapidly cycling cells spend most of their time in S/G2/M and slowly cycling cells have a long G1, FUCCI can separate rapidly from slowly cycling cells in vivo.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is differentiation linked to cell cycle changes, according to earlier work?",
+   "a": "In zebrafish (FUCCI) and in human and mouse ESCs, differentiation is marked by slower cycling with a lengthened G1 phase. Muscle and liver differentiation also show wholesale depletion of RNA polymerase II regulatory cofactors, and different lineages appear to use different general transcription factors.",
+   "kw": [
+    "G1 elongation",
+    "differentiation"
+   ],
+   "info": "This suggests core promoters and basal transcription factors are an unexplored layer of differentiation control.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the hypothesis and strategy of the study?",
+   "a": "The authors hypothesized that analysing core promoter architecture during changes in cell cycle behaviour would reveal how promoter regulation contributes to developmental transitions. They FACS-separated G1 and S/G2/M cells from segmentation-stage FUCCI embryos and profiled TSSs with CAGE.",
+   "kw": [
+    "FACS",
+    "CAGE"
+   ],
+   "info": "They chose segmentation-stage embryos because differentiating cells with distinct cell cycle dynamics are spatially well separated at this stage.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - fish and imaging",
+   "q": "Which fish line and imaging setup did they use?",
+   "a": "They used FUCCI zebrafish Tg(EF1a:mKO2-zCdt1(1/190))rw0405b / Tg(EF1a:mAG-zGem(1/100))rw0410h from sibling crosses. Embryos were dechorionated with 1 mg/ml pronase from Streptomyces griseus, mounted in 1% low-melt agarose and imaged on a Zeiss Lightsheet with dual-side illumination, using maximum intensity projections in Zen Black.",
+   "kw": [
+    "FUCCI",
+    "lightsheet"
+   ],
+   "info": "To get red/green proportions, 10 embryos per stage were imaged on a Zeiss Axio Zoom V16 and the pixel count of each fluorophore was quantified in ImageJ.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell sorting and CAGE",
+   "q": "How were cells sorted and the RNA prepared?",
+   "a": "About 200 14-somite embryos were dissociated with enzyme-free cell dissociation buffer and FACS-sorted into red (G1) and green (S/G2/M) populations. RNA was extracted with the miRNeasy kit, and every sample had a RIN above 9.",
+   "kw": [
+    "FACS",
+    "propidium iodide"
+   ],
+   "info": "Correct sorting was validated by propidium iodide DNA content analysis. RNA quality was checked on a Bioanalyzer 2100.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell sorting and CAGE",
+   "q": "Which CAGE protocol and sequencing setup did they use?",
+   "a": "NanoCAGE, a protocol optimized for small cell numbers, on G1, S/G2/M and unsorted (Total) cells in triplicate. Libraries were sequenced on an Illumina HiSeq 2500 with 50-cycle single reads.",
+   "kw": [
+    "nanoCAGE"
+   ],
+   "info": "Data are in ArrayExpress under E-MTAB-8795.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE mapping and clustering",
+   "q": "How were CAGE reads mapped and CTSSs defined?",
+   "a": "Reads were trimmed by 15 bp at the 5' end to remove the linker and UMI, then mapped to Zv9 with Bowtie (at most 2 mismatches, uniquely mapping tags with MAPQ 20). CAGEr removed the extra non-genomic G, and every unique 5' read end was called a CAGE-defined TSS (CTSS).",
+   "kw": [
+    "Bowtie",
+    "CAGEr",
+    "CTSS"
+   ],
+   "info": "Counts were normalized with a power-law approach to 10^6 reads, giving tags per million (tpm). Replicates correlated well and were merged. One S/G2/M library (replicate 2) was excluded because of low complexity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE mapping and clustering",
+   "q": "How were tag clusters and consensus clusters built?",
+   "a": "CTSSs with at least 0.5 tpm in one sample were clustered when neighbours were within 20 bp. Each tag cluster (TC) was trimmed to its 10th–90th expression percentiles and kept only above 5 tpm. TCs within 100 bp of each other across samples were merged into consensus clusters (CCs).",
+   "kw": [
+    "tag cluster",
+    "consensus cluster"
+   ],
+   "info": "CCs were annotated to the nearest Ensembl (danRer7) TSS with ChIPseeker. Only CCs within 1 kb upstream of an annotated TSS or in the 5' UTR were kept.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - expression and enrichment analyses",
+   "q": "How did they test differential expression, GO and cell cycle periodicity?",
+   "a": "DESeq2 on raw CC counts, with adjusted P < 0.05. GO enrichment used GOstats, testing up- and downregulated genes separately against all expressed genes. Cell cycle periodicity was assessed against the top 600 human genes in Cyclebase 3.0 via human orthologs, with a permutation test (n = 10,000).",
+   "kw": [
+    "DESeq2",
+    "GOstats",
+    "Cyclebase"
+   ],
+   "info": "When several CCs mapped to one region, the most highly expressed CC represented it. Orthologs (one-to-one and one-to-many) came from the Ensembl March 2017 archive (hg19).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - expression and enrichment analyses",
+   "q": "How did they measure tissue specificity?",
+   "a": "Tau and entropy scores were computed from RNA-seq of eight adult zebrafish tissues in DanioCode series 391 (brain, gill, heart, intestine, kidney, liver, muscle, spleen). For embryos, an anatomical specificity score was built from ZFIN in situ expression data from zygote to 20 dpf.",
+   "kw": [
+    "Tau",
+    "entropy",
+    "ZFIN"
+   ],
+   "info": "The anatomical specificity score comes from unpublished work (Vucenovic and Lenhard), so the paper gives few details on how it is calculated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif and shape analyses",
+   "q": "How was core promoter motif enrichment tested?",
+   "a": "PWMs for the TATA-box, CCAAT-box, Sp1, INR and YY1 were taken from JASPAR 2018. Each CC was centred on its dominant TSS and scanned from 120 bp upstream to 50 bp downstream, with a hit called at a 90% PWM match. Each gene set was compared with non-significant CCs by Fisher's exact test (P < 0.01), and log2 odds ratios were shown as heatmaps.",
+   "kw": [
+    "JASPAR",
+    "PWM",
+    "Fisher's exact test"
+   ],
+   "info": "For the W-box, they counted all poly-W (A/T) pentamers 20–40 bp upstream of the dominant TSS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif and shape analyses",
+   "q": "How were promoter shapes classified?",
+   "a": "By interquantile width (IQW), the distance between the 10th and 90th expression percentiles of a CC. Sharp means IQW < 10 bp. Peaked broad means IQW of 10 bp or more with one CTSS carrying more than 60% of expression. Broad covers the rest.",
+   "kw": [
+    "IQW",
+    "promoter shape"
+   ],
+   "info": "The Figure 4E legend defines sharp more strictly: at least 90% of expression within 10 bp and at least 60% from one dominant TSS. This differs slightly from the Methods wording.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif and shape analyses",
+   "q": "How did they analyse alternative promoter usage?",
+   "a": "They took 1612 paired canonical and alternative promoters from earlier zebrafish work and kept genes above 5 tpm in either promoter in both populations. Genes with a 2-fold change in alternative promoter expression normalized to canonical were selected (n = 79). These were split by whether the canonical or alternative promoter changed: a change above 50% in one and below 25% in the other.",
+   "kw": [
+    "alternative promoters"
+   ],
+   "info": "Groups: canonical down, alternative down, canonical up, alternative up. Nine genes fitting none of these were discarded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - segregation of cells by cell cycle dynamics",
+   "q": "What did FUCCI imaging show across the segmentation period?",
+   "a": "Cell cycling was separated by space and tissue. Developing somites were enriched for slowly cycling G1 (red) cells. Rapidly cycling S/G2/M (green) cells marked mostly neuroectoderm-derived lineages (optic cup, neural tube), the notochord and circulating cells over the yolk.",
+   "kw": [
+    "somites",
+    "notochord"
+   ],
+   "info": "The 14-somite stage showed the clearest spatial segregation by cycling dynamics, so it was chosen for CAGE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - segregation of cells by cell cycle dynamics",
+   "q": "Did FACS really separate cells by cell cycle stage?",
+   "a": "Yes. In propidium iodide DNA content analysis, the red population was 81% diploid (2N, G1) versus 39% in the total population. The green population had more S-phase (27% vs 17%) and 4N G2/M cells (46% vs 22%).",
+   "kw": [
+    "propidium iodide",
+    "FACS"
+   ],
+   "info": "Imaging of sorted cells showed 93% red cells in the G1 sort and 89% green cells in the S/G2/M sort; the rest were blank (Figure 1C).",
+   "concl": "FUCCI plus FACS successfully separates cells by cell cycle stage in the embryo."
+  },
+  {
+   "type": "qa",
+   "section": "Results - global transcription initiation patterns",
+   "q": "How did they show that nanoCAGE gives reliable TSS data?",
+   "a": "The IQW distributions of well-expressed clusters (TPM of 5 or more) matched published 14-somite tagging-CAGE data, and 80% of genes were shared across all samples. About 70% of TSSs mapped within 1 kb upstream of annotated gene starts, similar to published CAGE.",
+   "kw": [
+    "nanoCAGE",
+    "IQW"
+   ],
+   "info": "Example promoters with consistent TSS profiles were si:ch211-113a14.29 (a histone 2B orthologue) and mmp30.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptomes of G1 and S/G2/M cells",
+   "q": "How many genes were differentially expressed between G1 and S/G2/M cells?",
+   "a": "Of 12,865 consensus clusters shared between the populations, 190 were upregulated in G1 and 138 in S/G2/M (adjusted P < 0.05).",
+   "kw": [
+    "DESeq2"
+   ],
+   "info": "The two transcriptomes overlap heavily, and a small subset is differentially regulated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptomes of G1 and S/G2/M cells",
+   "q": "Were the S/G2/M-upregulated genes enriched for cell cycle genes?",
+   "a": "Yes. 46% of S/G2/M-upregulated genes were cell cycle periodic (P < 0.0001), mostly peaking between G2 and M. Only 3.2% of G1-upregulated genes were periodic, and most of those peaked in G1.",
+   "kw": [
+    "Cyclebase",
+    "cell cycle periodic genes"
+   ],
+   "info": "In unchanged genes, peak times were spread more evenly across cell cycle stages.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptomes of G1 and S/G2/M cells",
+   "q": "Which population expressed more tissue-specific genes?",
+   "a": "G1. Its upregulated genes had higher Tau and lower entropy scores, and their embryonic anatomical specificity was highest specifically at the segmentation stage. GO terms were muscle development for G1 and nuclear division and DNA/chromatin processing for S/G2/M.",
+   "kw": [
+    "tissue specificity",
+    "GO"
+   ],
+   "info": "In the ZFIN cross-reference, most genes had no tissue-specific term (72% S/G2/M, 61% G1, 81% unchanged). Somite and muscle terms were enriched in G1. Germ layer and proliferative region terms were enriched in S/G2/M.",
+   "concl": "Differential expression reflects cell replication in S/G2/M cells and tissue specification in G1 cells."
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptomes of G1 and S/G2/M cells",
+   "q": "Did the neural enrichment of green cells seen in imaging show up in the transcriptome?",
+   "a": "No. Neural and sensory tissue terms were fairly evenly represented in both populations, even though green cells looked enriched in the eye cup and neural tissue.",
+   "kw": [
+    "neural tissue"
+   ],
+   "info": "On closer imaging, neural lineages contain both fast- and slow-dividing cells. Bulk transcriptomics shows the most enriched tissues but not tissue-specific cell cycle regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - core promoter classes and motifs",
+   "q": "Which core promoter motifs were enriched in each population?",
+   "a": "S/G2/M-upregulated genes were enriched for the NF-Y-bound CCAAT-box (P = 4.22e-12). G1-upregulated genes were enriched for the canonical TATA-box (P = 2.04e-7) and Sp1 sites (P = 0.002) and depleted for YY1 (P = 0.002).",
+   "kw": [
+    "CCAAT-box",
+    "TATA-box",
+    "NF-Y"
+   ],
+   "info": "Motifs were scanned 120 bp upstream to 50 bp downstream of the dominant TSS, against genes with unchanged expression. CCAAT and TATA enrichment were inverse between the two groups, and both motifs were positionally constrained relative to the TSS.",
+   "concl": "Fast- and slow-cycling cells use different core promoter elements: CCAAT versus TATA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - core promoter classes and motifs",
+   "q": "What is a W-box, and was it used differently?",
+   "a": "A W-box is a roughly 5 bp A/T-rich stretch about 30 bp upstream of the TSS, with a looser sequence than the canonical TATA-box. In the region 20–40 bp upstream, G1 genes favoured canonical TATA (over 90% PWM match), while S/G2/M genes were enriched for 75–90% matches, which correspond to TATA-like and W-box motifs.",
+   "kw": [
+    "W-box",
+    "TATA-like"
+   ],
+   "info": "Overall WW-dinucleotide frequency did not differ between groups, so the authors analysed PWM match strength and specific pentamers instead.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - core promoter classes and motifs",
+   "q": "Which poly-W pentamers were enriched in each group?",
+   "a": "Four TATA-divergent pentamers (TTAAA, TAAAT, TTTAA, AATAA) were enriched in S/G2/M-upregulated promoters (P < 0.001–0.01). TATAA and ATAAA were enriched in G1 (P < 0.001), but in 90% (21/23) and 100% (21/21) of cases they were part of a canonical TATA-box.",
+   "kw": [
+    "poly-W pentamers"
+   ],
+   "info": "This points to canonical versus non-canonical TATA element use between populations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - core promoter classes and motifs",
+   "q": "Were G1-upregulated promoters sharper?",
+   "a": "Yes. Sharp promoters made up 43.7% of G1-upregulated genes, versus 29.0% of S/G2/M-upregulated and 29.2% of unchanged genes. TATA-box use was strongly enriched in sharp promoters, but only in the G1 gene set.",
+   "kw": [
+    "sharp promoters",
+    "TATA-box"
+   ],
+   "info": "In the S/G2/M set, promoter shape was only weakly linked to TATA. WW-dinucleotide frequency showed no association with shape.",
+   "concl": "Genes upregulated in slowly cycling G1 cells combine more TATA use with sharper TSS distribution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue-independence of promoter differences",
+   "q": "Are the motif differences just a consequence of different tissues in each population?",
+   "a": "Mostly not. The analysis was repeated on tissue-specific, non-tissue-specific and tissue-independent gene sets. CCAAT stayed enriched in S/G2/M in every set (P = 0.005–0.0001) and TATA stayed enriched in G1 in every set (P < 0.0001).",
+   "kw": [
+    "tissue-independent"
+   ],
+   "info": "Set sizes (S/G2/M, G1, unchanged): tissue-specific 38/74/1577; non-tissue-specific 100/116/6849; tissue-independent 120/141/7633. Sp1 enrichment appeared in the tissue-independent sets. CCAAT enrichment was smaller and TATA enrichment larger in the tissue-specific set.",
+   "concl": "Promoter differences are characteristic of cell cycle dynamics, but tissue identity contributes somewhat to G1 TATA enrichment and narrow TSS distribution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue-independence of promoter differences",
+   "q": "Did TSS width differences hold in the tissue-independent gene set?",
+   "a": "Yes. TSS distribution was narrower in G1-upregulated and broader in S/G2/M-upregulated genes than in unchanged genes, though the G1 sharpening was weaker than in the full gene set.",
+   "kw": [
+    "IQW"
+   ],
+   "info": "The tissue-specific set was too small for a reliable IQW analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shape transitions",
+   "q": "How many promoters changed shape between G1 and S/G2/M?",
+   "a": "Of 4774 promoters expressed above 10 tpm in both populations, 394 (8.3%) changed shape class (sharp, peaked broad or broad) between populations.",
+   "kw": [
+    "promoter shape transition"
+   ],
+   "info": "The global IQW distribution was unchanged between populations. Example: mtfr2, a gene associated with proliferation in human, has broader TSS usage in S/G2/M, with a CCAAT-box near the region where TSS usage differs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shape transitions",
+   "q": "Which motifs marked the shape-changing and stable promoters?",
+   "a": "Promoters sharp in both populations (n = 775) were enriched for TATA, and promoters broad in both (n = 3421) were depleted for TATA. Promoters that were sharp in G1 and broad in S/G2/M (n = 82) were enriched for CCAAT (P < 0.05) compared with the reverse group (G1 broad, S/G2/M sharp; n = 77).",
+   "kw": [
+    "CCAAT-box",
+    "TATA-box",
+    "YY1"
+   ],
+   "info": "CCAAT and Sp1 were also enriched in shared-sharp promoters, though about 17-fold less than TATA, even though both are usually associated with broad promoters. YY1 was enriched where TSSs condensed in S/G2/M. The paper writes this significance as 'n<0.01', apparently a typo for P.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shape transitions",
+   "q": "What did GO analysis of shape-switching genes show?",
+   "a": "A mixed set of terms, with both proliferation and differentiation genes. The authors conclude that shape transitions have a subtler effect on transcriptional output than differential expression, though both involve the same motifs.",
+   "kw": [
+    "GO"
+   ],
+   "info": "G1 broad / S/G2/M sharp genes included DNA demethylation, replication fork processing and chondrocyte differentiation. G1 sharp / S/G2/M broad genes included peptidyl-proline modification and p53 signal transduction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoter usage",
+   "q": "How many genes switched alternative promoter usage between populations?",
+   "a": "Of 231 genes with expressed canonical or alternative promoters, 79 (34%) showed a 2-fold change in relative alternative promoter expression. Groups (S/G2/M relative to G1): canonical down 12, alternative down 22, canonical up 10, alternative up 26, and 9 discarded.",
+   "kw": [
+    "alternative promoters"
+   ],
+   "info": "The text does not give the alternative-up n; 26 comes from Figure 6B.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoter usage",
+   "q": "Which motifs were linked to alternative promoter switching?",
+   "a": "TATA was enriched where the canonical promoter was reduced in S/G2/M (P < 0.05). CCAAT was enriched where the alternative promoter was increased in S/G2/M (P < 0.01).",
+   "kw": [
+    "inpp5b",
+    "CCAAT-box"
+   ],
+   "info": "Example: inpp5b has an unchanged canonical promoter but more use of a CCAAT-containing alternative promoter in S/G2/M. Public RNA-seq suggests this promoter drives a segmentation-period-specific transcript.",
+   "concl": "The same TATA/CCAAT split shapes alternative promoter choice between fast- and slow-cycling cells."
+  },
+  {
+   "type": "qa",
+   "section": "Results - temporal dynamics across segmentation",
+   "q": "How did the ratio of fast- to slow-cycling cells change over segmentation?",
+   "a": "The green-to-red FUCCI pixel ratio fell from 2.4:1 at 4-somite (11 hpf) to 1.1:1 at 14-somite (16 hpf) and 0.4:1 at Prim-5 (24 hpf), with n = 10 embryos per stage.",
+   "kw": [
+    "FUCCI",
+    "segmentation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - temporal dynamics across segmentation",
+   "q": "Did genes with temporal expression changes show the same promoter pattern?",
+   "a": "Yes, using published 4-somite, 14-somite and Prim-5 CAGE (8130 shared CCs). Genes losing expression over time (n = 93) were enriched for CCAAT (P < 0.01), and genes gaining expression (n = 434) were enriched for TATA (P < 0.001). Mean IQW was 27.5 bp for lost, 23.0 for gained and 22.8 for unchanged genes.",
+   "kw": [
+    "temporal expression",
+    "CCAAT-box",
+    "TATA-box"
+   ],
+   "info": "Lost or gained genes changed more than 1.5-fold in the same direction at each successive stage. Sp1 was enriched in both sets, unlike in the cell cycle comparison, so the two gene selections partly diverge.",
+   "concl": "The promoter switch marks a temporal transition across segmentation, not only the 14-somite stage."
+  },
+  {
+   "type": "qa",
+   "section": "Results - temporal dynamics across segmentation",
+   "q": "Do the temporal and cell cycle gene sets overlap?",
+   "a": "G1-upregulated genes overlapped strongly with genes gaining expression over time (chi-square statistic 135.96, P < 0.00001), and both were linked to muscle differentiation. S/G2/M-upregulated genes did not significantly overlap with genes losing expression, although both groups share CCAAT enrichment and broader TSSs.",
+   "kw": [
+    "chi-square"
+   ],
+   "info": "Genes losing expression had GO terms for morphogenesis and gastrulation rather than proliferation. The Figure 7F table gives an overall chi-square of 147.78; 135.96 is the G1 by gained cell.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors link the CCAAT-box to cell cycle regulation?",
+   "a": "Earlier work showed CCAAT-boxes, together with CDE/CHR elements, regulate G2/M-peaking genes, for example three CCAAT-boxes bound by NF-Y in the human cyclin B2 promoter. This study extends that role to genes regulated during differentiation-coupled cell cycle changes, associated with broad TSS distribution.",
+   "kw": [
+    "NF-Y",
+    "CDE/CHR"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does this study fit with single-cell RNA-seq of early zebrafish embryos?",
+   "a": "Earlier scRNA-seq up to the 6-somite stage found early specification separating notochord and brain (fast cycling) from somites and heart (slow cycling). The authors propose that lineages are specified early through small transcriptional changes, and that the major transcriptional shift happens at tissue differentiation, together with G1 elongation.",
+   "kw": [
+    "scRNA-seq",
+    "C1-CAGE"
+   ],
+   "info": "At 6-somite most cells are still rapidly cycling. The authors suggest single-cell CAGE (for example C1-CAGE) for future work.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What role do the authors assign to the TATA-box in differentiation?",
+   "a": "More TATA-box use is a major feature of differentiating cells at the earliest stages of tissue-lineage specification. This extends the known link between TATA, sharp initiation and tissue-specific (type I) promoters.",
+   "kw": [
+    "TATA-box",
+    "type I promoters"
+   ],
+   "info": "Earlier work found that muscle and liver differentiation involves depletion of Pol II cofactors, especially TATA-associated factors. TATA-like elements have been linked to dispersed, multimodal TSS usage and, in yeast, to TFIID rather than SAGA regulation, a distinction since challenged.",
+   "concl": "Differentiation transitions in embryos go together with promoter-level changes in the regulatory program, with the TATA-box as a key component."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall model the authors propose?",
+   "a": "As cells move from proliferation to tissue specification, they slow cycling with a dominant G1 phase and sharpen promoter usage through more TATA-box and Sp1 use at the expense of the CCAAT-box. In the transcriptome, DNA/chromatin processing genes in fast-cycling unspecified cells are replaced by tissue-lineage specifying genes.",
+   "kw": [
+    "Sp1",
+    "proliferation to differentiation"
+   ],
+   "info": "Sp1 has been linked elsewhere to the proliferation-to-differentiation switch via pRB and cyclin D1, and to G1 regulation in epithelial cells.",
+   "concl": "First in vivo, whole-organism view of promoter-level regulatory changes during the switch from proliferation to tissue specification."
+  },
+  {
+   "type": "note",
+   "section": "Results - tissue-independence of promoter differences",
+   "text": "Cell cycle stage and tissue identity are confounded in sorted populations. Could single-cell CAGE separate cell cycle effects from lineage effects within one tissue, for example neural tube, which has both fast and slow cyclers?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Which general transcription factor complexes actually bind TATA versus CCAAT promoters in fast- and slow-cycling embryonic cells? The paper infers this only from motif enrichment, with no binding or perturbation data."
+  },
+  {
+   "type": "note",
+   "section": "Methods - CAGE mapping and clustering",
+   "text": "The analysis uses the old Zv9/danRer7 assembly and relatively small differentially expressed gene sets (190 and 138). Worth checking whether the motif results hold on GRCz11."
+  }
+ ]
+}

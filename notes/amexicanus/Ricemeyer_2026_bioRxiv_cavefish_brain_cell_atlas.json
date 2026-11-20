@@ -1,0 +1,664 @@
+{
+ "id": "Ricemeyer_2026",
+ "title": "Cave adaptation drives coordinated transcriptional remodeling across diverse cell types in the brain of a teleost fish",
+ "link": "https://doi.org/10.64898/2026.06.19.733352",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Ricemeyer_2026_bioRxiv_cavefish_brain_cell_atlas.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does this paper present?",
+   "a": "A spatially integrated comparative cell atlas of whole adult brains of surface and cave Astyanax mexicanus. It combines single-nucleus RNA-seq with spatial transcriptomics and defines the molecular signatures of 35 cell types.",
+   "kw": [
+    "cell atlas",
+    "snRNA-seq",
+    "spatial transcriptomics"
+   ],
+   "info": "Cavefish behavioural changes they want to explain include sleep loss, increased appetite and reduced aggression. These are thought to be complex traits that needed coordinated changes across multiple cell types to evolve, which is why their mechanisms have been hard to find.",
+   "concl": "Cave colonization drove canalized regulatory changes to gene expression across diverse cell types."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings in short?",
+   "a": "Cavefish brains differ from surface brains in cell-type composition and show complex regulatory changes in hypoxia response and circadian rhythm pathways. Microglia are extensively remodelled (senescence and AMPK pathways), and a cave-enriched ligand-receptor pattern centres on signals sent from glia to diverse neurons.",
+   "kw": [
+    "microglia",
+    "HIF1",
+    "circadian rhythm"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is it hard to find the mechanisms of adaptation, even now that genomes are cheap to assemble?",
+   "a": "Much of the change that drives adaptation over short evolutionary time is regulatory rather than in coding sequence. Bulk RNA-seq can find differentially expressed genes but is hard to interpret when many complex traits evolved through coordinated changes to the regulatory programs of multiple cell types.",
+   "kw": [
+    "regulatory evolution",
+    "bulk RNA-seq"
+   ],
+   "info": "Long-read sequencing and new assembly algorithms make it straightforward to compare closely related genomes adapted to different environments.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What common themes do subterranean animals show?",
+   "a": "Energetic and developmental resources are moved away from vision and its neural circuitry and towards non-visual senses that detect movement, vibration, smell or electric fields. Caves are also dark, hypoxic and have different food availability and parasite load.",
+   "kw": [
+    "subterranean adaptation"
+   ],
+   "info": "Examples: the naked mole-rat has degraded eyes and reduced visual pathways but higher tactile sensitivity and pain tolerance. The cave salamander Proteus anguinus has reduced eyes and visual nerves but can navigate using magnetic fields. These perturbed processes often mimic human disease phenotypes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is A. mexicanus a good natural experiment for rapid adaptation?",
+   "a": "One species has river populations in the Sierra del Abra region of northeastern Mexico and at least 35 cave populations that adapted independently. Cave evolution happened several times over roughly the last 20,000 years, is still ongoing, and surface and cave populations keep hybridizing.",
+   "kw": [
+    "Astyanax mexicanus",
+    "repeated evolution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which cavefish traits are known, and which behavioural mechanisms were already explained?",
+   "a": "Known traits include eye loss, starvation resistance, enhanced olfaction, and loss of aggression, schooling, circadian rhythm and prey response. Previously explained mechanisms include more superficial neuromasts for vibration attraction and a mao mutation that reduces aggression.",
+   "kw": [
+    "mao",
+    "neuromasts"
+   ],
+   "info": "Brains are highly heterogeneous and most behavioural changes are likely polygenic, so finding the causal genetic changes has been largely intractable. Single-cell and spatial RNA-seq can break the changes down by cell type and brain region.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What central question about brain cell types does the paper ask?",
+   "a": "Whether brain cell types evolved similarly during cave adaptation, or whether the new environment put different evolutionary pressures on different cell types.",
+   "kw": [
+    "microglia",
+    "brain immunity"
+   ],
+   "info": "Big immune differences between surface and cavefish were already known outside the brain (Peuss et al. 2020), but immunity inside the brain had not been studied. Microglial dysfunction plays a role in Alzheimer's and Parkinson's disease.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - spatially integrated comparative brain atlas",
+   "q": "Which samples make up the atlas?",
+   "a": "Nuclei from the brains of 7 Rio Choy surface fish (3 males, 4 females) and 9 Pachon cavefish (4 males, 5 females), plus spatial data from one female Rio Choy surface fish.",
+   "kw": [
+    "Rio Choy",
+    "Pachon"
+   ],
+   "info": "There are no spatial data from cavefish, so spatial annotation is based on a single surface brain.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - spatially integrated comparative brain atlas",
+   "q": "How many nuclei and clusters, and how were the clusters labelled?",
+   "a": "After QC, unsupervised network-based clustering split 117k nuclei into 35 clusters. Cell type labels came from canonical marker genes and from where each cluster's expression pattern mapped in the spatial data.",
+   "kw": [
+    "leiden clustering",
+    "UMAP"
+   ],
+   "info": "Spatial examples: Bergmann glia (slc1a3b, gabp7a, glula, s100b) concentrate in the molecular cell layer of the cerebellum. One of three VGLUT1+/VGLUT2b+ clusters concentrates in the torus longitudinalis. Unclear point: the Supplementary Figure 1 caption numbers clusters from 0 to 35, which would be 36 clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - spatially integrated comparative brain atlas",
+   "q": "How did they refine the clusters after annotation?",
+   "a": "They merged clusters that could not be told apart by differentially expressed genes or spatial patterns, for example clusters 0 and 1 (both VGLUT1+ with non-specific brain-wide patterns). They also set the immune clusters aside for higher-resolution reclustering.",
+   "kw": [
+    "VGLUT1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - spatially integrated comparative brain atlas",
+   "q": "Which top-level cell groups did they find?",
+   "a": "Five neuron groups: 9 glutamatergic groups (split by location and VGLUT type), 4 multi-neurotransmitter clusters, 1 purely GABAergic cluster, 1 diencephalic projection neuron cluster and 1 Purkinje cluster. Three glia groups: oligodendrocytes with their precursors; quiescent radial glia, astrocytes and Bergmann glia; and cerebellar ventricular zone neurogenic progenitors. They also found barrier endothelium and one immune category.",
+   "kw": [
+    "glutamatergic neurons",
+    "glia"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cell type composition",
+   "q": "Which brain region size differences between surface and cavefish were already known?",
+   "a": "Cavefish have an enlarged hypothalamus and habenula and a smaller optic tectum.",
+   "kw": [
+    "optic tectum",
+    "hypothalamus"
+   ],
+   "info": "Region size changes can reflect more neurons of one type (for example more serotonergic neurons in the cavefish hypothalamus) or lost sensory input (the smaller tectum is linked to lost visual innervation).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cell type composition",
+   "q": "How does cell type composition differ between surface and cave brains?",
+   "a": "Surface brains have proportionally more oligodendrocytes and more VGLUT1+/VGLUT2b+ neurons in the torus longitudinalis. Cave brains have proportionally more cerebellar ventricular-zone neurogenic progenitors, Purkinje cells, immune cells, VGLUT1+ eurydendroid neurons and unlocalized VGLUT1+ neurons (FDR = 0.05).",
+   "kw": [
+    "scCODA",
+    "differential composition"
+   ],
+   "info": "Tested with a Bayesian model for differential composition, with population and sex as covariates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ecotype as driver of gene expression",
+   "q": "How did they check which factor drives overall expression patterns?",
+   "a": "They grouped cells by sample and cell type and ran UPGMA hierarchical clustering on the first 20 principal components. Qualitatively, cell type was the top-level factor, with ecotype and sex at lower levels.",
+   "kw": [
+    "UPGMA",
+    "hierarchical clustering"
+   ],
+   "info": "Sex was included because it is a major determinant of brain gene expression in other organisms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ecotype as driver of gene expression",
+   "q": "How did they quantify the importance of cell type, ecotype and sex, and what were the values?",
+   "a": "For each factor they computed NMI-weighted mean node depth, where a lower depth means higher-level organization. Cell type was 9.3 (bootstrapped 95% CI 8.2-10.6), ecotype 12.3 (11.9-12.7) and sex 13.3 (13.0-13.6).",
+   "kw": [
+    "normalized mutual information",
+    "NMI"
+   ],
+   "info": "NMI was calculated at each internal node between tree topology (left or right descendant) and the factor of the leaves.",
+   "concl": "Ecotype organizes expression at a higher level than sex."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ecotype as driver of gene expression",
+   "q": "What did the per-cell-type DEG analysis between cave and surface show?",
+   "a": "Every cell type had some DEGs, with more genes up than down in cave. VGLUT2+/CHOL/NORA, VGLUT1+ GCL, unlocalized VGLUT1+ and unlocalized VGLUT2+ neurons had the most DEGs.",
+   "kw": [
+    "DEG",
+    "pseudobulk"
+   ],
+   "info": "Those cell types also have the most cells, so their high DEG counts are probably partly due to more statistical power. Figure 2c: every cell type except Purkinje cells has more cave-biased genes than surface-biased or sex-biased genes. Sex was a covariate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ecotype as driver of gene expression",
+   "q": "Which controls did they use to put the cave vs surface DEG numbers in context?",
+   "a": "They compared ecotype DEGs to sex DEGs, which were fewer. They also split individuals randomly into two equal groups regardless of sex or ecotype, which gave only 3 DEGs across all cell types.",
+   "kw": [
+    "null control"
+   ],
+   "info": "",
+   "concl": "Cave vs surface is the major determinant of within-cell-type expression variation in the brain, more important than sex."
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "Which pathways were differentially regulated across many cell types?",
+   "a": "Circadian rhythm signaling (10 cell types), serotonin receptor signaling (9) and synaptic long-term potentiation (9). The last one suggests neuronal remodelling in cavefish.",
+   "kw": [
+    "Fisher's exact test",
+    "pathway enrichment"
+   ],
+   "info": "Some pathways were cell-type specific, for example HIF1 signaling enriched in cavefish astrocytes.",
+   "concl": "Cave adaptation changed key pathways at both the system level and the cell level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "What did they see for core clock genes across cell types?",
+   "a": "Subsets of A. mexicanus orthologs of BMAL, CLOCK, CRY and PER were differentially expressed in all cell types, but no single gene was differentially expressed in every cell type.",
+   "kw": [
+    "TTFL",
+    "circadian clock"
+   ],
+   "info": "Earlier bulk RNA-seq showed many core transcriptional-translational feedback loop (TTFL) genes lose rhythmicity in cavefish, but the cellular basis was unresolved.",
+   "concl": "This shows why expression changes need to be measured at the cell-type level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "How do cry and per repressor genes differ between cave and surface brain cell types?",
+   "a": "cry1a and cry3a are higher in cavefish, and cry1b and cry3b are higher in surface fish, each in different but overlapping cell types. per1a, per1b and per3 are higher in many cavefish cell types.",
+   "kw": [
+    "cry1a",
+    "per3"
+   ],
+   "info": "In bulk data (Mack et al. 2021) all four cry genes are rhythmic in surface fish and all except cry1b lose rhythmicity in Pachon. per1a, per1b and per3 keep their rhythmicity in Pachon.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "How do Pachon and Molino differ for per3?",
+   "a": "per3 transcription is increased in Pachon cavefish, but in Molino per3 expression is reduced by a high-frequency heterozygous deletion of its canonical start codon.",
+   "kw": [
+    "per3",
+    "Molino"
+   ],
+   "info": "So the same gene changes in opposite directions in two cave morphs, by a coding deletion in Molino and a regulatory change in Pachon.",
+   "concl": "Different cave lineages perturbed the circadian TTFL by multiple routes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "Why is cry1a an example of conserved repeated evolution?",
+   "a": "The cry1a mutation in Pachon is a substitution of the same amino acid also found in Somalian cavefish and in subterranean mammals such as the naked mole rat. This suggests circadian dysregulation is adaptive underground.",
+   "kw": [
+    "cry1a",
+    "convergent evolution"
+   ],
+   "info": "Cry1a is directly photoentrained by light in fishes. The authors speculate that constant rather than rhythmic expression may allow continuous regulation of downstream processes that depend on cry1a.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "What happens to the clock activators clocka and arntl1a/b?",
+   "a": "clocka is reduced in cavefish only in Purkinje cells. arntl1a is down in cavefish VGLUT2+/CHOL/NORA neurons, while arntl1b is up in cavefish VGLUT1+ neurons, so the two paralogs may have taken on different roles or been selected in opposite directions.",
+   "kw": [
+    "arntl1",
+    "clocka"
+   ],
+   "info": "In mice, ARNTL1 knockdown in the suprachiasmatic nucleus causes anxiety-like behaviour, higher stress sensitivity and a longer free-running locomotor period in constant darkness. The authors suggest cell-specific trade-offs that could relate to higher locomotion and lower stress responses in cavefish.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - circadian-regulated genes",
+   "q": "What is the overall conclusion on circadian genes, and what are its limits?",
+   "a": "There is no clear pattern linking differential expression to a gene's role as activator or repressor, or to loss of rhythmicity. Adaptation to the arrhythmic cave probably involved coordinated multigenic regulatory changes across different cell types.",
+   "kw": [
+    "multigenic adaptation"
+   ],
+   "info": "Limitation: they need time-course single-cell experiments with repeated sampling over a day, plus genomic data beyond RNA-seq.",
+   "concl": "This is the first demonstration that circadian gene expression can be broken down by cell type in the cavefish brain."
+  },
+  {
+   "type": "qa",
+   "section": "Results - hypoxia signaling in astrocytes",
+   "q": "What is HIF1A, and what was already known about it in cavefish?",
+   "a": "HIF1A is a transcription factor that is hydroxylated and degraded under normoxia but becomes stable under hypoxia and turns on genes that help cells cope with low oxygen. Cavefish upregulate the HIF1A orthologs hif1aa and hif1al2 and their targets during development, even under normoxia.",
+   "kw": [
+    "HIF1A",
+    "hypoxia"
+   ],
+   "info": "Caves are relatively hypoxic because there is no photosynthesis. Effects proposed downstream of the HIF1 pathway, especially via upregulated sonic hedgehog signaling, include enhanced olfaction, taste bud amplification and heart asymmetry reversal.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - hypoxia signaling in astrocytes",
+   "q": "Which HIF1 pathway genes differ in cavefish astrocytes?",
+   "a": "16 HIF1 pathway genes were differentially expressed. The biggest difference was slc2a1, much higher in cavefish (LFC = 3.23, adjusted p = 4.27e-7). Also up in cave were hk2 (LFC 1.22), mmp14b (1.44), mmp16b (2.46) and igf2b (1.22), while vegfc was down (LFC -1.44, p = 5.90e-5).",
+   "kw": [
+    "slc2a1",
+    "astrocytes",
+    "vegfc"
+   ],
+   "info": "These genes cover glucose metabolism (slc2a1, hk2), ECM remodelling (mmp14b, mmp16b), cell survival (igf2b) and angiogenesis (vegfc). Possible inconsistency: the Supplementary Table 4 caption says LFC > 0 means higher in surface, but the text reports positive LFCs as higher in cave.",
+   "concl": "This is the first evidence that astrocyte evolution is involved in cave evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune subclustering",
+   "q": "Why and how were immune cells reclustered, and which types were found?",
+   "a": "The resolution that best split neurons and glia was too low to resolve immune subtypes, so the immune nuclei were reclustered starting from raw counts. They found a full repertoire: B cells, T cells (including gamma-delta and double-positive clusters), macrophages, microglia and their precursors, basophils/mast cells and neutrophils.",
+   "kw": [
+    "immune subclustering",
+    "microglia"
+   ],
+   "info": "Immune cell types showed no spatial pattern, so they got no spatial annotation. Figure 4a also shows megakaryocytes/platelets, red blood cells and a neuronal cluster.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune subclustering",
+   "q": "How does immune composition differ by ecotype and by sex?",
+   "a": "Cavefish brains have proportionally more T cells, gamma delta T cells and macrophages (FDR = 0.05). Male brains have proportionally more microglia and fewer B cells than female brains.",
+   "kw": [
+    "T cells",
+    "macrophages"
+   ],
+   "info": "The cave result fits the longer, more sensitive pro-inflammatory cytokine response and greater adaptive immune investment seen outside the brain (Peuss et al. 2020). The male microglia result fits mammalian evidence that microglia contribute to brain sex differences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune pathways",
+   "q": "Which immune cell types were used for pathway analysis, and why?",
+   "a": "Only microglia, macrophages and T cells, because only they had enough DEGs (in the hundreds) for pathway enrichment. As in neurons and glia, each had more genes higher in cavefish than in surface fish.",
+   "kw": [
+    "pathway enrichment"
+   ],
+   "info": "Earlier work (Shafer et al. 2022) reported fewer immune cells in the cave hypothalamus, but molecular phenotypes of immune cells in whole brains were unknown.",
+   "concl": "The authors read this as system-wide remodelling of regulatory networks in cavefish brains."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune pathways",
+   "q": "What changed in cavefish microglia, and why look for senescence?",
+   "a": "521 genes had at least twofold differential expression (p < 0.05), the most of any immune cell type. Cell senescence was the top enriched pathway (-log BH p = 3.44), with the transcription factor orthologs chp1, phf1 and smad1 up in cavefish microglia.",
+   "kw": [
+    "microglia",
+    "senescence",
+    "smad1"
+   ],
+   "info": "Rationale: sleep deprivation reduces microglial function and synaptic pruning in other organisms, and cavefish sleep less. The threshold here (p < 0.05) differs from the DEG threshold in Methods (adjusted p < 0.01). The authors note that comparing DEG counts is prone to bias.",
+   "concl": "The authors read this as adaptation towards non-inflammatory tissue maintenance and microglia that are more resilient to sleep deprivation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune pathways",
+   "q": "Why is AMPK enrichment in cavefish microglia interesting?",
+   "a": "AMPK is activated by low glucose, yet these fish were lab-reared with good food. Activation may therefore reflect a canalized low-glucose response that persists regardless of actual glucose, which is generally higher in cavefish because of insulin resistance.",
+   "kw": [
+    "AMPK",
+    "canalization"
+   ],
+   "info": "They report a z-score of -2.27 from 12 of 110 genes whose direction is consistent with a decrease in movement disorders. How this score relates to the AMPK result is not clearly explained.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune pathways",
+   "q": "What did they find in brain macrophages?",
+   "a": "324 DEGs between ecotypes and 17 enriched pathways, several pointing to altered immune surveillance and inflammatory signaling. The macrophage alternative activation pathway showed FcERI upregulation leading to SYK activation, a kinase strongly implicated in microglia-mediated synapse removal.",
+   "kw": [
+    "macrophages",
+    "SYK",
+    "M2 polarization"
+   ],
+   "info": "Macrophages are normally excluded from the brain and enter through the blood-brain barrier after injury, inflammation, infection or developmental remodelling. Figure 4d suggests an M2 anti-inflammatory subtype.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune pathways",
+   "q": "What did they find in brain T cells?",
+   "a": "34 enriched pathways, mostly related to cytokine signaling, with FLT3 signaling among the top (-log10 corrected p = 3.55). Upstream regulators include a TCR activation network (JUNB, MYC, MAX), and higher BTLA, SOCS2 and CFLAR may be how the shift towards homeostasis-promoting T cells happens in the cavefish brain.",
+   "kw": [
+    "FLT3",
+    "TCR",
+    "BTLA"
+   ],
+   "info": "BTLA negatively regulates T cell activation, SOCS2 inhibits cytokine signaling and CFLAR blocks apoptotic signaling. FLT3 expression in T cells usually marks early progenitor-like states. The authors say more data are needed to validate these states.",
+   "concl": "The brain immune system is highly divergent between ecotypes. Microglia may play a role in the synaptic pruning that reduces optic tectum size in cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Results - astrocyte to neuron communication",
+   "q": "Which approaches did they use for cell-cell communication, and what did tensor decomposition show?",
+   "a": "They used tensor decomposition (Tensor-cell2cell) and a DEG-based ligand-receptor analysis. Tensor decomposition gave five factors, and only Factor 4 differed by ecotype: it was enriched in cavefish, with astrocytes, Bergmann glia and quiescent radial glia as senders and neurons as receivers.",
+   "kw": [
+    "Tensor-cell2cell",
+    "ligand-receptor"
+   ],
+   "info": "Factor 4 sample loadings were compared with a two-sided independent t-test and Bonferroni correction (p < 0.05). Possible effects include more metabolic support for neurons, homeostatic regulation, synaptic plasticity and neuromodulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - astrocyte to neuron communication",
+   "q": "What did the DEG-based ligand-receptor analysis show?",
+   "a": "11,294 ligand-receptor interactions were differentially regulated between surface and cavefish (BH-corrected p < 0.05). VGLUT2+ OT, OPCs, VGLUT1+/2b+ dDien, VGLUT1+/2b+ TL, oligodendrocytes, VZ neural progenitors and Bergmann glia took part more often in cave interactions. Astrocytes, VGLUT2+/CHOL/NORA, quiescent radial glia, VGLUT1+, GABA/GLYC/NORA, VGLUT1+ LCa and VGLUT2+/CHOL took part more often in surface interactions.",
+   "kw": [
+    "LIANA+",
+    "CellPhoneDB"
+   ],
+   "info": "Possible tension: astrocytes and quiescent radial glia are key senders in the cave-enriched Factor 4, but they are among the most surface-biased cell types in the DEG-based counts. The paper does not discuss this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - astrocyte to neuron communication",
+   "q": "What did the overlap of both analyses show, and why is mdkb highlighted?",
+   "a": "The top Factor 4 interactions (above mean + 2 SD, n = 81) overlapped with differentially expressed interactions in 61 cases. mdkb, an ortholog of mammalian MDK, had enriched interactions with four receptors, each in more than 10 glia-to-neuron cell type pairs.",
+   "kw": [
+    "mdkb",
+    "midkine"
+   ],
+   "info": "MDK promotes neurite outgrowth and mediates signaling between the nervous and immune systems. Figure 5e shows mdkb with sdc3, sorl1, lrp1ab and alk.",
+   "concl": "Suggests an astrocyte-led reconfiguration of neural connectivity and modulation of nervous system inflammation in cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main themes the authors take from the atlas?",
+   "a": "First, expression differences are large and found throughout the brain even under identical lab rearing, not just in vision-linked regions like the optic tectum. Second, changes are spread across many cell types, which fits coordinated multigenic regulatory evolution. Third, the brain immune system is extensively remodelled, in line with known immune differences between ecotypes.",
+   "kw": [
+    "regulatory evolution"
+   ],
+   "info": "They call it the first single-cell-resolution, spatially integrated, comparative brain atlas of a vertebrate adapted to an extreme environment.",
+   "concl": "Adaptation to an extreme environment needed pervasive, cell-type-distributed remodelling of transcription across neurons, glia and immune cells at the same time."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How can the atlas be used as a resource?",
+   "a": "To deconvolve bulk RNA-seq into cell types, to project new single-cell datasets onto it instead of annotating them by hand, and as an expression reference across cell types and ecotypes.",
+   "kw": [
+    "UCSC Cell Browser",
+    "deconvolution"
+   ],
+   "info": "Data: GEO GSE335564 and the UCSC Cell Browser (astyanax-adult-brain.cells.ucsc.edu). Code: GitHub WarrenLab/astyanax-adult-brain-atlas.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main limitation of their pathway and interaction analyses?",
+   "a": "Few pathway resources exist for teleosts, so they projected A. mexicanus genes onto mammalian orthologs to use mouse and human databases. The teleost whole-genome duplication produced a and b paralogs that were often neo- or subfunctionalized, and even in closely related species the target genes and cis-regulatory elements turn over quickly.",
+   "kw": [
+    "orthology",
+    "teleost whole-genome duplication"
+   ],
+   "info": "They argue that recovering known differences (sleep, hypoxia) supports the approach. Lineage-specific, cell-type-resolved gene regulatory networks from single-cell multi-omics will be needed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What follow-up do they propose for HIF1A signaling in astrocytes?",
+   "a": "Map HIF1A-targeted response elements in astrocytes and their differences between ecotypes using single-cell ATAC-seq, then perturb these sequences with CRISPR to find which changes cause phenotypic differences.",
+   "kw": [
+    "scATAC-seq",
+    "CRISPR"
+   ],
+   "info": "Astrocytes take part in circadian rhythm and nervous system repair, so a link to sleep loss is worth testing. Other suggested studies: whether the pro-senescence microglial state is neuroprotective under chronic metabolic stress, and what the reorganized glia-neuron network does functionally.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do the authors see cavefish as relevant for disease research?",
+   "a": "Signatures such as microglial AMPK activation and hypoxia-dependent astrocyte reprogramming resemble mammalian neurodegenerative disease models. The cavefish brain is a natural model where disease-relevant transcriptional states have been canalized by selection, so they can be studied outside a pathological context.",
+   "kw": [
+    "neurodegeneration",
+    "canalization"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - sample collection",
+   "q": "How were the brains collected?",
+   "a": "Fish aged 1-2 years were reared at the Stowers Institute, euthanised by hypothermal shock in an ice bath, and whole brains were flash frozen in liquid nitrogen. Dissections alternated between cave and surface fish to avoid circadian bias and took about 8 hours over two days, with females dissected in March 2023 and males in January 2024.",
+   "kw": [],
+   "info": "Nuclei were isolated with the Singulator2 instrument (S2 Genomics) with 0.4 U/ul RNase inhibitor in all buffers, and counted and checked for debris on a Cellometer. IACUC protocol 2021-126.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - snRNA-seq library prep and sequencing",
+   "q": "How were the single-nucleus libraries made and sequenced?",
+   "a": "With 10x Genomics Chromium Single Cell 3' v3 chemistry (GEM encapsulation), checked on a Bioanalyzer high-sensitivity chip, and sequenced on an Illumina NovaSeq 6000.",
+   "kw": [
+    "10x Chromium",
+    "NovaSeq 6000"
+   ],
+   "info": "Read structure: 26 bp read 1, 8 bp i7 index, 98 bp read 2, on a 200-cycle run.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - snRNA-seq data processing",
+   "q": "How were reads aligned, counted and cleaned of ambient RNA?",
+   "a": "Reads were aligned to the AstMex3_surface reference (NCBI GCF_023375975.1) with CellRanger v7.2.0 (mkref and count, default parameters). Ambient signal was removed with cellbender remove-background v0.3.0 using default parameters.",
+   "kw": [
+    "CellRanger",
+    "CellBender",
+    "AstMex3"
+   ],
+   "info": "The NCBI GTF was converted to a CellRanger-compatible format with a custom script (WarrenLab/cleanup-ncbi-gtf).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - snRNA-seq data processing",
+   "q": "What QC filters and clustering steps were used?",
+   "a": "In scanpy v1.9.8 they removed cells with fewer than 200 or more than 4,000 genes, more than 10,000 counts, or more than 2% ribosomal counts. They then normalized, log-scaled, chose highly variable genes, regressed out counts per cell, ran PCA, integrated by sample with harmony, and ran leiden clustering at resolution 1.0, visualized with UMAP.",
+   "kw": [
+    "scanpy",
+    "harmony",
+    "leiden"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - spatial data",
+   "q": "How were the spatial data generated and filtered?",
+   "a": "With the Curio Seeker Slide-seq workflow on sagittal cryosections of one OCT-embedded female surface brain. Reads were processed with a STAR v2.6.1d reference (--sjdbOverhang 50) and the Curio Seeker pipeline v2.0.0, and barcodes with log10 counts below 1.9 were removed, along with barcodes in 40 um windows with fewer than 7 barcodes and 100 um windows with fewer than 17.",
+   "kw": [
+    "Slide-seq",
+    "Curio Seeker",
+    "STAR"
+   ],
+   "info": "Sectioning targeted the optic lobe, pituitary, pineal gland, cerebellum and olfactory lobe.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - spatial data",
+   "q": "How were spatial barcodes labelled with nuclei clusters?",
+   "a": "Spatial and nuclei PCA bases were integrated with harmony (15 iterations). Each spatial barcode got the most common cluster among its 5 nearest nuclei, and no label if all five were in different clusters.",
+   "kw": [
+    "label transfer",
+    "harmony"
+   ],
+   "info": "Genes present in fewer than 3 cells in the spatial data were filtered out before processing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cluster annotation",
+   "q": "How were cell types annotated?",
+   "a": "Marker genes per cluster came from a t-test with overestimated variance (|log2FC| > 1, p < 0.01). These were compared manually with known markers, especially a zebrafish brain atlas (Pandey et al. 2023), and with mouse and human databases such as ScType, plus spatial location.",
+   "kw": [
+    "ScType",
+    "elavl3",
+    "apoeb"
+   ],
+   "info": "Neurons were identified by elavl3/elavl4 (HuC), then split by neurotransmitter markers and VGLUT type. Immune types were based on an earlier A. mexicanus head kidney study (Peuss et al. 2020). apoeb marks microglia.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - differential composition",
+   "q": "Which tool tested composition differences?",
+   "a": "scCODA v0.1.9, with population (cave vs surface) and sex as covariates and FDR = 0.05.",
+   "kw": [
+    "scCODA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - hierarchical clustering and NMI",
+   "q": "How exactly was NMI-weighted node depth computed?",
+   "a": "At each internal node of the UPGMA tree they made one vector coding leaves as left (0) or right (1) descendants and another coding the factor as integers, then computed normalized mutual information between them. They took the NMI-weighted mean of node depth per factor, with 95% CIs from 10,000 bootstrap iterations.",
+   "kw": [
+    "NMI",
+    "bootstrap"
+   ],
+   "info": "The tree came from scanpy's dendrogram function with method=average on the first 20 PCs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - differential expression",
+   "q": "How was differential expression tested?",
+   "a": "Pseudobulk: counts were summed per sample within each cell type and run in pydeseq2 v0.4.8 with sex and population as design factors. A gene was a DEG at |log2FC| > 1 and adjusted p < 0.01.",
+   "kw": [
+    "pydeseq2",
+    "pseudobulk"
+   ],
+   "info": "As the null control, they split all individuals randomly into two equal groups and reran the analysis with that grouping as the only covariate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pathway enrichment",
+   "q": "How was pathway enrichment done?",
+   "a": "With Ingenuity Pathway Analysis (IPA), using a right-tailed Fisher's exact test and Benjamini-Hochberg-adjusted p-values. A z-score estimates whether the direction of expression changes matches predicted activation or inhibition.",
+   "kw": [
+    "IPA",
+    "z-score"
+   ],
+   "info": "IPA uses mammalian knowledge, so it relies on orthology projection (see the Discussion limitation).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell-cell communication",
+   "q": "Which tools and databases were used for cell-cell communication?",
+   "a": "LIANA+ with a database built from an A. mexicanus to human ortholog set (Roback et al. 2025), using ligand-receptor pairs curated in CellPhoneDB. Only interactions with p at most 0.05 were plotted, and Tensor-cell2cell was used for the multi-dimensional sender-receiver analysis.",
+   "kw": [
+    "LIANA+",
+    "CellPhoneDB",
+    "Tensor-cell2cell"
+   ],
+   "info": "Normalized raw counts were the input.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Methods - sample collection",
+   "text": "Females were dissected in March 2023 and males in January 2024, so sex is confounded with dissection batch. How much of the sex effect (sex DEGs, more microglia and fewer B cells in males) could be a batch effect?"
+  },
+  {
+   "type": "note",
+   "section": "Results - astrocyte to neuron communication",
+   "text": "Astrocytes and quiescent radial glia are key senders in the cave-enriched Factor 4 but among the most surface-biased cell types in the DEG-based interaction counts. How do these fit together? Spatial data exist only for one surface female, so cave-specific spatial changes cannot be checked."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Is the HIF1 change in astrocytes causally linked to sleep loss, and does the pro-senescence microglial state protect neurons under chronic metabolic stress? Worth checking the follow-up scATAC-seq and CRISPR work."
+  }
+ ]
+}

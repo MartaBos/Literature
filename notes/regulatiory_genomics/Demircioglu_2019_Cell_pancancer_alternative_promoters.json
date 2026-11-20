@@ -1,0 +1,647 @@
+{
+ "id": "Demircioglu_2019",
+ "title": "A Pan-cancer Transcriptome Analysis Reveals Pervasive Regulation through Alternative Promoters",
+ "link": "https://doi.org/10.1016/j.cell.2019.08.018",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Demircioglu_2019_Cell_pancancer_alternative_promoters.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Most human protein-coding genes are regulated by several distinct promoters. A global change in transcription is a defining feature of cancer, but the contribution of alternative promoters to it was still largely unexplored.",
+   "kw": [
+    "alternative promoters",
+    "cancer transcriptome"
+   ],
+   "info": "They infer active promoters from RNA-seq data of 18,468 cancer and normal samples.",
+   "concl": "Alternative promoters are a major contributor to context-specific regulation of transcription. They are deregulated across tissues, cancer types and patients, and affect both known cancer genes and new candidates."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main clinical claim of the paper?",
+   "a": "For genes with independently regulated promoters, promoter activity predicts patient survival more accurately than gene expression.",
+   "kw": [
+    "survival",
+    "biomarker"
+   ],
+   "info": "The authors suggest this opens new diagnostic avenues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a promoter and why does promoter choice matter?",
+   "a": "The promoter is the region upstream of the transcription start site (TSS). It contains the elements needed to start transcription and integrates signals from distal regulatory elements and epigenetic modifications. In humans most protein-coding genes have several promoters that start transcription of different isoforms.",
+   "kw": [
+    "promoter",
+    "TSS"
+   ],
+   "info": "",
+   "concl": "Promoters determine when a gene is active and how active it is, and also which isoforms are expressed."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does alternative promoter usage differ from alternative splicing?",
+   "a": "Alternative splicing regulates isoform expression after transcription. Alternative TSS usage regulates isoform expression before transcription.",
+   "kw": [
+    "alternative splicing",
+    "alternative TSS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How were promoters studied genome-wide before, and what was the limitation?",
+   "a": "Earlier studies used H3K4me3 ChIP-seq (a mark of active promoters) or CAGE sequencing of transcript 5' ends, and found that TSSs are often used differently in cancer. These data are not available for most cancer studies, so the role of alternative promoters in cancer remained largely unexplored.",
+   "kw": [
+    "H3K4me3",
+    "CAGE"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use RNA-seq to infer promoter activity?",
+   "a": "RNA-seq is one of the most widely generated large-scale molecular phenotypes in cancer, and it measures the transcriptome in a largely unbiased way. Because promoters control isoforms with distinct 5' start sites, RNA-seq can in principle be used to identify active promoters.",
+   "kw": [
+    "RNA-seq"
+   ],
+   "info": "This lets them analyse thousands of publicly available samples without new experiments.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which samples and cohorts did they analyse?",
+   "a": "18,468 RNA-seq samples covering 42 cancer types. These came from the PCAWG cohort (1,188 patients with matched whole-genome sequencing), the TCGA Pan-Cancer Atlas (11,251 samples with exome sequencing) and 6,674 normal GTEx samples.",
+   "kw": [
+    "PCAWG",
+    "TCGA",
+    "GTEx"
+   ],
+   "info": "From the methods: PCAWG contributes 543 RNA-seq samples beyond those already in TCGA (11,251 + 6,674 + 543 = 18,468). GTEx is phs000424.v6.p1 and TCGA is phs000178.v10.p8.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "How did they define the set of possible promoters?",
+   "a": "From Gencode release 19 they compiled 113,076 possible promoters. Isoforms with identical or very close TSSs were assumed to be regulated by the same promoter.",
+   "kw": [
+    "Gencode 19"
+   ],
+   "info": "There are far fewer promoters than isoforms per gene, so estimating promoter activity is a much simpler problem than estimating isoforms, and the inference is more robust. To reduce false positives, only uniquely identifiable promoters were analysed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "How is promoter activity defined and estimated from RNA-seq?",
+   "a": "Promoter activity is the total amount of transcription started at a promoter. It is estimated from the unique junction reads that span the first intron of the transcripts belonging to that promoter.",
+   "kw": [
+    "junction reads",
+    "promoter activity",
+    "proActiv"
+   ],
+   "info": "The implementation is available as proActiv (github.com/GoekeLab/proActiv).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "What are major, minor and inactive promoters, and how many of each did they find?",
+   "a": "A major promoter is the most active promoter of a gene: 17,182 (30%). Minor promoters are the other active promoters: 5,115 (9%). Inactive promoters have an average estimated activity below 0.25: 35,127 (61%).",
+   "kw": [
+    "major promoter",
+    "minor promoter"
+   ],
+   "info": "These three counts add up to about 57,400, far fewer than the 113,076 annotated promoters. This is probably because only uniquely identifiable promoters were classified, but the paper does not say so explicitly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "Is the first (5'-most) promoter of a gene always the dominant one?",
+   "a": "No. Major promoters can occur at any position in a gene, and one in three major promoters lies downstream of the first TSS.",
+   "kw": [
+    "first TSS"
+   ],
+   "info": "Without regulatory genomics data, the first promoter is often assumed to be the active one.",
+   "concl": "RNA-seq data add information and context to genome annotations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "How did they validate the RNA-seq-based promoter activity?",
+   "a": "They compared it with ENCODE H3K4me3 ChIP-seq and FANTOM5 CAGE data. Major promoters had the highest H3K4me3 levels and inactive promoters the lowest (Kruskal-Wallis p < 2.2e-16), and the CAGE data agreed. For 44 of 61 tissues, the estimates were most similar to ChIP-seq profiles from matching cell lines.",
+   "kw": [
+    "H3K4me3",
+    "CAGE",
+    "ENCODE"
+   ],
+   "info": "Uniquely identified promoters had significantly more CAGE support than non-unique ('internal') promoters.",
+   "concl": "Expression-based and epigenetic estimates of promoter activity are highly consistent."
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "How do estimates from patient samples compare with those from cell lines?",
+   "a": "Estimates from patients were generally highly consistent, while cell lines showed much higher variance.",
+   "kw": [
+    "cell lines"
+   ],
+   "info": "Cancer cell lines are already known to differ from primary tissue.",
+   "concl": "RNA-based estimates from patient samples probably reflect the tumour promoter landscape more accurately than estimates from cell lines."
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of active promoters",
+   "q": "How does the junction-read approach compare with Salmon, Kallisto and first-exon read counts?",
+   "a": "The estimates correlated highly with Salmon and Kallisto (Pearson > 0.85) and less with first-exon read counts. The junction-read approach agreed better with ChIP-seq than all the other methods (p < 2.2e-16).",
+   "kw": [
+    "Salmon",
+    "Kallisto"
+   ],
+   "info": "The authors suggest transcript-based methods may overestimate inactive transcripts. In Figure S1K, first-exon counts correlate with the other methods at about R = 0.62-0.64.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoters and isoform diversity",
+   "q": "What mainly drives genome-wide promoter activity patterns across samples?",
+   "a": "The tissue and cell of origin of each cancer type. This closely matches what is seen with gene expression.",
+   "kw": [
+    "t-SNE",
+    "cell of origin"
+   ],
+   "info": "The t-SNE used the 1,500 promoters with the highest variance. Only the minimal set of discriminative reads that indicate promoter activity was used.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoters and isoform diversity",
+   "q": "How common are genes with more than one active promoter, and what is an 'alternative promoter'?",
+   "a": "23% of expressed protein-coding genes have at least two active promoters that each contribute more than 10% of the gene's expression. An alternative promoter is one whose activity depends on context but not on the activity of the gene's other promoters.",
+   "kw": [
+    "alternative promoter"
+   ],
+   "info": "Using such promoters is invisible in gene-level expression analysis.",
+   "concl": "Promoter activity contains information that cannot be detected at the gene expression level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoters and isoform diversity",
+   "q": "Can a gene with no tissue specificity at the expression level still have tissue-specific promoters?",
+   "a": "Yes. GJB1 shows no tissue specificity at the gene level but has two independent, highly tissue-specific promoters. The second promoter (prmtr.50930) is more active in the central nervous system (CNS), and the first (prmtr.50929) is inactive in CNS samples.",
+   "kw": [
+    "GJB1",
+    "tissue-specific promoter"
+   ],
+   "info": "Tissue-specific alternative promoters were defined as promoters with significantly changed activity across tissues (FDR-adjusted p < 0.05) in genes whose overall expression does not change. Most of them (62%) activate a single isoform, which links transcriptional regulation directly to isoform expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoters and isoform diversity",
+   "q": "How often do alternative promoters switch the major promoter, and how much isoform switching do they explain?",
+   "a": "Alternative promoters are usually minor promoters, but for 15% of genes the major promoter switches. Overall, 58% of isoform-switching events involve a switch in promoter, and 42% are explained by splicing.",
+   "kw": [
+    "isoform switching",
+    "promoter switch"
+   ],
+   "info": "",
+   "concl": "Alternative promoters are a major contributor to tissue-specific transcriptional diversity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoters and isoform diversity",
+   "q": "How does using an alternative promoter change the gene product?",
+   "a": "It almost always changes the 5' UTR, with on average less than 20% of the 5' UTR sequence shared. It often changes almost 50% of the protein-coding sequence, and almost 90% of alternative promoters encode isoforms that may use a different 3' UTR, based on annotations.",
+   "kw": [
+    "5' UTR",
+    "CDS",
+    "3' UTR"
+   ],
+   "info": "",
+   "concl": "Promoters regulate alternative isoforms with distinct sequences. This may affect post-transcriptional regulation, translation and protein structure in a context-specific way."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer-associated promoters",
+   "q": "How did they find promoters that change in cancer compared with normal tissue?",
+   "a": "They compared cancer samples with adjacent normal samples from PCAWG and TCGA plus 5,260 GTEx normal samples, after matching each tumour type to the most similar normal tissue. For most tumour types, the most similar normal tissue was the tissue the tumour came from.",
+   "kw": [
+    "cancer vs normal",
+    "GTEx"
+   ],
+   "info": "Lung squamous cell carcinoma (LUSC) was most similar to normal skin, which reflects its cell of origin.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer-associated promoters",
+   "q": "How many cancer-associated promoters did they find, and are they robust?",
+   "a": "Each tissue had between 73 and 633 promoters significantly differentially regulated in cancer compared with normal. Analyses using only paired cancer and normal samples from the same individuals, and using smaller subsets of the data, confirmed the results.",
+   "kw": [
+    "cancer-associated promoters"
+   ],
+   "info": "The change in expression from these promoters was largely independent of the gene's other promoters.",
+   "concl": "Alternative promoters act as independent regulatory units that can be specifically deregulated in cancer."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer-associated promoters",
+   "q": "Which known cancer genes show alternative promoter activation in cancer?",
+   "a": "Examples include the biomarkers SEPT9 and TNFRSF19 (TROY), the proto-oncogene CTNNB1, the p53 target BID, MLLT1 (linked to childhood kidney cancer), CDK4 and PRKACA. In kidney renal clear cell carcinoma (KIRC), the first CDK4 promoter (prmtr.29918) is inactive in cancer but active in normal tissue, while the second (prmtr.29917) is the major promoter in both.",
+   "kw": [
+    "CDK4",
+    "SEPT9",
+    "CTNNB1"
+   ],
+   "info": "Here too, promoter choice changes the 5' UTR, CDS and 3' UTR sequences, so transcriptional changes in cancer translate into functional differences in the gene product.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer-associated promoters",
+   "q": "What did the de novo motif analysis of cancer-associated promoters show?",
+   "a": "Several transcription factor motifs were enriched in alternative promoters compared with the set of active promoters, across all cancer types.",
+   "kw": [
+    "motif enrichment",
+    "RSAT"
+   ],
+   "info": "In the supplement, motifs similar to those of KLF9 and SMAD4 were found in alternative promoters downregulated in lung adenocarcinoma (LUAD), and both genes are expressed at lower levels in LUAD than in normal lung.",
+   "concl": "Changes in promoter activity are partly driven by changes in upstream regulatory networks."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer-associated promoters",
+   "q": "Do alternative promoters differ between closely related tumour types or subtypes?",
+   "a": "Yes. Across the three kidney tumour types, the 3'-most JAZF1 promoter (prmtr.40310) is specifically active in kidney renal papillary cell carcinoma (KIRP). In breast cancer, the 3'-most STAU2 promoter (prmtr.2834) is specific to the basal subtype, while overall STAU2 expression is similar across subtypes.",
+   "kw": [
+    "JAZF1",
+    "STAU2",
+    "breast cancer subtypes"
+   ],
+   "info": "Many genes showed only minor changes in overall expression but significant tumour-type-specific changes in isoform expression through alternative promoters (FDR-adjusted p < 0.05).",
+   "concl": "Alternative promoter activation is associated with the molecular characteristics of tumours."
+  },
+  {
+   "type": "qa",
+   "section": "Results - pan-cancer deregulation",
+   "q": "Are some alternative promoters deregulated across many cancer types?",
+   "a": "Yes. 184 promoters were deregulated across several tumour types from different tissues compared with matched normal tissue, including promoters of known oncogenes and tumour suppressors such as TES and SPOP.",
+   "kw": [
+    "TES",
+    "SPOP",
+    "pan-cancer"
+   ],
+   "info": "For TES and SPOP, an alternative promoter has lower activity across multiple cancer types. Using an alternative promoter in cancer had not been described for these genes. Tissue-specific promoter switching is more frequent than pan-cancer switching.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - noncoding promoter mutations",
+   "q": "Which promoters accumulate more somatic mutations?",
+   "a": "Promoters of genes with a simpler promoter architecture (single-TSS genes) carry more mutations. These genes are more often noncoding (lncRNAs) and lie in regions with later replication timing.",
+   "kw": [
+    "somatic mutations",
+    "replication timing",
+    "lncRNA"
+   ],
+   "info": "The analysis used PCAWG whole-genome data for patients with matched RNA-seq. Most of these patterns come from passenger mutations. Only a few driver promoter mutations have been found in PCAWG: TERT, PAX5, WDR74, HES1, IFI44L, RFTN1 and POLR3E.",
+   "concl": "Different groups of promoters are exposed to different mutational patterns."
+  },
+  {
+   "type": "qa",
+   "section": "Results - noncoding promoter mutations",
+   "q": "Was mutation burden associated with alternative promoter activity?",
+   "a": "No significant association was found, possibly because each cancer type has a limited number of samples.",
+   "kw": [
+    "mutation burden"
+   ],
+   "info": "The authors expect more associations to appear with larger sample sizes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter usage and patient survival",
+   "q": "How did they test whether promoter activity predicts patient survival?",
+   "a": "They selected genes showing promoter switching within a cancer type (two distinct major promoters in at least 10% of samples). They then tested whether promoter activity was associated with survival in 9,459 TCGA samples with matched clinical data, comparing the top 10% of samples by activity with the rest.",
+   "kw": [
+    "survival analysis",
+    "TCGA"
+   ],
+   "info": "Several genes were significantly associated with survival only through a specific promoter, not through overall gene expression. This mainly affects genes whose alternative promoters have low correlation with the gene's other promoters.",
+   "concl": "Gene expression cannot capture promoter switching, so it is a limited biomarker for genes with independently regulated promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter usage and patient survival",
+   "q": "Which genes predict survival through alternative promoter usage?",
+   "a": "Previously unknown genes such as EML2, and known cancer genes not previously reported to rely on promoter switching, such as CDKN2A in kidney cancer and ERBB2 (HER2) in lower-grade glioma.",
+   "kw": [
+    "EML2",
+    "CDKN2A",
+    "ERBB2"
+   ],
+   "info": "In the supplement, only the second CDKN2A promoter (prmtr.37826) predicts survival, in both KIRC and kidney chromophobe (KICH).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter usage and patient survival",
+   "q": "What did they find for ERBB2 in lower-grade glioma?",
+   "a": "ERBB2 uses two independently regulated promoters (Pearson correlation 0.053). Only the second promoter (P2) predicts poor outcome (p = 2.01e-19), while the major promoter (P1) shows no significant association (p = 0.8520).",
+   "kw": [
+    "ERBB2",
+    "HER2",
+    "lower-grade glioma"
+   ],
+   "info": "The Figure 5 Kaplan-Meier panels show different p values (P2 p = 6.3e-23 and P1 p = 0.44) from those in the text. The paper does not explain the difference.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter usage and patient survival",
+   "q": "How is ERBB2 P2 activation related to somatic mutations?",
+   "a": "In 510 samples with exome data, ERBB2 P2 activation significantly co-occurs with EGFR and PTEN missense mutations and is mutually exclusive with TP53 and IDH1 missense mutations. In IDH1-mutant samples P1 is more active than P2, while P2 is the dominant major promoter in samples without IDH1 mutations.",
+   "kw": [
+    "IDH1",
+    "EGFR",
+    "PTEN"
+   ],
+   "info": "No underlying promoter mutation was found. P1 levels are not associated with somatic mutations, so only the level of P1 relative to P2 is informative.",
+   "concl": "This is a striking example of an association between alternative promoter activation and somatic mutations in cancer."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter usage and patient survival",
+   "q": "Does ERBB2 promoter usage predict survival independently of IDH1, EGFR and PTEN mutations?",
+   "a": "Yes. Even in patients without IDH1, EGFR or PTEN mutations (n = 80), ERBB2 promoter usage predicts survival.",
+   "kw": [
+    "predictive biomarker"
+   ],
+   "info": "The supplementary Kaplan-Meier plot for this subgroup reports p = 0.002. IDH1, EGFR and PTEN mutations are themselves associated with survival.",
+   "concl": "Alternative promoter usage could potentially be a highly robust, predictive biomarker."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter usage and patient survival",
+   "q": "How do the authors interpret the link between promoter usage and survival?",
+   "a": "Survival could be associated either with the underlying regulatory changes, which could serve as diagnostic markers, or with the different isoforms produced by the choice of promoter, which could be explored as therapeutic targets.",
+   "kw": [],
+   "info": "None of these new promoter biomarkers has yet been explored in detail.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is new about this study compared with earlier promoter studies in cancer?",
+   "a": "Earlier ChIP-seq and CAGE studies were limited in sample numbers. With 18,468 RNA-seq samples, this is the largest survey of promoter activity in human tissues and cancers, and the first to describe patient-to-patient variation in promoter usage.",
+   "kw": [],
+   "info": "",
+   "concl": "Promoter choice is tightly regulated, has a significant influence on the cancer transcriptome, and may contribute to cellular transformation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations of estimating promoter activity from RNA-seq?",
+   "a": "Short-read data make some promoters more uncertain. TSSs that lie within internal exons or overlap splice acceptor sites are especially hard to identify accurately. Using information from the 3' end of transcripts depends heavily on accurate annotations and good isoform-abundance estimates, and remains uncertain.",
+   "kw": [
+    "internal promoters",
+    "short reads"
+   ],
+   "info": "CAGE and ChIP-seq data suggest that these internal TSSs are used less than other TSSs, so the authors argue the overall promoter landscape is still captured accurately.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which cancer genes were already known to use alternative promoters?",
+   "a": "MET, TP73 and ALK.",
+   "kw": [
+    "MET",
+    "TP73",
+    "ALK"
+   ],
+   "info": "This study shows that many more cancer-associated genes use alternative promoters, across all major cancer types.",
+   "concl": "Transcriptional regulation, possibly involving sequence-specific transcription factors and epigenetic modifiers, is a robust way to set isoform expression in tumours before transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is the change in 3' UTR sequence interesting?",
+   "a": "The 3' UTR contains regulatory elements such as microRNA-binding sites, so promoter choice may link pre-transcriptional and post-transcriptional regulation.",
+   "kw": [
+    "3' UTR",
+    "microRNA"
+   ],
+   "info": "Alternative promoters often have low activity, and the functional consequences of these transcripts still need to be validated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What applications do the authors suggest?",
+   "a": "A catalogue of active promoters across 42 cancer types and tissues, as a resource for studying gene regulation and noncoding mutations. Tissue- and cancer-specific promoters could serve as sensors and tumour-restricted activators for immunotherapy and drug development, for diagnostics such as liquid biopsy, and for designing genome-wide functional screens.",
+   "kw": [
+    "resource",
+    "liquid biopsy"
+   ],
+   "info": "Because RNA-seq is so widely generated, the approach has many applications beyond cancer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - promoter identification and activity estimation",
+   "q": "How were promoters built from the annotation?",
+   "a": "The TSS of each Gencode 19 transcript was defined as the start of its first exon. Transcripts with overlapping first exons were grouped under one promoter, and the 5'-most TSS was used as the TSS of that promoter.",
+   "kw": [
+    "Gencode 19"
+   ],
+   "info": "This gives mappings from promoters to transcripts and genes (Table S1) and promoter coordinates (Table S2).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - promoter identification and activity estimation",
+   "q": "What is a uniquely identifiable promoter in their splicing-graph framework?",
+   "a": "Each gene is represented as a weighted splicing graph, a directed acyclic graph of splice sites (nodes) and introns and exons (edges), with edges weighted by uniquely mapping reads. A promoter is uniquely identifiable if all its first-intron edges have rank 1 in every transcript that uses them.",
+   "kw": [
+    "splicing graph",
+    "internal promoter"
+   ],
+   "info": "Promoters excluded are single-exon promoters (no first intron) and 'internal' promoters, whose first intron is an internal intron (rank > 1) in some other transcript.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - promoter identification and activity estimation",
+   "q": "How are absolute and relative promoter activity calculated?",
+   "a": "Absolute activity is the log2 of the summed junction reads on the promoter's first introns, normalised with DESeq2 (v1.20.0) size factors across the combined dataset. Gene expression is the sum of the absolute activities of all of a gene's promoters, and relative activity is absolute activity divided by gene expression.",
+   "kw": [
+    "DESeq2",
+    "relative promoter activity"
+   ],
+   "info": "Major promoter: highest average activity of the gene across the cohort. Inactive: average activity below 0.25. Minor: all other promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - promoter identification and activity estimation",
+   "q": "What is the split read ratio method?",
+   "a": "It is a method for internal promoters. It takes the log2 ratio of reads at splice donor sites to reads at splice acceptor sites of the promoter's first exons (each plus 1), normalised by the sample's average promoter activity.",
+   "kw": [
+    "split read ratio"
+   ],
+   "info": "It was used only for the robustness analysis and excluded from all downstream analyses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq data and alignment",
+   "q": "How were the RNA-seq data processed?",
+   "a": "Raw GTEx and TCGA fastq files from dbGaP were aligned to GRCh37.p13 with TopHat2 v2.0.12 (--b2-very-sensitive), using Gencode 19 as the reference annotation. For PCAWG, they used aligned BAM files and STAR junction files from the PCAWG pipeline.",
+   "kw": [
+    "TopHat2",
+    "STAR"
+   ],
+   "info": "STAR v2.4.0i is listed for PCAWG. Junction files from TopHat2 and STAR were used to estimate absolute and relative promoter activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - alternative quantification methods",
+   "q": "Which other quantification methods were used for comparison?",
+   "a": "Salmon v0.10.0 and Kallisto v0.44.0, with and without bias correction, on all 18,468 samples. Transcript estimates were FPKM-UQ normalised and summed per promoter, and promoters at or below 0.5 FPKM-UQ were called inactive.",
+   "kw": [
+    "Salmon",
+    "Kallisto",
+    "FPKM-UQ"
+   ],
+   "info": "First-exon read counts were obtained with featureCounts (Rsubread v1.30.9) only for breast (1,227 BRCA, 218 GTEx breast) and kidney (91 KICH, 610 KIRC, 323 KIRP, 36 GTEx kidney). Here promoters at or below 0.25 FPKM-UQ were called inactive.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - alternative promoter identification",
+   "q": "How were tissue-specific alternative promoters identified statistically?",
+   "a": "Using only TCGA tumour samples, they fitted linear models of absolute and relative promoter activity against tissue membership. A promoter needed a BH-adjusted p of 0.05 or less for both, and only the top 5,000 by relative-activity p value were considered.",
+   "kw": [
+    "linear model",
+    "Benjamini-Hochberg"
+   ],
+   "info": "Filters: mean gene expression of at least 1, absolute and relative activity of at least 0.25 in both groups, and summed relative activity of at least 0.9 and 0.45. A promoter needed at least a 2-fold change in absolute activity but less than a 1.5-fold change in gene expression. The authors call this threshold conservative, because many alternative promoters will also change gene expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - alternative promoter identification",
+   "q": "How did they handle batch effects when combining PCAWG, TCGA and GTEx?",
+   "a": "Normal tissues were matched by hierarchical clustering on promoter activity (distance = 1 - correlation) after removing batch effects with limma v3.36.5 removeBatchEffect. The cancer-versus-normal linear models also included study as a covariate, with GTEx as the reference.",
+   "kw": [
+    "limma",
+    "batch effect"
+   ],
+   "info": "Only tumour types with at least 15 normal and 15 tumour samples were used. Multi-type analyses required a BH-adjusted p of 1e-5 or less. The pan-cancer model adjusted for both tissue (adrenal gland as reference) and study, with a summed relative activity threshold lowered to 0.1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - validation with ChIP-seq and CAGE",
+   "q": "How was the ChIP-seq and CAGE comparison set up?",
+   "a": "They processed 1,158 ENCODE datasets (361 H3K4me3 ChIP-seq and 797 RNA-seq) from 68 cell lines with both data types. RNA-seq was mapped with TopHat2 and ChIP-seq with BWA v0.7.10-r789, and read counts within plus or minus 2,000 bp of the TSS were correlated with promoter activity (Spearman).",
+   "kw": [
+    "BWA",
+    "FANTOM5"
+   ],
+   "info": "For the major, minor and inactive comparison they used 59 cell lines with H3K4me3 data. CAGE support came from 1,829 FANTOM5 samples, counting tags from 100 bp upstream to 50 bp downstream of the TSS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - isoform switch and UTR analysis",
+   "q": "How did they decide whether an isoform switch was caused by a promoter or by splicing?",
+   "a": "For each tumour type, they compared the tumour-specific major transcript with the pan-cancer major transcript. If the new major transcript came from a different promoter, the switch was a promoter event. If it came from the same promoter with a different transcript, it was a splicing event.",
+   "kw": [
+    "isoform switch"
+   ],
+   "info": "For the UTR analysis, regions unique to the major promoter, unique to the alternative promoter, or shared were annotated as 5' UTR, CDS or 3' UTR using Gencode 19.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - robustness analyses",
+   "q": "How did they check that cancer-associated promoters are consistent across patients and sample sizes?",
+   "a": "A paired analysis of 766 individuals in 18 cancer types (paired t test, BH < 0.05) was compared with the main results using Fisher's exact test. They also repeated the BRCA analysis 10 times on random subsamples of 50 (25 + 25) and 100 (50 + 50) samples, testing overlap with the full-data results.",
+   "kw": [
+    "paired samples",
+    "Fisher's exact test"
+   ],
+   "info": "The full BRCA dataset was 1,227 BRCA and 218 GTEx breast samples.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif analysis",
+   "q": "How was the motif analysis done?",
+   "a": "De novo motif discovery used the RSAT Metazoa web server on the 200 bp upstream of the TSS. Cancer-associated alternative promoters were compared against all promoters of active genes in the same tissue, and motifs were matched to JASPAR 2018.",
+   "kw": [
+    "RSAT",
+    "JASPAR 2018"
+   ],
+   "info": "Using all promoters of active genes as background targets motifs that are more frequent in alternative promoters than in generally active promoters. Results are in Table S6.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - mutation burden",
+   "q": "How was noncoding promoter mutation burden calculated?",
+   "a": "As the total number of somatic SNVs (PCAWG consensus calls) in the 200 bp upstream of the TSS, excluding SNVs that overlap an exon.",
+   "kw": [
+    "SNV",
+    "PCAWG"
+   ],
+   "info": "Only PCAWG samples with both whole-genome and RNA-seq data were used.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - survival analysis and statistics",
+   "q": "What were the criteria and tools for the survival analysis?",
+   "a": "They used tumour types with more than 40 samples and genes with at least 2 promoters having more than 10 junction reads per sample, plus one promoter with relative activity above 0.5 in at least 10% of tumours. The top 10% of samples by absolute activity formed the high group, survival was analysed with the R survival package v2.42.3, and promoters were called predictive at BH-adjusted p < 0.01.",
+   "kw": [
+    "survival package",
+    "R 3.5.1"
+   ],
+   "info": "The specific survival test (for example log-rank or Cox) is not stated. Other tests used the Wilcoxon test unless stated otherwise, and all analyses were done in R 3.5.1 with GenomicFeatures v1.32.3 and GenomicAlignments v1.16.0.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - promoter usage and patient survival",
+   "text": "What drives ERBB2 P2 activation in lower-grade glioma when no promoter mutation is found? Is the P2 isoform itself functional? The text and Figure 5 also report different p values that should be checked."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Many alternative promoters have low activity and their functional consequences were not validated. Which of these isoforms actually change protein function or 3' UTR-mediated regulation?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "The junction-read approach (proActiv) only needs RNA-seq and an annotation. Could it detect alternative promoter usage between cave and surface Astyanax, or across zebrafish tissues, and how much would it depend on annotation quality for internal TSSs?"
+  }
+ ]
+}

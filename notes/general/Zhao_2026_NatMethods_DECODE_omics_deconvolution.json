@@ -1,0 +1,503 @@
+{
+ "id": "Zhao_2026",
+ "title": "DECODE: deep learning-based common deconvolution framework for various omics data",
+ "link": "https://doi.org/10.1038/s41592-026-03007-y",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Zhao_2026_NatMethods_DECODE_omics_deconvolution.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does a deconvolution algorithm do?",
+   "a": "It estimates cell-type abundances from tissue-level (bulk) data, using single-cell data as a reference. This allows cellular analysis of large cohorts without single-cell profiling of every sample.",
+   "kw": [
+    "deconvolution",
+    "cell abundance"
+   ],
+   "info": "Cell abundance is defined as the proportional distribution of cell types within a tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is DECODE and what makes it different from earlier tools?",
+   "a": "DECODE is a universal deep learning deconvolution framework for both cell types and cell states. It works on transcriptomic, proteomic and metabolomic data and can integrate multiomics tissue datasets at the cellular level.",
+   "kw": [
+    "DECODE",
+    "multiomics"
+   ],
+   "info": "Most earlier tools were built for a single omics type.",
+   "concl": "DECODE fills the gap in metabolomics deconvolution and stays robust when the single-cell reference is incomplete."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use deconvolution instead of single-cell profiling for large cohorts?",
+   "a": "Single-cell technologies are too expensive for large cohort studies, and many preserved tissue samples cannot be made into single-cell suspensions. Deconvolution is a cost-effective way to bring tissue-level cohort data to the cellular level.",
+   "kw": [
+    "single-cell",
+    "cohort"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the problem with existing deconvolution methods?",
+   "a": "Each method is built for one omics type: MuSiC and CIBERSORTx for bulk transcriptomics, RCTD and SPOTlight for spatial transcriptomics, and scpDeconv for proteomics. Many transcriptomic methods assume Poisson or negative binomial distributions, which do not suit other omics.",
+   "kw": [
+    "MuSiC",
+    "CIBERSORTx",
+    "scpDeconv"
+   ],
+   "info": "Spatial methods may also attribute biological variation in nonspatial data to spatial effects. Using a different tool for each omics layer adds systematic biases that cannot be quantified and makes workflows fragmented.",
+   "concl": "No dedicated deconvolution tool existed for metabolomics, even though the authors state that metabolomics correlates most closely with clinical phenotypes."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the three technical challenges for a universal deconvolution framework?",
+   "a": "First, omics types differ in scale, distribution, sparsity and feature dimensionality. Second, the single-cell reference may miss cell types that are in the tissue. Third, reference and tissue data come from different donors, technologies and health states, which creates strong batch effects.",
+   "kw": [
+    "batch effect",
+    "cell-type mismatch"
+   ],
+   "info": "The mismatch problem is framed as estimating the relative abundances of n known cell types in tissue that contains n + m cell types (m at least 1), with a reference that has only n types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of DECODE",
+   "q": "What does DECODE do in stage 1?",
+   "a": "It generates pseudotissue training samples. For each sample, cell-type proportions are drawn from a uniform distribution, cells are randomly sampled from the single-cell data in those proportions, and their profiles are summed. Repeating this many times gives the training set.",
+   "kw": [
+    "pseudotissue",
+    "pseudo-bulk"
+   ],
+   "info": "The proportions are updated after rounding the per-type cell counts, so labels match the cells actually sampled. Rules for choosing cells per pseudotissue (m) and the number of pseudotissues (U) are in the Supplementary Information.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of DECODE",
+   "q": "How does DECODE remove batch effects between pseudotissue and real target data (stage 2)?",
+   "a": "With adversarial training. An encoder, a discriminator and a shallow deconvolution module (eDeconvolver) are trained together with L1 and binary cross-entropy losses. The aim is that the discriminator cannot tell whether a feature came from train-tissue or target-tissue, while the deconvolution signal is kept.",
+   "kw": [
+    "adversarial training",
+    "discriminator"
+   ],
+   "info": "After stage 2 the encoder parameters are frozen and passed to stage 3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of DECODE",
+   "q": "What happens in stage 3?",
+   "a": "Noise of up to 10% is added twice to each train-tissue sample to make training pairs. These pass through the frozen encoder and a dimension-expansion module (DimExpander). An attention-based denoiser then splits the embedding into noise features and purified tissue features.",
+   "kw": [
+    "denoiser",
+    "contrastive learning",
+    "DimExpander"
+   ],
+   "info": "Purified features pass through linear attention and a deconvolver to predict proportions. Training is supervised by L1 loss plus a contrastive learning loss.",
+   "concl": "Stage 3 is what makes DECODE robust to noise and to cell types missing from the reference."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview of DECODE",
+   "q": "What are the two inference pathways in stage 4?",
+   "a": "Standard deconvolution is used when the reference covers all cell types in the tissue. Relative deconvolution through the denoiser is used when the tissue contains unknown cell types, which the authors call the common real-world case.",
+   "kw": [
+    "inference",
+    "relative deconvolution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptomic and proteomic deconvolution",
+   "q": "Which methods was DECODE compared against, and with which metrics?",
+   "a": "TAPE, CIBERSORTx, MuSiC, scpDeconv, Scaden, RCTD, Seurat, SPOTlight, Tangram, ucdselect and cell2location. The metrics were Lin's concordance correlation coefficient (CCC), root mean square error (RMSE) and Pearson's r.",
+   "kw": [
+    "CCC",
+    "RMSE",
+    "benchmark"
+   ],
+   "info": "The Methods text says 12 state-of-the-art methods but lists only 11 names; the figures show 12 bars because DECODE is included.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptomic and proteomic deconvolution",
+   "q": "Which 7 benchmark scenarios were used across the 15 datasets?",
+   "a": "1: cross-donor (human lung RNA). 2: cross-disease (human breast RNA, ER-positive train, ER-negative test). 3: cross-health state (breast CyTOF proteomics, premenopausal train, postmenopausal test). 4: cross-dataset and cross-platform (mouse islet RNA and mouse cell line proteomics). 5: spatial (STARmap visual cortex, Slide-seqV2 hippocampus). 6: many cell types (human retina, 17 types). 7: real blood tissue with ground truth.",
+   "kw": [
+    "benchmark scenarios"
+   ],
+   "info": "Scenarios 1-6 used pseudotissues made by mixing single cells. Scenario 7 used three real peripheral blood transcriptomic datasets (Monaco, Newman, SDY67).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptomic and proteomic deconvolution",
+   "q": "How did DECODE perform against the other methods in scenarios 1-7?",
+   "a": "DECODE had the top CCC in the cross-donor, cross-disease, cross-health state, cross-dataset, spatial and many-cell-type tasks. In a few cases other methods had slightly higher Pearson correlation (scenarios 1, 2, 4 and 5), and on the real Monaco data DECODE had slightly higher RMSE than TAPE and Scaden.",
+   "kw": [
+    "CCC"
+   ],
+   "info": "In scenario 7 each dataset has only about 10-20 samples with very concentrated proportions, so the authors say per-cell-type metrics are unstable and overall performance is more reliable.",
+   "concl": "The authors conclude that DECODE is currently the most effective deconvolution method for both transcriptomics and proteomics."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptomic and proteomic deconvolution",
+   "q": "Is DECODE computationally efficient?",
+   "a": "On the scenario 1 dataset it ranked fifth in peak memory and fourth in runtime among the methods compared, which the authors call reasonable efficiency.",
+   "kw": [
+    "runtime",
+    "memory"
+   ],
+   "info": "From the figure: about 2,000 MB peak RAM and well under 100 s. TAPE used close to 9,000 MB, and Scaden took over 1,000 s.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Metabolomics deconvolution",
+   "q": "Which single-cell metabolomics datasets were used?",
+   "a": "Mouse liver (244 metabolite features; hepatocytes, Kupffer cells, endothelial cells), mouse bone marrow (107 features; GMPs, B, T, myeloid, erythroid cells) and human colorectal cancer (112 features; cancer cells, fibroblasts, B, myeloid, T cells).",
+   "kw": [
+    "single-cell metabolomics"
+   ],
+   "info": "Liver and bone marrow had no donor information, so each was split equally into train and test halves. For colorectal cancer, the model was trained on mismatch repair-deficient samples and tested on conventional samples. Cell numbers were 724, 1,428 and 57,078.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Metabolomics deconvolution",
+   "q": "Why is metabolomics harder to deconvolve than transcriptomics or proteomics?",
+   "a": "There are far fewer features: hundreds of metabolites, compared with tens of thousands of RNAs or about 1,000-3,000 proteins per cell with SCoPE or nanoPOTS. Metabolomic profiles are also very similar between cell types.",
+   "kw": [
+    "feature similarity",
+    "Kendall similarity"
+   ],
+   "info": "Kendall similarity between mouse liver cell types was 0.93-0.95 for metabolomics, 0.57-0.68 for proteomics and about -0.08 to 0.16 for transcriptomics. In bone marrow, only GMPs had clearly distinct metabolites.",
+   "concl": "DECODE has to pick up subtle signals of difference between cells."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Metabolomics deconvolution",
+   "q": "How did DECODE perform on metabolomics?",
+   "a": "DECODE was only slightly below MuSiC in CCC on mouse liver and outperformed all other methods on every other metric and dataset. Its predicted-versus-true points lie close to the 1:1 line.",
+   "kw": [
+    "MuSiC",
+    "metabolomics"
+   ],
+   "info": "CIBERSORTx failed to run on the liver and colorectal cancer data, and MuSiC failed on colorectal cancer. For poorly characterized cell types, other methods showed truncated x axes on the predicted-versus-true plots, meaning they could not separate weak signals between cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell state deconvolution",
+   "q": "What is a cell state, and which cell state datasets were used?",
+   "a": "Cell states are conditions such as differentiation, activation or apoptosis, as opposed to cell types. Three datasets were used: monocyte pseudotime from scRNA-seq (10 states), melanoma and monocyte cell cycle proteomics (G1, S, G2), and melanoma drug treatment with 20 proteins and metabolites (days 0, 1, 3, 5).",
+   "kw": [
+    "cell state",
+    "pseudotime",
+    "cell cycle"
+   ],
+   "info": "Pseudotime values (0-1) were split into 10 bins. For the cell cycle data, the model trained on melanoma and tested on monocytes; only 39 differential proteins across phases were used, out of 2,844. Melanoma cells carried BRAF V600E.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell state deconvolution",
+   "q": "How well did DECODE recover cell state abundances?",
+   "a": "DECODE had the best performance on all three cell state datasets. This includes MeDuSA, a method designed specifically for pseudotime state abundance, on the monocyte dataset.",
+   "kw": [
+    "MeDuSA"
+   ],
+   "info": "MeDuSA needs continuous pseudotime labels, so it was compared only on dataset 1. CIBERSORTx failed on datasets 2 and 3.",
+   "concl": "DECODE can recover state abundances related to pseudotime, the cell cycle and responses to drugs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell state deconvolution",
+   "q": "Why could a model trained on melanoma cell cycle data be tested on monocytes?",
+   "a": "Differentially expressed proteins between phases overlapped strongly between the two cell types. Cell cycle state gave highly consistent protein expression regardless of cell type.",
+   "kw": [
+    "cell cycle"
+   ],
+   "info": "Differential proteins were tested with a two-sided Wilcoxon rank-sum test with Benjamini-Hochberg correction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Incomplete single-cell references",
+   "q": "Why are single-cell references often incomplete?",
+   "a": "Some cell populations are lost during library preparation, and dissociation steps such as enzymatic digestion can destroy specific cell types (for example podocytes). Single-cell proteomics and metabolomics are mostly mass spectrometry-based and often use in vitro cell lines, so rare cell types are missing.",
+   "kw": [
+    "reference incompleteness"
+   ],
+   "info": "Scaden examined how unknown cell types affect stability but did not solve the problem.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Incomplete single-cell references",
+   "q": "How did they test robustness to unknown cells and noise?",
+   "a": "Unknown cell types were added step by step to the test data: neutrophils in lung transcriptomics, vascular lymphatic cells held out of training in breast proteomics, and hematopoietic stem cells in bone marrow metabolomics. Three perturbations were also applied: random scaling by 0.9-1.1, scaling by 0.8 or 1.2, and zeroing or deleting features.",
+   "kw": [
+    "perturbation",
+    "unknown cell types"
+   ],
+   "info": "For the low-dimensional, continuous proteomic and metabolomic data, features were removed and the models retrained instead of zeroing test features, because these data are very sensitive to missing values. The proportion of unknown cells went from 3.3% to 20%, and perturbed features from 5% to 20%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Incomplete single-cell references",
+   "q": "What did the robustness tests show?",
+   "a": "DECODE outperformed other methods in most comparisons, especially in CCC, with a few suboptimal cases in transcriptomics. On metabolomics, every method except DECODE gave unusable results.",
+   "kw": [
+    "robustness"
+   ],
+   "info": "Bone marrow metabolomics: DECODE CCC fell from about 0.77 to about 0.57 as unknown cells increased to 20%; the next best was about 0.45 or lower (read from the figure).",
+   "concl": "Metabolomic data are the most sensitive to noise because they have few features and low cell-type specificity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Incomplete single-cell references",
+   "q": "Was DECODE also the most stable method (lowest coefficient of variation)?",
+   "a": "Not always. In transcriptomics, Scaden, scpDeconv and RCTD had lower CVs than DECODE for all three metrics in all four scenarios. In proteomics, Scaden and scpDeconv usually had lower CVs, except at the 0.8 or 1.2 noise level, but DECODE still had the highest accuracy.",
+   "kw": [
+    "coefficient of variation"
+   ],
+   "info": "CV was compared only among competitive methods, because stability means little when accuracy is very low. CVs were rescaled to [0.1, 1] for plotting. In metabolomics, only DECODE gave usable results, so stability was not compared.",
+   "concl": "DECODE is the most accurate method, but not always the most stable one."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Consistency across omics",
+   "q": "How did they test whether DECODE gives consistent results across omics?",
+   "a": "With a PBMC CITE-seq dataset (43,791 cells; transcriptome plus surface proteins; CD4 T, CD8 T, B, NK and myeloid cells). Training pseudotissues came from donor HS1, and transcriptomic and proteomic test pseudocohorts from donor HS5.",
+   "kw": [
+    "CITE-seq",
+    "PBMC"
+   ],
+   "info": "1,101 highly variable genes and 205 protein features were used. GEO accession GSE253721.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Consistency across omics",
+   "q": "What were the cross-omics consistency results?",
+   "a": "DECODE outperformed all other methods and performed almost identically on both omics (CCC about 0.95 on each, read from the figure). Across 1,000 test samples, its predictions from RNA and protein had low KL divergence and high Spearman correlation.",
+   "kw": [
+    "KL divergence",
+    "Spearman"
+   ],
+   "info": "Significance was tested with a one-tailed Wilcoxon test with Bonferroni correction on sample-wise CCC values. TAPE was the least consistent between omics.",
+   "concl": "One method for all omics layers reduces error accumulation when cell abundances are compared across omics and cohorts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Consistency across omics",
+   "q": "Which real multiomics cohorts did they apply DECODE to?",
+   "a": "Human breast cancer: 238 samples (transcriptomics and proteomics, 4 studies): nonmetastatic primary (n = 99), primary with brain metastasis (n = 45) and brain metastatic lesions (n = 94), with 9 cell types. Mouse liver: 285 samples (transcriptomics, proteomics and metabolomics, 10 studies): chow (208), HFD (63), HFD-TLC (4), NASH (6) and WDA (4), with 3 cell types.",
+   "kw": [
+    "breast cancer",
+    "mouse liver",
+    "NASH"
+   ],
+   "info": "The breast reference was single-cell multiomics data from the Wu et al. breast cancer atlas. The liver references were single-cell transcriptomic, proteomic and metabolomic data from three studies. Some liver groups are very small (n = 4-6).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Consistency across omics",
+   "q": "What did DECODE find in the breast cancer cohorts?",
+   "a": "Nonmetastatic primary tumors had more T cells (1.14-fold vs metastatic primaries, 1.23-fold vs brain metastases) and more perivascular-like (PVL) cells (1.48- and 1.64-fold). They had fewer B cells (1.70- and 1.47-fold lower). Plasmablasts were 1.14-fold higher than in metastatic primaries but 1.36-fold lower than in brain metastases.",
+   "kw": [
+    "T cells",
+    "PVL cells",
+    "B cells"
+   ],
+   "info": "Example P values: PVL vs brain metastasis P = 2.85e-20; B cells vs metastatic primaries P = 6.79e-21. Two-sided unpaired t-test with no multiple-testing adjustment (figure legend).",
+   "concl": "The authors suggest protective roles for T cells and PVL cells and an association of higher B cell abundance with metastatic progression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Consistency across omics",
+   "q": "What did DECODE find in the mouse liver cohorts?",
+   "a": "In chow mice, estimates from all omics agreed with consensus values of about 70% hepatocytes and 15% Kupffer cells. Kupffer cells increased 1.23-fold in WDA (P = 1.38e-2) and 1.61-fold in NASH (P = 2.06e-13), and stayed stable in HFD. Hepatocytes fell 1.12-fold in NASH (P = 1.87e-3) and rose slightly in HFD (1.03-fold, P = 1.48e-2).",
+   "kw": [
+    "Kupffer cells",
+    "hepatocytes",
+    "NASH"
+   ],
+   "info": "The decreases in hepatocytes in the HFD-TLC and WDA groups were not significant. The average hepatocyte share was 70.1% in chow, 72.5% in HFD, 66.1% in HFD-TLC, 69.3% in WDA and 62.6% in NASH.",
+   "concl": "The authors suggest that sugar, cholesterol and alcohol together (WDA) activate Kupffer cells more than high-fat intake alone."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do stages 2 and 3 each contribute, according to the authors?",
+   "a": "Stage 2 (transferred adversarial training) aligns data across platforms, health states and sample types, which removes batch effects. Stage 3 (contrastive learning plus self-attention) corrects measurement bias and reconstructs purified features from noisy input.",
+   "kw": [
+    "ablation"
+   ],
+   "info": "Their individual contributions were tested by splitting DECODE into three components (ablation, Supplementary Table 9).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How did subtype-level deconvolution refine the breast cancer findings?",
+   "a": "CD4+ T cells, CD8+ T cells and cycling T cells all tended to increase in nonmetastatic tumors. The B cell increase in metastatic tumors and brain metastases came mainly from naive B cells, not memory B cells.",
+   "kw": [
+    "naive B cells",
+    "CD8+ T cells"
+   ],
+   "info": "The authors link elevated naive B cells to impaired immune function in late-stage tumors but say causality needs experimental confirmation. Plasmablast enrichment in brain metastases was also flagged as needing validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Was there a sex effect in the NASH liver data?",
+   "a": "Yes. Female NASH mice had more Kupffer cells than both controls and male NASH mice. This agrees with an earlier study reporting a stronger inflammatory response in female mice with NASH.",
+   "kw": [
+    "sex differences",
+    "Kupffer cells"
+   ],
+   "info": "Shown in Supplementary Fig. 19b; the NASH group had only n = 6.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations of DECODE do the authors list?",
+   "a": "Training needs artificial noise cells made by combining features from different single-cell types, which adds computational cost that grows with feature dimensionality. Also, few single-cell metabolomics datasets exist, and they mostly come from tissues other than blood, so robustness cannot be fully evaluated and use with cohort metabolomics is limited.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "The noise-cell step runs once per task, so the authors think it will not block clinical use. Future work: a dedicated spatial module and extension to other layers such as DNA methylation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data preprocessing",
+   "q": "How were the single-cell transcriptomic data preprocessed?",
+   "a": "With the Scanpy workflow: genes found in fewer than 3 cells were removed, and so were cells with fewer than 200 genes or counts, or with more than 20% mitochondrial reads. Counts were normalized to 10,000 per cell and log-transformed, and usually only highly variable genes were kept.",
+   "kw": [
+    "Scanpy",
+    "highly variable genes"
+   ],
+   "info": "Scanpy v1.9.8 (reporting summary). Each pseudotissue dataset was scaled to [0, 1] by dividing by its largest eigenvalue, and real bulk data were processed the same way. The eigenvalue-based scaling is stated without further explanation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Datasets",
+   "q": "What were the dataset sizes in the main transcriptomic scenarios?",
+   "a": "Lung: 12,971 cells, 3,346 HVGs, donor 296C (female) for training and 302C (male) for testing. Breast: 100,064 cells, 2,525 HVGs, donors CID3586 (ER+) and CID3921 (ER-). Retina: fovea (34,723 cells) for training and periphery (19,768 cells) for testing, with 3,789 HVGs.",
+   "kw": [
+    "datasets"
+   ],
+   "info": "Islet: GSE211799, 2,558 HVGs, donors VSG_MUC13634 for training and STZ_G1 for testing. Scenario 7 blood: 11,328 shared genes, of which 982 HVGs were used. Lung cell types: type 2 alveolar cells, luminal macrophages, dendritic cells and fibroblasts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Datasets",
+   "q": "What were the proteomic and spatial datasets?",
+   "a": "Breast CyTOF: 751,970 cells, 34 proteins, 6 cell types. Murine cell lines (RAW 264.7, C10, SVEC) measured on two platforms: 108 and 72 cells with 1,437 and 1,032 proteins, of which the 762 shared proteins were used. Spatial: STARmap (882 genes, 1,523 cells, 189 spots of 750 µm) with a Smart-seq2 reference, and Slide-seqV2 (41,786 cells, 1,892 spots of 100 µm).",
+   "kw": [
+    "CyTOF",
+    "STARmap",
+    "Slide-seqV2"
+   ],
+   "info": "The STARmap reference was Allen Brain Atlas Smart-seq2 data (14,249 cells). Slide-seqV2 was loaded via Squidpy and gridded using the ucdselect framework.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model",
+   "q": "What are the encoder, discriminator and eDeconvolver made of, and how is stage 2 trained?",
+   "a": "Each is a small network: a linear layer, leaky ReLU and dropout, with layer normalization in the encoder, a sigmoid on the discriminator and a softmax on the eDeconvolver. Training labels train-tissue as 1 and target as 0. Loss1 is BCE plus the L1 deconvolution loss; Loss2 is BCE with the labels swapped, which updates the encoder and discriminator.",
+   "kw": [
+    "adversarial loss",
+    "binary cross-entropy"
+   ],
+   "info": "Two loss calculations and two parameter updates happen per batch.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model",
+   "q": "How are the artificial impurity (noise) cells made in stage 3?",
+   "a": "One cell is sampled from each of the n reference cell types, and their features are mixed with a random weight matrix whose columns are positive and sum to 1. This is repeated to make a pool, and up to 10% of the pseudotissue cell capacity (m x 0.1) is added to make two noisy versions of each sample.",
+   "kw": [
+    "artificial impurity cells"
+   ],
+   "info": "The noise cells are blends of known cell types, used to imitate unknown cell types in the tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model",
+   "q": "How does the contrastive loss in stage 3 work?",
+   "a": "It is a noise contrastive estimation (NCE) loss. Features sampled at the same position from clean train-tissue and from purified (denoised) features are positive pairs. Clean features paired with noise features are negative pairs. Positives are pulled together and negatives pushed apart.",
+   "kw": [
+    "NCE loss",
+    "contrastive learning"
+   ],
+   "info": "S points are sampled from the same positions and passed through an MLP. Total stage 3 loss is the sum of three L1 deconvolution losses and the denoiser NCE loss.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evaluation and software",
+   "q": "What is Lin's CCC, and why use it alongside Pearson's r?",
+   "a": "CCC = 2 r sigma_y sigma_yhat divided by (sigma_y squared + sigma_yhat squared + (mu_y - mu_yhat) squared). It ranges from -1 to 1. Unlike Pearson's r, it also penalizes differences in mean and scale, so it measures agreement with the true proportions, not only correlation.",
+   "kw": [
+    "CCC",
+    "Pearson's r"
+   ],
+   "info": "The authors explain their use of Kendall similarity (robust to outliers, sensitive to subtle differences) for similar cell types, cosine similarity for sparse transcriptomic data, and Spearman for trend consistency.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Evaluation and software",
+   "q": "What software and hardware were used?",
+   "a": "Ubuntu 20.04, Python 3.8, PyTorch 2.0.0 with CUDA 11.8, on one NVIDIA RTX 4090 (24 GB) GPU and an Intel Xeon Gold 6430 CPU with 16 vCPUs. Statistics used SciPy (ttest_ind, wilcoxon) with Bonferroni correction.",
+   "kw": [
+    "PyTorch",
+    "SciPy"
+   ],
+   "info": "Reporting summary versions: scipy 1.10.1, numpy 1.24.2, scanpy 1.9.8, scikit-learn 1.3.2, pandas 2.0.3. Code is at github.com/forceworker/DECODE. The Fig. 6 legend says no multiple-testing adjustment was applied for the cohort t-tests, while the Methods mention Bonferroni; it is unclear which applies where.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Metabolomics deconvolution",
+   "text": "Most metabolomics benchmarks split cells from the same dataset into train and test halves because donor information was missing. How well does DECODE work on real bulk metabolomics with a reference from another lab or platform?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Consistency across omics",
+   "text": "Several mouse liver groups were tiny (HFD-TLC n = 4, WDA n = 4, NASH n = 6), and the cohort t-tests were not corrected for multiple testing. Treat the liver and breast biology as hypotheses, not findings."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could this framework (adversarial batch correction plus contrastive denoising for missing reference types) be applied to bulk RNA-seq or ATAC-seq of cavefish or zebrafish tissues using single-cell atlases as references? The authors mention extending it to DNA methylation."
+  }
+ ]
+}

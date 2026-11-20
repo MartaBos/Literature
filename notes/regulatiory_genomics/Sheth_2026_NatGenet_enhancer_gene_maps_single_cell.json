@@ -1,0 +1,567 @@
+{
+ "id": "Sheth_2026",
+ "title": "Mapping enhancer-gene regulatory interactions from single-cell data",
+ "link": "https://doi.org/10.1038/s41588-026-02695-8",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Sheth_2026_NatGenet_enhancer_gene_maps_single_cell.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is scE2G?",
+   "a": "scE2G is a family of classification models that predict enhancer-gene regulatory interactions from single-cell data. They use either scATAC-seq alone or multiomic scRNA plus scATAC-seq data, and they are trained on a CRISPR perturbation dataset of more than 10,000 tested element-gene pairs.",
+   "kw": [
+    "scE2G",
+    "enhancer-gene map"
+   ],
+   "info": "The models were benchmarked against CRISPR perturbations, fine-mapped eQTLs and GWAS variant-gene associations. The authors applied them to heterogeneous tissues to interpret noncoding trait variants.",
+   "concl": "scE2G gives state-of-the-art performance across cell types and nominated regulatory interactions linking INPP4B and IL15 to lymphocyte count."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "Knowing which enhancers regulate which genes in which cell types is key to understanding gene regulation and disease variants, but such maps are missing for most human cell types.",
+   "kw": [
+    "enhancer-gene regulatory interactions"
+   ],
+   "info": "The human genome encodes millions of enhancers that tune gene expression in specific cell types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the limitation of bulk models like ABC and ENCODE-rE2G?",
+   "a": "They predict interactions from bulk chromatin state and 3D contact data and have produced maps for hundreds of cell types and tissues. Their resolution is limited in complex tissues, because individual cell types are hard to purify for bulk epigenomic assays.",
+   "kw": [
+    "ABC",
+    "ENCODE-rE2G"
+   ],
+   "info": "ABC stands for Activity-by-Contact.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How did earlier single-cell enhancer-gene methods work, and what was the problem with them?",
+   "a": "Most used unsupervised strategies, such as correlating element accessibility with gene expression. Their accuracy and consistency were hard to judge because robust benchmarking datasets and pipelines were lacking.",
+   "kw": [
+    "unsupervised",
+    "correlation"
+   ],
+   "info": "Gold-standard enhancer perturbation datasets collected by the ENCODE Consortium now allow both evaluation and supervised learning.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting enhancer-gene interactions from single-cell data",
+   "q": "What are the two scE2G models?",
+   "a": "scE2G ATAC uses scATAC-seq data only, and scE2G Multiome uses paired scRNA-seq and scATAC-seq data. Both are logistic regression classifiers that predict which accessible elements act as enhancers for which genes in a given cell population.",
+   "kw": [
+    "scE2G ATAC",
+    "scE2G Multiome",
+    "logistic regression"
+   ],
+   "info": "Predictions are cell-type resolved because the model analyzes one cell type or state at a time, for example one cluster from a single-cell dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting enhancer-gene interactions from single-cell data",
+   "q": "Which features does scE2G ATAC use?",
+   "a": "It uses six features: (1) an ABC score, (2) accessibility at or near the element, (3) accessibility at the promoter, (4) genomic distance, (5) gene density between element and promoter, and (6) promoter class, meaning whether the gene is expressed ubiquitously.",
+   "kw": [
+    "ABC score",
+    "promoter class"
+   ],
+   "info": "In the ABC score, activity comes from pseudobulk scATAC-seq and contact is estimated as an inverse function of genomic distance. Apart from this single-cell adaptation of ABC, the feature set is similar to the bulk ENCODE-rE2G model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting enhancer-gene interactions from single-cell data",
+   "q": "What does scE2G Multiome add on top of the ATAC model?",
+   "a": "It adds the Kendall correlation between element accessibility and gene expression across single cells. This correlation is combined with the ABC score into one feature, the ARC-E2G score (activity, responsiveness and contact).",
+   "kw": [
+    "Kendall correlation",
+    "ARC-E2G score"
+   ],
+   "info": "Combining the two into the ARC-E2G score improves calibration across sequencing depths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting enhancer-gene interactions from single-cell data",
+   "q": "What data were the models trained on?",
+   "a": "They were trained on 10,342 element-gene pairs tested with CRISPR in K562 erythroleukemia cells, aggregated from three studies: 466 positives and 9,876 negatives. Features were computed from K562 10x Multiome data.",
+   "kw": [
+    "K562",
+    "CRISPRi",
+    "training data"
+   ],
+   "info": "Positives: perturbing the element significantly decreased gene expression. Negatives: no significant reduction, with power to detect at least a 15 to 25% effect. The screens used dCas9-KRAB with gRNAs targeting DHS elements. A 'best-subsets' strategy with hold-one-chromosome-out cross-validation chose a minimal feature set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting enhancer-gene interactions from single-cell data",
+   "q": "How was scE2G applied to build maps, and in how many cell types?",
+   "a": "scE2G Multiome was applied to 45 cell types, each defined as a cluster annotated by marker genes, from PBMCs, BMMCs and pancreatic islets plus cell lines. For each cell type, the pipeline pseudobulks the scATAC data to call peaks and compute ABC and accessibility features, computes element-gene correlations, and applies the pretrained model.",
+   "kw": [
+    "PBMC",
+    "BMMC",
+    "pancreatic islets"
+   ],
+   "info": "Example loci were EBF1 (B cell development), CEBPB (myeloid) and SPTA1 (erythroid). Predictions matched known cell-type-specific regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - benchmarking of scE2G models",
+   "q": "What was scE2G benchmarked against?",
+   "a": "It was tested on three orthogonal datasets: CRISPR enhancer perturbations, fine-mapped eQTLs and fine-mapped GWAS variants. The comparison included distance baselines and ten published models: ABC-based (ABC, STARE), correlation-based (Signac, Cicero, ArchR, FigR) and regression-based (SnapATAC, SCENT, DIRECT-NET, SCENIC+).",
+   "kw": [
+    "benchmarking",
+    "SCENIC+",
+    "Signac"
+   ],
+   "info": "Some models (scE2G, ABC, STARE, SCENT) analyze each cell type on its own. The others predict interactions by comparing across all cell types in a dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - benchmarking of scE2G models",
+   "q": "How did scE2G perform on the K562 CRISPR benchmark?",
+   "a": "Both scE2G models significantly outperformed all other models on all metrics. scE2G Multiome beat scE2G ATAC (P bootstrap = 3 x 10^-4 for delta AUPRC), and scE2G ATAC beat ABC. Only scE2G and ABC-based models beat the distance baselines.",
+   "kw": [
+    "AUPRC",
+    "CRISPR benchmark"
+   ],
+   "info": "Hold-one-chromosome-out cross-validation scores were used because the models were trained on this dataset. The benchmark had 9,225 pairs and 461 positives within 1 Mb. The advantage was stronger for distal pairs. Results held in two more K562 Multiome datasets.",
+   "concl": "scE2G Multiome performed similarly to the bulk DNase-seq ENCODE-rE2G model (delta AUPRC = -0.022, P bootstrap = 0.139)."
+  },
+  {
+   "type": "qa",
+   "section": "Results - benchmarking of scE2G models",
+   "q": "Does scE2G generalize to a held-out CRISPR dataset?",
+   "a": "Yes. On 4,175 held-out pairs (189 positives) from five cell types (K562, GM12878, HCT116, Jurkat, WTC11), the scE2G models had significantly better AUPRC and precision than all other models. Their performance did not differ significantly between the training and held-out datasets.",
+   "kw": [
+    "held-out CRISPR",
+    "generalization"
+   ],
+   "info": "Element selection and screen design differed in the held-out data, so each pair was weighted by the probability that it is a direct effect.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - benchmarking of scE2G models",
+   "q": "How well did scE2G capture fine-mapped eQTLs?",
+   "a": "With predictions binarized at the suggested thresholds, scE2G Multiome reached 13.9% recall and 14.9-fold enrichment. The next-best non-ABC model, SCENIC+, reached 1.4% recall and 10.3-fold enrichment. At a fixed 10% recall, scE2G Multiome enhancers were the most enriched for eQTLs (P adjusted = 6.72 x 10^-10 against the next-best model).",
+   "kw": [
+    "eQTL",
+    "PIP",
+    "enrichment"
+   ],
+   "info": "The benchmark used fine-mapped eQTL variant-gene links (PIP > 50%) from 19 biosamples, matched to 32 cell types. Across all thresholds, only ABC-based models reached recall above 2%. Bulk models in earlier benchmarks reached 10 to 20%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - benchmarking of scE2G models",
+   "q": "How did scE2G do on the GWAS benchmark?",
+   "a": "Only scE2G and other ABC-based models reached recall and enrichment in the range seen for bulk models (5 to 15% recall, 5- to 15-fold enrichment). For linking credible sets to known genes, scE2G Multiome had a recall of 24.2% on its own and 12.9% after intersecting with PoPS. Non-ABC models did not exceed 0.8% recall in either case.",
+   "kw": [
+    "GWAS",
+    "PoPS",
+    "credible sets"
+   ],
+   "info": "The benchmark used 15,648 fine-mapped variants (PIP > 10%) for 11 traits and predictions from 28 PBMC and BMMC cell types. Compared with eQTLs, GWAS variants affect more constrained genes and lie further from the TSS. The text gives scE2G gene-linking performance as 25 to 50% recall and 25 to 75% precision, comparable to bulk models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - benchmarking of scE2G models",
+   "q": "What are the strengths and limitations of each benchmark type?",
+   "a": "CRISPR data show causation directly, but they come mostly from K562 and may include indirect effects. eQTLs cover many primary cell types, but the causal variant is uncertain and recall is low because eQTLs can act through mechanisms other than enhancers. GWAS is the key use case, but causal variants, cell types and 'known' genes are all uncertain.",
+   "kw": [
+    "CRISPR",
+    "eQTL",
+    "GWAS"
+   ],
+   "info": "",
+   "concl": "Consistent performance across three complementary benchmarks suggests the model learned generalizable rules of enhancer-gene regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - model interpretation",
+   "q": "Which features matter most in scE2G Multiome?",
+   "a": "Three feature-importance analyses were run on the CRISPR benchmark: all subsets of 11 candidate features, sequential feature selection and ablation. In all three, the ABC score, the Kendall correlation and promoter class (ubiquitous expression) had large, significant effects on AUPRC and on precision at 70% recall.",
+   "kw": [
+    "feature selection",
+    "ABC score"
+   ],
+   "info": "Four more features, related to genomic distance and ATAC signal, were added for optimal performance. In forward selection, adding the ABC score gave by far the largest gain in AUPRC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - model interpretation",
+   "q": "What does the Kendall correlation contribute?",
+   "a": "It improves prediction of long-range interactions (for example, over 100 kb). It significantly improves on the ABC score alone (delta AUPRC = 0.223) and on scE2G ATAC (delta AUPRC = 0.102, P bootstrap = 6.0 x 10^-4).",
+   "kw": [
+    "Kendall correlation",
+    "long-range enhancers"
+   ],
+   "info": "Kendall correlation was picked from six tested metrics for its predictive performance and computational tractability. It correlates binarized element accessibility with continuous gene expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - model interpretation",
+   "q": "Is it better to compute correlations within one cell type or across cell types or meta-cells?",
+   "a": "Correlation computed across single cells within one cell type performed best. It beat meta-cells within K562 and single cells across several cell types (K562 plus PBMC), which is the approach used by methods like Signac and SnapATAC.",
+   "kw": [
+    "meta-cells",
+    "SEACells",
+    "stochastic variation"
+   ],
+   "info": "Example: a CRISPR-validated TFRC enhancer (chr3:196193510-196195038) was predicted only by single-cell scE2G Multiome. Cells with the enhancer open ranked higher for TFRC expression (P = 8.88 x 10^-17). Such pairs did not form K562 subtype clusters and had weaker correlations across meta-cells.",
+   "concl": "Stochastic variation in enhancer-gene co-activity across single cells within a cell type is informative, possibly reflecting a temporal relationship between accessibility and transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Results - model interpretation",
+   "q": "Which CRISPR pairs are hardest for scE2G to predict?",
+   "a": "The hardest pairs are more distal, have weaker CRISPR effect sizes, lack canonical enhancer signatures, or target ubiquitously expressed genes.",
+   "kw": [
+    "error analysis"
+   ],
+   "info": "These pairs have lower positive rates and are underrepresented in training. They may also involve mechanisms scE2G does not model, be indirect effects, or be hard to detect for lack of statistical power.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - performance across sequencing depths",
+   "q": "How much does sequencing depth vary in real datasets?",
+   "a": "The benchmark datasets included cell types with 3,960 to 37,442 ATAC fragments per cell and 108 to 22,525 cells. Total fragments per cell type spanned over two orders of magnitude.",
+   "kw": [
+    "sequencing depth"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - performance across sequencing depths",
+   "q": "What is the minimum data needed for robust scE2G Multiome performance?",
+   "a": "About 2 million ATAC fragments and 1 million RNA UMIs, which corresponds to roughly 100 cells. Above that, AUPRC and recall improve only modestly with more coverage, because the Kendall correlation contributes more.",
+   "kw": [
+    "downsampling",
+    "UMIs",
+    "ATAC fragments"
+   ],
+   "info": "The authors made 196 downsamples of the K562 10x Multiome dataset, varying cell number, fragments per cell and UMIs per cell. At low fragment counts, peak calls degrade and many CRISPR-tested elements are no longer candidate elements.",
+   "concl": "Robustness comes from merging ABC and Kendall into the ARC-E2G score, whose model weight stays stable across depths."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cell-type resolution of scE2G predictions",
+   "q": "How many enhancer-gene links does scE2G predict per cell type?",
+   "a": "Across 39 cell types that passed depth thresholds (4.9 to 822 million ATAC fragments), the average was 48,758 links (range 41,947 to 54,180), involving 36,259 unique enhancers and 8,658 genes with at least one distal enhancer.",
+   "kw": [
+    "enhancer-gene links"
+   ],
+   "info": "The average enhancer was 86.3 kb from its target promoter. On average, each expressed gene had 5.6 enhancers and each enhancer regulated 1.3 genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cell-type resolution of scE2G predictions",
+   "q": "What shows that scE2G predictions are truly cell-type resolved?",
+   "a": "Closely related cell types had the most similar predictions. eQTLs were more enriched in predictions from matched or same-lineage cell types. Cell-type-resolved predictions found 76% more unique enhancer-gene links in BMMCs than aggregate predictions. At EBF1 and CEBPB, predictions showed the expected cell-type-specific enhancer use, which pseudobulk predictions obscured.",
+   "kw": [
+    "cell-type resolution",
+    "EBF1",
+    "CEBPB"
+   ],
+   "info": "eQTL enrichment and recall were highest for same cell type (n = 97), then same lineage (n = 204), then unmatched (n = 2,259) comparisons. At BCL11A, the three known erythroid enhancers (+62, +58, +55 kb, gene-editing targets for beta-hemoglobinopathies) were predicted only in erythroid lineage cells.",
+   "concl": "scE2G identifies many cell-type-specific links that are missed when aggregated cell populations are analyzed."
+  },
+  {
+   "type": "qa",
+   "section": "Results - linking GWAS variants to target genes",
+   "q": "Are GWAS variants enriched in enhancers of biologically relevant cell types?",
+   "a": "Yes. Random blood glucose variants were more enriched in pancreatic beta and polypeptide cell enhancers (14.6-fold average) than in non-islet enhancers. MCV variants were most enriched in erythroid lineage enhancers (12.0-fold average).",
+   "kw": [
+    "S-LDSC",
+    "MCV",
+    "blood glucose"
+   ],
+   "info": "scE2G Multiome maps from 40 cell types were used to interpret fine-mapped GWAS variants for 17 traits. S-LDSC heritability enrichment showed similar trends.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - linking GWAS variants to target genes",
+   "q": "How many GWAS signals did scE2G link to genes?",
+   "a": "Of 1,892 noncoding credible sets (3,686 variants, PIP > 10%), scE2G linked 1,450 variants to 1,351 genes, giving 2,840 unique credible set-gene-cell type predictions. For 458 credible sets, the strongest link was to a gene other than the one with the nearest TSS.",
+   "kw": [
+    "gene prioritization",
+    "credible sets"
+   ],
+   "info": "Full results are in Supplementary Table 9.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - linking GWAS variants to target genes",
+   "q": "What is the rs7696969 example?",
+   "a": "rs7696969 at 4q31.21 is associated with lymphocyte count (PIP = 22%) and is the lead variant for platelet distribution width (P = 5.4 x 10^-48). It lies in an INPP4B intron and overlaps an enhancer predicted to regulate both INPP4B (441 kb away) and IL15 (769 kb away), most strongly in NK and T cells.",
+   "kw": [
+    "rs7696969",
+    "INPP4B",
+    "IL15"
+   ],
+   "info": "The enhancers were predicted more weakly in HSCs and megakaryocyte-erythroid progenitors. INPP4B encodes a phosphatase that modulates the AKT pathway. IL15 encodes a cytokine needed for NK and memory CD8+ T cell development.",
+   "concl": "rs7696969 may affect several blood traits through cell-type-specific, long-range regulation of INPP4B and IL15."
+  },
+  {
+   "type": "qa",
+   "section": "Results - linking GWAS variants to target genes",
+   "q": "What independent evidence supports the rs7696969 links?",
+   "a": "PoPS ranks IL15 and INPP4B as the top two genes in the locus. rs7696969 is also a fine-mapped eQTL for INPP4B (PIP = 66.6%) and a chromatin accessibility QTL in lymphoblastoid cell lines.",
+   "kw": [
+    "PoPS",
+    "TP73",
+    "caQTL"
+   ],
+   "info": "The variant overlaps TP73 footprints in several T cell types and changes a TP73 motif. FIMO match score is 9.981 for the reference allele and 13.231 for the alternate (JASPAR MA0861.1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does scE2G's design differ from previous single-cell models?",
+   "a": "Earlier models rely on correlation, regression, or accessibility combined with distance. scE2G is a supervised classifier trained directly on CRISPR data, and it integrates the ABC score, element-gene correlation and promoter class, which together outperform any single feature.",
+   "kw": [
+    "supervised learning"
+   ],
+   "info": "Proposed mechanisms: the ABC score captures activity and 3D contacts, the correlation may capture additional variance in these, and promoter class may reflect that housekeeping-gene promoters respond less to distal enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What does the paper suggest for experimental design?",
+   "a": "Within-cell-type correlations across single cells work best. This favors true single-cell data over meta-cells, and a paired multiomic assay over separate ATAC and RNA assays.",
+   "kw": [
+    "multiome",
+    "experimental design"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "When should you use scE2G, and when ENCODE-rE2G?",
+   "a": "Use scE2G for cell types with at least 100 cells, 2 million ATAC fragments and 1 million RNA UMIs, ideally from single-cell multiome data. If bulk ATAC-seq or DNase-seq exists and the single-cell data are missing or below these thresholds, ENCODE-rE2G performs similarly.",
+   "kw": [
+    "ENCODE-rE2G",
+    "guidelines"
+   ],
+   "info": "ENCODE-rE2G can be improved further by adding bulk H3K27ac or high-resolution Hi-C data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main limitations of scE2G?",
+   "a": "(1) It predicts only distal elements acting as enhancers, not, for example, CTCF-bound topological elements. (2) It is trained on only 466 positives from K562, and its performance on other cell types is modest. (3) Bulk models that add Hi-C or H3K27ac are more accurate, so maximum performance has not been reached. (4) The eQTL and GWAS tasks need extra models of variant effects on elements and gene effects on phenotypes.",
+   "kw": [
+    "limitations",
+    "K562",
+    "CTCF"
+   ],
+   "info": "",
+   "concl": "Larger perturbation datasets across many cell types should improve scE2G further."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future directions do the authors propose?",
+   "a": "Expand the CRISPR training data with large-scale perturbation studies across cell types, and explore joint training on CRISPR and eQTL data. They cite pgBoost as an example of a model trained on eQTL links.",
+   "kw": [
+    "pgBoost",
+    "future work"
+   ],
+   "info": "In parallel work, scE2G has been applied to single-cell atlases of human coronary arteries and fetal heart, where it identified and validated enhancers carrying cardiovascular disease variants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why combine enhancer-gene predictions with gene-function information when interpreting variants?",
+   "a": "Adding orthogonal information about gene function increased precision at identifying likely causal genes. In this paper, intersecting scE2G with PoPS did exactly that.",
+   "kw": [
+    "PoPS",
+    "causal genes"
+   ],
+   "info": "The trade-off is recall: scE2G Multiome dropped from 24.2% to 12.9% after the PoPS intersection.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome and gene references",
+   "q": "Which genome build and gene annotation were used?",
+   "a": "All coordinates are in GRCh38. Genes came from GENCODE v29 (protein-coding, processed transcript and lincRNA), with one promoter per gene defined as 500 bp around the RefSeq TSS of the isoform with the most coding isoforms. After filtering for compatibility with GENCODE v43, 20,531 unique genes remained.",
+   "kw": [
+    "GRCh38",
+    "GENCODE"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - 10x Multiome data and preprocessing",
+   "q": "Which single-cell datasets were used, and how were they processed?",
+   "a": "Public 10x Multiome data from K562, PBMC, BMMC, GM12878 and pancreatic islets were combined with newly generated data for K562, Jurkat, HCT116 and WTC11. Processing used cellranger-arc v2.0.2.",
+   "kw": [
+    "10x Multiome",
+    "cellranger-arc"
+   ],
+   "info": "QC metrics were RNA UMIs, ATAC fragments, nucleosome signal, TSS enrichment and percent mitochondrial reads. Demultiplexing used deMULTIplex2 v1.0.1. PBMCs were annotated with Harmony v1.2.0 and Seurat v5.0.3. WTC11 iPSCs carrying dox-inducible KRAB-dCas9 were differentiated toward hepatocyte progenitors. In the K562 dataset that was mixed with mouse cells, only cells with more than 95% human reads were kept.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Kendall correlation and ARC-E2G score",
+   "q": "How was the Kendall correlation computed?",
+   "a": "The authors computed Kendall tau-b between binarized element accessibility and normalized gene expression for each candidate pair, using a custom fast algorithm. Cells are sorted by expression, concordant and discordant pairs are counted with cumulative sums, and ties are corrected for.",
+   "kw": [
+    "Kendall tau-b",
+    "MACS2",
+    "Signac"
+   ],
+   "info": "MACS2 v2.2.9 peaks overlapping ABC candidate elements were counted with Signac FeatureMatrix and binarized with BinarizeCounts. RNA was normalized with Seurat NormalizeData.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Kendall correlation and ARC-E2G score",
+   "q": "How is the ARC-E2G score defined, and why was it introduced?",
+   "a": "ln(ARC-E2G) = ln(ABC) + (1/beta) x (SD of ln ABC / SD of tau) x tau, where beta is the slope from regressing scaled ln(ABC) on scaled Kendall tau. It was introduced because the Kendall correlation's performance, and so its model weight, depended on sequencing and cell depth.",
+   "kw": [
+    "ARC-E2G score"
+   ],
+   "info": "ABC and Kendall were the best single features with and without 3D contact or distance, respectively. Merging them makes the feature weight stable across depths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - training and applying scE2G",
+   "q": "How were the models trained, and how were the score thresholds set?",
+   "a": "The ABC codebase defines candidate pairs and computes ABC from pseudobulk scATAC, with contact from a power law in distance. Logistic regression is evaluated with hold-one-chromosome-out cross-validation, and a final model trained on all chromosomes is applied to new cell types. The binarization threshold is the cross-validated score that gives 70% recall: 0.177 for scE2G Multiome and 0.174 for scE2G ATAC.",
+   "kw": [
+    "cross-validation",
+    "threshold"
+   ],
+   "info": "For scE2G Multiome, pairs whose gene falls below a minimum TPM get a score of 0. Ubiquitous-expression promoter classes came from previous work.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - training and applying scE2G",
+   "q": "How was the meta-cell comparison set up?",
+   "a": "The authors built 90 meta-cells from K562 scRNA-seq with SEACells v0.3.3, aggregated the RNA and ATAC counts, computed Kendall correlation over the meta-cells, and retrained scE2G with that correlation and the ABC score as separate features.",
+   "kw": [
+    "SEACells",
+    "meta-cells"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - benchmarking",
+   "q": "How were the published predictors run fairly?",
+   "a": "Each was given the same RNA UMI and ATAC fragment count matrices, and predictions were limited to peak-gene pairs within 1 Mb of the TSS. AUPRC was computed with the trapezoidal method plus the rectangle from the curve's left endpoint to the origin, which handles predictors that give many identical scores.",
+   "kw": [
+    "AUPRC",
+    "fair benchmarking"
+   ],
+   "info": "Versions: ArchR v1.0.2, Cicero v1.3.9, DIRECT-NET v0.0.1, FigR v0.1.0, SCENT v1.0.0, SCENIC+ v1.0a1, Signac v1.13.0, SnapATAC v1.0.0 and STARE v1.0.4. A separate run with each method's default settings was also done.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - benchmarking",
+   "q": "How was the held-out CRISPR dataset built, and how were indirect effects handled?",
+   "a": "Eight screens covering five cell types were reprocessed: three Perturb-seq screens in K562, two direct-capture targeted Perturb-seq screens in K562 and WTC11, and CRISPRi-FlowFISH in K562, HCT116, GM12878 and Jurkat. Each pair was weighted by P_direct(d) = r_direct(d) / (r_direct(d) + r_indirect), with the indirect rate estimated from interchromosomal trans effects.",
+   "kw": [
+    "Perturb-seq",
+    "CRISPRi-FlowFISH",
+    "direct effects"
+   ],
+   "info": "Pairs already in the training data were removed. Negatives had to be adequately powered. Positives were filtered on effect size (at least 5%) and H3K27ac signal at the element.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - benchmarking",
+   "q": "Which eQTL and GWAS data were used for benchmarking?",
+   "a": "eQTLs came from eQTL Catalogue v7, fine-mapped with SuSiE, keeping distal noncoding variants with PIP > 50%. GWAS data came from 94 UK Biobank traits fine-mapped with SuSiE by the Finucane lab, keeping distal noncoding variants with PIP > 10%.",
+   "kw": [
+    "SuSiE",
+    "eQTL Catalogue",
+    "UK Biobank"
+   ],
+   "info": "A 'known' causal gene carries a coding fine-mapped variant with PIP > 50% and is linked to independent noncoding credible sets of the same trait within 500 kb. Model plus PoPS: a gene must rank in the top two by both model score and PoPS. eQTL biosamples were grouped at fine-grained and coarse-grained resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell-type resolution and GWAS prioritization",
+   "q": "How was the cell-type resolution analysis done?",
+   "a": "A shared prediction across cell types was defined as the same gene with at least 50% overlap of the enhancer. For BMMCs, scE2G was run on size-proportional random samples drawn from all BMMCs, from the cell type's supergroup, or from the exact cell type (15 cell types in 5 supergroups), over 20 iterations.",
+   "kw": [
+    "supergroups",
+    "sampling"
+   ],
+   "info": "This design controls for the number and size of the input cell clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell-type resolution and GWAS prioritization",
+   "q": "How were causal genes and cell types prioritized for GWAS loci?",
+   "a": "Only cell type-trait pairs with significant, at least fivefold variant enrichment in predicted enhancers were used. For each credible set, the two genes with the highest scE2G scores among enhancers containing its noncoding variants were kept.",
+   "kw": [
+    "S-LDSC",
+    "FIMO",
+    "JASPAR"
+   ],
+   "info": "S-LDSC v1.0.1 was run with baseline model v2.2 on 104 UK Biobank traits. Motif effects were scored with FIMO v5.5.9 using JASPAR motifs.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - model interpretation",
+   "text": "The authors suggest that within-cell-type correlations reflect stochastic temporal links between enhancer accessibility and transcription (bursting), but this is an interpretation that was not tested directly. Worth going back to Supplementary Note 1 and Fig. 3."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "scE2G is trained only on human K562 CRISPR data, and its performance on other cell types is described as modest. The paper does not address whether the learned feature weights would transfer to non-human single-cell multiome data, such as zebrafish or cavefish."
+  },
+  {
+   "type": "note",
+   "section": "Results - benchmarking of scE2G models",
+   "text": "The absolute recall for eQTLs and GWAS variants is low (about 14% for eQTLs) even for the best model. How much of this comes from benchmark noise (non-enhancer mechanisms, causal variant uncertainty) and how much from model limits?"
+  }
+ ]
+}

@@ -1,0 +1,483 @@
+{
+ "id": "Hou_2025",
+ "title": "The ChickenGTEx portal: a pan-tissue catalogue of regulatory variants shaping transcriptomic and phenotypic diversity",
+ "link": "https://doi.org/10.1093/nar/gkaf731",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Hou_2025_NAR_ChickenGTEx_portal.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the ChickenGTEx portal?",
+   "a": "A web database (http://chicken.farmgtex.org) that catalogues the regulatory effects of genetic variants on transcriptomic and phenotypic diversity across chicken tissues, cell types and sexes.",
+   "kw": [
+    "ChickenGTEx",
+    "molQTL"
+   ],
+   "info": "Published in the NAR Database issue 2026 (advance access August 2025). The first six authors share joint first authorship.",
+   "concl": "It is meant to be an integrative genomics resource for chicken, which is both a key livestock species and a model organism."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the key numbers in the resource?",
+   "a": "Imputation panel of 2869 chickens from 123 breeds, five molecular phenotypes across 28 tissues, about 2.2 million molQTL, 806,229 fine-mapped molQTL, 1956 context-dependent molQTL, 257 epigenomes of 7 marks (15 chromatin states) from 23 tissues, 185,376 single-cell profiles in 191 clusters from 9 tissues, and 96,386 gene-trait associations for 108 traits.",
+   "kw": [],
+   "info": "Some numbers are inconsistent within the paper. The abstract says about 2.2 million molQTL, but the per-type cis-molQTL counts in the Results add up to about 22.1 million. The abstract says 123 breeds, but Methods says the WGS data span 153 breeds. The feature list gives 289 epigenetic profiles, while the abstract and Methods say 257.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What linking strategy does the portal use?",
+   "a": "A SNP-to-gene-to-trait (variant-to-gene-to-trait, V2G2T) framework. It combines molQTL, regulatory elements and context- or environment-dependent regulatory heterogeneity.",
+   "kw": [
+    "V2G2T"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why focus on non-coding variants?",
+   "a": "Over 80% of trait-associated variants lie in non-coding regions. There they regulate chromatin organization and gene expression and so affect phenotypic variation and disease susceptibility.",
+   "kw": [
+    "non-coding variants",
+    "GWAS"
+   ],
+   "info": "Accurate annotation of non-coding variants is presented as essential for understanding the molecular mechanisms of complex traits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which existing resources annotate non-coding variants, and in which species?",
+   "a": "ENCODE and GTEx mapped regulatory elements and the effects of non-coding variants, mainly in humans and mice. Tools built on them include RegulomeDB, HaploReg, SCREEN, FunSeq and the GTExPortal.",
+   "kw": [
+    "ENCODE",
+    "GTEx"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is FarmGTEx and how does ChickenGTEx fit into it?",
+   "a": "FarmGTEx, together with the FAANG initiative, studies how non-coding variants regulate gene expression across tissues and complex traits in domestic animals. ChickenGTEx is the chicken part of FarmGTEx and maps molQTL across tissues, cell types, genetic backgrounds and sexes.",
+   "kw": [
+    "FarmGTEx",
+    "FAANG"
+   ],
+   "info": "The authors argue farm animals are useful because sampling conditions are well controlled and experiments are accessible.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "Chicken was the first farm animal and the first bird to be sequenced, yet its regulatory variants and their effects on transcriptome and phenotype had not been systematically characterized. There was no integrative framework that brought together regulatory variants, functional annotations and trait associations.",
+   "kw": [],
+   "info": "Pieces existed separately: the ChickenGTEx molQTL study, a pan-tissue atlas of chicken regulatory elements, and several chicken single-cell studies.",
+   "concl": "The portal unifies these pieces into one user-oriented platform."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data information and curation",
+   "q": "What bulk RNA-seq data are in the portal?",
+   "a": "7015 RNA-seq datasets from 52 tissues grouped into 28 tissue categories, collected from 113 breeds. The most common tissues are liver (12%), muscle (8%) and spleen (7%).",
+   "kw": [
+    "RNA-seq"
+   ],
+   "info": "Leghorn makes up 24% of samples. The next breeds are written as 'Ross Rhode (7%), and Island Red (5%)', which looks garbled in the text. Metadata include BioProject, BioSample, breed, age, sex, platform, depth and alignment statistics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data information and curation",
+   "q": "How were the RNA-seq reads processed?",
+   "a": "Reads were trimmed with Trim Galore v0.6.6 and aligned to the GRCg6a reference with STAR v2.7.7a. The average uniquely mapping rate was 91% (range 60 to 99%).",
+   "kw": [
+    "STAR",
+    "Trim Galore",
+    "GRCg6a"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data information and curation",
+   "q": "What WGS data are included?",
+   "a": "2869 WGS datasets from 153 genetically and geographically diverse breeds, with an average depth of 12.5x and an average mapping rate of 98%.",
+   "kw": [
+    "WGS"
+   ],
+   "info": "The main breeds are Rhode Island Red (16%), Yellow-plumage Dwarf (6.8%), Leghorn (5%), Tibetan (4%) and COBB (3%).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data information and curation",
+   "q": "What epigenomic and single-cell data were integrated?",
+   "a": "257 epigenomes from 23 tissues, each from 2 to 4 chickens, taken from a previously published chicken regulatory element atlas. Single-cell transcriptomes come from nine tissues: liver, spleen, heart, breast muscle, bursa of Fabricius, retina, lung, amygdala and mesencephalon.",
+   "kw": [
+    "epigenome",
+    "scRNA-seq"
+   ],
+   "info": "The epigenome tissues include brain regions, testis, muscle, heart, adipose, kidney, spleen, bone marrow, lung, trachea, thymus, liver, gut segments, shell glands and bursa. All single-cell data were reused from earlier published studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - five types of molecular phenotypes",
+   "q": "Which five molecular phenotypes were quantified?",
+   "a": "Protein-coding gene (PCG) expression, exon expression, lncRNA expression, 3' UTR alternative polyadenylation (APA) and alternative splicing variation (ASV), across 28 tissues.",
+   "kw": [
+    "APA",
+    "ASV",
+    "lncRNA"
+   ],
+   "info": "These map onto five QTL types: eQTL, exQTL, lncQTL, 3'aQTL and sQTL.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - five types of molecular phenotypes",
+   "q": "How were gene and exon expression quantified?",
+   "a": "PCG and lncRNA expression (TPM) was calculated with featureCounts v2.0.1 and StringTie v2.1.5. Exon expression was estimated with featureCounts v2.0.1 and TBtools v1.09.",
+   "kw": [
+    "featureCounts",
+    "StringTie",
+    "TBtools"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - five types of molecular phenotypes",
+   "q": "How was tissue specificity measured?",
+   "a": "With eight metrics from the tspex package: Counts, Tau, Gini coefficient, Simpson index, Shannon entropy specificity, ROKU specificity, specificity measure dispersion and Jensen-Shannon specificity dispersion. On this scale 0 means broad expression and 1 means tissue-specific expression.",
+   "kw": [
+    "tspex",
+    "Tau"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - five types of molecular phenotypes",
+   "q": "How were APA and splicing events quantified?",
+   "a": "APA was quantified with DaPars v2 as the percentage of distal poly(A) site usage index (PDUI) per gene per sample. Splicing (intron excision) was quantified with LeafCutter as the percent spliced-in (PSI) for each intron cluster per sample.",
+   "kw": [
+    "DaPars",
+    "LeafCutter",
+    "PDUI"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - identification of molQTL",
+   "q": "How were genotypes obtained for the RNA-seq samples?",
+   "a": "SNPs were called from the RNA-seq data with GATK v4.1.9.0. They were then imputed with Beagle 5.1 using the reference panel built from 2869 WGS chickens.",
+   "kw": [
+    "GATK",
+    "Beagle",
+    "imputation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - identification of molQTL",
+   "q": "How was molQTL mapping done?",
+   "a": "Linear regression in tensorQTL v1.0.4 and linear mixed models with genetic relatedness as a random effect in rMVP v1.0.8. Covariates were the top 5 genotype PCs and 10 PEER factors, and only cis-SNPs within 1 Mb of the TSS were tested.",
+   "kw": [
+    "tensorQTL",
+    "rMVP",
+    "PEER"
+   ],
+   "info": "The PCs correct for population stratification and the PEER factors correct for hidden factors. Fine-mapping used the stepwise regression procedure in tensorQTL v1.0.4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - regulatory mechanisms underlying molQTL",
+   "q": "Which epigenomic marks were used to interpret molQTL?",
+   "a": "Four histone modifications (H3K4me1, H3K4me3, H3K27ac, H3K27me3), CTCF, ATAC-seq and DNase-seq.",
+   "kw": [
+    "H3K27ac",
+    "ATAC-seq",
+    "CTCF"
+   ],
+   "info": "Signal bigWigs were made with bamCompare, Z-score normalized with scipy.stats.zscore and displayed in IGV.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - regulatory mechanisms underlying molQTL",
+   "q": "How were chromatin states defined?",
+   "a": "ChromHMM predicted 15 chromatin states, named by their combinations of marks and their enrichment around TSSs. The states are TssA, TssAHet, TxFlnk, TxFlnkWk, TxFlnkHet, EnhA, EnhAMe, EnhAWk, EnhAHet, EnhPois, ATAC_Is, TssBiv, Repr, ReprWk and Qui.",
+   "kw": [
+    "ChromHMM",
+    "chromatin states"
+   ],
+   "info": "The states come from the earlier chicken regulatory element atlas (Pan et al. 2023).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single-cell RNA-seq analyses",
+   "q": "How were the single-cell data processed?",
+   "a": "With Seurat v4.1.1. Cells with fewer than 200 genes or more than 20% mitochondrial reads were removed, likely multiplets were removed, and Harmony was used to correct batch effects.",
+   "kw": [
+    "Seurat",
+    "Harmony"
+   ],
+   "info": "Markers had to be expressed in at least 25% of cells in the cluster, with log2FC > 0.25 and FDR < 0.01. Clusters were annotated using known marker genes. The pipeline figure also shows CIBERSORTx deconvolution, but the Methods text does not describe it.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - identification of context-dependent molQTL",
+   "q": "How were context-dependent eQTL (by sex, cell type or tissue) detected?",
+   "a": "With a linear model that includes an interaction term: y = g + i + i x g + c + e. Here g is the genotype effect, i is the context (sex, cell type composition or tissue), i x g is the interaction, c is the covariates (5 PCs, 10 PEER factors) and e is the residual.",
+   "kw": [
+    "interaction eQTL",
+    "sex-biased eQTL"
+   ],
+   "info": "Significance threshold: FDR-corrected P < 0.01.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - associations of molQTL with complex traits",
+   "q": "How were molQTL linked to complex traits?",
+   "a": "GWAS summary statistics for 108 traits were used for TWAS. Single-tissue TWAS used S-PrediXcan and multi-tissue TWAS used S-MultiXcan (both in MetaXcan), with significance at FDR < 0.05.",
+   "kw": [
+    "TWAS",
+    "S-PrediXcan",
+    "S-MultiXcan"
+   ],
+   "info": "The traits cover growth, development, egg production, feed intake and efficiency.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - molecular phenotypes",
+   "q": "Can you give examples of tissue-specific expression?",
+   "a": "BPIFB2 and BPIFB3, which encode lipid transfer/lipopolysaccharide-binding proteins, are highly expressed in the oviduct (Tau = 0.94). An lncRNA of unknown function (ENSGALG00000030728) is relatively highly expressed in adipose tissue (Tau = 0.94).",
+   "kw": [
+    "BPIFB2",
+    "Tau"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - molecular phenotypes",
+   "q": "How many APA events are in the portal?",
+   "a": "15,847 APA events across 28 tissues. Of these, 3819 are shared across all tissues and 993 are tissue-specific, ranging from 0 in small intestine (9 datasets) to 200 in retina (120 datasets).",
+   "kw": [
+    "APA",
+    "PDUI"
+   ],
+   "info": "The authors read the shared events as a sign of a conserved regulatory role. The tissue-specific counts may partly reflect sample size per tissue (9 versus 120 datasets), but the paper does not discuss this.",
+   "concl": "The retina has a distinct APA landscape."
+  },
+  {
+   "type": "qa",
+   "section": "Results - molecular phenotypes",
+   "q": "Which genes illustrate APA, and why are they interesting?",
+   "a": "BRD8 has the most significant average normalized PDUI across tissues. It encodes a thyroid hormone receptor-interacting protein and may influence reproduction and growth. CNGB3 has a retina-specific APA event (normalized PDUI = 0.24, n = 119).",
+   "kw": [
+    "BRD8",
+    "CNGB3"
+   ],
+   "info": "The human orthologs are linked to BMI and age at menarche (BRD8) and to height, BMI and reproductive timing (CNGB3). The CNGB3 text mixes rod and cone photoreceptors in one sentence, so it is unclear which is meant.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - molecular phenotypes",
+   "q": "What splicing results are highlighted?",
+   "a": "The portal highlights 677 tissue-specific ASV events. One example is intron 1 retention in TACR3 specifically in the hypothalamus (normalized PSI = 0.15, n = 97).",
+   "kw": [
+    "TACR3",
+    "intron retention"
+   ],
+   "info": "TACR3 encodes the neurokinin B receptor, which regulates GnRH-induced gonadotropin secretion and puberty. The authors suggest this splicing event may relate to variation in age at puberty in chickens.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cis-molQTL",
+   "q": "How many cis-molQTL of each type were found?",
+   "a": "2,971,719 cis-eQTL, 2,394,728 cis-lncQTL, 12,593,157 cis-exQTL, 970,651 cis-3'aQTL and 3,218,604 cis-sQTL across 28 tissues.",
+   "kw": [
+    "eQTL",
+    "sQTL",
+    "exQTL"
+   ],
+   "info": "These add up to about 22.1 million, which does not match the 'about 2.2 million' in the abstract. The abstract figure may be a typo or may count something else; the paper does not say.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cis-molQTL",
+   "q": "Why fine-map, and how many fine-mapped molQTL are there?",
+   "a": "Associations can be driven by linkage disequilibrium between SNPs, so fine-mapping narrows them down to likely causal variants. There are 92,617 fine-mapped eQTL, 60,875 lncQTL, 542,741 exQTL, 31,344 3'aQTL and 78,652 sQTL, 806,229 in total.",
+   "kw": [
+    "fine-mapping",
+    "linkage disequilibrium"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cis-molQTL",
+   "q": "What are example eQTL, lncQTL and exQTL?",
+   "a": "rs316488589 is associated with LCOR expression in liver (n = 855), with the T allele raising expression by 2.44 TPM units. rs312332135 affects lncRNA ENSGALG00000051591 in retina (beta = 2.62), and rs313665599 affects DMD exon usage in muscle (beta = 1.23 to 1.34).",
+   "kw": [
+    "LCOR",
+    "DMD"
+   ],
+   "info": "LCOR is implicated in body height regulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cis-molQTL",
+   "q": "What are example 3'aQTL and sQTL acting at a distance?",
+   "a": "A rare variant, rs731959666, about 30 kb downstream of BZW1, changes APA in liver: the A allele raises normalized PDUI by 5.37. A common variant, 12_3166845, about 375 kb upstream of ABHD14B, is associated with intron 1 retention in adipose: the T allele raises normalized PSI by 5.57.",
+   "kw": [
+    "BZW1",
+    "ABHD14B",
+    "3'aQTL"
+   ],
+   "info": "BZW1 encodes a regulator of translation initiation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - regulatory mechanisms",
+   "q": "How does the portal help interpret the mechanism behind a molQTL?",
+   "a": "It overlays molQTL on tissue-specific chromatin states and epigenetic binding landscapes from 257 profiles across 23 tissues. For example, rs738808334 lies in a liver-specific H3K4me1 peak and predicted enhancer and is associated with liver-specific SLCO1B3 expression.",
+   "kw": [
+    "SLCO1B3",
+    "H3K4me1",
+    "enhancer"
+   ],
+   "info": "The SLCO1B3 gene body is also enriched for active chromatin mark peaks in liver but not in heart.",
+   "concl": "Integrating epigenomes with molQTL lets users propose candidate enhancer-mediated mechanisms for variants."
+  },
+  {
+   "type": "qa",
+   "section": "Results - single-cell expression profiles",
+   "q": "What does the single-cell part of the portal contain?",
+   "a": "185,376 cells with 45,402 features in 191 clusters across nine tissues. They range from 12 clusters and 25,563 cells in mesencephalon to 52 clusters and 39,016 cells in retina.",
+   "kw": [
+    "single-cell",
+    "cell clusters"
+   ],
+   "info": "Other cell counts: spleen 7877 (15 clusters), liver 13,911 (15), heart 21,922 (15), breast muscle 17,701 (19), bursa 27,318 (16), lung 20,051 (23), amygdala 12,017 (24). The canonical liver gene ALB is expressed exclusively in hepatocytes.",
+   "concl": "Lessons from human GTEx show cell type composition matters, so causal variants need to be resolved at cell-type level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - context-dependent molQTL",
+   "q": "How many context-dependent eQTL were found?",
+   "a": "1194 sex-biased, 703 cell type-biased and 59 tissue-biased eQTL, 1956 in total.",
+   "kw": [
+    "context-dependent eQTL"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - context-dependent molQTL",
+   "q": "Can you give an example of a sex-biased and a cell type-biased eQTL?",
+   "a": "rs10731833 regulates CPS1 in liver: the G allele increases expression in males (P = 4.72e-6) but not in females. The C allele of rs316264082 regulates PPP1R3D in heart in a way that depends on cardiomyocyte abundance.",
+   "kw": [
+    "CPS1",
+    "PPP1R3D",
+    "sex-biased eQTL"
+   ],
+   "info": "CPS1 is a mitochondrial urea cycle gene, and the urea cycle is known to show sex differences in nitrogen metabolism.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - context-dependent molQTL",
+   "q": "Can a variant have opposite effects in different tissues?",
+   "a": "Yes. The T allele of rs738636550 increases CSD1 expression by 0.94 units in adipose but decreases it by 0.42 in liver and 0.85 in retina.",
+   "kw": [
+    "CSD1",
+    "tissue-biased eQTL"
+   ],
+   "info": "CSD1 encodes cytosolic Cu/Zn superoxide dismutase, so the variant may contribute to tissue-specific oxidative stress responses.",
+   "concl": "Tissue-biased eQTL can explain tissue-specific and even opposite regulatory effects of the same variant."
+  },
+  {
+   "type": "qa",
+   "section": "Results - gene-trait associations",
+   "q": "How many gene-trait associations are in the portal, and what do they let users do?",
+   "a": "96,386 significant gene-trait associations across 108 traits. Users can use them to infer regulatory hierarchies of variants, genes and tissues behind each trait.",
+   "kw": [
+    "TWAS",
+    "gene-trait association"
+   ],
+   "info": "Traits relate to growth, development, egg production, feed intake and efficiency.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - gene-trait associations",
+   "q": "What regulatory network was shown for body weight?",
+   "a": "Body weight traits (for example at 6 and 8 weeks) were linked to eQTL and exQTL of ATP7B in liver, the sQTL of PHF11 in spleen and its eQTL in muscle, the eQTL of THSD1 in muscle, the exQTL and 3'aQTL of CAB39L in retina, and the eQTL of ALG11 in adipose.",
+   "kw": [
+    "ATP7B",
+    "CAB39L",
+    "body weight"
+   ],
+   "info": "Retina contributing to body weight is a notable tissue link, but the paper does not discuss it further.",
+   "concl": "Complex traits are shaped by networks of different molQTL types acting across multiple tissues."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude and plan next?",
+   "a": "The portal links genotypes to regulatory function and phenotypes for research from molecular biology and vertebrate evolution to breeding and translational work. Planned additions are more high-resolution multi-omics data, especially single-cell and well-designed experiments, and better web-based analysis tools.",
+   "kw": [],
+   "info": "There is no formal limitations section. The examples are associations from TWAS and molQTL and are not experimentally validated. The single-cell and epigenome data are reused from other studies, and the reference genome is GRCg6a.",
+   "concl": "ChickenGTEx is a foundational resource for functional interpretation of non-coding variants in chicken."
+  },
+  {
+   "type": "note",
+   "section": "Abstract",
+   "text": "Check the molQTL total: the abstract says about 2.2 million, but the per-type counts in the Results add up to about 22 million. The breed (123 vs 153) and epigenome (257 vs 289) counts are also inconsistent."
+  },
+  {
+   "type": "note",
+   "section": "Results - molecular phenotypes",
+   "text": "Are tissue-specific APA and ASV counts (0 in small intestine vs 200 in retina) driven by sample size per tissue rather than biology?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could a similar V2G2T portal (molQTL plus ChromHMM states plus scRNA-seq plus TWAS) be built for zebrafish or Astyanax? Worth looking at the underlying ChickenGTEx Nat Genet 2025 paper for the full methods."
+  }
+ ]
+}

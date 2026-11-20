@@ -1,0 +1,632 @@
+{
+ "id": "Novakovsky_2023",
+ "title": "ExplaiNN: interpretable and transparent neural networks for genomics",
+ "link": "https://doi.org/10.1186/s13059-023-02985-y",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Novakovsky_2023_GenomeBiol_ExplaiNN.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does ExplaiNN address?",
+   "a": "Deep learning models such as CNNs excel at genomic tasks but are hard to interpret. ExplaiNN combines the expressiveness of CNNs with the interpretability of linear models.",
+   "kw": [
+    "ExplaiNN",
+    "CNN",
+    "interpretability"
+   ],
+   "info": "The authors aim to speed up the adoption of deep learning in genomic sequence analysis by domain experts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What can ExplaiNN do, and how well?",
+   "a": "It predicts TF binding and chromatin accessibility and discovers de novo motifs, with performance comparable to state-of-the-art methods. Its predictions are transparent and give both global (cell state level) and local (individual sequence level) insights.",
+   "kw": [
+    "TF binding",
+    "chromatin accessibility",
+    "de novo motifs"
+   ],
+   "info": "It can also be used as a plug-and-play platform for pretrained models and annotated PWMs.",
+   "concl": "An interpretable model does not have to cost performance in genomic sequence tasks."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are machine and deep learning used for data like ATAC-seq and ChIP-seq?",
+   "a": "These methods produce so much data that manual analysis is impossible. Deep learning has outperformed other approaches at predicting genome folding, chromatin accessibility states, gene expression levels and TF binding sites.",
+   "kw": [
+    "ATAC-seq",
+    "ChIP-seq"
+   ],
+   "info": "The problem is that many complex models are opaque: they do not reveal the features behind their predictions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is filter visualization, and what are its limitations?",
+   "a": "The first-layer convolutional filters of a CNN are turned into PWMs by aligning the sequences that activate each filter. These PWMs are then annotated by comparing them to databases such as JASPAR.",
+   "kw": [
+    "filter visualization",
+    "PWM",
+    "JASPAR"
+   ],
+   "info": "Limitations: success depends heavily on architecture choices such as max pooling and filter size, and it is hard to see how deeper layers combine the motifs. Global interpretability requires nullifying filters one at a time, which is computationally intensive and depends on arbitrary thresholds.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are attribution methods?",
+   "a": "They score how important each nucleotide in an input sequence is, using either forward propagation (for example in silico mutagenesis) or back-propagation (for example DeepLIFT). The scores can then be clustered into PWMs, for example with TF-MoDISco.",
+   "kw": [
+    "DeepLIFT",
+    "TF-MoDISco",
+    "in silico mutagenesis"
+   ],
+   "info": "They give local interpretability, but measuring how much each feature contributes to the model's predictions overall (global interpretability) is still hard. Neither filter visualization nor attribution shows how the model actually makes its predictions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the difference between local and global interpretability?",
+   "a": "Local interpretability identifies the important nucleotides or features in an individual input sequence. Global interpretability quantifies how each feature (for example a filter) influences the model's predictions overall.",
+   "kw": [
+    "local interpretability",
+    "global interpretability"
+   ],
+   "info": "In ExplaiNN, global means insight at the cell state level and local means insight at the level of individual sequences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are neural additive models (NAMs)?",
+   "a": "NAMs, introduced by Agarwal and colleagues, compute predictions as a linear combination of the outputs of independent deep learning models, each tuned to one input feature. This gives the explainability of linear models without losing accuracy.",
+   "kw": [
+    "NAM",
+    "linear model"
+   ],
+   "info": "Linear models are interpretable and transparent because their learned coefficients can be read directly. ExplaiNN is inspired by NAMs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ExplaiNN architecture",
+   "q": "How is ExplaiNN built?",
+   "a": "It takes one-hot encoded DNA as input and makes predictions as a linear combination of many independent CNNs called units. Each unit has one convolutional layer with a single filter, exponential activation and two fully connected layers. A final linear layer combines the unit outputs.",
+   "kw": [
+    "units",
+    "one-hot encoding",
+    "linear layer"
+   ],
+   "info": "Each unit's convolutional layer has batch normalization, exponential activation and max pooling. Its fully connected layers have batch normalization, ReLU and dropout. The paper calls ExplaiNN a glass box model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ExplaiNN architecture",
+   "q": "Why does ExplaiNN use exponential activation in the convolutional layer?",
+   "a": "Exponential activation has been shown to improve the motif representations learned by CNN filters, compared with ReLU.",
+   "kw": [
+    "exponential activation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ExplaiNN architecture",
+   "q": "How does ExplaiNN give global and local interpretations?",
+   "a": "Each unit's filter is matched to a JASPAR profile with Tomtom, which gives the unit a biological annotation. The final-layer weights (coefficients) can be read like those of a linear model, which gives global interpretation. Multiplying a unit's output by its weight for each input sequence gives unit importance scores, which give local interpretation.",
+   "kw": [
+    "Tomtom",
+    "unit importance score"
+   ],
+   "info": "This is the main difference from a standard CNN: the final-layer weights of each unit can be interpreted directly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding in open chromatin",
+   "q": "Which dataset did they use for the proof of concept?",
+   "a": "Binding of 50 TFs to open chromatin regions (OCRs), taken from a reference dataset of 163 TFs binding more than 1.8 million 200-bp OCRs that the authors repurposed.",
+   "kw": [
+    "OCR",
+    "TF binding"
+   ],
+   "info": "The task is multi-task prediction of binding of the 50 TFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding in open chromatin",
+   "q": "How does the number of units affect performance?",
+   "a": "They trained models with 1 to 200 units. Performance improved with more units and plateaued at around 100 units.",
+   "kw": [
+    "hyperparameter",
+    "number of units"
+   ],
+   "info": "The number of units is the key hyperparameter of ExplaiNN.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding in open chromatin",
+   "q": "How did ExplaiNN compare with other models at predicting TF binding?",
+   "a": "Measured by average AUPRC, ExplaiNN outperformed CNN1, CNN1Exp and DeepCNN. With more than 100 units it nearly matched DanQ, a more complex hybrid convolutional and recurrent model. The 100-unit model beat DeepCNN for most TFs and was only slightly worse than DanQ.",
+   "kw": [
+    "DanQ",
+    "DeepCNN",
+    "AUPRC"
+   ],
+   "info": "CNN1 has one convolutional layer. CNN1Exp is CNN1 with exponential activation. DeepCNN has three convolutional layers and is adapted from Basset.",
+   "concl": "ExplaiNN performs comparably to more complex models, at least for TF binding prediction."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding in open chromatin",
+   "q": "How many TF binding modes did the models recover?",
+   "a": "The 50 TFs correspond to 33 binding modes. ExplaiNN with 100 and 300 units recovered 19 and 21 of them. DanQ recovered 19 with filter visualization and 20 with DeepLIFT plus TF-MoDISco, and DeepCNN recovered fewer.",
+   "kw": [
+    "binding modes",
+    "TF-MoDISco"
+   ],
+   "info": "Binding modes were defined from hierarchically clustered groups of JASPAR DNA-binding profiles. The number recovered by ExplaiNN increased with the number of units.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding in open chromatin",
+   "q": "What did the final linear layer weights show?",
+   "a": "Units with FOX-like filters had high positive weights for the FOXA1 class. CEBP-, CTCF- and Ets-like units had high positive weights for their matching TF classes. Some units, however, had negative weights for the class of their own annotated TF.",
+   "kw": [
+    "FOXA1",
+    "CTCF",
+    "heatmap"
+   ],
+   "info": "More than one filter can learn the same motif.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding in open chromatin",
+   "q": "Why did some units have negative weights for their own TF?",
+   "a": "Their importance scores for that class were negligible, which means the model was not using them to predict that class. This was the case for several CTCF-, CEBP- and Ets-like units.",
+   "kw": [
+    "unit importance score"
+   ],
+   "info": "A FOX-like unit was important for both the FOXA1 and AR classes, consistent with FOXA1 helping shape AR signaling in prostate cells. Nullifying the FOX-like filters in DanQ one at a time gave impacts consistent with ExplaiNN's importance scores.",
+   "concl": "ExplaiNN gives local and global interpretation faster and more easily than DeepLIFT plus TF-MoDISco or filter nullification."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cooperative interactions",
+   "q": "How did ExplaiNN compare with DeepSTARR on enhancer activity?",
+   "a": "ExplaiNN did worse than DeepSTARR on both developmental (PCC 0.61 vs 0.68) and housekeeping (PCC 0.71 vs 0.74) Drosophila enhancers.",
+   "kw": [
+    "DeepSTARR",
+    "STARR-seq",
+    "Drosophila"
+   ],
+   "info": "DeepSTARR is a CNN trained on STARR-seq data that can capture heterotypic cooperativity. The authors attributed the gap to a greater presence of nonlinear interactions in this dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cooperative interactions",
+   "q": "Can ExplaiNN capture heterotypic cooperativity between different TF motifs?",
+   "a": "No. In a distance-dependence analysis with the housekeeping TF motifs Dref, Ohler1 and Ohler6, DeepSTARR learned distance dependencies but ExplaiNN's outputs looked like those for the negative control 5-mer GGGCT.",
+   "kw": [
+    "heterotypic cooperativity",
+    "Dref",
+    "Ohler1"
+   ],
+   "info": "In the analysis, one motif is slid along random sequences that have the second motif embedded in the center, and additive effects are accounted for. This result was expected because each unit's filter is independent of the others.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cooperative interactions",
+   "q": "Can ExplaiNN capture homotypic cooperativity?",
+   "a": "Yes. Both ExplaiNN and DeepSTARR captured homotypic cooperativity for Dref and Ohler6, but for Ohler1 the two methods disagreed. When the fully connected layers were replaced with global max pooling, ExplaiNN learned no distance dependencies.",
+   "kw": [
+    "homotypic cooperativity",
+    "fully connected layers"
+   ],
+   "info": "In this analysis a second copy of the same motif was slid relative to a copy fixed at the center.",
+   "concl": "The fully connected layers within each unit allow homotypic cooperativity to be learned. Heterotypic interactions cannot be learned."
+  },
+  {
+   "type": "qa",
+   "section": "Results - de novo motif discovery",
+   "q": "Why use ExplaiNN for de novo motif discovery?",
+   "a": "Execution time of de novo tools is becoming a limitation as datasets grow. Many tools are also assay-specific (as the DREAM5 evaluation on PBM data showed) and need extensive parameter tuning for each assay.",
+   "kw": [
+    "de novo motif discovery",
+    "DREAM5"
+   ],
+   "info": "The goal was efficient motif discovery within a single platform.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - de novo motif discovery",
+   "q": "Do important units produce better motifs?",
+   "a": "Yes. For each of 163 TFs they trained a 100-unit model, which gives 100 PWMs per TF. For 139 TFs (85.3%), the best-performing PWM came from one of the 10 most important units.",
+   "kw": [
+    "PWM",
+    "unit importance"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - de novo motif discovery",
+   "q": "How did ExplaiNN compare with STREME?",
+   "a": "The best PWMs from the two methods differed only subtly, but STREME was better for TFs with small training datasets. ExplaiNN was more than 100 times faster for TFs with large datasets of at least 50,000 sequences.",
+   "kw": [
+    "STREME",
+    "GPU"
+   ],
+   "info": "The speed difference is consistent with reports on the benefits of GPU-enabled motif discovery.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - de novo motif discovery",
+   "q": "Does ExplaiNN learn full motifs or only partial ones?",
+   "a": "For 12 nuclear receptors with at least 10,000 training sequences, ExplaiNN learned full motifs that matched JASPAR (for example AR, NR2F2 and VDR). STREME often reported partial motifs consistent with monomeric sites.",
+   "kw": [
+    "nuclear receptors",
+    "AR",
+    "VDR"
+   ],
+   "info": "CNN filters are not guaranteed to learn full motifs, because CNNs usually assemble partial motifs in deeper layers. Nuclear receptors can bind as palindromes, direct repeats or extended monomeric sites. The authors also cite their earlier use of ExplaiNN to study two IRF4 mutations linked to immunodeficiency and lymphoma.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - de novo motif discovery",
+   "q": "How did ExplaiNN do on in vitro data for GATA3?",
+   "a": "The performance of its best PWMs was consistent across HT-SELEX, PBM and SMiLE-seq data. It was comparable to STREME (in vivo) and to the HMM method (SMiLE-seq), and it outperformed Autoseed (HT-SELEX) and Seed-and-Wobble (PBM).",
+   "kw": [
+    "GATA3",
+    "HT-SELEX",
+    "SMiLE-seq"
+   ],
+   "info": "All GATA3 logos were very similar to each other and to the JASPAR profile MA0037.4, which was derived with RSAT from mouse Gata3 ChIP-seq data.",
+   "concl": "ExplaiNN could serve as a fast, universal method for de novo motif discovery across assays."
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune cell chromatin accessibility",
+   "q": "How did ExplaiNN compare with AI-TAC at predicting immune chromatin accessibility?",
+   "a": "On mouse OCRs across 81 immune cell types from 6 lineages, performance saturated at about 250 units, and the authors used 300 units. Average PCC was within 1 to 2% of AI-TAC, and per-sequence PCCs of the two models correlated well (R = 0.81). AI-TAC correctly predicted more sequences.",
+   "kw": [
+    "AI-TAC",
+    "ATAC-seq",
+    "PCC"
+   ],
+   "info": "300 units equals the number of first-layer convolutional filters in AI-TAC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - immune cell chromatin accessibility",
+   "q": "Which lineage-specific motifs did ExplaiNN recover?",
+   "a": "NFE2, NFI and GATA in stem cells; POU, EBF and PAX in B cells; TCF3, TCF7, Ets and AP1 in T cells; NR1, TBX and REL in innate lymphoid cells; SPI, Kruppel zinc fingers and CEBP in myeloid cells. These are the same motifs reported for AI-TAC.",
+   "kw": [
+    "lineage-specific motifs",
+    "CEBP",
+    "PAX"
+   ],
+   "info": "CEBP- and PAX-like units were important for most cell types of the myeloid and B lineages, respectively.",
+   "concl": "ExplaiNN reproduced AI-TAC's results by reading unit weights and importances, without computationally heavy filter nullification."
+  },
+  {
+   "type": "qa",
+   "section": "Results - single-cell chromatin accessibility",
+   "q": "Which single-cell dataset did they analyze?",
+   "a": "A scATAC-seq dataset of 228,873 OCRs across 15,298 human pancreatic islet cells, grouped into 12 clusters by accessibility. They trained a 400-unit model, the point at which performance plateaued.",
+   "kw": [
+    "scATAC-seq",
+    "pancreatic islets"
+   ],
+   "info": "The model predicts the activity of each OCR across the 12 clusters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - single-cell chromatin accessibility",
+   "q": "Which cell type-specific patterns did ExplaiNN find in islets?",
+   "a": "PDX-like units had high positive weights for beta and delta cells and MAF-like units for alpha and beta cells. HNF1-like units were high for alpha and gamma but not ductal cells, and FOX-like units for alpha, beta and gamma cells. These patterns match what chromVAR found in the original study.",
+   "kw": [
+    "chromVAR",
+    "PDX",
+    "MAF"
+   ],
+   "info": "There were also differences. Some units lacked high weights in expected cell types (for example an Ets-like unit in endothelial cells), and others showed patterns not reported in the original study.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - single-cell chromatin accessibility",
+   "q": "Which units separated hormone-high from hormone-low cells?",
+   "a": "RFX-like units were important for hormone-high cells (alpha, beta and delta type 1) but not hormone-low cells (type 2). AP1-like units showed the opposite pattern.",
+   "kw": [
+    "RFX",
+    "AP1"
+   ],
+   "info": "Both results agree with the original study.",
+   "concl": "ExplaiNN reproduced and extended the original scATAC-seq results."
+  },
+  {
+   "type": "qa",
+   "section": "Results - plug-and-play with JASPAR and DanQ",
+   "q": "What happened when unit filters were initialized with JASPAR profiles and frozen?",
+   "a": "Models with 300 to 1492 frozen JASPAR-initialized units performed much worse than AI-TAC and than a 300-unit ExplaiNN trained from scratch. Some units were still informative: a Lef1-initialized unit (MA0768.2) was important for T cells.",
+   "kw": [
+    "JASPAR",
+    "frozen filters",
+    "Lef1"
+   ],
+   "info": "The idea is that units come with known biological annotations from the start. The authors attributed the poor performance to many JASPAR profiles coming from TFs that are irrelevant to immune cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - plug-and-play with JASPAR and DanQ",
+   "q": "What happened when the JASPAR-initialized filters were allowed to change during training?",
+   "a": "Performance improved and approached that of AI-TAC. More than 35% of the filters changed substantially and no longer matched their original JASPAR profile (Tomtom q-value > 0.05).",
+   "kw": [
+    "fine-tuning",
+    "EBF1",
+    "TFAP2C"
+   ],
+   "info": "For example, a unit initialized with TFAP2C (MA0815.1) had no importance when frozen. After refinement its filter resembled the EBF1 motif and the unit became important for B cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - plug-and-play with JASPAR and DanQ",
+   "q": "How did they use pretrained DanQ models inside ExplaiNN, and why?",
+   "a": "The aim was to tell apart TFs from the same structural family, which have very similar binding specificities. They pretrained 350 single-TF DanQ models on mouse ChIP-seq data and used them as frozen units, either without or with two fully connected layers after each one. Fine-tuned on the AI-TAC data, these models reached PCC 0.335 and 0.343, compared with 0.360 for AI-TAC.",
+   "kw": [
+    "transfer learning",
+    "DanQ",
+    "paralogs"
+   ],
+   "info": "The pretrained DanQ models had AUPRCs from 0.51 (E4f1) to 0.96 (Snai2), with a median of 0.78.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - plug-and-play with JASPAR and DanQ",
+   "q": "Could the DanQ-unit model tell TF paralogs apart?",
+   "a": "Yes. The Irf4 and Irf8 units were important in different immune lineages, matching their distinct roles. The Pax5 unit was important in B cells, while the Pax3 and Pax7 units had negligible importance, consistent with their role in myogenesis.",
+   "kw": [
+    "Irf4",
+    "Irf8",
+    "Pax5"
+   ],
+   "info": "Importances were taken from the model without fully connected layers.",
+   "concl": "Using pretrained TF-specific models as units can resolve the roles of individual family members."
+  },
+  {
+   "type": "qa",
+   "section": "Results - plug-and-play with JASPAR and DanQ",
+   "q": "What did UMAP of the unit outputs show?",
+   "a": "Clustering OCRs by their unit outputs (in the model with fully connected layers) gave three main clusters, associated with alpha/beta T, myeloid and B cell ATAC signal. Bcl11b unit outputs fell within the alpha/beta T cluster, Cebpa within the myeloid cluster and Ebf1 within the B cluster.",
+   "kw": [
+    "UMAP",
+    "Bcl11b",
+    "Cebpa"
+   ],
+   "info": "",
+   "concl": "Swapping in pretrained models gives performance close to state of the art while keeping interpretability."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might ExplaiNN perform well even though it only captures homotypic cooperativity?",
+   "a": "The authors give three possible reasons. Excluding higher-order interactions may act as a regularizer on simple tasks like TF binding prediction. Higher-order interactions may be marginal in these datasets, in line with studies suggesting cis-regulatory logic is less complex than some believe. Or such interactions may be specific to individual enhancers and not detectable by genome-wide models.",
+   "kw": [
+    "regularization",
+    "cis-regulatory logic"
+   ],
+   "info": "These are hypotheses; the paper does not test them.",
+   "concl": "Comparing ExplaiNN with a nonlinear model shows whether nonlinearity helps. If it does not help much, the simpler interpretable model may be preferable."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why are deep learning models still mainly used by experts in genomics?",
+   "a": "Because they are seen as opaque and there is no consensus on best practices for interpreting them, which makes routine use hard for non-specialists.",
+   "kw": [
+    "adoption"
+   ],
+   "info": "The authors present ExplaiNN as an interpretable, easy-to-use alternative.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does ExplaiNN relate to classic PWM-based approaches?",
+   "a": "It can be seen as an extension of learning PWMs with expectation-maximization and then combining them in a linear model, except that its filters learn many PWMs at once. Because of the fully connected layers, its activations are not equivalent to independent PWM scans unless those layers are replaced by global max pooling.",
+   "kw": [
+    "expectation-maximization",
+    "PWM scanning"
+   ],
+   "info": "The fully connected layers probably make the scores more expressive by learning motif positional information.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations and future directions?",
+   "a": "ExplaiNN cannot capture heterotypic nonlinear interactions and cannot handle tasks that need large receptive fields, such as those addressed by Akita, Xpresso, Basenji or Enformer. The authors suggest adding more complex architecture to account for this missing complexity and better visualization and data processing tools.",
+   "kw": [
+    "limitations",
+    "receptive field"
+   ],
+   "info": "One advantage they highlight is that a single tool covers ChIP-seq and several in vitro assays, so users need to master fewer methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "What is the main conclusion of the paper?",
+   "a": "ExplaiNN closes the gap between performance and interpretability by using an interpretable network design. It gives global (cell state) and local (sequence) biological insights without compromising performance.",
+   "kw": [
+    "ExplaiNN"
+   ],
+   "info": "The software is open source under the MIT license at github.com/wassermanlab/ExplaiNN.",
+   "concl": "Interpretable-by-design networks can accelerate genomic analyses."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architectures",
+   "q": "What are the exact layers of an ExplaiNN unit?",
+   "a": "Conv layer with one 19x4 filter, batch normalization, exponential activation and max pooling (kernel 7, stride 7). Then a fully connected layer with 100 nodes, batch normalization, ReLU and 30% dropout, and a second fully connected layer with 1 node, batch normalization and ReLU.",
+   "kw": [
+    "architecture",
+    "PyTorch"
+   ],
+   "info": "The final linear layer has n outputs (50 for TF binding, 81 for immune accessibility). All models were implemented in PyTorch 1.9.0. DanQ: 320 filters of 26x4, two bidirectional LSTM layers with hidden size 320, and a fully connected layer with 925 nodes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - interpretability",
+   "q": "How were unit filters converted into PWMs and annotated?",
+   "a": "For each filter, all 19-mers that activated the unit to at least 50% of its maximum, taken from correctly predicted sequences, were aligned into a position frequency matrix. This was converted to a PWM with a uniform background of 0.25. PWMs were matched to the JASPAR 2020 vertebrate collection with Tomtom 5.3.0 (q-value at most 0.05).",
+   "kw": [
+    "Tomtom",
+    "JASPAR 2020",
+    "PFM"
+   ],
+   "info": "This follows the AI-TAC procedure. A unit matching SOX family profiles, for example, would be called SOX-like.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - interpretability",
+   "q": "How exactly are unit importance scores computed?",
+   "a": "For each unit and task, the unit's activation for each sequence is multiplied by its final-layer weight for that task. Only correctly predicted sequences that activate the filter to at least 50% of its maximum are included. The median of these products is the unit's importance for that task.",
+   "kw": [
+    "unit importance score"
+   ],
+   "info": "This was introduced because some weights were strongly positive or negative for tasks in which the unit was not activated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - interpretability",
+   "q": "How were DeepLIFT and TF-MoDISco run?",
+   "a": "DeepLIFT scores were computed for correctly predicted test sequences with 10 reference sequences using Captum 0.4.0. Motifs were then extracted with TF-MoDISco 0.5.14.0 using default settings.",
+   "kw": [
+    "DeepLIFT",
+    "Captum",
+    "TF-MoDISco"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - datasets",
+   "q": "How was the human TF binding matrix built?",
+   "a": "It covers 163 TFs across 1,817,918 200-bp DNase I hypersensitive sites in 52 cell and tissue types. A site is 1 if it overlaps a ReMap 2018 ChIP-seq peak summit of the TF, 0 if accessible but unbound, and null if unresolved. Data were split 80/10/10 into training, validation and test with scikit-learn 0.24.2.",
+   "kw": [
+    "DHS",
+    "ReMap 2018"
+   ],
+   "info": "For the 50-TF task, any regions with unresolved values were removed. For de novo motif discovery, unbound regions were subsampled to a 50:50 ratio with bound regions, matching GC content.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - datasets",
+   "q": "How were the mouse and in vitro datasets prepared?",
+   "a": "Mouse: ReMap ChIP-seq peaks for 350 TFs and an atlas of 1,802,604 DHSs were resized to 201 bp with BEDTools slop 2.30.0, and GC-matched negatives were sampled from the DHSs. GATA3 PBM data (UniPROBE) were quantile normalized. HT-SELEX cycles were treated as classes, and SMiLE-seq reads were clipped to 30 bp with dinucleotide-shuffled negatives from BiasAway 3.3.0.",
+   "kw": [
+    "BEDTools",
+    "BiasAway",
+    "UniPROBE"
+   ],
+   "info": "Treating HT-SELEX cycles as classes removes the need for negative sequences. For PBM, the arrays AMADID 015681 and 016060 were used for training and validation. In vitro data were split 80/20 into training and validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - datasets",
+   "q": "How was the islet scATAC-seq data processed?",
+   "a": "The binarised data were denoised with a PeakVI model with 21 latent dimensions (scvi-tools 0.14.6), and mean accessibility per peak was computed for the 12 clusters. Peaks were resized to 600 bp. Chromosome 1 was used for validation, chromosomes 10 to 12 for testing and the rest for training.",
+   "kw": [
+    "PeakVI",
+    "scvi-tools"
+   ],
+   "info": "The AI-TAC and DeepSTARR datasets and their splits were taken from the original publications.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model training",
+   "q": "What were the training settings?",
+   "a": "Adam optimizer with binary cross entropy loss (mean squared error for PBM), learning rate 0.003, batch size 100 and early stopping on validation performance. Training and validation sets included reverse complements, and sequences with Ns were discarded.",
+   "kw": [
+    "Adam",
+    "early stopping"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - de novo PWMs",
+   "q": "How was STREME run and how were PWMs evaluated?",
+   "a": "STREME 5.3.0 was run on each TF's training sequences with --hofract 0, --maxw 19 (matching ExplaiNN's filter size) and --nmotifs 100. Each PWM was scored by taking the best hit on both strands of each test sequence and computing AUPRC.",
+   "kw": [
+    "STREME",
+    "AUPRC"
+   ],
+   "info": "For the in vitro assays, the HT-SELEX model was a multiclass classifier predicting cycle of origin, and the PBM model predicted quantile-normalized probe intensities. The best PWM was chosen on the validation set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - plug-and-play",
+   "q": "How were JASPAR profiles turned into filter weights?",
+   "a": "All 746 JASPAR 2020 vertebrate profiles were resized to 19 bp. Farthest point sampling on Tomtom similarities gave non-redundant sets of 150, 250, 375 and 500 profiles. Adding reverse complements doubled these to 300, 500, 750 and 1000, and the full collection to 1492. Weights were the PWM probabilities minus 0.25 (using Biopython 1.79).",
+   "kw": [
+    "farthest point sampling",
+    "Biopython"
+   ],
+   "info": "Filters were frozen by nullifying their gradients. In the DanQ-unit models, the 350 DanQ outputs were combined in one fully connected layer with 81 outputs, or each output first passed through its own 200-node layer. UMAP was done with UMAP 0.5.2.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - cooperative interactions",
+   "text": "For Ohler1, ExplaiNN and DeepSTARR gave non-concordant homotypic distance dependencies. The paper does not explain why."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Comparing ExplaiNN with a nonlinear model on the same ATAC-seq data could show whether heterotypic motif interactions matter in that system, as the authors suggest with the DeepSTARR example."
+  },
+  {
+   "type": "note",
+   "section": "Results - de novo motif discovery",
+   "text": "Why is STREME better than ExplaiNN for TFs with small training datasets? Is there a minimum dataset size below which ExplaiNN motifs are unreliable?"
+  }
+ ]
+}

@@ -1,0 +1,605 @@
+{
+ "id": "Xu_2026",
+ "title": "Gene body methylation suppresses intragenic transcription and permits epigenetic inheritance in a cnidarian",
+ "link": "https://doi.org/10.1038/s41559-026-03090-6",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Xu_2026_NatEcolEvol_gene_body_methylation_cnidarian.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "In invertebrates, DNA methylation is mostly found in the bodies of highly and constitutively expressed genes. This has led to the widespread idea that gene body methylation (gbM) regulates gene expression and contributes to adaptation and plasticity, but there is little mechanistic evidence for it.",
+   "kw": [
+    "gene body methylation"
+   ],
+   "info": "These ideas often come from analogy to the roles of methylation in vertebrates. The lack of evidence makes epigenetic variation hard to interpret in evolutionary and ecological studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings in short?",
+   "a": "In Nematostella vectensis, loss of DNA methylation gives viable embryos with minimal effects on gene expression. Instead, it causes widespread chromatin opening and spurious transcription initiation, mostly from TEs inside gene bodies. Methylation is selectively restored in the germline, guided by transcription-associated chromatin, but it is not globally reprogrammed after fertilization, so aberrant methylation states can be inherited.",
+   "kw": [
+    "Nematostella vectensis",
+    "epigenetic inheritance"
+   ],
+   "info": "",
+   "concl": "gbM is an evolutionarily conserved genome defence mechanism. Incomplete epigenetic resetting can create heritable regulatory variation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does methylation differ between vertebrates and most invertebrates, and how does 5mC repress transcription in vertebrates?",
+   "a": "Vertebrates have global hypermethylation, with nearly all CpGs methylated except at active promoters and enhancers. Most invertebrates have mosaic methylation, mostly limited to the bodies of broadly expressed genes, which does not fit a role in transcriptional repression. In vertebrates, 5mC blocks transcription factor binding or recruits methyl-CpG-binding proteins that bring in chromatin remodelling complexes.",
+   "kw": [
+    "5mC",
+    "hypermethylation",
+    "mosaic methylation"
+   ],
+   "info": "In vertebrates, 5mC is needed for TE repression, genomic imprinting, X-chromosome inactivation and tumour suppression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why has the function of gbM been hard to test experimentally?",
+   "a": "The major invertebrate models, Drosophila melanogaster and Caenorhabditis elegans, have lost 5mC completely. Studies linking gbM to plasticity, adaptation and transcriptional stability are mostly correlative and often assume vertebrate roles are conserved.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the open question about methylation inheritance in invertebrates?",
+   "a": "Vertebrates actively re-establish 5mC patterns during development (most extensively in mammals, but also in lampreys and teleosts), while invertebrates seem to lack global reprogramming. Intergenerational inheritance of 5mC has been proposed but is controversial, because DNA sequence variation strongly determines methylation in invertebrates.",
+   "kw": [
+    "epigenetic reprogramming",
+    "intergenerational inheritance"
+   ],
+   "info": "It was also unknown whether 5mC patterns can be re-established after being disturbed, and whether inheriting aberrant methylation has any functional effect.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use Nematostella vectensis?",
+   "a": "It is a tractable early-branching animal with a canonical gbM pattern, a simple body plan, and single-copy orthologues of DNMT1 (maintenance) and DNMT3 (de novo), both structurally conserved with the vertebrate enzymes. Its genome evolved slowly and preserves ancestral metazoan linkage groups.",
+   "kw": [
+    "DNMT1",
+    "DNMT3",
+    "Nematostella"
+   ],
+   "info": "The genome is 269 Mbp, and repeats make up 34% of it, with a well-characterized repeat landscape.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5mC depletion is developmentally tolerated",
+   "q": "How are the methylation machinery genes expressed during Nematostella development?",
+   "a": "The methylation machinery is deposited maternally. DNMT1 and its cofactor UHRF1 transcripts drop quickly after fertilization, while DNMT3 drops briefly and then rises again at later stages.",
+   "kw": [
+    "UHRF1",
+    "maternal deposition"
+   ],
+   "info": "Expression came from two published developmental RNA-seq datasets. These transcript changes are not reflected in the methylome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5mC depletion is developmentally tolerated",
+   "q": "How stable is global methylation over the Nematostella life cycle?",
+   "a": "Global CpG methylation stays at about 12% across developmental stages and adult tissues. They measured it with Oxford Nanopore genome skimming.",
+   "kw": [
+    "genome skimming",
+    "Oxford Nanopore"
+   ],
+   "info": "This differs from the progressive methylation loss seen during development and ageing in bilaterian invertebrates. The authors suggest it may reflect the continuous renewal of cnidarian stem cells and their limited senescence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5mC depletion is developmentally tolerated",
+   "q": "How does gbM relate to transcription across development?",
+   "a": "Genes with high gbM have the most stable expression across development. The correlation between gbM and expression is strongest during zygotic genome activation (7 to 12 hpf) and gets weaker afterwards.",
+   "kw": [
+    "zygotic genome activation",
+    "transcriptional stability"
+   ],
+   "info": "They used a Spearman correlation between gbM at 25 hpf and transcript abundance in two developmental RNA-seq datasets. The coefficient-of-variation analysis used 16,207 genes. The same temporal decoupling was described in annelids.",
+   "concl": "gbM marks stably transcribed genes and is linked to early developmental transcription, not to dynamic regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5mC depletion is developmentally tolerated",
+   "q": "Why were cytidine analogues not used to deplete methylation?",
+   "a": "5-azacytidine, zebularine and decitabine were very toxic. Even at very low concentrations they caused developmental arrest and poor survival to the polyp stage, and they reduced mCG only modestly.",
+   "kw": [
+    "5-azacytidine",
+    "decitabine",
+    "zebularine"
+   ],
+   "info": "Cytidine analogues are incorporated into DNA and RNA, which causes cytotoxicity and confounds the effects of methylation loss.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5mC depletion is developmentally tolerated",
+   "q": "What is GSK-3484862 and how well did it work?",
+   "a": "GSK-3484862 is a second-generation DNMT1 inhibitor that blocks the DNMT1 catalytic domain and promotes its degradation, with fewer off-target effects in mammalian cells. Treating for 25 h from fertilization gave a sixfold drop in global mCG already at gastrula, with no obvious morphological defects and survival to primary polyp similar to DMSO controls.",
+   "kw": [
+    "GSK-3484862",
+    "DNMT1 inhibitor"
+   ],
+   "info": "Even 5 h of treatment reduced global mCG markedly.",
+   "concl": "Depleting DNA methylation does not disrupt normal development in Nematostella."
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5mC depletion is developmentally tolerated",
+   "q": "What happened with morpholino knockdown of the methylation machinery?",
+   "a": "Translation-blocking morpholinos against DNMT1, DNMT3 and UHRF1 also caused global methylation loss without affecting survival. However, the loss came later, after 3 dpf.",
+   "kw": [
+    "morpholino"
+   ],
+   "info": "The authors explain the delay by abundant maternal DNMT1 mRNA or protein in eggs. Inhibiting DNMT1 protein directly with GSK therefore demethylates earlier than blocking its translation. In Extended Data Fig. 2g, the DNMT1+UHRF1 and DNMT1+DNMT3 combinations reached the lowest levels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Loss of gbM alters chromatin accessibility",
+   "q": "What was the design of the multi-omic experiment, and how much methylation was lost?",
+   "a": "In three independent crosses, half of the fertilized eggs were treated with GSK and half with DMSO, and gastrulae were profiled at 25 hpf by EM-seq, ATAC-seq and RNA-seq (plus CAGE). EM-seq showed global 5mC dropping about sixfold, from 12% to about 2%, uniformly across CpGs and gene bodies.",
+   "kw": [
+    "EM-seq",
+    "ATAC-seq",
+    "gastrula"
+   ],
+   "info": "They chose the gastrula because the gbM-transcription correlation is still high there and cell-type complexity is lower than at later stages. In methylome clustering with published datasets, genetic background was the main source of variation, but the GSK samples formed a distinct, highly divergent group.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Loss of gbM alters chromatin accessibility",
+   "q": "How much did gene expression change after demethylation?",
+   "a": "264 genes went up and 555 went down (FDR < 0.01). Downregulated genes were mostly normally methylated (512 of 555), and upregulated genes were mostly unmethylated (197 of 264). Only about 6% of methylated genes were downregulated, and about 93% did not change.",
+   "kw": [
+    "DESeq2",
+    "differential expression"
+   ],
+   "info": "Genes counted as methylated had at least 10% mCG in controls. The Extended Data Fig. 3c MA plot gives 290 up and 571 down, which does not match the main text. The paper does not explain the difference. The pattern resembles DNMT1 knockdowns in the wasp Nasonia.",
+   "concl": "gbM loss has only modest effects on host gene expression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Loss of gbM alters chromatin accessibility",
+   "q": "Which kinds of genes were down- or upregulated?",
+   "a": "Downregulated methylated genes were enriched for amino acid metabolism and for older gene ages. Upregulated unmethylated genes had weaker enrichment (a few chromatin genes, such as H3K4 methylation and CpG binding) and were biased to younger gene ages.",
+   "kw": [
+    "gene age",
+    "heterochrony"
+   ],
+   "info": "Downregulated genes are normally highly expressed at gastrula, and upregulated genes are normally lower at this stage.",
+   "concl": "This fits a modest heterochronic shift rather than widespread transcriptional disruption."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Loss of gbM alters chromatin accessibility",
+   "q": "How did chromatin accessibility change after GSK treatment?",
+   "a": "There were 768 differential ATAC peaks (FDR < 0.01), and 87% of them became more accessible. Newly opened peaks were mostly in normally methylated regions and largely intronic. Peaks that closed were usually unmethylated and at promoters.",
+   "kw": [
+    "ATAC-seq",
+    "chromatin accessibility"
+   ],
+   "info": "A peak was called methylated if it had at least 20% mCG in controls. Only 13% of genes carrying new peaks were differentially expressed (48 down, 11 up, 376 unchanged).",
+   "concl": "Most chromatin changes occur in the gene bodies of methylated genes and do not depend on strong transcriptional changes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic TEs and spurious transcription",
+   "q": "What kinds of sequences were in the newly opened methylated peaks?",
+   "a": "54% overlapped transposable elements, mainly DNA transposons and some LTR retrotransposons. These TEs were significantly younger than the genome-wide TE population.",
+   "kw": [
+    "transposable elements",
+    "DNA transposons",
+    "Kimura distance"
+   ],
+   "info": "TE age was measured as Kimura distance to consensus models. In Extended Data Fig. 5a, DNA/hAT-hAT19 is the most significantly enriched family.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic TEs and spurious transcription",
+   "q": "How did TE expression respond to demethylation?",
+   "a": "TEs went both up and down. Only TEs that were originally methylated and silent were clearly reactivated, in an on-off way. TEs that were already active changed only quantitatively.",
+   "kw": [
+    "TElocal"
+   ],
+   "info": "Individual TE insertions were counted with TElocal: 43 methylated up, 36 methylated down, 30 unmethylated up, 21 unmethylated down.",
+   "concl": "5mC selectively keeps intragenic methylated TEs silent."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic TEs and spurious transcription",
+   "q": "Do the new open regions look like enhancers or promoters?",
+   "a": "They were not enriched for canonical enhancer marks at gastrula or later stages, but they overlapped H3K36me3, a gene body mark. They were enriched for promoter-binding transcription factor motifs (NFY, YY1, POU), and footprinting showed more NFY occupancy after GSK. Closing peaks matched normally active promoters with H3K4me3.",
+   "kw": [
+    "NFY",
+    "H3K36me3",
+    "TOBIAS"
+   ],
+   "info": "Histone data came from published gastrula ChIP-seq. Footprinting also picked up motifs for developmental regulators.",
+   "concl": "Demethylation lets transcription factors bind, and some sites gain promoter-like architecture."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic TEs and spurious transcription",
+   "q": "How did they show directly that demethylation causes aberrant transcription initiation?",
+   "a": "With CAGE-seq, which captures transcript 5' ends. GSK-specific CAGE signal appeared at open methylated peaks and was absent in controls. GSK-specific TSS clusters sat in normally methylated regions, while control-specific clusters sat in unmethylated regions.",
+   "kw": [
+    "CAGE-seq",
+    "cryptic transcription"
+   ],
+   "info": "There were 90 GSK-specific and 75 untreated-specific CAGE clusters. The new TSSs often produced shorter isoforms or antisense transcripts. Many came from TEs and formed chimaeric TE-host gene transcripts.",
+   "concl": "gbM prevents spurious regulatory activity and cryptic transcription initiation within actively transcribed genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Germline methylation recovery",
+   "q": "Does methylation recover during somatic proliferation in regeneration?",
+   "a": "No. Over five rounds of bisection and regeneration, global methylation in GSK-treated animals stayed low and stable (about 4% versus about 11% in controls in Fig. 3b), and regeneration was not impaired.",
+   "kw": [
+    "regeneration"
+   ],
+   "info": "Each round of regeneration took about 3 weeks.",
+   "concl": "Somatic mitotic proliferation does not drive methylation recovery and carries no detectable fitness cost."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Germline methylation recovery",
+   "q": "Where does methylation recover after early GSK treatment?",
+   "a": "Somatic tissues recovered very little up to sexual maturity. Sperm from successive spawnings recovered strongly, to about 50% of baseline (about 6% versus 12%), while eggs recovered only modestly.",
+   "kw": [
+    "germline",
+    "de novo methylation"
+   ],
+   "info": "Sperm had significantly more methylation than eggs in the GSK groups (Wilcoxon), though not in the DNMT1+UHRF1 morpholino group. This fits the slightly higher male germline methylation in controls.",
+   "concl": "De novo methylation restores 5mC, and the effect is stronger in the male germline."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Germline methylation recovery",
+   "q": "Is remethylation uniform across the genome?",
+   "a": "No. Of 21,470 DMRs between GSK and DMSO gastrulae, k-means clustering split them into 9,664 fast-recovery DMRs, which regained near-control methylation in sperm, and 11,806 slow-recovery DMRs, which recovered slowly or not at all.",
+   "kw": [
+    "DMR",
+    "k-means"
+   ],
+   "info": "The DMRs from F0 gastrulae were used as baseline coordinates and followed through 3 and 5 mpf, sperm and F1 gastrula.",
+   "concl": "De novo methylation is region-specific."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Chromatin features predicting recovery",
+   "q": "Which chromatin features distinguish fast- from slow-recovering DMRs?",
+   "a": "Fast DMRs are enriched for gene body marks H3K79me2/3 and H3K36me3. Slow DMRs are enriched for repressive H3K9me3 and H3K27me3.",
+   "kw": [
+    "H3K79me2/3",
+    "H3K9me3",
+    "H3K27me3"
+   ],
+   "info": "This used published adult Nematostella iChIP-seq histone data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Chromatin features predicting recovery",
+   "q": "How well do histone marks predict remethylation?",
+   "a": "A linear regression on histone ChIP-seq signal explained much of the variance in recovery (R2 = 0.53). Gene body marks were positively associated with recovery and repressive marks strongly negatively. H3K79me2/3 was a stronger predictor than H3K36me3.",
+   "kw": [
+    "linear regression",
+    "H3K79me2/3",
+    "PWWP"
+   ],
+   "info": "This was surprising because the DNMT3 PWWP domain is known to read H3K36me3. Relative importance was computed with relaimpo (lmg).",
+   "concl": "H3K79 methylation may have an underappreciated role in recruiting de novo DNA methylation in animals."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Chromatin features predicting recovery",
+   "q": "How do expression level and gene length relate to recovery?",
+   "a": "Genes with fast or dual DMRs were more highly expressed at gastrula and in early development than genes with only slow DMRs. Dual-DMR genes were longer, and in them recovery was faster at the 5' end, where H3K79me2/3 peaks, and slower toward the 3' end.",
+   "kw": [
+    "transcriptional elongation",
+    "5' bias"
+   ],
+   "info": "The genes split into 4,090 with only fast DMRs, 2,477 with only slow DMRs and 2,880 dual. In 85% of dual genes, the fast DMR lies 5' of the slow DMR. H3K36me3 is spread more uniformly along the gene, so it is unlikely to be the only instructive mark for DNMT3.",
+   "concl": "Remethylation proceeds quantitatively during transcriptional elongation: highly transcribed short genes recover fast, and long genes take longer."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Chromatin features predicting recovery",
+   "q": "What about slow-recovering intergenic DMRs?",
+   "a": "There were 1,453 of them. They cluster in repeat-rich, gene-poor regions, are strongly enriched for H3K9me3 and are depleted of active marks such as H3K4me3.",
+   "kw": [
+    "heterochromatin",
+    "H3K9me3"
+   ],
+   "info": "Only 284 intergenic DMRs were fast. Merging slow intergenic DMRs within 2 kb gave 232 clusters.",
+   "concl": "Methylation in heterochromatin is probably maintained by DNMT1, not re-established by transcription-dependent DNMT3."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inheritance of aberrant methylation",
+   "q": "What was the global methylation of F1 offspring from treated x untreated crosses?",
+   "a": "In reciprocal crosses, F1 global methylation consistently matched the arithmetic mean of the two parental gametes, no matter which parent was demethylated. All fertilizations were viable.",
+   "kw": [
+    "reciprocal crosses",
+    "passive inheritance"
+   ],
+   "info": "The lowest-methylated GSK-treated males were selected for crossing. Morpholino-derived parents gave the same pattern.",
+   "concl": "Parental methylation states are inherited passively, with no preferential reprogramming or erasure of either parental genome."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inheritance of aberrant methylation",
+   "q": "What did per-read methylation at slow DMRs show in F1 gastrulae?",
+   "a": "In controls, nearly all reads were heavily methylated (above 90% mCG). In demethylated sperm, most reads were below 40%. F1 gastrulae from demethylated sperm x control eggs showed a bimodal distribution.",
+   "kw": [
+    "per-read methylation",
+    "single-molecule"
+   ],
+   "info": "The maternal reads stay methylated and the paternal reads stay hypomethylated.",
+   "concl": "There is no post-fertilization reprogramming in which one parental methylome serves as a template for the other."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inheritance of aberrant methylation",
+   "q": "Do these parent-of-origin differences persist into juveniles?",
+   "a": "Yes. Haplotype-resolved Nanopore profiling of an F1 juvenile showed that slow DMRs on the paternal haplotype stayed hypomethylated, while the maternal homologue kept baseline methylation. Fast DMRs regained methylation on both haplotypes.",
+   "kw": [
+    "haplotype phasing",
+    "epimutations"
+   ],
+   "info": "Reads were assigned to parents using SNPs that were homozygous in the father and heterozygous in the offspring.",
+   "concl": "Nematostella has no global erasure or re-establishment of methylation after fertilization, so epimutations are inherited."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inheritance of aberrant methylation",
+   "q": "Do natural population differences resemble the induced epimutations?",
+   "a": "Of 690 DMRs found between this study's controls and three published datasets from different colonies, variation tracked colony of origin rather than developmental stage. Of the 383 population DMRs that overlap recovery DMRs, 96% overlapped slow-recovering DMRs.",
+   "kw": [
+    "natural variation",
+    "population DMRs"
+   ],
+   "info": "The populations were Massachusetts, Florida and Vienna backgrounds, profiled by WGBS or EM-seq.",
+   "concl": "Slow, less efficient targeting of methylation probably contributes to stable heritable epigenetic variation among populations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inherited epimutations in F1",
+   "q": "Does inherited hypomethylation keep chromatin open in F1?",
+   "a": "Yes, at slow DMRs. Open methylated peaks that overlap fast DMRs were nearly fully remethylated in F1 and lost accessibility, while peaks in slow DMRs stayed hypomethylated and accessible. The effect was stronger in morpholino-derived F1, which inherited lower methylation (4.3% versus 5.7 to 6.1% in GSK F1).",
+   "kw": [
+    "ectopic accessibility",
+    "F1"
+   ],
+   "info": "There were 154 fast and 325 slow peak regions. DNMT1 levels are not perturbed in F1, so the effect cannot be blamed on loss of non-catalytic DNMT1 functions.",
+   "concl": "Persistent hypomethylation alone is enough to sustain ectopic chromatin accessibility across generations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inherited epimutations in F1",
+   "q": "What happens to transcription in F1?",
+   "a": "Genes dysregulated in F0 GSK gastrulae had intermediate expression in F1, between control and F0 demethylated levels. Morpholino-derived F1 kept more of the dysregulated profile and clustered closer to GSK F0 than to controls.",
+   "kw": [
+    "transcriptional inheritance"
+   ],
+   "info": "Correlation of log2 fold changes with F0 GSK versus DMSO was Pearson R = 0.67 for GSK F1 and 0.49 for MO F1.",
+   "concl": "Inherited epimutations shape both chromatin and transcription, so these non-genetic changes could in principle be subject to natural selection."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors propose as the main function of gbM?",
+   "a": "gbM suppresses spurious transcription initiation within highly and broadly expressed genes, especially from TEs inserted in gene bodies. Unlike H3K9me3, DNA methylation gives a more permissive repression that is compatible with active transcription.",
+   "kw": [
+    "genome defence",
+    "transcriptional integrity"
+   ],
+   "info": "This may reflect a division of labour in which the ancestral co-occurrence of heterochromatin and 5mC split into separate silencing strategies. DNMT3 domains such as PWWP and ADD probably allowed targeting to active gene bodies. Plants have convergent gbM, which also suppresses intragenic antisense transcription.",
+   "concl": "gbM contributes to transcriptional integrity rather than regulating host gene expression."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does gbM differ from the piRNA pathway in TE control?",
+   "a": "The piRNA system acts in trans, giving sequence-specific degradation of TE transcripts and local silencing. gbM acts in cis as a chromatin feature that broadly suppresses spurious initiation within transcribed regions.",
+   "kw": [
+    "piRNA",
+    "PIWI"
+   ],
+   "info": "Coupling small RNAs to DNA methylation deposition is thought to be a later innovation, clearest in tetrapods, so in invertebrates the two systems may work largely independently.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is methylation loss tolerated in Nematostella but lethal in vertebrates?",
+   "a": "In vertebrates, 5mC also controls promoters, enhancers and extensive TE silencing, roles that probably evolved together with genome hypermethylation. In Nematostella, spurious transcripts from demethylated gene bodies cause no obvious developmental defects, and viable, fertile adults are produced.",
+   "kw": [],
+   "info": "In some insects, spurious transcription may be more harmful, for example through dominant-negative isoforms or effects on transcript stability. This could explain why DNMT1 knockdown is lethal in some species but not others.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors mention?",
+   "a": "Residual 5mC remained after both GSK and morpholino treatment. Removing methylation completely would probably require genetic disruption of both DNMT1 and DNMT3, but losing these proteins could add phenotypes through their non-catalytic roles.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "They suggest future genetic approaches that target only catalytic activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might remethylation happen in the germline but not the soma, and what are the evolutionary implications?",
+   "a": "Germline-restricted recovery supports TE control as the main role of gbM, because genome integrity matters most in the germline. Inherited epimutations can cause ectopic accessibility and new transcripts, and a subset could expose silenced regulatory or coding potential, as in TE exonization.",
+   "kw": [
+    "TE exonization",
+    "DNMT3"
+   ],
+   "info": "DNMT3 is expressed late in development but does not drive somatic 5mC gain. This might reflect restricted nuclear localization or lower activity, which the authors propose but do not test. Environmental stress or inefficient maintenance could transiently activate repressed sequences.",
+   "concl": "DNA methylation can carry intergenerational epigenetic inheritance in invertebrates, but its main function is genome defence downstream of transcription, not fine-tuning gene expression in response to the environment."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and methylation inhibition",
+   "q": "How were animals kept and the drugs applied?",
+   "a": "The laboratory line was kept in 15 per mille artificial sea water at 19 °C and fed Artemia nauplii, and embryos were cultured at 22 °C after dejellying with 4% L-cysteine. GSK-3484862 was used at 5 µM in 0.1% DMSO, the highest fully soluble dose. For multi-omics, the zygotes were treated for 25 h.",
+   "kw": [
+    "GSK-3484862",
+    "husbandry"
+   ],
+   "info": "Cytidine analogue doses compared in Extended Data Fig. 2c were 0.05 µM decitabine, 0.05 µM 5-azacytidine and 10 µM zebularine. GSK treatment windows from 5 h to 7 days were tested, with global methylation read at 8 dpf. Each of the three replicates came from different broodstocks with pooled gametes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Morpholinos",
+   "q": "How were morpholinos injected?",
+   "a": "Translation-blocking morpholinos from Gene Tools against DNMT1, DNMT3 and UHRF1, plus a control MO, were injected into dejellied eggs at 800 µM for single MOs or 400 µM each for pairs. Fluorescent dextran (0.2 mg/ml) was used as a tracer.",
+   "kw": [
+    "morpholino",
+    "microinjection"
+   ],
+   "info": "Injection used a FemtoJet 4i, and eggs were fertilized within 3 h of spawning. Two MO-F1 lines were made from DNMT1+UHRF1-injected F0 parents.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Regeneration and growth series",
+   "q": "How were the regeneration and maturation samples collected?",
+   "a": "8-month-old polyps were bisected and allowed to regenerate over about 3 weeks, alternating oral and aboral regeneration for five rounds. Newly regenerated tissue was sampled each round, excluding mesentery to avoid gamete signal. For maturation, sperm from one male per group was collected over three spawnings at 2-week intervals from 12 mpf.",
+   "kw": [
+    "regeneration",
+    "sperm sampling"
+   ],
+   "info": "The Results say the aboral half regenerated the oral end first, while the Methods say the oral half first regenerated a new aboral end. The order is unclear. Eggs from three spawnings of one female were pooled because of low DNA yield.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Nanopore sequencing",
+   "q": "How was methylation measured with Nanopore?",
+   "a": "For low-coverage skimming, 30 to 100 ng gDNA went into Rapid Barcoding Kit V14 libraries on R10.4.1 flow cells, basecalled with Guppy 6.3.8 (5mC_cg sup model), aligned with minimap2 2.24 to GCF_932526225.1 and processed with modbam2bed 0.9.4. For high coverage (above 30x), 10 kb sheared DNA was prepared with the LSK114 kit and called with Dorado 0.7.2 and Modkit pileup 0.5.0.",
+   "kw": [
+    "Guppy",
+    "Dorado",
+    "Modkit"
+   ],
+   "info": "Mitochondrial reads were the internal unmethylated control. Eggs used the Native Barcoding Kit V14 to reduce capture of mitochondrial DNA. The reporting summary lists Guppy v6.5.7 and modbam2bed 0.9.1, which does not match the Methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - EM-seq and DMRs",
+   "q": "How was EM-seq done and analysed, including DMR calling?",
+   "a": "100 ng gDNA with lambda (unmethylated) and pUC19 (methylated) spike-ins was sheared to about 400 bp, prepared with the NEBNext EM-seq kit and sequenced on a NovaSeq X Plus. Reads were mapped with BS-Seeker2/bowtie2, merged with bbmerge, deduplicated with Sambamba and methylation-called with CGmapTools. DMRs were called with DSS 2.54.0 (DMLtest with smoothing, callDMR delta = 0.5).",
+   "kw": [
+    "EM-seq",
+    "DSS",
+    "CGmapTools"
+   ],
+   "info": "Gene bodies counted as methylated at 10% weighted mCG or more (permissive). ATAC peaks counted as methylated at 20% or more (stringent, to avoid boundary peaks). Per-CpG comparisons used CpGs with at least 10x coverage. Published WGBS and EM-seq data were reanalysed with the same pipeline.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq",
+   "q": "How was ATAC-seq done and analysed?",
+   "a": "Nuclei from about 100 gastrulae (about 5,000 nuclei) were tagmented with in-house Tn5 for 30 min at 37 °C and sequenced 2 x 150 bp. Reads were mapped with Chromap (--preset atac), peaks were called with MACS3 (-g 2.7e8 -q 0.05), and counts from featureCounts (--fracOverlap 0.2) were tested in DESeq2 at FDR < 0.01.",
+   "kw": [
+    "Chromap",
+    "MACS3",
+    "DESeq2"
+   ],
+   "info": "FRiP scores were above 0.3. Promoters were defined as 500 bp upstream to 200 bp downstream of the TSS. TEs were annotated with Earl Grey plus RepBase. Motifs were found with Homer2 (vertebrate motifs) and footprinting was done with TOBIAS, keeping motifs found in at least four replicate comparisons at P < 0.001.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq",
+   "q": "How was RNA-seq done and analysed?",
+   "a": "PolyA-selected RNA (800 ng) went into NEBNext Ultra II Directional libraries, sequenced to about 50 M paired-end reads. Reads were mapped with HISAT2 (--max-intronlen 40000 --dta), and genes and TE insertions were counted with TElocal and tested with DESeq2 (FDR < 0.01).",
+   "kw": [
+    "HISAT2",
+    "TElocal",
+    "StringTie"
+   ],
+   "info": "StringTie built de novo transcriptomes per replicate, which were merged per condition. Kallisto was used for gene-level counts. GO enrichment used TopGO. Gene ages came from OrthoFinder, with Metazoa as the oldest class when an orthogroup was shared with sponges.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE-seq",
+   "q": "How was CAGE-seq done and analysed?",
+   "a": "Libraries were made from 4 µg of the RNA used for RNA-seq, sequenced on a NextSeq 2000 (70 bp single-end, more than 50 M reads). Reads were trimmed with Trim Galore 0.6.7 and cutadapt 4.6, which removed the extra G, mapped with STAR keeping primary unique reads with MAPQ above 20, and analysed with CAGEr 2.14.0 using power-law normalization and 20 bp TSS clustering.",
+   "kw": [
+    "CAGEr",
+    "STAR"
+   ],
+   "info": "The Methods mention 2 replicates of GSK-treated gastrulae, but the figures show CAGE tracks for 2 DMSO and 2 GSK replicates. The exact design is unclear. The STAR version is given as v.5.1.0.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Histone data and regression",
+   "q": "Where did the histone data come from and how was the regression built?",
+   "a": "Gastrula and developmental ChIP-seq (GSE46488) was remapped to the new genome with bowtie2 (-X 2000), and adult iChIP-seq log2 signal-to-input tracks were taken from GSE329959. Average histone signal per DMR (bigWigAverageOverBed) was the input to an R lm() model, with feature importance from relaimpo 2.2.7 (lmg metric).",
+   "kw": [
+    "ChIP-seq",
+    "relaimpo"
+   ],
+   "info": "No new ChIP-seq was generated. All histone data come from published datasets, partly from different stages (adult) than the methylation samples.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Per-read methylation and haplotype phasing",
+   "q": "How were per-read methylation and parental haplotypes resolved?",
+   "a": "Dorado 0.7.2 (sup, 5mCG_5hmCG) calls were extracted with modkit 0.4.1 (--pass-only, --motif CG 0) and filtered to base quality of at least 20. Variants were called with Clair3 1.0.10 and phased with WhatsHap 1.7, using sites homozygous in the father (from sperm) but heterozygous in the offspring to assign parental alleles.",
+   "kw": [
+    "Clair3",
+    "WhatsHap",
+    "pedigree phasing"
+   ],
+   "info": "Pedigree-phased VCFs were made with VariantAnnotation 1.52.0 and used for WhatsHap haplotag. The sample was a single 4-month-old F1 juvenile from a GSK male x untreated female cross. Data are in GEO GSE307384.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Chromatin features predicting recovery",
+   "text": "Why does H3K79me2/3 predict de novo methylation better than H3K36me3, and what links H3K79 methylation to DNMT3 recruitment?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "What restricts DNMT3 de novo activity in somatic tissues despite its expression (nuclear localization, enzymatic activity)? The authors do not test this."
+  },
+  {
+   "type": "note",
+   "section": "Results - Inheritance of aberrant methylation",
+   "text": "Do the natural population DMRs that overlap slow-recovering regions have phenotypic or fitness effects that selection could act on?"
+  }
+ ]
+}

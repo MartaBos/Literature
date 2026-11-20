@@ -1,0 +1,718 @@
+{
+ "id": "DeWinter_2025",
+ "title": "Modelling and design of transcriptional enhancers",
+ "link": "https://doi.org/10.1038/s44222-025-00280-y",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/DeWinter_2025_NatRevBioeng_enhancer_modelling_design.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are transcriptional enhancers according to this review?",
+   "a": "Genomic elements that contain critical information for the regulation of gene expression, encoded through precisely arranged transcription factor-binding sites (TFBSs).",
+   "kw": [
+    "enhancer",
+    "TFBS"
+   ],
+   "info": "",
+   "concl": "Cell-type-specific enhancer activity is defined by the arrangement, copy number and strength of TFBSs in the DNA sequence."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is a genomic sequence-to-function model?",
+   "a": "A computational model that takes DNA sequence as input and predicts gene regulatory features, such as the output of high-throughput genomic assays in a cell type of interest.",
+   "kw": [
+    "sequence-to-function"
+   ],
+   "info": "These models are used to unravel the combinatorial rules governing cell-type-specific enhancer activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does it mean that these models act as biological 'oracles'?",
+   "a": "They can accurately predict the activity of novel DNA sequences, so sequences can be optimized against the model's prediction to design synthetic enhancers with tailored cell-type-specific or cell-state-specific activity.",
+   "kw": [
+    "oracle",
+    "synthetic enhancer"
+   ],
+   "info": "This partially removes the need for additional high-throughput screens to generate and test hypotheses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do enhancers regulate gene expression in the classical paradigm?",
+   "a": "Multiple transcription factors bind at clusters of TFBSs, forming a nucleoprotein complex with co-factors, which then interacts with the basal transcriptional machinery (BTM) at the transcription start site to induce expression.",
+   "kw": [
+    "BTM",
+    "TSS"
+   ],
+   "info": "Enhancers can lie upstream, downstream or in introns of the gene they regulate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does this review distinguish core promoters from enhancers?",
+   "a": "Core promoters overlap the TSS, interact with the BTM and their effect on expression is usually not cell-type specific, whereas enhancers are cell-type specific and need to interact with a core promoter to affect target gene expression.",
+   "kw": [
+    "core promoter"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What early synthetic constructs showed that TFBS clusters are sufficient for activity?",
+   "a": "Homotypic clusters of binding sites for TFs downstream of JAK, cAMP and WNT signalling are sufficient to build reporters, and five copies of a heterotypic cluster of CREB, MEF2, SRF and TCF sites drive expression in response to neuronal activity.",
+   "kw": [
+    "CREB",
+    "MEF2",
+    "WNT"
+   ],
+   "info": "However, synthetic WNT reporters are only specific to certain biological contexts and need extra cell-type-specific TFBSs elsewhere.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is genome-wide identification of enhancers technically challenging?",
+   "a": "Neither enhancers nor TF binding are discrete biological entities, and both TF expression and TF interactions are cell-type specific, so a simple list of co-binding TFs is not enough.",
+   "kw": [],
+   "info": "Grammar rules such as distance constraints, presence of weak TFBSs and absence of repressor sites may also be needed for a functional enhancer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a massively parallel reporter assay (MPRA)?",
+   "a": "A brute-force reporter assay in which many candidate enhancer sequences, each coupled to a minimal core promoter, a reporter gene and a barcode, are tested at once; activity is read out as the ratio of barcode counts over plasmid counts by next-generation sequencing.",
+   "kw": [
+    "MPRA",
+    "barcode"
+   ],
+   "info": "The alternative in vivo reporter format measures enhancer activity as fluorescence by microscopy after genome integration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the typical size scales of an enhancer in this review's figure 1?",
+   "a": "An enhancer has the size of a single nucleosome-depleted region, about 200 bp, and the distance between individual non-overlapping binding sites can range from 3 bp up to the full enhancer length.",
+   "kw": [
+    "nucleosome-depleted region"
+   ],
+   "info": "Figure 1b also lists TFBS combination, copy number, affinity, inter-site distance and flank position as grammar features.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "When and how were enhancers first discovered?",
+   "a": "In the early 1980s, as a viral genomic fragment that enhanced transcription of a nearby gene; equivalent eukaryotic elements were found soon after and shown to consist of TFBSs and to have cell-type-specific activity.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "Why is the even-skipped (eve) stripe 2 enhancer a classic example?",
+   "a": "In Drosophila development eve is expressed in seven transverse stripes along the anterior-posterior axis, and the stripe 2 enhancer that drives the second stripe has been dissected in detail by site-directed mutagenesis and TF mis-expression.",
+   "kw": [
+    "even-skipped",
+    "Drosophila"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "What happened when eve stripe 2 enhancers were redesigned computationally?",
+   "a": "A model trained on orthologous enhancer sequences from eight Drosophila species designed synthetic variants; sequences close to wild type drove expression in the correct segment, while more heavily edited sequences lost specificity.",
+   "kw": [],
+   "info": "The authors attribute the failure on divergent sequences to the limited amount of training data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "How well did the early logistic regression model of human skeletal-muscle enhancers perform?",
+   "a": "Trained on 29 skeletal-muscle enhancers plus about 2,000 randomly sampled negatives using PWM log-likelihood scores of known muscle TFs, it reached 60% sensitivity at a 4% false positive rate.",
+   "kw": [
+    "PWM",
+    "logistic regression"
+   ],
+   "info": "A PWM log-likelihood score represents the likelihood that a sequence is generated by the PWM model rather than a background model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "What did the Lasso model of human heart enhancers achieve?",
+   "a": "Using over 700 features (known and de novo PWM log-likelihood scores and Markov model scores up to order six) with 77 validated enhancers and 1,000 random negatives, it reached 70% sensitivity at a 50% false positive rate and identified novel heart enhancers genome-wide with 74% accuracy.",
+   "kw": [
+    "Lasso"
+   ],
+   "info": "Model weights also revealed PWMs of important heart-specific TFs.",
+   "concl": "Even with small sample sizes, accurate sequence-to-function models can be built."
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "What is a thermodynamic model such as Gemstat?",
+   "a": "A model that uses DNA sequence plus TF concentrations to predict gene expression in two steps: TF-DNA interaction and interaction of bound TFs with the basal transcriptional machinery.",
+   "kw": [
+    "Gemstat"
+   ],
+   "info": "Fit on 44 Drosophila blastoderm enhancers with varying anterior-posterior profiles plus TF protein levels, it supported synergistic TF interactions and short-range repression.",
+   "concl": "Choosing the best-fitting thermodynamic model gives mechanistic insight."
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - conventional machine learning",
+   "q": "What is gkm-SVM and how did it perform?",
+   "a": "A gapped k-mer support vector machine using all possible 10-mers with 6 informative bases (4 bp gaps allowed) as features; trained on more than 30,000 chromatin accessibility peaks versus random genomic background, it reached about 70% sensitivity at about 5% false positive rate using MPRA data as ground truth.",
+   "kw": [
+    "gkm-SVM",
+    "k-mer"
+   ],
+   "info": "Unlike regression and thermodynamic models, its features are learned de novo from sequence rather than from pre-existing PWMs, which requires far more training data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - deep neural networks",
+   "q": "Which three architectures dominate DNN sequence-to-function models?",
+   "a": "Convolutional neural networks (CNNs), recurrent neural networks (RNNs, usually with LSTM blocks) and transformers.",
+   "kw": [
+    "CNN",
+    "LSTM",
+    "transformer"
+   ],
+   "info": "Models can be framed as classification (is a region active) or regression (how active), and one input can carry several labels for several cell types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - deep neural networks",
+   "q": "Why is the first convolutional layer of a CNN analogous to a PWM scan?",
+   "a": "Tuneable filters are scanned over the one-hot encoded sequence to produce a local weighted sum, just like scanning a position weight matrix along DNA; filter sizes are kept small to match local patterns such as TFBSs.",
+   "kw": [
+    "one-hot encoding"
+   ],
+   "info": "Because small filters give a small context, many layers must be stacked, increasing parameters and overfitting risk; dilated convolutions or pooling layers are used instead to widen the receptive field.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - deep neural networks",
+   "q": "What limits RNNs for genomics and what does the transformer do better?",
+   "a": "The sequential LSTM step cannot be parallelized within a sample, limiting efficiency and batching for long inputs; transformers embed input segments and use a learnable attention mechanism to weight segment-to-segment influence, allowing much larger sequence contexts.",
+   "kw": [
+    "attention"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - deep neural networks",
+   "q": "What input sizes do the large transformer-based models take?",
+   "a": "Basenji takes 131 kb (dilated convolution), Enformer 200 kb and Borzoi 524 kb; Table 1 lists output bin sizes of 128 bp for Basenji and Enformer and 32 bp for Borzoi.",
+   "kw": [
+    "Basenji",
+    "Enformer",
+    "Borzoi"
+   ],
+   "info": "By contrast DeepSTARR takes 249 bp, DeepTopic models 500 bp, Basset 600 bp, scBasset 1,344 bp and BPNet 1 kb with 1 bp output bins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - deep neural networks",
+   "q": "How can deep models be interpreted (explainable AI)?",
+   "a": "Through motifs captured in the first convolutional layer, through in silico saturation mutagenesis (mutating every nucleotide to each of the other three and recording prediction changes), and through input gradients; results are visualized as nucleotide letters scaled by contribution.",
+   "kw": [
+    "ISM",
+    "attribution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - model categories",
+   "q": "What are the three biological categories of DNN sequence-to-function models?",
+   "a": "Models predicting a single modality in a single cell type, models predicting a single modality across multiple cell types, and large models predicting many modalities across many biological conditions.",
+   "kw": [],
+   "info": "The third category typically has 30-250 million parameters and is trained on repositories such as ENCODE, Roadmap Epigenomics and Cistrome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - model categories",
+   "q": "What do DeepBind and BPNet predict?",
+   "a": "DeepBind takes 14-101 bp DNA or RNA and predicts TF binding affinity from protein binding microarray data; BPNet takes 1 kb and predicts ChIP-nexus binding profile shape and coverage at single base pair resolution using dilated convolutions.",
+   "kw": [
+    "DeepBind",
+    "BPNet"
+   ],
+   "info": "BPNet predicts SOX2, OCT4 (POU5F1), KLF4 and NANOG profiles in embryonic stem cells, and inserting TFBSs at varying distances in random backgrounds revealed a distance-dependent bias toward cooperative binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - model categories",
+   "q": "What is DeepSTARR?",
+   "a": "A CNN taking 249 bp sequences and predicting developmental and housekeeping enhancer activity measured by genome-wide STARR-seq in Drosophila S2 cells.",
+   "kw": [
+    "DeepSTARR",
+    "STARR-seq"
+   ],
+   "info": "About 200 sequences with variable prediction scores were tested in vitro and their activity matched the predictions, showing accurate prediction even on left-out or random data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - model categories",
+   "q": "What are the 'DeepTopic' models and what makes their training data special?",
+   "a": "DeepMel, DeepMel2, DeepFlyBrain, DeepLiver and DeepBrain: models taking 500 bp input and doing binary multi-label classification of cell-type-specific accessibility peaks, trained not on raw scATAC-seq but on topics learned beforehand by topic modelling.",
+   "kw": [
+    "DeepFlyBrain",
+    "topic modelling"
+   ],
+   "info": "Each topic is both a set of co-accessible regions and a set of cells with similar accessibility. They cover human melanoma states, the Drosophila brain, mouse liver, mouse and human cortex, and chicken telencephalon. DeepLiver adds transfer learning on MPRA data.",
+   "concl": "Although trained only on accessibility, these models learn features relevant to enhancer activity."
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - model categories",
+   "q": "What is the difference between Basset, scBasset and AI-TAC?",
+   "a": "Basset is a binary classifier of bulk accessibility across hundreds of cell lines (600 bp input), scBasset classifies accessibility at single-cell level (1,344 bp input), and AI-TAC is a regression model (251 bp input) predicting accessibility levels across 81 mouse immune cell types.",
+   "kw": [
+    "scBasset",
+    "AI-TAC"
+   ],
+   "info": "scBasset has a bottleneck layer giving a low-dimensional cell representation, and can denoise scATAC-seq and correct batch effects. AI-TAC identified a combinatorial motif set underlying immune cell states.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - model categories",
+   "q": "What extra outputs do Basenji, Enformer and Borzoi provide compared with DeepSEA, DanQ and Sei?",
+   "a": "They predict levels of modalities by regression rather than binary classification, and they also predict gene expression, as CAGE at the TSS (Basenji, Enformer) or RNA-seq coverage across the gene body (Borzoi).",
+   "kw": [
+    "CAGE"
+   ],
+   "info": "Attention weights from Enformer and Borzoi can point to candidate enhancers regulating a gene. Epiformer is an Enformer-based model for cell-type-specific accessibility in the human brain.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sequence-to-function models - DNA language models",
+   "q": "How are DNA language models trained and used?",
+   "a": "They are trained self-supervised on vast unlabelled DNA by predicting masked segments ('tokens') from surrounding context; the resulting high-dimensional embeddings serve as features for fine-tuning supervised models on specific tasks.",
+   "kw": [
+    "DNA language model",
+    "fine-tuning"
+   ],
+   "info": "Example: SegmentNT fine-tuned the Nucleotide Transformer to segment the genome into regulatory categories including enhancers and promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - oracles",
+   "q": "What evidence shows sequence-to-function models generalize beyond their training genome?",
+   "a": "Enformer, DeepMel, DeepLiver and gkm-SVM predict effect sizes from in vitro saturation mutagenesis of enhancers (most accurately at TFBS positions), DeepSTARR predicts the activity of hundreds of random DNA sequences, and DeepMel and DeepBrain transfer across species.",
+   "kw": [
+    "generalization"
+   ],
+   "info": "DeepBrain mapped orthologous cell types between human and chicken; AI-TAC predicted accessibility across human and mouse immune cells; an SVM classified Twist binding across fly species.",
+   "concl": "High-fidelity models that generalize to unseen DNA can act as oracles for sequence optimization."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - oracles",
+   "q": "How well do current models predict genetic variation in gene expression?",
+   "a": "Enformer and Borzoi begin to distinguish expression QTLs from negative controls, but still require improvement to fully model cross-individual variation.",
+   "kw": [
+    "eQTL"
+   ],
+   "info": "This is one of the acknowledged weak points of large sequence-to-expression models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - design",
+   "q": "How were synthetic promoters designed in yeast?",
+   "a": "A CNN was trained to predict reporter expression driven by random 80-mers, then a genetic algorithm navigated the space of all possible 80-mers using the model output as a fitness function, giving synthetic promoters much stronger than natural ones.",
+   "kw": [
+    "genetic algorithm"
+   ],
+   "info": "Yeast is simple because its unicellular nature allows direct measurement of promoter activity, so training data match the design target closely.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - design",
+   "q": "How were cell-line-specific human enhancers designed with MPRA-trained models?",
+   "a": "A multi-task regression CNN trained on MPRA data was used in a cost function that maximizes activity in K562, HepG2 or SK-N-SH while minimizing off-target activity; thousands of candidates generated by AdaLead, Simulated Annealing, Fast SeqProp and Deep Exploration Networks were retested by MPRA.",
+   "kw": [
+    "K562",
+    "AdaLead",
+    "Fast SeqProp"
+   ],
+   "info": "Designed sequences were stronger and more cell-line specific than genomic ones; retraining the CNN on the synthetic data (iterative design) further increased the activity difference across cell lines.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - design",
+   "q": "How were tissue-specific enhancers designed for the Drosophila embryo?",
+   "a": "CNNs predicting pseudobulk accessibility were trained for five embryonic tissues (including central nervous system, epidermis, gut, muscle), then transfer learning gave CNNs classifying active vs inactive enhancers; three billion random sequences were screened and 8 of the top 3,000 per tissue were tested in vivo.",
+   "kw": [
+    "shotgun optimization",
+    "transfer learning"
+   ],
+   "info": "Candidates were picked from the top 3,000 by visual inspection of motif content.",
+   "concl": "About 70% of tested designs drove cell-type-specific activity in the target tissue."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - design",
+   "q": "What are in silico evolution and motif embedding?",
+   "a": "Two greedy search algorithms starting from random seed sequences matched to the GC content of genomic candidate enhancers: in silico evolution iteratively makes the single nucleotide change that most increases the prediction score, while motif embedding implants essential TFBSs one by one at the position giving the largest score gain.",
+   "kw": [
+    "in silico evolution",
+    "motif embedding"
+   ],
+   "info": "Applied with DeepFlyBrain they generated enhancers for Kenyon cells and perineurial glia; with DeepMel2 they generated melanocytic-state melanoma enhancers.",
+   "concl": "Only 10 to a maximum of 20 mutations were sufficient to achieve cell-type-specific enhancer activity."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - design",
+   "q": "What did the PPIF locus editing experiment with Enformer show?",
+   "a": "Using the THP-1 or Jurkat CAGE head of Enformer, 185 edits of 4-10 bp were designed and integrated 20-100 bp upstream of the PPIF TSS: ATF4-site edits raised expression by up to 200%, ZEB-site edits lowered it by 80% and FOX-site edits by 100%.",
+   "kw": [
+    "PPIF",
+    "ATF4",
+    "CEBPA"
+   ],
+   "info": "Edits creating CEBPA sites, a TF specific to THP-1, gave a twofold difference in PPIF expression between THP-1 and Jurkat cells.",
+   "concl": "Proof of principle that designed edits in genomic context can reprogram gene expression, including differentially between cell lines."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - fundamental insights",
+   "q": "What evidence supports that TFBS identity, copy number, arrangement and affinity encode all the information for cell-type-specific activity?",
+   "a": "Enhancers for Kenyon cells or perineurial glia were designed from identical seeds by only creating activator sites or destroying repressor sites; embedding essential TFBSs is sufficient; optimizing an already functional synthetic enhancer was only possible by adding TFBSs; and dual-cell-type enhancers were made by adding TFBSs of the second cell type.",
+   "kw": [
+    "enhancer grammar"
+   ],
+   "info": "Destroying activity without touching TFBSs was only possible by creating binding sites for repressors expressed in that cell type.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - fundamental insights",
+   "q": "What was the minimal designed Kenyon cell enhancer?",
+   "a": "An enhancer consisting only of a Mef2 site positioned 5 bp upstream of Eyeless and an Onecut site 3 bp downstream, which fully recapitulated Kenyon cell enhancer activity.",
+   "kw": [
+    "Mef2",
+    "Eyeless",
+    "Onecut"
+   ],
+   "info": "Separately, designed enhancers as short as 50 bp had activity equivalent to longer 145 bp enhancers.",
+   "concl": "Learned distance rules can be used to build minimal functional enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - fundamental insights",
+   "q": "Why is the choice of the starting seed sequence a critical challenge?",
+   "a": "Random DNA often contains unintended binding sites for repressors expressed in the target cell type; for example random sequences used for melanoma enhancers almost always harbour ZEB2 sites, whose 5 bp consensus occurs by chance once in 1,024 bp.",
+   "kw": [
+    "ZEB2",
+    "seed sequence"
+   ],
+   "info": "Hence models must account for both activator and repressor sites in the background sequence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - fundamental insights",
+   "q": "If TFBS combinations are all that matter, why is AI needed at all?",
+   "a": "Because enhancer activity depends on combinatorial TF binding, TFBSs must be modelled in their cis-regulatory context, and the motif syntax is usually a 'soft syntax' (a preference rather than an exact arrangement) that AI can capture from whole sequences.",
+   "kw": [
+    "soft syntax"
+   ],
+   "info": "The authors anticipate that deep-learning-based discovery will eventually feed into better mechanistic 'white box' models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - gradient-based design",
+   "q": "Why can't gradient ascent be applied directly to DNA sequences?",
+   "a": "DNA is an array of categorical variables (A, C, T, G), so it must first be approximated by a continuous distribution such as the Gumbel-Softmax (values per nucleotide called logits), optimized, and then converted back to a discrete sequence, usually by argmax.",
+   "kw": [
+    "Gumbel-Softmax",
+    "gradient ascent"
+   ],
+   "info": "Ledidi uses this principle with Basenji as oracle and a loss that minimizes both the number of edits and predicted JunD binding, designing cell-line-specific edits that eliminate JunD binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - gradient-based design",
+   "q": "What two problems arise with continuous relaxation, and how do SeqProp and Fast SeqProp fix them?",
+   "a": "Models are trained only on discrete inputs so a continuous optimum need not be a discrete optimum, and Softmax causes vanishing gradients when logits diverge. SeqProp samples a discrete sequence for the forward pass while updating the continuous version via the gradient, and Fast SeqProp adds a normalization strategy.",
+   "kw": [
+    "SeqProp",
+    "straight-through estimator"
+   ],
+   "info": "Together these reach fitter local optima in fewer iterations; Ledidi instead picks the iteration whose discrete sequence is most fit.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "What limitations of oracle-plus-search design motivate generative AI?",
+   "a": "Greedy searches such as in silico evolution can produce sequences outside the natural distribution of functional biological sequences (so they may fail experimentally despite good predictions), and local optimization may miss better solutions requiring broader exploration of sequence space.",
+   "kw": [],
+   "info": "The authors note that large-scale enhancer reporter assays are still needed to test how serious these concerns are.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "How have GANs been used for regulatory DNA design?",
+   "a": "A GAN trained on 14,098 experimentally verified promoters designed 50 bp bacterial promoters of which up to 70% were functional; ExpressionGAN generated yeast regulatory DNA with prespecified mRNA levels (Spearman rho 0.7 between predicted and measured expression across three orders of magnitude).",
+   "kw": [
+    "GAN",
+    "ExpressionGAN"
+   ],
+   "info": "GANs also generated fly brain and melanoma enhancers, but only GAN sequences scoring high with DeepFlyBrain or DeepMel2 oracles showed substantial cell-type-specific activity. Another GAN designed realistic background sequences around user-defined TFBSs.",
+   "concl": "GANs still need a reliable oracle, often fail to converge and can suffer mode collapse, so diffusion models are replacing them."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "How does a diffusion model generate enhancers, and why is DNA difficult for it?",
+   "a": "Training adds noise to input sequences (forward process) and learns to undo it (reverse process); new sequences are generated from random noise by the learned denoising steps. Diffusion cannot be applied directly to discrete data such as DNA, so the input or modelling space is modified or mapped to a continuous latent space.",
+   "kw": [
+    "diffusion model"
+   ],
+   "info": "DDSM places nucleotides at the vertices of the standard 3-simplex with its interior giving Dirichlet-modelled nucleotide probability distributions; it generated 1,024 bp human promoters conditioned on CAGE initiation profiles, validated in silico with Sei-predicted H3K4me3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "What is DNA-Diffusion and how was it evaluated?",
+   "a": "A BitDiffusion-based model trained on a DNase I hypersensitive site index with cell-type labels, generating 100,000 candidate enhancers each for GM12878, K562 and HepG2; sequences were assessed in silico for TFBS composition and predicted accessibility and activity using ChromBPNet and Enformer.",
+   "kw": [
+    "DNA-Diffusion",
+    "BitDiffusion"
+   ],
+   "info": "BitDiffusion casts binary bits as real numbers ('analogue bits') and thresholds them back to discrete DNA. DiscDiff instead uses a variational autoencoder for the latent space and generated 50,000 promoters across 15 species.",
+   "concl": "In silico validation showed generated sequences recapitulate endogenous properties of genomic enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "How does discrete diffusion compare with earlier diffusion approaches?",
+   "a": "Benchmarked on three high-quality functional genomics datasets spanning human promoters and fly enhancers, DNA discrete diffusion outperformed BitDiffusion and DDSM in capturing the diversity of cis-regulatory grammars and reproducing properties of genomic regulatory DNA.",
+   "kw": [
+    "discrete diffusion"
+   ],
+   "info": "A suite of metrics for functional similarity, sequence similarity and regulatory composition was introduced for this comparison.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "What is flow matching and how did Dirichlet flow matching perform?",
+   "a": "Flow matching learns transformations ('flow') mapping a simple known distribution such as a Gaussian onto the data distribution; Dirichlet flow matching relaxes discrete DNA onto the simplex and beat DDSM on the promoter design task with a mean squared error of 0.0269 versus 0.0334 for Sei-predicted H3K4me3 profiles.",
+   "kw": [
+    "flow matching",
+    "Dirichlet"
+   ],
+   "info": "Guided Dirichlet flow matching also did class-conditional generation of cell-type-specific enhancers, evaluated in silico by embedding-space distance to genomic enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Designing enhancers and promoters - generative AI",
+   "q": "What is regLM?",
+   "a": "A framework that label-encodes biological activity as 'prompt tokens' prefixed to DNA sequences and trains a HyenaDNA model for next-token prediction, so it can then generate promoters or enhancers with the prompted level of activity (high, low or cell-type specific).",
+   "kw": [
+    "regLM",
+    "HyenaDNA"
+   ],
+   "info": "An MPRA-trained sequence-to-function model was still used as an oracle to select promising candidates from the generated sequences.",
+   "concl": "Even with generative models, experimental validation of designed sequences remains necessary."
+  },
+  {
+   "type": "qa",
+   "section": "Evaluation of synthetic enhancer activity",
+   "q": "What two properties must be evaluated for a synthetic enhancer?",
+   "a": "Specificity (active only in the target cell types) and strength (enough transcription to drive sufficient expression but not so much that it disrupts normal cellular processes).",
+   "kw": [
+    "specificity",
+    "strength"
+   ],
+   "info": "Controlling strength matters especially for gene therapy, where a therapeutic product may need a specific expression level.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluation of synthetic enhancer activity",
+   "q": "What is the trade-off between microscopy reporter assays and MPRAs?",
+   "a": "Fluorescence microscopy readily shows cell-type and developmental-time specificity (especially after genome integration early in development, avoiding mosaicism) but quantifies strength poorly because fluorescence may not scale linearly and copy number is hard to control; MPRAs quantify strength and control copy number but are bulk, cover few cell types and are not accessible for all cell types.",
+   "kw": [
+    "MPRA",
+    "reporter assay"
+   ],
+   "info": "Single-cell MPRAs and the use of primary cells are proposed as a way to combine both strengths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Evaluation of synthetic enhancer activity",
+   "q": "Are computational evaluations of synthetic enhancers sufficient?",
+   "a": "No. In silico evaluation mostly assesses sequence diversity, motif content and similarity to genomic enhancers, sometimes combined with independent model prediction scores; it is valuable as a first-quality filter but must be used together with experimental validation.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - software",
+   "q": "Which software suites exist for building, interpreting and designing with sequence-to-function models?",
+   "a": "Selene, Janggu, gReLU, EUGENe and CREsted cover preprocessing, train-test splitting, negative set generation, model building, training, evaluation, attribution and in silico saturation mutagenesis, and synthetic enhancer design.",
+   "kw": [
+    "CREsted",
+    "gReLU"
+   ],
+   "info": "Refactored or ported models include bpnet-refactor, bpnet-lite, enformer-pytorch and borzoi-pytorch; repositories like Kipoi and Hugging Face improve reuse and reproducibility.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - software",
+   "q": "What is ChromBPNet and why is bias modelling needed?",
+   "a": "A model that predicts ATAC-seq and DNase-seq profile shapes and explicitly models and regresses out the sequence bias of the Tn5 and DNase I enzymes, giving more accurate base-pair-resolution accessibility profiles.",
+   "kw": [
+    "ChromBPNet",
+    "Tn5"
+   ],
+   "info": "Downstream tools: tfmodisco and tfmodisco-lite for de novo motif discovery from attribution scores, finemo_gpu for calling motif hits, tangermeme for footprinting, motif ablation and variant effects, and polygraph for quality assessment of synthetic enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - translational considerations",
+   "q": "What does the RPE65 gene therapy example illustrate?",
+   "a": "Voretigene neparvovec (AAV2 with human RPE65 cDNA under a hybrid chicken beta-actin/CMV promoter) gives only modest sight improvement; replacing it with a 1.6 kb endogenous RPE65 promoter fragment did not improve efficacy, while a carefully selected smaller sub-fragment raised expression in retinal pigment epithelium with less ectopic expression.",
+   "kw": [
+    "RPE65",
+    "AAV"
+   ],
+   "info": "That optimization, with another AAV serotype and a codon-optimized gene (AAV2/5-OPTIRPE65), went into phase I (NCT02781480) and II (NCT02946879) trials.",
+   "concl": "Sequence-to-function models could help select or design regulatory elements that drive the right level and cell-type range of expression in gene therapy."
+  },
+  {
+   "type": "qa",
+   "section": "Outlook",
+   "q": "What is the data leakage criticism of models trained on genomic sequences?",
+   "a": "De Boer and Taipale argue that performance of models trained on genomic sequences is generally overestimated because of data leakage caused by sequence homology, and that genomic sequence diversity is anyway insufficient to explore all features underlying enhancer activity.",
+   "kw": [
+    "data leakage",
+    "homology"
+   ],
+   "info": "Proposed solution: train on randomly synthesized DNA sequences whose activity is measured experimentally, possibly in an active learning loop; this is limited to cell types where high-throughput activity measurement is feasible (transfectable, proliferative, homogeneous cell lines).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook",
+   "q": "Do you need huge multi-cell-type datasets to get useful models?",
+   "a": "Not necessarily: 'niche' models trained on a specific system or even a single cell type already give deep sequence interpretations, although large datasets covering many cell types and states should help cell-type-specific design.",
+   "kw": [
+    "foundation model"
+   ],
+   "info": "A short-term challenge is training foundation models covering many cell types while keeping high-resolution interpretation for each one; moving from bulk to single-cell training data is producing finer-grained models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook",
+   "q": "What is the drawback of classification compared to regression for design models?",
+   "a": "Classification models tend to learn discrete features that optimize decision boundaries instead of a continuous input-output mapping, which can lead them to exploit TFBSs that are not part of the cell type's enhancer logic by giving them negative importance simply because they lower the positive-class likelihood.",
+   "kw": [
+    "classification",
+    "regression"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook",
+   "q": "Why is modelling a gene's expression harder than modelling a single enhancer?",
+   "a": "Genes are usually regulated by multiple enhancers acting additively or multiplicatively, and expression also depends on intrinsic promoter activity, largely non-linear enhancer-promoter interactions, enhancer-promoter and enhancer-enhancer distances, plus promoter-proximal pausing, RNA processing and degradation.",
+   "kw": [
+    "shadow enhancers",
+    "enhancer-promoter"
+   ],
+   "info": "Specialized architectures combining transformers with U-net, as in Borzoi or Scooby, are needed to capture both local (TFBS) and global (enhancer) features.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook",
+   "q": "What applications do the authors foresee for synthetic enhancers beyond gene therapy?",
+   "a": "Cell-type markers driving fluorescent reporters for visualization and tracking in vivo, and enhancers that switch on only after a cell-state change such as neuronal activity, cell-cell signalling, hypoxia or malignant cell-state switching.",
+   "kw": [
+    "cell-state-specific"
+   ],
+   "info": "They also envision sequence-to-expression models generating artificial genomic loci, potentially designing an entire novel cell state with a designed transcriptome, though this is limited by the difficulty of building and testing large DNA and by poor generalization of current models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook",
+   "q": "What role could protein structure models play in enhancer design?",
+   "a": "Models like AlphaFold 3 that predict protein-protein and protein-DNA interactions could quantify the effect of mutations on TF binding, cooperative binding of multiple TFs and co-factor effects, and be included in fitness functions or used to co-design enhancers together with synthetic TFs.",
+   "kw": [
+    "AlphaFold 3"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Designing enhancers and promoters - design",
+   "text": "The fly embryo design approach (accessibility model plus transfer learning onto enhancer activity, then shotgun screening of random sequences) is the closest template for doing this in a non-model fish: worth checking what minimal accessibility data would be needed for Astyanax or zebrafish tissues."
+  },
+  {
+   "type": "note",
+   "section": "Outlook",
+   "text": "The data leakage point (homology between train and test genomic regions inflating performance) matters for cross-species cavefish/surface fish comparisons; need to check how to hold out properly when surface and cave sequences are nearly identical."
+  },
+  {
+   "type": "note",
+   "section": "Evaluation of synthetic enhancer activity",
+   "text": "Open question raised by the review: how to combine MPRA quantification with microscopy-based specificity in vivo; single-cell MPRA is mentioned but no established protocol is given here."
+  }
+ ]
+}

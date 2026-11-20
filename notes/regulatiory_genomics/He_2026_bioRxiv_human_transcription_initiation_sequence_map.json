@@ -1,0 +1,584 @@
+{
+ "id": "He_2026",
+ "title": "A comprehensive map of the sequence basis of transcription initiation in humans",
+ "link": "https://doi.org/10.64898/2026.10.29.762743",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/He_2026_bioRxiv_human_transcription_initiation_sequence_map.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did this paper build?",
+   "a": "An atlas of efficient, interpretable deep learning models trained on over 200 transcription initiation profiling (PRO-cap) experiments. The experiments cover all major human organs and many cancer types. The models predict initiation patterns from local DNA sequence and are used to decode the sequence determinants of initiation across cellular contexts.",
+   "kw": [
+    "PRO-cap",
+    "deep learning",
+    "transcription initiation"
+   ],
+   "info": "Bioinformatics preprint (bioRxiv, posted 30 October 2026, not peer reviewed). Authors are from the Kundaje lab, Stanford.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is gene expression controlled in mammalian genomes?",
+   "a": "Mainly through millions of cis-regulatory elements (CREs). CREs bind transcription factors and other chromatin-associated proteins to regulate the expression of nearby genes.",
+   "kw": [
+    "CRE"
+   ],
+   "info": "Identifying, cataloguing and decoding CREs has driven consortium projects such as ENCODE, FANTOM and Roadmap Epigenomics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What features mark active promoters and enhancers?",
+   "a": "Chromatin accessibility, various post-translational histone modifications, and transcription initiation. Promoters start transcription of genes directly. Enhancers activate transcription from promoters over long genomic distances.",
+   "kw": [
+    "promoter",
+    "enhancer"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is divergent transcription?",
+   "a": "In mammalian genomes, both enhancers and promoters are transcribed in the sense and the antisense direction, which gives a characteristic divergent initiation pattern.",
+   "kw": [
+    "divergent transcription"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use PRO-cap instead of standard RNA-seq to measure initiation?",
+   "a": "Many noncoding RNAs, including enhancer RNAs (eRNAs), are intrinsically unstable. Their initiation profiles can only be captured reliably by assays that profile nascent capped RNAs, such as PRO-cap.",
+   "kw": [
+    "PRO-cap",
+    "eRNA",
+    "nascent RNA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are base-resolution profile models a good fit for transcription initiation?",
+   "a": "Both the quantitative strength of initiation and its spatially resolved profile carry functional information, and each has distinct sequence determinants. Interpretation of such models has revealed motifs, motif composites, and spacing and orientation rules.",
+   "kw": [
+    "base-resolution models"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "Earlier sequence-to-initiation models were trained either on a few cell lines with published nascent initiation data or on initiation profiles collapsed across biological contexts. This narrow training scope limited how well regulatory grammar could be studied across the diversity of human cell states.",
+   "kw": [
+    "ProCapNet",
+    "CLIPNET"
+   ],
+   "info": "ProCapNet and CLIPNET (earlier work by the same group) are the previous single or few cell line models. Dudnyk et al. 2024 is the collapsed-context model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - PRO-cap model atlas",
+   "q": "What data and models make up the atlas?",
+   "a": "224 single-task BPNet models, one per ENCODE PRO-cap experiment, each trained with 7 cross-validation folds. The models predict PRO-cap profiles from local DNA sequence. The data come from a recent ENCODE release of over 200 PRO-cap experiments spanning cell lines and primary tissues from all major organs and many cancer types.",
+   "kw": [
+    "BPNet",
+    "ENCODE"
+   ],
+   "info": "Input is 2114 bp of DNA sequence. Output is a 1000 bp predicted profile (positioning) plus predicted total counts (strength).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - PRO-cap model atlas",
+   "q": "What is the difference between the counts and profile outputs?",
+   "a": "Counts is the predicted strength of transcription initiation (total signal). Profile is the predicted positioning of initiation at base resolution across both strands.",
+   "kw": [
+    "counts head",
+    "profile head"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - PRO-cap model atlas",
+   "q": "How accurate are the models?",
+   "a": "They predict initiation strength and positioning with high accuracy. Per-model Pearson r for log counts ranged from about 0.2 to 0.8 across the atlas. The neuron model reached r = 0.678 and a median profile Jensen-Shannon distance of 0.552.",
+   "kw": [
+    "Pearson r",
+    "Jensen-Shannon distance"
+   ],
+   "info": "Metrics are averaged across seven held-out folds. For neurons, the predicted-versus-observed profile distance lay between the replicate baseline (better) and the average-profile baseline (worse). The 0.2 to 0.8 range is read off Fig. 1b.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - PRO-cap model atlas",
+   "q": "What makes model performance drop?",
+   "a": "Shallow sequencing depth, experiments without cap enrichment, and experiments with other technical problems.",
+   "kw": [
+    "read depth",
+    "quality control"
+   ],
+   "info": "Fig. 1d groups libraries by depth (fewer than 10M, 10 to 20M, more than 20M reads). Low-depth libraries have lower counts r and higher profile JSD. Perturbation, uncapped and faulty libraries are flagged separately.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "Which sequence features drive profile predictions, and which drive counts predictions?",
+   "a": "Profile (positioning) predictions are largely set by core promoter motifs such as the TATA box and the initiator. Counts (strength) predictions are driven by sequence-specific TF motifs.",
+   "kw": [
+    "DeepLIFT",
+    "TATA box",
+    "initiator"
+   ],
+   "info": "Nucleotide contributions were estimated with DeepLIFT. This split agrees with earlier work (ProCapNet, CLIPNET).",
+   "concl": "Core promoter motifs decide where initiation happens; TF motifs decide how much."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "What example shows cell-type-specific TF motifs driving initiation?",
+   "a": "The NEUROD1 promoter. It has PRO-cap signal, correctly predicted, in neurons but not in B cells. The annotated motifs include HAND2, SOX, MLXIP, NEUROG, SP/KLF, ZBTB14, TATA and Inr.",
+   "kw": [
+    "NEUROD1",
+    "NEUROG"
+   ],
+   "info": "A second example (Fig. S2) is an intronic candidate enhancer in TMEM131 (SCREEN EH38E2017378). It initiates at different positions in ileum and in heart left ventricle, where a MEF2 motif is present. This shows that TF motifs can affect positioning as well as strength.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "How did they get a genome-wide motif lexicon from the models?",
+   "a": "TF-MoDISco clustered high-importance subsequences (seqlets) into motifs for each model. MotifCompendium then meta-clustered the motifs across all models into one deduplicated organism-wide lexicon of consensus initiation-driving motifs.",
+   "kw": [
+    "TF-MoDISco",
+    "MotifCompendium",
+    "seqlets"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "Which motifs dominate the profile lexicon?",
+   "a": "Core promoter motifs: the CA and TA initiators, the TATA box, and low-complexity motifs that likely represent the BRE, DPE/MTE or pause motif. Sequence-specific TFs make some contribution. The initiator and TATA motifs were found in nearly all biological contexts.",
+   "kw": [
+    "CA-Inr",
+    "TA-Inr",
+    "TATA"
+   ],
+   "info": "The authors say the low-complexity motifs only 'likely' represent the B-recognition element, the downstream promoter element/motif ten element, or the pause motif. The assignment is not definitive.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "Which lineage-specific TF motifs did the counts heads find?",
+   "a": "The lineage-specific motifs matched expected biology: MEF2 in heart and muscle, GATA in myeloid and erythroid samples, and POU2F2 in B cells and bulk lymphoid samples.",
+   "kw": [
+    "MEF2",
+    "GATA",
+    "POU2F2"
+   ],
+   "info": "Other lineage-restricted motifs in Fig. 2c: POU:SOX (stem), NEUROG (neural), RELA and ZBTB11 (B + T/NK), TCF12 and EBF (B + neural), REL and SPIB (lymphoid + T/NK), BCL11B (B + T/NK), ZBTB8A (lymphoid + vascular), ARID (GI + liver).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "Which TF motifs were found almost everywhere?",
+   "a": "The SP/KLF family, NFY, NRF1 and ZNF143 were recovered in nearly all tissue types. Motifs showed a wide range of positional dependencies.",
+   "kw": [
+    "SP/KLF",
+    "NFY",
+    "NRF1"
+   ],
+   "info": "Other ubiquitous count motifs in Fig. 2b: ATF1, ETS, AP-1, TFEC, BANP, ELK1:SREBF2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "q": "Why did the earlier ProCapNet K562 models miss GATA motifs, even though GATA1 is key in erythroid cells?",
+   "a": "Mainly because ProCapNet drew both positive and negative examples from accessible chromatin. This confounds GATA's role in establishing accessibility. A secondary reason is that shallow sequencing causes disproportionate dropout of the lowly transcribed enhancers that GATA1 mostly binds.",
+   "kw": [
+    "GATA1",
+    "ProCapNet",
+    "negative set"
+   ],
+   "info": "The full analysis is in Supplementary Note 1, which is not part of this PDF. The atlas uses GC-matched genomic negatives instead of DNase hypersensitive site negatives.",
+   "concl": "How negatives are chosen can hide TFs that act through chromatin accessibility."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - lexicon size and lineage structure",
+   "q": "How large is the motif lexicon, and does a small study recover most of it?",
+   "a": "After deduplication, motifs detected in at least two experiments formed 234 MotifCompendium clusters. Five diverse experiments, similar in scale to earlier efforts, recovered only 24% of this lexicon.",
+   "kw": [
+    "rarefaction",
+    "MotifCompendium"
+   ],
+   "info": "Rarefaction compared tissue-diverse (round-robin), uniform-random, and tissue-redundant (one tissue first) sampling. Diverse sampling recovered motifs fastest.",
+   "concl": "Studies built on a few cell lines miss most of the initiation motif lexicon."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - lexicon size and lineage structure",
+   "q": "Are motifs more tissue-restricted than expected by chance?",
+   "a": "Yes. 28 TF-matched clusters were confined to a single tissue group. That is 7.1 times the number expected under a degree-preserving randomization (p < 0.001, 1000 permutations).",
+   "kw": [
+    "degree-preserving permutation",
+    "lineage restriction"
+   ],
+   "info": "The null distribution centred around 3 to 5 single-group motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - lexicon size and lineage structure",
+   "q": "Could the tissue concentration just come from replicates of heavily sequenced cell lines?",
+   "a": "No. Tissue-level concentration persisted after deduplication. At the biosample level (112 groups), points followed the random expectation closely, so the concentration reflects lineage restriction across distinct biosamples, not replicate redundancy.",
+   "kw": [],
+   "info": "The Fig. S3a caption gives TF-matched n = 111 but the plot legend gives n = 212. With 22 unmatched clusters, 212 adds up to 234, so 111 looks like a typo. This is unclear in the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - cross-cell-type prediction",
+   "q": "Can the models tell which tissue a tissue-specific peak is most active in?",
+   "a": "Partly. Among the top 1% most tissue-specific peaks (by the tau index), predictions ranked the observed dominant tissue group first for 33.4% of peaks, 6.7 times the 5% base rate.",
+   "kw": [
+    "tau specificity index",
+    "top-k accuracy"
+   ],
+   "info": "Accuracy rose with tissue specificity. Top-3 and top-5 accuracies were 3.9 and 2.9 times chance at the top 1% threshold. Across all peaks, top-1 accuracy was about 0.19 (read from Fig. S3c).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - cross-cell-type prediction",
+   "q": "How much of the reproducible initiation difference between biosamples do the models capture?",
+   "a": "Only about a quarter. The correlation between predicted and observed differences rose with the replicate-derived reproducibility ceiling, with a through-origin slope of 0.26. The models encode reproducible context-specific sequence effects but do not recover the full state-dependent range of initiation.",
+   "kw": [
+    "differential initiation",
+    "reproducibility ceiling"
+   ],
+   "info": "Based on 993 different-tissue and 50 same-tissue biosample quadruples. Accuracy across cell types did not differ substantially between promoters and enhancers.",
+   "concl": "Local sequence explains only part of how initiation differs between cell states."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main biological conclusion?",
+   "a": "A broadly shared core promoter grammar positions initiation, while a much larger, lineage-structured TF lexicon is associated with initiation strength. This helps explain how common transcriptional machinery supports context-specific regulatory programs.",
+   "kw": [
+    "core promoter grammar",
+    "TF lexicon"
+   ],
+   "info": "",
+   "concl": "Shared positioning grammar plus a lineage-specific strength lexicon."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "The motif lexicon does not saturate with limited sampling, so more tissues and cell states need initiation profiling. A substantial share of reproducible variation between biosamples remains unexplained by these local sequence-only models.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "Model quality also depends on read depth and on cap enrichment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What can the atlas be used for, and where is it?",
+   "a": "Improving TSS annotation, scoring noncoding variants, discovering regulatory syntax, and designing regulatory sequences. Models, predictions, contribution scores, motif annotations and genome browser tracks are all released.",
+   "kw": [
+    "resource",
+    "variant scoring"
+   ],
+   "info": "Code: github.com/kundajelab/procap-atlas. Model checkpoints and motif sets: HuggingFace collection adamyhe/procap-atlas. A UCSC track hub is available. Raw data are on ENCODE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data acquisition and preprocessing",
+   "q": "Which data did they download, and how was it prepared?",
+   "a": "From the ENCODE portal in February 2026 (n = 224), they took uniformly processed PINTS peak calls and stranded 5'-mapped coverage bigWigs for all PRO-cap experiments. Bidirectional and unidirectional peak files were concatenated, and technical replicate signal was summed per strand. Everything was in hg38/GRCh38.",
+   "kw": [
+    "PINTS",
+    "ENCODE",
+    "hg38"
+   ],
+   "info": "Only the most recent processing release was kept. One experiment (ENCSR683YIA, Pfeiffer cells) only had divergent peak calls, so those were used. Negative-strand tracks are stored as negative values but were converted to absolute values for training.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data acquisition and preprocessing",
+   "q": "How were peaks filtered?",
+   "a": "Peaks were represented by their midpoints. Loci overlapping the ENCODE hg38 blacklist or lacking a full 2114 bp input window were removed. Within each training split, peaks with total absolute signal above 1.2 times the 99th percentile were also removed.",
+   "kw": [
+    "blacklist"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data acquisition and preprocessing",
+   "q": "How were negative training regions chosen?",
+   "a": "They were sampled from chr1 to chr22 and chrX to match the GC content of each experiment's peaks in 2-percentage-point bins. Windows containing peaks were excluded, as were candidates whose central 1000 bp signal exceeded half the 1st percentile of peak signal. Training batches had peaks and negatives at a 7:1 ratio.",
+   "kw": [
+    "GC-matched negatives"
+   ],
+   "info": "Candidates with more than 10% non-canonical bases were discarded. This differs from the DNase hypersensitive site negatives used by ProCapNet.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - dataset quality control",
+   "q": "How were problem datasets flagged?",
+   "a": "Depth flags: 21 datasets under 10M reads and 38 between 10 and 20M reads. Perturbation flags: HCT116 (n = 8) and HEK293T (n = 1). Uncapped enrichment flag: K562 (n = 4). One ReNcell CX dataset (ENCSR973QQI) had anomalous PRO-cap signal downstream of TSSs and was excluded from integrative analyses.",
+   "kw": [
+    "audit flags",
+    "GENCODE v49"
+   ],
+   "info": "QC used metaplots around 78,654 GENCODE v49 TSSs. Good datasets show sharp sense-strand enrichment exactly at the TSS. Uncapped libraries show weak TSS enrichment, and low-depth libraries are noisy. Models were still trained for all 224 datasets, since quality issues only affect the matching single-task model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architecture, training and evaluation",
+   "q": "What is the model architecture?",
+   "a": "A BPNet model built with bpnet-lite. It takes a 2114 bp one-hot sequence and predicts PRO-cap signal over the central 1000 bp, using 512 convolutional filters, eight dilated residual layers and no control tracks. The profile head outputs two 1000-position strand logit vectors normalized jointly, and the count head outputs one log total count across both strands.",
+   "kw": [
+    "BPNet",
+    "bpnet-lite"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architecture, training and evaluation",
+   "q": "What loss function was used?",
+   "a": "The sum of the multinomial negative log-likelihood of the observed profile and 100 times the mean squared error of the log total count. Profile loss used only peaks. Count loss used both peaks and negatives.",
+   "kw": [
+    "multinomial NLL",
+    "MSE"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architecture, training and evaluation",
+   "q": "How were the models trained?",
+   "a": "With seven chromosome-based folds: one held out for testing, the next for validation, and five for training. Each model trained for 50 epochs with AdamW, batch size 64 and learning rate 0.0005, without scheduling or early stopping. The checkpoint with the lowest combined validation loss was kept.",
+   "kw": [
+    "AdamW",
+    "cross-validation"
+   ],
+   "info": "Augmentation used random shifts of up to 200 bp and reverse-complementing. Unlike ProCapNet, poorly mappable output positions were not masked.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architecture, training and evaluation",
+   "q": "How was performance measured?",
+   "a": "Only on held-out chromosomes. Counts were scored by Pearson correlation between predicted log counts and log(1 + observed counts). Profiles were scored by Jensen-Shannon distance between the joint strand-specific predicted and observed profiles.",
+   "kw": [
+    "Jensen-Shannon distance"
+   ],
+   "info": "Downstream predictions and DeepLIFT scores were averaged over all seven fold models. The exception is the cross-cell-type analysis, which used the model that held out each chromosome. Forward/reverse-complement averaging was not applied.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DeepLIFT feature attribution",
+   "q": "What does DeepLIFT compute?",
+   "a": "A contribution score for each base toward a scalar model output. It splits the difference between the prediction for the input and the prediction for a neutral reference into an additive sum of per-feature contributions: f(x) - f(r) = sum of c_i.",
+   "kw": [
+    "DeepLIFT",
+    "DeepSHAP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DeepLIFT feature attribution",
+   "q": "Why didn't they use the usual dinucleotide-shuffled reference?",
+   "a": "Many core promoter motifs are short or degenerate (CA and TA initiators, simple AT-rich sequences that can drive TBP binding), so shuffling can accidentally recreate them. This makes attributions unstable, especially for the profile head. Instead, each reference position was set to the nucleotide composition of the input sequence.",
+   "kw": [
+    "reference choice",
+    "shuffling"
+   ],
+   "info": "The deterministic reference gives uniform, neutral predicted profiles and is much faster than shuffles, which usually need about 20 references averaged. The benchmark is in Supplementary Note 2, which is not in this PDF.",
+   "concl": "Reference choice matters for interpreting initiation models."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DeepLIFT feature attribution",
+   "q": "How do you attribute a profile output when DeepLIFT needs a single scalar?",
+   "a": "They attributed the scalar y = softmax(centered profile logits) dot (centered profile logits), following earlier BPNet work. The counts head is already a scalar and is attributed directly.",
+   "kw": [
+    "profile attribution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif discovery, clustering and annotation",
+   "q": "How was de novo motif discovery run?",
+   "a": "tfmodisco-lite was run on the profile and counts DeepLIFT scores of each model's peaks, giving 224 x 2 = 448 motif sets. It used the central 1000 bp, up to 1 million seqlets per metacluster, and 50 Leiden runs.",
+   "kw": [
+    "tfmodisco-lite",
+    "Leiden"
+   ],
+   "info": "The authors note that 50 Leiden runs is excessive, carried over from ProCapNet and CLIPNET, and recommend the default of 2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif discovery, clustering and annotation",
+   "q": "How were motifs merged across experiments and annotated?",
+   "a": "With MotifCompendium on 219 motif sets per head, after excluding uncapped and anomalous experiments. Motifs were clustered at above 0.95 similarity within each experiment, then above 0.9 across experiments, using Leiden (Constant Potts) clustering with k-centroids refinement. Clusters were matched to JASPAR 2026 nonredundant vertebrate motifs.",
+   "kw": [
+    "MotifCompendium",
+    "JASPAR 2026"
+   ],
+   "info": "Redundant centroids were merged iteratively through fully connected cliques above 0.92 pairwise similarity, until memberships stabilized. Core promoter motifs, repeats and composite motifs were annotated manually.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif hit calling with Fi-NeMo",
+   "q": "How were individual motif instances called and filtered?",
+   "a": "Fi-NeMo was run per experiment and head on 2114 bp windows with the experiment-specific CWMs. Settings were regularization 0.7 and CWM trimming threshold 0.3, with trimmed CWMs extended to at least 6 bases. Hits in dense clusters (at least 5 calls of one motif within 80 bp) were removed, and motifs with final CWM similarity of 0.8 or less were discarded.",
+   "kw": [
+    "Fi-NeMo",
+    "CWM"
+   ],
+   "info": "Some motifs had a hit-derived CWM similarity of 0.9 or less with at least 200 hits. For these, only hits overlapping an independently called seqlet (tangermeme recursive_seqlets, threshold 0.05) were kept. The same rule was applied to 8 CA-initiator clusters whose short cores attract background hits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif-centered PRO-cap metaprofiles",
+   "q": "How were the motif-centered metaprofiles in Fig. 2 made?",
+   "a": "From TF-MoDISco seqlets, not Fi-NeMo hits. Signal was taken in a window of plus or minus 200 bp around each seqlet center, oriented to the cluster's motif, averaged in 5 bp bins and normalized to RPM. Seqlets were averaged within each experiment first, then equally across experiments.",
+   "kw": [
+    "metaprofile",
+    "seqlets"
+   ],
+   "info": "The two strands show orientation relative to the motif, not the gene's sense. Each metaprofile was scaled independently, so amplitudes cannot be compared between motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif lexicon rarefaction and discovery concentration",
+   "q": "How was the rarefaction analysis done?",
+   "a": "On experiments with at least 10M mapped reads (N = 198 of 219), keeping count-head clusters present in at least two experiments. The chance of recovering a cluster seen in n_c experiments when sampling k without replacement is 1 - C(N - n_c, k)/C(N, k).",
+   "kw": [
+    "rarefaction"
+   ],
+   "info": "Tissue-diverse and single-tissue sampling were simulated with 200 replicates per k, reporting the mean and the 5th to 95th percentile interval. Robustness checks varied the minimum seqlet abundance used to call a motif present.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - motif lexicon rarefaction and discovery concentration",
+   "q": "How was the null for lineage concentration built?",
+   "a": "The 198 experiments were assigned to 21 tissue or lineage groups. The cluster-by-experiment incidence matrix was randomized 1000 times with the Curveball algorithm, keeping both row and column totals fixed. The observed count of single-group clusters was compared to this null with a one-sided empirical p value with add-one correction.",
+   "kw": [
+    "Curveball algorithm"
+   ],
+   "info": "Metastatic samples were grouped by tissue of origin. Blood was split into B cell, T/NK, bulk lymphoid and myeloid-erythroid groups. The concentration ratio is the observed mean number of groups per cluster divided by the randomized mean; values below 1 mean more lineage concentration than expected.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cross-cell-type prediction analysis",
+   "q": "Which peak set was used for the cross-cell-type analysis?",
+   "a": "PINTS peaks from all 224 experiments were pooled and merged into 905,540 union regions. They randomly sampled 100,000, leaving 99,907 after blacklist and window filtering. Each peak was scored with the fold model that held out its chromosome.",
+   "kw": [
+    "union peak set"
+   ],
+   "info": "Observed and predicted counts were rescaled within each experiment to sum to 10^6, then log(1 + x) transformed. Peaks with a maximum tissue-group mean below 0.5 were removed, leaving 96,121 for the tissue-specificity analyses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cross-cell-type prediction analysis",
+   "q": "What is the tau specificity index, and how was tissue retrieval scored?",
+   "a": "Tau is the sum over groups of (1 - x_g / max x) divided by (G - 1). It is 0 for equal signal across groups and 1 for signal restricted to one group. Top-k accuracy is the fraction of peaks whose observed top tissue group is among the k groups with the highest predicted signal.",
+   "kw": [
+    "tau index",
+    "top-k accuracy"
+   ],
+   "info": "Peaks were split by tau into the top 1%, 5%, 10%, 20%, 50% and all peaks. Retrieval used only the 20 tissue groups with at least two experiments.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cross-cell-type prediction analysis",
+   "q": "How was the reproducibility ceiling for differential signal defined?",
+   "a": "For biosample pairs where both had replicates, two independent observed differences were computed from disjoint replicate pairs. Their Pearson correlation is the ceiling. The predicted-versus-observed correlation divided by the ceiling is the attained fraction.",
+   "kw": [
+    "replicate ceiling"
+   ],
+   "info": "For positive ceilings, the predicted-versus-observed correlation was regressed on the ceiling by least squares through the origin, pooling same-tissue and cross-tissue comparisons. This gave the slope of 0.26.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - generative AI disclosure",
+   "q": "Did the authors use AI tools?",
+   "a": "Yes. Coding agents (Claude Code and Codex) were used extensively to write the code base, mostly to pipe together scripts previously written by hand, scrape data and make visualizations. The authors say human domain expertise was critical for diagnosing data and model quality issues.",
+   "kw": [
+    "generative AI"
+   ],
+   "info": "They warn against uncritical use of generative AI in exploratory work without good benchmarks or priors.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - sequence determinants of initiation",
+   "text": "Supplementary Notes 1 (GATA and the choice of negative set compared with ProCapNet) and 2 (DeepLIFT reference choice) are not in this PDF. Worth reading, especially the point about negatives from accessible chromatin hiding pioneer-like TFs."
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - cross-cell-type prediction",
+   "text": "Models capture only about 26% of the reproducible differential initiation between biosamples. What explains the rest (chromatin state, distal context, trans factors)? Relevant for any sequence-to-function model applied across cell types or species."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could this approach (per-sample BPNet on PRO-cap plus TF-MoDISco/MotifCompendium) be applied to fish nascent transcription data to compare core promoter versus lineage TF lexicons?"
+  }
+ ]
+}

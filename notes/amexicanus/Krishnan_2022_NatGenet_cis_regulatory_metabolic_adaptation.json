@@ -1,0 +1,574 @@
+{
+ "id": "Krishnan_2022",
+ "title": "Genome-wide analysis of cis-regulatory changes underlying metabolic adaptation of cavefish",
+ "link": "https://doi.org/10.1038/s41588-022-01049-4",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Krishnan_2022_NatGenet_cis_regulatory_metabolic_adaptation.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "How cis-regulatory changes contribute to metabolic adaptation, using Astyanax mexicanus surface fish from nutrient-rich water and cavefish from nutrient-deprived water.",
+   "kw": [
+    "cis-regulatory elements",
+    "metabolic adaptation"
+   ],
+   "info": "Genome-wide epigenetic profiling was done in liver tissue.",
+   "concl": "Many liver CREs have genetically diverged and differ in chromatin features between morphotypes, yet are remarkably similar between independently derived cave populations."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main example of a cis-regulatory change found?",
+   "a": "A CRE in the hpdb gene carries a genomic deletion in cavefish that abolishes IRF2 repressor binding and derepresses enhancer activity in reporter assays.",
+   "kw": [
+    "hpdb",
+    "IRF2"
+   ],
+   "info": "The mutation is present in multiple independent cave populations.",
+   "concl": "Gives molecular insight into a trade-off between loss of pigmentation and adaptation to food-deprived caves."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is Astyanax mexicanus a good system for this?",
+   "a": "It has river surface fish and cave morphotypes that colonized caves around 150,000 years ago, and several cave populations adapted independently, so one can ask whether the same genes and networks were reused.",
+   "kw": [
+    "repeated evolution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was already known about genetic changes behind cavefish metabolism?",
+   "a": "Missense mutations in metabolic genes such as insra and mc4r help cavefish survive low-nutrient conditions, but the contribution of regulatory changes had not been investigated.",
+   "kw": [
+    "insra",
+    "mc4r"
+   ],
+   "info": "",
+   "concl": "This is the gap the paper fills: noncoding regulatory contribution to metabolic phenotypes."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why the liver?",
+   "a": "Because of its central role in glucose and fat metabolism.",
+   "kw": [
+    "liver"
+   ],
+   "info": "No Astyanax liver cell line exists, so reporter assays later used zebrafish ZFL and human HepG2 cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide annotation of CREs",
+   "q": "What samples and assays were used?",
+   "a": "Liver tissue from surface fish and two independently derived cave populations, Pachon and Tinaja, profiled with ATAC-seq, ChIP-seq for H3K4me3, H3K27ac and H3K27me3, and bulk RNA-seq.",
+   "kw": [
+    "ATAC-seq",
+    "ChIP-seq",
+    "RNA-seq"
+   ],
+   "info": "The surface fish genome astMex_2.0 was the reference for all analyses unless stated otherwise.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide annotation of CREs",
+   "q": "How many putative CREs were identified?",
+   "a": "94,175 accessible chromatin regions across the three populations: 68,002 in surface, 69,178 in Pachon and 73,762 in Tinaja. 44.87% were within 10 kb of a TSS.",
+   "kw": [
+    "putative CREs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide annotation of CREs",
+   "q": "How were chromatin states defined?",
+   "a": "With ChromHMM. H3K4me3 marked active promoters, H3K27ac active enhancers, H3K27me3 repressed regions, all three marks together poised regions, and low intensity of all marks gave low signal states.",
+   "kw": [
+    "ChromHMM"
+   ],
+   "info": "Active and poised CREs had accessible chromatin; repressed and low-signal states were relatively inaccessible.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide annotation of CREs",
+   "q": "Did chromatin state track gene expression?",
+   "a": "Yes. Expression correlated positively with active and poised marks and inversely with repressed marks.",
+   "kw": [],
+   "info": "",
+   "concl": "Chromatin accessibility can be used to identify putative CREs that correlate with expression of associated genes in this system."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide annotation of CREs",
+   "q": "How conserved are the putative CREs?",
+   "a": "Regions marked by a chromatin feature were about 30% more conserved across 11 fish species than random regions, and 94 of 441 human liver-specific enhancers were conserved and open in this dataset.",
+   "kw": [
+    "GERP",
+    "conservation"
+   ],
+   "info": "Suggests some CREs take part in conserved vertebrate metabolic gene regulatory networks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "How many regions were differentially accessible between populations?",
+   "a": "47,241 loci were invariant; 33,176 differed between surface and Pachon, 35,140 between surface and Tinaja, and only 25,777 between the two cave populations.",
+   "kw": [
+    "differential accessibility"
+   ],
+   "info": "Active histone mark patterns largely mirrored accessibility.",
+   "concl": "Divergence is greater between surface and cave than between the two cave populations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "How similar are Pachon and Tinaja in gains and losses of accessibility?",
+   "a": "Of the highly differential regions near genes, 74.4% of surface-accessible CREs lost accessibility in both cave populations, and 77.4% of regions gaining accessibility in Pachon also gained it in Tinaja.",
+   "kw": [
+    "parallel evolution"
+   ],
+   "info": "The Venn diagram in Fig. 1e gives 77.3% while the text says 77.4%. Histone marks and expression showed the same trend.",
+   "concl": "Points to repeated or parallel evolution at the epigenetic level through modification of existing surface fish regulatory circuitry."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "What are s-CREs and c-CREs?",
+   "a": "s-CREs are surface-accessible CREs (1,880 peaks in the heatmaps) and c-CREs are cave-accessible CREs biased the same way in both Pachon and Tinaja (1,698 peaks).",
+   "kw": [
+    "s-CREs",
+    "c-CREs"
+   ],
+   "info": "Differential peaks had q < 0.05 for both Pachon vs surface and Tinaja vs surface; invariant peaks had q > 0.90 in all three comparisons (1,991 peaks).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "Do morphotype-biased CREs correlate with nearby gene expression?",
+   "a": "Yes, for CREs within 10 kb of a TSS there was a significant correlation (P < 0.05) between the CRE bias and expression of the nearby gene.",
+   "kw": [
+    "CRE-gene association"
+   ],
+   "info": "One-sided t-test P values: 0.014 surface vs Pachon and 0.052 surface vs Tinaja for surface-biased peaks; 0.033 and 0.031 for cave-biased peaks. The 0.052 value is above the stated threshold, so the claim is not strict for every comparison.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "Which pathways are enriched near s-CREs versus c-CREs?",
+   "a": "Genes near s-CREs were enriched for circadian rhythm, lipid metabolism and TGF-beta signaling; genes near c-CREs for lipid metabolism and immune function.",
+   "kw": [
+    "GSEA",
+    "TGF-beta"
+   ],
+   "info": "Pathway analysis used GSEA reactomes on genes within 10 kb of the TSS whose expression had the same bias as the CRE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "How do lipid genes near s-CREs and c-CREs differ?",
+   "a": "s-CRE lipid genes are catabolic (lipases lipca and lpl, fatty acid binding proteins) and up in surface fish; c-CRE lipid genes are signaling and anabolic (fasn, aacs, acsl1a, acss2l) and up in cavefish.",
+   "kw": [
+    "fasn",
+    "lipid anabolism"
+   ],
+   "info": "Network analysis of c-CRE genes also showed fasn, g6pd and slc30a8 upregulated in cavefish. Circadian genes per1b and cry1b were higher in surface fish.",
+   "concl": "Consistent with previously reported increased fat accumulation in cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Morphotype-biased CREs and metabolic pathways",
+   "q": "Which TF motifs are enriched in each class of CRE?",
+   "a": "s-CREs are enriched for RAR:RXR, LXR, HNF4A and NF-kB motifs; c-CREs for NF-Y, KLF14, ETS and c-Myc. CTCF was the top motif in both (P = 1e-13 in s-CREs, 1e-51 in c-CREs).",
+   "kw": [
+    "HOMER",
+    "CTCF",
+    "HNF4A"
+   ],
+   "info": "NF-Y regulates lipid metabolism via the leptin pathway; KLF14 represses TGF-beta signaling, which is enriched in surface but not cave.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "Could differential TF expression (trans) explain the accessibility differences?",
+   "a": "Largely not for the TFs tested: those with enriched motifs showed little or no significant expression difference between morphotypes.",
+   "kw": [
+    "trans-acting factors",
+    "hnf4a"
+   ],
+   "info": "A previously reported hnf4a mutation may change downstream targets, and many direct and indirect Hnf4a targets were differentially expressed between surface and Pachon.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "How many variants were found under the CREs?",
+   "a": "GATK called 527,644 SNPs and 183,958 indels between morphotypes from the ATAC-seq reads. 27.4% of peaks had no SNPs (the rest 1 to 169) and 27.1% had no indels (the rest 1 to 44).",
+   "kw": [
+    "GATK",
+    "SNPs",
+    "indels"
+   ],
+   "info": "123,611 SNPs between surface and Pachon, 138,278 between surface and Tinaja, and only 66,056 shared between both comparisons.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "Which morphotype is more heterozygous?",
+   "a": "Surface fish, for both SNPs and indels.",
+   "kw": [
+    "heterozygosity"
+   ],
+   "info": "Matches earlier reports of greater genetic diversity in surface fish and more inbreeding in cave populations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "Do cave-accessible peaks carry more SNPs?",
+   "a": "Yes, a small but significant increase over surface-accessible peaks: P = 3.52e-4 for Pachon-accessible and P = 4.29e-10 for Tinaja-accessible (Mann-Whitney U-test).",
+   "kw": [
+    "SNP density"
+   ],
+   "info": "Differential peaks here used P < 0.001, and SNP density was counted in a 200-bp window around the peak center.",
+   "concl": "Suggests sequence differences drive the evolution of newly accessible regions in cavefish."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "How many SNPs could alter TF binding?",
+   "a": "48.2% of SNPs (254,554) could alter TF motifs, giving 1,497,297 altered motifs. At least one altered motif was present in 33% of Pachon-accessible and 41% of surface-accessible CREs.",
+   "kw": [
+    "motifbreakR",
+    "HNF1B"
+   ],
+   "info": "HNF1B, which regulates glucose metabolism and is implicated in diabetes, was in the top 15 altered-motif TFs for surface-accessible CREs but not for Pachon-accessible CREs. Forkhead motifs dominate both lists.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "How were 25 CREs chosen for functional testing?",
+   "a": "From 3,620 differential CREs within 10 kb of a TSS: 2,157 after requiring a SNP or indel, 1,631 with an annotated gene, 466 where ATAC bias matched RNA bias, then manual curation to 25.",
+   "kw": [
+    "candidate selection"
+   ],
+   "info": "Manual criteria: flanking regions keeping the biased epigenetic signature with no major unbiased flanking peaks, strongly differential gene expression (for example Nos, hpdb), and a metabolic or tissue-health role for the gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "How were CREs tested in vivo?",
+   "a": "By Tol2-mediated transient transgenesis in Astyanax and zebrafish embryos with surface or cave constructs driving GFP, scored 3 to 5 days after fertilization; several CREs gave enhanced GFP over vector control.",
+   "kw": [
+    "Tol2",
+    "GFP"
+   ],
+   "info": "Tol2 vector with minimal c-fos promoter; at least 100 embryos per construct because of mosaicism and position effects. Results are qualitative, which motivated the cell-line assays.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "What did the luciferase assays show?",
+   "a": "In ZFL cells 20 of 25 CREs (80%) drove at least twofold expression over empty vector, and 32% were also functional in HepG2. Surface and Pachon alleles differed for 7 of 20 functional CREs in ZFL and 5 of 8 in HepG2.",
+   "kw": [
+    "luciferase",
+    "ZFL",
+    "HepG2"
+   ],
+   "info": "CRE-1, CRE-7, CRE-15 and CRE-20 stayed differential in both cell lines, so their sequence polymorphisms are causal for the reporter difference.",
+   "concl": "Function is conserved across large evolutionary distance for some CREs, but the selection criteria did not predict the in vitro outcome."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genetic changes in CREs",
+   "q": "What caveats do the authors give for the reporter assays?",
+   "a": "The cell lines come from other species and differ from adult Astyanax liver, the CREs were tested outside their genomic context, and not every SNP or indel has a functional consequence.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE-15 and IRF2",
+   "q": "What is CRE-15 (CRE-hpdb)?",
+   "a": "A cave-biased CRE 744 bp from the hpdb gene (ENSAMXG00000015502). Stable transgenic zebrafish lines for the surface and Pachon alleles drove reporter expression in the anterior gut and liver region, matching hpdb expression.",
+   "kw": [
+    "CRE-hpdb"
+   ],
+   "info": "hpdb catalyzes the first unidirectional step of tyrosine catabolism.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE-15 and IRF2",
+   "q": "How is hpdb expressed between morphotypes?",
+   "a": "hpdb was the most upregulated gene in the Pachon liver transcriptome and was also upregulated in Tinaja, confirmed by qPCR.",
+   "kw": [
+    "hpdb",
+    "qPCR"
+   ],
+   "info": "In the qPCR panel Pachon values are in the thousands relative to surface normalized to 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE-15 and IRF2",
+   "q": "How did they show the hpdb difference acts in cis?",
+   "a": "Pachon-surface F1 hybrid livers showed intermediate hpdb levels (incompletely dominant Pachon allele), and using a synonymous SNP in exon 12 both alleles were present in DNA but only the Pachon allele appeared in mRNA.",
+   "kw": [
+    "allele-specific expression",
+    "F1 hybrids"
+   ],
+   "info": "qPCR was done on 5 F1 fish.",
+   "concl": "Increased hpdb expression in Pachon is mediated by changes in cis."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE-15 and IRF2",
+   "q": "What is the sequence change, and does IRF2 bind it?",
+   "a": "Pachon has several small deletions predicted to abolish an IRF2 repressor motif. In EMSA, recombinant human IRF2 bound the 20-bp surface oligo but showed very weak or no binding to the Pachon oligo.",
+   "kw": [
+    "EMSA",
+    "IRF2"
+   ],
+   "info": "Human IRF2 was used because the DNA-binding domain is highly conserved with Astyanax. Binding was competed by 200x and 400x unlabeled self oligo but not by nonspecific oligo, and irf2 expression did not differ between morphotypes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE-15 and IRF2",
+   "q": "Is losing the IRF2 site sufficient to derepress the CRE?",
+   "a": "Yes. Deleting the IRF2 motif in the surface allele (surface IRF2-del) restored high luciferase expression, similar to the Pachon allele.",
+   "kw": [
+    "surface IRF2-del"
+   ],
+   "info": "",
+   "concl": "IRF2 acts as a repressor of CRE-hpdb."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRE-15 and IRF2",
+   "q": "Did adding the IRF2 site back to the Pachon allele restore repression?",
+   "a": "Not on its own; Pachon IRF2-ins was not significantly repressed. Repression was restored only after two further sites were converted to the surface alleles (Pachon IRF2-ins-ATA and IRF2-ins-ATA-TT, P = 0.008).",
+   "kw": [
+    "rescue"
+   ],
+   "info": "",
+   "concl": "Deleting the IRF2 site is sufficient to release repression, but other mutations also contribute to the CRE's differential activity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IRF2 deletion as adaptive trait",
+   "q": "What is the proposed trade-off with pigmentation?",
+   "a": "Tyrosine feeds melanin, dopamine, ketone bodies and TCA intermediates. Cavefish lacking melanin accumulate excess tyrosine, so higher hpdb could divert it to fumarate and acetoacetate for energy.",
+   "kw": [
+    "tyrosine",
+    "melanin",
+    "TCA cycle"
+   ],
+   "info": "Liver expression of tyrosinase and tyrosine hydroxylase was very low. Excess tyrosine was previously reported in melanin-deficient cave populations and in oca2 knockdown surface fish.",
+   "concl": "A thrifty strategy for using any available nutrient in a nutrient-deprived cave."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IRF2 deletion as adaptive trait",
+   "q": "Is the IRF2 site deletion present in wild fish?",
+   "a": "They genotyped 23 wild surface fish, 23 wild Pachon and one each of Tinaja, Yerbaniz, Piedras and Japones. The deletion was fixed in all cavefish except the heterozygous Japones individual, and absent in all surface fish.",
+   "kw": [
+    "genotyping",
+    "positive selection"
+   ],
+   "info": "Wild Pachon livers also had higher hpdb than wild surface (P = 0.018). Only a single individual was sampled for the non-Pachon cave populations.",
+   "concl": "The authors argue the mutation is under positive selection."
+  },
+  {
+   "type": "qa",
+   "section": "Results - IRF2 deletion as adaptive trait",
+   "q": "Are other tyrosine catabolism genes also changed?",
+   "a": "Yes. hpdb, hgd and fah, encoding enzymes for unidirectional steps of tyrosine catabolism, all have higher expression in Pachon than surface livers.",
+   "kw": [
+    "hgd",
+    "fah"
+   ],
+   "info": "",
+   "concl": "Supports the idea that excess tyrosine is repurposed through the TCA cycle."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main conclusion about the two cave populations?",
+   "a": "The genome-wide chromatin architecture of Pachon and Tinaja is more similar to each other than to surface fish, matching their phenotypic convergence (loss of eyes and pigment, excess fat, insulin resistance).",
+   "kw": [
+    "convergence"
+   ],
+   "info": "",
+   "concl": "Their hypothesis is that selection repeatedly acted on existing transcriptional gene regulatory networks when the fish met a new environment."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors say about cis versus trans overall?",
+   "a": "Cell culture assays suggested a large proportion of CREs have altered activities potentially from trans-acting effects, while some arise from underlying genetic changes, and genetic variation contributes to the gain of accessible regions in cavefish.",
+   "kw": [
+    "cis vs trans"
+   ],
+   "info": "This inference is loosely argued: the reporter assay tests sequence differences in a constant cellular environment, so how trans effects are deduced from it is not spelled out.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors propose for future work?",
+   "a": "That many other differentially accessible regions found here are involved in metabolic adaptation, and that Astyanax mexicanus is an effective system for uncovering gene regulatory networks behind physiological adaptation to new environments.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and sampling",
+   "q": "How were fish housed and livers collected?",
+   "a": "Surface fish and cavefish were kept under identical lab conditions, same food and 14/10 h light/dark cycle, to negate environmental effects. Livers were dissected in the morning, 3 h after lights on, after overnight fasting, and split for RNA-seq and ATAC-seq.",
+   "kw": [
+    "husbandry"
+   ],
+   "info": "Fish were 9 to 12 months old, mixed sexes for ATAC-seq. Methods say livers from three fish per population, while GEO lists two ATAC-seq and two RNA-seq samples per population.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq",
+   "q": "How was ATAC-seq adapted to whole liver tissue?",
+   "a": "Livers were Dounce-homogenized with 30 to 40 strokes of the loose pestle in lysis buffer to release nuclei; about 70,000 nuclei were tagmented with Nextera Tn5 at 37 C for 22 to 24 min, then sequenced paired-end on Illumina NextSeq Mid-Output.",
+   "kw": [
+    "ATAC-seq",
+    "Tn5"
+   ],
+   "info": "Nuclei were checked with Trypan blue. Over 80% of reads mapped, duplication was under 0.4% per sample, and ATACseqQC gave a mean fragment length of 200 bases with 200-bp periodicity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-seq and RNA-seq",
+   "q": "What were the ChIP-seq and RNA-seq details?",
+   "a": "ChIP used about 200,000 cells and 1 ug antibody per sample: H3K4me3 (Millipore 07-473), H3K27ac (Abcam ab4729), H3K27me3 (Abcam ab195477). RNA-seq used TruSeq Stranded mRNA; both were sequenced as 50-bp single reads on a HiSeq 2500.",
+   "kw": [
+    "ChIP-seq"
+   ],
+   "info": "Livers were fixed in 1% formaldehyde for 15 min and chromatin prepared with the MAGnify Low Cell ChIP-Seq kit. Antibodies were validated by western blot.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data analysis",
+   "q": "Which tools and thresholds were used for alignment, peaks and differential tests?",
+   "a": "Bowtie 2 v2.3.4.1 to astMex_2.0 (ATAC with -X 2000 --very-sensitive), MACS2 v2.1.2 default peak calling, consensus peaks required in at least 2 replicates, and edgeR for differential accessibility with mean CPM of at least 1 and Benjamini-Hochberg adjusted P < 0.0001.",
+   "kw": [
+    "Bowtie2",
+    "MACS2",
+    "edgeR"
+   ],
+   "info": "RNA-seq used STAR v2.6.1c (--outFilterMultimapNmax 2, --quantMode GeneCounts) with Ensembl 96 models, then edgeR. Peaks were mapped to the nearest gene with GenomicRanges in R 3.6.1. Note different thresholds in different analyses: P < 0.0001 globally, q < 0.05 for heatmaps, P < 0.001 for the SNP density comparison.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data analysis",
+   "q": "How was ChromHMM run?",
+   "a": "ChromHMM v1.15 on the three histone marks, BinarizeBam with 200-bp bins and Poisson threshold 0.001, then a seven-state HMM with learnModel defaults.",
+   "kw": [
+    "ChromHMM"
+   ],
+   "info": "ATAC peaks were resized to 400 bp; a state had to cover at least 50% of a peak or genome bin. Enrichment was computed against 1,000 bedtools shuffle randomizations. The ChromHMM genome was built from the Ensembl 94 release.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data analysis",
+   "q": "How were variants called and motif disruptions predicted?",
+   "a": "ATAC reads were aligned with BWA mem v0.7.17 and variants called with GATK 3.8 HaplotypeCaller under a best practices Snakemake pipeline with two bootstrapping rounds for BQSR, then GATK hard filters. motifbreakR used HOCOMOCO from MotifDb 1.30 with threshold 1e-4, method ic and uniform background.",
+   "kw": [
+    "GATK",
+    "motifbreakR",
+    "HOCOMOCO"
+   ],
+   "info": "SNP filters QD < 2.0, FS > 60.0, MQ < 40.0, ReadPosRankSum < -8.0; indel filters QD < 2.0, FS > 200.0, ReadPosRankSum < -20.0. Lab stocks are probably somewhat inbred, giving little power for allele frequencies, so only fixed differences were analyzed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data analysis",
+   "q": "How were conservation, motif and pathway analyses done?",
+   "a": "Conservation used GERP constrained regions for 11 fish from Ensembl on the astMex1 genome with exons removed and 1,000 size-matched random background sets. Motifs used HOMER findMotifsGenome.pl -size given with known vertebrate motifs, and pathways used GSEA reactomes after converting gene IDs to human.",
+   "kw": [
+    "GERP",
+    "HOMER",
+    "GSEA"
+   ],
+   "info": "Human liver enhancers were mapped through UCSC multiz100way hg19 to astMex1 pairwise alignments (mafSpeciesSubset) and bedtools v2.26.0. Conservation used astMex1 while everything else used astMex_2.0.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Reporter assays and EMSA",
+   "q": "What were the reporter and EMSA conditions?",
+   "a": "CREs were cloned into pGL4.23 upstream of a minimal promoter driving firefly luciferase, co-transfected with pRLTK Renilla control (350 ng test, 150 ng control, Lipofectamine LTX) and read 48 h later, with empty vector normalized to 1. EMSA used recombinant human IRF2 (0.25 ug), 100 fmol 32P-labeled probe and 25 pmol competitor on 6% retardation gels.",
+   "kw": [
+    "pGL4.23",
+    "EMSA"
+   ],
+   "info": "Constructs were made by Gibson assembly; assays had two or more replicates (figures state three biological replicates) and significance came from a two-tailed Student's t-test.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data availability",
+   "q": "Where are the data?",
+   "a": "ATAC-seq, ChIP-seq and RNA-seq data are at GEO accession GSE153052, and original data plus all analysis code are in the Stowers Original Data Repository (libpb-1538).",
+   "kw": [
+    "GSE153052"
+   ],
+   "info": "A UCSC Genome Browser session with all AstMex2 tracks is also provided.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Genetic changes in CREs",
+   "text": "Only 7 of 20 functional CREs showed allele-specific differences in ZFL cells. Worth going back to how much of the morphotype-biased accessibility is really cis-encoded versus driven by trans or tissue context, since cell lines from other species may miss the relevant trans environment."
+  },
+  {
+   "type": "note",
+   "section": "Results - IRF2 deletion as adaptive trait",
+   "text": "The selection claim rests on genotyping one individual each from Tinaja, Yerbaniz, Piedras and Japones. A population-level sample of the IRF2 deletion frequency across cave populations would be needed to test for positive selection properly."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "The proposed tyrosine-to-TCA flux is inferred from expression of hpdb, hgd and fah plus reporter data. No metabolite measurements (fumarate, acetoacetate, tyrosine) were made in this paper, so the metabolic trade-off remains a hypothesis."
+  }
+ ]
+}

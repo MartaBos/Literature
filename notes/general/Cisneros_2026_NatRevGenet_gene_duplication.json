@@ -1,0 +1,646 @@
+{
+ "id": "Cisneros_2026",
+ "title": "Evolutionary causes and consequences of gene duplication",
+ "link": "https://doi.org/10.1038/s41576-026-00935-5",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Cisneros_2026_NatRevGenet_gene_duplication.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main way new genes emerge, and why are paralogues kept?",
+   "a": "Gene duplication is the main way new genes emerge. Models and empirical studies show that paralogues are kept because of dosage benefits, the partitioning of ancestral functions, or the gain of new functions.",
+   "kw": [
+    "gene duplication",
+    "paralogues"
+   ],
+   "info": "The gap the review addresses: the molecular mechanisms and the relative importance of the factors that push duplicates toward one fate or another have been hard to quantify.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which recent methods made molecular studies of duplicate gene evolution possible?",
+   "a": "Gene editing, deep mutational scanning and ancestral sequence reconstruction. Together they let researchers study duplicated gene evolution across timescales.",
+   "kw": [
+    "deep mutational scanning",
+    "ancestral sequence reconstruction",
+    "gene editing"
+   ],
+   "info": "",
+   "concl": "These approaches show how both adaptive and non-adaptive evolutionary forces shape the modern fates of gene duplicates."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do paralogues originate?",
+   "a": "At the gene level, they arise through mechanisms such as translocation and unequal crossing over. At the genome scale, they arise through genome doubling, either from errors in cell division or chromosome segregation (autopolyploidization) or from hybridization between species (allopolyploidization).",
+   "kw": [
+    "autopolyploidization",
+    "allopolyploidization",
+    "WGD"
+   ],
+   "info": "Only a fraction of duplicates becomes fixed and is retained over evolutionary time. This reflects a combination of biochemical and evolutionary constraints.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What fraction of genes in modern genomes are duplicates?",
+   "a": "Duplicates from whole-genome duplications and small-scale duplications make up about 17% of genes in Haemophilus influenzae, about 48% in Saccharomyces cerevisiae and more than 70% in humans.",
+   "kw": [
+    "WGD",
+    "small-scale duplication"
+   ],
+   "info": "All duplicates start out redundant and then diverge genetically and functionally over time.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What did Ohno propose, and how has the view changed since?",
+   "a": "Ohno argued that gene duplication was an important mechanism of evolution, and duplicate retention was generally attributed to neofunctionalization. Since then, support has grown for other models: beneficial dosage effects and subfunctionalization.",
+   "kw": [
+    "Ohno",
+    "neofunctionalization"
+   ],
+   "info": "Ohno's model dates from 1970.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the scope of this review?",
+   "a": "It focuses on duplications that produce full-length paralogues, because these share the same post-duplication functional properties. It covers function-fitness relationships, gene expression and physical molecular interactions, from fixation to functional divergence.",
+   "kw": [],
+   "info": "Partial and chimeric duplications are common but are left out. General rules are harder to set for them because functional overlap depends on which region was duplicated.",
+   "concl": "Fates of paralogues are driven not only by natural selection but also by non-adaptive forces and contextual factors, such as evolutionary contingencies and arrival biases shaped by the mutational spectrum."
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Foundational models of duplicated genes",
+   "q": "What is nonfunctionalization, and why is it the most likely fate?",
+   "a": "Nonfunctionalization is the return of a duplicate pair to a single copy. It is the most likely fate because two copies relax selection, most mutations cause loss of function, and those mutations are thought to be neutral because of redundancy.",
+   "kw": [
+    "nonfunctionalization",
+    "relaxed selection"
+   ],
+   "info": "Here gene function means the biochemical activities of a gene that are under selection (selected effect). Examples include expression level, protein localization, substrate or protein binding, enzymatic activity and expression across cell types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Foundational models of duplicated genes",
+   "q": "What is the difference between neofunctionalization and subfunctionalization?",
+   "a": "In neofunctionalization (Ohno, 1970), one copy gains mutations that give it a new beneficial function while the other keeps the ancestral functions. In subfunctionalization, the copies lose different subsets of ancestral functions, so both must be kept to perform all of them. This can be a neutral process.",
+   "kw": [
+    "neofunctionalization",
+    "subfunctionalization"
+   ],
+   "info": "Subfunctionalization should be more likely than gaining new functions because most mutations are loss-of-function mutations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Foundational models of duplicated genes",
+   "q": "Which is more common, neofunctionalization or subfunctionalization?",
+   "a": "This is still unknown. Models of protein-protein interaction networks suggest that subfunctionalization is faster, because interactions are lost more easily than gained. Large-scale expression profiling suggests that regulatory neofunctionalization is more common in various species.",
+   "kw": [
+    "neofunctionalization",
+    "subfunctionalization"
+   ],
+   "info": "The prevalent mechanism may depend on the protein function studied. Each function needs a different approach.",
+   "concl": "Overall rates of neo- and subfunctionalization remain to be fully quantified."
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Ancestral sequence reconstruction",
+   "q": "How is ancestral sequence reconstruction (ASR) used to study paralogues?",
+   "a": "Homologous sequences from many organisms are used to build a phylogeny. From it, the authors infer the pre-duplication ancestor (AncPD) and the two post-duplication ancestral paralogues (AncP1, AncP2). The branches between them contain the mutations (delta m) that may have changed function.",
+   "kw": [
+    "ASR",
+    "AncPD"
+   ],
+   "info": "Phylogeny quality is critical. Because ASR is probabilistic, good practice is to infer and resurrect two or more of the most probable sequences at each node of interest, which cheaper DNA synthesis now makes affordable. The ancestral proteins are then synthesized and either purified or expressed in a cell host for assays. The framework was proposed about 60 years ago.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 2 - Ancestral sequence reconstruction",
+   "q": "How do ASR results distinguish subfunctionalization from neofunctionalization?",
+   "a": "If AncPD has an activity, AncP1 keeps it and AncP2 loses it, the result supports subfunctionalization for that function. If one ancestral paralogue has an activity that AncPD and the other paralogue lack, the result supports neofunctionalization.",
+   "kw": [
+    "ASR",
+    "subfunctionalization"
+   ],
+   "info": "The other paralogue may have kept a different ancestral function. Analysing the delta m mutations shows which substitutions caused the change.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Immediate dosage effects and fixation",
+   "q": "Why can a duplication be harmful right after it happens?",
+   "a": "Both copies make identical products, so total expression is expected to rise. Higher expression can disrupt stoichiometry and complex assembly for complex subunits, add metabolic and energetic costs, cause spurious molecular interactions, or disrupt metabolic pathways.",
+   "kw": [
+    "dosage",
+    "stoichiometric imbalance"
+   ],
+   "info": "Fixation probability rises with beneficial fitness effects, so immediate dosage effects matter for whether a duplicate is retained at all.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Immediate dosage effects and fixation",
+   "q": "When is increased dosage beneficial?",
+   "a": "In genes involved in metabolism and stress responses. In some species, increased expression from gene dosage is even the main mechanism of adaptive change.",
+   "kw": [
+    "copy number variants",
+    "drug resistance"
+   ],
+   "info": "These effects depend on the environment and genetic background. In some fungal pathogens, drug-resistance CNVs rise in frequency with antifungal drugs and fall once the drug is removed. The size of the effect differs across closely related species and their hybrids.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Immediate dosage effects and fixation",
+   "q": "What is a fitness function?",
+   "a": "It is the relationship between fitness and a gene's expression level. It usually has a plateau of optimal expression, with fitness falling when expression is too low or too high.",
+   "kw": [
+    "fitness function"
+   ],
+   "info": "Fitness functions can be asymmetric because benefits diminish while the cost of expression rises linearly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Immediate dosage effects and fixation",
+   "q": "How have fitness functions been measured experimentally?",
+   "a": "In bacteria and yeast, native promoters were replaced with inducible promoters or with promoter libraries of different strengths, which allows pooled, high-throughput fitness measurements. CRISPR interference and CRISPR activation were also used to block or activate transcription.",
+   "kw": [
+    "CRISPRi",
+    "CRISPRa",
+    "promoter library"
+   ],
+   "info": "Observed shapes include gradual responses, sensitivity only to low expression, sensitivity only to high expression, concave functions and dosage insensitivity. A missing optimum may partly reflect the limited range of expression tested.",
+   "concl": "The variety of fitness function shapes explains why the immediate fitness effects of duplication vary so much between genes."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Immediate dosage effects and fixation",
+   "q": "Why does the fitness effect of a duplication depend on context?",
+   "a": "The same expression shift can be beneficial, neutral or deleterious depending on the shape of the fitness function and the starting expression level. The same gene can also have different expression or fitness functions across environments, cell types and tissues, which creates trade-offs.",
+   "kw": [
+    "context dependence",
+    "trade-offs"
+   ],
+   "info": "A fixed WGD does not mean every individual duplication was beneficial, because the fitness effect is the combined effect of all of them. Small-scale duplicates, such as tandem duplicates or retrotransposed copies, often have different expression because of a new gene context, such as new promoters or UTRs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Immediate dosage effects and fixation",
+   "q": "What is expression attenuation?",
+   "a": "mRNA and protein levels are rarely doubled, even when regulatory sequences are duplicated too. For some genes, post-transcriptional or post-translational regulation keeps expression below the expected doubling, for example through feedback loops that maintain complex stoichiometry.",
+   "kw": [
+    "expression attenuation"
+   ],
+   "info": "This could explain why most small-scale duplications have been reported as neutral, and why studies disagree on the effects of dosage increases for complex subunits. Attenuation has been shown in adaptive CNVs.",
+   "concl": "Attenuation buffers duplication toxicity. It can also make a duplication immediately beneficial if the pre-duplication level was suboptimal and doubling would overshoot the optimum."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "What first suggested that paralogues co-evolve in expression?",
+   "a": "Paralogues are often expressed at lower levels than their singleton orthologues. After fixation, fitness depends on the summed expression of both copies, so the copies can diverge while keeping total output constant.",
+   "kw": [
+    "cumulative expression"
+   ],
+   "info": "The two copies do not need to contribute equally. In allopolyploidization, expression can differ right after duplication.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "How does expression divergence relate to duplicate loss after WGD?",
+   "a": "In paramecia, yeast and plants, gene loss was more frequent in pairs with diverged expression, and the less expressed paralogue was lost more often. The same pattern was later shown in salmonids.",
+   "kw": [
+    "WGD",
+    "gene loss",
+    "salmonids"
+   ],
+   "info": "",
+   "concl": "Losses with minimal impact on cumulative expression are more readily tolerated."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "What is the absolute dosage subfunctionalization (ADS) model?",
+   "a": "Selection acts jointly on two duplicates to keep their combined protein abundance near an optimum. Expression changes in either copy are tolerated as long as the total stays close to the optimum, which produces compensatory drift along a line of constant cumulative expression.",
+   "kw": [
+    "ADS",
+    "compensatory drift"
+   ],
+   "info": "When one copy becomes lowly expressed, its contribution becomes negligible. It can then be lost neutrally, or its small contribution to the ancestral function may open the way to neofunctionalization.",
+   "concl": "ADS explains why expression divergence is associated with gene loss and why the copy with lower expression is lost preferentially."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "What does ADS assume, and does compensatory drift extend beyond transcription?",
+   "a": "ADS assumes the two paralogues are functionally redundant. This is plausible even after allopolyploidization, because hybridizing species are usually closely related. Compensatory drift seems to extend beyond transcription: paralogue pairs show widespread reductions in translational efficiency and faster evolution of post-translational regulatory signals.",
+   "kw": [
+    "functional redundancy",
+    "translational efficiency"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "How has the ADS model been extended?",
+   "a": "Selection acts not only on total abundance but also on total function, that is, abundance times specific activity for each copy. In Paramecium, mutations accumulated in the coding region of the lowly expressed paralogue, including loss-of-function mutations, before it was lost.",
+   "kw": [
+    "ADS",
+    "Paramecium",
+    "relaxed selection"
+   ],
+   "info": "Other studies show that the less expressed duplicate evolves faster, loses protein-protein interactions and carries more segregating loss-of-function variants. Caveat: the link between abundance and evolutionary rate can exist without duplication. However, in Paramecium, loss-of-function alleles are more frequent in lowly expressed paralogues than in singletons with similar expression.",
+   "concl": "Selection acts on both cumulative expression and cumulative function. This helps explain why some paralogues keep similar functions for long periods."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "Which yeast example shows that ADS can persist for millions of years?",
+   "a": "TUB1 and TUB3 are ancient WGD-derived paralogues with almost identical expression-fitness functions, so fitness depends mainly on their summed abundance. That sum is very similar to the native expression of TUB2 and TUB4, which assemble with them into microtubules.",
+   "kw": [
+    "TUB1",
+    "TUB3",
+    "ADS"
+   ],
+   "info": "Fitness functions were measured with a promoter library, varying one paralogue while the other stayed at wild-type expression. Relative fitness was measured as yeast cell doublings per wild-type generation time.",
+   "concl": "Selection can keep acting on total function for some paralogue pairs long after duplication."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "What is active compensation between paralogues?",
+   "a": "It is the up- or downregulation of a gene in response to a change in expression or loss of its paralogue, through shared cis-regulatory motifs or shared regulators. In yeast, TDH2 is upregulated when its paralogue TDH3 is deleted, through two shared regulators that are part of a broader regulation of glycolysis.",
+   "kw": [
+    "active compensation",
+    "TDH2",
+    "TDH3"
+   ],
+   "info": "It has also been shown experimentally in Drosophila. Compensation can occur at the level of localization as well, when a protein moves to its deleted paralogue's usual location.",
+   "concl": "Active compensation is rare overall, but it shows that substantial functional redundancy can persist between paralogues."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "q": "How might ADS affect how long duplicates are retained?",
+   "a": "ADS may lengthen retention time, which gives subfunctionalizing or neofunctionalizing mutations more time to arise. Experimental work showed that duplication does not speed up the gain of new molecular functions if one copy can be quickly lost.",
+   "kw": [
+    "retention time",
+    "Ohno's hypothesis"
+   ],
+   "info": "According to the reference annotation, the experiment evolved E. coli carrying one or two copies of a fluorescent protein.",
+   "concl": "How long ADS lasts and how this varies across genes and species is still not precisely characterized."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Evolutionary contingency and new functions",
+   "q": "How does compensatory drift create evolutionary contingency?",
+   "a": "Changes in one copy are offset by changes in the other, so early mutations set the future trajectory. One copy keeps most of the ancestral function, while the other becomes a minor contributor that degenerates or gains new functions.",
+   "kw": [
+    "evolutionary contingency",
+    "asymmetric divergence"
+   ],
+   "info": "Asymmetry has been reported in protein evolutionary rates, protein-protein interactions, environmental responsiveness and tissue expression patterns.",
+   "concl": "One copy is marked early for loss or neofunctionalization and then tends to accumulate further degenerative mutations."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Evolutionary contingency and new functions",
+   "q": "What examples show that contingency can lead to parallel evolution of duplicate fates?",
+   "a": "In Brassicaceae, one of two duplicated transcription factors was lost independently in several species, and it is much less expressed where it remains. In teleosts, two lineages convergently evolved electric organs by neofunctionalizing the same, lower-expressed copy of a WGD-derived pair.",
+   "kw": [
+    "parallel evolution",
+    "teleost WGD",
+    "electric organ"
+   ],
+   "info": "According to the cited reference title, the teleost gene is a sodium channel gene. The paralogue first evolved lower expression in the ancestral tissue, which let it gain a new tissue specificity, an extension of ADS to tissue expression patterns.",
+   "concl": "Early expression-reducing mutations, which probably occurred by chance in one copy, primed that paralogue for loss or functional divergence."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Evolutionary contingency and new functions",
+   "q": "Does expression divergence come before activity divergence?",
+   "a": "It is unclear whether expression or specific activity changes first. The order may depend on whether mutational biases favour changes in regulatory or in coding regions.",
+   "kw": [
+    "mutational bias"
+   ],
+   "info": "This may matter especially in allopolyploids, where the two copies are already divergent and may be differentially expressed when they come together in the hybrid genome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Evolutionary contingency and new functions",
+   "q": "How does compensatory drift limit which new functions a minor copy can gain?",
+   "a": "A neofunctionalizing mutation in the minor copy is selected only if its benefit outweighs the loss of ancestral function. Because fitness functions differ between molecular functions, some new functions are only beneficial within a narrow range of expression or activity.",
+   "kw": [
+    "neofunctionalization",
+    "fitness function"
+   ],
+   "info": "Shown conceptually in Fig. 2c,d: the same new function can be beneficial or deleterious depending on when along the drift trajectory it arises.",
+   "concl": "Some functional changes may never become accessible if compatible expression or activity levels are never sampled."
+  },
+  {
+   "type": "qa",
+   "section": "Gene dosage - Evolutionary contingency and new functions",
+   "q": "How could expression noise and arrival biases shape neofunctionalization?",
+   "a": "Mutations affecting expression act mostly on transcription. A minor copy downregulated at the transcriptional level would show more expression noise, which could favour functions that need high responsiveness to environmental change.",
+   "kw": [
+    "expression noise",
+    "arrival biases"
+   ],
+   "info": "The authors call this speculative. These constraints add to those imposed by the ancestral gene's sequence and function.",
+   "concl": "Together, these mechanisms might explain the high parallelism in new metabolic functions arising from copy number changes in different yeast species."
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Mutational and arrival biases",
+   "q": "What are mutational biases?",
+   "a": "They are asymmetries in the rates at which different mutation types occur. Examples are transitions being more frequent than transversions, and de novo mutations in many species, including humans, being biased towards A and T.",
+   "kw": [
+    "mutational bias",
+    "AT bias"
+   ],
+   "info": "The AT bias may come from cytosine deamination, which is worse in organisms with CpG methylation. AT-rich codons tend to encode hydrophobic amino acids, and these can create new protein interfaces. Such interfaces may later become needed for stability as more hydrophobic substitutions accumulate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 3 - Mutational and arrival biases",
+   "q": "What are arrival biases, and how strong can they be?",
+   "a": "When several mutations have identical fixation probability, the first to appear is the most likely to fix. In RNA secondary structure maps, arrival biases can make a less fit but frequent phenotype fix over a rarer one whose fitness effect is 50 times more advantageous.",
+   "kw": [
+    "arrival biases",
+    "fixation probability"
+   ],
+   "info": "Simulations, experiments and comparative genomics show that, among several adaptive trajectories, those using more frequent mutation types are more likely. Arrival biases are usually modelled in haploids but may apply to diploids, depending on effect sizes and how efficient selection is.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Evolution of novel interaction specificity",
+   "q": "How did steroid receptors neofunctionalize after duplication?",
+   "a": "After multiple rounds of WGD in vertebrates, one paralogue kept its ancestral interactions. The other gained mutations that let it bind different hormones and DNA motifs.",
+   "kw": [
+    "steroid receptors",
+    "neofunctionalization",
+    "interaction specificity"
+   ],
+   "info": "Once their molecular functions diverge, paralogues stop evolving under ADS. Transcription factor paralogues in plants, yeast and other organisms diverged in binding-site and distal regulatory element specificity, which created new regulatory modules.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Evolution of novel interaction specificity",
+   "q": "Is binding divergence driven by positive selection or by relaxed selection?",
+   "a": "Both play a role. Positive selection drove new inhibitors of snake venom metalloproteases through multiple duplications. In steroid receptors, however, ASR combined with deep mutational scanning showed that activity-decreasing mutations had been fixed, often on the same branches as duplications, which fits relaxed selection.",
+   "kw": [
+    "relaxed selection",
+    "positive selection",
+    "deep mutational scanning"
+   ],
+   "info": "Right after duplication, both paralogues share the same interactions, so redundancy relaxes selection on each copy.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Evolution of novel interaction specificity",
+   "q": "How do biophysical properties make some proteins prone to binding divergence?",
+   "a": "Bacterial histidine kinases and their response regulators often duplicate together. Some paralogous pairs differ only slightly in affinity, driven by as few as three mutations, and single mutations can cause crosstalk between systems.",
+   "kw": [
+    "histidine kinases",
+    "two-component systems"
+   ],
+   "info": "",
+   "concl": "When binding specificity is highly sensitive to mutation, divergence after duplication is easier."
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Chance and contingency in novel specificity",
+   "q": "What two factors determine whether a new binding specificity can evolve?",
+   "a": "First, the new specificity must not be deleterious, for example by creating spurious interactions. Second, mutations that change specificity must be reachable from the current sequence. Selection can act on the first factor but not the second, which depends on the protein's past evolution.",
+   "kw": [
+    "contingency",
+    "sequence space"
+   ],
+   "info": "Adaptive neofunctionalizing mutations are often destabilizing. Their fixation therefore depends on other mutations, including earlier ones, that compensate for the loss of stability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Chance and contingency in novel specificity",
+   "q": "How did permissive mutations enable new specificity in steroid receptors?",
+   "a": "Neofunctionalizing mutations that gave specificity for new ligands and DNA motifs could only fix after 7 to 11 neutral mutations, which stabilized the binding interface, were already in place. More neofunctionalizing mutations were accessible in paralogues that had accumulated permissive mutations.",
+   "kw": [
+    "permissive mutations",
+    "specific epistasis",
+    "global epistasis"
+   ],
+   "info": "Specific epistasis: a permissive mutation changes the local biophysical landscape. Global epistasis: a neutral mutation stabilizes the whole protein and opens access to many adaptive mutations.",
+   "concl": "Permissive mutations had no effect on fitness and could have been fixed by drift. So whether an adaptive mutation can fix depends on chance history."
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Chance and contingency in novel specificity",
+   "q": "What chance events besides drift have produced new specificities?",
+   "a": "An ancestral receptor bound oestrogen. Because aldosterone, an intermediate in the oestrogen synthesis pathway, is structurally similar, a duplicated receptor evolved aldosterone specificity with just two mutations. In cyanobacteria, a horizontally transferred protein that happened to interact with a paralogue family evolved into an allosteric regulator.",
+   "kw": [
+    "aldosterone",
+    "horizontal gene transfer",
+    "retrograde model"
+   ],
+   "info": "The receptor case resembles the retrograde model of enzyme evolution. The authors say it would not have been possible without duplication, because oestrogen constrains the ancestral receptor.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Molecular interactions - Chance and contingency in novel specificity",
+   "q": "How can subfunctionalization of binding arise from a promiscuous ancestor?",
+   "a": "Paralogues can stay redundant and promiscuous for a long time while accumulating neutral mutations. With epistasis, which mutations later reduce promiscuity depends on the mutations already fixed. In a pair of myosin paralogues with 81% sequence identity, about 15% of single amino acid substitutions caused partial loss of an interaction in one paralogue but not the other.",
+   "kw": [
+    "promiscuity",
+    "cryptic genetic variation",
+    "myosin"
+   ],
+   "info": "",
+   "concl": "Seemingly inconsequential mutations accumulated since duplication strongly shape future evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Overview",
+   "q": "Why are duplicated homomeric proteins a special case?",
+   "a": "About 30% of proteins form homomers. After duplication, the paralogues share the same interface and can form heteromers with each other. When all binding affinities are equal, heteromers make up 50% of dimers, 75% of trimers and 87.5% of tetramers.",
+   "kw": [
+    "homomers",
+    "heteromers"
+   ],
+   "info": "This also applies to some allopolyploid paralogues, because proteins form interspecific complexes in hybrids, even between species more distant than those that usually hybridize. Mutations that change relative affinities shift the heteromer fraction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Paralogue interference",
+   "q": "What is paralogue interference?",
+   "a": "It is when a mutant copy impairs the wild-type paralogue, for example by forming inactive or partially inactive heteromers that titrate away the functional copy. It is analogous to dominant-negative mutations at biallelic loci.",
+   "kw": [
+    "paralogue interference",
+    "dominant-negative"
+   ],
+   "info": "Each homomer is affected only by mutations in its own gene, but the heteromer depends on both genes. Dominant-negative mutations tend to be mildly destabilizing and to cluster in active sites and interfaces, and paralogue interference shows similar trends.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Paralogue interference",
+   "q": "What did the single-mutant library of a homotetrameric enzyme show about interference?",
+   "a": "The library of a dimer-of-dimers enzyme was expressed alongside a wild-type copy. Interfering mutations were depleted at the dimerization interface and enriched at the tetramerization interface. Tetramerization-interface mutants were less deleterious than active-site mutants because they sequester fewer wild-type copies.",
+   "kw": [
+    "paralogue interference",
+    "assembly pathway"
+   ],
+   "info": "In the Fig. 4c model, disrupting interface 1 leaves 50% activity, disrupting interface 2 leaves 25%, and disrupting catalysis leaves 6.25%.",
+   "concl": "Interference exposes mutations to selection that redundancy would otherwise mask. This can help keep redundant homomeric paralogues and expand gene families linked to dominant deleterious diseases."
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Paralogue interference",
+   "q": "How does interference work for the yeast MADS-box factors Arg80 and Mcm1?",
+   "a": "Arg80-Mcm1 heterodimers regulate arginine-responsive genes, and Mcm1 homodimers regulate another set of specific sites. The reconstructed ancestor's homodimers could do both. Raising Arg80 DNA-binding affinity back to the pre-duplication state, or raising Arg80 abundance, recruited Mcm1 to arginine sites and interfered with its other role.",
+   "kw": [
+    "Arg80",
+    "Mcm1",
+    "MADS-box"
+   ],
+   "info": "The PDF text drops a symbol before -specific sites, so the exact site class is unclear from the extracted text.",
+   "concl": "Divergence between the two paralogues minimized interference and subfunctionalized their roles."
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Paralogue interference",
+   "q": "What is a human example of paralogue interference?",
+   "a": "SRGAP2A is a homodimer involved in neuronal synapse formation. Its truncated, human-specific paralogue SRGAP2C can still dimerize with SRGAP2A but blocks its function because it lacks other functional domains.",
+   "kw": [
+    "SRGAP2A",
+    "SRGAP2C"
+   ],
+   "info": "SRGAP2C seems to have evolved a role as a co-regulator of SRGAP2A during synapse formation. Because many duplications produce truncated genes, this kind of interference could be common, depending on how much paralogues are co-expressed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Maintenance or loss of heteromers",
+   "q": "How can paralogue interference be reduced?",
+   "a": "Through dosage, since an excess of wild-type copies overcomes the mutant. It can also be reduced by preventing heterodimerization, for example through different subcellular compartments, tissues or cell types, or through differences in assembly order and preference.",
+   "kw": [
+    "paralogue interference",
+    "compartmentalization"
+   ],
+   "info": "Increasing mutant abundance raises the fraction of heteromers and mutant homodimers, which can amplify deleterious effects.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Maintenance or loss of heteromers",
+   "q": "Why do heteromers of paralogues tend to persist, and why does that matter?",
+   "a": "Mutations tend to destabilize the two homomers more than the heteromer, so heteromers are unlikely to be lost unless selection favours it. Human paralogues that do not form heteromers show stronger signatures of adaptive evolution and functional divergence than those that do.",
+   "kw": [
+    "heteromers",
+    "functional divergence"
+   ],
+   "info": "High-throughput protein-protein interaction data show heteromers are often retained, but many paralogues are selectively homomeric.",
+   "concl": "Losing heteromerization could free paralogues to accumulate sub- or neofunctionalizing mutations independently."
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Maintenance or loss of heteromers",
+   "q": "How can heteromerizing paralogues become dependent on each other?",
+   "a": "If the heteromer becomes the only functional complex, deleting one paralogue reduces the other's abundance, interactions or localization, so the copies are not redundant. A combinatorial deep mutational scanning library of a homodimeric enzyme identified more than 200 pairs of loss-of-function alleles that complement each other as heterodimers.",
+   "kw": [
+    "paralogue dependency",
+    "compensatory mutations"
+   ],
+   "info": "Natural examples include heteromers with functions their homomers lack, and interfering paralogues co-opted into regulatory roles.",
+   "concl": "Dependency can arise from compensatory co-evolution and contradicts the usual assumption that duplicates are redundant."
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Maintenance or loss of heteromers",
+   "q": "What determines whether paralogues become selective homomers or heteromers?",
+   "a": "As few as one to three mutations can be enough. AT-biased mutation introduces hydrophobic residues that can make stability depend on the paralogue partner. Complex structure also matters: slight structural asymmetry in haemoglobin made substitutions favour heterotetramers.",
+   "kw": [
+    "haemoglobin",
+    "heterospecificity"
+   ],
+   "info": "Purifying selection on a shared interface tends to preserve both homomers and heteromers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Homomeric proteins - Maintenance or loss of heteromers",
+   "q": "How does co-translational assembly prevent heteromerization?",
+   "a": "Homomers whose interfaces are encoded at the N-terminus can assemble during translation with other nascent chains from polysomes on the same mRNA, so each copy pairs with itself. The determinants are encoded in the ancestral sequence, so duplicates would preferentially homomerize right after duplication.",
+   "kw": [
+    "co-translational assembly",
+    "homospecificity"
+   ],
+   "info": "Other barriers include different subcellular localization or expression timing, which are probably acquired later. Genome-wide analyses show these cellular barriers affect large fractions of non-heteromerizing human paralogues.",
+   "concl": "Selective homomerization caused by inherited barriers tends to lead to faster functional divergence."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "What is the main conclusion of the review?",
+   "a": "Fitness functions, deep mutational scanning and ASR show that fixing function-altering mutations often depends on earlier mutations that originally had no fitness effect. Paralogues can also become dependent when their heteromer is the only functional unit.",
+   "kw": [
+    "non-adaptive evolution",
+    "contingency"
+   ],
+   "info": "",
+   "concl": "Multiple lines of evidence highlight the role of non-adaptive processes in the evolution of duplicated genes."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions",
+   "q": "Which open questions remain?",
+   "a": "Functional divergence becomes more likely as duplications age, but the time needed may vary between paralogue pairs, for example with the type of function. Gradual changes in catalysis or binding specificity probably alter fitness functions until selection can tell the paralogues apart.",
+   "kw": [
+    "functional divergence"
+   ],
+   "info": "The authors suggest that assaying subtle, progressive mutational effects on function will help trace paralogue histories.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Box 1 - Foundational models of duplicated genes",
+   "text": "The overall rates of neofunctionalization and subfunctionalization have not been quantified, and the answer may depend on which protein function is studied (interactions vs expression)."
+  },
+  {
+   "type": "note",
+   "section": "Gene dosage - Expression divergence and long-term retention",
+   "text": "How long does ADS keep paralogues redundant, how does this vary across genes and species, and does expression divergence come before activity divergence or after? Worth revisiting for teleost WGD paralogues (salmonid and electric organ examples)."
+  },
+  {
+   "type": "note",
+   "section": "Homomeric proteins - Maintenance or loss of heteromers",
+   "text": "Are the order and timescale of transitions (duplication, divergence in interactions, functional divergence) the same for every paralogue pair, and do specific paralogue properties change their probability?"
+  }
+ ]
+}

@@ -1,0 +1,603 @@
+{
+ "id": "Monti_2026",
+ "title": "Genome-wide mapping of DNA G-quadruplexes in Trypanosoma brucei chromatin reveals enrichment in coding regions and transcription start sites",
+ "link": "https://doi.org/10.1093/nar/gkag637",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Monti_2026_NAR_G4_map_Trypanosoma_chromatin.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "The functional roles of G-quadruplexes (G4s) in trypanosomatid parasites remain poorly understood, largely because their genomic distribution was not known. The authors generated the first chromatin-based genome-wide G4 map in Trypanosoma brucei.",
+   "kw": [
+    "G-quadruplex",
+    "Trypanosoma brucei"
+   ],
+   "info": "They also ran in silico G4 analyses across 64 trypanosomatid species.",
+   "concl": "A reliable chromatin G4 map was missing for this parasite."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is a G-quadruplex?",
+   "a": "A non-canonical DNA secondary structure formed in guanine-rich sequences, proposed to act as a regulatory element in trypanosomatid parasites including T. brucei, the agent of African sleeping sickness.",
+   "kw": [
+    "G4"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Where are G4s enriched in T. brucei according to G4 ChIP-Seq?",
+   "a": "In gene-associated regions, including coding DNA sequences (CDSs), and at transcription boundaries such as transcription start sites (TSSs) and transcription termination sites (TTSs).",
+   "kw": [
+    "G4 ChIP-Seq",
+    "CDS",
+    "TSS"
+   ],
+   "info": "This pattern diverges markedly from previously published genome-wide G4 maps in humans.",
+   "concl": "G4s may have roles unique to trypanosome biology."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did the G4-stabilizing ligand PhenDC3 do to the transcriptome?",
+   "a": "PhenDC3 induced targeted transcriptional perturbation of genes bearing G4s, particularly G4s located within CDSs and TSSs.",
+   "kw": [
+    "PhenDC3"
+   ],
+   "info": "",
+   "concl": "G4s have a distinctive role in regulating gene expression in T. brucei and are potential therapeutic targets."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is human African trypanosomiasis a target for new drugs?",
+   "a": "About 55 million people in 36 sub-Saharan African countries are at risk, with roughly 1000 cases reported annually, and current treatments are toxic, hard to administer and increasingly met with drug resistance.",
+   "kw": [
+    "sleeping sickness"
+   ],
+   "info": "Melarsoprol can cause fatal reactive encephalopathy. Fexinidazole (oral, introduced 2019) has unclear efficacy in advanced disease, in children under 6 years or under 20 kg, in pregnancy and in breastfeeding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the economic impact of animal trypanosomiasis?",
+   "a": "Nagana causes weight loss, reduced productivity and high mortality in livestock, with agricultural losses exceeding $1 billion annually.",
+   "kw": [
+    "Nagana"
+   ],
+   "info": "Current drugs include diminazene aceturate, isometamidium chloride and homidium bromide/chloride, all with narrow therapeutic index and resistance problems.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the canonical G4 sequence motif?",
+   "a": "Sequences with at least three guanine tetrads separated by loops of up to seven nucleotides, written as GGG-N1-7-GGG-N1-7-GGG-N1-7.",
+   "kw": [
+    "G4 motif"
+   ],
+   "info": "G4s form through Hoogsteen hydrogen bonding and are stabilized by central monovalent cations such as K+ or Na+. Sequences deviating from this consensus can still form stable 'non-canonical' G4s.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where are G4s enriched in the human genome?",
+   "a": "In regulatory regions such as telomeres and promoters of proto-oncogenes, for example c-MYC and c-KIT.",
+   "kw": [
+    "c-MYC",
+    "c-KIT"
+   ],
+   "info": "The authors previously reported that clusters of G4s at intergenic and intronic regions can act as super enhancers (super-G4s).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Are G4-targeting drugs clinically relevant?",
+   "a": "Yes, two G4-targeting candidates, CX-5461 and QN-302, have progressed through clinical trials for tumour malignancies.",
+   "kw": [
+    "CX-5461",
+    "QN-302"
+   ],
+   "info": "This has prompted exploration of G4 targeting beyond cancer, in viruses, bacteria, parasites, yeasts, helminths and plants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - in silico analyses",
+   "q": "Which genomes were used for the predictive G4 analysis?",
+   "a": "64 genomes from seven trypanosomatid genera (Trypanosoma, Leishmania, Crithidia, Phytomonas, Herpetomonas, Leptomonas, Porcisia) downloaded from NCBI, plus two Schistosoma genomes and the human genome as comparison.",
+   "kw": [
+    "NCBI"
+   ],
+   "info": "Accession numbers are in Supplementary Table S1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - in silico analyses",
+   "q": "What G4Hunter settings were used?",
+   "a": "Default settings of a 25-nucleotide window size and a threshold of 1.2, with additional analyses at thresholds of 1.5, 1.8 and 2.0.",
+   "kw": [
+    "G4Hunter"
+   ],
+   "info": "A custom Python script automated the prediction in iterative loops. The 1.2/25 nt settings were previously validated to balance false positives and false negatives.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - in silico analyses",
+   "q": "How was PQS frequency per species calculated?",
+   "a": "By dividing the number of putative G-quadruplex sequences (PQSs) identified by G4Hunter by the genome length and multiplying by 1000, giving PQSs per 1000 bp.",
+   "kw": [
+    "PQS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture",
+   "q": "Which cells were cultured and how?",
+   "a": "T. brucei Lister 427 bloodstream forms in HMI-11 with 10% FBS at 37 C and 5% CO2, kept below 1.5 x 10^6 cells/ml; HeLa in DMEM with 5% FBS; COLO 205 and MA-104 cells in MEM with 5% FBS.",
+   "kw": [
+    "Lister 427"
+   ],
+   "info": "Parasites were sub-passaged every 24-48 h; HeLa were sub-cultured every 5 days.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - BG4 antibody",
+   "q": "How was the G4-selective antibody produced?",
+   "a": "Recombinant BG4 was expressed in BL21(DE3) E. coli from the pSANG10-3FBG4 vector (Addgene 55756), purified by nickel affinity chromatography and dialysed into PBS.",
+   "kw": [
+    "BG4"
+   ],
+   "info": "Purity and concentration were checked by SDS-PAGE and functionality by ELISA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - G4 ChIP-Seq",
+   "q": "How was chromatin prepared for G4 ChIP-Seq?",
+   "a": "2 x 10^8 parasites were cross-linked with 1% formaldehyde for 20 min at room temperature and sonicated with a Bioruptor for 20 cycles (30 s on, 30 s off, high setting) to a fragment size of 100-500 bp.",
+   "kw": [
+    "Bioruptor",
+    "formaldehyde"
+   ],
+   "info": "Fragment size was checked on 2% agarose gels or the Agilent 4200 TapeStation (v4.1.1) with D5000 ScreenTape.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - G4 ChIP-Seq",
+   "q": "What were the key ChIP conditions?",
+   "a": "720 ng chromatin per sample with 136 ng BG4 (about 5:1 chromatin-to-antibody ratio), 2% Triton X-100 pretreatment for 10 min, BG4 binding 1 h at 16 C, then anti-FLAG magnetic beads 1 h at 16 C.",
+   "kw": [
+    "anti-FLAG",
+    "Triton X-100"
+   ],
+   "info": "One sample without BG4 served as input control. Crosslinks were reversed with proteinase K (1 h 37 C, then 2 h 65 C) and DNA purified with the MinElute kit.",
+   "concl": "Protocol fine-tuning was needed because low T. brucei culture yields give only nanograms of chromatin."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - G4 ChIP-Seq",
+   "q": "How many replicates were used?",
+   "a": "Chromatin came from two independent T. brucei cultures (two biological replicates), and for each biological replicate two to three technical ChIP replicates were done in parallel with a matching input control.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - G4 ChIP-Seq",
+   "q": "How was ChIP quality checked before sequencing?",
+   "a": "By qPCR comparing a G4-positive and a G4-negative locus inside bloodstream expression site 1 (BES1), calculating % input as 2^(Ct input - Ct ChIP) x 100 and dividing G4-positive by G4-negative % input to give fold enrichment.",
+   "kw": [
+    "qPCR",
+    "BES1"
+   ],
+   "info": "qPCR on a Stratagene Mx3005P: 95 C 20 s, then 40 cycles of 95 C 3 s and 60 C 30 s, with Fast SYBR Green Master Mix and 1 uM primers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-Seq data analysis",
+   "q": "What was the sequencing and alignment pipeline?",
+   "a": "Libraries (NEBNext Ultra II) were sequenced paired-end on an Illumina NovaSeq 6000 at 15 and 38 million reads per sample; reads were QC'd with FastQC, trimmed with fastp and aligned with Bowtie2 (default settings) to the Lister 427 v10 (Tb427v10) assembly from TriTrypDB.",
+   "kw": [
+    "Bowtie2",
+    "fastp",
+    "Tb427v10"
+   ],
+   "info": "SAMtools filtering used -F 2308 and -q 10 to drop unaligned, secondary and supplementary reads and MAPQ < 10. Duplicates were removed with Picard MarkDuplicates (REMOVE_DUPLICATES=TRUE) or samtools markdup.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-Seq data analysis",
+   "q": "Which peak-calling parameters were used?",
+   "a": "MACS2 with a user-defined genome size of -g 2.67e7, --nomodel --extsize 200 for a fixed 200 nt fragment size, and a q-value cut-off of 0.01.",
+   "kw": [
+    "MACS2"
+   ],
+   "info": "Log2 ChIP/input ratios were made with deepTools bamCompare (v2.4.2) at 50 bp bins and visualized in IGV v2.19.4. Common and unique peaks between replicates were found with bedtools intersect.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation and enrichment",
+   "q": "How were peaks assigned to genomic features?",
+   "a": "With the GenomicRanges R package, using Tb427v10 annotations (protein-coding genes, pseudogenes, ncRNAs); 341 of 342 TSSs and TTSs from the v12 assembly were lifted onto v10 with Liftoff, and peaks overlapping no feature were called intergenic.",
+   "kw": [
+    "GenomicRanges",
+    "Liftoff"
+   ],
+   "info": "The workflow was implemented in Nextflow. Gene-to-PTU mapping used Tb427v12 annotations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation and enrichment",
+   "q": "How was fold enrichment over random computed?",
+   "a": "Peaks were shuffled genome-wide three independent times with bedtools shuffle (v2.31.1), and observed overlap per feature was divided by the overlap in each randomized set, giving three fold-enrichment values whose mean and SD are reported.",
+   "kw": [
+    "bedtools shuffle"
+   ],
+   "info": "The same procedure was applied to the published G4-seq peaks from Marsico et al. 2019 (GSM3003555, GSM3003556), lifted onto Lister 427 v10.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - annotation and enrichment",
+   "q": "How were the radial genome plots made?",
+   "a": "With Circos hosted on Galaxy, using log2 ChIP/input from deepTools bamCompare at 1000 bp bins, replicate bigWigs averaged with bigwigAverage and converted to WIG with bigWigToWig.",
+   "kw": [
+    "Circos",
+    "Galaxy"
+   ],
+   "info": "Unitig and unplaced-contig fragments were excluded; bloodstream expression sites (BESs) were plotted as a separate track because of their specialized, independently regulated subtelomeric nature.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - viability and RNA-seq",
+   "q": "How were viability and selectivity measured?",
+   "a": "T. brucei (2.5 x 10^4 parasites/ml, 48 h then resazurin for 16 h) and HeLa/COLO/MA-104 (1 x 10^4 cells/ml, 5 days then resazurin for 6 h) were read by fluorescence (ex 545 nm, em 590 nm); EC50 and CC50 came from 11-point curves in GraphPad Prism, assays in triplicate.",
+   "kw": [
+    "resazurin",
+    "EC50"
+   ],
+   "info": "Selectivity index = host cell CC50 / T. brucei EC50.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - viability and RNA-seq",
+   "q": "What was the RNA-seq design?",
+   "a": "T. brucei bloodstream forms (0.75 x 10^6/ml, 15 ml) were treated 4 h with 2 x EC50 of PhenDC3, CX-5461, BMH-21 or no compound, four replicates per condition, poly(A)-enriched libraries sequenced paired-end on NovaSeq 6000 at 15 million reads per sample.",
+   "kw": [
+    "RNA-seq",
+    "BMH-21"
+   ],
+   "info": "RNA was extracted with the RNeasy Mini Kit including on-column DNase I digestion.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - viability and RNA-seq",
+   "q": "How was differential expression analysed?",
+   "a": "Reads were trimmed with fastp, aligned with Bowtie2 to Tb427v10, filtered at -q 1 with SAMtools, counted with featureCounts (subread v1.5.2) and tested with edgeR using FDR < 0.05 and a log2 fold change cut-off of +/- 1 (two-fold).",
+   "kw": [
+    "edgeR",
+    "featureCounts"
+   ],
+   "info": "Volcano plots with ggplot2; MDS plot with Degust using a minimum gene read count of 10, FDR 0.05 and abs log FC cut-off 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4s across trypanosomatids",
+   "q": "How variable is predicted G4 abundance across trypanosomatids?",
+   "a": "Very variable: Herpetomonas tarakana had the highest frequency (5.63 PQS/kb), 27-fold higher than Schistosoma japonicum (0.22) and six-fold higher than humans (0.93).",
+   "kw": [
+    "PQS"
+   ],
+   "info": "Trypanosomatid genomes ranged from about 17 Mb (Phytomonas francai) to 89 Mb (T. cruzi); Schistosoma is about 400 Mb and human 3.1 Gb.",
+   "concl": "Herpetomonas and Leishmania show the highest G4 frequencies, Schistosoma the lowest."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4s across trypanosomatids",
+   "q": "Does GC content explain G4 prevalence?",
+   "a": "Only partly: GC content and PQS frequency were near-linearly related (R-squared 0.709), but exceptions exist, for example T. cruzi and T. rangeli have nearly identical GC (51.55% vs 51.52%) yet 1.96 vs 2.60 PQS/kb (1.3-fold difference).",
+   "kw": [
+    "GC content"
+   ],
+   "info": "Average trypanosomatid GC is 52.9% versus 32.9% in Schistosoma and 37.8% in humans. T. rangeli is non-pathogenic to mammals, so G4 differences might relate to biology rather than base composition.",
+   "concl": "GC content alone cannot reliably predict G4 abundance."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4s across trypanosomatids",
+   "q": "What happened when G4Hunter thresholds were raised from 1.2 to 2.0?",
+   "a": "The proportion of retained PQSs decreased progressively in all genera; Porcisia retained the largest proportion across all thresholds despite not having the highest GC content.",
+   "kw": [
+    "G4Hunter"
+   ],
+   "info": "Across the 23 Trypanosoma species the retention pattern was highly similar, with no species showing marked enrichment of high-scoring PQSs at thresholds of 1.8-2.0.",
+   "concl": "Porcisia has a high genomic density of sequences predicted to form stable G4s."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "Did the adapted G4 ChIP protocol work in T. brucei?",
+   "a": "Yes, qPCR showed about six-fold (5.7-fold average across three technical replicates) enrichment of G4-containing over non-G4 regions in BES1, meeting the >=5-fold benchmark established for human cells.",
+   "kw": [
+    "BES1",
+    "VSG"
+   ],
+   "info": "BES1 is a telomeric locus controlling expression of the active variant surface glycoprotein (VSG) gene, key for immune evasion.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "How many G4 peaks were detected?",
+   "a": "An average of 9519 peaks across three technical replicates of biological sample 1 and 1809 peaks across two technical replicates of biological sample 2.",
+   "kw": [
+    "MACS2"
+   ],
+   "info": "This is far below the ~30 000 PQSs predicted computationally, consistent with only a subset of predicted sequences folding in vivo.",
+   "concl": "First comprehensive genomic map of G4s in T. brucei chromatin."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "How reproducible were the ChIP-Seq replicates?",
+   "a": "Technical replicates overlapped well (7564 shared peaks, 79%, in sample 1; 910 shared peaks, 50%, in sample 2), but only about 15% of peaks (823) were shared between the two biological samples.",
+   "kw": [],
+   "info": "The authors attribute biological-replicate variability to sequencing depth, IP efficiency and biological variation, and note similar variability in human G4 ChIP-Seq datasets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "How well did ChIP-Seq peaks match G4Hunter predictions?",
+   "a": "On average 33% of peaks in biological sample 1, 39% in biological sample 2 and 45% of the shared peak set overlapped PQSs predicted at threshold 1.2 with a 25 nt window.",
+   "kw": [
+    "G4Hunter"
+   ],
+   "info": "Peaks reproducibly detected in both biological replicates had the highest overlap with predictions.",
+   "concl": "Shared peaks are the most robust set of experimentally identified G4 sites."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "Why can't T. brucei G4 locations be annotated like human ones?",
+   "a": "T. brucei genes sit in long polycistronic transcription units (PTUs) of functionally unrelated genes, lacks classical per-gene promoters (transcription starts at defined TSSs upstream of PTUs), and is annotated by CDSs because it lacks typical exon-intron structure.",
+   "kw": [
+    "PTU",
+    "CDS"
+   ],
+   "info": "This forced a tailored annotation combining Tb427v10 gene features with TSS/TTS lifted from v12.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "What fraction of ChIP-Seq G4 peaks fall in CDSs?",
+   "a": "88% in biological sample 1, 61% in biological sample 2 and 57% in the shared peak set, with only 4-20% at TSS and TTS sites.",
+   "kw": [
+    "CDS",
+    "TSS",
+    "TTS"
+   ],
+   "info": "By contrast Puig Lombardi et al. assigned 42.4% of T. brucei G4s to promoters and 31.5% to exons, while in humans introns (29.6%) and intergenic regions (21.7%) dominate.",
+   "concl": "G4 distribution in T. brucei chromatin is CDS-centric, unlike the promoter-centric human pattern."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "What did re-annotating the published G4-seq data show?",
+   "a": "Using the same tailored annotation, most G4-seq peaks fell in intergenic regions (66% under K+ and 46% under K+/PDS) and CDSs (20% and 40%), with only 5-8% at TSS/TTS.",
+   "kw": [
+    "G4-seq"
+   ],
+   "info": "G4-seq by Marsico et al. was done on naked single-stranded DNA, not chromatin.",
+   "concl": "CDSs consistently carry a high proportion of G4 peaks, while TSS, TTS and intergenic assignments vary with method."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ChIP-Seq map",
+   "q": "What were the fold-enrichment values over shuffled peaks?",
+   "a": "CDSs were enriched most in biological sample 1 (1.90 +/- 0.03), whereas in biological sample 2 TSSs and TTSs were highest (5.14 +/- 1.04 and 4.66 +/- 0.57); in the shared peak set TSS and TTS were about 4.57 and 5.41-fold while CDSs were only ~1.15-fold.",
+   "kw": [
+    "bedtools shuffle"
+   ],
+   "info": "Intergenic regions, pseudogenes and ncRNA genes showed little or no enrichment (e.g. intergenic 0.05-0.14). Re-annotated G4-seq showed ~1.9-fold TSS and ~2.6-2.9-fold TTS enrichment.",
+   "concl": "Functional G4s in T. brucei appear to sit in CDSs plus TSS and TTS, not in intergenic DNA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromosome cores",
+   "q": "Where in the chromosomes are G4s concentrated?",
+   "a": "The core regions of the megabase chromosomes are densely packed with G4 peaks, consistent with earlier G4-seq maps, and the number of shared peaks scaled with chromosome size (R-squared = 0.848).",
+   "kw": [
+    "chromosome core"
+   ],
+   "info": "The genome consists of 11 megabase chromosomes plus bloodstream expression sites. Normalizing peaks by chromosome length and by GC content showed core chromosomes have fairly uniform peak density while subtelomeric regions vary more.",
+   "concl": "G4 density in cores is not just an effect of chromosome size or GC content."
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromosome cores",
+   "q": "Which gene functions are associated with the 823 shared G4 peaks?",
+   "a": "Half (50%) map to genes annotated as hypothetical proteins, followed by unspecified products (4%) and trypanosome VSGs (4%); smaller fractions hit reverse transcriptases (1%), protein kinases (1%), methyltransferases (0.7%) and DEAD/DEAH box helicases (0.4%).",
+   "kw": [
+    "VSG",
+    "methyltransferase"
+   ],
+   "info": "G4s at VSG loci raise the possibility that DNA secondary structures contribute to antigenic variation, which could rationalize the potency of G4 ligands against trypanosomiasis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ligands and viability",
+   "q": "How potent and selective are the tested ligands against T. brucei?",
+   "a": "CX-5461 was most potent (EC50 0.15 +/- 0.01 uM) but poorly selective (HeLa CC50 <0.20 uM, S.I. <1.3; COLO 0.53 uM, S.I. 3.5; MA-104 0.88 uM, S.I. 5.9), while PhenDC3 had EC50 0.36 +/- 0.06 uM with selectivity indices of 58-150.",
+   "kw": [
+    "PhenDC3",
+    "CX-5461"
+   ],
+   "info": "PhenDC3 CC50 values: HeLa 53 +/- 3 uM, COLO 21 +/- 2 uM, MA-104 52 +/- 10 uM. BMH-21 EC50 was 0.11 +/- 0.01 uM with HeLa CC50 <0.28 uM.",
+   "concl": "Targeting G4s can give selective T. brucei killing; PhenDC3 is a promising scaffold."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 ligands and viability",
+   "q": "Why were CX-5461 and BMH-21 both included?",
+   "a": "CX-5461 is a dual G4 binder and RNA polymerase I inhibitor, so BMH-21, a specific RNA Pol I inhibitor, was used to disentangle G4-driven from RNA Pol I-driven transcriptional effects.",
+   "kw": [
+    "RNA Pol I"
+   ],
+   "info": "CX-5461 had previously been reported to kill T. brucei through RNA Pol I inhibition rather than G4 stabilization. PhenDC3 gives the more purely G4-driven view.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptome",
+   "q": "How many genes were differentially expressed by each compound?",
+   "a": "CX-5461 affected the most genes (357), then PhenDC3 (294) and BMH-21 (289); about 98% (~16 900 genes) were unchanged in all treatments.",
+   "kw": [
+    "DEG"
+   ],
+   "info": "PhenDC3 gave a nearly balanced 139 up and 155 down, whereas CX-5461 (43 up, 314 down) and BMH-21 (19 up, 270 down) were dominated by downregulation, consistent with RNA Pol I inhibition.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptome",
+   "q": "Did PhenDC3 preferentially perturb G4-containing genes?",
+   "a": "Yes, 18 G4-containing genes were differentially expressed under PhenDC3 (11 up, 7 down) versus 10 each for CX-5461 and BMH-21, and none of the 15 genes changed by all three compounds carried G4s.",
+   "kw": [
+    "PhenDC3"
+   ],
+   "info": "Of 34 genes affected by both PhenDC3 and CX-5461, only one (Tb427_110072300) contained a G4 motif and was upregulated by both. Of 196 genes shared by CX-5461 and BMH-21 but not PhenDC3, 187 were downregulated and only six carried G4 peaks.",
+   "concl": "CX-5461's global profile resembles BMH-21, pointing to RNA Pol I inhibition as its dominant effect."
+  },
+  {
+   "type": "qa",
+   "section": "Results - transcriptome",
+   "q": "Which annotations stood out among PhenDC3-upregulated G4 genes?",
+   "a": "Methyltransferase domain and deoxyhypusine synthase annotations were unique to two G4-containing genes upregulated by PhenDC3 and absent from downregulated genes and from CX-5461 or BMH-21 responders.",
+   "kw": [
+    "methyltransferase"
+   ],
+   "info": "Many of the 11 upregulated G4 genes are hypothetical proteins. G4s have been implicated in methylation-related pathways in other eukaryotes.",
+   "concl": "Suggests a possible G4-mediated epigenetic regulatory link."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 feature analysis",
+   "q": "How did expression change depend on where the G4 sits?",
+   "a": "PhenDC3 clearly upregulated genes with G4s at TSS regions, changed CDS-associated genes more moderately, and reduced expression of genes with G4s at TTSs, a trend similar to BMH-21.",
+   "kw": [
+    "TSS",
+    "TTS"
+   ],
+   "info": "The largest differences between treatments were for CDS- and TSS-associated G4 genes; TTS, intergenic and pseudogene categories differed less. Peak numbers per category: 467 CDS, 132 TSS, 168 TTS.",
+   "concl": "The functional impact of G4 stabilization depends on genomic context."
+  },
+  {
+   "type": "qa",
+   "section": "Results - G4 feature analysis",
+   "q": "What was the result of comparing genes with and without G4s?",
+   "a": "PhenDC3 produced a significant expression difference between genes with and without G4s, especially in protein-coding genes and TSSs, downregulating genes without G4s while upregulating most G4-carrying categories except TTSs; CX-5461 and BMH-21 showed little or no such difference.",
+   "kw": [
+    "PhenDC3"
+   ],
+   "info": "Genes without G4s were randomly subsampled with awk to match the number of G4-containing genes (721 vs 721 for PhenDC3). Significance was tested by Mann-Whitney U-test.",
+   "concl": "Supports a G4-mediated mechanism that preferentially alters G4-carrying genes."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the in silico results suggest about G4 conservation?",
+   "a": "The 23 Leishmania species had consistently high PQS frequency (average 3.74, range 2.52-4.57), suggesting conserved functional roles, while the 23 Trypanosoma species ranged more broadly from 0.85 to 4.34 PQS/kb.",
+   "kw": [
+    "Leishmania"
+   ],
+   "info": "Porcisia retained the most PQSs at high thresholds despite lower GC than Leishmania; Porcisia infects porcupines, has fewer cell-surface proteins and does not rely on macrophage infection, so G4s may serve alternative, niche-specific roles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do ChIP-Seq and G4-seq give different distributions?",
+   "a": "G4-seq sequences extracted naked single-stranded DNA under G4-promoting conditions and detects mismatches, while G4 ChIP-Seq captures G4s inside native chromatin, so it preferentially reports structures stably folded under physiological conditions.",
+   "kw": [
+    "G4-seq",
+    "ChIP-Seq"
+   ],
+   "info": "Annotation strategy also matters: Marsico et al. used a cross-species framework while this study tailored annotation to PTU-based T. brucei architecture. Total peak numbers were broadly comparable (5664 average here).",
+   "concl": "Chromatin context and genome annotation strongly influence apparent G4 distribution."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors interpret the upregulation of G4-containing genes?",
+   "a": "They read it as evidence of disrupted transcriptional homeostasis rather than selective induction of specific pathways, consistent with reports that drug treatment of trypanosomes often causes widespread upregulation.",
+   "kw": [],
+   "info": "They also suggest it may reflect different G4-protein recognition in T. brucei, in line with their finding that G4 ligands can act as molecular glues increasing G4-protein interactions.",
+   "concl": "Disruption may contribute to parasite killing, but roles of specific upregulated genes need further work."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations and open points do the authors state?",
+   "a": "The precise mechanisms of G4 effects at TSS and TTS regions remain unclear and need experimental validation, the functional relevance of VSG-associated G4s is undetermined, and methyltransferase-associated G4 peaks are a modest fraction (10 peaks identified).",
+   "kw": [],
+   "info": "Biological replicate overlap was only ~15% (823 peaks), which the authors attribute to depth, IP efficiency and biological variability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall conclusion?",
+   "a": "This is the first chromatin-based genome-wide map of G4s in T. brucei, showing species-specific distribution enriched in CDSs and transcription boundaries, transcriptional relevance upon G4 ligand treatment, and therapeutic potential of G4 targeting.",
+   "kw": [
+    "G4 map"
+   ],
+   "info": "Data are in GEO under GSE302611 (ChIP-Seq) and GSE302610 (RNA-seq). Future work should address mechanistic roles of the unknown (hypothetical) proteins and improve ligand selectivity.",
+   "concl": "Experimental, physiologically relevant validation is essential when evaluating G4 prevalence."
+  },
+  {
+   "type": "note",
+   "section": "Results - chromosome cores",
+   "text": "Half of the shared G4 peaks sit in genes annotated as hypothetical proteins; worth checking whether any have orthologs or regulatory annotation in other organisms, since the authors leave this unresolved."
+  },
+  {
+   "type": "note",
+   "section": "Results - G4 ChIP-Seq map",
+   "text": "Biological sample 1 and 2 gave very different peak numbers (9519 vs 1809) and opposite feature enrichments (CDS-dominant vs TSS/TTS-dominant). Go back and check how much the conclusions rest on the 823 shared peaks."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Could the CDS enrichment in chromatin partly reflect accessibility or crosslinking bias in gene-dense core regions rather than true G4 folding? The paper normalizes for chromosome size and GC but not for chromatin accessibility."
+  }
+ ]
+}

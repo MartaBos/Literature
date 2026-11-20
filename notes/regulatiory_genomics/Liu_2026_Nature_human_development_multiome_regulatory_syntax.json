@@ -1,0 +1,635 @@
+{
+ "id": "Liu_2026",
+ "title": "Multiomics and deep learning dissect regulatory syntax in human development",
+ "link": "https://doi.org/10.1038/s41586-026-10326-9",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Liu_2026_Nature_human_development_multiome_regulatory_syntax.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the Human Development Multiomic Atlas (HDMA)?",
+   "a": "It is a single-cell atlas of chromatin accessibility and gene expression measured in the same cells. It covers 817,740 fetal cells from 12 organs, 203 cell types and more than 1 million candidate cis-regulatory elements.",
+   "kw": [
+    "HDMA",
+    "single-cell multiome"
+   ],
+   "info": "Many of the candidate CREs show organ-specific in vivo enhancer activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What kinds of motif rules did the deep learning models find?",
+   "a": "They found hard syntactic rules that need precise motif spacing and orientation, soft rules that allow flexible motif arrangements, and ubiquitous motifs that inhibit accessibility.",
+   "kw": [
+    "motif syntax",
+    "composite motifs"
+   ],
+   "info": "Composite motifs with distinct syntactic constraints are predicted to mediate TF cooperativity.",
+   "concl": "When genetic variants disrupt motifs with positive or negative effects on accessibility, gene expression changes in the matching direction."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "There is no comprehensive view of the TF motifs that drive chromatin state changes during human development. Existing accessibility datasets come from bulk tissue, single organs or a single modality.",
+   "kw": [
+    "chromatin accessibility"
+   ],
+   "info": "Bulk DNase-seq and ATAC-seq hide cellular heterogeneity. Most single-cell atlases cover one organ or one omic modality. The authors argue that a multi-organ, multi-modal view is needed to link chromatin state to transcriptional programs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is motif syntax and how can TF cooperativity shape it?",
+   "a": "Syntax is how TF binding sites are organized in a regulatory element. Cooperative binding can happen through direct TF-TF interactions, which impose hard (fixed) constraints, or through competition with nucleosomes, which imposes soft (flexible) constraints.",
+   "kw": [
+    "syntax",
+    "TF cooperativity",
+    "nucleosome"
+   ],
+   "info": "How general these rules are across human development was largely unknown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use deep learning models of chromatin accessibility?",
+   "a": "Models trained to predict base-resolution accessibility from local DNA sequence learn causal sequence features. They also allow in silico tests of syntax and of non-coding variants by predicting how sequence changes affect accessibility.",
+   "kw": [
+    "ChromBPNet",
+    "deep learning"
+   ],
+   "info": "Another motivation is that disease variants are enriched in non-coding DNA, but it is hard to predict which ones disrupt regulation in a specific cell type.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A multiomic human development atlas",
+   "q": "Which samples were profiled, and with what method?",
+   "a": "They profiled 817,740 fetal cells from 12 organs between post-conception weeks 10 and 23 using SHARE-seq. SHARE-seq is a split-and-pool combinatorial barcoding method that measures ATAC and RNA in the same cell.",
+   "kw": [
+    "SHARE-seq",
+    "fetal tissue"
+   ],
+   "info": "There were 76 samples from 23 individuals. Samples per organ: lung 15, brain 8, muscle 8, heart 8, eye 7, liver 7, stomach/oesophagus 7, adrenal 4, skin 3, spleen 3, thymus 3, thyroid 3. TSS enrichment, UMIs and genes detected per cell were better than in the earlier single-ome fetal atlases (Cao et al. and Domcke et al.).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A multiomic human development atlas",
+   "q": "How were cell types annotated and grouped?",
+   "a": "They annotated 203 L1 clusters iteratively, using compartment markers, known cell type markers and de novo marker genes. Related L1 clusters were then grouped by hand into 134 L2 clusters and 37 broad L3 classes.",
+   "kw": [
+    "cell annotation",
+    "L1/L2/L3 clusters"
+   ],
+   "info": "TF motif enrichment in cluster-specific peaks supported the cell identities. Shared cell types from different organs, such as endothelial cells, fibroblasts and immune cells, often clustered together. The main text says 134 L2 clusters, but the Fig. 1d label reads n = 131, so this number is inconsistent within the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - A multiomic human development atlas",
+   "q": "How specific is TF motif accessibility (chromVAR) compared with marker gene expression?",
+   "a": "It is less specific. Many motifs are accessible across several cell types. For example, CUX2 expression is restricted to neurons, but the top neuronal motif, NEUROD1, also has increased accessibility in fibroblasts and neural crest-derived cells.",
+   "kw": [
+    "chromVAR",
+    "NEUROD1",
+    "CUX2"
+   ],
+   "info": "",
+   "concl": "This reflects motif degeneracy and context-dependent TF activity during development."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility landscape of development",
+   "q": "How many accessible regulatory elements were mapped?",
+   "a": "They mapped 1,032,273 chromatin-accessible cis-regulatory elements (caCREs), each 500 bp, covering about 17% of the genome. The set was built by iterative overlap of peaks called separately in the 203 L1 cell types.",
+   "kw": [
+    "caCREs"
+   ],
+   "info": "Most caCREs had their highest normalized ATAC signal in liver, eye, heart and stomach/oesophagus cell types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility landscape of development",
+   "q": "How do HDMA caCREs compare with ENCODE?",
+   "a": "85.1% of HDMA caCREs overlapped ENCODE v4 cCREs. HDMA recovered 48.7% of all ENCODE v4 sites, including 56.2% of CTCF-bound elements.",
+   "kw": [
+    "ENCODE v4",
+    "cCREs"
+   ],
+   "info": "Brain- and eye-derived elements were overrepresented among the 14.9% of caCREs not found in ENCODE.",
+   "concl": "Single-cell profiling finds cell-type-specific elements that are missing from bulk-derived ENCODE data."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility landscape of development",
+   "q": "How were caCREs linked to genes, and what are highly linked genes (HLGs)?",
+   "a": "They ran the activity-by-contact (ABC) model in each L1 cluster and pooled the links per L3 cluster. HLGs are the top 1% of genes with the most ABC-linked caCREs in an L3 cluster.",
+   "kw": [
+    "ABC model",
+    "HLGs",
+    "GO"
+   ],
+   "info": "HLGs were enriched for cell-type-specific processes, for example B cell proliferation in immune cells. Transcription regulation terms were enriched in 25 of 37 L3 clusters, and TF binding activity in 33 of 37. Endothelial HLGs included NR2F2, ELF4, SOX18, NFIC, FOXC1, BCL9L, EGFL7, PLXND1 and PLEC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility landscape of development",
+   "q": "What are global HLGs (gHLGs)?",
+   "a": "They are the top 1% of genes whose caCRE links are found consistently in all L3 clusters. There are 81 gHLGs, including KLF9, KLF4 and BCL6, and they are enriched for TF activity.",
+   "kw": [
+    "gHLGs",
+    "KLF4",
+    "BCL6"
+   ],
+   "info": "This agrees with the authors' earlier observations in the developing human brain.",
+   "concl": "Transcription factors are among the most highly regulated genes in development."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Resolving regulatory element specificity",
+   "q": "How were HDMA enhancers checked against VISTA?",
+   "a": "Of 3,272 VISTA enhancers with hg38 coordinates, 851 are active in organs profiled in HDMA, and 766 of those intersect caCREs. VISTA enhancers active in brain, heart and eye had higher accessibility in the matching organ's cell types (AUROC 0.72, 0.75 and 0.59) and higher nearby gene expression (AUROC 0.57, 0.67 and 0.57).",
+   "kw": [
+    "VISTA",
+    "X-gal",
+    "E11.5"
+   ],
+   "info": "VISTA enhancers were assayed by X-gal reporter staining in mouse embryos at E11.5. Tests were one-sided Wilcoxon rank-sum, with accessibility P values of 10^-437 (brain), 10^-452 (heart) and 9.11 x 10^-48 (eye). Effect size was W/(n1 x n2), read as an AUROC probability.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Resolving regulatory element specificity",
+   "q": "What was surprising about some heart-annotated VISTA enhancers?",
+   "a": "Several enhancers annotated as heart-specific were accessible only in liver cell types. Expert review and histology confirmed six of them (mm2143, mm69, mm291, mm101, mm257 and mm18) as active in both liver and heart.",
+   "kw": [
+    "VISTA re-annotation",
+    "liver"
+   ],
+   "info": "The authors suggest liver activity was missed by visual inspection because the mouse liver sits directly beneath the heart and has a similar natural colour. Sectioning of X-gal-stained embryos validated liver activity for all six.",
+   "concl": "Single-cell accessibility can correct organ annotations of validated enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Resolving regulatory element specificity",
+   "q": "What did they find for enhancer mm101?",
+   "a": "mm101 overlaps the known alpha-globin super-enhancer and is ABC-linked to the alpha-globin cluster. Its accessibility and HBA2 expression were high specifically in liver erythroblasts and cycling erythroblasts, and histology showed X-gal staining in erythroblasts in hepatic sinusoids.",
+   "kw": [
+    "mm101",
+    "alpha-globin",
+    "HBA2"
+   ],
+   "info": "Later, model interpretation found two high-scoring GATA motifs in mm101, which fits the role of GATA1 in erythropoiesis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The transcription factor motif lexicon",
+   "q": "What does ChromBPNet predict, and how well did it perform here?",
+   "a": "ChromBPNet is a convolutional neural network that takes 2,114 bp of sequence and predicts total read counts and the base-resolution read profile in a central 1,000 bp window. Fivefold cross-validated models were trained for 203 cell types. Models for 189 cell types (945 models) were kept, with a median Pearson correlation of 0.78 between predicted and observed log counts in held-out peaks.",
+   "kw": [
+    "ChromBPNet",
+    "cross-validation"
+   ],
+   "info": "Training used peaks and GC-matched background regions. A pretrained Tn5 bias model removes enzyme bias. Four cell types were dropped because any fold had Spearman below 0.5, and ten because their models learned mostly low-complexity motifs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The transcription factor motif lexicon",
+   "q": "How was the de novo motif lexicon built?",
+   "a": "DeepLIFT gave per-nucleotide contribution scores, TF-MoDISco grouped high-contribution regions into motifs per cell type, and the motifs were clustered across cell types. The result is a lexicon of 508 de novo motifs from 189 cell types.",
+   "kw": [
+    "DeepLIFT",
+    "TF-MoDISco",
+    "motif lexicon"
+   ],
+   "info": "Steps from the Methods: 6,362 motifs per cell type were clustered into 834, and 107 low-complexity or CG-dominated motifs were flagged, leaving 508 after QC. Motifs are labelled mostly at the TF family level because motifs within a family are similar.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The transcription factor motif lexicon",
+   "q": "Which categories of motifs are in the lexicon?",
+   "a": "The categories are base motifs (match known motifs), base with flanks (extra predictive flanking nucleotides), homocomposites, heterocomposites, and 38 unresolved motifs with no database match. More than half of the motifs are composite.",
+   "kw": [
+    "composite motifs",
+    "CTCF"
+   ],
+   "info": "Both the core and upstream CTCF motifs were recovered, reflecting contacts by different CTCF zinc fingers. 493 motifs (97%) are positive (they promote accessibility) and 15 are negative.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The transcription factor motif lexicon",
+   "q": "How many predictive motif instances were found per cell type?",
+   "a": "Using Fi-NeMo, each cell type had on average 839,544 motif instances, with 2 to 8 instances per peak. 65% of instances were within 150 bp of the peak summit.",
+   "kw": [
+    "Fi-NeMo",
+    "motif instances"
+   ],
+   "info": "The number of instances scaled with the number of peaks, so deeper sequencing could recover more.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The transcription factor motif lexicon",
+   "q": "Which motifs are promoter-dominant and which are cell-type-specific?",
+   "a": "Ubiquitous, TSS-proximal promoter motifs include NRF1, NFY, YY1/2, TBP, SP/KLF, ETS and BANP, which are generally CG-rich. Organ- and cell-type-specific motifs were mostly distal or intronic, for example SPI and RUNX in immune cells, POU in eye and brain, and HNF4 in liver.",
+   "kw": [
+    "promoter motifs",
+    "NRF1",
+    "HNF4"
+   ],
+   "info": "NRF1 and BANP are known to be sensitive to DNA methylation. Distances to nucleosome dyads were computed with NucleoATAC. Endothelial models trained separately in different organs learned consistent sequence contributions. Two unresolved palindromic motifs were used only in stomach, lung and liver.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The transcription factor motif lexicon",
+   "q": "What did the motif co-occurrence analysis show?",
+   "a": "CTCF rarely co-occurred with other motifs, while promoter-dominant motifs were co-enriched with each other in all tissues. There were also tissue-dependent partnerships, such as ONECUT with HD and PAX motifs in eye and FOX with HNF1A/B in liver.",
+   "kw": [
+    "co-occurrence"
+   ],
+   "info": "For each cell type and pair of base motifs, they ran a one-sided Fisher's exact test on peak counts, with Benjamini-Hochberg adjusted P < 0.05.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "q": "How do the authors define hard and soft syntax?",
+   "a": "DNA-mediated cooperativity, through direct protein-protein contacts, gives fixed spacing and orientation within less than 20 bp (hard syntax). Nucleosome-mediated cooperativity allows flexible arrangements at 20 to 150 bp (soft syntax).",
+   "kw": [
+    "hard syntax",
+    "soft syntax"
+   ],
+   "info": "Operational criteria from the Methods: hard means at least one arrangement has a joint-effect z-score above 4; soft means the joint effect minus the independent effect is above 0.15 at some arrangement with the motifs 20 to 150 bp apart.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "q": "How did they test whether two motifs act synergistically?",
+   "a": "They used in silico marginalization with ChromBPNet and tangermeme. Both motifs were inserted into 100 GC-matched background sequences in every orientation at distances of 0 to 200 bp, and the predicted joint effect was compared with the sum of the two independent effects (a log-additive model).",
+   "kw": [
+    "in silico marginalization",
+    "tangermeme"
+   ],
+   "info": "The analysis focused on the cell type with the most predictive instances of each composite motif. A pair counted as synergistic if the BH-adjusted Wilcoxon signed-rank P was below 0.001 and the joint minus independent effect was above 0.15. For 18 composites the effect came from nucleotides other than the inserted ones, so 120 motifs were classified.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "q": "Which known composite element did they recover as a positive control?",
+   "a": "They recovered the Coordinator motif, an E-box plus a TAAT homeodomain site. It showed strong synergy at a 5 bp head-to-tail arrangement, which matches the crystal structure of TWIST1-TCF4 binding together with ALX4.",
+   "kw": [
+    "Coordinator",
+    "TWIST1",
+    "ALX4"
+   ],
+   "info": "The motif was found mostly in skin cell types, consistent with neural crest-derived mesenchyme. A different E-box plus homeodomain (TGATTGAT) composite showed similar spacing-constrained synergy, mostly in muscle and thymus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "q": "How many composite motifs were synergistic, and what spacings did hard-syntax pairs prefer?",
+   "a": "67 of 138 composite motifs tested were synergistic. Hard-syntax motifs preferred about 7 bp and 11 bp between motif centres, consistent with binding in adjacent grooves or grooves offset by one helical turn. Soft-syntax motifs had broader preferences, with effects decaying to independence beyond about 100 bp.",
+   "kw": [
+    "p53",
+    "SOX",
+    "GATA-TAL"
+   ],
+   "info": "The Discussion gives 48 hard and 27 soft; some motifs have both. Known dimers recovered include SOX homodimers, p53 (4 bp separation of two head-to-tail NCATGN sites) and GATA-TAL. RUNX-RUNX, FOX-NR and ETS-NR are put forward as possibly new syntax features. Only 8.9% of all pairs tested across cell types were synergistic.",
+   "concl": "Densely packed, spatially constrained TF interactions seem to be a relatively common regulatory mechanism in development."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "q": "How widespread and important are synergistic motifs across cell types?",
+   "a": "About 60% of cell types had at least one hard-syntax and one soft-syntax composite motif. Within a cell type, both hard and soft composites had higher total contribution scores than non-synergistic and non-composite motifs, and hard-syntax motifs were also more prevalent.",
+   "kw": [
+    "motif importance"
+   ],
+   "info": "This was ranked by number of instances (prevalence) and summed CWM contribution (importance), using positive motifs only.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "q": "Is cooperativity cell-type-specific?",
+   "a": "Yes. An IKZF-RUNX composite drove predicted accessibility only in some thymus- and spleen-derived immune cells, which also express IKZF and RUNX factors. A FOX-HNF4 composite was predicted to be accessible specifically in hepatocytes.",
+   "kw": [
+    "IKZF-RUNX",
+    "FOX-HNF4"
+   ],
+   "info": "Caveat: scRNA-seq detects TF genes expressed at low levels poorly, so a full analysis was not possible.",
+   "concl": "Motif cooperativity depends on both precise binding site syntax and cell-type-specific TF expression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ubiquitous motifs reduce accessibility",
+   "q": "What are negative motifs and how common are they?",
+   "a": "These are 15 de novo motifs predicted to reduce accessibility. They are widespread inside accessible regions, with 2 to 5 instances per peak, and make up more than a third of all predictive motif instances in several organs.",
+   "kw": [
+    "negative motifs",
+    "ZEB/SNAIL",
+    "BCL11A"
+   ],
+   "info": "Many match TF families with repressive activity (ZEB/SNAIL, HIC, BCL11A, NFY and YY1/2), but their ubiquitous negative effect on accessibility had not been reported before. Others match no database.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ubiquitous motifs reduce accessibility",
+   "q": "How can NFY and YY1/2 be both positive and negative?",
+   "a": "Distinct NFY and YY1/2 motifs drive opposite effects. Footprints show canonical signatures at positive instances, but reduced accessibility relative to the flanks at negative instances.",
+   "kw": [
+    "NFY",
+    "YY1"
+   ],
+   "info": "Negative instances were less concordant across cell types than positive ones. Positive and negative instances of the same motif rarely overlapped between cell types, so different loci carry the two effects. The Discussion links this to YY1 acting as both activator and repressor, and to NFY maintaining nucleosome-depleted regions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ubiquitous motifs reduce accessibility",
+   "q": "Where do negative motifs sit relative to nucleosomes, and what happens when they are ablated in silico?",
+   "a": "Negative motifs are enriched near nucleosome dyads and depleted near peak summits, whereas positive motifs avoid dyads and cluster near summits. Ablating 1,000 instances per motif reduced predicted accessibility for positive motifs and slightly increased it for negative motifs.",
+   "kw": [
+    "in silico ablation",
+    "nucleosome dyad"
+   ],
+   "info": "Ablations used Heart_c3 fibroblast models. Each instance was neutralized by replacing every base with the base that had the smallest absolute hypothetical DeepLIFT score.",
+   "concl": "Non-coding regions with identical sequence features can make opposite contributions to accessibility."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Ubiquitous motifs reduce accessibility",
+   "q": "Do positive and negative motifs have matching effects on gene expression (eQTLs)?",
+   "a": "Yes. GTEx eQTLs overlapping positive motifs were enriched for downregulating variants (P = 9.91 x 10^-11, OR = 0.047). eQTLs overlapping negative motifs were enriched for upregulating variants (P = 8.01 x 10^-4, OR = infinity).",
+   "kw": [
+    "GTEx",
+    "eQTL"
+   ],
+   "info": "GTEx v8 tissues were matched to fetal organs, and the direction of effect came from the allelic fold change. Enrichment was tested against 100,000 shuffles of allelic fold change per organ, with two-sided Fisher's exact tests on top. Only a small fraction of eQTL variants overlapped motif instances. Tissue-specific signals included GATA in heart, HNF4 in liver and NKX in thyroid. The paper does not explain how the odds ratio is oriented.",
+   "concl": "Disrupting motifs that increase accessibility lowers expression, and disrupting motifs that decrease accessibility raises it."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Disease variants in regulatory elements",
+   "q": "How did they link GWAS variants to fetal cell types?",
+   "a": "They used g-chromVAR with fine-mapped credible sets from CAUSALdb (1,483 GWASs, 349 traits). 131 L2 cell types were significantly enriched (FDR < 0.05), and a curated disease-focused subset covered 68 cell types, 79 studies and 36 MeSH disease terms.",
+   "kw": [
+    "g-chromVAR",
+    "CAUSALdb",
+    "fine-mapping"
+   ],
+   "info": "The Methods mention 13,710 CAUSALdb studies, of which 13,194 were kept after removing studies with a PIP sum below 5. How these counts relate to the 1,483 GWASs in the main text is not explained.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Disease variants in regulatory elements",
+   "q": "Were variant enrichments organ-specific or cell-type-specific?",
+   "a": "They were mostly cell-type-specific but organ-agnostic: similar cell types from different organs were enriched for the same traits. Immune cells were linked to thyroid disease, eczema, rhinitis and cancer, myocytes to atrial fibrillation, endothelial cells to hypertension, and hepatocytes and cholangiocytes to lipid metabolism disorders.",
+   "kw": [
+    "GWAS enrichment"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Variant effect on local accessibility",
+   "q": "How were fetal-specific causal variants identified?",
+   "a": "They took high-confidence causal variants (SuSiE PIP of 0.8 or more) that overlapped predictive motif instances in disease-enriched fetal cell types, then compared them with ATAC peaks from matched adult cell types in ENCODE. This gave 28 fetal-only hits and 80 hits present in both fetal and adult peaks.",
+   "kw": [
+    "SuSiE",
+    "fetal-only variants"
+   ],
+   "info": "A variant counted as fetal-only if it was found in fewer than two matched adult peak sets. Effects of the 28 fetal-only variants were predicted with ChromBPNet.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Variant effect on local accessibility",
+   "q": "What is the asthma variant example?",
+   "a": "rs113892147 (PIP 0.819) lies in a conserved positive NRF1 motif in an element accessible in fetal lung macrophages but not in adult ones. The effect A allele is predicted to reduce accessibility, consistent with an eQTL linking it to lower ARHGEF25 expression in adult lung (beta = -0.295).",
+   "kw": [
+    "NRF1",
+    "asthma",
+    "ARHGEF25"
+   ],
+   "info": "The authors say the direct link to asthma pathology remains unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Variant effect on local accessibility",
+   "q": "What is the coronary artery disease (CAD) variant example?",
+   "a": "rs12740374 (PIP 0.855) overlaps a negative ZEB/SNAIL motif in fetal muscle endothelial cells. The effect G allele disrupts this motif and creates a C/EBP site, so accessibility is predicted to increase.",
+   "kw": [
+    "rs12740374",
+    "SORT1",
+    "C/EBP"
+   ],
+   "info": "This variant is at the CELSR2-PSRC1-SORT1 CAD locus and is already known to enhance C/EBP binding and SORT1 expression in hepatocytes. In muscle it is associated with higher CELSR2 (beta = 0.338) and PSRC1 (beta = 0.238) expression, but not in heart tissue.",
+   "concl": "Non-cardiac cells such as endothelial cells may contribute to CAD risk."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What advantages does the deep learning approach have over classical motif discovery?",
+   "a": "Unlike footprinting, which needs deep sequencing, ChromBPNet can be trained on pseudobulk data from single-cell clusters with modest coverage. It learns likely causal features that predict accessibility, and it allows in silico perturbations to test syntax.",
+   "kw": [
+    "footprinting",
+    "pseudobulk"
+   ],
+   "info": "The de novo motifs agree with earlier findings that a limited set of core motifs regulates most transcription initiation events.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors interpret hard and soft syntax biologically?",
+   "a": "Hard syntax recalls rigid architectures such as the IFN-beta enhanceosome and the AP-1-IRF4 (AICE) and ETS-IRF (EICE) composites. Soft syntax fits indirect cooperativity, such as mass-action competition between TFs and nucleosomes or recruitment of remodellers that evict nucleosomes.",
+   "kw": [
+    "enhanceosome",
+    "indirect cooperativity"
+   ],
+   "info": "Earlier in vitro surveys (for example CAP-SELEX) found similar spacing preferences but lacked in vivo resolution and often focused on fused or overlapping sites.",
+   "concl": "Soft syntax may give evolutionary robustness, because elements can keep working when motif spacing, number or orientation changes."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which positive motifs went against the eQTL pattern, and why might that be?",
+   "a": "An RFX motif and an SP/KLF-like motif were enriched for upregulating eQTLs. These could be affinity-optimizing variants that strengthen binding, or the TFs might open chromatin while repressing expression.",
+   "kw": [
+    "RFX",
+    "affinity-optimizing variants"
+   ],
+   "info": "RFX family members are known to act as repressors at some regulatory elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do fetal-only disease variants matter?",
+   "a": "Many variants for adult-onset traits sit in fetal-specific accessible regions. They may influence disease by disrupting the development of relevant cell lineages even if the elements later close, or by allowing fetal elements to be wrongly reactivated later in life.",
+   "kw": [
+    "developmental origin of disease"
+   ],
+   "info": "For example, the asthma variant could affect the development of alveolar macrophages, which come from fetal liver monocytes and persist into adulthood.",
+   "concl": "Developmental context is relevant for understanding disease aetiology."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors list?",
+   "a": "Deeper sampling is needed to capture full cell diversity, and VISTA enhancers were assayed at mouse E11.5 (about human PCW 5), much earlier than these samples. Accessibility models can miss regulators that act downstream of or independently of accessibility, and motif degeneracy prevents assigning motifs to single TFs. Variant effect predictions still need experimental validation.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "VISTA is also a small set of strong, tissue-specific enhancers, so it may not represent all caCREs. The Methods add that no batch correction was done, because individual effects are confounded with developmental timing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sample collection and SHARE-seq",
+   "q": "How were nuclei isolated and libraries made?",
+   "a": "100 to 200 mg of frozen tissue was dounce-homogenized in nuclei extraction buffer, fixed with 0.2% formaldehyde for 4 min, quenched with glycine, and enriched on an iodixanol gradient. SHARE-seq libraries were made from 76 samples from 23 individuals in 12 batches, one per organ.",
+   "kw": [
+    "nuclei isolation",
+    "iodixanol"
+   ],
+   "info": "Tissues came from elective terminations at Stanford with informed consent (protocol SCRO-796). Sequencing was on a NovaSeq 6000 (S4 v1.5, 300 cycles) with a 96-99-8-96 read configuration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - SHARE-seq data pre-processing",
+   "q": "Which pipeline and tools processed the raw data?",
+   "a": "A Snakemake (v7.15.1) pipeline turns BCL files into ATAC fragment files and RNA sparse matrices. ATAC used bcl2fastq v2.20.0.422, fastp v0.23.2 and Bowtie2 v2.5.0. RNA used STAR v2.5.4b, featureCounts v2.0.1 and UMI-tools v1.1.2. Everything was aligned to hg38.",
+   "kw": [
+    "Snakemake",
+    "Bowtie2",
+    "STAR"
+   ],
+   "info": "Barcode matching allowed 1 bp mismatch per 8 bp barcode round. A 10-billion-read NovaSeq run takes under 4 h. Raw reads were anonymized with BAMboozle. The pipeline is GreenleafLab/shareseq-pipeline v1.0.0.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - SHARE-seq data pre-processing",
+   "q": "Why did they use a +4/-4 Tn5 offset instead of +4/-5?",
+   "a": "The usual +4/-5 shift leaves a 1 bp mismatch between the two insertion sites from a single Tn5 transposition event when BAM/BED end-exclusive coordinates are used. Using +4/-4 gives one consensus insertion site.",
+   "kw": [
+    "Tn5 offset"
+   ],
+   "info": "The mismatch does not matter for binned analyses but does affect base-pair-sensitive work such as footprinting and motif analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA processing and clustering",
+   "q": "How was the RNA modality normalized and clustered?",
+   "a": "They used Seurat v4.3.0 with SCTransform v2, 3,000 consensus variable features (mitochondrial, sex chromosome and cell cycle genes excluded), and DecontX (celda v1.6.1) to remove ambient RNA. Cells were clustered with Louvain at resolution 0.3 on 50 PCs.",
+   "kw": [
+    "Seurat",
+    "DecontX",
+    "SCTransform"
+   ],
+   "info": "Low-quality clusters (low UMIs, likely doublets, or no clear markers) were removed and the steps repeated, usually 1 to 3 times. Markers came from one-versus-all Wilcoxon tests within the organ with log2FC above 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC processing and peak calling",
+   "q": "How were ATAC peaks called for the atlas and for ChromBPNet training?",
+   "a": "For the atlas, ArchR v1.0.2 with MACS2 v2.2.7.1 called peaks per cluster, which were merged by iterative overlap. For ChromBPNet, a second lenient call used MACS2 v2.2.9.1 (-p 0.01) on pseudoreplicates, keeping peaks reproducible in both, removing ENCODE blacklist regions and resizing to 1,000 bp around the summit.",
+   "kw": [
+    "ArchR",
+    "MACS2",
+    "pseudoreplicates"
+   ],
+   "info": "Motif enrichment and chromVAR used a curated cisBP set of 1,141 human TF motifs. Background regions were GC-matched (chrombpnet prep nonpeaks), with default human chromosome folds.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Linkage of regulatory elements to genes",
+   "q": "How was the ABC model adapted?",
+   "a": "ABC was modified to accept custom regions (HDMA caCREs merged with hg38 TSSs). Pseudobulk ATAC signal, without H3K27ac ChIP-seq, was used as enhancer activity, and contact was estimated with a power-law function of distance.",
+   "kw": [
+    "ABC model"
+   ],
+   "info": "Links were kept with an ABC score above 0.013, which corresponds to 70% recall on a benchmark CRISPR dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Motif discovery and annotation",
+   "q": "Which settings were used for motif discovery and annotation?",
+   "a": "TF-MoDISco-lite v2.0.7 sampled 1,000,000 seqlets in the central 400 bp and built 30 bp CWMs. Motifs were clustered with gimmemotifs v0.18.0 (-t 0.8) and the TF-MoDISco SimilarPatternCollapser, then annotated with TOMTOM v4.11.2 against 5,193 known PWMs.",
+   "kw": [
+    "TF-MoDISco-lite",
+    "gimmemotifs",
+    "TOMTOM"
+   ],
+   "info": "CWMs were trimmed at 30% of the maximum per-position contribution. Labels follow the format ID|family:subfamily#index, with composite constituents separated by underscores.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Identification of predictive motif instances",
+   "q": "How does Fi-NeMo call motif instances?",
+   "a": "For each peak, Fi-NeMo fits a sparse linear regression that rebuilds the contribution scores from a weighted combination of trimmed CWMs. A non-zero coefficient marks a motif instance.",
+   "kw": [
+    "Fi-NeMo"
+   ],
+   "info": "Fi-NeMo v0.23 was run with alpha 0.8 and trim threshold 0.3, first with all 834 motifs and then with 436 non-composite motifs. Motifs whose instance-derived CWM correlated below 0.9 with the input CWM were removed, and instances overlapping by more than 3 bp were deduplicated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Prediction of variant effect",
+   "q": "How were variant effects on accessibility predicted?",
+   "a": "With tangermeme, the 2,114 bp reference sequence around the variant's peak was run through all five ChromBPNet folds, then the effect allele was substituted and predicted again. The effect was the summed difference in predicted counts in a 100 bp window around the variant, averaged across folds, along with the log2 fold change of peak counts.",
+   "kw": [
+    "variant effect prediction",
+    "tangermeme"
+   ],
+   "info": "Contribution scores for both alleles were computed with DeepLIFT on the counts output.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Ubiquitous motifs reduce accessibility",
+   "text": "Which proteins bind the negative motifs, and do they lower accessibility by favouring nucleosomes or recruiting chromatin remodellers? The authors leave this open."
+  },
+  {
+   "type": "note",
+   "section": "Results - Inferring distinct modes of transcription factor synergy",
+   "text": "Hard-syntax pairs such as RUNX-RUNX, FOX-NR and ETS-NR are predicted only in silico. Worth checking later whether they are confirmed experimentally, for example with reporter assays at the predicted spacings."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Do fetal-only disease variants act by changing lineage development, or by wrongly reactivating fetal enhancers in adults? The paper proposes both but tests neither."
+  }
+ ]
+}

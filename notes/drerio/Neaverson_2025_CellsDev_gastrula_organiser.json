@@ -1,0 +1,681 @@
+{
+ "id": "Neaverson_2025",
+ "title": "Coordinating tissue development to build body and brain: Lessons from the gastrula organiser and its derivatives",
+ "link": "https://doi.org/10.1016/j.cdev.2025.204042",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Neaverson_2025_CellsDev_gastrula_organiser.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How has the Spemann-Mangold organiser mostly been studied, and what is still unknown?",
+   "a": "It has been a central paradigm for over a century and was studied mainly through its ability to induce secondary axes in transplantation experiments. It is still unknown how the organiser and its derivatives act together to build a well-proportioned body axis.",
+   "kw": [
+    "Spemann-Mangold organiser",
+    "secondary axis"
+   ],
+   "info": "This is a review in a special issue for the Spemann-Mangold centenary (Cells & Development, Spemann-Mangold Issue Part II). It has no original data or methods section.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the scope of the review and how do the authors approach it?",
+   "a": "They compare evidence from four vertebrate models (Xenopus, zebrafish, chick and mouse) to work out what the organiser is needed for at each stage of neural development and body axis formation. They focus mostly on experiments in which the organiser or its derivatives were removed.",
+   "kw": [
+    "organiser deletion",
+    "comparative embryology"
+   ],
+   "info": "The deletion experiments include surgical ablations, mutants and explants. The authors argue that these show the organiser's role in normal development better than graft assays do.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the consensus view the review presents?",
+   "a": "Initial neural specification and anterior-posterior patterning happen before the morphological organiser forms. They are driven by planar signals from pre-organiser cells, plus species-specific contributions from extraembryonic tissues. Later, the anterior axial mesendoderm maintains anterior identity and tissue proportions, and the notochord patterns the dorsal-ventral axis and coordinates posterior elongation through mechanical coupling.",
+   "kw": [
+    "planar signals",
+    "pre-organiser",
+    "axial mesendoderm"
+   ],
+   "info": "",
+   "concl": "The pace of axial mesoderm extension is proposed as a key coordinator of proportional body axis development."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What did the original 1924 organiser experiment show?",
+   "a": "Hilde Mangold grafted the dorsal blastopore lip of one newt embryo into another, and the host formed an ectopic secondary body axis. She used newt species with different pigmentation, so graft and host cells could be told apart. The graft became axial mesendoderm, and the secondary neural tube was induced from host tissue.",
+   "kw": [
+    "dorsal blastopore lip",
+    "induction"
+   ],
+   "info": "Spemann called the dorsal lip an 'organisation centre'. The view at the time was that the whole animal hemisphere was 'indifferent' and needed the organiser to tell it what to become.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Apart from induction, what else does the organiser graft reveal, and what is 'individuation'?",
+   "a": "It shows that the organiser and the tissue responding to it can self-assemble a well-patterned, proportional body axis. Individuation (Waddington and Needham, 1936) is the idea that this needs long-term interactions between signalling and responding tissues.",
+   "kw": [
+    "individuation",
+    "self-assembly"
+   ],
+   "info": "Mechanical interactions are now known to work together with inductive signals in multi-tissue self-assembly, as described for the posterior body axis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What key gap do the authors want to address?",
+   "a": "How morphogenesis dynamics are coordinated across tissues: the rate of progenitor expansion and commitment, and how tissues change shape. Both must be matched between tissues to build proportional multi-tissue structures.",
+   "kw": [
+    "morphogenesis",
+    "proportion"
+   ],
+   "info": "The authors say this work could also help morphogenetic engineering of multicellular systems in vitro. They use three terms throughout: organiser precursor cells, the morphological organiser, and organiser derivatives (prechordal mesendoderm and notochord).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "In zebrafish, when are the pre-organiser, organiser and organiser-derived stages (Table 1)?",
+   "a": "Pre-organiser: blastula, about 3 hpf, when the mid-blastula transition and zygotic transcription begin. The shield (morphological organiser) forms at 50% epiboly, about 6 hpf. Prechordal mesendoderm and notochord emerge at 50-75% epiboly (about 6-8 hpf), and the notochord becomes a visible rod at about 90% epiboly.",
+   "kw": [
+    "shield",
+    "gsc",
+    "chordin"
+   ],
+   "info": "The 'shield marker genes' are already expressed before the shield forms: gsc and chordin on the future dorsal side, and lim1 along the whole margin. This suggests organiser precursor cells are already present. Organiser cells sit in the superficial shield and also in deeper layers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the equivalent organiser stages in Xenopus, chick and mouse (Table 1)?",
+   "a": "Xenopus: pre-organiser NF8-NF10 (about 5-9 hpf), with precursors in the BCNE centre; organiser at NF10 (about 9 hpf). Chick: pre-organiser EGK-X to HH3; central and posterior precursors meet at HH3+ to HH4 (about 15-19 h). Mouse: organiser cells in the EGO and then the MGO from E6.5; the node becomes morphologically visible only at E7.5.",
+   "kw": [
+    "BCNE",
+    "Hensen's node",
+    "EGO/MGO"
+   ],
+   "info": "BCNE = blastula Chordin- and Noggin-expressing centre. In mouse, prechordal plate cells have already left by the time the node is visible, so the morphological-organiser stage and the derivative stage are hard to separate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - planar signals",
+   "q": "What is the organiser called in birds and mammals, and how do mouse node grafts differ?",
+   "a": "It is Hensen's node (the node), at the tip of the primitive streak. Waddington showed this by grafting it from chick, duck or rabbit into chick hosts. A mouse node graft also induces a secondary axis, but the axis lacks the most anterior (forebrain) structures.",
+   "kw": [
+    "Hensen's node",
+    "primitive streak"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - planar signals",
+   "q": "Why do the authors say the term 'neural induction' is often misused?",
+   "a": "Induction means a change of fate, but in the normal embryo the responding cells are already fated to become neural plate. It has therefore been suggested that 'neural induction' should only describe graft assays, where the organiser is placed next to prospective non-neural tissue.",
+   "kw": [
+    "neural induction"
+   ],
+   "info": "Many textbooks still say the organiser does neural induction in normal development, which mixes up what a graft can do with what the organiser does in situ. Supporting evidence: in chick, the earliest neural genes induced by a node graft are expressed before the node forms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - planar signals",
+   "q": "What is the difference between planar and vertical signals?",
+   "a": "Planar signals come from the early gastrula organiser and spread through the plane of the ectoderm. Vertical signals come from mesoderm lying underneath the ectoderm after it has involuted.",
+   "kw": [
+    "planar signals",
+    "vertical signals"
+   ],
+   "info": "",
+   "concl": "In every species reviewed, neural induction and AP patterning of brain regions happen early, through planar signals from the organiser."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Xenopus",
+   "q": "What happens when the organiser is deleted in Xenopus?",
+   "a": "The embryo is ventralised. It lacks head, trunk, tail, somites, kidney, nervous system and placodes, but still makes ventral tissues from all three germ layers, such as ciliated epidermis, red blood cells and posterior gut.",
+   "kw": [
+    "ventralisation",
+    "organiser deletion"
+   ],
+   "info": "Changing the amount of organiser tissue changes how far dorsal and anterior development extends. This supports a role for the organiser in patterning both the AP and DV axes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Xenopus",
+   "q": "How are head and trunk organiser functions separated in amphibians?",
+   "a": "The anterior part of the organiser becomes prechordal plate and induces head structures. The posterior part becomes notochord and induces trunk and tail. Ablating prechordal mesendoderm precursors removes head structures, and removing notochord precursors removes trunk structures.",
+   "kw": [
+    "head organiser",
+    "prechordal plate",
+    "notochord"
+   ],
+   "info": "Over time the organiser loses its ability to induce anterior structures, but keeps its tail-inducing ability for longer. The ectoderm receives AP instructions before any axial mesoderm involutes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Xenopus",
+   "q": "What do Keller explants and exogastrulae show about planar signalling?",
+   "a": "In Keller explants, mesoderm and ectoderm lie side by side in one plane and are never stacked vertically. Extensive AP neural patterning still happens, even in a recombinate of dorsal mesoderm with ventral ectoderm. In exogastrulae, AP patterning reaches only the midbrain level: forebrain (eyes) and ventral neurons of the hindbrain and spinal cord do not form.",
+   "kw": [
+    "Keller explant",
+    "exogastrula"
+   ],
+   "info": "A recent transcriptomic study confirmed that AP neural patterning can happen without vertical signals.",
+   "concl": "Planar organiser-derived signals are partially responsible for AP patterning."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Zebrafish",
+   "q": "When and how does the zebrafish shield form, and what can it do when grafted?",
+   "a": "Epiboly starts at about 4 hpf, and gastrulation begins at about 5 hpf at 50% epiboly, when the germ ring forms. Convergence packs cells together on the dorsal side of the germ ring, where the shield forms at 50-60% epiboly. A full-thickness shield graft into the ventral germ ring gives a complete ectopic axis with all brain tissues.",
+   "kw": [
+    "shield",
+    "germ ring",
+    "epiboly"
+   ],
+   "info": "The shield contains a mix of neurectodermal and chordamesodermal progenitors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Zebrafish",
+   "q": "What happened when the shield was removed microsurgically (Shih and Fraser)?",
+   "a": "The embryos developed normal nervous systems with normal AP and DV patterning. They were shorter and wider than controls and arched dorsally. However, most still had notochord cells, mostly in the tail.",
+   "kw": [
+    "shield ablation",
+    "chordin"
+   ],
+   "info": "One possible explanation is that chordin is switched on before gastrulation and before the shield forms, so neural development may already be under way.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Zebrafish",
+   "q": "What shows that neural induction and AP patterning start before the shield forms?",
+   "a": "Removing the whole presumptive shield in late blastula embryos removed opl (zic1), an early forebrain marker. Dorsal ectoderm explants taken at early gastrula already had a latent AP pattern: anterior explants expressed opl, and posterior explants (closer to the shield) expressed less opl plus fkh5 (foxb1), a midbrain-to-spinal-cord gene.",
+   "kw": [
+    "opl/zic1",
+    "fkh5/foxb1"
+   ],
+   "info": "",
+   "concl": "Neural commitment and AP patterning are already visible at early gastrula stage."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Zebrafish",
+   "q": "Why did different shield removal studies give different phenotypes?",
+   "a": "Removing only the morphological shield leaves some gsc+ and noto+ cells. Removing the shield together with neighbouring marginal tissue (Saude et al.) caused complete loss of notochord and prechordal plate, major loss of floor plate and motor neurons, cyclopia and disrupted somite patterning. This resembles the bozozok (dharma) mutant, which loses axial mesoderm and forebrain and has a reduced midbrain.",
+   "kw": [
+    "bozozok",
+    "dharma",
+    "gsc"
+   ],
+   "info": "The differences probably reflect how much tissue was removed. Saude et al. concluded that the deeper gsc+ cells matter most for anterior structures.",
+   "concl": "The morphological shield is not the whole zebrafish organiser region."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Zebrafish",
+   "q": "Which signals other than the organiser can pattern the zebrafish neural AP axis?",
+   "a": "Varga et al. found that organiser-deficient embryos make the full AP pattern as long as BMP signalling is blocked. Wnts from mesendodermal precursors at the lateral margin act as posteriorising signals: grafting these cells to the animal pole or the prospective forebrain gives ectopic hindbrain. Posterior spinal cord progenitors depend on FGF rather than on BMP antagonists.",
+   "kw": [
+    "BMP",
+    "Wnt",
+    "FGF"
+   ],
+   "info": "Spinal cord progenitors are spread widely along the DV axis and lie far from the shield, so shield deletion is unlikely to affect posterior neural tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Zebrafish",
+   "q": "Why do Thisse and Thisse suggest the whole blastoderm margin is the zebrafish organiser?",
+   "a": "A shield grafted to the animal pole of a blastula host only makes axial mesoderm and does not recruit or pattern host cells. The full ectopic axis seen after ventral margin grafts comes from reorganised Nodal/BMP gradients along the margin. A high BMP to Nodal ratio gives tail, a 1:1 ratio gives posterior head, and no BMP gives anterior fates.",
+   "kw": [
+    "Nodal/BMP ratio",
+    "dorsal patterning centre"
+   ],
+   "info": "They propose calling the shield the 'dorsal patterning centre'.",
+   "concl": "The zebrafish organiser patterns the AP axis mainly by planar induction, not by vertical signals from derivatives after involution."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Chick",
+   "q": "Which cell populations form Hensen's node, and what comes out of it?",
+   "a": "Two populations: 'central' cells in the pre-streak epiblast, which have no specific markers, and 'posterior' cells from Koller's sickle, which express Chordin and Goosecoid. Only the posterior cells have some neural-inducing ability, and full ability appears when the two meet at mid-streak stage. The first cells to ingress through the node make definitive endoderm, then head process; later cells make notochord, medial half-somites and floor plate.",
+   "kw": [
+    "Koller's sickle",
+    "Goosecoid",
+    "Chordin"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Chick",
+   "q": "Why is it hard to test whether the chick node is required?",
+   "a": "The node regulates very strongly. Embryos look normal after the node is ablated, reversed or replaced with other tissue. When the node and the anterior 40% of the primitive streak were removed at HH3+, embryos restored all node marker expression except Goosecoid.",
+   "kw": [
+    "regulation",
+    "node ablation"
+   ],
+   "info": "When the node is ablated in older embryos, the head and notochord anterior to the regressing node form normally, but the wound does not close and somites form on both sides of the gap. Even after removing the whole streak, notochord forms on either side of the gap, possibly from regenerated node tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Chick",
+   "q": "What starts neural development in chick, if not the node?",
+   "a": "When the egg is laid, before gastrulation, the epiblast is already in a primed 'pre-neural' state, induced by FGF signals from the hypoblast. Explants of medial pre-streak epiblast cultured alone become committed neural tissue without added growth factors. AP patterning into forebrain, midbrain, hindbrain and spinal cord may be complete by HH4.",
+   "kw": [
+    "hypoblast",
+    "FGF",
+    "pre-neural state"
+   ],
+   "info": "Paraxial mesoderm has a caudalising effect and gives midbrain and hindbrain identity to tissue that would otherwise become forebrain. The node and paraxial mesoderm probably work together, and the head process later refines the pattern. Caveat: the explant assays need serum containing growth factors and are not equivalent to removing the organiser.",
+   "concl": "It has not yet been possible to fully assess whether the chick organiser is required."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Mouse",
+   "q": "Why do mouse node grafts lack anterior structures, and which grafts do induce them?",
+   "a": "The node only becomes visible at late gastrula, and by then prechordal and head process mesendoderm have already left it (equivalent to chick HH4+ to 5). An EGO graft induces neural tissue only up to the hindbrain. A combined graft of EGO, AVE and anterior epiblast induces anterior neural tissue.",
+   "kw": [
+    "EGO",
+    "AVE",
+    "MGO"
+   ],
+   "info": "Node-derived cells mostly form trunk notochord from hindbrain level backwards, while anterior axial mesendoderm comes mainly from the EGO and MGO. The MGO has been claimed to have full ability, but grafts only show induction of forebrain and midbrain genes.",
+   "concl": "Full organiser ability in mouse may need several tissues acting together."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Mouse",
+   "q": "What did FOXA2 (HNF-3beta) mutant mice reveal about node requirement?",
+   "a": "FOXA2-/- embryos form no node and no notochord but still make neural tissue. Half of them weakly expressed Otx2 in forebrain and midbrain, and the other half had no Otx2. Those with Otx2 tended to express Engrailed and, weakly, Hoxb1, but anterior head structures were abnormal in all embryos.",
+   "kw": [
+    "FOXA2",
+    "Otx2",
+    "AVE"
+   ],
+   "info": "Caveat: FOXA2 is also needed in the AVE (for Wnt antagonists and Otx2) and is expressed in prechordal mesendoderm, so the defect cannot be pinned on one tissue. A conditional knockout restricted to embryonic tissues showed that the AVE alone cannot maintain anterior neural character.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Mouse",
+   "q": "Is early BMP antagonism needed for mouse neural development?",
+   "a": "Yes, probably. Chordin;Noggin double mutants lose anterior notochord and forebrain. FOXA2 mutants lack Chordin and Noggin at gastrula stage but still express Chordin earlier in the anterior streak. Mutations that block formation of the primitive streak and EGO/MGO give no neural tissue at all.",
+   "kw": [
+    "Chordin",
+    "Noggin",
+    "BMP antagonism"
+   ],
+   "info": "Surgical node ablation at late gastrula still gave an intact neural tube with Otx2 anterior and Hoxb1 posterior, and unlike in chick the node does not regenerate. By that stage the neural plate is probably already committed.",
+   "concl": "AP neural specification starts before the node forms, through EGO/MGO planar signals and vertical signals from the AVE. The node then patterns tissue posterior to the hindbrain."
+  },
+  {
+   "type": "qa",
+   "section": "Early neural specification - Summary",
+   "q": "What is the consensus from Section 2 across species?",
+   "a": "In all four species, neural development starts before the morphological organiser forms. It uses signals from an early pre-organiser structure, plus extraembryonic endoderm in chick (hypoblast) and mouse (AVE). The pre-organiser starts AP patterning through planar signals in the ectoderm, and the morphological organiser continues it.",
+   "kw": [
+    "pre-organiser",
+    "extraembryonic endoderm"
+   ],
+   "info": "",
+   "concl": "The full range of AP neural tissues can only develop through coordination of several tissues."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - neural maintenance",
+   "q": "In what order are axial mesendoderm tissues internalised?",
+   "a": "In all four species the order is broadly the same: prechordal mesendoderm precursors first, then anterior notochord (head process), then trunk notochord.",
+   "kw": [
+    "prechordal mesendoderm",
+    "head process"
+   ],
+   "info": "The posterior notochord forms differently, from NMPs in the tailbud, and is outside the scope of the review.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Xenopus",
+   "q": "How does Xenopus axial mesendoderm form, and which markers define each part?",
+   "a": "The first cells to involute are leading edge mesendoderm (xhesx1), which forms anterior endoderm. Next come prechordal mesendoderm (xgsc) and then notochord progenitors (xtbxt). The PME migrates collectively in a fan shape under the anterior neural plate, and notochord cells converge and extend to form a rod.",
+   "kw": [
+    "xhesx1",
+    "xgsc",
+    "xtbxt"
+   ],
+   "info": "The tail notochord forms after involution ends, by further mediolateral intercalation. PME and head process keep expressing the BMP and Wnt antagonists first made in the organiser.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Xenopus",
+   "q": "Which experiments separate PME function from the earlier organiser in Xenopus?",
+   "a": "Disrupting cholesterol-rich membrane microdomains (Reis et al.) altered PME cell shape and shh and goosecoid expression without affecting the earlier organiser. It caused severe head loss, which was partly rescued by injecting the Wnt antagonist Dkk-1. Surgical PME ablation caused cyclopia, with one large Pax6+ eye field, but did not change AP patterning.",
+   "kw": [
+    "Dkk-1",
+    "cyclopia",
+    "Pax6"
+   ],
+   "info": "Nodal inhibition and early organiser ablations cannot separate the PME from its precursors. Overexpressing Wnt inhibitors (Frzb1, Dkk-1) expands anterior neural tissue, while overactive Wnt posteriorises it.",
+   "concl": "The PME probably keeps signalling to maintain anterior fate that is already specified, and may ensure correct forebrain proportions."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Zebrafish",
+   "q": "How do zebrafish shield cells give rise to prechordal plate and notochord?",
+   "a": "Deep gsc+ shield cells make prechordal mesendoderm, and more superficial noto-expressing cells make notochord. Prechordal plate cells ingress first and migrate towards the animal pole as a collective, between the ectoderm and the yolk syncytial layer.",
+   "kw": [
+    "gsc",
+    "noto",
+    "collective migration"
+   ],
+   "info": "The motility and directionality are intrinsic and do not depend on external cues, but only the collective has them; isolated prechordal plate cells do not. Prechordal plate and head process keep expressing shield genes, including gsc, chordin and dkk1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Zebrafish",
+   "q": "What do Nodal pathway mutants lacking a prechordal plate show about forebrain development?",
+   "a": "oep (tdgf1) mutants have smaller anterior neural structures but normal AP neural patterning. squint;cyclops double mutants lack most mesoderm, including prechordal plate and notochord, yet AP patterning is mostly normal. The smaller forebrain in oep is due to missing Dkk1, which the prechordal plate normally secretes.",
+   "kw": [
+    "oep",
+    "squint/cyclops",
+    "Dkk1"
+   ],
+   "info": "squint and cyclops are secreted Nodal-related ligands, and oep is an essential cofactor of the pathway. Overexpressing Dkk1 expands forebrain at the expense of midbrain, and transplanting Dkk1-expressing cells rescues the oep forebrain.",
+   "concl": "Prechordal plate signals do not set AP pattern, but they matter for brain regions reaching the right size."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Zebrafish",
+   "q": "How long does Wnt antagonism need to last for normal forebrain development in zebrafish?",
+   "a": "Until at least mid-somitogenesis. A heat-inducible dominant-negative Frizzled-8a rescued the oep forebrain defects even when induced at 16 hpf.",
+   "kw": [
+    "Frizzled-8a",
+    "Wnt antagonism"
+   ],
+   "info": "Study by Kim et al. (2009).",
+   "concl": "Continuous Wnt antagonism is important for forebrain development."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Zebrafish",
+   "q": "What DV defects follow loss of the prechordal plate in zebrafish?",
+   "a": "Cyclopia, because prechordal plate signals split the eye field in two, and complete loss of ventral forebrain regions such as the hypothalamus, as well as loss of the floor plate. Ethanol, which impairs prechordal plate migration, also causes cyclopia.",
+   "kw": [
+    "cyclopia",
+    "hypothalamus",
+    "floor plate"
+   ],
+   "info": "Correct positioning of the prechordal plate is therefore important.",
+   "concl": "Without a prechordal plate, DV patterning is far more affected than AP patterning."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Zebrafish",
+   "q": "How might the speed of mesendoderm migration affect brain proportions?",
+   "a": "Dkk1 morphants internalise and migrate axial mesendoderm faster. Dkk1 overexpression slows migration and shifts the anterior limit of the neural plate caudally. Friction between prechordal plate and neurectoderm also affects where the brain forms.",
+   "kw": [
+    "Dkk1",
+    "friction",
+    "migration speed"
+   ],
+   "info": "Dkk1 may control how fast mesendoderm advances, so that the overlying neural plate gets the right signals at the right time.",
+   "concl": "The timing, speed and possibly direction of prechordal plate migration may set the final positions and proportions of brain regions."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Chick",
+   "q": "Can chick head process and prechordal plate still pattern the brain after HH4?",
+   "a": "Partly. At HH5, young head process grafts induce organised ectopic forebrain and midbrain. By HH6, prechordal plate and head process have separated, and grafts induce only forebrain or only midbrain, respectively.",
+   "kw": [
+    "head process",
+    "prechordal plate",
+    "goosecoid"
+   ],
+   "info": "Cells leave the node from late HH4 to form goosecoid+ prechordal plate and head process. The notochord forms as the node regresses from about HH6. Brain AP regionalisation is considered complete by HH4.",
+   "concl": "This fits a maintenance role through continued vertical induction."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Chick",
+   "q": "What is the 'conveyor belt' movement and why does it matter?",
+   "a": "As the neural tube develops, it moves anteriorly over the head process like a conveyor belt, so each part of the head process touches the overlying neural tissue only briefly. This explains why anterior head process grafts induce midbrain and hindbrain in competent epiblast but cannot change the forebrain fate of the tissue above them at HH6-7.",
+   "kw": [
+    "conveyor belt",
+    "head process"
+   ],
+   "info": "Posterior neural plate explants at HH6-7 express hindbrain and spinal cord genes, but combined with posterior head process they express only spinal cord markers. The proposed reason is that the head process represses neural genes from levels anterior to its own.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Chick",
+   "q": "Does anterior mesendoderm change neural fate or neural tissue morphogenesis?",
+   "a": "Grafts of anterior mesendoderm into the epiblast marginal zone gathered host neural cells on top of the graft, and these formed a secondary regionalised brain. The type of brain tissue depended on where the graft sat along the host AP axis.",
+   "kw": [
+    "convergence",
+    "neural tube morphogenesis"
+   ],
+   "info": "The chick neural tube elongates by contraction-based convergent extension: actomyosin builds up along the mediolateral axis, junctions shrink, and cells converge to the midline.",
+   "concl": "Anterior mesendoderm can promote neural convergence without changing neural fate."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Mouse",
+   "q": "Which mouse organiser regions form which axial tissues, and what happens without anterior axial mesendoderm?",
+   "a": "The EGO forms prechordal plate and anterior notochord, the node forms trunk notochord, and the MGO contributes to both. Mutants lacking anterior axial mesendoderm have anterior truncations. Gdf1-/- Nodal+/- embryos have major forebrain defects, and in Hex1 mutants the mesendoderm forms but does not migrate properly, so the forebrain cannot maintain itself.",
+   "kw": [
+    "Gdf1",
+    "Hex1",
+    "anterior truncation"
+   ],
+   "info": "Chordin-/- Noggin-/+ embryos also fail to maintain forebrain. Loss of prechordal mesendoderm causes DV defects: expanded dorsal markers, reduced hypothalamic genes and sometimes cyclopia.",
+   "concl": "In normal mouse development, anterior axial mesendoderm maintains AP pattern rather than inducing it."
+  },
+  {
+   "type": "qa",
+   "section": "Organiser derivatives - Summary",
+   "q": "What is the consensus role of early organiser derivatives in brain development?",
+   "a": "They maintain and refine AP neural patterning that planar organiser signals have already set up before gastrulation. They probably also regulate progenitor renewal and differentiation, helping set the right size of brain territories.",
+   "kw": [
+    "maintenance",
+    "brain size"
+   ],
+   "info": "How this is coordinated with continued development of the posterior body is largely unknown.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body",
+   "q": "How does the notochord act as an organiser of the posterior body?",
+   "a": "It secretes Shh, forming a gradient that patterns the neural tube DV axis in all vertebrates. It induces the floor plate through close contact, and the floor plate then also secretes Shh. It does not seem to affect AP patterning, but it does affect physical elongation of the AP axis.",
+   "kw": [
+    "Shh",
+    "floor plate",
+    "axis elongation"
+   ],
+   "info": "Force for elongation is thought to come mostly from paraxial mesoderm and neural tube, but this varies between species. In anamniotes, notochord vacuolation provides hydraulic force for extension and straightening. Vacuole function is understudied in chick and mouse, so the review does not cover it there.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Xenopus",
+   "q": "What are the neural defects in notochordless Xenopus embryos?",
+   "a": "UV irradiation of eggs reduces mesoderm in a dose-dependent way. Embryos lacking only the notochord have spinal cord defects, cyclopia, no floor plate cells and an altered balance of dorsal and ventral neuron types. They also have no dopaminergic neurons in the ventral spinal cord, and left-right laterality is disrupted, with some axons projecting the wrong way.",
+   "kw": [
+    "UV irradiation",
+    "dopaminergic neurons",
+    "laterality"
+   ],
+   "info": "Disrupting notochord-neural tube contact later did not stop dopaminergic neuron induction but reduced their number, so these neurons are probably induced by notochord precursors during gastrulation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Xenopus",
+   "q": "Does the Xenopus notochord generate force for axis elongation?",
+   "a": "Not during convergent extension. In agarose force-sensor assays, dorsal explants without notochord produced about as much force as explants with it, and more paraxial mesoderm gave more stress. Yet notochordless embryos were on average 25% shorter than controls, probably because notochord vacuolation drives later elongation.",
+   "kw": [
+    "force sensor",
+    "vacuolation",
+    "dystroglycan"
+   ],
+   "info": "Neural explants elongated at the same rate as full dorsal explants. From early tailbud stages, vacuoles swell osmotically. Dystroglycan mutations disrupt notochord extension and vacuolation and affect body length and straightness.",
+   "concl": "Paraxial mesoderm and neural tissue drive early elongation, and later elongation depends on the notochord."
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Zebrafish",
+   "q": "What do zebrafish notochordless mutants show about DV and AP neural patterning?",
+   "a": "Mutants lacking a notochord include flh (noto), mom (momo), doc and ntl (tbxta). Unlike in frog, a ventral floor plate still forms, but it is truncated and made of patches of cells in the trunk. AP neural patterning is largely unaffected.",
+   "kw": [
+    "flh/noto",
+    "ntl/tbxta",
+    "floor plate"
+   ],
+   "info": "Floor-plate-inducing Shh is still present in the midline of ntl and flh gastrulae, but its source without a notochord is unclear. Brief Shh exposure may be enough to specify primary motor neurons, while secondary motor neurons need longer exposure.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Zebrafish",
+   "q": "How does midline and mesoderm loss affect somite and neural morphogenesis in zebrafish?",
+   "a": "Notochordless mutants lack tail structures. After shield removal, somites fused across the midline and were rectangular instead of chevron-shaped. Neural tube morphogenesis is normal in midline mutants, but maternal-zygotic oep mutants, which lack all mesoderm, show slower, disoriented convergent extension and disorganised neural tissue.",
+   "kw": [
+    "MZoep",
+    "convergent extension",
+    "silberblick/Wnt11"
+   ],
+   "info": "Friction between somitic mesoderm and neighbouring tissues helps shape somites. In silberblick (Wnt11) mutants, paraxial mesoderm convergent extension is disrupted, which affects axial extension and causes cyclopia.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Zebrafish",
+   "q": "What role does notochord vacuolation play in zebrafish axis elongation?",
+   "a": "Vacuolation starts at early tailbud, just after convergent extension ends. Disrupting vacuolated cells gives shorter embryos with wavy spines, and doc mutant notochords do not vacuolate and have shorter axes. Somite elongation after tailbud stage is coordinated with the expansion of vacuolated notochord cells.",
+   "kw": [
+    "notochord vacuoles",
+    "doc"
+   ],
+   "info": "Fig. 2A, about 22-somite stage: expanding anterior notochord cells push against the unexpanded posterior notochord. The resulting stress passes to neighbouring somites, which stretch along the AP axis.",
+   "concl": "The authors hypothesise that notochord development acts as a timer that matches the elongation rate of paraxial mesoderm and spinal cord."
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Chick",
+   "q": "What did chick node ablations show about the cranial notochord?",
+   "a": "The chick notochord grows mainly by adding cells at its caudal end. Embryos that failed to regenerate cranial notochord still had normal head morphology with En2 expression. However, many showed an 'inverted head' phenotype, with two half En2+ neural tubes that still expressed En2 at the right position.",
+   "kw": [
+    "En2",
+    "cranial notochord",
+    "inverted head"
+   ],
+   "info": "The paper gives '85% compared to 20% displaying good or fair morphology'; how these percentages compare is not clearly stated. Embryos lacking cranial notochord also lack floor plate and show ventral expansion of En2. Excising node subregions disrupts DV patterning only at AP levels missing midline tissue.",
+   "concl": "AP patterning is unaffected without cranial notochord, but the midline may give structural integrity to neural tube morphogenesis."
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Chick",
+   "q": "How are axial and paraxial tissues mechanically coupled in the chick tail bud?",
+   "a": "Presomitic mesoderm (PSM) squeezes the axial tissues from both sides, which promotes their elongation. The axial tissues then push on the tail bud progenitor domain, moving PSM progenitors out laterally and creating a positive feedback loop. The loop starts from a random cell motility gradient in the PSM, driven by FGF that is highest posteriorly.",
+   "kw": [
+    "presomitic mesoderm",
+    "mechanical coupling",
+    "FGF"
+   ],
+   "info": "Deleting the axial region has a much weaker effect on elongation speed than deleting posterior PSM. Proliferation of cells after they enter the PSM is needed for timely elongation, and FGF-triggered extracellular hyaluronic acid drives PSM volume growth.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Chick",
+   "q": "Which notochord and node regions matter most for chick axis elongation and posterior survival?",
+   "a": "Removing posterior notochord or the tail bud progenitor domain slows elongation, but removing anterior notochord does not. Removing posterior notochord together with posterior neural tube slows it further. Removing the posterior subregion of the node causes abrupt axial truncation and widespread apoptosis in the posterior body, which a graft of SHH-producing cells can rescue.",
+   "kw": [
+    "SHH",
+    "apoptosis",
+    "axial truncation"
+   ],
+   "info": "The chick neural tube can elongate without axial mesoderm, which suggests each tissue can elongate on its own to some extent.",
+   "concl": "Axial and paraxial tissues act together in chick elongation, and the notochord may promote posterior survival and keep all tissues at the same pace."
+  },
+  {
+   "type": "qa",
+   "section": "Notochord and posterior body - Mouse",
+   "q": "What happens to the body axis in mice lacking a notochord?",
+   "a": "FOXA2-/- embryos have severely disrupted neural tube DV polarity, probably because ventral SHH is missing, and node-ablated embryos have no floor plate. AP order of genes is often normal. The axis is much shorter, ablated embryos tend to have fewer somites, and sometimes the neural tube fails to elongate at all.",
+   "kw": [
+    "FOXA2",
+    "notochordal plate",
+    "SHH"
+   ],
+   "info": "The mouse notochord first forms as an epithelial notochordal plate on the endoderm surface. It elongates by convergent extension, then sinks inwards and rounds up into a rod.",
+   "concl": "This fits the chick model in which notochord elongation coordinates the other tissues, but this has not been tested much in mouse."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "What are the authors' overall conclusions about the organiser's role in normal development?",
+   "a": "Organiser precursor cells, together with early extraembryonic endoderm (hypoblast in chick, AVE in mouse), start neural development and set up AP pattern by planar signals before axial mesendoderm lies under the neural tissue. Anterior axial mesendoderm has a relatively minor role in maintaining or refining AP pattern. However, loss of the prechordal plate or its Wnt antagonists consistently reduces forebrain size.",
+   "kw": [
+    "planar signals",
+    "forebrain expansion"
+   ],
+   "info": "Graft-based neural induction, the most studied aspect, does not reflect what the organiser does in normal development. Continued signalling may also make patterning robust during neural plate convergent extension.",
+   "concl": "The authors propose that the embryo uses the pace of axial mesoderm extension to coordinate the extension of other tissues and so produce a proportional body axis."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusions and perspectives",
+   "q": "Why does this matter for organoid and gastruloid engineering?",
+   "a": "Gastruloids express many early embryonic markers but lack embryo-like morphology. Simply embedding them in matrigel can produce trunk-like structures and well-patterned somites, which shows that mechanical forces and tissue-ECM interactions matter.",
+   "kw": [
+    "gastruloids",
+    "matrigel",
+    "mechanotransduction"
+   ],
+   "info": "Limitation: little is known about how forces act at the multi-tissue level, because this requires understanding development from the whole organism down to gene regulation.",
+   "concl": "A multi-scale understanding of how organiser derivatives tune multi-tissue forces is needed to engineer organoids."
+  },
+  {
+   "type": "note",
+   "section": "Organiser derivatives - Summary",
+   "text": "How is the size of anterior brain territories, set by organiser derivatives, coordinated with continued development of the posterior body? The authors say this is largely unknown."
+  },
+  {
+   "type": "note",
+   "section": "Notochord and posterior body - Zebrafish",
+   "text": "Which tissue makes the floor-plate-inducing Shh in the midline of ntl and flh notochordless zebrafish gastrulae? The paper says the source is unclear."
+  },
+  {
+   "type": "note",
+   "section": "Notochord and posterior body - Mouse",
+   "text": "Does the chick tail bud mechanical-coupling model, where notochord pace coordinates PSM and neural tube elongation, apply to mouse and other vertebrates? Also worth checking the zebrafish notochord-as-timer hypothesis."
+  }
+ ]
+}

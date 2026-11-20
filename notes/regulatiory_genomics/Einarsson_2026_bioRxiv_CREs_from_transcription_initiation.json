@@ -1,0 +1,615 @@
+{
+ "id": "Einarsson_2026",
+ "title": "Mapping active cis-regulatory elements from transcription initiation events",
+ "link": "https://doi.org/10.64898/2026.05.11.724207",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Einarsson_2026_bioRxiv_CREs_from_transcription_initiation.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the problem with current methods for measuring CRE activity?",
+   "a": "They often cannot tell active regulation apart from permissive chromatin. They are often not sensitive enough to detect unstable enhancer RNAs, or they cannot scale to small amounts of input material and primary cells.",
+   "kw": [
+    "cis-regulatory elements",
+    "eRNA"
+   ],
+   "info": "Knowing CRE activity is needed to model gene regulation and to interpret genetic variation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What two tools does the paper introduce?",
+   "a": "nucCAGE is a TSS assay that profiles nuclear, capped RNAs. PRIME is a computational framework that identifies active CREs from TSS data.",
+   "kw": [
+    "nucCAGE",
+    "PRIME"
+   ],
+   "info": "Benchmarks: fine-mapped eQTLs, ClinVar variants, GWAS loci and CRISPRi-tested elements.",
+   "concl": "PRIME predictions from nucCAGE data have better recall than state-of-the-art methods and still show strong enrichment for phenotype-associated variation."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they get from applying PRIME to FANTOM5?",
+   "a": "A cell-type-resolved atlas of active CREs that recapitulates known tissue-trait relationships. They used it to nominate causal noncoding variants, linking immune-cell enhancer regulation of SMAD3 to asthma and NCOR2 to premature separation of placenta.",
+   "kw": [
+    "FANTOM5",
+    "SMAD3",
+    "NCOR2"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are chromatin accessibility and histone marks not enough to find active enhancers?",
+   "a": "Large epigenomic efforts have catalogued millions of putative CREs, but these signatures may reflect permissive rather than functionally active chromatin. It is therefore hard to know which candidate enhancers are active in a given cell context.",
+   "kw": [
+    "chromatin accessibility",
+    "H3K27ac"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does CAGE capture and why can it detect enhancers?",
+   "a": "CAGE (Cap Analysis of Gene Expression) enriches for the 5' ends of m7G-capped RNAs from both promoters and enhancers, which share an architecture. Active enhancers start divergent transcription of enhancer RNAs (eRNAs), just as mRNA promoters produce reverse-strand promoter upstream transcripts (PROMPTs).",
+   "kw": [
+    "CAGE",
+    "eRNA",
+    "PROMPT"
+   ],
+   "info": "This made the CAGE-derived enhancer atlases of the FANTOM projects possible.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How useful are CAGE-defined enhancers for explaining trait heritability?",
+   "a": "They are sparse (63,285 enhancers across 1,829 FANTOM5 libraries) but strongly enriched for heritability. FANTOM5 enhancers show a 39-fold enrichment for immunological traits, compared with 3-fold for H3K27ac-marked putative enhancers.",
+   "kw": [
+    "heritability",
+    "FANTOM5"
+   ],
+   "info": "Their small genomic coverage limits how much total heritability they can explain.",
+   "concl": "Transcription initiation is a more specific readout of regulatory activity than chromatin signatures, so more sensitive TSS methods would help variant interpretation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are eRNAs hard to detect, and what are the problems with nascent transcript assays?",
+   "a": "Most eRNAs and PROMPTs have no poly(A) tail and are degraded quickly, so TSS assays detect them poorly. Nascent assays such as GRO-cap measure transcription directly, but they cannot tell polymerase pausing from re-initiation and they need a lot of starting material.",
+   "kw": [
+    "GRO-cap",
+    "nascent transcription"
+   ],
+   "info": "TSS assays with nuclear fractionation or chromatin fractionation (NET-CAGE) had looked promising. How much nascent RNA TSS assays capture was unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Does PRIME distinguish promoters from enhancers?",
+   "a": "No. Because promoters and enhancers share a transcriptional architecture, PRIME predicts CREs as one unified class from TSS data.",
+   "kw": [
+    "PRIME"
+   ],
+   "info": "Promoter-proximal or distal labels are assigned afterwards from gene annotation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - nucCAGE and PRIME sensitivity",
+   "q": "How does nucCAGE differ from standard CAGE?",
+   "a": "Nuclei are extracted before cap-trapping. Controlled mechanical shear forces detach the endoplasmic reticulum from the nuclear envelope, which reduces carryover of mature rRNA. With less rRNA using up reverse-transcription resources, more capped RNAs are recovered with complete second-strand cDNA.",
+   "kw": [
+    "nucCAGE",
+    "cap-trapping",
+    "rRNA"
+   ],
+   "info": "This raises the relative share of unstable, non-polyadenylated transcripts such as eRNAs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - nucCAGE and PRIME sensitivity",
+   "q": "What did nucCAGE show in K562 compared with whole-cell CAGE?",
+   "a": "nucCAGE gave stronger CTSS signal at known enhancers and PROMPTs and comparable signal at mRNA promoters. It also raised the fraction of CTSSs in intronic and intergenic regions while keeping the enrichment of mRNA TSSs.",
+   "kw": [
+    "CTSS",
+    "ARL4A",
+    "KLF2"
+   ],
+   "info": "Examples: increased eRNA signal at the known ARL4A enhancer and at the PROMPT upstream of the KLF2 promoter. As with whole-cell CAGE, a high proportion of nucCAGE CTSSs lay near DHSs.",
+   "concl": "nucCAGE enriches for unstable RNAs and makes active CRE mapping more sensitive."
+  },
+  {
+   "type": "qa",
+   "section": "Results - nucCAGE and PRIME sensitivity",
+   "q": "Which methods was PRIME compared against in the ClinVar benchmark, and what were the numbers?",
+   "a": "In K562, PRIME was compared with FANTOM5-style divergent loci, dREG, PINTS, H3K27ac, ENCODE cCREs and DHSs. At the score threshold matching the highest recall of any other method (0.053, for DHSs), PRIME gave 19-fold (nucCAGE) and 24-fold (whole-cell CAGE) enrichment of ClinVar variants. That is 8-fold and 10-fold higher than DHSs.",
+   "kw": [
+    "ClinVar",
+    "dREG",
+    "PINTS"
+   ],
+   "info": "Enrichment is the ratio of noncoding, non-benign ClinVar SNVs (pathogenic, likely pathogenic, VUS) to noncoding common variants that overlap predicted CREs. The model was trained on GM12878 and applied to K562. The result held regardless of distance to the gene promoter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - nucCAGE and PRIME sensitivity",
+   "q": "Did the eQTL benchmark agree, and what is the trade-off between nucCAGE and whole-cell CAGE?",
+   "a": "Yes. With GTEx fine-mapped eQTLs, PRIME again had better recall and enrichment. Predictions from nucCAGE have higher recall than those from whole-cell CAGE but slightly lower enrichment.",
+   "kw": [
+    "eQTL",
+    "GTEx"
+   ],
+   "info": "Fine-mapped noncoding eQTLs with PIP > 50% were used.",
+   "concl": "PRIME on nucCAGE data was the most sensitive of all methods tested."
+  },
+  {
+   "type": "qa",
+   "section": "Results - library complexity",
+   "q": "How much RNA does nuclei extraction give, and which input amounts did they test?",
+   "a": "Nuclear extraction gave 3.5 to 13-fold less RNA than whole cells, because cytoplasmic RNA was removed and about 50% of nuclei were lost. In GM12878 they compared 500,000 cells with 1 million nuclei (compensating for nuclei loss) and 5 million nuclei (compensating for total RNA loss), with 1 million whole-cell and 10 million nuclei samples as references.",
+   "kw": [
+    "library complexity",
+    "carrier RNA"
+   ],
+   "info": "CAGE needs 5 µg of input RNA for optimal library construction, so carrier RNA is added below that. Two opposing effects follow: lower input reduces complexity, while depleting cytoplasmic RNA increases the share of nascent transcripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - library complexity",
+   "q": "What happened with 10 million nuclei?",
+   "a": "Noise built up substantially. Intronic fractions grew at the expense of exonic signal, and intergenic fractions grew at the expense of intronic signal.",
+   "kw": [
+    "noise"
+   ],
+   "info": "The authors think spurious reads replaced true TSS signal, probably because cap-trapping works less well in crowded reactions with unchanged reagent concentrations. 10 million K562 nuclei samples showed the same pattern.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - library complexity",
+   "q": "How does input affect core promoter (tag cluster) complexity?",
+   "a": "Low-input nucCAGE (500,000 and 1 million nuclei) had lower CTSS positional complexity, meaning narrower 10-90% IQR width and lower shape entropy, similar to GRO-cap. 5 million nuclei samples closely resembled 500,000 and 1 million whole-cell libraries.",
+   "kw": [
+    "tag clusters",
+    "shape entropy",
+    "YC initiator"
+   ],
+   "info": "5 million and 10 million nuclei samples also expressed more canonical YC initiator TSSs, which suggests the higher promoter complexity is not just noise.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - library complexity",
+   "q": "What is the optimal nucCAGE input?",
+   "a": "More than 1 million but fewer than 10 million GM12878 nuclei, about 1.5 to 2.5 µg of nuclear RNA. In this range nucCAGE is much more complex than 500,000 whole-cell samples made from a similar amount of RNA.",
+   "kw": [
+    "input optimisation"
+   ],
+   "info": "The summary of the next section and the Discussion give the optimal range as 2.5 to 5 million nuclei. The paper is not fully consistent here.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - nascent and steady-state transcripts",
+   "q": "Are promoter-proximal TSSs also enriched in nucCAGE, or only distal ones?",
+   "a": "Both. As expected, many gene-distal core promoters were much more highly expressed in nucCAGE (|log2 fold-change| > 1). Unexpectedly, gene-proximal DHSs showed the same pattern, for example the RAPGEF2 promoter.",
+   "kw": [
+    "RAPGEF2"
+   ],
+   "info": "",
+   "concl": "Many transcription initiation events do not produce stable, mature mRNAs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - nascent and steady-state transcripts",
+   "q": "How did they use triptolide to test for nascent RNA enrichment?",
+   "a": "Triptolide blocks the ATP-dependent helicase activity of TFIIH, which stops transcription initiation and quickly depletes nascent transcripts. Both proximal and distal DHSs lost CAGE signal, and the drop was strongest for transcripts enriched in nucCAGE (chi-squared test: p = 0.024 distal, p = 9.12x10^-172 proximal).",
+   "kw": [
+    "triptolide",
+    "TFIIH"
+   ],
+   "info": "",
+   "concl": "nucCAGE is more sensitive to nascent transcripts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - nascent and steady-state transcripts",
+   "q": "How does nucCAGE compare with GRO-cap and NET-CAGE?",
+   "a": "Core promoters enriched in nucCAGE showed higher GRO-cap activity than in whole-cell CAGE (p = 8.15x10^-12 distal, p = 9.59x10^-297 proximal). nucCAGE enriched intronic and intergenic CTSSs about as much as NET-CAGE, but it needs much less input and no transcriptional inhibitors such as alpha-amanitin.",
+   "kw": [
+    "GRO-cap",
+    "NET-CAGE"
+   ],
+   "info": "GRO-cap did not detect many nucCAGE core promoters in distal DHSs, so nucCAGE may capture transient or low-abundance initiation that other nascent assays miss.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - nascent and steady-state transcripts",
+   "q": "How well does nucCAGE reflect steady-state expression?",
+   "a": "Pearson correlation with RNA-seq was 0.81 for whole-cell CAGE, 0.72 for nucCAGE, 0.73 for the 5 million nuclei libraries and 0.68 for GRO-cap.",
+   "kw": [
+    "RNA-seq"
+   ],
+   "info": "The slightly lower correlation for nucCAGE fits its enrichment of unstable RNAs.",
+   "concl": "nucCAGE captures both nascent and stable transcripts. About 2.5 to 5 million nuclei balances high sensitivity against low noise."
+  },
+  {
+   "type": "qa",
+   "section": "Results - PRIME model",
+   "q": "Why was a data-driven method needed instead of heuristic thresholds?",
+   "a": "Defining CREs de novo from TSS data usually relies on heuristics such as strand directionality of divergent loci or minimum expression cutoffs, and these are very sensitive to library complexity. Strict cutoffs throw away relevant loci, and lenient ones let in noise.",
+   "kw": [
+    "divergent transcription",
+    "heuristics"
+   ],
+   "info": "Strict divergent-transcription criteria find highly relevant loci but miss the continuum of promoter and enhancer activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PRIME model",
+   "q": "How was PRIME trained?",
+   "a": "PRIME is a LightGBM classifier trained on GM12878 whole-cell and nucCAGE data at several input levels. Positives were DHSs with detectable CTSS signal, excluding annotated exons. Negatives were regions with CTSS signal outside DHSs. Signal was normalised to emphasise shape rather than absolute expression.",
+   "kw": [
+    "LightGBM",
+    "DHS"
+   ],
+   "info": "DHS overlap served as a practical scaffold, not as ground truth. The model is assay-agnostic and can be applied to any base-pair-resolution TSS data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PRIME model",
+   "q": "How does PRIME make genome-wide predictions, and what does its score mean?",
+   "a": "It scores sliding windows across CTSS-dense loci, then thresholds and merges them into contiguous loci, each with one integrated score. Scores range from 0 to 1 and are model-specific confidence measures, not calibrated probabilities.",
+   "kw": [
+    "PRIME score"
+   ],
+   "info": "This strategy increased recall while keeping precision comparable to divergent loci defined by directionality.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PRIME model",
+   "q": "What did SHAP analysis show about what PRIME learned?",
+   "a": "The largest feature contributions came from TSS signal within about the first 100 bp around the PRIME locus centre, regardless of genomic location.",
+   "kw": [
+    "SHAP"
+   ],
+   "info": "This matches the typical initiation patterns of active promoters and enhancers.",
+   "concl": "PRIME captures biologically meaningful initiation patterns."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRISPRi benchmark",
+   "q": "How did PRIME perform against CRISPRi-tested elements in K562?",
+   "a": "Chromatin-based methods (H3K27ac, DHSs and both combined) had high recall but many CRISPRi-negative regions, so precision was low. RNA-based methods, especially PRIME, raised precision while keeping recall high. PRIME beat all alternatives at every score threshold.",
+   "kw": [
+    "CRISPRi",
+    "precision-recall"
+   ],
+   "info": "The gold-standard set (n = 428 in the figure) combines three enhancer perturbation screens. PRIME on nucCAGE had slightly lower precision than PRIME on whole-cell CAGE but markedly higher recall.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRISPRi benchmark",
+   "q": "Could PRIME 'false positives' be real CREs?",
+   "a": "Possibly. Many PRIME-positive regions that were CRISPRi-negative were supported by other prediction methods. Against DC-TAP-seq, which has more power to detect small effects, PRIME reached even higher precision.",
+   "kw": [
+    "DC-TAP-seq"
+   ],
+   "info": "The DC-TAP-seq benchmark had n = 223 elements in the figure.",
+   "concl": "PRIME gave the best overall balance of enrichment and recall across the eQTL, ClinVar and CRISPRi benchmarks."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cell type-specific trait enrichments",
+   "q": "Which cell lines did they profile, and did trait enrichments match cell identity?",
+   "a": "They made nucCAGE and whole-cell CAGE from GM12878, K562, A549, HepG2 and HCT116. Metabolic and liver-related trait SNVs were most enriched in HepG2 PRIME loci, and immune and blood traits were most enriched in K562.",
+   "kw": [
+    "GWAS",
+    "HepG2",
+    "K562"
+   ],
+   "info": "Some enrichments crossed cell types. ApoB SNVs were also enriched in K562, including a candidate CRE in the first intron of ABO. A CRE in ABCA7 that overlaps an MCHC SNV was active in HepG2 even though the trait is erythroid.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cell type-specific trait enrichments",
+   "q": "What did PRIME show at the MYC locus?",
+   "a": "It recapitulated known CREs at higher resolution, with strong, selective activity of CRISPRi-validated enhancers e1 to e7 in K562. Elements e3 and e4 had promoter-like, plus-strand-biased initiation. A cluster of CREs inside CCDC26 in K562 nuclei co-localised with the blood enhancer cluster (BENC).",
+   "kw": [
+    "MYC",
+    "BENC",
+    "super-enhancer"
+   ],
+   "info": "Epithelial patterns: PC9-5 was A549-specific, A375-2 was A549-biased, and HCT116-1 was shared by A549 and HCT116. MDA-MB-231-1 (overlapping MYC-LASE) was active in A549, HCT116, HepG2 and K562 but not GM12878.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - FANTOM5 CRE atlas",
+   "q": "How was the FANTOM5 PRIME atlas built?",
+   "a": "PRIME was applied to the aggregated signal of 760 curated FANTOM5 CAGE libraries, and 2,849,385 regions with score >= 0.75 were kept as cell-type-agnostic focal points. Facet-specific PRIME scores were then computed in these fixed loci for 141 'facets' (ontology-based groups of cell types, tissues and cell lines).",
+   "kw": [
+    "FANTOM5",
+    "facets"
+   ],
+   "info": "Methods give 2,849,384 regions, a difference of one. Hierarchical clustering of facet scores separated physiological tissues from cancer-derived samples.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - FANTOM5 CRE atlas",
+   "q": "How many distal CREs does the PRIME atlas contain compared with the original FANTOM5 enhancer atlas?",
+   "a": "The original atlas has 63,285 enhancers. PRIME found a median of 73,151 promoter-distal CREs per facet at score 0.5. At least one facet contained 2,450,372 loci at threshold 0.5 (2,146,690 distal, 303,682 proximal) and 399,875 at 0.75 (263,685 distal, 136,190 proximal).",
+   "kw": [
+    "enhancer atlas"
+   ],
+   "info": "Many loci were found in only one or a few cell types, so the atlas is much more cell-type-specific than the original. The browser is at anderssonlab.org/PRIMEatlas.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - FANTOM5 CRE atlas",
+   "q": "What did s-LDSC across UK Biobank traits show?",
+   "a": "Across 4,178 UK Biobank traits, gene-distal PRIME loci recapitulated known trait-tissue links and found cell-type-specific enrichments not seen with the original FANTOM5 enhancers. Examples: urea, C-reactive protein and urate in kidney; blood pressure in cardiac fibroblasts; spherical power in eye; neurological traits in brain and neurons.",
+   "kw": [
+    "s-LDSC",
+    "UK Biobank"
+   ],
+   "info": "A lenient threshold (0.5) captures broad sets with lower enrichment. A strict threshold (0.75) trades recall for confidence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - FANTOM5 CRE atlas",
+   "q": "How did PRIME resolve blood and immune traits?",
+   "a": "Lymphocyte traits mapped to T cell, NK cell and lymphocyte facets, hemoglobin and reticulocyte traits to reticulocytes, and monocyte traits to monocytes and the monocyte-related AML subtypes M4eo and M5. Neutrophil traits were also enriched in monocyte facets, and eosinophil traits in both myeloid and lymphoid facets.",
+   "kw": [
+    "immune traits"
+   ],
+   "info": "The original FANTOM5 atlas is strongly enriched for blood and immune traits, probably because hematopoietic cells are overrepresented. PRIME kept these enrichments but resolved related immune cell types much better.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant interpretation",
+   "q": "What is the SMAD3 example?",
+   "a": "An intronic distal CRE in SMAD3 (chr15:67121091-67121491) overlaps rs17294280. This variant is associated with asthma (P = 5.77x10^-23, PIP = 0.995), lung function FEV/FVC (P = 1.18x10^-12) and allergic rhinitis (P = 6.0x10^-12). The CRE is most active in T cells, monocytes and mast cells.",
+   "kw": [
+    "SMAD3",
+    "asthma",
+    "rs17294280"
+   ],
+   "info": "The variant is a blood eQTL for SMAD3 (P = 0.000011, effect size -0.23, GTEx), and scE2G and ENCODE-rE2G both link the CRE to SMAD3. Variants came from Open Targets.",
+   "concl": "A plausible mechanism linking immune-cell enhancer activity to asthma susceptibility."
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant interpretation",
+   "q": "What is the NCOR2 example?",
+   "a": "A monocyte-active distal CRE about 58 kb from the NCOR2 TSS (chr12:124626205-124626605) overlaps rs763017549, which is associated with premature separation of placenta (abruptio placentae; P = 9.80x10^-18, PIP = 1.0). scE2G links the CRE to NCOR2.",
+   "kw": [
+    "NCOR2",
+    "placental abruption"
+   ],
+   "info": "NCOR2 is a co-repressor that recruits HDAC complexes and has been implicated in trophoblast differentiation and preeclampsia.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant interpretation",
+   "q": "What unexpected trait-cell type link did the atlas reveal?",
+   "a": "Variants for non-iron-deficiency anemia ('Other anemias') were enriched in mast-cell PRIME loci. For example, a mast-cell-active distal CRE at CMA1 contains rs76735545, which is associated with pernicious anemia (P = 1.31x10^-11, PIP = 1.0).",
+   "kw": [
+    "mast cells",
+    "CMA1",
+    "anemia"
+   ],
+   "info": "ENCODE-rE2G links the CRE to CMA1 in HepG2. The variant is also an eQTL for SDR39U1 in skeletal muscle (P = 5.7x10^-9). Other examples include ACOT11/SSBP3 (anthropometric traits), CD82 (platelets) and IKZF3 (eosinophils).",
+   "concl": "This points to a possible mast-cell role in erythroid physiology and anemia."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is nucCAGE a practical alternative to nascent transcription assays?",
+   "a": "GRO-cap and PRO-seq need 50 to 100 million cells and are mostly limited to cell lines. Whole-cell CAGE underrepresents rapidly degraded eRNAs and PROMPTs. nucCAGE enriches unstable nuclear transcripts with modest input and keeps a clear relationship to steady-state expression.",
+   "kw": [
+    "PRO-seq",
+    "GRO-cap"
+   ],
+   "info": "This could extend TSS profiling to primary cells and disease-relevant tissues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors explain the lower precision of PRIME on nucCAGE?",
+   "a": "Its high recall likely reflects a continuum of enhancer activities, including low-effect-size enhancers that stricter methods miss. DC-TAP-seq results show that many functional enhancers have small effects.",
+   "kw": [
+    "small-effect enhancers"
+   ],
+   "info": "",
+   "concl": "Many 'negatives' in earlier perturbation screens may have functional but subtle regulatory potential."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "nucCAGE does not capture purely nascent RNA but a mix of nascent and unstable, short-lived nuclear transcripts. The number of CREs PRIME can detect still depends on library complexity. Input beyond the optimum (2.5 to 5 million nuclei) adds noise, possibly from capture of decaying RNA fragments.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "Future work could classify CREs by initiation frequency, strand balance and multi-peak modality instead of binary activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell culture and triptolide",
+   "q": "Which cells were used and how was the triptolide treatment done?",
+   "a": "K562, HCT116, A549 and HepG2 came from ATCC and GM12878 from Coriell. For triptolide, GM12878 cells were seeded at 2x10^5 cells/ml in 5 ml, incubated 16 h, then given 50 µl of 10 mM triptolide or DMSO for 5 h, in triplicates.",
+   "kw": [
+    "triptolide",
+    "GM12878"
+   ],
+   "info": "Suspension lines were split 1:3 at 7.5x10^6 cells/ml. Adherent lines were split 1:5 to 1:8 at 75-80% confluence. All lines were grown at 37 °C with 5% CO2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - nuclei extraction",
+   "q": "How exactly were nuclei extracted?",
+   "a": "Cell pellets were dissolved in 500 µl hypotonic lysis buffer (NP-40 substitute, Tween20, 0.01% digitonin, BSA, RNase inhibitors), incubated 5 min on ice, and sheared by 10 passes through a 27G needle. They were then diluted with 9.5 ml resuspension buffer and spun 10 min at 500xg at 4 °C.",
+   "kw": [
+    "nuclei extraction",
+    "27G needle"
+   ],
+   "info": "RNA was extracted with the PureLink RNA Mini Kit with on-column DNase and checked on a Bioanalyzer. Flow cytometry (anti-TOMM20 plus DAPI) compared this N27 protocol with Omni-ATAC nuclei extraction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE library preparation",
+   "q": "How were CAGE libraries made?",
+   "a": "They followed the SLIC-CAGE and nAnT-iCAGE protocols. Up to 4,000 ng RNA was topped up with carrier RNA to 5,000 ng and reverse transcribed with SuperScript IV and random primers. The m7G cap was then oxidised with periodate, biotinylated and pulled down on streptavidin beads (cap-trapping).",
+   "kw": [
+    "SLIC-CAGE",
+    "nAnT-iCAGE",
+    "cap-trapping"
+   ],
+   "info": "Carrier was digested with I-SceI and I-CeuI. Pools of eight libraries were sequenced single-end on a NextSeq 550 (75 cycles) with 3% PhiX.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - preprocessing and mapping",
+   "q": "What does the PRIMEprep pipeline do?",
+   "a": "PRIMEprep v0.1.0 runs FastQC v0.12.1, then fastp v0.23.4 (trims the first 3 bases, minimum length 30, Phred 20, 50% unqualified limit). It removes rRNA with rRNAdust v1.02, maps with STAR v2.7.3a to GRCh38 (--alignEndsType Extend5pOfRead1, unique reads only), and checks QC with samtools v1.21 and preseq v2.0.",
+   "kw": [
+    "PRIMEprep",
+    "STAR",
+    "fastp"
+   ],
+   "info": "Non-templated 5' G additions were corrected using the MD tag. CTSSs are the 5' ends of uniquely mapped reads after G correction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - core promoters and divergent loci",
+   "q": "How were core promoters (tag clusters) defined and characterised?",
+   "a": "Same-strand CTSSs no more than 20 bp apart were merged into tag clusters (core promoters). Breadth was measured as the 10-90% interquantile width, and dispersion as Shannon shape entropy normalised to 0-1.",
+   "kw": [
+    "tag clusters",
+    "CAGEfightR"
+   ],
+   "info": "Genes were assigned within 1000 bp upstream and 100 bp downstream of UCSC knownGene TSSs. Initiators at dominant CTSSs were classed as YR (CA, TA, CG, TG) or YC (CC, TC). Analysis was done in R v4.2.2 with PRIME v0.1.0 and CAGEfightR v1.18.0.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - core promoters and divergent loci",
+   "q": "How were FANTOM5-style divergent loci called?",
+   "a": "Pairs of opposite-strand, divergently oriented core promoters no more than 400 bp apart were merged into loci. Directionality was calculated as (P2 - M1)/(P2 + M1) in 200 bp windows flanking the midpoint. Loci with |directionality| <= 0.8 were kept.",
+   "kw": [
+    "directionality",
+    "divergent loci"
+   ],
+   "info": "A locus has a 'divergent signature' if M1 > P1 and P2 > M2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PRIME training",
+   "q": "How was the PRIME training set built?",
+   "a": "Positives were 401 bp windows (+-200 bp) around GM12878 DHS summits (Roadmap E116) that contained CAGE signal, minus GENCODE v31 exons, CDS and 3' UTRs. Negatives were tag-cluster-summit windows that did not overlap positives. Regions with fewer than 4 CAGE reads were removed. The final set had 4,428,109 regions.",
+   "kw": [
+    "training data",
+    "data augmentation"
+   ],
+   "info": "Positives were augmented with normally distributed shifts (+-30 bp). Negatives were augmented with uniform shifts and near-positive flanks of the 151 bp cores, then subsampled to balance the classes. The Methods cite Fig. S7 for this schematic while the Results cite Fig. S9.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PRIME training",
+   "q": "What is the model input and configuration?",
+   "a": "The input is a 401-position normalised strand-difference profile, (f - r)/max(max(f), max(r)), with values from -1 to 1. The model is a binary LightGBM classifier in Python 3.9.9, tuned by Bayesian optimisation with wandb: n_estimators 1686, num_leaves 1463, learning_rate 0.09377, max_depth 30, reg_lambda 50, gbdt.",
+   "kw": [
+    "LightGBM",
+    "hyperparameters"
+   ],
+   "info": "Chromosomes 2-4 were held out as the test set, and the rest split 80/20 into training and validation. Loss was binary cross-entropy. No class reweighting was needed. Model release is PRIMEmodel v1.0.0.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome-wide prediction",
+   "q": "How are genome-wide windows turned into final PRIME regions?",
+   "a": "401 bp windows with a 20 bp step tile the regions around tag-cluster summits. Windows scoring >= 0.75 are clustered. Within each cluster, 151 bp cores scoring within max_score - 0.1 of the top core are merged, and this repeats iteratively.",
+   "kw": [
+    "segmentation"
+   ],
+   "info": "Output: non-overlapping regions of at least 151 bp, each scored by its maximum and with a summit at the midpoint of the best core. Proximal or distal labels are assigned afterwards with TxDb.Hsapiens.UCSC.hg38.knownGene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - benchmarks",
+   "q": "How were the variant benchmarks set up?",
+   "a": "All annotations were resized to 200 bp, and promoters were defined as +-500 bp around TSSs. eQTLs were GTEx v8 whole-blood eQTLs fine-mapped with SuSiE and FINEMAP (PIP > 0.5). GWAS used UK Biobank fine-mapped variants (PIP > 0.2, lifted to hg38) grouped into blood, immune and liver/metabolic traits. ClinVar used the 2 March 2026 release.",
+   "kw": [
+    "SuSiE",
+    "FINEMAP",
+    "1000 Genomes"
+   ],
+   "info": "Enrichment was measured against distal noncoding 1000 Genomes variants. eQTL and GWAS analyses were restricted to distal elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - atlas and s-LDSC",
+   "q": "How were facet scores and s-LDSC run on the atlas?",
+   "a": "Pooled FANTOM5 predictions were re-centred to 401 bp and rescored per facet with PRIMEmodel::predictFocal(). Scores were quantile-normalised across facets. For s-LDSC, distal regions at score 0.5 or 0.75 were used, capped at the top 100,000 per facet, and enrichment was calculated as h2 divided by the proportion of SNPs.",
+   "kw": [
+    "predictFocal",
+    "s-LDSC"
+   ],
+   "info": "Facets were clustered by Jaccard distance of active distal CREs with average linkage. Variant interpretation used Open Targets credible sets (PIP > 0.3) and E2G-portal links (scE2G, ENCODE-rE2G). Data are in GEO GSE306952.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - CRISPRi benchmark",
+   "text": "Are the PRIME-positive but CRISPRi-negative regions really functional small-effect enhancers? The DC-TAP-seq result supports this, but it has not been tested directly."
+  },
+  {
+   "type": "note",
+   "section": "Results - library complexity",
+   "text": "The optimal nucCAGE input is stated inconsistently: more than 1 million and fewer than 10 million nuclei (1.5-2.5 µg RNA) in one place, and 2.5-5 million nuclei in the summary and Discussion. Check Fig. 2A and S5 before planning experiments."
+  },
+  {
+   "type": "note",
+   "section": "Results - PRIME model",
+   "text": "PRIME was trained only on human GM12878 CAGE with DHSs as the scaffold. The authors say it works on any base-pair-resolution TSS data, but it is untested whether the learned initiation patterns transfer to other species such as zebrafish or cavefish CAGE data."
+  }
+ ]
+}

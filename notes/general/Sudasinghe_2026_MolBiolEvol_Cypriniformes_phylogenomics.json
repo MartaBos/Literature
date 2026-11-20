@@ -1,0 +1,610 @@
+{
+ "id": "Sudasinghe_2026",
+ "title": "Phylogenomics of Cypriniformes, the most diverse order of freshwater fishes: consensus, challenges, and limitations",
+ "link": "https://doi.org/10.1093/molbev/msag261",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/general/Sudasinghe_2026_MolBiolEvol_Cypriniformes_phylogenomics.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main goal and scope of this study?",
+   "a": "To build the first phylogenomic tree of Cypriniformes that includes every family and many genera. It covers 316 species, about 30% of all described genera.",
+   "kw": [
+    "Cypriniformes",
+    "phylogenomics"
+   ],
+   "info": "Cypriniformes is the most species-rich order of freshwater fishes, with about 5,000 species. The dataset combines 257 newly assembled genomes with public genomes.",
+   "concl": "The backbone topology of Cypriniformes is now established, so well-supported clades and regions of persistent conflict can be told apart clearly."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What kinds of phylogenetic conflict did the authors find?",
+   "a": "Some relationships remain hard to resolve. The conflict comes from biological processes (ILS) and from possible model artifacts, and both can produce similar-looking patterns of discordance.",
+   "kw": [
+    "incomplete lineage sorting",
+    "long-branch attraction",
+    "gene tree discordance"
+   ],
+   "info": "The placements of several miniaturized lineages are now better supported.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are Cypriniformes an important group to study?",
+   "a": "They are the most species-rich clade of freshwater fishes, with nearly 5,000 species in Asia, Europe, Africa and North America. They include several model organisms used in development, genetics, physiology and neuroscience, and they matter for fisheries, aquaculture and the aquarium trade.",
+   "kw": [
+    "Cypriniformes"
+   ],
+   "info": "Ray-finned fishes make up about half of all vertebrate species (over 35,000). Freshwater covers less than 1% of Earth's surface but holds nearly 50% of all fish species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What limited earlier molecular phylogenies of Cypriniformes?",
+   "a": "Sparse taxon sampling, reliance on a few markers (mostly mtDNA or a few nuclear loci) or targeted capture, and missing major lineages. Some relationships were congruent across studies, but others stayed in persistent conflict.",
+   "kw": [
+    "taxon sampling"
+   ],
+   "info": "The previous largest genomic dataset was Stout et al. 2016, which used anchored hybrid enrichment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are the miniaturized lineages hard to place?",
+   "a": "They combine extreme morphological reduction, faster molecular evolution and possible long-branch attraction (LBA). Paedocypris, for example, has been placed as sister to all other Cypriniformes, as sister to Cyprinoidei, or inside Danionidae.",
+   "kw": [
+    "Paedocypris",
+    "long-branch attraction",
+    "progenetic miniaturization"
+   ],
+   "info": "The problematic miniature taxa are Paedocypris, Sundadanio, Fangfangia and Danionella. Paedocypris includes some of the smallest known vertebrates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does polyploidy complicate phylogenetic inference in Cypriniformes?",
+   "a": "Both autopolyploidy and allopolyploidy occur. The resulting whole-genome duplications create paralogs, and if paralogs are mistaken for orthologs they can distort the inferred relationships, especially in Cyprinidae and Catostomidae.",
+   "kw": [
+    "polyploidy",
+    "whole-genome duplication",
+    "paralogy"
+   ],
+   "info": "Other sources of incongruence listed: ILS, introgression, rate heterogeneity, compositional bias, and model misspecification as a systematic source.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expanding the phylogenomic framework",
+   "q": "How much larger is this dataset than earlier ones?",
+   "a": "Taxon sampling (316 species) is about 84% larger than in Stout et al. 2016. The largest combined matrix, BUSCO.NT.C12+UCE, has 541,983 bp, about a 229% increase in total alignment size (sites x species).",
+   "kw": [
+    "BUSCO",
+    "UCE"
+   ],
+   "info": "The main tree in Fig. 1 is an ASTRAL-IV species tree with 335 species (including outgroups) and 1,167 loci.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expanding the phylogenomic framework",
+   "q": "Did different inference methods agree?",
+   "a": "Yes, broadly. Concatenation (IQ-TREE2) and coalescent-aware species trees (ASTRAL-IV, wASTRAL) gave congruent relationships. The reference-free, orthology-free ROADIES trees were also largely consistent, across three independent runs.",
+   "kw": [
+    "ASTRAL-IV",
+    "wASTRAL",
+    "ROADIES"
+   ],
+   "info": "Concatenation trees were similar across all datasets. Coalescent-aware trees varied modestly between marker sets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expanding the phylogenomic framework",
+   "q": "Did paralogy from polyploidy distort the tree?",
+   "a": "No evidence of that. ROADIES, which handles paralogs, agreed with the concatenation trees within Cyprinidae and Catostomidae. A neighbor-net of the BUSCO data showed no extra non-tree-like signal in the polyploid families compared with nonpolyploid ones.",
+   "kw": [
+    "neighbor-net",
+    "paralogy",
+    "polyploidy"
+   ],
+   "info": "",
+   "concl": "Paralogy does not appear to distort relationships within the polyploid families."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expanding the phylogenomic framework",
+   "q": "Were the results robust to models that target systematic error?",
+   "a": "Yes. Three approaches gave broadly congruent relationships: the GHOST heterotachy model on a reduced dataset, Bayesian CAT-GTR (site-heterogeneous), and ML on RY-recoded data (which reduces compositional heterogeneity).",
+   "kw": [
+    "GHOST",
+    "CAT-GTR",
+    "RY-recoding"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expanding the phylogenomic framework",
+   "q": "How should high support values be read next to concordance factors?",
+   "a": "Support for major relationships was uniformly high, which is expected for genome-scale data with low sampling variance. Concordance factors still showed considerable topological heterogeneity between loci.",
+   "kw": [
+    "concordance factors",
+    "gCF",
+    "sCF"
+   ],
+   "info": "BUSCO.NT.C12 and UCE had the highest overall concordance. HUGHES.NT.C12 and MALMSTROM.NT.C12 showed more discordance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Expanding the phylogenomic framework",
+   "q": "Were the families monophyletic?",
+   "a": "Yes. Every family represented by more than one species was consistently recovered as monophyletic with strong support, although the amount of gene-tree discordance varied a lot between families.",
+   "kw": [
+    "monophyly"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Stable phylogenetic relationships",
+   "q": "What are the stable relationships among the loaches (Cobitoidei)?",
+   "a": "Botiidae is sister to all other loaches, followed in turn by Vaillantellidae and Cobitidae. Gastromyzontidae+Serpenticobitidae is usually sister to Balitoridae+Barbuccidae, and these four form a clade that is mostly sister to Nemacheilidae+Ellopostomatidae.",
+   "kw": [
+    "Cobitoidei",
+    "loaches"
+   ],
+   "info": "Ellopostomatidae as sister to Nemacheilidae had weaker support and a short internal branch.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Stable phylogenetic relationships",
+   "q": "Which relationships within Cyprinoidei were consistently supported?",
+   "a": "Cyprinidae is sister to Psilorhynchidae in every dataset. Leptobarbidae and Xenocyprididae are successive sister groups to the clade Acheilognathidae, Gobionidae, Leuciscidae, Tanichthyidae and Tincidae.",
+   "kw": [
+    "Cyprinoidei",
+    "Cyprinidae",
+    "Psilorhynchidae"
+   ],
+   "info": "These results agree with earlier molecular studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conflicting phylogenetic relationships",
+   "q": "What are the three main zones of conflict in the tree?",
+   "a": "(1) The early branching order of the four suborders. (2) The base of Cyprinoidei, specifically where Danionidae sits. (3) The relationships among Acheilognathidae, Gobionidae, Leuciscidae, Tanichthyidae and Tincidae.",
+   "kw": [
+    "incomplete lineage sorting",
+    "short internal branches"
+   ],
+   "info": "These regions show ILS, which is typical of very short internal branches and/or rapid diversification. The third zone had some of the lowest gCF and sCF values in the whole tree.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conflicting phylogenetic relationships",
+   "q": "How do concatenation and coalescent methods differ on the suborder relationships?",
+   "a": "Gyrinocheiloidei is sister to all other Cypriniformes in all concatenated and most coalescent trees. Concatenation puts Catostomoidei as sister to Cobitoidei+Cyprinoidei. No coalescent tree supports that; they mostly give Catostomoidei+Cobitoidei as sister to Cyprinoidei.",
+   "kw": [
+    "Gyrinocheiloidei",
+    "Catostomoidei",
+    "concatenation vs coalescent"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conflicting phylogenetic relationships",
+   "q": "Which alternative placements of Danionidae appeared at the base of Cyprinoidei?",
+   "a": "Three placements, with Paedocyprididae excluded: (i) sister to all other Cyprinoidei, (ii) sister to Cyprinidae+Psilorhynchidae, or (iii) sister to all other Cyprinoidei except Cyprinidae+Psilorhynchidae.",
+   "kw": [
+    "Danionidae"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zebrafish relatives",
+   "q": "How well is Danionidae (the zebrafish family) sampled?",
+   "a": "Danionidae has about 364 species in 39 genera. The study samples 34 genera, about 87% of all valid genera.",
+   "kw": [
+    "Danionidae",
+    "zebrafish"
+   ],
+   "info": "The authors call it one of the most comprehensive phylogenomic frameworks for the family so far, useful for comparative evolutionary and developmental work.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zebrafish relatives",
+   "q": "Where does Danionella sit, and how do the Danionidae subfamilies relate?",
+   "a": "Danionella is always sister to the rest of Danioninae, even though its rate is strongly elevated. Chedrinae is always sister to Danioninae, and that clade is sister to Rasborinae+Esominae or to Rasborinae alone in most analyses.",
+   "kw": [
+    "Danionella",
+    "Danioninae",
+    "Esominae"
+   ],
+   "info": "Esominae moved between analyses: sister to Rasborinae in most concatenated and several coalescent trees, sister to the rest of Danionidae in others.",
+   "concl": "A stable, close relationship between Danionella and Danio rerio gives a framework for comparative developmental genomics and the study of miniaturization."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rate variation in progenetic miniatures",
+   "q": "What is progenetic miniaturization?",
+   "a": "Extreme developmental truncation, in which larval-like morphology is kept into adulthood. In Cypriniformes, four genera show it: Paedocypris, Danionella, Sundadanio and Fangfangia.",
+   "kw": [
+    "progenetic miniaturization",
+    "developmental truncation"
+   ],
+   "info": "These genera also show remarkable morphological innovation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rate variation in progenetic miniatures",
+   "q": "Do the miniature lineages evolve faster at the molecular level?",
+   "a": "Yes. All four, especially Paedocypris and Danionella, had markedly higher substitution rates, measured as root-to-tip distances in rooted concatenated trees, in every dataset.",
+   "kw": [
+    "root-to-tip distance",
+    "rate heterogeneity",
+    "substitutional saturation"
+   ],
+   "info": "Rate heterogeneity can cause LBA or increase saturation and erode phylogenetic signal. So the authors tested placements with CAT-GTR, RY-recoding and alternative outgroups.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Position of Fangfangia",
+   "q": "Where does Fangfangia spinicleithralis belong?",
+   "a": "It is sister to Sundadanio in all datasets, with high statistical support and high gCF and sCF. This confirms a hypothesis that was previously based only on morphology.",
+   "kw": [
+    "Fangfangia",
+    "Sundadanio",
+    "Sundadanionidae"
+   ],
+   "info": "It had never been in any genetic database before and was known only from its original morphological description.",
+   "concl": "This is the first molecular confirmation of the Fangfangia+Sundadanio sister relationship."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sundadanionidae and ILS",
+   "q": "Where is Sundadanionidae placed, and how well supported is that?",
+   "a": "In all datasets it is sister to the clade Leptobarbidae, Xenocyprididae, Acheilognathidae, Gobionidae, Leuciscidae, Tanichthyidae and Tincidae. Support is strong, but the internal branch is very short.",
+   "kw": [
+    "Sundadanionidae",
+    "short internal branch"
+   ],
+   "info": "Gene-level residual discordance was high in all analyses (psi4 > 78.5%). At site level, UCE, BUSCO.NT.C12, BUSCO.AA and MALMSTROM.AA had discordance psi2 = 47 to 67% above concordance psi1 = 19 to 33%. Quartet values were fairly even (psi1 = 34 to 40%, psi2 = 30 to 34%), and UCE was higher (psi1 = 42%).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Sundadanionidae and ILS",
+   "q": "What did hypothesis testing show for Sundadanionidae?",
+   "a": "Across 8,208 constrained ML searches, GGI ranked H2 (sister to the Leptobarbidae-to-Tincidae group) highest, then H1 (with Danionidae), then H3. No hypothesis clearly dominated, and over 94% of loci did not significantly distinguish the alternatives.",
+   "kw": [
+    "GGI",
+    "deltaGLS",
+    "AU test"
+   ],
+   "info": "Pairwise deltaGLS showed no strong outlier loci and balanced support. The placement did not change under CAT-GTR or RY-recoding, and gene properties did not differ between hypotheses.",
+   "concl": "The conflict looks like genuine biological signal, from ILS during a rapid early radiation, rather than LBA or compositional artifacts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Paedocyprididae placement",
+   "q": "Where is Paedocyprididae placed?",
+   "a": "In most analyses it is sister to all other Cyprinoidei, with strong support. Only the ASTRAL-IV and wASTRAL trees from the HUGHES.NT.C123 and MALMSTROM.NT.C123 datasets put it as sister to all other Cypriniformes.",
+   "kw": [
+    "Paedocypris",
+    "Paedocyprididae"
+   ],
+   "info": "Its internal branch was longer than that of Sundadanionidae in all datasets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Paedocyprididae placement",
+   "q": "How much gene-tree conflict is there at the Paedocyprididae branch?",
+   "a": "A lot. In HUGHES and MALMSTROM the residual discordance was over 79.8% and gene concordance was only psi1 = 4.5 to 10.8%. UCE was much more concordant (psi1 = 50.4%, psi4 = 38.8%).",
+   "kw": [
+    "concordance vectors"
+   ],
+   "info": "At site level, discordance (psi2 = 34.7 to 64.9%) mostly exceeded concordance (psi1 = 20 to 33%). Quartet concordance was moderate to high (psi1 = 38.9 to 66.9%), highest for UCE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Paedocyprididae placement",
+   "q": "What did GGI and deltaGLS show for Paedocyprididae?",
+   "a": "Across 12,265 constrained ML analyses, H2 (Cyprinoidei monophyletic without Paedocyprididae) ranked highest in the H1 to H3 set, and H4 (Cypriniformes monophyletic without Paedocyprididae) ranked highest in the H1, H4, H5 set. Over 91% of loci were nonsignificant, so per-locus support was weak.",
+   "kw": [
+    "GGI",
+    "deltaGLS"
+   ],
+   "info": "deltaGLS: more loci favored H2 and H4. Between H1 and H3/H5, a modest majority favored H1. Gene properties did not differ, so there was no sign of locus-specific bias.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Paedocyprididae placement",
+   "q": "Is the Paedocyprididae placement an LBA or GC-content artifact?",
+   "a": "There is no evidence for it. Paedocyprididae has markedly higher GC content that resembles the outgroups (possible compositional convergence). Still, its position as sister to the rest of Cyprinoidei stayed the same under CAT-GTR, RY-recoding, and with the high-GC outgroups removed.",
+   "kw": [
+    "GC content",
+    "compositional convergence",
+    "long-branch attraction"
+   ],
+   "info": "In the reduced outgroup sets, only outgroups with GC content similar to Cypriniformes were kept (Clupeiformes and Siluriformes, or Siluriformes alone).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What explains the persistent conflict zones?",
+   "a": "The conflict sits on extremely short internodes with heterogeneous gene histories, which fits ILS from rapid successive speciation under the multispecies coalescent. Because this appears at both deep and shallow levels, the order may have gone through repeated bursts of diversification.",
+   "kw": [
+    "multispecies coalescent",
+    "incomplete lineage sorting",
+    "rapid radiation"
+   ],
+   "info": "Ancestral polymorphisms persist through successive splits before fixation, which makes gene genealogies vary stochastically.",
+   "concl": "Most topological conflict in Cypriniformes likely reflects biological processes (rapid divergence and ILS), not methodological artifacts."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might miniature lineages evolve faster?",
+   "a": "The authors suggest it may reflect differences in life history, genome architecture, or metabolic constraints linked to extreme miniaturization and developmental truncation.",
+   "kw": [
+    "rate heterogeneity",
+    "miniaturization"
+   ],
+   "info": "This is speculative and was not tested in this paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the Sundadanionidae and Paedocyprididae problems differ?",
+   "a": "For Sundadanionidae, balanced gene-tree support and very short internodes point to ILS during a rapid early radiation. For Paedocyprididae, the placement holds up under tests for LBA and composition, so its recalcitrance looks like weak, conflicting signal rather than a systematic-error artifact or ILS.",
+   "kw": [
+    "ILS",
+    "LBA",
+    "recalcitrant nodes"
+   ],
+   "info": "",
+   "concl": "Conflict within one radiation can come from distinct sources that produce superficially similar patterns."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations and future directions do the authors name?",
+   "a": "Genome-scale sequence data may still fail to resolve recalcitrant nodes. Progress may come from models that include recombination landscapes, from rare genomic changes or conserved synteny made possible by chromosome-level assemblies, and from new morphological data on early developmental stages.",
+   "kw": [
+    "synteny",
+    "rare genomic changes",
+    "chromosome-level assemblies"
+   ],
+   "info": "Noise and systematic error in these newer approaches are still largely unexplored. They have already been applied to the early branching of the suborders (MacGuigan et al. 2026).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Taxon sampling",
+   "q": "What new genomic data were generated?",
+   "a": "New data for 257 species: Illumina short reads for 253, and PacBio HiFi long reads for 4 (Paedocypris sp. Kalimantan Tengah, Sundadanio atomus, Boraras brigittae and Rasbora kalochroma).",
+   "kw": [
+    "PacBio HiFi",
+    "Illumina"
+   ],
+   "info": "All four PacBio species live in Southeast Asian peat swamp blackwaters. Paedocypris and Sundadanio are progenetic miniatures, B. brigittae is a proportioned dwarf, and R. kalochroma is not miniature. The taxonomy came from the Catalog of Fishes (accessed 1 December 2020), compared with Tan and Armbruster 2018.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Taxon sampling",
+   "q": "Which families get whole-genome data for the first time?",
+   "a": "Barbuccidae, Ellopostomatidae, Leptobarbidae and Psilorhynchidae. Fangfangia spinicleithralis also gets its first molecular data.",
+   "kw": [
+    "Fangfangia"
+   ],
+   "info": "Overall, the sampling covers about 30% of the roughly 527 described Cypriniformes genera.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing",
+   "q": "How were the samples sequenced?",
+   "a": "Illumina: DNA from museum specimens (DNeasy), TruSeq PCR-free libraries (or TruSeq Nano for under 1,000 ng), PE150 on NovaSeq 6000. Depth targeted about 30x for diploids and 60x for polyploids, assuming a 1 Gb genome.",
+   "kw": [
+    "NovaSeq 6000",
+    "PacBio Revio",
+    "Sequel IIe"
+   ],
+   "info": "PacBio: HMW DNA from Qiagen Genomic-tips. Paedocypris had 6 to 7 kb inserts on Sequel IIe; the other three had 10 to 12 kb inserts on Revio. Sequencing was at the NGS Platform, University of Bern, except 15 Indian species at Agrigenome Labs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QC and genome assembly",
+   "q": "How were the short-read genomes assembled?",
+   "a": "Reads were trimmed in two rounds with fastp (adapters, dedup, polyG/X, then a sliding window at Q20, window size 4). k-mer profiling used KMC 3 and GenomeScope 2.0 (k = 21 and 31). Assemblies were made with ABySS 2.0 (k = 90, kc = 2, chosen after testing k = 70 to 95 on 20 species) and SPAdes (default settings).",
+   "kw": [
+    "ABySS",
+    "SPAdes",
+    "compleasm"
+   ],
+   "info": "Quality was checked with QUAST and BUSCO via compleasm (actinopterygii_odb10, n = 3,640). For each species, the assembly with the higher complete single-copy BUSCO score was kept.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QC and genome assembly",
+   "q": "How were the PacBio HiFi genomes assembled?",
+   "a": "Following the VGP standard workflow: HiFiAdapterFilt for cleaning, Meryl and GenomeScope 2.0 for k-mers, hifiasm in solo mode with light purge to get primary and alternate contigs, then two rounds of purge_dups to remove haplotypic duplications.",
+   "kw": [
+    "hifiasm",
+    "purge_dups",
+    "Merqury"
+   ],
+   "info": "Quality was checked with Merqury (QV, k-mer completeness), QUAST and BUSCO. Full details are in a separate paper (Sudasinghe et al. 2026a).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Taxonomic validation",
+   "q": "How did they check species identity and contamination?",
+   "a": "They assembled mitogenomes with MITObim (carp or zebrafish reference), annotated them with MITOS, and BLASTed the roughly 650 bp cox1 barcode (or cytb) against NCBI, then built NJ trees. A match of at least 95% identity counted as correct. Samples where cox1 and cytb disagreed were treated as contaminated and removed.",
+   "kw": [
+    "MITObim",
+    "cox1",
+    "cytb"
+   ],
+   "info": "Samples with hits below 95%, or with a mismatching identity, were rechecked with the taxonomic experts who provided them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Dataset curation",
+   "q": "How was the final set of 335 species reached?",
+   "a": "389 assemblies were combined: new data, 95 public Cypriniformes genomes, 19 outgroup genomes and 18 SRA datasets. Removed were 2 contaminants, 1 hybrid and 4 low-quality samples; for the 47 species with several assemblies, only the one with the highest BUSCO score was kept.",
+   "kw": [
+    "outgroups",
+    "data curation"
+   ],
+   "info": "Outgroups were Characiformes, Gymnotiformes, Siluriformes, Gonorynchiformes and Clupeiformes (Otomorpha). The low-quality samples had more than 10% discrepancy between k = 21 and k = 31 genome size estimates and unrealistic heterozygosity. Public genomes were reviewed as of 1 July 2024.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Marker datasets",
+   "q": "Which four marker sets were used?",
+   "a": "Three exon sets and one UCE set. BUSCO uses actinopterygii_odb10 single-copy CDS. HUGHES uses the teleost exon probes, harvested with HMMER. MALMSTROM uses the teleost ortholog set via DIAMOND blastx. UCE uses the Ostariophysan 2.7K probe set with PHYLUCE and 500 bp flanks.",
+   "kw": [
+    "BUSCO",
+    "UCE",
+    "PHYLUCE"
+   ],
+   "info": "BUSCO alignments: MACSE v2 codon-aware alignment, BMGE (BLOSUM30) and TAPER on amino acids, then masking, trimming, BMGE (-e 0.8 -g 0.2) and TAPER on nucleotides. HUGHES and MALMSTROM: MAFFT, BMGE, TAPER. UCE: MAFFT and Gblocks. The three exon sets overlapped little when mapped to zebrafish GRCz11, so they are largely independent.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Dataset filtering",
+   "q": "How were loci filtered, and how many were left?",
+   "a": "Taxa with over 50% missing data were removed, loci with more than two stop codons or shorter than 150 bp were dropped, alignments were inspected by hand in AliView, and loci present in fewer than 251 taxa (75%) were removed. This left 769 BUSCO, 866 HUGHES, 1,394 MALMSTROM and 896 UCE loci, cut by genesortR to 539, 607, 976 and 628.",
+   "kw": [
+    "genesortR",
+    "missing data"
+   ],
+   "info": "genesortR ran with outlier fraction 0.3 and topological similarity off. Each exon set was analyzed as NT.C123, NT.C12 and AA, giving ten datasets in total with UCE. Locus trees were built with IQ-TREE2 (ModelFinder, 1,000 ultrafast bootstraps).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Phylogenomic inference",
+   "q": "Why were the results interpreted mainly from NT.C12, AA and UCE?",
+   "a": "The NT.C123 datasets, which include third codon positions, gave some incongruent relationships, probably from substitutional saturation at third positions. NT.C12, AA and UCE had higher resolution and less homoplasy.",
+   "kw": [
+    "third codon position",
+    "saturation"
+   ],
+   "info": "genesortR showed NT.C123 had more saturation, faster rates, and higher bootstrap support and patristic distances.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Phylogenomic inference",
+   "q": "Which tree inference methods were used?",
+   "a": "Concatenation in IQ-TREE2 (ModelFinder MFP, --merge). Coalescent-aware ASTRAL-IV (with CASTLES-Pro branch lengths) and wASTRAL in ASTER. ROADIES, run three times in accurate mode with IDENTITY = 50, which builds multicopy gene trees and uses ASTRAL-Pro3.",
+   "kw": [
+    "IQ-TREE2",
+    "ASTRAL-IV",
+    "ROADIES"
+   ],
+   "info": "CASTER-site and CASTER-pair were also run but gave biologically implausible topologies, likely because the reduced genomic data had limited power, so they are not reported. ROADIES pipeline: random subsequences, LASTZ, PASTA alignment, RAxML-NG gene trees, ASTRAL-Pro3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Systematic error tests",
+   "q": "How did they test for heterotachy, site heterogeneity and compositional bias?",
+   "a": "GHOST in IQ-TREE2 on 140 representative species (BUSCO.NT.C12+UCE, ten models compared by AIC/BIC). CAT-GTR in PhyloBayes-MPI on amino acid data cut to 140 taxa and about 10,000 sites (two chains, maxdiff < 0.1). RY-recoding of NT.C123 with PhyKIT. Outgroup reduction to Clupeiformes+Siluriformes or Siluriformes only.",
+   "kw": [
+    "GHOST",
+    "CAT-GTR",
+    "PhyloBayes-MPI"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Support and concordance",
+   "q": "How were support and concordance measured?",
+   "a": "Ultrafast bootstrap (1,000) for concatenated trees and local posterior probabilities for ASTRAL-based trees. gCF and sCF were computed in IQ-TREE2 (--scfl 100) on the ASTRAL-IV tree, and qCF from ASTRAL-IV with -u 2. CFs were read as descriptions of topological variation, not as support.",
+   "kw": [
+    "gCF",
+    "sCF",
+    "qCF"
+   ],
+   "info": "Root-to-tip distances were computed with ape in R after pruning outgroups. GC content came from AMAS. A neighbor-net from logDet distances was built in SplitsTree4 v4.18.3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Hypothesis testing",
+   "q": "What are concordance vectors?",
+   "a": "Four proportions that add up to one for a focal branch. psi1 is the share supporting the branch, psi2 and psi3 are the two main alternative topologies (psi2 > psi3), and psi4 covers all other discordant topologies.",
+   "kw": [
+    "concordance vectors"
+   ],
+   "info": "A low psi1 means most loci do not support the inferred branch even when species-tree support is high, which points to conflict or ILS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Hypothesis testing",
+   "q": "How do GGI and deltaGLS work?",
+   "a": "GGI runs constrained ML searches per locus under each competing topology, changing only the focal lineage, and ranks them with the AU test (IQ-TREE2 -zb 20000 -au --sitelh --ntop 40). deltaGLS is the per-locus log-likelihood difference between two topologies; it shows whether a few loci drive the overall support.",
+   "kw": [
+    "GGI",
+    "deltaGLS",
+    "AU test"
+   ],
+   "info": "Run on the BUSCO, HUGHES and MALMSTROM NT.C12 datasets and UCE. Trees were pruned with nw_prune. Nested hypotheses (H2/H4 and H3/H5 for Paedocyprididae) were not compared directly.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Why do Paedocypris and Danionella have elevated substitution rates and (for Paedocypris) high GC content? Life history, genome architecture or metabolic constraints are suggested but not tested."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Would synteny or rare genomic changes from chromosome-level assemblies resolve the suborder branching order and the placement of Paedocyprididae? See MacGuigan et al. 2026."
+  },
+  {
+   "type": "note",
+   "section": "Results - Zebrafish relatives",
+   "text": "Look at the Danionidae tree (34 of 39 genera) as a comparative framework for zebrafish and Danionella work."
+  }
+ ]
+}

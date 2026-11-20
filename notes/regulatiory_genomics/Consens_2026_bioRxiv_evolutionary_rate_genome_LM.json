@@ -1,0 +1,519 @@
+{
+ "id": "Consens_2026",
+ "title": "Predicting evolutionary rate as a pretraining task improves genome language model representations",
+ "link": "https://doi.org/10.64898/2026.02.02.703275",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Consens_2026_bioRxiv_evolutionary_rate_genome_LM.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem with genome language models (gLMs) does this paper address?",
+   "a": "Most gLMs are pretrained only on sequence reconstruction tasks borrowed from natural language processing, and recent studies show these models often fail to capture biological signal. The authors test whether predicting the rate of evolution works better as a pretraining task.",
+   "kw": [
+    "genome language model",
+    "pretraining"
+   ],
+   "info": "This is a bioRxiv preprint (posted February 4, 2026) and has not been peer reviewed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding in one sentence?",
+   "a": "Models pretrained on both sequence and evolutionary rate outperform models trained on sequence alone, on new zero-shot benchmarks and on established variant effect prediction benchmarks.",
+   "kw": [
+    "evolutionary rate"
+   ],
+   "info": "Training on evolutionary rate made even their small models (4M and 66M parameters) competitive with much larger gLMs on some tasks.",
+   "concl": "Evolution should be a key training target for genome-scale models."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the two standard pretraining tasks for gLMs?",
+   "a": "Next token prediction (NTP), where the model predicts the next nucleotide from the previous ones, and masked language modeling (MLM), where the model predicts masked nucleotides from the surrounding context.",
+   "kw": [
+    "NTP",
+    "MLM"
+   ],
+   "info": "These models do well after fine-tuning on tasks such as TF binding and chromatin profiles. However, recent work shows they underperform simple baselines and do not reliably beat randomly initialized versions of the same architecture.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is zero-shot evaluation important for gLMs?",
+   "a": "In biological discovery the labels are often not known, so a model has to be useful without task-specific training. Few earlier works tested gLMs in this zero-shot setting.",
+   "kw": [
+    "zero-shot"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is evolutionary rate a good signal for genome function?",
+   "a": "Functional sites tend to be conserved and accumulate substitutions more slowly than neutral sites. Evolutionary rate also captures fine-grained function within an element, for example lower rates at specific positions within codons.",
+   "kw": [
+    "evolutionary rate",
+    "conservation"
+   ],
+   "info": "Whole genome alignments now allow evolutionary rates to be estimated at single-base resolution. Even so, evolutionary rate had barely been tested as a training target for gLMs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What two new pretraining tasks do they introduce?",
+   "a": "Current evolution prediction (CEP) predicts the PhyloP score at each position from the sequence up to that position. Masked evolution modeling (MEM) gives the model a partially masked sequence and has it predict PhyloP scores at all positions.",
+   "kw": [
+    "CEP",
+    "MEM",
+    "PhyloP"
+   ],
+   "info": "CEP can be combined with NTP and MEM with MLM. Both need only a single sequence as input, not an alignment.",
+   "concl": "Because the tasks combine with sequence reconstruction, the same architecture and data can be compared under sequence-only, evolution-only and combined training."
+  },
+  {
+   "type": "qa",
+   "section": "Related works",
+   "q": "Don't multi-species gLMs already learn evolution implicitly?",
+   "a": "In principle they can, by seeing homologous regions across species, as protein language models do. But genomes are much noisier than proteins and are dominated by DNA of unknown function, so it is unclear whether this works as well for genomes.",
+   "kw": [
+    "multi-species pretraining"
+   ],
+   "info": "Genomes are also much longer than proteins, which makes it attractive to compress evolutionary information into a simple per-base target. In genomics the main interest is often the human genome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related works",
+   "q": "What is the downside of MSA-based models like GPN-MSA and GPN-STAR?",
+   "a": "They need a multiple sequence alignment as input, which limits downstream use. For example, synthetic sequences have no natural homologs in other species.",
+   "kw": [
+    "GPN-MSA",
+    "GPN-STAR",
+    "MSA"
+   ],
+   "info": "GPN-MSA is a masked language model over MSAs. GPN-STAR additionally uses the phylogenetic tree to constrain attention between sequences. Both do well on non-coding variant effect prediction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related works",
+   "q": "How does this work differ from PhyloGPN, the closest existing approach?",
+   "a": "PhyloGPN predicts the evolutionary rate only at one central nucleotide per input, which is less efficient to train. It was also never tested in combination with sequence reconstruction. CEP and MEM predict the rate at every position and can be combined with NTP or MLM.",
+   "kw": [
+    "PhyloGPN"
+   ],
+   "info": "Earlier deep learning models for conservation, such as the DeepCons CNN, were built for specific tasks rather than as general pretraining objectives.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related works",
+   "q": "What problems with existing gLM benchmarks do they point out?",
+   "a": "Supervised classifiers trained on frozen representations add variance and compute cost. Randomly initialized baselines are often missing. Easy negatives such as random genomic DNA let models win on low-level sequence composition instead of real regulatory features.",
+   "kw": [
+    "benchmarking",
+    "negative sets"
+   ],
+   "info": "Their benchmarks are zero-shot, include architecture-matched random-initialization baselines, and use several negative sets of increasing difficulty.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pretraining tasks",
+   "q": "What do PhyloP scores measure?",
+   "a": "Whether a single nucleotide position evolves more slowly than expected under a neutral model (conserved, positive score) or faster (accelerated, negative score). Scores are computed from an MSA and its phylogenetic tree.",
+   "kw": [
+    "PhyloP"
+   ],
+   "info": "They chose PhyloP because it is widely used and has single-nucleotide resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pretraining tasks",
+   "q": "How does MEM masking work?",
+   "a": "15% of positions in the input sequence are randomly masked. The model then predicts PhyloP scores at all positions, using bidirectional context from the unmasked sequence.",
+   "kw": [
+    "MEM",
+    "masking"
+   ],
+   "info": "CEP is the autoregressive version: the PhyloP score at position i is predicted from positions 1 to i only, mirroring next token prediction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pretraining tasks",
+   "q": "What loss is used for predicting evolutionary rate?",
+   "a": "The model predicts a mean and a log variance for the rate at each position and is trained with a Gaussian negative log likelihood (GNLL) loss. The variance is clamped with a small epsilon for stability.",
+   "kw": [
+    "GNLL",
+    "loss function"
+   ],
+   "info": "Sequence tasks use standard cross-entropy over the 4 nucleotides. For joint training the two losses are simply added (L = GNLL + CE). The evolutionary rate head is a linear layer on the final hidden state.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architectures",
+   "q": "What architecture is ArGamba (autoregressive Gamba)?",
+   "a": "It is based on Jamba, a hybrid Transformer and Mamba model with mixture-of-experts routing, and has about 66 million parameters (66.5M in Table A1).",
+   "kw": [
+    "ArGamba",
+    "Jamba",
+    "Mamba"
+   ],
+   "info": "Jamba interleaves attention blocks, which model global context, with Mamba state space blocks, which handle long sequences efficiently. It was trained as NTP-only, CEP-only and NTP+CEP. The context is 2 kb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architectures",
+   "q": "What architecture is Bi-Gamba (bidirectional Gamba)?",
+   "a": "It is based on Caduceus, a bidirectional Mamba state space model that is reverse-complement equivariant to reflect double-stranded DNA. It has about 4 million parameters (3.9M).",
+   "kw": [
+    "Bi-Gamba",
+    "Caduceus",
+    "reverse-complement equivariance"
+   ],
+   "info": "It was trained as MLM-only, MEM-only and MLM+MEM with a 2 kb context. Table A1 labels one row 'Bi-Gamba NTP-only', which appears to be a typo for MLM-only.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pretraining data",
+   "q": "What genome and filtering were used for pretraining?",
+   "a": "The human reference genome hg38 (from the Basenji resource). Repeats (RepeatMasker) and low-quality regions, defined as more than 10% N within any 1000 bp window plus centromeres, were removed entirely. This reduced the corpus from about 3 billion to about 1 billion bp.",
+   "kw": [
+    "hg38",
+    "RepeatMasker"
+   ],
+   "info": "Other models such as GPN-MSA and Evo2 downweight repeats rather than removing them. The authors removed them completely to save compute.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pretraining data",
+   "q": "Where did the PhyloP training targets come from?",
+   "a": "From the Zoonomia 241-mammal alignment (UCSC Comparative Genomics hub). Positions without a score were set to zero, and all values were rounded to two decimal places.",
+   "kw": [
+    "Zoonomia",
+    "PhyloP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - pretraining data",
+   "q": "How were the data split and the models trained?",
+   "a": "Chromosomes 3 and 16 were held out for validation and chromosomes 2 and 22 for testing. Models trained for about seven epochs on a single 48 GB GPU (NVIDIA L40S or RTX A6000).",
+   "kw": [
+    "Adam",
+    "train/test split"
+   ],
+   "info": "Optimizer: Adam with linear warmup followed by inverse square root decay (LambdaLR). The pretrained checkpoints used in the tables are from step 44k.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation design",
+   "q": "Which external gLMs did they compare against, and why each?",
+   "a": "Nucleotide Transformer human-reference and multi-species versions, to test implicit learning of evolution from multiple species. Evo2 (7B parameters) as the autoregressive single-nucleotide counterpart to ArGamba. Caduceus (human only) as the counterpart to Bi-Gamba. PhyloGPN as the most similar model that predicts evolutionary rate.",
+   "kw": [
+    "Evo2",
+    "Nucleotide Transformer",
+    "PhyloGPN"
+   ],
+   "info": "Parameters and context: NT multi-species 498.3M and 6 kb, NT human-ref 480.4M and 6 kb, PhyloGPN 83.2M and 0.481 kb, Caduceus 7.7M and 131 kb, HyenaDNA 6.6M and 160 kb. HyenaDNA appears only in the supplementary tables.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation design",
+   "q": "How were representations compared without training a classifier?",
+   "a": "With leave-one-out 1-nearest-neighbor (1-NN) retrieval in each model's representation space, scored by balanced accuracy. Each region was represented by mean-pooling token embeddings over only that region.",
+   "kw": [
+    "1-NN",
+    "balanced accuracy",
+    "mean pooling"
+   ],
+   "info": "Embeddings came from the final hidden layer, except layer 26 for Evo2, which Evo2's authors found most informative. The region was centered in the input for bidirectional models and placed at the end for autoregressive models. The Gamba window was 2048 bp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation design",
+   "q": "Which non-gLM baselines were used?",
+   "a": "A sequence baseline of L2-normalized 6-mer frequency vectors (a 3-mer version was used for the ATG task). An evolutionary baseline, 'PhyloP (6D)', summarizes PhyloP scores with six features: mean, standard deviation, fraction positive, fraction negative, mean of positive and mean of negative scores.",
+   "kw": [
+    "k-mer",
+    "PhyloP 6D",
+    "baseline"
+   ],
+   "info": "The PhyloP baseline tests whether pretraining on PhyloP just reproduces the scores or learns something more.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation design",
+   "q": "Which functional region categories were in the benchmark, and where did they come from?",
+   "a": "VISTA enhancers, UCNEs from UCNEbase, RepeatMasker repeats, EPD promoters, and GENCODE exons, introns, coding regions, 5'UTRs, 3'UTRs and the 2 kb upstream of the TSS. GENCODE regions were limited to canonical transcripts.",
+   "kw": [
+    "VISTA",
+    "UCNE",
+    "GENCODE"
+   ],
+   "info": "UCNEs are non-coding regions longer than 200 bp with at least 95% identity between human and chicken. Overlapping regions got a single label through a fixed priority order, so the classes are mutually exclusive.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation design",
+   "q": "What are the four region-separation settings, and what does each control for?",
+   "a": "1) Functional regions vs length-matched random regions from the same chromosome. 2) Functional regions vs a same-length, strand-aware region 2 kb upstream, which controls for local composition such as GC content. 3) Multiclass separation of categories from each other, which controls for negatives being biased toward common elements like repeats. 4) The same multiclass task using a random 100 bp subregion, which controls for region length leaking the label.",
+   "kw": [
+    "confounders",
+    "negative sets"
+   ],
+   "info": "Random regions came in two types: non-annotated, and category-matched (avoiding the ROI's own category but allowed to overlap other annotations).",
+   "concl": "The settings increase in difficulty and show which signals each model relies on."
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional region separation",
+   "q": "Which model was best at separating functional regions, and how close did Gamba get?",
+   "a": "Evo2 was best in all 4 settings. The best Gamba model reached 95.5% to 97.7% of Evo2's performance with only 0.06% to 0.95% of its parameters.",
+   "kw": [
+    "Evo2",
+    "Gamba"
+   ],
+   "info": "Examples: upstream task, Evo2 74.62% vs Bi-Gamba MEM-only 72.90%. Multiclass, Evo2 56.54% vs ArGamba NTP-only 53.97%. 100 bp multiclass, Evo2 42.20% vs ArGamba NTP+CEP 40.25%. The authors say Gamba beat all other gLMs in 3 of 4 settings. However, in Table A4 (random regions) NT multi-species (77.47%) is slightly above the best Gamba (Bi-Gamba MEM-only, 77.20%), so this claim is unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional region separation",
+   "q": "Did evolutionary rate pretraining help in the region tasks?",
+   "a": "Yes, strongly against random and upstream regions. In the upstream task Bi-Gamba MEM-only scored 72.90% vs 65.92% for MLM-only, and ArGamba CEP-only scored 70.85% vs 66.99% for NTP-only.",
+   "kw": [
+    "MEM",
+    "CEP"
+   ],
+   "info": "Against category-matched random regions: Bi-Gamba MEM-only 77.20% vs MLM-only 71.39%; ArGamba NTP+CEP 76.25% vs NTP-only 71.54%. Sequence-only Gamba variants were among the worst gLMs here.",
+   "concl": "Pretraining on evolutionary rate is critical to Gamba's performance in these settings."
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional region separation",
+   "q": "Where did sequence-only pretraining beat evolution-only?",
+   "a": "In the multiclass task with whole regions, autoregressive NTP-only (53.97%) beat CEP-only (50.31%), and NTP+CEP reached 53.23%. With 100 bp subregions, NTP+CEP was best among ArGamba models at 40.25% (NTP-only 36.46%, CEP-only 37.81%).",
+   "kw": [
+    "multiclass classification"
+   ],
+   "info": "Architecture interacted with the task: ArGamba was best at separating categories from each other, and Bi-Gamba was best against random or upstream regions. Bi-Gamba MLM-only scored only 34.53% (whole regions) and 23.60% (100 bp).",
+   "concl": "Combining both objectives generally matched or beat either one alone, so the benefits are composable."
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional region separation",
+   "q": "Do the Gamba models just copy the PhyloP signal they were trained on?",
+   "a": "No. Gamba models outperformed the PhyloP (6D) baseline in all settings, for example 72.90% vs 69.55% in the upstream task and 53.97% vs 30.91% in the multiclass task.",
+   "kw": [
+    "PhyloP 6D"
+   ],
+   "info": "Figure A1 compares Gamba and PhyloP per category, with Bonferroni-corrected significance. Figure A2: at the region level, predicted and observed mean PhyloP correlate with Pearson r of 0.396 (ArGamba CEP-only) to 0.558 (Bi-Gamba MEM-only) and Spearman rho of 0.597 to 0.672. Coding regions appear underpredicted in the scatter plots.",
+   "concl": "Using PhyloP as a training target leads to deeper functional understanding than the raw scores provide."
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional region separation",
+   "q": "Did pretrained gLMs beat their randomly initialized versions?",
+   "a": "Yes. Unlike earlier benchmarks, all gLMs in the main figures beat their random initializations. For example, Bi-Gamba MEM-only went from 21.99% to 42.21% and NT multi-species from 12.13% to 33.55% in the multiclass task.",
+   "kw": [
+    "random initialization"
+   ],
+   "info": "Exception in the supplementary tables: HyenaDNA got worse after pretraining (38.59% to 34.40% multiclass; 54.15% to 36.52% in the upstream task). This does not match the statement that 'all gLMs' improved.",
+   "concl": "Zero-shot evaluations that control for confounders are hard enough to show the effect of pretraining."
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional region separation",
+   "q": "Are some gLMs robust to one confounder but not another?",
+   "a": "Yes. NT multi-species did well at separating functional regions from random regions (77.47%) but poorly at separating categories from each other (33.55%).",
+   "kw": [
+    "Nucleotide Transformer",
+    "confounders"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ATG classification",
+   "q": "What is the ATG classification task meant to test?",
+   "a": "Whether a model distinguishes the same motif (ATG) in different functional contexts, which requires knowing the genetic code rather than the sequence itself or simple distance heuristics.",
+   "kw": [
+    "ATG",
+    "start codon",
+    "genetic code"
+   ],
+   "info": "Classes: the translation start (CDS offset 0), in-frame methionines (offset mod 3 = 0), out-of-frame ATGs in the same protein, non-coding ATGs 2 to 5 kb away, and non-coding ATGs more than 100 kb away. Figure 3A also shows start, in-frame and out-of-frame ATGs from a different gene, so the exact class set is not fully clear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ATG classification",
+   "q": "How was the ATG dataset built?",
+   "a": "From GENCODE v44 CDS annotations filtered to MANE Select v1.3 canonical transcripts, giving 19,370 transcripts on chromosomes 1 to 22. They sampled 2,000 start codons, stratified by chromosome.",
+   "kw": [
+    "GENCODE v44",
+    "MANE Select"
+   ],
+   "info": "CDS segments were phase-trimmed, joined 5' to 3', and reverse-complemented for minus-strand genes. Each ATG was the mean of its 3 bp representation. Nearest neighbors (cosine distance) were searched among the other 9,999 examples, implying 10,000 examples in total. For NT, the 6-mer token can include up to 3 bp of flanking sequence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ATG classification",
+   "q": "Did evolutionary rate pretraining improve ATG classification?",
+   "a": "Yes. ArGamba NTP+CEP scored 53.6% vs 44.6% for NTP-only and 51.9% for CEP-only. Bi-Gamba MEM-only (56.2%) and MLM+MEM beat MLM-only (46.9%).",
+   "kw": [
+    "CEP",
+    "MEM"
+   ],
+   "info": "Gains were largest for separating coding from non-coding ATGs (Figure 3C recall heatmaps). Standard errors are large, for example 56.22 plus or minus 11.97 for Bi-Gamba MEM-only.",
+   "concl": "Evolutionary prediction alone gives strong gains even without sequence reconstruction."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ATG classification",
+   "q": "Which models were best at ATG classification?",
+   "a": "NT multi-species (80.1%), then Evo2 (74.4%) and PhyloGPN (74.2%). Gamba models did not beat these multi-species models.",
+   "kw": [
+    "Nucleotide Transformer",
+    "Evo2",
+    "PhyloGPN"
+   ],
+   "info": "NT's lead may partly come from its 6-mer tokens adding flanking context. NT human-ref (55.87%) and Caduceus (59.46%) beat the PhyloP 6D baseline (54.24%). The 3-mer baseline was 27.91% plus or minus 24.03%, and random initializations clustered around 40%.",
+   "concl": "Evolutionary rate pretraining probably does not learn the codon table as well and must use some other signal to identify coding regions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant effect prediction",
+   "q": "What variant effect prediction (VEP) benchmarks were used?",
+   "a": "The SongLab GPN-Star suite on Hugging Face: ClinVar pathogenic vs benign missense, COSMIC frequent-in-cancer vs common missense, UK Biobank GWAS fine-mapped missense and non-coding (PIP above 0.9 vs below 0.01), OMIM non-coding pathogenic vs common, and gnomAD rare vs common missense.",
+   "kw": [
+    "ClinVar",
+    "GWAS fine-mapping",
+    "gnomAD"
+   ],
+   "info": "Variant counts: ClinVar 22,254 vs 27,910; COSMIC 183 vs 18,720; GWAS missense 224 vs 1,997; GWAS non-coding 1,140 vs 10,260; OMIM 338 vs 3,042; gnomAD about 6 million per class. All were evaluated zero-shot on test splits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant effect prediction",
+   "q": "How were variants scored?",
+   "a": "Two ways. LLR is the log-likelihood ratio of the alternate vs reference allele, used for sequence models. ERP is the model's predicted evolutionary rate at the variant position. Both were averaged over the forward and reverse-complement strands.",
+   "kw": [
+    "LLR",
+    "ERP"
+   ],
+   "info": "They used 2048 bp windows centered on the variant in hg38 and kept only SNVs with A/C/G/T alleles where the reference matched. Metrics were AUROC or AUPRC with 200 bootstrap resamples. Evo2 scores came from precomputed files aligned to the same variants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant effect prediction",
+   "q": "How did sequence-only and evolution-trained models compare on VEP?",
+   "a": "Sequence likelihood gave weak, inconsistent signal, often near random. On ClinVar, ArGamba NTP-only had AUROC 0.528 and Bi-Gamba MLM-only 0.476, vs 0.641 for Bi-Gamba MEM-only ERP. On gnomAD, LLR AUROCs were 0.426 to 0.454 vs about 0.59 for ERP.",
+   "kw": [
+    "ClinVar",
+    "AUROC"
+   ],
+   "info": "GWAS non-coding AUPRC: LLR about 0.10 vs ERP 0.138 to 0.146. OMIM non-coding AUPRC: LLR about 0.09 vs ERP about 0.156.",
+   "concl": "Evolutionary rate-only models consistently beat sequence-only models on most VEP tasks."
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant effect prediction",
+   "q": "Is joint sequence plus evolution training always best for VEP?",
+   "a": "No, it depends on model family and task. For ArGamba, NTP+CEP usually improved LLR over NTP-only, but CEP-only beat the joint model's ERP on several non-coding tasks. For Bi-Gamba, MLM+MEM more consistently improved ERP but often lowered LLR on missense tasks, except ClinVar.",
+   "kw": [
+    "joint training"
+   ],
+   "info": "The authors say Bi-Gamba tends to be best on missense variants and ArGamba is competitive on non-coding tasks. In the tables, Bi-Gamba is also slightly higher on GWAS non-coding (0.146 vs 0.139), so that statement is not obvious from the numbers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - variant effect prediction",
+   "q": "How do Gamba models compare with true PhyloP and Evo2 on VEP?",
+   "a": "True PhyloP was the strongest single predictor on all VEP tasks, for example ClinVar AUROC 0.804 and OMIM AUPRC 0.673. Evo2 was strong on ClinVar (AUROC 0.856). Gamba ERP matched or beat Evo2 on GWAS fine-mapped missense (Bi-Gamba MEM-only 0.190 vs 0.168) and non-coding (0.146 vs 0.106).",
+   "kw": [
+    "PhyloP",
+    "Evo2"
+   ],
+   "info": "Gamba was far behind on OMIM (about 0.156 vs Evo2 0.381 and PhyloP 0.673) and COSMIC (about 0.013 to 0.028 vs Evo2 0.064 and PhyloP 0.086). Evo2 was not evaluated on gnomAD because of the dataset size.",
+   "concl": "Small evolution-trained models (4M to 66M parameters) can rival a 7B model on some VEP tasks, but they do not reach the PhyloP scores they learn from."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion",
+   "q": "What do the authors conclude?",
+   "a": "Predicting evolutionary rate from sequence improves gLM representations, and it can be combined with the sequence reconstruction used to train current gLMs. Evolution-only models beat sequence-only baselines on several benchmarks.",
+   "kw": [
+    "comparative genomics"
+   ],
+   "info": "They also present two new zero-shot evaluations: region separation and ATG classification. Code and model weights are listed as 'forthcoming'.",
+   "concl": "Comparative genomics is a core strategy in bioinformatics but has barely been used for training gLMs, and it should be."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion",
+   "q": "What future directions do they suggest for the training target?",
+   "a": "Using other conservation scores, such as PhastCons, which captures rates over broader contexts. Also PhyloP from other alignments, such as vertebrate alignments, which have been reported to beat the 241-mammal PhyloP for VEP.",
+   "kw": [
+    "PhastCons",
+    "vertebrate alignment"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion",
+   "q": "What limitations do the authors state?",
+   "a": "To isolate the effect of the training target, they used small models with short context (2 kb) and less data than state-of-the-art gLMs, so Gamba is likely under-parametrized and undertrained. They also did not explore design choices such as the PhyloP loss function or how to weight the combined losses.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "Other points from the methods: training used human only, and repeats were removed entirely, so repeat-region behaviour of the training objective is not tested.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - ATG classification",
+   "text": "If evolution-trained models identify coding regions without learning the codon table, what signal are they actually using?"
+  },
+  {
+   "type": "note",
+   "section": "Conclusion",
+   "text": "Could the same pretraining work for teleosts, for example predicting PhyloP from a fish or vertebrate alignment to build a gLM for zebrafish or Astyanax regulatory regions? Code and weights were still 'forthcoming' at posting, so check availability."
+  },
+  {
+   "type": "note",
+   "section": "Results - variant effect prediction",
+   "text": "Gamba ERP stays well below true PhyloP on every VEP task (for example OMIM 0.156 vs 0.673). When do learned conservation predictions add value beyond using the alignment-based scores directly, apart from sequences with no homologs?"
+  }
+ ]
+}

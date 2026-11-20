@@ -1,0 +1,630 @@
+{
+ "id": "Wiese_2025",
+ "title": "Quantitative trait loci concentrate in specific regions of the Mexican cavefish genome and reveal key candidate genes for cave-associated evolution",
+ "link": "https://doi.org/10.1093/jhered/esae040",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Wiese_2025_JHered_QTL_cavefish_genome_regions.pdf",
+ "added": "2026-11-18",
+ "generated_by": "ChatGPT GPT-6",
+ "imported_from": "/home/mbosnjak/literature/notes_builder/batches/2026-11-18_wiese_files/Wiese_2025_QTL_cavefish_notes.json",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the central research question?",
+   "a": "Do cave-associated quantitative trait loci (QTL) cluster in particular genomic regions of Astyanax mexicanus, and can integrated QTL, expression and selection data reveal candidate genes for repeated cave adaptation?",
+   "kw": [
+    "QTL",
+    "clustering",
+    "cave adaptation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main results?",
+   "a": "The authors remapped 206 previously published cave-trait QTL to the AstMex3 surface genome. QTL are significantly clustered beyond uniform and gene-density null expectations, but tested genomic features do not explain the clusters. Integrating QTL, differential expression and selective sweeps identifies 36 candidate genes.",
+   "kw": [
+    "206 QTL",
+    "36 candidate genes",
+    "AstMex3"
+   ],
+   "info": "",
+   "concl": "Some genomic regions are disproportionately associated with cave-derived traits, but causal genes and mechanisms require further validation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is Astyanax mexicanus suited to QTL mapping?",
+   "a": "Surface and cave ecotypes can interbreed and produce viable hybrid offspring; segregation of genetic markers and phenotypes in crosses permits linkage-based QTL mapping. Multiple cave populations have independently evolved reductions in eyes and pigmentation and behavioral and physiological changes.",
+   "kw": [
+    "Astyanax mexicanus",
+    "hybrid crosses",
+    "repeated evolution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does QTL mapping establish and what does it not?",
+   "a": "A QTL is a genomic region statistically associated with phenotypic variation in a mapping cross. Mapping does not, by itself, identify the causal gene or prove a molecular mechanism.",
+   "kw": [
+    "QTL",
+    "linkage mapping"
+   ],
+   "info": "Individual mapping studies can miss loci and overestimate effect sizes; integrated analyses can consolidate evidence across studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What two mechanisms can cause different phenotypic QTL to overlap?",
+   "a": "Pleiotropy (one locus influences several phenotypes) and tight physical linkage (distinct causal genes lie near one another). The compiled QTL map alone cannot distinguish these explanations.",
+   "kw": [
+    "pleiotropy",
+    "linkage"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why update earlier QTL maps?",
+   "a": "The earlier integrated map was anchored to a fragmented Pachón cave reference, whereas the chromosome-level AstMex3 surface genome is more contiguous and can recover regions missing or fragmented in older references.",
+   "kw": [
+    "AstMex3",
+    "genome assembly"
+   ],
+   "info": "AstMex3 has 25 chromosomes, 109 unplaced scaffolds, contig N50 47.1 Mb and scaffold N50 51.9 Mb; the older cave draft had 10,735 scaffolds, contig N50 14.7 kb and scaffold N50 1.775 Mb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which populations and cave traits motivate this comparison?",
+   "a": "The paper highlights Pachón, Tinaja and Molino cave populations and morphological traits such as eye degeneration and pigment loss, alongside behavior, metabolism, sensory morphology and regeneration.",
+   "kw": [
+    "Pachón",
+    "Tinaja",
+    "Molino",
+    "phenotypes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Literature review",
+   "q": "How were prior QTL studies collected?",
+   "a": "PubMed and Web of Science were searched with Astyanax/cavefish and QTL/quantitative trait locus terms. Papers without de novo QTL or available marker sequences were excluded, and only studies published before June 6, 2022 were considered.",
+   "kw": [
+    "literature search",
+    "QTL"
+   ],
+   "info": "Table 1 summarizes 20 published studies considered in the review; the discussion describes 206 retained QTL mapped from 16 studies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Marker remapping",
+   "q": "How were legacy genetic markers remapped to AstMex3?",
+   "a": "Available marker sequences were aligned to the AstMex3 surface genome using BLAST+ v2.8.1. The best hit was ranked by highest bitscore, then lowest E-value, then highest percent identity.",
+   "kw": [
+    "BLASTn",
+    "AstMex3",
+    "genetic markers"
+   ],
+   "info": "Ambiguous equally ranked hits and hits inconsistent with other markers on the original linkage group were removed; three gene markers (igf1, shhb/twhh and pax6) were added manually from known coordinates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Integrated QTL map",
+   "q": "How many markers were collected and successfully integrated?",
+   "a": "9023 marker sequences were collected; 200 had no BLAST hit, 126 mapped to a discordant chromosome, and 96 could not be uniquely resolved. The resulting integrated map retained 8486 markers (94%).",
+   "kw": [
+    "9023 markers",
+    "8486 markers",
+    "BLAST"
+   ],
+   "info": "",
+   "concl": "Most historical markers could be anchored to AstMex3, with filtering for uncertain mappings."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL assignment",
+   "q": "How were QTL coordinates represented?",
+   "a": "When confidence-interval flanking markers were available, the genomic span between the markers defined a QTL interval. Otherwise, the mapped peak marker represented a QTL peak. QTL without usable peak or interval markers were discarded.",
+   "kw": [
+    "QTL interval",
+    "LOD peak",
+    "confidence interval"
+   ],
+   "info": "The authors caution that coordinates from heterogeneous historical studies are approximate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Integrated QTL map",
+   "q": "How many QTL have intervals versus only peaks?",
+   "a": "Of 206 mapped QTL, 168 were represented by LOD confidence intervals and 38 only by the genetic marker at the LOD peak.",
+   "kw": [
+    "206 QTL",
+    "168 intervals",
+    "38 peaks"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL assignment",
+   "q": "Which phenotype categories were assigned?",
+   "a": "Eight categories: Eye, Pigment, Skeletal, Non-Eye Sensory, Metabolic, Behavior, Cardiac and Other morphological.",
+   "kw": [
+    "trait classes",
+    "phenotypes"
+   ],
+   "info": "The last category covers traits such as length that do not fit clearly elsewhere.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL clusters",
+   "q": "How were QTL windows constructed?",
+   "a": "The 25 AstMex3 chromosomes were partitioned into 118 nonoverlapping, centered windows of 10 Mb with GenomicRanges::tileGenome. The 10 Mb choice approximated the filtered QTL interval length (mean 11.4 Mb; median 9.64 Mb).",
+   "kw": [
+    "GenomicRanges",
+    "10 Mb windows",
+    "QTL intervals"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL clusters",
+   "q": "Why did the authors count distinct QTL rather than all overlapping records?",
+   "a": "Overlapping QTL for closely related eye-size traits and melanophore phenotypes were consolidated as a single distinct QTL per window to limit inflation from redundant phenotype definitions.",
+   "kw": [
+    "distinct QTL",
+    "trait redundancy"
+   ],
+   "info": "All overlapping QTL were located with valr bed_intersect.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL clusters",
+   "q": "What null models and test defined QTL clustering?",
+   "a": "A Monte Carlo chi-square test (XNomial::xmonte) compared observed counts with (1) uniform genomic distribution and (2) counts proportional to protein-coding gene density. Windows with standardized residual >3 against either model were considered putative clusters.",
+   "kw": [
+    "Monte Carlo",
+    "chi-square",
+    "gene density",
+    "standardized residual"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - QTL clustering",
+   "q": "Do QTL cluster more than expected by chance?",
+   "a": "Yes. Uniform null: chi-square = 192.9, P = 0.00002; gene-density null: chi-square = 216.1, P < 0.00001. Both expectations are rejected.",
+   "kw": [
+    "QTL clustering",
+    "chi-square",
+    "P-value"
+   ],
+   "info": "",
+   "concl": "The distribution is nonrandom and cannot be explained solely by the number of protein-coding genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - QTL clustering",
+   "q": "How many candidate QTL cluster windows were identified?",
+   "a": "Six 10 Mb windows across four chromosomes had more QTL than expected under the tested distributions.",
+   "kw": [
+    "six windows",
+    "four chromosomes"
+   ],
+   "info": "Figure 1 marks enriched windows with asterisks, and Supplementary Table S7 lists the locations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Chromosome 1",
+   "q": "What is the strongest genomic hotspot?",
+   "a": "An approximately 40 Mb region on chromosome 1, spanning roughly 2–42 Mb, contains QTL associated with 10 distinct traits, including eye size, vibration attraction, relative condition, tastebuds and melanophores.",
+   "kw": [
+    "chromosome 1",
+    "QTL hotspot",
+    "40 Mb"
+   ],
+   "info": "",
+   "concl": "Chromosome 1 is a prominent shared target for mapping cave-derived traits, but the data do not identify a single causal locus."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic predictors",
+   "q": "Which genomic factors were tested as explanations for QTL clusters?",
+   "a": "Thirteen metrics incorporating repeat masking, GC content, CpG dinucleotide frequency, TGTGTG/CACACA repeats, gene counts by biotype, coding-gene lengths, transcription-factor counts and recombination rate were assessed.",
+   "kw": [
+    "GC content",
+    "CpG",
+    "repeats",
+    "recombination",
+    "transcription factors"
+   ],
+   "info": "Genomic features were summarized in 10 Mb windows; recombination was derived from Pachón, Tinaja and Molino × surface F2 linkage maps as weighted cM/Mb.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic predictors",
+   "q": "How were cluster and noncluster windows compared?",
+   "a": "Wilcoxon rank-sum tests compared the six QTL-enriched 10 Mb windows with 22 windows having no known QTL.",
+   "kw": [
+    "Wilcoxon",
+    "n=6",
+    "n=22"
+   ],
+   "info": "The small number of cluster windows and broad spatial scale constrain interpretation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genomic predictors",
+   "q": "Did genomic features predict the location of QTL clusters?",
+   "a": "No. None of the 13 tested variables differed significantly between QTL-rich and QTL-free windows (all Wilcoxon P > 0.05).",
+   "kw": [
+    "negative result",
+    "genomic predictors"
+   ],
+   "info": "",
+   "concl": "This does not establish that mutational biases are absent; coarse QTL localization and 10 Mb windows can obscure localized signals."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QTL effect sizes",
+   "q": "What is PVE and how was it assessed?",
+   "a": "PVE is the proportion of phenotypic variance explained by a mapped QTL, as reported in the original studies. The authors compiled PVE by trait class and measured skewness and kurtosis with the R moments package.",
+   "kw": [
+    "PVE",
+    "effect size",
+    "skewness",
+    "kurtosis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - QTL effect sizes",
+   "q": "What is the overall shape of the QTL effect-size distribution?",
+   "a": "Reported PVE values have strong positive skew (skewness 2.04) and kurtosis 8.02; most reported QTL have relatively smaller effects with a few large-effect outliers.",
+   "kw": [
+    "PVE",
+    "skewness 2.04",
+    "kurtosis 8.02"
+   ],
+   "info": "The text calls the distribution light-tailed, although the reported kurtosis >3 conventionally denotes heavier tails under ordinary kurtosis definitions; retain the reported statistic without treating that wording as resolved.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - QTL effect sizes",
+   "q": "How does the PVE distribution differ by trait?",
+   "a": "Eye (skewness 2.08) and Skeletal (2.55) have strongly positively skewed PVE; Non-Eye Sensory (0.77) and Behavior (0.73) are less skewed. Pigmentation includes some of the largest PVE outliers.",
+   "kw": [
+    "Eye",
+    "Skeletal",
+    "Behavior",
+    "Pigment"
+   ],
+   "info": "The albinism QTL linked to oca2 is the highest-PVE example; albinism is a Mendelian trait.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Limitations",
+   "q": "What biases affect interpretation of reported PVE?",
+   "a": "QTL mapping favors loci with moderate or large measurable effects; small-effect loci may be missed. Estimated PVE for detected loci can be inflated, especially in smaller crosses (Beavis effect), so cross-study PVE comparisons are approximate.",
+   "kw": [
+    "Beavis effect",
+    "PVE bias",
+    "sample size"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Candidate genes",
+   "q": "Which three evidence layers defined the core candidate-gene set?",
+   "a": "A candidate protein-coding gene had to overlap at least one cave-trait QTL, show a selective sweep in Pachón, Tinaja and Molino but not Río Choy or Rascón, and be differentially expressed in all three cave populations relative to Río Choy in the same direction.",
+   "kw": [
+    "QTL",
+    "selective sweeps",
+    "differential expression"
+   ],
+   "info": "The selective-sweep gene set came from Moran et al. (2023); their older Ensembl IDs were translated to AstMex3 IDs via the homology table.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Whole-body RNA-seq",
+   "q": "Which whole-body transcriptomes were analyzed?",
+   "a": "Previously published whole-body larval RNA-seq from Pachón, Tinaja and Molino caves and Río Choy surface fish (Mack et al. 2021) was reprocessed. STAR v2.7.1 alignment to AstMex3, HTSeq v0.11.0 counts and DESeq2 v1.38.1 contrasts (each cave versus Río Choy) were used.",
+   "kw": [
+    "RNA-seq",
+    "STAR",
+    "HTSeq",
+    "DESeq2"
+   ],
+   "info": "Cave samples were compared at time 0 in the original study; adjusted P < 0.1 defined differential expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Whole-body RNA-seq",
+   "q": "What qualifies as shared differential expression?",
+   "a": "Genes had to meet the adjusted P < 0.1 threshold in all three cave-versus-Río Choy contrasts and change in the same direction in all three (all upregulated or all downregulated).",
+   "kw": [
+    "shared expression",
+    "FDR",
+    "three cave populations"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Eye RNA-seq",
+   "q": "What additional eye-specific RNA-seq was examined?",
+   "a": "Previously published eye tissue RNA-seq at 54 hpf from Pachón embryos versus surface fish (Gore et al. 2018) was remapped to AstMex3 and reanalyzed with STAR, HTSeq and DESeq2.",
+   "kw": [
+    "eye RNA-seq",
+    "54 hpf",
+    "Pachón"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Candidate genes",
+   "q": "How many candidate genes passed all three main evidence criteria?",
+   "a": "36 protein-coding genes overlapped a cave-derived QTL, showed repeated cave-selective sweeps and had shared differential expression in Pachón, Tinaja and Molino versus surface fish.",
+   "kw": [
+    "36 genes",
+    "QTL",
+    "selection",
+    "expression"
+   ],
+   "info": "Full gene list is in Supplementary Table S13, not enumerated in the article text.",
+   "concl": "These are prioritized candidates, not experimentally verified causal genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Candidate genes",
+   "q": "How many shortlisted genes were also altered in developing eyes?",
+   "a": "Fourteen of 36 candidates were significantly downregulated in 54 hpf Pachón eye tissue versus surface fish; none of the 36 were significantly upregulated in that comparison.",
+   "kw": [
+    "14 genes",
+    "eye",
+    "downregulation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - rgrb",
+   "q": "Why is rgrb highlighted?",
+   "a": "rgrb encodes retinal G-protein-coupled receptor b, predicted to function in phototransduction. It falls within a retinal-thickness QTL, is downregulated in whole-body cave fry and 54 hpf Pachón eye tissue, and carries repeated cave-specific selective-sweep evidence.",
+   "kw": [
+    "rgrb",
+    "phototransduction",
+    "retinal thickness"
+   ],
+   "info": "Its associated QTL concerns the outer plexiform layer; the whole-body stage is described as 30 dpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - rgrb",
+   "q": "What structural observation supports a role for rgrb?",
+   "a": "Exons 4 and 5 of rgrb are nearly completely deleted in multiple cave populations across both lineages, whereas examined surface populations retain intact reading frames.",
+   "kw": [
+    "rgrb",
+    "exon deletion",
+    "convergent evolution"
+   ],
+   "info": "Named caves include Escondido, Molino and Jineo (lineage 1), plus Jos, Monticellos, Pachón, Palma Seca, Tinaja and Yerbaniz (lineage 2).",
+   "concl": "The paper proposes rgrb loss/downregulation as a candidate mechanism for abnormal cavefish retinal development; causality was not established."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - stra6",
+   "q": "Why is stra6 a plausible candidate?",
+   "a": "stra6, involved in retinoic acid-related biology, is downregulated in cavefish and lies within a QTL for maxillary bone length, which tends to be greater in cavefish.",
+   "kw": [
+    "stra6",
+    "retinoic acid",
+    "maxillary bone"
+   ],
+   "info": "",
+   "concl": "A possible link between stra6 expression and craniofacial morphology remains a hypothesis."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - rab8a",
+   "q": "Why is rab8a a plausible candidate?",
+   "a": "rab8a is upregulated in cavefish and occurs under QTL for relative condition and peduncle depth. Its known involvement in glucose transporter regulation offers a possible metabolic connection.",
+   "kw": [
+    "rab8a",
+    "glucose homeostasis",
+    "condition factor"
+   ],
+   "info": "",
+   "concl": "Its association with multiple QTL raises, but does not prove, pleiotropic functions."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Pleiotropy",
+   "q": "What established gene provides an example of pleiotropy?",
+   "a": "oca2 is implicated in both albinism and sleep duration in cavefish, demonstrating that a locus involved in a conspicuous morphological trait can also affect behavior.",
+   "kw": [
+    "oca2",
+    "albinism",
+    "sleep",
+    "pleiotropy"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Pleiotropy",
+   "q": "How might pleiotropy be distinguished from closely linked genes experimentally?",
+   "a": "CRISPR–Cas9 perturbation of one gene followed by multiple-trait phenotyping could support pleiotropy if several traits respond. Perturbing neighboring genes with different trait effects could favor linkage.",
+   "kw": [
+    "CRISPR–Cas9",
+    "functional validation",
+    "linkage"
+   ],
+   "info": "Both mechanisms could operate together; this paper does not experimentally separate them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Genomic architecture",
+   "q": "Could rearrangements influence QTL clustering?",
+   "a": "The authors discuss structural linkage mechanisms, including possible roles for inversions, as future research directions rather than demonstrated explanations of the observed QTL hotspots.",
+   "kw": [
+    "inversions",
+    "linkage",
+    "genomic architecture"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Limitations",
+   "q": "Why are broad QTL intervals a limitation for discovering causal genes?",
+   "a": "Historical confidence intervals can span roughly 10 Mb and overlap hundreds of genes. A QTL overlap is therefore low-resolution positional evidence and is not equivalent to a causal promoter, variant or gene assignment.",
+   "kw": [
+    "resolution",
+    "QTL intervals",
+    "candidate genes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Limitations",
+   "q": "What limitations arise from merging QTL data across studies?",
+   "a": "Studies vary in cross, population, traits, markers, mapping resolution and sample size. Some phenotype definitions overlap, and some markers could not be localized unambiguously, so aggregate hotspots require cautious interpretation.",
+   "kw": [
+    "heterogeneity",
+    "cross-study comparison",
+    "mapping bias"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Main conclusions",
+   "q": "What does the integrated QTL resource establish?",
+   "a": "Historical cave-trait QTL can be placed on one high-quality surface reference, allowing genomic hotspot analysis and multi-evidence candidate prioritization. Enriched regions occur across four chromosomes; no tested coarse genomic predictor explains them; 36 genes receive convergent support from QTL, expression and selection.",
+   "kw": [
+    "integrated QTL map",
+    "candidate prioritization"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion - Main conclusions",
+   "text": "Wiese et al. 2025 integrates positional associations, RNA-seq and selection signals; the 36 candidates are hypotheses for follow-up, not validated regulatory or structural mechanisms."
+  },
+  {
+   "type": "note",
+   "section": "Methods - Reference assemblies",
+   "text": "All genomic coordinates and mapped marker positions in this study are relative to the AstMex3 surface assembly. They should not be combined directly with cave AMEX_1.1 positions without reliable coordinate translation."
+  },
+  {
+   "type": "note",
+   "section": "Discussion - Limitations",
+   "text": "The paper’s 2022 literature cutoff and dependence on archived marker sequences mean that this is not an exhaustive current catalog of all cavefish QTL."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Data and tools",
+   "q": "Which computational resources were used for mapping and visualization?",
+   "a": "BLAST+ v2.8.1 mapped markers; GenomicRanges v1.49.0 tiled the genome; valr v0.6.6 counted overlaps; karyoploteR v1.24.0 displayed QTL; XNomial v1.0.4 performed Monte Carlo chi-square testing.",
+   "kw": [
+    "BLAST+",
+    "GenomicRanges",
+    "valr",
+    "karyoploteR",
+    "XNomial"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic predictors",
+   "q": "How were repeat, CpG and TGTGTG statistics obtained?",
+   "a": "Repeat proportion was inferred from N bases in the hard-masked AstMex3 genome. GC and CpG fractions were computed on the unmasked genome; Biostrings::oligonucleotideFrequency quantified CpG and TGTGTG/CACACA motifs.",
+   "kw": [
+    "hard masking",
+    "Biostrings",
+    "CpG",
+    "TGTGTG"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic predictors",
+   "q": "How were transcription-factor density and recombination represented?",
+   "a": "TF genes were obtained from Animal TFDB 4.0 and intersected with windows. Linkage-map recombination values for cave × surface crosses were calculated in cM/Mb between markers and averaged with overlap-length weights per window.",
+   "kw": [
+    "Animal TFDB",
+    "TF density",
+    "cM/Mb"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Experimental directions",
+   "q": "What follow-up experiments do the authors propose?",
+   "a": "Targeted genetic editing and phenotype assays of genes in enriched QTL regions, alongside higher-resolution genetic mapping, could test whether repeated trait evolution reflects pleiotropy, linked genes and specific causal variants.",
+   "kw": [
+    "CRISPR",
+    "fine mapping",
+    "functional experiments"
+   ],
+   "info": "",
+   "concl": ""
+  }
+ ]
+}

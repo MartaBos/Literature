@@ -1,0 +1,511 @@
+{
+ "id": "Lal_2025",
+ "title": "Loss of Conserved Noncoding Elements Likely Shaped the Evolution of Regressed Phenotypes in Cavefish",
+ "link": "https://doi.org/10.1093/gbe/evaf211",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/amexicanus/Lal_2025_GBE_conserved_noncoding_element_loss.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this paper address?",
+   "a": "Only a small number of protein-coding variants have been found in Astyanax mexicanus cave morphs, so most of the large phenotypic gap between cave and surface morphs is still unexplained.",
+   "kw": [
+    "Astyanax mexicanus",
+    "regressive evolution"
+   ],
+   "info": "Traits that differ between the morphs include vision, brain morphology, behavior, pigmentation, metabolism and hypoxia tolerance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they do and what was the headline result?",
+   "a": "They aligned the genomes of five closely related teleosts and identified 46,914 conserved noncoding elements (CNEs). Of these, 473 were specifically lost in cave morphs.",
+   "kw": [
+    "CNEs",
+    "genome alignment"
+   ],
+   "info": "46,914 matches the sum of 46,330 CNEs conserved in all five fishes, 473 cave-lost and 111 surface-lost CNEs (Fig. 1c). The abstract total therefore includes the lost sets.",
+   "concl": "Loss of distal regulatory elements may have dampened developmental pathways and contributed to phenotypic regression in cave morphs."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How were the CNEs characterised functionally?",
+   "a": "Using zebrafish data, the CNEs carried activating histone modifications, contained binding sites for neuronal transcription factors and contacted their cognate genes through chromatin loops. Genes next to cave-lost CNEs were important for eye and nervous system development and were gradually downregulated during cave morph embryonic development.",
+   "kw": [
+    "zebrafish",
+    "chromatin loops",
+    "histone marks"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which convergent phenotypes do cave-adapted species show?",
+   "a": "Species from several phyla have independently adapted to caves and show convergent loss of vision, albinism, hypoxia tolerance, distinct neuroanatomy and altered behavior.",
+   "kw": [
+    "convergent evolution",
+    "troglomorphy"
+   ],
+   "info": "The authors say the genetic basis of these phenotypes is not fully understood.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Is apoptosis of the lens the only mechanism behind eye loss in cavefish?",
+   "a": "No. Cavefish lens primordia form and then degenerate by apoptosis, but the optic vesicles are already smaller than in surface fish before any degeneration, and the optic cup is absent.",
+   "kw": [
+    "eye regression",
+    "apoptosis",
+    "optic vesicle"
+   ],
+   "info": "This is the basis for their hypothesis that other mechanisms, independent of apoptosis, also contribute to eye regression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What other cave morph phenotypes besides the eye do they list?",
+   "a": "Smaller brain mass with a regressed optic tectum and periventricular grey zone, an enlarged hypothalamus, and craniofacial changes such as bone fragmentation and fusion. Behavioral changes include loss of circadian rhythm, swimming handedness, a more sensitive lateral line, more foraging and social avoidance.",
+   "kw": [
+    "neuroanatomy",
+    "behavior",
+    "craniofacial"
+   ],
+   "info": "Several craniofacial changes arose independently of eye regression. A protruded lower jaw is probably a constructive adaptation for altered feeding. Some behavioral changes are partly attributed to the enlarged hypothalamus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why look at regulatory elements rather than coding mutations?",
+   "a": "Apart from a few lesions that partly explain eye and melanin loss, few inactivating gene mutations have been found in cavefish. Between human and mouse, expression divergence driven by cis-regulatory changes correlates more strongly with phenotypic divergence than coding divergence does.",
+   "kw": [
+    "cis-regulatory elements",
+    "expression divergence"
+   ],
+   "info": "Precedents they cite: noncoding element changes linked to human cognition, social behavior, vocal tract, wrist and digit development and loss of the penile spine, and divergence of limb regulatory elements in limb-regressed snakes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are CNEs and why are they relevant in teleosts?",
+   "a": "Conserved noncoding elements are noncoding sequences conserved across vertebrates. Most act as binding sites for DNA-binding proteins and often lie near development-related genes. Teleosts show rapid evolutionary turnover and divergence of CNEs.",
+   "kw": [
+    "CNEs",
+    "teleost CNE turnover"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What hypothesis did they test?",
+   "a": "That mutations in regulatory elements serving as transcription factor binding sites changed gene regulatory circuitry in cave morphs. They tested this as whether CNE loss in cave morphs explains the evolution of regressed and diverged phenotypes.",
+   "kw": [
+    "hypothesis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - CNE identification",
+   "q": "How did they choose how many species to use for defining CNEs?",
+   "a": "They aligned 12 teleost genomes one after another in order of phylogenetic closeness and counted CNEs as a function of the number of species in which each CNE was conserved. The steepest drop in CNE number came after five fishes (four species).",
+   "kw": [
+    "species selection",
+    "phylogenetic closeness"
+   ],
+   "info": "Fig. 1a plots CNE number and the fold change from i to i+1 fishes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - CNE identification",
+   "q": "Which five fishes were used?",
+   "a": "A. mexicanus surface morph, A. mexicanus cave morph, Pygocentrus nattereri, Ictalurus punctatus and Danio rerio.",
+   "kw": [
+    "Pygocentrus nattereri",
+    "Ictalurus punctatus",
+    "Danio rerio"
+   ],
+   "info": "These had chromosome-level assemblies at 33 to 77x coverage with scaffold N50 of 26 to 52 Mb, except D. rerio (N50 = 2.2 Mb). Zebrafish was included mainly so the CNEs could be characterised functionally. The main text does not say which cave population's assembly was used (assembly details are in Table S1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - CNE identification",
+   "q": "How many CNEs were conserved, cave-lost and surface-lost?",
+   "a": "46,330 CNEs were conserved across all five fishes. The cave morph independently lost 473 CNEs and the surface morph lost 111.",
+   "kw": [
+    "cave-lost CNEs",
+    "surface-lost CNEs"
+   ],
+   "info": "",
+   "concl": "The cave morph lost about four times as many CNEs as the surface morph."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - CNE identification",
+   "q": "Which chromatin marks do the CNEs carry in zebrafish embryos?",
+   "a": "Mainly the enhancer marks H3K27ac and H3K4me1, to a lesser extent the promoter mark H3K4me3, and not the repressive mark H3K27me3. This was in 48 hpf zebrafish embryos.",
+   "kw": [
+    "H3K27ac",
+    "H3K4me1",
+    "enhancers"
+   ],
+   "info": "Heatmaps are centred on conserved, cave-lost and surface-lost CNEs (Fig. 1d).",
+   "concl": "The CNEs behave like enhancer-type distal regulatory elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - CNE identification",
+   "q": "Where are the CNEs located relative to TADs?",
+   "a": "They are enriched in TAD interiors and depleted at the gene-rich TAD borders.",
+   "kw": [
+    "TADs"
+   ],
+   "info": "TADs come from 48 hpf zebrafish Hi-C. The authors say this fits the known link between CNE synteny and TAD structure.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - CNE identification",
+   "q": "What evidence shows the CNEs contact their nearby genes?",
+   "a": "Virtual 4C from 48 hpf zebrafish embryo Hi-C showed that CNEs contact the TSS of the proximal gene more often than flanking regions of matched size do.",
+   "kw": [
+    "Hi-C",
+    "virtual 4C"
+   ],
+   "info": "Shown in Fig. 1f for conserved, cave-lost and surface-lost CNEs.",
+   "concl": "Supports the idea that the CNEs regulate nearby genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - functional enrichment",
+   "q": "What functions are enriched among genes near cave-lost CNEs?",
+   "a": "Cell adhesion, peripheral nervous system development, retina morphogenesis in a camera-type eye, rhombomere development, neuromast hair cell differentiation and related terms. To a lesser extent, steroid hormone mediated signaling was also enriched.",
+   "kw": [
+    "GREAT",
+    "GO enrichment",
+    "eye development"
+   ],
+   "info": "They suggest steroid hormone enrichment may relate to starvation-resistant fertility and larger maternal deposits in cave morph embryos. Several genes in this term (Esrrg, Rorb, Nr2e3) are also linked to eye development and downregulated in cave morphs.",
+   "concl": "Cave-lost CNEs are non-randomly associated with vision, brain and lateral line phenotypes."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - functional enrichment",
+   "q": "What about genes near surface-lost CNEs?",
+   "a": "They showed only moderate fold enrichment of broad terms such as regulation of gene expression, muscle development and regulation of RNA metabolism.",
+   "kw": [
+    "surface-lost CNEs"
+   ],
+   "info": "These terms are common around CNEs across clades. The authors say surface CNE loss may be evolutionarily neutral, or may reflect a relaxation of constraint that has not been explored.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - functional enrichment",
+   "q": "What did the expression ontology (in situ) analysis show?",
+   "a": "Genes near cave-lost CNEs were significantly enriched for nervous system expression terms. Genes near surface-lost CNEs showed no enriched term.",
+   "kw": [
+    "TopAnat",
+    "in situ hybridization"
+   ],
+   "info": "Enriched terms shown have Benjamini-Hochberg FDR at or below 0.1. Examples include central nervous system, brain, telencephalon, retina, ganglionic layer of retina and optic stalk, plus some tooth and pharyngeal skeleton terms (Fig. 2c).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell expression and motifs",
+   "q": "In which zebrafish cell types are genes near cave-lost CNEs most highly expressed?",
+   "a": "Compared with genes near conserved CNEs, they have higher expression in retinal and brain neurons of zebrafish embryos.",
+   "kw": [
+    "scRNA-seq",
+    "zebrafish"
+   ],
+   "info": "Cell types were ranked by the difference in mean expression and only the top 50 are shown. The top-ranked cell types include epiphysis, mid-hindbrain boundary neurons, oligodendrocytes and cranial ganglia (Fig. 3a).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell expression and motifs",
+   "q": "Which example genes did they show on the zebrafish UMAP?",
+   "a": "Lhx1a and Pcdh17, both key genes in teleost retinal development, are expressed specifically in eye and neural cells.",
+   "kw": [
+    "Lhx1a",
+    "Pcdh17"
+   ],
+   "info": "Controls were Gna12a and Rras2, genes from the bottom of the GO enrichment list.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - single-cell expression and motifs",
+   "q": "Which transcription factor motifs are enriched in cave-lost CNEs?",
+   "a": "Compared with conserved CNEs, cave-lost CNEs were enriched for binding sites of nervous system related transcription factors. Lhx4 and Meis2 ranked near the top, and both are known to act in eye and nervous system development.",
+   "kw": [
+    "Lhx4",
+    "Meis2",
+    "motif enrichment"
+   ],
+   "info": "Fig. 3d gives e-values of 0.00019 for Lhx4 and 0.00085 for Meis2, and both are expressed in eye and neural cells. GO analysis of the enriched TFs gave terms such as nervous system process, cognition, and learning or memory. No GO terms were enriched for TFs whose sites were specific to surface-lost CNEs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - developmental expression",
+   "q": "Are genes near cave-lost CNEs expressed less in cavefish?",
+   "a": "Yes. Using developmental time-course data from cave and surface morphs, genes near cave-lost CNEs were progressively downregulated during embryonic development compared with genes near conserved or surface-lost CNEs.",
+   "kw": [
+    "downregulation",
+    "developmental time course"
+   ],
+   "info": "Fig. 4a shows log2 cave-to-surface fold change at 10, 24, 36 and 72 hpf and in adult brain, tested with Mann-Whitney U tests.",
+   "concl": "CNE loss goes together with reduced expression of nearby genes in cave morphs."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - developmental expression",
+   "q": "When does the downregulation appear?",
+   "a": "It coincides with post-segmentation eye growth and brain patterning stages, around 36 hours post-fertilization, when eye growth is known to arrest in cave morphs.",
+   "kw": [
+    "36 hpf",
+    "eye growth arrest"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - developmental expression",
+   "q": "Did nervous system genes alone show the same pattern?",
+   "a": "The pattern was consistent with the full gene sets, but the P-values were not significant because the samples were small.",
+   "kw": [],
+   "info": "Shown in Fig. S1. They ran this because each gene set was enriched for different functional terms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - example loci",
+   "q": "What is the Lhx9 example?",
+   "a": "Cave-lost CNEs lie in the upstream intergenic region of Lhx9, a LIM homeodomain TF needed for retinal amacrine cell types that regulate nitric oxide release. Lhx9 is downregulated in cave morph embryos.",
+   "kw": [
+    "Lhx9",
+    "amacrine cells",
+    "nitric oxide"
+   ],
+   "info": "NO regulates other retinal cells and ocular blood flow, and is implicated in glaucoma and diabetic retinopathy. Fig. 4b combines PhyloP/MultiZ conservation, zebrafish histone marks at 24 and 48 hpf, cave/surface expression ratios and single-cell expression.",
+   "concl": "Loss of the CNE together with Lhx9 downregulation may have contributed to eye regression."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - example loci",
+   "q": "What is the Chd4 / Fezf2 example?",
+   "a": "Two CNEs near the Chd4, Fezf2 and Orgf gene cluster are lost in cave morphs, and nearby genes are downregulated during embryogenesis. Chd4 remodels chromatin to control retinal cell type specification. Fezf2 acts in differentiation and maturation of cone ON/OFF bipolar cells.",
+   "kw": [
+    "Chd4",
+    "Fezf2",
+    "Orgf"
+   ],
+   "info": "Chromatin loops are shown from H3K4me3 HiChIP of 48 hpf embryos and from adult brain Hi-C. Orgf pathway dysregulation is linked to corneal surface problems in mammals. The figure labels the gene 'cdh4' and 'Orgf1/2' while the text says Chd4. The naming is inconsistent in the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - example loci",
+   "q": "Which other example genes are mentioned?",
+   "a": "Rorb, a key gene in retina differentiation, and Emx2, which works with Pax6 to regionalise the cerebral cortex.",
+   "kw": [
+    "Rorb",
+    "Emx2"
+   ],
+   "info": "Shown in Fig. S2. In most examples the CNEs or their immediate flanks had activating histone marks in zebrafish embryos.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - conclusions and limitations",
+   "q": "What do the authors conclude?",
+   "a": "CNE loss probably weakened developmental pathways for the eye and nervous system in cave morphs, contributing to regression of those phenotypes.",
+   "kw": [
+    "regressive evolution"
+   ],
+   "info": "They suggest CNE knockouts in surface morphs as the next experiment.",
+   "concl": "Turnover of noncoding regulatory elements may have shaped cavefish adaptation."
+  },
+  {
+   "type": "qa",
+   "section": "Results and discussion - conclusions and limitations",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "The results are correlative, so genetic experiments are needed to validate them. The epigenetic characterisation relied on zebrafish data, which may not fully capture the A. mexicanus epigenetic landscape.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CNE identification",
+   "q": "How were the genomes aligned?",
+   "a": "Assemblies of 12 teleosts from Ensembl and NCBI were aligned pairwise with LASTZ in order of phylogenetic closeness to A. mexicanus. Chain files were converted to axt format with UCSC Kent utilities.",
+   "kw": [
+    "LASTZ",
+    "UCSC Kent utilities"
+   ],
+   "info": "The assembly list is in Table S1. The chain files are available on GitHub (mohan9955/cavefish-manuscript, liftOver_chain).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CNE identification",
+   "q": "How were CNEs called and with which thresholds?",
+   "a": "Pairwise axt files were turned into CNE objects with the CNEr package, and CNEs were called with ceScan at 90% or higher sequence identity and at least 50 bp length, filtering out exonic and repeat sequences.",
+   "kw": [
+    "CNEr",
+    "ceScan"
+   ],
+   "info": "They chose the 90% identity cutoff because the species are phylogenetically close and cave and surface morphs are the same species. Conserved, cave-lost and surface-lost sets were extracted with bedtools intersect. No CNEr version is given.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CNE identification",
+   "q": "How did they check that cave-lost CNEs are real deletions and not alignment artefacts?",
+   "a": "They examined synteny of the regions flanking cave-lost CNEs. The flanks were mappable in both morphs, and the complete or partial CNE deletions were specific to cave morphs.",
+   "kw": [
+    "synteny",
+    "deletion validation"
+   ],
+   "info": "Shown in Fig. S3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CNE identification",
+   "q": "How were CNEs assigned to genes?",
+   "a": "With bedtools closest, using a 100 kb distance threshold. Genes were grouped as near cave-lost, near surface-lost or near conserved CNEs, and the cave-lost and surface-lost gene sets were mutually exclusive.",
+   "kw": [
+    "bedtools closest",
+    "100 kb"
+   ],
+   "info": "The CNE-gene distance distribution saturates at about 250 kb. They chose 100 kb as a conservative cutoff to keep high-confidence links and reduce false positives (Fig. S4).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - histone and Hi-C data",
+   "q": "Where did the histone data come from and how were they plotted?",
+   "a": "Processed bigwig files for H3K4me3, H3K4me1, H3K27ac and H3K27me3 from 48 hpf zebrafish embryos came from DANIO-CODE. CNE-centred heatmaps were made with deepTools.",
+   "kw": [
+    "DANIO-CODE",
+    "deepTools"
+   ],
+   "info": "Figure 4 also shows 24 hpf tracks, but the methods only mention 48 hpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - histone and Hi-C data",
+   "q": "Which Hi-C data and processing were used?",
+   "a": "KR-normalised .hic files for 48 hpf zebrafish embryos came from GEO GSE156099 and adult brain Hi-C from GSE134055. Matrices were built at 5 kb resolution with Juicer, and TADs were called with HiTAD.",
+   "kw": [
+    "Juicer",
+    "HiTAD",
+    "KR normalization"
+   ],
+   "info": "Aggregation plots across TAD borders were made with in-house scripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - histone and Hi-C data",
+   "q": "How was the virtual 4C analysis set up?",
+   "a": "They took rows for gene TSSs and considered bins within 1 Mb of each TSS, excluding CNE-gene pairs in adjacent bins. The region between CNE and TSS was split into two relative bins, and each side was extended by the CNE-gene distance and split into two bins each.",
+   "kw": [
+    "virtual 4C"
+   ],
+   "info": "Each bin got the mean normalised Hi-C count of the 5 kb windows inside it. Heatmaps and boxplots were drawn in R.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - histone and Hi-C data",
+   "q": "How was HiChIP processed?",
+   "a": "H3K4me3 HiChIP SRA files from 48 hpf embryos (GSE175706) were mapped to GRCz10 with HiCUP, and loops were called with FitHiChIP.",
+   "kw": [
+    "HiChIP",
+    "HiCUP",
+    "FitHiChIP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - enrichment and motif analysis",
+   "q": "Which tools were used for GO and expression enrichment?",
+   "a": "GREAT v3.0.0 and the ToppGene suite for GO terms, and TopAnat (Bgee) with in situ hybridization data for expression terms. Terms supported by only one gene were removed, and terms were sorted by Benjamini-Hochberg FDR.",
+   "kw": [
+    "GREAT",
+    "ToppGene",
+    "TopAnat"
+   ],
+   "info": "GREAT accounts for region-based bias in functional terms, which makes it well suited to noncoding elements. P-values come from region-based binomial tests.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - enrichment and motif analysis",
+   "q": "How was the motif analysis done?",
+   "a": "Motif enrichment in cave-lost, surface-lost and conserved CNEs was tested with peak-motifs on RSAT. TFs significantly enriched in cave-lost CNEs (P < 0.05) were run through GO analysis in ToppGene, with TFs enriched in conserved CNEs as the background.",
+   "kw": [
+    "RSAT peak-motifs"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - expression data",
+   "q": "Where did the expression data come from?",
+   "a": "A. mexicanus developmental expression came from the supplementary dataset of Stahl and Gross 2017, and cave versus surface log2 fold changes were computed with DESeq2. Zebrafish single-cell data (up to 5 dpf) came from Farrell et al. 2018 and Farnsworth et al. 2020.",
+   "kw": [
+    "DESeq2",
+    "Daniocell",
+    "Stahl and Gross 2017"
+   ],
+   "info": "Mean expression per cell-type cluster came from Farnsworth et al. table S1. UMAPs of the Farrell data were made with Daniocell. The cited Stahl and Gross study covers two cavefish populations, but this paper does not say which population(s) were used. Statistics used Mann-Whitney U tests in R.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - functional enrichment",
+   "text": "Is surface-specific CNE loss (111 CNEs) neutral, or does it reflect relaxed constraint in surface fish? The authors leave this unexplored."
+  },
+  {
+   "type": "note",
+   "section": "Results and discussion - conclusions and limitations",
+   "text": "Main next step: CNE knockouts (e.g. upstream of Lhx9 or near Chd4/Fezf2) in surface fish, plus Astyanax-specific chromatin data instead of the zebrafish proxy."
+  },
+  {
+   "type": "note",
+   "section": "Methods - CNE identification",
+   "text": "Check Table S1 for which cave population's genome was used, and whether cave-lost CNEs are shared across independently evolved cave populations (Pachon, Tinaja, Molino) or specific to one."
+  }
+ ]
+}

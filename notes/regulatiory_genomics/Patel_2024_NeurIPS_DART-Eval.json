@@ -1,0 +1,559 @@
+{
+ "id": "Patel_2024",
+ "title": "DART-Eval: A Comprehensive DNA Language Model Evaluation Benchmark on Regulatory DNA",
+ "link": "https://papers.nips.cc/paper_files/paper/2024/hash/71998bfc3217ffe1cca1ee084dfadadd-Abstract-Datasets_and_Benchmarks_Track.html",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Patel_2024_NeurIPS_DART-Eval.pdf",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is DART-Eval?",
+   "a": "DART-Eval (DNA RegulaTory Evaluations) is a set of benchmarks focused on regulatory DNA. It tests DNA language models (DNALMs) in zero-shot, probed and fine-tuned settings and compares them with ab initio models as baselines.",
+   "kw": [
+    "DART-Eval",
+    "DNALM",
+    "benchmark"
+   ],
+   "info": "The tasks are sequence motif discovery, cell-type-specific regulatory activity prediction and counterfactual prediction of regulatory genetic variants. Data and code are at github.com/kundajelab/DART-Eval and on Synapse (DART_Eval_Benchmark). Published at NeurIPS 2024, Datasets and Benchmarks track.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding of the benchmark?",
+   "a": "Current annotation-agnostic DNALMs perform inconsistently. For most tasks they do not give compelling gains over baseline models, even though they need much more compute.",
+   "kw": [
+    "DNALM"
+   ],
+   "info": "",
+   "concl": "Large pretrained DNA language models are not yet clearly better than simpler supervised models for regulatory DNA."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are DNA language models (DNALMs)?",
+   "a": "They are self-supervised models trained on genomic DNA from one or more species to learn rich sequence representations, by analogy with protein language models. They are meant to help with DNA sequence design, discovery of functional syntax and evolutionary analyses.",
+   "kw": [
+    "DNALM",
+    "self-supervised learning"
+   ],
+   "info": "The idea is that one pretrained model can act as a foundation for many downstream tasks, so less specialised training from scratch is needed (Appendix B.2).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is regulatory DNA harder for DNALMs to learn than coding DNA?",
+   "a": "About 20,000 protein-coding genes cover only about 1.5% of the human genome, and their syntax is dense and information-rich. Millions of non-coding regulatory elements cover an estimated 5 to 20% of the genome, and they use a sparse, combinatorial, cell-type-specific syntax of short, fuzzy TF-binding motifs.",
+   "kw": [
+    "regulatory elements",
+    "transcription factors",
+    "motif syntax"
+   ],
+   "info": "The Introduction gives 5 to 20% of the genome for regulatory elements, but the Discussion says 10 to 20%. The paper does not explain the difference.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What three things should an effective DNALM achieve, according to the authors?",
+   "a": "(1) Learn representations that distinguish different types of functional elements. (2) Serve as a foundation for supervised models trained on possibly sparse labels, through probing or fine-tuning. (3) Outperform alternative ab initio models on biologically relevant tasks, either alone or as a foundation for a supervised model.",
+   "kw": [
+    "probing",
+    "fine-tuning"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "Contemporary DNALMs have not been rigorously tested against state-of-the-art ab initio models on whether their regulatory DNA representations help the key applications. These applications are interpreting and discovering regulatory sequences, predicting the effects of variants and other perturbations, and designing sequences.",
+   "kw": [
+    "ab initio models"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the three key results of the evaluation?",
+   "a": "(1) Embedding-free methods generally outperform embedding-based methods. (2) Simpler ab initio supervised models match or beat much larger fine-tuned DNALMs. (3) DNALMs do particularly poorly on counterfactual prediction (variant effects) and fall well behind ab initio supervised models there.",
+   "kw": [
+    "embeddings",
+    "counterfactual prediction"
+   ],
+   "info": "",
+   "concl": "DNALMs are weakest on counterfactual variant effect prediction, which is the most practically important task."
+  },
+  {
+   "type": "qa",
+   "section": "Related work",
+   "q": "Which DNALMs were evaluated?",
+   "a": "Caduceus, DNABERT-2, GENA-LM, HyenaDNA, Mistral-DNA and Nucleotide Transformer (NT), each in its most capable version. All are trained genome-wide without genomic annotations.",
+   "kw": [
+    "Caduceus",
+    "HyenaDNA",
+    "Nucleotide Transformer"
+   ],
+   "info": "Caduceus ps_131k_d-256_n-16: masked, single nucleotide, 7.7M parameters, human, 131 kbp context. DNABERT-2 117M: masked, byte-pair, 117M, multi-species, 10 kbp. GENA-LM bert-large-t2t: masked, byte-pair, 336M, multi-species, 4.5 kbp. HyenaDNA large-1m: autoregressive, single nucleotide, 6.6M, human, 1 Mbp. Mistral-DNA v1-1.6B-hg38: autoregressive, byte-pair, 1.6B, human, 10 kbp. NT v2-500m-multi-species: masked, k-mer, 500M, multi-species, 12 kbp. Architectures are Transformers, Hyena (implicit long convolutions) and Mamba (selective state space).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related work",
+   "q": "Which kinds of DNALMs were left out?",
+   "a": "Models of evolutionarily distant organisms, annotation-aware models trained on pre-specified classes of genomic regions, and models that use extra inputs such as multiple sequence alignments.",
+   "kw": [
+    "annotation-aware models"
+   ],
+   "info": "The authors say the benchmark can be adapted to these models and plan to add them in future.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related work",
+   "q": "What are the three main limitations of earlier DNALM benchmarks?",
+   "a": "(1) They use surrogate tasks, such as classifying promoters versus enhancers, instead of the real applications: interpretation, counterfactual prediction and design. (2) Their datasets have design flaws, such as missing compositional controls. (3) They use oversimplified or outdated baselines, which exaggerates the benefit of DNALMs.",
+   "kw": [
+    "benchmark design",
+    "surrogate tasks"
+   ],
+   "info": "In Table 2, DART-Eval is the only benchmark meeting all five criteria: it includes distal elements, analyses 1,443 TFs individually (other benchmarks analyse 10 at most), has regression tasks for quantitative assays, uses compositionally controlled negatives, and accounts for LD among variants. Note that the Table 2 legend appears to swap the meaning of the check and cross symbols.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related work",
+   "q": "Why do negatives need to match the composition of the positives?",
+   "a": "Regulatory DNA usually has higher G/C content than the genomic background. Without matched background sequences, a classifier can do well just by using GC content, without learning real regulatory sequence features.",
+   "kw": [
+    "GC content",
+    "compositional bias"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Related work",
+   "q": "Why is it wrong to use trait-associated variants as the 'functional' set in variant benchmarks?",
+   "a": "Because of linkage disequilibrium (LD), most trait associations are correlative rather than causal. A positive set built from them is therefore full of non-causal variants.",
+   "kw": [
+    "linkage disequilibrium",
+    "causal variants"
+   ],
+   "info": "DART-Eval uses high-confidence causal variants instead: chromatin accessibility QTLs restricted to accessible peaks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation approaches and baselines",
+   "q": "How were DNALMs evaluated zero-shot, without task-specific training?",
+   "a": "In two ways. Embedding-based tests use the mean last-layer embedding across tokens. Likelihood-based tests use the cross-entropy loss, read as a negative log-likelihood.",
+   "kw": [
+    "zero-shot",
+    "likelihood",
+    "embeddings"
+   ],
+   "info": "Autoregressive models: the likelihood comes from one forward pass of next-token predictions. Masked models: each token is masked in turn and the token quasi-likelihoods are summed. Embeddings of auxiliary tokens (CLS, start, end) were removed. For byte-pair models, the embedding average is weighted by the number of nucleotides in each token. All models were taken from HuggingFace.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation approaches and baselines",
+   "q": "What is the difference between probing and fine-tuning here?",
+   "a": "In final-layer probing, the DNALM is frozen and a small CNN is trained on its final hidden-layer outputs. In fine-tuning, LoRA low-rank adapters are trained on all linear and convolutional layers of the base model.",
+   "kw": [
+    "LoRA",
+    "probing",
+    "fine-tuning"
+   ],
+   "info": "Probing head: token embeddings are repeated per nucleotide, followed by a linear projection to 32 dimensions, two conv layers (width 8, 32 filters), sum pooling and a linear output, with ReLU activations; Adam, learning rate 2e-3. LoRA: rank 8, alpha 16, dropout 0.05; AdamW, learning rate 1e-4, weight decay 0.01; each model's own classifier head trained from scratch.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation approaches and baselines",
+   "q": "Which ab initio baselines were used?",
+   "a": "ChromBPNet for chromatin accessibility regression and variant scoring. A small probing-head-like CNN (68K parameters) for the other tasks. A larger ChromBPNet-like CNN (5.6M parameters) trained on binary labels for the cell-type-specific classification task.",
+   "kw": [
+    "ChromBPNet",
+    "ab initio",
+    "CNN"
+   ],
+   "info": "ChromBPNet (6.6M parameters) takes 2,114 bp of one-hot sequence, passes it through 1 conv layer and 8 dilated residual layers, and predicts total counts in the central 1,000 bp (MSE loss; the only output compared here) plus a base-resolution profile (multinomial loss). Pretrained ENCODE ChromBPNet models were used. Probing-head-like CNN: conv width 41 with 256 channels plus a learned positional embedding, then the probing head; Adam, learning rate 1e-3. ChromBPNet-like: 7 dilated layers, no profile head, positional encoding added; learning rate 1e-4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation approaches and baselines",
+   "q": "How were the data split into training, validation and test sets?",
+   "a": "By chromosome, with the same split in every experiment. Test: chromosomes 5, 10, 14, 18, 20 and 22. Validation: chromosomes 6 and 21. Training: all other chromosomes.",
+   "kw": [
+    "chromosome split"
+   ],
+   "info": "The checkpoint with the lowest validation loss was evaluated, and all reported numbers are on the test set. This gives roughly 4:1 (train plus validation) to test and 9:1 train to validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation approaches and baselines",
+   "q": "How much compute do the DNALMs need?",
+   "a": "It varies a lot. For a batch of 64 sequences of 2,114 bp on an L40S GPU, inference memory ranged from 0.94 GB (HyenaDNA) to 9.35 GB (Mistral-DNA, 1.6B parameters). Training memory ranged from 7.57 GB (HyenaDNA) to 40.82 GB (Caduceus).",
+   "kw": [
+    "compute"
+   ],
+   "info": "Training runtime per batch ranged from 174 ms (HyenaDNA) to 835 ms (Caduceus). No matching resource numbers are given for the ab initio baselines, so the claim that DNALMs need much more compute is not directly quantified against them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 1 regulatory DNA vs background",
+   "q": "What data were used to test whether models can tell regulatory DNA from background?",
+   "a": "Positives were about 2.3 million ENCODE candidate cis-regulatory elements (cCREs) of 350 bp. Negatives were the same number of synthetic sequences made by dinucleotide-shuffling each cCRE, which keeps composition but destroys syntax.",
+   "kw": [
+    "cCRE",
+    "ENCODE",
+    "dinucleotide shuffling"
+   ],
+   "info": "The cCREs are from ENCODE phase IV (more than twice as many as phase III). They were defined from DNase-seq combined with H3K27ac (enhancer) and H3K4me3 (promoter) ChIP-seq. Shuffling was seeded with the SHA-256 hash of genomic coordinates for reproducibility.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 1 regulatory DNA vs background",
+   "q": "How was accuracy defined in Task 1?",
+   "a": "Zero-shot, a pair counts as correct if the cCRE gets a higher likelihood than its shuffled negative. In supervised settings, absolute accuracy is the fraction of sequences classified correctly, and paired accuracy is the fraction of pairs where the cCRE gets the higher probability.",
+   "kw": [
+    "paired accuracy",
+    "absolute accuracy"
+   ],
+   "info": "A one-sided Wilcoxon rank-sum test was also used zero-shot, and AUROC and AUPRC for the supervised settings.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 1 regulatory DNA vs background",
+   "q": "How well did the models separate cCREs from shuffled controls?",
+   "a": "All DNALMs ranked cCREs above controls zero-shot, from 0.745 (NT) to 0.971 (Caduceus). The best probed model was GENA-LM (absolute 0.887, paired 0.959). The best fine-tuned model was NT (0.920, 0.976), compared with 0.846 and 0.932 for the ab initio CNN.",
+   "kw": [
+    "zero-shot",
+    "fine-tuning"
+   ],
+   "info": "Probed models performed about the same as the ab initio CNN. Fine-tuning pushed paired accuracies close to 1.",
+   "concl": "This is the easiest task. DNALMs learn some regulatory features beyond composition, and fine-tuning gives a moderate gain over ab initio models."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "q": "How was sensitivity to known TF motifs tested?",
+   "a": "Consensus sequences of 1,443 motifs from HOCOMOCO v12 were inserted at the centre of 100 neutral backgrounds (dinucleotide-shuffled cCREs) to make positives. Shuffled motifs were inserted in the same way to make negatives. Forward and reverse complements were scored, giving 577,400 unique sequences.",
+   "kw": [
+    "HOCOMOCO v12",
+    "TF motifs",
+    "PWM"
+   ],
+   "info": "HOCOMOCO v12 has PWMs for 949 human TFs, which gives 1,443 motifs when subtypes are counted. Motifs were derived from ChIP-seq and HT-SELEX with ChIPMunk. The consensus is the most probable base at each position.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "q": "How was a correct motif prediction defined in the likelihood and embedding approaches?",
+   "a": "Likelihood: correct if the motif-containing sequence gets a higher likelihood than its shuffled-motif control. Embedding: correct if the cosine distance from the neutral background to the positive is larger than the distance to the negative.",
+   "kw": [
+    "cosine distance",
+    "likelihood"
+   ],
+   "info": "There are 200 pairs per motif, so accuracy is computed per motif, with a one-sided Wilcoxon rank-sum test. Results were also aggregated by HOCOMOCO TF family.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "q": "Did the likelihood approach detect TF motifs?",
+   "a": "Yes for most, but not all, motifs, and accuracy varied a lot between motifs. Median per-motif accuracies ranged from 0.565 (NT) to 0.645 (HyenaDNA), and some motifs scored close to 0.",
+   "kw": [
+    "motif sensitivity"
+   ],
+   "info": "From Table S7: the 25th percentile was 0.420 to 0.495 and the 75th percentile 0.658 to 0.820, depending on the model. This suggests some motifs are simply not encoded in the learned representations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "q": "Did the embedding approach detect TF motifs?",
+   "a": "No. No model reliably prioritised motifs. Most per-motif accuracies fell between 40% and 60%, with medians around 0.50.",
+   "kw": [
+    "embeddings"
+   ],
+   "info": "Embedding-based accuracies were also uncorrelated between models (Figure S3).",
+   "concl": "Averaged final-layer embeddings with cosine distance do not capture what the models have learned."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "q": "What does the correlation of motif scores between models suggest?",
+   "a": "Likelihood-based motif accuracies were highly correlated between models. This points to a strong influence of the pretraining data distribution on which motifs a model learns.",
+   "kw": [
+    "pretraining data"
+   ],
+   "info": "The pattern held when motifs were grouped into TF families by DNA-binding domain and motif similarity (Figures S4 and S5). Caduceus looks less correlated with the other models in Figure S2, but the text does not comment on this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "q": "Why was motif detection worse than discriminating whole regulatory elements?",
+   "a": "The authors propose two reasons. DNALMs learn only a subset of TF motifs, mainly those that are frequent across the genome. And regulatory elements contain several TF binding sites, so they can be recognised even with an incomplete set of learned motifs.",
+   "kw": [
+    "motif frequency"
+   ],
+   "info": "These are hypotheses and were not tested directly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 3 cell-type-specific regulatory DNA",
+   "q": "How were cell-type-specific regulatory elements defined?",
+   "a": "ATAC-seq peaks from five cell lines (GM12878, H1ESC, HEPG2, IMR90, K562) were merged into a consensus set. DESeq2 was run one cell type versus the rest (log fold change above 1, adjusted p below 0.001), and only peaks differential in exactly one cell type were kept.",
+   "kw": [
+    "ATAC-seq",
+    "DESeq2",
+    "differential accessibility"
+   ],
+   "info": "Differential peaks per cell type: GM12878 45,184; H1ESC 49,208; HEPG2 33,948; IMR90 50,783; K562 37,623. Peaks came from ENCODE, with multiple biological replicates per cell type.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 3 cell-type-specific regulatory DNA",
+   "q": "How did they check that the differential peaks carry cell-type-specific signals?",
+   "a": "HOMER de novo motif discovery was run on each cell type's peaks against the other cell types' peaks, and the motifs were matched to JASPAR. Each cell type was enriched for its expected TFs.",
+   "kw": [
+    "HOMER",
+    "JASPAR"
+   ],
+   "info": "GM12878: IRF1, IRF2, SpiB. H1ESC: Oct4, Sox2, Sox6. HEPG2: Hnf4a, FoxA1, Hnf1. IMR90: ATF3, Fosl2, Jun-AP1. K562: Gata1, KLF4, Gata2. All had -log10 q capped at 10.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 3 cell-type-specific regulatory DNA",
+   "q": "How was cell-type information in the embeddings tested zero-shot?",
+   "a": "Embeddings of the top 5,000 differential peaks per cell line were clustered with k-means (k = 50). Agreement between clusters and true cell-type labels was measured with adjusted mutual information (AMI). The baseline was a bag-of-motifs vector built from FIMO motif hits.",
+   "kw": [
+    "k-means",
+    "AMI",
+    "FIMO"
+   ],
+   "info": "Baseline: FIMO scanning with HOCOMOCO motifs, intersected with peaks using BedTools; each entry is the sum of -log10 FIMO q-values for that motif; the most variable motifs were chosen by permutation (1,000 subsamples of 100 peaks); labels were not used. AMI comes from 100 k-means runs with a conservative 95% CI. AMI is about 0 for random labels and 1 for a perfect match.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 3 cell-type-specific regulatory DNA",
+   "q": "Did DNALM embeddings separate cell types zero-shot?",
+   "a": "No. The motif-count baseline reached AMI 0.2743 +/- 0.0167, while all DNALMs were around 1 to 3 x 10^-4, which is essentially random.",
+   "kw": [
+    "AMI",
+    "embeddings"
+   ],
+   "info": "For example, DNABERT-2 had AMI 2.932 x 10^-4 and Caduceus 1.106 x 10^-4.",
+   "concl": "Only the simple known-motif baseline gave an embedding space useful for cell-type-specific activity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 3 cell-type-specific regulatory DNA",
+   "q": "How did supervised models do at classifying the 5 cell types?",
+   "a": "Fine-tuned Caduceus had the best overall accuracy (0.671), essentially the same as the ab initio ChromBPNet-like CNN (0.667). The best probed model was HyenaDNA (0.587), and the small probing-head-like CNN reached 0.474.",
+   "kw": [
+    "cell-type classification",
+    "AUROC"
+   ],
+   "info": "Fine-tuned Caduceus one-vs-rest AUROC was 0.900 to 0.937, against 0.848 to 0.929 for ChromBPNet-like. Mistral-DNA was poor even when fine-tuned (0.402). Most probed models were at about the level of the small CNN.",
+   "concl": "Ab initio models matched the best fine-tuned DNALMs and clearly beat all probed DNALMs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 4 quantitative regulatory activity",
+   "q": "What was predicted in the quantitative activity task?",
+   "a": "Sequence-to-activity (S2A) regression models predicted DNase-seq signal, as log read counts, from 2 kb sequences. Inputs were DNase-seq peaks plus GC-matched background regions, with a separate model for each of the five cell types.",
+   "kw": [
+    "DNase-seq",
+    "S2A model",
+    "chromatin accessibility"
+   ],
+   "info": "The ChromBPNet preprocessing was used for all models: outlier peaks removed, peaks expanded to 2,114 bp, 10:1 peaks to negatives per batch, half of the sequences reverse-complemented, and random shifts of up to 500 bp. The target was read endpoints in the central 1,000 bp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 4 quantitative regulatory activity",
+   "q": "Which metrics were used for the accessibility regression?",
+   "a": "Pearson and Spearman correlation between predicted and observed signal, computed on peaks only and on peaks plus background. AUROC and AUPRC were also computed for separating high-confidence peaks from background.",
+   "kw": [
+    "Spearman",
+    "IDR"
+   ],
+   "info": "Positives for classification were reproducible peaks defined by the Irreproducible Discovery Rate (IDR) method.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 4 quantitative regulatory activity",
+   "q": "Did DNALMs predict quantitative accessibility as well as ChromBPNet?",
+   "a": "Fine-tuned DNALMs matched or slightly outperformed ChromBPNet. For example, Spearman r among peaks in K562 was 0.583 for NT versus 0.574 for ChromBPNet, but ChromBPNet was best in the other four cell types (0.534 to 0.754). Probed models were much worse, for example 0.149 for Caduceus in IMR90.",
+   "kw": [
+    "ChromBPNet",
+    "Nucleotide Transformer"
+   ],
+   "info": "AUROC was very similar for the best models, for example GM12878 0.940 (ChromBPNet) versus 0.938 (NT), and IMR90 0.975 versus 0.976 (Caduceus). On the peaks-plus-background correlations, fine-tuned NT was often higher than ChromBPNet (Tables S14 to S18).",
+   "concl": "Frozen last-layer embeddings are not expressive enough for quantitative accessibility prediction, but fine-tuning closes the gap."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 5 variant effect prediction",
+   "q": "What are caQTLs and dsQTLs?",
+   "a": "They are molecular QTLs: genetic variants associated with variation in chromatin accessibility across individuals. caQTLs are measured with ATAC-seq and dsQTLs (DNase I sensitivity QTLs) with DNase-seq.",
+   "kw": [
+    "caQTL",
+    "dsQTL",
+    "molecular QTL"
+   ],
+   "info": "S2A models are never trained on variation data, so scoring variants with them is a counterfactual task.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 5 variant effect prediction",
+   "q": "Which variant datasets were used?",
+   "a": "caQTLs from 100 lymphoblastoid cell lines (LCLs) of African ancestry: 219,382 variants, of which 6,821 are significant and 77,999 are controls. Yoruban LCL dsQTLs: 28,309 variants, of which 560 are significant and 26,813 are controls.",
+   "kw": [
+    "LCL",
+    "caQTL",
+    "dsQTL"
+   ],
+   "info": "The caQTL cohort covers 6 subpopulations (ESN, GWD, LWK, MSL, YRI, MKK). Variants were restricted to peak regions to enrich for causal variants, and negatives are non-significant variants in peaks. caQTL coordinates are on GRCh38 and dsQTL coordinates on GRCh37.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 5 variant effect prediction",
+   "q": "How were variants scored?",
+   "a": "Each allele was placed at the centre of a 2,114 bp sequence. Zero-shot scores were the cosine distance between the two allele embeddings, or the log-likelihood difference at the masked variant token. Supervised scores were the difference in predicted accessibility between alleles from the GM12878 S2A models of Task 4.",
+   "kw": [
+    "variant effect",
+    "allelic effect"
+   ],
+   "info": "Metrics: AUROC and AUPRC for significant versus control variants, plus Pearson correlation with the QTL effect size for supervised models. The main text says the supervised score is the absolute difference in predicted accessibility, while the appendix calls it the predicted counts log fold change.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 5 variant effect prediction",
+   "q": "Why was likelihood-based variant scoring not done for all models?",
+   "a": "With byte-pair encoding, a single base change can alter the whole token, so the two alleles' likelihoods cannot be compared cleanly. It was only done for models with fixed tokenisation.",
+   "kw": [
+    "byte-pair encoding",
+    "tokenization"
+   ],
+   "info": "The text says only NT and HyenaDNA, but Table 6 also reports likelihood scores for Caduceus, which uses single-nucleotide tokens. The paper does not explain this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 5 variant effect prediction",
+   "q": "How did DNALMs perform zero-shot on variants?",
+   "a": "Close to chance. NT was best in both settings, for example embedding AUROC 0.613 on Yoruban dsQTLs and likelihood AUROC 0.525 on African caQTLs.",
+   "kw": [
+    "zero-shot",
+    "AUROC"
+   ],
+   "info": "On Yoruban dsQTLs, likelihood AUROCs were below 0.5 (0.436 to 0.469). Unlike in the other zero-shot tasks, likelihood scoring did not clearly beat embedding scoring here.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Task 5 variant effect prediction",
+   "q": "How did supervised DNALM variant scores compare with ChromBPNet?",
+   "a": "ChromBPNet was much better: AUROC 0.772 and Pearson r 0.671 on African caQTLs, and AUROC 0.892 and r 0.738 on Yoruban dsQTLs. The best fine-tuned DNALMs reached AUROC 0.650 (Caduceus) and 0.670 (NT), and probed models were about 0.43 to 0.57.",
+   "kw": [
+    "ChromBPNet",
+    "counterfactual prediction"
+   ],
+   "info": "AUPRC: ChromBPNet 0.397 versus at most 0.179 for any DNALM (caQTL), and 0.359 versus at most 0.080 (dsQTL). Fine-tuned Mistral-DNA was at chance (AUROC about 0.51).",
+   "concl": "Fine-tuned models matched ChromBPNet at predicting accessibility but lost at predicting variant effects, so benchmarks need counterfactual tasks and not only observational ones."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall pattern across the five tasks?",
+   "a": "The tasks get harder in this order: detecting regulatory sequences, motif discovery, cell-type specificity, quantitative activity prediction, and counterfactual variant prediction. DNALMs do well on the simple tasks, but their performance drops as task complexity increases.",
+   "kw": [
+    "task difficulty"
+   ],
+   "info": "",
+   "concl": "Rigorous evaluation against strong baselines is needed to judge what DNALMs can actually do."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might DNALMs learn only part of the regulatory vocabulary, and how could this be fixed?",
+   "a": "Regulatory features are sparse and unevenly distributed: regulatory elements are only 10 to 20% of the genome, and some feature classes are much rarer than others. The authors suggest balanced sampling across element classes, regulatory annotations as tokens, or training on functionally related subsets such as candidate regulatory elements instead of the whole genome.",
+   "kw": [
+    "training data",
+    "sparsity"
+   ],
+   "info": "These are proposals, not tested in the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What lessons about DNALM design do the authors draw?",
+   "a": "Embedding-derived methods (embedding distance, probing) generally underperform methods that use the full model (likelihoods, fine-tuning). Masked objectives are less efficient than autoregressive ones for likelihoods because tokens must be masked one at a time. Byte-pair encodings make variant scoring hard. Fine-tuning works best but needs backpropagation through the whole model.",
+   "kw": [
+    "masked vs autoregressive",
+    "byte-pair encoding",
+    "fine-tuning"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations of DART-Eval?",
+   "a": "It only covers short, local sequence context, with no long-range tasks such as distal regulatory interactions, gene expression or 3D genome architecture. It is human only, and it does not include other element types such as 5' UTRs, 3' UTRs or splice sites, or post-transcriptional regulation.",
+   "kw": [
+    "limitations",
+    "long-range context"
+   ],
+   "info": "The authors expect benchmarking on other species to become more relevant as functional annotation of other model organisms improves.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Task 5 variant effect prediction",
+   "text": "Why do fine-tuned DNALMs match ChromBPNet at predicting accessibility but fall well behind it at predicting variant effects? The paper reports the gap but does not explain it."
+  },
+  {
+   "type": "note",
+   "section": "Results - Task 2 TF motif sensitivity",
+   "text": "Averaged final-layer embeddings seem to hide what the models know. Would other ways of extracting representations (other layers, other pooling) change the conclusions about embedding-based evaluations?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "All benchmarks are human only. Would the conclusions hold in non-human genomes, for example fish, as functional annotation of other organisms improves?"
+  }
+ ]
+}

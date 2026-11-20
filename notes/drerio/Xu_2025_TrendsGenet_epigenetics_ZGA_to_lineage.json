@@ -1,0 +1,113 @@
+{
+ "id": "Xu_2025",
+ "title": "Epigenetic regulation in early embryo development: from zygotic genome activation to the first lineage specification",
+ "link": "https://doi.org/10.1016/j.tig.2025.05.005",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Xu_2025_TrendsGenet_epigenetics_ZGA_to_lineage.txt",
+ "added": "2026-11-17",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Not the full paper: no access to the full text, so these notes are based only on the publicly available abstract and metadata (PubMed). Details from the main text and figures are missing.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What kind of paper is this and where was it published?",
+   "a": "It is a review by Xu R, Li Y, Wu Y, Liu X and Gao S, published in Trends in Genetics in 2025.",
+   "kw": [
+    "review"
+   ],
+   "info": "PMID 40480920. These notes are based only on the abstract and metadata because the full text was not accessible.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What role does epigenetic regulation play in early embryo development?",
+   "a": "It plays a pivotal role in orchestrating early embryo development and guides the transition from a totipotent zygote to a complex multicellular organism.",
+   "kw": [
+    "totipotency",
+    "zygote"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which developmental window does the review focus on?",
+   "a": "The dynamic landscape of epigenetic reprogramming during preimplantation embryo development, from zygotic genome activation (ZGA) to the first lineage specification.",
+   "kw": [
+    "zygotic genome activation",
+    "preimplantation embryo",
+    "lineage specification"
+   ],
+   "info": "The window is taken from the title and the keywords. The abstract does not say which species are covered. The MeSH terms list Humans and Animals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which epigenetic layers does the review cover?",
+   "a": "DNA methylation, histone modifications, higher-order chromatin, transposable elements (TEs) and RNA modifications.",
+   "kw": [
+    "DNA methylation",
+    "histone modifications",
+    "transposable elements"
+   ],
+   "info": "The review stresses how these layers interact with each other, not each one on its own.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the goal of epigenetic reprogramming in the early embryo, according to the review?",
+   "a": "Resetting the parental epigenome, which comes about through the interplay of DNA methylation, histone modifications, higher-order chromatin, TEs and RNA modifications.",
+   "kw": [
+    "epigenetic reprogramming",
+    "parental epigenome"
+   ],
+   "info": "The abstract gives no details about the specific mechanisms.",
+   "concl": "Resetting the parental epigenome depends on several epigenetic layers acting together."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "In which artificial settings does the review discuss abnormal epigenetic reprogramming?",
+   "a": "In somatic cell nuclear transfer (SCNT) and in assisted reproductive technologies (ART).",
+   "kw": [
+    "SCNT",
+    "ART"
+   ],
+   "info": "The abstract does not say which specific defects are described.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Does the review link epigenetic defects to disease?",
+   "a": "Yes. It summarizes clinical disorders that result from abnormal epigenetic reprogramming and discusses possible therapeutic strategies.",
+   "kw": [
+    "clinical disorders"
+   ],
+   "info": "The abstract does not name the disorders or the therapeutic strategies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the overall aim of the review?",
+   "a": "To clarify the role of epigenetic modifications in developmental defects and to offer perspectives that help both developmental biology research and the clinical use of assisted reproduction.",
+   "kw": [
+    "developmental defects"
+   ],
+   "info": "The review also discusses future research directions.",
+   "concl": "The review connects basic epigenetic reprogramming in early embryos with clinical problems in ART and SCNT."
+  },
+  {
+   "type": "note",
+   "section": "Abstract",
+   "text": "Get the full text to check which species are covered, especially whether zebrafish or other non-mammalian models are discussed alongside the mammalian preimplantation embryo, and how TEs and RNA modifications act at ZGA."
+  }
+ ]
+}
