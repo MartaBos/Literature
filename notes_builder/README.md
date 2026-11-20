@@ -407,3 +407,20 @@ keeps the old commits (not pushed). Future commits: no Claude co-author line.
 2026-11-20: Marta enabled GitHub Pages (branch main, /) → https://martabos.github.io/Literature/
 (repo made public for that). Links to the five pages added to the top-level README.md; all five
 checked with curl (HTTP 200).
+
+## One-time code task: sorting + tag filter (scheduled for Wed 2026-11-25 05:00)
+
+Marta asked (2026-11-20) for sorting (author A→Z/Z→A, year both directions) and filtering by tags
+(only / everything except; topic chips unchanged; tags from `tags` + "Shared by <name>") on every page,
+to be done on Wednesday if usage is left. Spec: `tasks/2026-11-25_sort_filter.md`.
+
+- `run_task_once.sh tasks/<task>.md`: runs headless Claude with Read/Edit/Write and only three shell
+  commands allowed (00_make_template.py, 02_build_html.py, ./check_pages.sh). Backs up the files it may
+  change; afterwards rebuilds and runs `check_pages.sh` (node --check on every page, paper counts must not
+  change) and checks no other file was touched. Pass → local commit (author Marta, no Claude line, NOT
+  pushed). Fail / no usage left → files restored, attempt saved in `logs/task_<task>_attempt.patch`.
+  Removes its own cron line. Log: `logs/task_<task>.log`.
+- `check_pages.sh`: page check used above (also handy by hand).
+- cron: `0 5 25 11 * /home/mbosnjak/literature/notes_builder/run_task_once.sh tasks/2026-11-25_sort_filter.md`
+- Tested 2026-11-20: restricted headless flags work (`check_pages.sh` run via Claude, $0.03); template
+  did not yet contain the success markers (`pn-sort-`, "except").
