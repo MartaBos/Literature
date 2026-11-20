@@ -388,7 +388,7 @@ GH=/home/mbosnjak/miniforge3/envs/R/bin/gh
 $GH repo edit MartaBos/Literature --visibility private --accept-visibility-change-consequences   # was public
 cd ~/literature && git init -b main
 git config user.email "$($GH api user --jq .id)+MartaBos@users.noreply.github.com"; git config user.name "Marta Bosnjakovic"
-git add -A && git commit -m "..."      # checked first: no PDFs/secrets staged, ~5 MB, 121 files (+ top-level README.md)
+git add -A && git commit -m "..."      # (no Claude co-author line, see 2026-11-20) checked first: no PDFs/secrets staged, ~5 MB, 121 files (+ top-level README.md)
 git remote add origin https://github.com/MartaBos/Literature.git
 git -c credential.helper= -c "credential.helper=!$GH auth git-credential" push -u origin main
 ```
@@ -398,3 +398,12 @@ Later updates (after new notes / comments):
 cd ~/literature && git add -A && git commit -m "Update notes" && \
 git -c credential.helper= -c "credential.helper=!/home/mbosnjak/miniforge3/envs/R/bin/gh auth git-credential" push
 ```
+
+2026-11-20: "Co-Authored-By: Claude" lines removed from both commits at Marta's request
+(`git filter-branch --msg-filter 'sed "/^Co-Authored-By: Claude/d"' -- main`, then
+`git push --force-with-lease=main:<old sha> origin main`); local tag `backup-before-trailer-removal`
+keeps the old commits (not pushed). Future commits: no Claude co-author line.
+
+2026-11-20: Marta enabled GitHub Pages (branch main, /) → https://martabos.github.io/Literature/
+(repo made public for that). Links to the five pages added to the top-level README.md; all five
+checked with curl (HTTP 200).
