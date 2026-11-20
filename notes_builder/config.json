@@ -5,7 +5,7 @@
 
   "claude_model": null,
   "timeout_minutes": 25,
-  "max_new_papers_per_run": 15,
+  "max_new_papers_per_run": 25,
   "server_port": 21060,
 
   "_comment_folders": "category = default subcategory for new papers; subcategories = name -> colour (mex blue, emb orange, gen green, dam pink, oth purple, ali yellow). Folders starting with _ (e.g. papers/_superseded_preprints) are ignored.",

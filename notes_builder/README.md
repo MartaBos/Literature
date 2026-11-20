@@ -32,7 +32,7 @@ with the exact file name to save the PDF as.
    in the same format as the hand-written notes (section / question / answer /
    keywords / additional information / main conclusion). The script checks the
    reply and saves it as `notes/<folder>/<pdf name>.json`. The DOI link comes
-   from the PDF's own metadata. At most `max_new_papers_per_run` (15) papers per week.
+   from the PDF's own metadata. At most `max_new_papers_per_run` (25 since 2026-11-20) papers per week.
 2. **`02_build_html.py`**: rebuilds every `paper_notes_<folder>.html` from
    `template.html` plus that folder's JSON notes. PDFs still without notes are
    listed as "no notes yet".
@@ -435,4 +435,4 @@ Folder 1zWi1_GrYqo8_DGb5Oxxdllr5X7sCpezJ, 24 files, all labelled shared by Damir
 - Preprints → journal versions (Crossref): Mouren → Nat Commun 2026 and Bhardwaj → eLife 2026 downloaded
   from PMC (`11_download_papers.py 2026-11-20_damir2025`); Fradkin (Orthrus) → Nat Methods 2026 and
   Grushina → JBCB 2025 are paywalled → bioRxiv preprints used, "Open paper" = journal DOI, source note shown.
-- Total library: 97 papers; 22 new ones get notes on Wednesday (weekly cap 15 → 7 the week after unless raised).
+- Total library: 97 papers; 22 new ones get notes on Wednesday 2026-11-25 (weekly cap raised 15 → 25 on 2026-11-20 at Marta's request).
