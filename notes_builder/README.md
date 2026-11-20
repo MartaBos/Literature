@@ -374,3 +374,27 @@ python3 -I 17_import_notes.py $B/Komiya_2008_Organogenesis_wnt_signal_transducti
     $B/org0402_0068.pdf signaling "Wnt" Komiya_2008_Organogenesis_wnt_signal_transduction.pdf --tags "External notes"
 python3 -I 02_build_html.py
 ```
+
+## GitHub backup (2026-11-20): https://github.com/MartaBos/Literature (private)
+
+`~/literature` is a git repository. Pushed on Marta's request; not pushed automatically by the weekly job.
+Excluded by `~/literature/.gitignore`: all PDFs, `papers/**/*.txt` (abstract / full-text sources),
+`notes_builder/batches/*_files/`, `work/`, `logs/`, `.server_token`, `.server.pid`, `.lock`, `notes/_failed/`.
+Comments (`notes/comments*.json*`) are included (Marta's choice; repo private). Commits use the GitHub
+no-reply email (repo-local `git config user.email`).
+
+```bash
+GH=/home/mbosnjak/miniforge3/envs/R/bin/gh
+$GH repo edit MartaBos/Literature --visibility private --accept-visibility-change-consequences   # was public
+cd ~/literature && git init -b main
+git config user.email "$($GH api user --jq .id)+MartaBos@users.noreply.github.com"; git config user.name "Marta Bosnjakovic"
+git add -A && git commit -m "..."      # checked first: no PDFs/secrets staged, ~5 MB, 121 files (+ top-level README.md)
+git remote add origin https://github.com/MartaBos/Literature.git
+git -c credential.helper= -c "credential.helper=!$GH auth git-credential" push -u origin main
+```
+
+Later updates (after new notes / comments):
+```bash
+cd ~/literature && git add -A && git commit -m "Update notes" && \
+git -c credential.helper= -c "credential.helper=!/home/mbosnjak/miniforge3/envs/R/bin/gh auth git-credential" push
+```
