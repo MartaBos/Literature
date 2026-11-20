@@ -59,9 +59,10 @@ AFTER="$("$HERE/check_pages.sh" | sort)" || restore "page check failed (JS error
 [ "$BEFORE" == "$AFTER" ] || restore "paper counts changed: before [$BEFORE] after [$AFTER]"
 grep -q "pn-sort-" "$HERE/template.html" || restore "sorting code not found in template"
 grep -qi "except" "$HERE/template.html" || restore "tag 'except' mode not found in template"
+grep -q "Verdana" "$HERE/template.html" || restore "Verdana font option not found in template"
 
 git add $ALLOWED papers/*/paper_notes_*.html "notes_builder/tasks/${NAME}.md"
-git commit -q -m "Pages: sorting (author/year) and tag filter (only/except)
+git commit -q -m "Pages: sorting (author/year), tag filter (only/except) and font choice (Verdana)
 
 Done by the one-time task notes_builder/tasks/${NAME}.md; checked by run_task_once.sh
 (rebuild, node --check on every page, paper counts unchanged)." && echo "COMMITTED $(git log --oneline -1)"

@@ -410,7 +410,7 @@ checked with curl (HTTP 200).
 
 ## One-time code task: sorting + tag filter (scheduled for Wed 2026-11-25 05:00)
 
-Marta asked (2026-11-20) for sorting (author A→Z/Z→A, year both directions) and filtering by tags
+Marta asked (2026-11-20) for sorting (author A→Z/Z→A, year both directions), a font switch (current fonts / Verdana) and filtering by tags
 (only / everything except; topic chips unchanged; tags from `tags` + "Shared by <name>") on every page,
 to be done on Wednesday if usage is left. Spec: `tasks/2026-11-25_sort_filter.md`.
 

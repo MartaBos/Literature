@@ -1,4 +1,4 @@
-# Task: sorting and tag filtering on the paper-notes pages
+# Task: sorting, tag filtering and font choice on the paper-notes pages
 
 Requested by Marta on 2026-11-20, to be done on Wednesday 2026-11-25 if usage is left.
 
@@ -42,6 +42,19 @@ No tag checked = no tag filtering. Show how many papers are visible (e.g. "12 of
 Tag filtering combines with the topic chips (a paper must pass both) and applies everywhere the
 current `visible()` filter applies (sidebar list, home view, "Study" button, search results).
 Remember checked tags + mode per page in localStorage. Add a small "clear" control.
+
+## 3. Font choice (requested 2026-11-20)
+
+Add a font switch the reader can change on the page, placed next to the existing "Theme" button at
+the bottom of the sidebar (same button style; e.g. "Font: Literata" / "Font: Verdana", clicking
+cycles). Two options:
+- **Current** (default): the existing fonts (`--serif` Literata for reading text, `--sans`
+  Instrument Sans for the interface), unchanged.
+- **Verdana**: Verdana everywhere, i.e. set both `--serif` and `--sans` to
+  `Verdana, Geneva, "DejaVu Sans", sans-serif` (switch via a `data-font="verdana"` attribute on
+  `<html>` plus a CSS rule, like the existing `data-theme`).
+Remember the choice in localStorage (key "pn-font", shared by all pages) and apply it before the
+page renders. Verdana is a system font: do not load it from the network.
 
 ## Must keep working (do not break)
 Search, flashcards (study mode, keys 1/2/space), "known" progress, the "My comments" box, theme
