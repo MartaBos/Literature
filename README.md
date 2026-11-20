@@ -2,15 +2,15 @@
 
 Flashcard-style notes pages for my literature, one page per folder:
 
-**Online (GitHub Pages): https://martabos.github.io/Literature/**
+**Online (GitHub Pages): [https://martabos.github.io/Literature/](https://martabos.github.io/Literature/)**
 
-| Page | Open online | File in the repository |
+| Page | Link | File in the repository |
 |---|---|---|
-| Astyanax mexicanus | [open](https://martabos.github.io/Literature/papers/amexicanus/paper_notes_amexicanus.html) | `papers/amexicanus/paper_notes_amexicanus.html` |
-| Danio rerio | [open](https://martabos.github.io/Literature/papers/drerio/paper_notes_drerio.html) | `papers/drerio/paper_notes_drerio.html` |
-| General | [open](https://martabos.github.io/Literature/papers/general/paper_notes_general.html) | `papers/general/paper_notes_general.html` |
-| Regulatory genomics | [open](https://martabos.github.io/Literature/papers/regulatiory_genomics/paper_notes_regulatiory_genomics.html) | `papers/regulatiory_genomics/paper_notes_regulatiory_genomics.html` |
-| Signaling pathways | [open](https://martabos.github.io/Literature/papers/signaling/paper_notes_signaling.html) | `papers/signaling/paper_notes_signaling.html` |
+| Astyanax mexicanus | [https://martabos.github.io/Literature/papers/amexicanus/paper_notes_amexicanus.html](https://martabos.github.io/Literature/papers/amexicanus/paper_notes_amexicanus.html) | `papers/amexicanus/paper_notes_amexicanus.html` |
+| Danio rerio | [https://martabos.github.io/Literature/papers/drerio/paper_notes_drerio.html](https://martabos.github.io/Literature/papers/drerio/paper_notes_drerio.html) | `papers/drerio/paper_notes_drerio.html` |
+| General | [https://martabos.github.io/Literature/papers/general/paper_notes_general.html](https://martabos.github.io/Literature/papers/general/paper_notes_general.html) | `papers/general/paper_notes_general.html` |
+| Regulatory genomics | [https://martabos.github.io/Literature/papers/regulatiory_genomics/paper_notes_regulatiory_genomics.html](https://martabos.github.io/Literature/papers/regulatiory_genomics/paper_notes_regulatiory_genomics.html) | `papers/regulatiory_genomics/paper_notes_regulatiory_genomics.html` |
+| Signaling pathways | [https://martabos.github.io/Literature/papers/signaling/paper_notes_signaling.html](https://martabos.github.io/Literature/papers/signaling/paper_notes_signaling.html) | `papers/signaling/paper_notes_signaling.html` |
 
 The online pages are updated whenever the repository is pushed. Comments are read-only online; they are edited through the notes server on abacus2.
 
