@@ -424,3 +424,15 @@ to be done on Wednesday if usage is left. Spec: `tasks/2026-11-25_sort_filter.md
 - cron: `0 5 25 11 * /home/mbosnjak/literature/notes_builder/run_task_once.sh tasks/2026-11-25_sort_filter.md`
 - Tested 2026-11-20: restricted headless flags work (`check_pages.sh` run via Claude, $0.03); template
   did not yet contain the success markers (`pn-sort-`, "except").
+
+### Damir's 2025 Drive folder (batch 2026-11-20_damir2025, "task 4"; notes by the Wednesday run)
+
+Folder 1zWi1_GrYqo8_DGb5Oxxdllr5X7sCpezJ, 24 files, all labelled shared by Damir, 2025 (shared_year "2025").
+- 20 PDFs filed from the folder (`batches/2026-11-20_damir2025_local_assign.tsv`; `_local_files` is a
+  symlink to `2026-11-20_damir2025_files`). File-name fixes: `Nepal_2025.pdf` = Nepal 2013 Genome Res;
+  `Phan_2024.pdf` (large file, fetched via drive.usercontent…&confirm=t) = Phan 2025 Nat Genet, already in
+  the library → not duplicated, catalog entry got shared_by Damir 2025; `Demircioglu_2019` already in library.
+- Preprints → journal versions (Crossref): Mouren → Nat Commun 2026 and Bhardwaj → eLife 2026 downloaded
+  from PMC (`11_download_papers.py 2026-11-20_damir2025`); Fradkin (Orthrus) → Nat Methods 2026 and
+  Grushina → JBCB 2025 are paywalled → bioRxiv preprints used, "Open paper" = journal DOI, source note shown.
+- Total library: 97 papers; 22 new ones get notes on Wednesday (weekly cap 15 → 7 the week after unless raised).

@@ -732,8 +732,8 @@
  "regulatiory_genomics/Phan_2025_NatGenet_conserved_regulatory_elements_diverged_sequence": {
   "title": "Conservation of regulatory elements with highly diverged sequences across large evolutionary distances",
   "category": "Regulatory evolution",
-  "shared_by": "",
-  "shared_year": "",
+  "shared_by": "Damir",
+  "shared_year": "2025",
   "link": "https://doi.org/10.1038/s41588-025-02202-5",
   "provided_link": "https://doi.org/10.1038/s41588-025-02202-5",
   "preprint_doi": null,
@@ -872,5 +872,247 @@
   "tags": [
    "External notes"
   ]
+ },
+ "regulatiory_genomics/Mouren_2026_NatCommun_exonic_enhancers": {
+  "title": "Exonic enhancers are a widespread class of dual-function regulatory elements",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41467-026-71220-6",
+  "provided_link": "https://doi.org/10.1038/s41467-026-71220-6",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025"
+ },
+ "regulatiory_genomics/Bhardwaj_2026_eLife_single_cell_chromatin_expression": {
+  "title": "Single-cell co-mapping reveals relationship between chromatin state and gene expression in early zebrafish development",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.7554/elife.110400",
+  "provided_link": "https://doi.org/10.7554/elife.110400",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025"
+ },
+ "regulatiory_genomics/Andersson_2014_Nature_FANTOM5_enhancer_atlas": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "An atlas of active enhancers across human cell types and tissues",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/nature12787",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Agarwal_2025_Nature_MPRA_regulatory_elements": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Massively parallel characterization of transcriptional regulatory elements",
+  "category": "Enhancers & enhancer–gene maps",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41586-024-08430-9",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Andrews_2023_Science_mammalian_CRE_TFBS_evolution": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Mammalian evolution of human cis-regulatory elements and transcription factor binding sites",
+  "category": "Regulatory evolution",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1126/science.abn7930",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Consens_2025_NatMachIntell_transformers_genome_LMs": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Transformers and genome language models",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s42256-025-01007-9",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Dahale_2022_LSA_CAGE_alternative_promoters_rat": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Cap analysis of gene expression reveals alternative promoter usage in a rat model of hypertension",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.26508/lsa.202101234",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Fu_2025_Nature_transcription_foundation_model": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "A foundation model of transcription across human cell types",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41586-024-08391-z",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/AlfonsoGonzalez_2024_TrendsCellBiol_alternative_TSS_RNA_processing": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "(Alternative) transcription start sites as regulators of RNA processing",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1016/j.tcb.2024.02.010",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Khetan_2025_Nature_TF_occupancy_binding_sites": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Multiple overlapping binding sites determine transcription factor occupancy",
+  "category": "TF binding & DNA structure",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41586-025-09472-3",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Marletaz_2018_Nature_amphioxus_vertebrate_gene_regulation": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Amphioxus functional genomics and the origins of vertebrate gene regulation",
+  "category": "Regulatory evolution",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41586-018-0734-6",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Nepal_2013_GenomeRes_transcription_initiation_embryogenesis": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Dynamic regulation of the transcription initiation landscape at single nucleotide resolution during vertebrate embryogenesis",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1101/gr.153692.112",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Nguyen_2024_Science_Evo_genome_sequence_model": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Sequence modeling and design from molecular to genome scale with Evo",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1126/science.ado9336",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Oomen_2025_Cell_transcription_initiation_atlas": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "An atlas of transcription initiation reveals regulatory principles of gene and transposable element expression in early mammalian development",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1016/j.cell.2024.12.013",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Theodoris_2024_Science_learning_language_of_DNA": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Learning the language of DNA",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1126/science.adt3007",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Weber_2022_Oncogene_5UTR_isoform_switches": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Monitoring the 5′UTR landscape reveals isoform switches to drive translational efficiencies in cancer",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41388-022-02578-2",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Xue_2025_SciData_alternative_promoter_database": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "An Integrated Database for Exploring Alternative Promoters in Animals",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41597-025-04548-1",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Fradkin_2024_bioRxiv_Orthrus_RNA_foundation_model": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": "10.1101/2024.10.10.617658",
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Orthrus: Towards Evolutionary and Functional RNA Foundation Models",
+  "category": "Deep learning & sequence models",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41592-026-03064-3",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)",
+  "source_note": "Notes are from the bioRxiv preprint, not from the peer-reviewed version (Nature Methods 2026; no access). Details may differ in the journal version."
+ },
+ "regulatiory_genomics/Grushina_2024_bioRxiv_alternative_TSS_promoter_shift": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": "10.1101/2024.12.04.626748",
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Prediction and annotation of alternative transcription starts and promoter shift in the chicken genome",
+  "category": "Transcription initiation & promoters",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1142/s0219720025500040",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)",
+  "source_note": "Notes are from the bioRxiv preprint, not from the peer-reviewed version (J Bioinform Comput Biol 2025; no access). Details may differ in the journal version."
+ },
+ "drerio/Sun_2024_NatCellBiol_zebrafish_chromatin_accessibility_atlas": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "Mapping the chromatin accessibility landscape of zebrafish embryogenesis at single-cell resolution by SPATAC-seq",
+  "category": "Genomic resources",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41556-024-01449-0",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "drerio/Yang_2020_Nature_zebrafish_CRE_3D_genome_map": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "A map of cis-regulatory elements and 3D genome structures in zebrafish",
+  "category": "Genomic resources",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41586-020-2962-9",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "drerio/Capek_2023_NatMethods_EmbryoNet_deep_learning_phenotypes": {
+  "provided_link": "Google Drive folder (shared)",
+  "preprint_doi": null,
+  "batch": "2026-11-20_damir2025_local",
+  "title": "EmbryoNet: using deep learning to link embryonic phenotypes to signaling pathways",
+  "category": "Embryo development & nutrition",
+  "shared_by": "Damir",
+  "shared_year": "2025",
+  "link": "https://doi.org/10.1038/s41592-023-01873-4",
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
  }
 }

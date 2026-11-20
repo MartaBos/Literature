@@ -1,0 +1,62 @@
+[
+ {
+  "link": "https://doi.org/10.1038/s41592-026-03064-3",
+  "kind": "doi",
+  "input_id": "10.1038/s41592-026-03064-3",
+  "preprint": false,
+  "doi": "10.1038/s41592-026-03064-3",
+  "title": "Orthrus: toward evolutionary and functional RNA foundation models",
+  "first_author": "Fradkin",
+  "year": 2026,
+  "journal": "Nature Methods",
+  "type": "journal-article",
+  "abstract": "",
+  "published_as": [],
+  "final_doi": "10.1038/s41592-026-03064-3"
+ },
+ {
+  "link": "https://doi.org/10.1142/s0219720025500040",
+  "kind": "doi",
+  "input_id": "10.1142/s0219720025500040",
+  "preprint": false,
+  "doi": "10.1142/s0219720025500040",
+  "title": "Prediction and annotation of alternative transcription starts and promoter shift in the chicken genome",
+  "first_author": "Grushina",
+  "year": 2025,
+  "journal": "Journal of Bioinformatics and Computational Biology",
+  "type": "journal-article",
+  "abstract": "Promoter shifting, characterized by alterations in Transcription Start Site (TSS) coordinates, is a well-documented phenomenon. The impact and statistical significance of promoter shifting can be assessed through analysis of Cap Analysis of Gene Expression (CAGE) data. This phenomenon is associated with developmental stage transitions, tissue differentiation, and cellular responses to environmental stimuli. Differential promoter usage suggests nonconstitutive expression of the regulated gene, indicative of focused promoter utilization. Conversely, housekeeping genes are typically characterized by stable expression levels driven by multiple dispersed promoters and are commonly expressed across a wide range of tissues. However, our findings demonstrate that many ubiquitously expressed genes utilize single, focused promoters and undergo significant promoter shifting, adding a layer of complexity to the definition of a housekeeping gene. Differential gene expression is commonly used to study gene responses to external stimuli in cells and tissues. Here, we employ an alternative approach based on differential promoter usage, identifying genes exhibiting significant promoter shifting as signatures of tissue response and phenotypic effects. Our results suggest that variations in chicken growth rate are regulated by nutrient metabolism rates, mediated through differential promoter usage of relevant genes.",
+  "published_as": [],
+  "final_doi": "10.1142/s0219720025500040"
+ },
+ {
+  "link": "https://doi.org/10.1038/s41467-026-71220-6",
+  "kind": "doi",
+  "input_id": "10.1038/s41467-026-71220-6",
+  "preprint": false,
+  "doi": "10.1038/s41467-026-71220-6",
+  "title": "Exonic enhancers are a widespread class of dual-function regulatory elements",
+  "first_author": "Mouren",
+  "year": 2026,
+  "journal": "Nature Communications",
+  "type": "journal-article",
+  "abstract": "Abstract Exonic enhancers (EEs) occupy an under-appreciated niche in gene regulation. By integrating transcription factor binding, chromatin accessibility, and high-throughput enhancer-reporter assays, we demonstrate that many protein-coding exons possess enhancer activity across species. These candidate EEs (cEEs) exhibit characteristic epigenomic signatures, form long-range interactions with gene promoters, and can be altered by both nonsynonymous and synonymous variants. CRISPR-mediated inactivation demonstrated the involvement of cEEs in the cis-regulation of host and distal gene expression. Through large-scale cancer genome analyses, we reveal that cEE mutations correlate with dysregulated target-gene expression and clinical outcomes, highlighting their potential relevance in disease. Evolutionary comparisons show that cEEs exhibit both strong sequence constraint and lineage-specific plasticity, suggesting that they serve ancient regulatory functions while also contributing to species divergence. Our findings expand the landscape of functional elements by establishing cEEs as a component of gene regulation, while revealing how coding regions can simultaneously fulfil both protein-coding and cis-regulatory roles.",
+  "published_as": [],
+  "final_doi": "10.1038/s41467-026-71220-6"
+ },
+ {
+  "link": "https://doi.org/10.7554/elife.110400",
+  "kind": "doi",
+  "input_id": "10.7554/elife.110400",
+  "preprint": false,
+  "doi": "10.7554/elife.110400",
+  "title": "Single-cell co-mapping reveals relationship between chromatin state and gene expression in early zebrafish development",
+  "first_author": "Bhardwaj",
+  "year": 2026,
+  "journal": "eLife",
+  "type": "journal-article",
+  "abstract": "Establishing a cell type-specific chromatin landscape is crucial for the maintenance of cell identity during embryonic development. However, our knowledge of how this landscape is set during vertebrate embryogenesis has been limited, due to the lack of methods to jointly detect chromatin modifications and gene expression in the same cell. Here we present a multimodal measurement of full-length transcriptome and histone modifications in individual cells during early embryonic development in zebrafish. We show that before the formation of germ layers, the chromatin and transcription states of cells are uncoupled and become progressively connected during gastrulation and somitogenesis. Silencing of developmental genes is achieved by local spreading of repressive chromatin together with cell type-specific demethylation. Combining transcription factor (TF) expression and chromatin states within an interpretable machine learning model, we classify TFs as lineage-specific activators and repressors and identify a subset of TFs that are epigenetically regulated. Altogether, our data resolves the dynamic relationship between chromatin and transcription during early vertebrate development and clarifies how these two layers interact to establish cell identity.",
+  "published_as": [],
+  "final_doi": "10.7554/elife.110400"
+ }
+]

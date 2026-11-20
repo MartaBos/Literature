@@ -1,0 +1,25 @@
+# PDFs from Damir's 2025 Drive folder 1zWi1_GrYqo8_DGb5Oxxdllr5X7sCpezJ (shared by Damir, 2025).
+# Not filed: Demircioglu_2019 (already in library), Phan_2024.pdf (= Phan 2025 Nat Genet, already in library),
+# Bhardwaj_2024 / Mouren_2025 preprints (journal versions downloaded instead, batch 2026-11-20_damir2025).
+# Fradkin / Grushina: journal versions paywalled -> preprints used, with a source note.
+source	folder	subcategory	filename	doi	tags
+2013_Andersson.pdf	regulatiory_genomics	Enhancers & enhancer–gene maps	Andersson_2014_Nature_FANTOM5_enhancer_atlas.pdf	10.1038/nature12787	
+Agarwal_2023.pdf	regulatiory_genomics	Enhancers & enhancer–gene maps	Agarwal_2025_Nature_MPRA_regulatory_elements.pdf	10.1038/s41586-024-08430-9	
+Andrews_2023.pdf	regulatiory_genomics	Regulatory evolution	Andrews_2023_Science_mammalian_CRE_TFBS_evolution.pdf	10.1126/science.abn7930	
+Consens_2024.pdf	regulatiory_genomics	Deep learning & sequence models	Consens_2025_NatMachIntell_transformers_genome_LMs.pdf	10.1038/s42256-025-01007-9	
+Dahale_2022.pdf	regulatiory_genomics	Transcription initiation & promoters	Dahale_2022_LSA_CAGE_alternative_promoters_rat.pdf	10.26508/lsa.202101234	
+Fu_2023.pdf	regulatiory_genomics	Deep learning & sequence models	Fu_2025_Nature_transcription_foundation_model.pdf	10.1038/s41586-024-08391-z	
+Gonzales_2024.pdf	regulatiory_genomics	Transcription initiation & promoters	AlfonsoGonzalez_2024_TrendsCellBiol_alternative_TSS_RNA_processing.pdf	10.1016/j.tcb.2024.02.010	
+Khetan_2025.pdf	regulatiory_genomics	TF binding & DNA structure	Khetan_2025_Nature_TF_occupancy_binding_sites.pdf	10.1038/s41586-025-09472-3	
+Marlétaz_2018.pdf	regulatiory_genomics	Regulatory evolution	Marletaz_2018_Nature_amphioxus_vertebrate_gene_regulation.pdf	10.1038/s41586-018-0734-6	
+Nepal_2025.pdf	regulatiory_genomics	Transcription initiation & promoters	Nepal_2013_GenomeRes_transcription_initiation_embryogenesis.pdf	10.1101/gr.153692.112	
+Nguyen_2024.pdf	regulatiory_genomics	Deep learning & sequence models	Nguyen_2024_Science_Evo_genome_sequence_model.pdf	10.1126/science.ado9336	
+Oomen_2025.pdf	regulatiory_genomics	Transcription initiation & promoters	Oomen_2025_Cell_transcription_initiation_atlas.pdf	10.1016/j.cell.2024.12.013	
+Theodoris_2024.pdf	regulatiory_genomics	Deep learning & sequence models	Theodoris_2024_Science_learning_language_of_DNA.pdf	10.1126/science.adt3007	
+Weber_2023.pdf	regulatiory_genomics	Transcription initiation & promoters	Weber_2022_Oncogene_5UTR_isoform_switches.pdf	10.1038/s41388-022-02578-2	
+Xue_2025.pdf	regulatiory_genomics	Transcription initiation & promoters	Xue_2025_SciData_alternative_promoter_database.pdf	10.1038/s41597-025-04548-1	
+Fradkin_2024.pdf	regulatiory_genomics	Deep learning & sequence models	Fradkin_2024_bioRxiv_Orthrus_RNA_foundation_model.pdf	10.1101/2024.10.10.617658	
+Grushina_2024.pdf	regulatiory_genomics	Transcription initiation & promoters	Grushina_2024_bioRxiv_alternative_TSS_promoter_shift.pdf	10.1101/2024.12.04.626748	
+Sun_2022.pdf	drerio	Genomic resources	Sun_2024_NatCellBiol_zebrafish_chromatin_accessibility_atlas.pdf	10.1038/s41556-024-01449-0	
+Yang_2020.pdf	drerio	Genomic resources	Yang_2020_Nature_zebrafish_CRE_3D_genome_map.pdf	10.1038/s41586-020-2962-9	
+Čapek_2022.pdf	drerio	Embryo development & nutrition	Capek_2023_NatMethods_EmbryoNet_deep_learning_phenotypes.pdf	10.1038/s41592-023-01873-4	

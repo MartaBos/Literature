@@ -1,0 +1,5 @@
+n	status	folder	filename	doi	source	provided_link
+1	NOT DOWNLOADED	regulatiory_genomics	Fradkin_2026_NatMethods_Orthrus_RNA_foundation_model.pdf	10.1038/s41592-026-03064-3		https://doi.org/10.1038/s41592-026-03064-3
+2	NOT DOWNLOADED	regulatiory_genomics	Grushina_2025_JBCB_alternative_TSS_promoter_shift.pdf	10.1142/s0219720025500040		https://doi.org/10.1142/s0219720025500040
+3	downloaded	regulatiory_genomics	Mouren_2026_NatCommun_exonic_enhancers.pdf	10.1038/s41467-026-71220-6	https://pmc-oa-opendata.s3.amazonaws.com/PMC13216554.1/PMC13216554.1.pdf	https://doi.org/10.1038/s41467-026-71220-6
+4	downloaded	regulatiory_genomics	Bhardwaj_2026_eLife_single_cell_chromatin_expression.pdf	10.7554/elife.110400	https://pmc-oa-opendata.s3.amazonaws.com/PMC13099137.1/PMC13099137.1.pdf	https://doi.org/10.7554/elife.110400
