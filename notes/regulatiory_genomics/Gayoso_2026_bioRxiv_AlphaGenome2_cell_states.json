@@ -1,0 +1,661 @@
+{
+ "id": "Gayoso_2026_AlphaGenome2",
+ "title": "AlphaGenome 2 predicts regulatory activity and variant effects across cell states",
+ "link": "https://doi.org/10.64898/2026.11.11.765857",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Gayoso_2026_bioRxiv_AlphaGenome2_cell_states.pdf",
+ "added": "2026-11-23",
+ "generated_by": "ChatGPT GPT-6; notes grounded in uploaded PDF",
+ "imported_from": "/home/mbosnjak/literature/notes_builder/batches/2026-11-23_drive_files/Gayoso_2026_AlphaGenome2_notes.json",
+ "source_note": "Sequential notes follow the article section order; info gives supporting detail and concl gives a takeaway when warranted. Methods notes follow main text.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What limitation does AlphaGenome 2 address?",
+   "a": "Even strong DNA sequence-to-function models poorly distinguish related cell types or cell states and often need dataset-specific fine-tuning to predict regulatory activity and variant effects.",
+   "kw": [
+    "cell-type specificity",
+    "fine-tuning"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the key model change?",
+   "a": "AlphaGenome 2 conditions a 1-Mb sequence model on tissue, cell type or cell state, training across bulk and single-cell datasets to predict condition-dependent regulatory activity.",
+   "kw": [
+    "conditioning",
+    "1 Mb"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the headline gains?",
+   "a": "Compared with fine-tuned AG1 and specialized models, AG2 improves cell-state-specific gene expression, accessibility, eQTL effect prediction and enhancer–gene linking; it doubles recall of causal single-cell eQTLs at 90% precision in a reported benchmark.",
+   "kw": [
+    "single-cell eQTL",
+    "enhancer–gene"
+   ],
+   "info": "",
+   "concl": "Condition-aware learning materially improves the usefulness of genomic predictions for single-cell genetics."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why do single-cell atlases not directly resolve most genetic variant effects?",
+   "a": "Atlases typically cover many cell states but too few genotyped donors per state to map QTLs reliably. QTL fine-mapping also struggles with LD, low-frequency variants and limited tissue availability.",
+   "kw": [
+    "scRNA-seq",
+    "eQTL",
+    "LD"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What can sequence-to-function models add to single-cell atlases?",
+   "a": "Given a DNA sequence and cellular state, they can predict gene expression and chromatin phenotypes and compare reference and alternative alleles even where direct molecular QTL measurements are unavailable.",
+   "kw": [
+    "sequence-to-function",
+    "variant effect"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does AG2 differ from the original AlphaGenome?",
+   "a": "AG1 predicts a fixed inventory of bulk and cell-line tracks. AG2 combines early, throughout-network condition embeddings with single-cell training and an expression encoder to handle newly profiled cell states without fine-tuning.",
+   "kw": [
+    "AG1",
+    "AG2",
+    "condition embeddings"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Condition-specific sequence modeling",
+   "q": "What are the inputs and outputs?",
+   "a": "Inputs are a 1-Mb human or mouse sequence, species, and a reference or expression-derived condition. Outputs include base/bin-level CAGE, RNA-seq, splicing, chromatin accessibility, histone/TF binding, CpG methylation, contact maps and gene expression.",
+   "kw": [
+    "CAGE",
+    "1 Mb",
+    "multimodal"
+   ],
+   "info": "Figure 1 depicts fixed condition embeddings and an optional single-cell expression encoder.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Condition-specific sequence modeling",
+   "q": "How is the biological condition incorporated?",
+   "a": "Adaptive normalization uses a condition embedding to modulate representations in the encoder, transformer and decoder, not only an output-specific prediction head.",
+   "kw": [
+    "adaptive normalization",
+    "early conditioning"
+   ],
+   "info": "",
+   "concl": "Early conditioning lets the same DNA sequence produce distinct predictions for different cellular states."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Condition-specific sequence modeling",
+   "q": "What data were added relative to AG1?",
+   "a": "AG2 adds 3,977 scRNA-seq and scATAC-seq pseudobulk tracks from 36 human/mouse studies, CpG methylation data for 185 human reference conditions, and post-training using 107 million human scRNA-seq profiles.",
+   "kw": [
+    "pseudobulk",
+    "methylation",
+    "CELLxGENE"
+   ],
+   "info": "The expression encoder spans 68 tissues in the illustration accompanying Figure 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Condition-specific sequence modeling",
+   "q": "What are the four training phases?",
+   "a": "Eight models undergo pretraining; condition embeddings and modulation layers are refined while the backbone is frozen; a single student distills average teacher predictions; post-training maps scRNA-derived expression representations into the frozen distilled model’s condition space.",
+   "kw": [
+    "pretraining",
+    "refinement",
+    "distillation",
+    "post-training"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Condition-specific sequence modeling",
+   "q": "What are reference and expression conditioning?",
+   "a": "Reference conditioning selects a learned embedding for an ontology-defined tissue/cell type; expression conditioning infers that embedding from a measured scRNA-seq profile of a new condition.",
+   "kw": [
+    "reference conditions",
+    "expression conditioning"
+   ],
+   "info": "",
+   "concl": "Expression conditioning extends AG2 to unseen cell states without retraining the sequence model."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Condition-specific sequence modeling",
+   "q": "What resources does the model generate?",
+   "a": "The authors produce genome-wide enhancer–gene predictions across 640 conditions and scores for about 7 million common/trait-associated variants across 510 conditions.",
+   "kw": [
+    "E2G atlas",
+    "variant atlas"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved condition-specific predictions",
+   "q": "How is tissue-specific gene-expression prediction assessed?",
+   "a": "The authors compare predicted and observed per-gene log fold changes against tissue means, isolating tissue-specific differences from overall expression.",
+   "kw": [
+    "GTEx",
+    "log fold change"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved condition-specific predictions",
+   "q": "How much better is AG2 across GTEx tissues?",
+   "a": "Median per-tissue Pearson r is 0.71 for AG2 versus 0.61 for AG1, and explained cross-tissue expression variance is 53% versus 41%.",
+   "kw": [
+    "GTEx",
+    "Pearson r"
+   ],
+   "info": "",
+   "concl": "Conditioning improves representation of tissue-dependent expression patterns."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved condition-specific predictions",
+   "q": "How well does AG2 represent differences among cell types?",
+   "a": "Across human/mouse scRNA pseudobulks it explains a median 34% of within-tissue cell-type expression variance versus 23% for AG1-sc; for scATAC peaks the corresponding figures are 60% versus 51%.",
+   "kw": [
+    "scRNA-seq",
+    "scATAC-seq",
+    "variance explained"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved condition-specific predictions",
+   "q": "What biological examples demonstrate finer specificity?",
+   "a": "AG2 captures mouse tuft-cell-specific Trpm5 expression/accessibility and hematopoietic differentiation expression trajectories more faithfully than AG1-sc on held-out DNA.",
+   "kw": [
+    "Trpm5",
+    "hematopoiesis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved condition-specific predictions",
+   "q": "Which architectural component drives the gain?",
+   "a": "Matched-data ablations show that conditioning in the early encoder and transformer produces much of the benefit; restricting conditioning to output/decoder layers yields relatively little improvement.",
+   "kw": [
+    "ablation",
+    "early conditioning"
+   ],
+   "info": "",
+   "concl": "Both the larger corpus and where the condition acts inside the network matter."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "What QTL evaluation tasks are used?",
+   "a": "Fine-mapped variants on held-out chromosomes are evaluated for causal-variant prioritization, direction of effect (sign), and effect magnitude (coefficient).",
+   "kw": [
+    "fine-mapping",
+    "causality",
+    "sign",
+    "coefficient"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "How does AG2 perform on bulk-tissue GTEx eQTLs?",
+   "a": "Across 49 tissues, causal eQTL recall at 90% precision rises from 17% (AG1) to 26% (AG2); sign recall at 90% accuracy rises from 32% to 40%.",
+   "kw": [
+    "GTEx",
+    "eQTL",
+    "recall"
+   ],
+   "info": "Causality AUPRC 0.74 for AG2 versus 0.72 AG1 and 0.69 Borzoi; sign-area metric 0.85 versus 0.83 and 0.77.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "Where are the GTEx improvements most pronounced?",
+   "a": "AG2’s gain over AG1 is driven primarily by eQTLs with putative tissue-specific effects. Other bulk QTL tasks such as splicing, accessibility, DNase and polyadenylation remain broadly comparable to AG1.",
+   "kw": [
+    "tissue-specific eQTL",
+    "bulk QTL"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "How does AG2 score on TenK10K and IBDverse single-cell QTLs?",
+   "a": "For TenK10K sc-eQTLs, recall at 90% precision improves from 16% (AG1-sc) to 30% (AG2), and sign recall at 90% accuracy from 23% to 43%. For intestinal IBDverse sc-eQTL sign, recall rises from 31% to 45%.",
+   "kw": [
+    "TenK10K",
+    "IBDverse",
+    "single-cell QTL"
+   ],
+   "info": "Benchmarks include 28 sc-eQTL cell types and 24 sc-caQTL cell types in TenK10K, and 47 non-blood cell types in IBDverse.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "Does predictive power decline with distance from the TSS?",
+   "a": "Distance matters, but among eQTL variants overlapping accessible chromatin, predictions remain strong even beyond 35 kb from the TSS. Outside accessible peaks, all compared models perform substantially worse.",
+   "kw": [
+    "distal eQTL",
+    "ATAC peaks",
+    "TSS"
+   ],
+   "info": "For TenK10K in accessible peaks beyond 35 kb, sign AUROC 0.86 AG2 versus 0.78 AG1-sc and effect-size Spearman ρ 0.57 versus 0.47.",
+   "concl": "Accessibility context is important when interpreting distal variant scores."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "What happens when bulk PBMC training tracks are withheld?",
+   "a": "An AG2 model trained without bulk PBMC tracks retains similar single-cell QTL performance in TenK10K; effect-size Spearman correlation decreases only modestly, from 0.47 to 0.45.",
+   "kw": [
+    "PBMC",
+    "ablation"
+   ],
+   "info": "",
+   "concl": "The gains do not simply result from memorizing bulk blood tracks."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Improved prediction of non-coding variant effects",
+   "q": "What disease-related examples demonstrate cell-type-specific effects?",
+   "a": "The paper illustrates variants affecting IL20RA and variants linked to congenital hyperinsulinism/HK1, where cell-state-resolved scores provide more specific mechanistic interpretation than aggregate tissue predictions.",
+   "kw": [
+    "IL20RA",
+    "HK1",
+    "cell-type specificity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Imputing unmeasured epigenomic assays",
+   "q": "What does cross-modality imputation mean here?",
+   "a": "Because condition embeddings are separated from modality output heads, AG2 can predict an assay type for a cell condition even when that assay was not measured for that condition.",
+   "kw": [
+    "epigenomic imputation",
+    "condition embeddings"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Imputing unmeasured epigenomic assays",
+   "q": "How is the ability to impute missing assays tested?",
+   "a": "The authors withhold experimental tracks across assay types and conditions, then evaluate inferred signal in comparison with measured data and appropriate baselines.",
+   "kw": [
+    "held-out tracks",
+    "imputation"
+   ],
+   "info": "The Results describe a held-out test of 184 bulk tracks across 30 conditions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Imputing unmeasured epigenomic assays",
+   "q": "Why is imputation useful for scRNA-based analysis?",
+   "a": "It permits prediction of accessibility and other epigenomic readouts in a cell population profiled by expression but not by matched ATAC- or ChIP-seq, enabling regulatory variant scoring in data-sparse states.",
+   "kw": [
+    "scRNA-seq",
+    "scATAC-seq"
+   ],
+   "info": "",
+   "concl": "Conditioning does not require every cell type to have every modality measured."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Generalizing to new cell states",
+   "q": "How does the expression encoder handle an unseen cell state?",
+   "a": "A separately trained scRNA expression autoencoder encodes cells; a lightweight adapter maps its latent representation into AG2’s frozen condition space, after which the DNA model predicts tracks for the new condition.",
+   "kw": [
+    "autoencoder",
+    "adapter",
+    "zero-shot"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Generalizing to new cell states",
+   "q": "What is frozen during the post-training phase?",
+   "a": "The distilled genomic sequence model remains frozen while the mapping from expression-derived cell representations to conditioning vectors is trained.",
+   "kw": [
+    "frozen backbone",
+    "post-training"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Generalizing to new cell states",
+   "q": "Does expression conditioning outperform fine-tuning on target datasets?",
+   "a": "Across related cell-type groups and unseen test cohorts, expression conditioning predicts condition-specific expression more accurately than dataset-specific fine-tuning in reported comparisons.",
+   "kw": [
+    "generalization",
+    "fine-tuning"
+   ],
+   "info": "Reported paired tests include P = 3.1 × 10⁻¹² across 147 groups and P = 1.6 × 10⁻⁴ across 20 unseen test groups.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Generalizing to new cell states",
+   "q": "What do Parkinson’s and vaccine-response cohort evaluations test?",
+   "a": "They evaluate expression-conditioned predictions and variant effects in new single-cell cohorts or states, including Parkinson’s-related brain populations and vaccine-induced CD8+ T-cell states, rather than simply reusing a fixed condition label.",
+   "kw": [
+    "Parkinson’s",
+    "CD8+ T cells",
+    "unseen cohort"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Generalizing to new cell states",
+   "q": "What is the advantage of using only a single-cell expression profile for conditioning?",
+   "a": "A new dataset can generate cell-state-specific regulatory predictions without experimental sequencing of all other modalities or retraining the DNA sequence network.",
+   "kw": [
+    "expression conditioning",
+    "modality transfer"
+   ],
+   "info": "",
+   "concl": "This makes the system more deployable to sparse or novel cell states."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Predicting enhancer–gene links at scale",
+   "q": "How are distal enhancer–gene links scored?",
+   "a": "The model computes the gradient of predicted expression for a target gene with respect to a 1-Mb DNA sequence centered on the gene TSS; gradient magnitudes are aggregated over candidate regulatory elements.",
+   "kw": [
+    "E2G",
+    "gradient attribution",
+    "TSS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Predicting enhancer–gene links at scale",
+   "q": "How does AG2 perform in a CRISPRi enhancer–gene benchmark?",
+   "a": "On 4,378 element–gene pairs across five held-out cell lines, AG2 reaches AUPRC 0.78 versus AG1 0.73, Borzoi ensemble 0.61 and ENCODE-rE2G 0.57.",
+   "kw": [
+    "CRISPRi",
+    "E2G",
+    "AUPRC"
+   ],
+   "info": "The paper reports a pronounced advantage in its distal element–gene distance bin (AG2 AUPRC 0.62 versus AG1 0.48, ENCODE-rE2G 0.37 and Borzoi 0.28).",
+   "concl": "AG2’s relative strength increases for long-range enhancer–gene relationships."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Predicting enhancer–gene links at scale",
+   "q": "Does AG2 generalize to primary astrocytes?",
+   "a": "On a CRISPRi screen in cultured primary human astrocytes, AG2 reports AUPRC 0.68 versus AG1 0.64 and Borzoi 0.49.",
+   "kw": [
+    "astrocytes",
+    "CRISPRi"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Predicting enhancer–gene links at scale",
+   "q": "What does the lineage-specific enhancer example illustrate?",
+   "a": "The analysis uses a variant in a regulatory element affecting erythroid-lineage activity and shows that predicted regulatory effects differ from those in naive B cells, consistent with different cellular enhancer activity.",
+   "kw": [
+    "erythroid",
+    "naive B cell",
+    "enhancer specificity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Predicting enhancer–gene links at scale",
+   "q": "What large-scale E2G resource was produced?",
+   "a": "Predicted enhancer–gene links are supplied across 640 reference conditions, extending linked regulatory element annotations into numerous primary cell states.",
+   "kw": [
+    "E2G atlas",
+    "640 conditions"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Interpreting complex-trait variants across cell types",
+   "q": "Which three questions must a GWAS interpretation answer?",
+   "a": "Which linked variant is functional, which gene it affects, and in which cell type or state the effect occurs.",
+   "kw": [
+    "GWAS",
+    "causal variant",
+    "target gene",
+    "cell type"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Interpreting complex-trait variants across cell types",
+   "q": "What does the IBD 21q22 example show?",
+   "a": "At an IBD-associated locus, AG2 prioritizes rs2836882 out of seven fine-mapped candidates, predicts an effect on ETS2 roughly 290 kb away rather than nearer genes, and localizes the effect to monocytes/macrophages.",
+   "kw": [
+    "IBD",
+    "rs2836882",
+    "ETS2"
+   ],
+   "info": "The paper cites prior experimental chromatin and perturbation evidence supporting the mechanism.",
+   "concl": "A condition-aware model can connect variant, distant target gene, and responsible cell lineage."
+  },
+  {
+   "type": "qa",
+   "section": "Results – Interpreting complex-trait variants across cell types",
+   "q": "What variant atlas is scored?",
+   "a": "Nearly seven million fine-mapped GWAS and common gnomAD variants (minor allele frequency >5%) across 510 reference conditions spanning human tissues and cell types.",
+   "kw": [
+    "Open Targets",
+    "gnomAD",
+    "7 million"
+   ],
+   "info": "These are precomputed candidate regulatory scores, not experimentally established causal labels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Interpreting complex-trait variants across cell types",
+   "q": "Why score many cell types rather than a generic tissue?",
+   "a": "A variant can alter a gene only within a narrow lineage, so aggregating signals across tissues may conceal relevant associations and the direction of the effect.",
+   "kw": [
+    "cell-type-specific variant effects"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results – Interpreting complex-trait variants across cell types",
+   "q": "What can the atlas contribute to complex-trait interpretation?",
+   "a": "It provides putative effects on genes and cellular states, enabling variant prioritization and hypotheses for GWAS loci including those without known eQTL colocalization.",
+   "kw": [
+    "GWAS",
+    "eQTL colocalization"
+   ],
+   "info": "",
+   "concl": "Computational variant maps can nominate targets for validation but do not replace association and perturbation data."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What general advance does the paper establish?",
+   "a": "Combining early conditional sequence modeling with organism-scale single-cell atlases yields better cell-specific track and variant predictions, supports assay imputation, and generalizes to unseen scRNA-seq cell states.",
+   "kw": [
+    "conditional S2F",
+    "single-cell atlas"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main remaining limitations?",
+   "a": "High-precision recall still covers only a minority of fine-mapped eQTLs/GWAS candidate variants; effects are underestimated outside accessible chromatin, at some distal regions, or through post-transcriptional mechanisms. Transient, stimulated, disease and fine-grained neuronal states remain underrepresented.",
+   "kw": [
+    "low recall",
+    "limitations",
+    "out-of-distribution"
+   ],
+   "info": "",
+   "concl": "A predicted lack of effect is not strong evidence of biological neutrality."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Can condition embeddings infer outcomes of gene knockouts or dynamic state transitions?",
+   "a": "Not reliably established. Because embeddings largely learn observational steady-state data, they describe correlations and the authors explicitly leave prediction of knockouts, overexpression and cell-state transitions unresolved.",
+   "kw": [
+    "causal perturbation",
+    "steady state"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future directions do the authors propose?",
+   "a": "Expand training modalities and cell types, including footprinting, brain atlases and perturbation datasets; add species; and adapt spatial or other inputs into the same condition space.",
+   "kw": [
+    "Fiber-seq",
+    "perturbations",
+    "spatial transcriptomics"
+   ],
+   "info": "The paper mentions lightweight adapters and more efficient attribution as possible scaling directions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – model and condition representations",
+   "q": "How is a discrete condition encoded?",
+   "a": "Ontology-defined reference conditions index learned embeddings that control adaptive normalization throughout the DNA sequence network.",
+   "kw": [
+    "ontology",
+    "condition embedding"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – single-cell corpus",
+   "q": "How do single-cell data enter pretraining and post-training?",
+   "a": "Pseudobulk scRNA-seq/scATAC-seq tracks provide reference condition targets; a separate large scRNA expression corpus trains a cell representation subsequently mapped to the frozen sequence model.",
+   "kw": [
+    "pseudobulk",
+    "single-cell autoencoder"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – distillation and post-training",
+   "q": "What is the distinction between student distillation and expression post-training?",
+   "a": "Distillation trains one student to approximate an ensemble of sequence-model teachers on perturbed DNA. Post-training holds that student fixed and learns how expression-derived cell states condition its predictions.",
+   "kw": [
+    "distillation",
+    "adapter"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – evaluation",
+   "q": "How are generalization and benchmarking protected?",
+   "a": "The authors use held-out genome intervals, held-out tracks or held-out single-cell datasets depending on the specific test, and compare with both fine-tuned AG1 and specialized methods.",
+   "kw": [
+    "held-out data",
+    "evaluation split"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – variant and enhancer scoring",
+   "q": "How are variant effects and E2G links obtained?",
+   "a": "Allelic effects compare reference- and alternate-sequence predictions for target conditions; E2G uses gene-expression attribution aggregated over candidate elements around each gene.",
+   "kw": [
+    "allele comparison",
+    "gradient attribution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – interpretation",
+   "q": "How should users interpret high or low regulatory variant scores?",
+   "a": "A high score is a model-based hypothesis of a context-specific effect; a low score does not exclude activity, especially in missing biological contexts or at mechanisms poorly captured by the training assays.",
+   "kw": [
+    "variant prioritization",
+    "limitations"
+   ],
+   "info": "",
+   "concl": ""
+  }
+ ]
+}

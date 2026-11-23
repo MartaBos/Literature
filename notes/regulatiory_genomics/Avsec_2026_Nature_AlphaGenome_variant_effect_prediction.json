@@ -1,0 +1,559 @@
+{
+ "id": "Avsec_2026_AlphaGenome",
+ "title": "Advancing regulatory variant effect prediction with AlphaGenome",
+ "link": "https://doi.org/10.1038/s41586-025-10014-0",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Avsec_2026_Nature_AlphaGenome_variant_effect_prediction.pdf",
+ "added": "2026-11-23",
+ "generated_by": "ChatGPT GPT-6; notes grounded in uploaded PDF",
+ "imported_from": "/home/mbosnjak/literature/notes_builder/batches/2026-11-23_drive_files/Avsec_2026_AlphaGenome_notes.json",
+ "source_note": "Sequential notes follow the article section order; info gives supporting detail and concl gives a takeaway when warranted. Methods notes follow main text.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does AlphaGenome aim to solve?",
+   "a": "Sequence-to-function models often trade long genomic context for nucleotide-level resolution and specialize in only a few assay modalities. AlphaGenome seeks to combine all three: long context, fine resolution, and diverse predictions.",
+   "kw": [
+    "sequence-to-function",
+    "multimodal"
+   ],
+   "info": "",
+   "concl": "A unified model could help interpret non-coding variants through several regulatory mechanisms at once."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are AlphaGenome’s inputs and outputs?",
+   "a": "It takes 1 Mb of human or mouse DNA and predicts 5,930 human or 1,128 mouse tracks across 11 modalities, at resolutions up to 1 bp.",
+   "kw": [
+    "1 Mb",
+    "genome tracks"
+   ],
+   "info": "Outputs include RNA-seq, CAGE, PRO-cap, accessibility, histone marks, TF binding, splicing and contact maps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the headline benchmark result?",
+   "a": "AlphaGenome matched or exceeded the strongest external model in 25 of 26 variant-effect evaluations.",
+   "kw": [
+    "benchmark"
+   ],
+   "info": "The main text also reports superiority in 22 of 24 genome-track prediction evaluations.",
+   "concl": "The strongest claim is broad performance over diverse tasks, not perfection on every assay."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is non-coding variant interpretation difficult?",
+   "a": "Non-coding variants can alter chromatin accessibility, histone modifications, transcription factor binding, contact structure, expression, and splicing, frequently in a cell-specific way.",
+   "kw": [
+    "non-coding variants",
+    "mechanisms"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the two fundamental compromises of earlier models?",
+   "a": "Short-input models can resolve individual bases but miss distant regulatory elements; long-input models typically have coarser outputs. Models specialized for one regulatory modality cannot describe the full set of consequences of a variant.",
+   "kw": [
+    "resolution",
+    "sequence length",
+    "specialization"
+   ],
+   "info": "The authors contrast ≤10 kb base-resolution methods with ~200–500 kb models often operating on 32- or 128-bp bins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is AlphaGenome different from Borzoi, Enformer, SpliceAI and Orca?",
+   "a": "AlphaGenome jointly predicts numerous one-dimensional and two-dimensional modalities from a 1-Mb sequence, including detailed splice junctions and contact maps, rather than using separate specialist tools.",
+   "kw": [
+    "Borzoi",
+    "Enformer",
+    "SpliceAI",
+    "Orca"
+   ],
+   "info": "",
+   "concl": "Its design targets complementary strengths rather than a single narrow prediction task."
+  },
+  {
+   "type": "qa",
+   "section": "Unifying DNA sequence-to-function model",
+   "q": "What biological outputs are predicted?",
+   "a": "The human model predicts 5,930 tracks and the mouse model 1,128 tracks: gene expression (RNA-seq, CAGE and PRO-cap), splice sites, splice-site usage and junctions, DNase/ATAC accessibility, histone modifications, TF binding and DNA contact maps.",
+   "kw": [
+    "CAGE",
+    "splicing",
+    "chromatin",
+    "contact maps"
+   ],
+   "info": "The paper presents 11 modality/output groups in Figure 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Unifying DNA sequence-to-function model",
+   "q": "Why use a 1-Mb sequence window?",
+   "a": "A long input provides local sequence motifs and long-range enhancer–promoter context. The authors cite a benchmark in which 465 of 471 validated enhancer–gene pairs fall within 1 Mb.",
+   "kw": [
+    "1 Mb",
+    "distal regulation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Unifying DNA sequence-to-function model",
+   "q": "How is the architecture structured?",
+   "a": "A U-Net-inspired encoder–transformer–decoder builds one-dimensional representations at 1-bp and 128-bp resolutions and two-dimensional representations at 2,048-bp resolution. Convolutions capture local patterns while transformers connect more distant regions.",
+   "kw": [
+    "U-Net",
+    "transformer",
+    "resolution"
+   ],
+   "info": "The model uses sequence parallelism across eight connected TPU v3 devices during training.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Unifying DNA sequence-to-function model",
+   "q": "How are splice junctions and contact maps represented?",
+   "a": "Contact maps use two-dimensional genomic-pair representations; splice junction counts are produced by a dedicated mechanism that models donor–acceptor interactions rather than only per-base splice signals.",
+   "kw": [
+    "splice junction",
+    "contact map"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Unifying DNA sequence-to-function model",
+   "q": "What are the two training stages?",
+   "a": "Pretraining fits observed experimental genome tracks using fold-specific and all-fold models. Distillation trains one student model to match averaged predictions from all-fold teachers using augmented and mutated DNA sequences.",
+   "kw": [
+    "pretraining",
+    "distillation"
+   ],
+   "info": "Held-out genomic intervals are used for fold-specific evaluation; the distilled all-fold student is used for variant-effect benchmarks.",
+   "concl": "Distillation transfers ensemble behavior into one model for practical scoring."
+  },
+  {
+   "type": "qa",
+   "section": "Performance overview",
+   "q": "How well does AlphaGenome predict experimental tracks?",
+   "a": "It outperformed external benchmarks in 22/24 genome-track evaluations across all 11 predicted modality groups.",
+   "kw": [
+    "track prediction",
+    "benchmark"
+   ],
+   "info": "Reported examples include +14.7% relative improvement in cell-type-specific gene-expression log-fold changes versus Borzoi and +6.3% in contact-map correlation versus Orca.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Performance overview",
+   "q": "How well does it predict variant effects?",
+   "a": "The distilled model matched or outperformed competitors on 25/26 variant-effect tasks, spanning expression, splicing, polyadenylation, enhancer–gene links, accessibility and binding.",
+   "kw": [
+    "variant effect",
+    "benchmark"
+   ],
+   "info": "The reported eQTL direction improvement versus Borzoi is +25.5% relative.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved track prediction performance",
+   "q": "Can AlphaGenome reconstruct multiple experimental signals at one locus?",
+   "a": "In a held-out human chromosome 19 region, predicted RNA-seq, ATAC/DNase, histone, CTCF and contact patterns generally track corresponding experimental data.",
+   "kw": [
+    "multimodal tracks",
+    "held-out DNA"
+   ],
+   "info": "Figure 2a shows a 1-Mb HepG2 example, and Figure 2b zooms into LDLR splicing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved track prediction performance",
+   "q": "How is transcript-level splicing represented in predictions?",
+   "a": "The model predicts splice donor and acceptor positions, their usage, pairwise junction counts and RNA coverage, enabling a more complete picture of RNA processing than splice-site classification alone.",
+   "kw": [
+    "splice sites",
+    "splice junctions"
+   ],
+   "info": "",
+   "concl": "Junction predictions can expose transcript structure changes invisible in site-only scoring."
+  },
+  {
+   "type": "qa",
+   "section": "Improved track prediction performance",
+   "q": "How is gene-expression performance evaluated?",
+   "a": "The authors compare expression across genes and across cell types or tissues using correlations, including normalized measures intended to isolate tissue-specific expression rather than overall gene abundance.",
+   "kw": [
+    "gene expression",
+    "correlation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved splicing variant predictions",
+   "q": "What kinds of splicing variants are tested?",
+   "a": "The study tests splice-region and deep-intronic/missense variant effects, splice outlier status, sQTLs and massively parallel functional splicing assay variants, with zero-shot and supervised settings.",
+   "kw": [
+    "sQTL",
+    "ClinVar",
+    "MFASS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved splicing variant predictions",
+   "q": "Why predict junctions instead of just splice donor or acceptor scores?",
+   "a": "Variants can create or remove junctions and change competition between donor–acceptor combinations. Junction count predictions capture these outcomes, including events far from canonical splice-site dinucleotides.",
+   "kw": [
+    "junction effects",
+    "splice competition"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved splicing variant predictions",
+   "q": "How does AlphaGenome perform on splicing variant tests?",
+   "a": "It achieves state-of-the-art performance on six of seven splicing variant benchmarks, with the strongest improvements often arising from composite or junction-based scores.",
+   "kw": [
+    "splicing",
+    "benchmark"
+   ],
+   "info": "The paper reports the exception rather than claiming superiority in every splicing test.",
+   "concl": "Splice junction modeling is a major source of the model’s advantage."
+  },
+  {
+   "type": "qa",
+   "section": "Performance across gene expression tasks",
+   "q": "Which regulatory mechanisms are evaluated beyond splicing?",
+   "a": "The paper evaluates variants affecting expression levels (eQTLs), distal enhancer–gene links, and alternative polyadenylation.",
+   "kw": [
+    "eQTL",
+    "enhancer–gene",
+    "APA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of eQTL effects",
+   "q": "How are eQTL effects inferred from sequence?",
+   "a": "The reference and alternative alleles are each inserted into sequence context; a gene-specific expression score is computed from their predicted differences and compared with observed QTL effect directions and effect sizes.",
+   "kw": [
+    "reference allele",
+    "alternative allele",
+    "eQTL"
+   ],
+   "info": "The paper also explores in silico mutagenesis for local sequence attribution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of eQTL effects",
+   "q": "What does the APOL4 example demonstrate?",
+   "a": "At rs9610445, the alternative allele is associated with lower APOL4 expression, and AlphaGenome predicts the same direction in its gene-expression signal.",
+   "kw": [
+    "APOL4",
+    "rs9610445"
+   ],
+   "info": "The example reports GTEx SuSiE posterior effect β = −0.709 and predicted variant score −1.52.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of eQTL effects",
+   "q": "What is learned about tissue specificity and gene-distance effects?",
+   "a": "AlphaGenome predicts eQTL effects more accurately than compared sequence models and assesses performance relative to variant distance from target-gene TSS; distal regulatory inference remains challenging.",
+   "kw": [
+    "tissue specificity",
+    "TSS distance"
+   ],
+   "info": "",
+   "concl": "Gene-specific effects should be evaluated across relevant tissues, not only one aggregate track."
+  },
+  {
+   "type": "qa",
+   "section": "Performance across gene expression tasks – enhancer–gene linking",
+   "q": "Can model attribution identify enhancers linked to genes?",
+   "a": "The authors use sequence-derived sensitivity scores for gene expression to link candidate regulatory elements to their target genes without requiring a directly observed perturbation for every pair.",
+   "kw": [
+    "enhancer–gene linking",
+    "attribution"
+   ],
+   "info": "Comparisons include ENCODE-rE2G and distance-to-TSS baselines.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Performance across gene expression tasks – enhancer–gene linking",
+   "q": "How well do model-derived links compare with supervised E2G methods?",
+   "a": "Zero-shot AlphaGenome performs close to the extended ENCODE-rE2G supervised model, and adding AlphaGenome features to supervised linking improves performance across distance categories.",
+   "kw": [
+    "ENCODE-rE2G",
+    "zero-shot"
+   ],
+   "info": "",
+   "concl": "Sequence-model features complement experimental enhancer–gene classifiers."
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of 3′ polyadenylation QTL effects",
+   "q": "How can AlphaGenome predict alternative polyadenylation without an APA-specific output?",
+   "a": "By predicting RNA-seq coverage, the model implicitly captures alternative usage of proximal and distal polyadenylation sites; changes in predicted coverage can therefore score paQTLs.",
+   "kw": [
+    "APA",
+    "paQTL",
+    "RNA-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of 3′ polyadenylation QTL effects",
+   "q": "What are the results for APA and paQTLs?",
+   "a": "The study reports APA Spearman ρ = 0.894 versus 0.790 for Borzoi. For paQTLs within 10 kb of a PAS, AUPRC is 0.629 versus 0.621; within 50 bp, 0.762 versus 0.727.",
+   "kw": [
+    "Spearman",
+    "AUPRC",
+    "PAS"
+   ],
+   "info": "Both models perform worse as variants lie farther from polyadenylation sites.",
+   "concl": "The same expression tracks support inference of 3′ end processing effects."
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of chromatin accessibility, DNase sensitivity and binding QTLs",
+   "q": "Which chromatin-related variant classes are evaluated?",
+   "a": "The model predicts effects on chromatin accessibility (caQTLs), DNase sensitivity (dsQTLs) and transcription factor binding (bQTLs), using predicted differences between reference and alternative alleles.",
+   "kw": [
+    "caQTL",
+    "dsQTL",
+    "bQTL"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of chromatin accessibility, DNase sensitivity and binding QTLs",
+   "q": "How does it compare with ChromBPNet and Borzoi?",
+   "a": "The paper reports better performance across the tested chromatin QTL classes and ancestries for causality and effect-size estimation.",
+   "kw": [
+    "ChromBPNet",
+    "Borzoi"
+   ],
+   "info": "Examples report Pearson r = 0.74 for fine-mapped caQTL effect sizes and r = 0.55 for SPI1 binding-QTL effects.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of chromatin accessibility, DNase sensitivity and binding QTLs",
+   "q": "Can sequence attribution reveal the motif mechanism?",
+   "a": "In silico mutagenesis highlights local sequence positions associated with predicted accessibility or TF-binding shifts, including NF-κB- and SPI1-related motifs.",
+   "kw": [
+    "ISM",
+    "NF-κB",
+    "SPI1"
+   ],
+   "info": "",
+   "concl": "Attribution can suggest a regulatory mechanism but is not experimental validation."
+  },
+  {
+   "type": "qa",
+   "section": "Improved prediction of chromatin accessibility, DNase sensitivity and binding QTLs",
+   "q": "What does the MPRA challenge show?",
+   "a": "In the CAGI5 reporter assay task, combining model-derived scores across cell types and modalities with LASSO reaches Pearson r = 0.65, above scores using individual matched chromatin-accessibility tracks.",
+   "kw": [
+    "CAGI5",
+    "MPRA",
+    "LASSO"
+   ],
+   "info": "The paper gives r = 0.57 for matched DNase and r = 0.63 for all-cell DNase feature aggregation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Multimodal view of variant effects",
+   "q": "What cancer locus demonstrates the joint interpretation of variants?",
+   "a": "The authors examine activating non-coding variants around TAL1 in T-cell acute lymphoblastic leukemia, including upstream neo-enhancer variants, an intronic SNV, and a downstream neo-enhancer.",
+   "kw": [
+    "TAL1",
+    "T-ALL",
+    "neo-enhancer"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Multimodal view of variant effects",
+   "q": "What is predicted for an oncogenic TAL1 insertion?",
+   "a": "For chr1:47239296:C>ACG, the model predicts higher H3K27ac/H3K4me1 near the mutation, changes in repressive and transcription-associated marks, and increased TAL1 RNA expression.",
+   "kw": [
+    "TAL1",
+    "histone modifications"
+   ],
+   "info": "The predicted expression effect concerns TAL1 approximately 7.5 kb away; predictions use CD34+ common myeloid progenitor tracks as the closest available cellular context.",
+   "concl": "The case study links local sequence change to chromatin and downstream expression in one analysis."
+  },
+  {
+   "type": "qa",
+   "section": "Multimodal view of variant effects",
+   "q": "How does joint modality scoring help rank disease variants?",
+   "a": "Combining local regulatory chromatin signals and target-gene expression identifies additional affected variants relative to either modality alone, with enrichment of known trait-altering variants among strong-scoring calls.",
+   "kw": [
+    "variant prioritization",
+    "multimodal score"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model and data ablations",
+   "q": "Why is 1 Mb of training context important?",
+   "a": "The authors vary training and evaluation length to test how long-range context affects track and variant predictions. Their analysis supports training with long context to resolve distal regulation.",
+   "kw": [
+    "sequence length",
+    "ablation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model and data ablations",
+   "q": "What is the effect of output resolution and distillation?",
+   "a": "Ablations study prediction resolution and teacher-to-student distillation; fine-grained outputs and distillation contribute to accurate, robust variant scoring, rather than simply enlarging a sequence model.",
+   "kw": [
+    "resolution",
+    "distillation",
+    "ablation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Model and data ablations",
+   "q": "Does multimodal training help specialized predictions?",
+   "a": "Removing modalities or training solely on one type generally harms variant-effect prediction; expression and accessibility data provide especially large initial gains, with diminishing benefits from later modalities.",
+   "kw": [
+    "multimodal learning",
+    "ablation"
+   ],
+   "info": "",
+   "concl": "Broad biological supervision improves learned DNA sequence representations."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the main interpretation of the paper?",
+   "a": "A unified sequence model can predict several molecular consequences of regulatory variants from DNA alone, without requiring separate models for each assay.",
+   "kw": [
+    "sequence-to-function",
+    "interpretability"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are key limitations?",
+   "a": "Predictions depend on the human and mouse training context and measured assays; long-range elements outside the input window or biological states lacking matched training data can be difficult. Computational predictions are not direct causal experiments.",
+   "kw": [
+    "limitations",
+    "generalization"
+   ],
+   "info": "",
+   "concl": "A high model score is evidence for prioritization, not proof that a variant is causal."
+  },
+  {
+   "type": "qa",
+   "section": "Methods – data and preprocessing",
+   "q": "What data are used to train AlphaGenome?",
+   "a": "Human and mouse functional genomics tracks across gene expression, transcription initiation, splicing, accessibility, chromatin-associated features and contact assays, with track-specific preprocessing and targets.",
+   "kw": [
+    "training data",
+    "human",
+    "mouse"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – training and validation",
+   "q": "How are unseen genomic regions evaluated?",
+   "a": "Fold-specific models use genome interval partitions so test regions are held out, while all-fold models use the available training intervals to produce teacher predictions for distillation.",
+   "kw": [
+    "cross-validation",
+    "genome split"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – variant-effect scoring",
+   "q": "What is the general reference-versus-alternative scoring procedure?",
+   "a": "For each variant, predict the selected track or gene output using reference and alternative sequence contexts; transform or summarize the difference into a score appropriate to the assessed modality.",
+   "kw": [
+    "variant effect scoring",
+    "REF",
+    "ALT"
+   ],
+   "info": "The exact scoring window and aggregation differ for splicing, expression, accessibility, TF binding and E2G tasks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods – attribution",
+   "q": "What does in silico mutagenesis (ISM) measure?",
+   "a": "ISM perturbs individual positions or local sequences computationally and evaluates resulting changes in model predictions to identify candidate functional motifs.",
+   "kw": [
+    "ISM",
+    "sequence attribution"
+   ],
+   "info": "",
+   "concl": "ISM measures learned model sensitivity, not an experimentally measured binding event."
+  },
+  {
+   "type": "qa",
+   "section": "Methods – benchmark interpretation",
+   "q": "Why separate track prediction from variant effect prediction?",
+   "a": "A model may fit observed genomic signal but still fail to predict the change caused by an allele; the authors therefore evaluate held-out tracks and independent QTL or functional variant benchmarks separately.",
+   "kw": [
+    "benchmark design",
+    "variant effects"
+   ],
+   "info": "",
+   "concl": ""
+  }
+ ]
+}

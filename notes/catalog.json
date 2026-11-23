@@ -1114,5 +1114,31 @@
   "shared_year": "2025",
   "link": "https://doi.org/10.1038/s41592-023-01873-4",
   "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+ },
+ "regulatiory_genomics/Avsec_2026_Nature_AlphaGenome_variant_effect_prediction": {
+  "title": "Advancing regulatory variant effect prediction with AlphaGenome",
+  "category": "Deep learning & sequence models",
+  "link": "https://doi.org/10.1038/s41586-025-10014-0",
+  "provided_link": "Drive folder (paper + prepared notes)",
+  "preprint_doi": null,
+  "pdf_from": "Drive, notes imported (Avsec_2026_AlphaGenome_notes.json)",
+  "shared_by": "",
+  "shared_year": "",
+  "tags": [
+   "External notes"
+  ]
+ },
+ "regulatiory_genomics/Gayoso_2026_bioRxiv_AlphaGenome2_cell_states": {
+  "title": "AlphaGenome 2 predicts regulatory activity and variant effects across cell states",
+  "category": "Deep learning & sequence models",
+  "link": "https://doi.org/10.64898/2026.11.11.765857",
+  "provided_link": "Drive folder (paper + prepared notes)",
+  "preprint_doi": null,
+  "pdf_from": "Drive, notes imported (Gayoso_2026_AlphaGenome2_notes.json)",
+  "shared_by": "",
+  "shared_year": "",
+  "tags": [
+   "External notes"
+  ]
  }
 }

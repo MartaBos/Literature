@@ -436,3 +436,28 @@ Folder 1zWi1_GrYqo8_DGb5Oxxdllr5X7sCpezJ, 24 files, all labelled shared by Damir
   from PMC (`11_download_papers.py 2026-11-20_damir2025`); Fradkin (Orthrus) → Nat Methods 2026 and
   Grushina → JBCB 2025 are paywalled → bioRxiv preprints used, "Open paper" = journal DOI, source note shown.
 - Total library: 97 papers; 22 new ones get notes on Wednesday 2026-11-25 (weekly cap raised 15 → 25 on 2026-11-20 at Marta's request).
+
+### AlphaGenome papers + prepared notes (batch 2026-11-23_drive, added 2026-11-23)
+
+Drive folder with 2 PDFs and 2 notes JSONs (made with ChatGPT, page format). Not shared by Damir,
+so no "Shared by" tag; tag "External notes". AlphaGenome 2 is bioRxiv v1 (2026-11-17), no published
+version yet (bioRxiv API `published: NA`). The JSONs' own `source_note` field describes the note style,
+not the source; pages read source notes only from catalog.json, so nothing is shown.
+
+```bash
+python3 -I 14_fetch_drive_folder.py 1aoRQRwK3aj0FHGC_Z2QXsbRAZ7nAwfhK batches/2026-11-23_drive_files \
+    | tee batches/2026-11-23_drive_identified.tsv          # PDFs only; JSONs reported "NOT A PDF"
+D=batches/2026-11-23_drive_files
+curl -s "https://drive.google.com/embeddedfolderview?id=1aoRQRwK3aj0FHGC_Z2QXsbRAZ7nAwfhK" \
+    | grep -oE 'file/d/[A-Za-z0-9_-]+|flip-entry-title">[^<]+' | paste - - > $D/_listing.txt
+curl -sL -o $D/Avsec_2026_AlphaGenome_notes.json  "https://drive.google.com/uc?export=download&id=11iUX_tCF7rjUvkZyigSnsv8f762WXqft"
+curl -sL -o $D/Gayoso_2026_AlphaGenome2_notes.json "https://drive.google.com/uc?export=download&id=1MejbHhx3Q5rN0Pve67x7f99D96BHzVK8"
+# format check: all items type qa with section/q/a/kw/info/concl (44 and 52), none empty
+curl -s https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.11.765857   # published: NA
+S="Deep learning & sequence models"
+python3 -I 17_import_notes.py $D/Avsec_2026_AlphaGenome_notes.json $D/s41586-025-10014-0.pdf regulatiory_genomics "$S" \
+    Avsec_2026_Nature_AlphaGenome_variant_effect_prediction.pdf --tags "External notes"
+python3 -I 17_import_notes.py $D/Gayoso_2026_AlphaGenome2_notes.json $D/2026.11.11.765857v1.full.pdf regulatiory_genomics "$S" \
+    Gayoso_2026_bioRxiv_AlphaGenome2_cell_states.pdf --tags "External notes"
+python3 -I 02_build_html.py && ./check_pages.sh        # regulatiory_genomics 60 -> 62 papers
+```
