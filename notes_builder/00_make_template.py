@@ -60,7 +60,7 @@ REPL = [
      '${p.note ? `<p class="note">${esc(p.note)}</p>` : ""}${p.source_note ? `<p class="srcnote">⚠ ${esc(p.source_note)}</p>` : ""}'),
     ('.phead .note{', '.phead .srcnote{font-size:.88rem;color:var(--again);border-left:3px solid var(--again);padding:2px 0 2px 10px;margin:8px 0 6px;max-width:68ch}\n.phead .note{'),
     # tags (e.g. Basics, Important): filled badges in the header, a star in the lists
-    # (no star when the catalog entry has "star": false)
+    # (star only when p.star: a tag listed in config.json "star_tags", or catalog "star": true/false)
     ('.shared{border:1px solid var(--rule);border-radius:6px;padding:1px 8px;font-size:.8rem;color:var(--muted)}',
      '.shared{border:1px solid var(--rule);border-radius:6px;padding:1px 8px;font-size:.8rem;color:var(--muted)}\n'
      '.badge{background:var(--ink);color:var(--bg);border-radius:6px;padding:1px 8px;font-size:.78rem;font-weight:600}\n'
@@ -68,9 +68,9 @@ REPL = [
     ('<span class="tag">${esc(p.category)}</span>${p.shared ?',
      '<span class="tag">${esc(p.category)}</span>${(p.tags||[]).map(t => `<span class="badge">${esc(t)}</span>`).join("")}${p.shared ?'),
     ('<span><b>${esc(p.id.replace("_"," "))}</b><span class="t">',
-     '<span><b>${esc(p.id.replace("_"," "))}${(p.tags||[]).length && !p.nostar ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b><span class="t">'),
+     '<span><b>${esc(p.id.replace("_"," "))}${p.star ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b><span class="t">'),
     ('<button class="prow" data-p="${p.slug}"><b>${esc(p.id.replace("_"," "))}</b>',
-     '<button class="prow" data-p="${p.slug}"><b>${esc(p.id.replace("_"," "))}${(p.tags||[]).length && !p.nostar ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b>'),
+     '<button class="prow" data-p="${p.slug}"><b>${esc(p.id.replace("_"," "))}${p.star ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b>'),
     # "My comments" box at the end of each paper (saved by serve_notes.py; read-only when opened as a file)
     ('.empty{font-family:var(--serif);color:var(--muted);padding:30px 0;max-width:52ch}',
      '.empty{font-family:var(--serif);color:var(--muted);padding:30px 0;max-width:52ch}\n'

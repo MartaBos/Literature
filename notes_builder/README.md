@@ -462,10 +462,13 @@ python3 -I 17_import_notes.py $D/Gayoso_2026_AlphaGenome2_notes.json $D/2026.11.
 python3 -I 02_build_html.py && ./check_pages.sh        # regulatiory_genomics 60 -> 62 papers
 ```
 
-Star in the lists (2026-11-23, Marta): any tag gives a ★ next to the paper name; a catalog entry
-with `"star": false` hides it (the header badge stays). Set for both AlphaGenome papers.
-`00_make_template.py`: star condition `(p.tags||[]).length && !p.nostar`; `02_build_html.py`: `nostar`.
+Star in the lists (2026-11-23, Marta): only papers she names get a ★ next to the name. Since
+2026-11-23 a star is opt-in: `config.json` `"star_tags"` (now `["Basics", "Damir's paper"]`) lists the
+tags that give one; a catalog entry can force it with `"star": true` / `false`. Other tags (e.g.
+"External notes") show only as the header badge. Result: 24 stars (8 Basics, 16 Damir's paper).
+`02_build_html.py` sets `p.star`; `00_make_template.py` shows the star when `p.star`.
+(First version the same day hid it only for the two AlphaGenome papers via `"star": false`; replaced.)
 ```bash
-# catalog.json: "star": false on the two AlphaGenome entries (small python edit)
+# edits to config.json / 02_build_html.py / 00_make_template.py (small python edits), then:
 python3 -I 00_make_template.py && python3 -I 02_build_html.py && ./check_pages.sh
 ```

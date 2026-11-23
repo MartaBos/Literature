@@ -38,12 +38,18 @@ def folder_info(name):
     return label, f.get("category") or next(iter(subcats), label), subcats
 
 
+# tags that give a ★ in the paper lists (config.json "star_tags"); catalog "star": true/false overrides
+STAR_TAGS = set(CFG.get("star_tags", []))
+
+
 def extras(folder, stem):
     c = CATALOG.get(f"{folder}/{stem}", {})
     shared = " · ".join(x for x in (c.get("shared_by"), str(c.get("shared_year") or "")) if x)
     pre = c.get("preprint_doi")
     return c, {"shared": shared, "preprint": f"https://doi.org/{pre}" if pre else "",
-               "tags": c.get("tags") or [], "nostar": c.get("star") is False,
+               "tags": c.get("tags") or [],
+               "star": c["star"] if isinstance(c.get("star"), bool)
+                       else any(x in STAR_TAGS for x in c.get("tags") or []),
                "source_note": c.get("source_note", "")}
 
 

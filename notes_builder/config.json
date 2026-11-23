@@ -8,6 +8,9 @@
   "max_new_papers_per_run": 25,
   "server_port": 21060,
 
+  "_comment_star_tags": "papers with one of these tags get a star in the lists; a catalog entry can force it with \"star\": true or false",
+  "star_tags": ["Basics", "Damir's paper"],
+
   "_comment_folders": "category = default subcategory for new papers; subcategories = name -> colour (mex blue, emb orange, gen green, dam pink, oth purple, ali yellow). Folders starting with _ (e.g. papers/_superseded_preprints) are ignored.",
   "folders": {
     "amexicanus": {
