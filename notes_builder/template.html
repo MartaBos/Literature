@@ -271,7 +271,7 @@ function renderList(){
     const k = p.qas.filter(q => known.has(q.uid)).length;
     return `<li><button class="pitem" style="${catVars(p.category)}" data-p="${p.slug}" aria-current="${current===p}">
       <span class="tab" style="background:var(--cd)"></span>
-      <span><b>${esc(p.id.replace("_"," "))}${(p.tags||[]).length ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b><span class="t">${esc(p.title)}</span></span>
+      <span><b>${esc(p.id.replace("_"," "))}${(p.tags||[]).length && !p.nostar ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b><span class="t">${esc(p.title)}</span></span>
       <span class="n">${p.qas.length ? (k ? k+"/" : "") + p.qas.length : "—"}</span></button></li>`;
   }).join("");
 }
@@ -308,7 +308,7 @@ function renderHome(){
     ${groups.map(c => `<div class="grp" style="${catVars(c)}"><h3><span class="dot" style="background:var(--cd)"></span>${esc(c)}</h3>
       ${list.filter(p => p.category===c).map(p => {
         const kn = p.qas.filter(q => known.has(q.uid)).length, pct = p.qas.length ? kn/p.qas.length*100 : 0;
-        return `<button class="prow" data-p="${p.slug}"><b>${esc(p.id.replace("_"," "))}${(p.tags||[]).length ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b><span>${esc(p.title)}</span>
+        return `<button class="prow" data-p="${p.slug}"><b>${esc(p.id.replace("_"," "))}${(p.tags||[]).length && !p.nostar ? `<span class="star" title="${esc(p.tags.join(", "))}">★</span>` : ""}</b><span>${esc(p.title)}</span>
           <div>${p.qas.length ? `<div class="bar"><i style="width:${pct}%"></i></div><div class="barlab">${kn} of ${p.qas.length} known</div>` : `<div class="barlab">${p.missing_pdf ? "PDF missing" : "No notes yet"}</div>`}</div></button>`;
       }).join("")}</div>`).join("")}
   </div>`;

@@ -461,3 +461,11 @@ python3 -I 17_import_notes.py $D/Gayoso_2026_AlphaGenome2_notes.json $D/2026.11.
     Gayoso_2026_bioRxiv_AlphaGenome2_cell_states.pdf --tags "External notes"
 python3 -I 02_build_html.py && ./check_pages.sh        # regulatiory_genomics 60 -> 62 papers
 ```
+
+Star in the lists (2026-11-23, Marta): any tag gives a ★ next to the paper name; a catalog entry
+with `"star": false` hides it (the header badge stays). Set for both AlphaGenome papers.
+`00_make_template.py`: star condition `(p.tags||[]).length && !p.nostar`; `02_build_html.py`: `nostar`.
+```bash
+# catalog.json: "star": false on the two AlphaGenome entries (small python edit)
+python3 -I 00_make_template.py && python3 -I 02_build_html.py && ./check_pages.sh
+```

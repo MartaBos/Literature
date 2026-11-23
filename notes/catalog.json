@@ -1126,7 +1126,8 @@
   "shared_year": "",
   "tags": [
    "External notes"
-  ]
+  ],
+  "star": false
  },
  "regulatiory_genomics/Gayoso_2026_bioRxiv_AlphaGenome2_cell_states": {
   "title": "AlphaGenome 2 predicts regulatory activity and variant effects across cell states",
@@ -1139,6 +1140,7 @@
   "shared_year": "",
   "tags": [
    "External notes"
-  ]
+  ],
+  "star": false
  }
 }

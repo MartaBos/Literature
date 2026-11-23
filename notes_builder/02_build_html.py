@@ -43,7 +43,8 @@ def extras(folder, stem):
     shared = " · ".join(x for x in (c.get("shared_by"), str(c.get("shared_year") or "")) if x)
     pre = c.get("preprint_doi")
     return c, {"shared": shared, "preprint": f"https://doi.org/{pre}" if pre else "",
-               "tags": c.get("tags") or [], "source_note": c.get("source_note", "")}
+               "tags": c.get("tags") or [], "nostar": c.get("star") is False,
+               "source_note": c.get("source_note", "")}
 
 
 def build(folder):
