@@ -123,6 +123,156 @@ REPL = [
      '  if (current && !query) renderPaper(current);\n'
      '})();\n\n'
      '/* search */'),
+    # --- sort dropdown, tag filter panel (per page) and font switch (shared) ---
+    ("button,input{font:inherit;color:inherit}", "button,input,select{font:inherit;color:inherit}"),
+    (".theme{margin:auto 22px 0;align-self:flex-start;",
+     '.tools{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;padding:0 22px}\n'
+     '.sortl{display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted)}\n'
+     '.sortl select{border:1px solid var(--rule);border-radius:8px;background:var(--surface);color:var(--ink);padding:4px 6px;font-size:.82rem;max-width:160px}\n'
+     '.tagf{font-size:.82rem}\n'
+     '.tagf[open]{flex-basis:100%}\n'
+     '.tagf summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--rule);border-radius:8px;padding:4px 10px;color:var(--muted)}\n'
+     '.tagf summary::-webkit-details-marker{display:none}\n'
+     '.tagf summary::after{content:"\\25BE";font-size:.7rem;margin-left:2px}\n'
+     '.tagf[open] summary::after{content:"\\25B4"}\n'
+     '.tagf.on summary{background:var(--surface);color:var(--ink);border-color:var(--muted)}\n'
+     '.tagbody{margin-top:8px;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--surface);display:flex;flex-direction:column;gap:8px}\n'
+     '.tmode{display:inline-flex;align-self:flex-start;border:1px solid var(--rule);border-radius:8px;overflow:hidden}\n'
+     '.tmode button{background:none;border:0;padding:3px 12px;font-size:.8rem;color:var(--muted)}\n'
+     '.tmode button+button{border-left:1px solid var(--rule)}\n'
+     '.tmode button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}\n'
+     '.thint{color:var(--muted);font-size:.78rem;margin:-2px 0 0}\n'
+     '.taglist{display:flex;flex-direction:column;gap:4px}\n'
+     '.tagi{display:flex;align-items:center;gap:8px;cursor:pointer;color:var(--ink)}\n'
+     '.tagi input{accent-color:var(--ink);margin:0}\n'
+     '.tagi small{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums}\n'
+     '.tfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:.8rem;border-top:1px solid var(--rule);padding-top:8px}\n'
+     '.tfoot button{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;text-underline-offset:3px;font-size:.8rem}\n'
+     '.tfoot button:hover{color:var(--ink)}\n'
+     '.tfoot button:disabled{opacity:.45;cursor:default;text-decoration:none}\n'
+     '.sfoot{margin:auto 22px 0;display:flex;flex-wrap:wrap;gap:8px}\n'
+     '.theme{'),
+    ("*,*::before,*::after{box-sizing:inherit}",
+     ':root[data-font="verdana"]{--serif:Verdana, Geneva, "DejaVu Sans", sans-serif; --sans:Verdana, Geneva, "DejaVu Sans", sans-serif}\n'
+     "*,*::before,*::after{box-sizing:inherit}"),
+    # apply the saved font before the page renders (attribute on <script> keeps check_pages.sh's regex on the main script)
+    ("<title>__PAGE_TITLE__</title>",
+     '<title>__PAGE_TITLE__</title>\n'
+     '<script data-pn="font">try{if(JSON.parse(localStorage.getItem("pn-font"))==="verdana")'
+     'document.documentElement.setAttribute("data-font","verdana")}catch(e){}</script>'),
+    ('    <div class="cats" id="cats"></div>\n',
+     '    <div class="tools">\n'
+     '      <label class="sortl">Sort <select id="sort"><option value="default">Default</option>'
+     '<option value="author-az">Author A→Z</option><option value="author-za">Author Z→A</option>'
+     '<option value="year-new">Year, newest first</option><option value="year-old">Year, oldest first</option></select></label>\n'
+     '      <details class="tagf" id="tagf"><summary>Tags<span id="tagsum"></span></summary>\n'
+     '        <div class="tagbody">\n'
+     '          <div class="tmode" id="tmode" role="group" aria-label="Tag filter mode"><button type="button" data-mode="only" aria-pressed="true">Only</button>'
+     '<button type="button" data-mode="except" aria-pressed="false">Except</button></div>\n'
+     '          <p class="thint" id="thint"></p>\n'
+     '          <div class="taglist" id="taglist"></div>\n'
+     '          <div class="tfoot"><span id="vcount"></span><button type="button" id="tclear">clear</button></div>\n'
+     '        </div>\n'
+     '      </details>\n'
+     '    </div>\n'
+     '    <div class="cats" id="cats"></div>\n'),
+    ('<button class="theme" id="theme">Theme: auto</button>',
+     '<div class="sfoot"><button class="theme" id="theme">Theme: auto</button><button class="theme" id="font">Font: Literata</button></div>'),
+    ("applyTheme();\n\nconst totalQ",
+     'applyTheme();\n'
+     'let font = store.get("pn-font", "current") === "verdana" ? "verdana" : "current";\n'
+     'function applyFont(){\n'
+     '  if (font==="verdana") document.documentElement.setAttribute("data-font", "verdana");\n'
+     '  else document.documentElement.removeAttribute("data-font");\n'
+     '  document.getElementById("font").textContent = "Font: " + (font==="verdana" ? "Verdana" : "Literata");\n'
+     '}\n'
+     'document.getElementById("font").onclick = () => {\n'
+     '  font = font==="verdana" ? "current" : "verdana";\n'
+     '  store.set("pn-font", font); applyFont();\n'
+     '};\n'
+     'applyFont();\n\nconst totalQ'),
+    ("const visible = () => papers.filter(p => !activeCats.size || activeCats.has(p.category));",
+     r'''/* tag filter + sort (remembered per page) */
+const sharedName = p => p.shared ? String(p.shared).split(" · ")[0].trim() : "";
+papers.forEach((p, i) => {
+  p.ord = i;
+  p.au = p.id.split("_")[0];
+  const m = /_((?:1[89]|20)\d\d)(?!\d)/.exec(p.id); p.yr = m ? +m[1] : null;
+  p.tagset = new Set([...(p.tags||[]), ...(sharedName(p) ? ["Shared by " + sharedName(p)] : [])]);
+});
+const allTags = (() => {
+  const n = new Map();
+  papers.forEach(p => p.tagset.forEach(t => n.set(t, (n.get(t)||0) + 1)));
+  const shr = t => t.startsWith("Shared by ") ? 1 : 0;
+  return [...n].sort((a,b) => shr(a[0]) - shr(b[0]) || a[0].localeCompare(b[0])).map(([t,c]) => ({t, c}));
+})();
+const TKEY = "pn-tags-" + DATA.page.folder, SKEY = "pn-sort-" + DATA.page.folder;
+const tSaved = store.get(TKEY, {}) || {};
+let tagMode = tSaved.mode==="except" ? "except" : "only";
+let tagSel = new Set((Array.isArray(tSaved.sel) ? tSaved.sel : []).filter(t => allTags.some(x => x.t===t)));
+const saveTags = () => store.set(TKEY, {mode: tagMode, sel: [...tagSel]});
+const sortSel = document.getElementById("sort");
+let sortBy = store.get(SKEY, "default");
+if (![...sortSel.options].some(o => o.value===sortBy)) sortBy = "default";
+sortSel.value = sortBy;
+const cmpAu = (a,b) => a.au.localeCompare(b.au, undefined, {sensitivity: "base"});
+const noYr = p => p.yr===null ? 1 : 0;
+const byYear = dir => (a,b) => noYr(a) - noYr(b) || (noYr(a) ? 0 : dir*(a.yr - b.yr)) || cmpAu(a,b) || a.ord - b.ord;
+const SORTFN = {
+  "author-az": (a,b) => cmpAu(a,b) || (a.yr ?? 9999) - (b.yr ?? 9999) || a.ord - b.ord,
+  "author-za": (a,b) => cmpAu(b,a) || (a.yr ?? 9999) - (b.yr ?? 9999) || a.ord - b.ord,
+  "year-new": byYear(-1),
+  "year-old": byYear(1)
+};
+const tagOK = p => !tagSel.size || ([...tagSel].some(t => p.tagset.has(t)) === (tagMode==="only"));
+const visible = () => {
+  const l = papers.filter(p => (!activeCats.size || activeCats.has(p.category)) && tagOK(p));
+  return SORTFN[sortBy] ? l.sort(SORTFN[sortBy]) : l;
+};
+const filterLabel = () => [activeCats.size ? [...activeCats].join(", ") : "",
+  tagSel.size ? (tagMode==="only" ? "Only " : "Except ") + [...tagSel].join(", ") : ""].filter(Boolean).join(" · ") || "All papers";
+function renderTags(){
+  document.getElementById("tagf").hidden = !allTags.length;
+  document.querySelectorAll("#tmode [data-mode]").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode===tagMode));
+  document.getElementById("thint").textContent = tagMode==="only"
+    ? "Show only papers that have any checked tag." : "Hide papers that have any checked tag.";
+  document.getElementById("taglist").innerHTML = allTags.map(({t,c}) =>
+    `<label class="tagi"><input type="checkbox" value="${esc(t)}"${tagSel.has(t) ? " checked" : ""}><span>${esc(t)}</span><small>${c}</small></label>`).join("");
+  renderCount();
+}
+function renderCount(){
+  const n = visible().length, on = tagSel.size > 0;
+  document.getElementById("vcount").textContent = `${n} of ${papers.length} papers`;
+  document.getElementById("tagsum").textContent = on ? ` (${tagMode} ${tagSel.size}) · ${n} of ${papers.length}` : "";
+  document.getElementById("tagf").classList.toggle("on", on);
+  document.getElementById("tclear").disabled = !on;
+}
+function refresh(){  // re-render everything that depends on visible()
+  renderCount(); renderList();
+  if (query){ const d = document.body.classList.contains("drawer"); doSearch(); document.body.classList.toggle("drawer", d); }
+  else if (!current) renderHome();
+}
+document.getElementById("taglist").onchange = e => {
+  const c = e.target.closest("input[type=checkbox]"); if (!c) return;
+  c.checked ? tagSel.add(c.value) : tagSel.delete(c.value);
+  saveTags(); refresh();
+};
+document.getElementById("tmode").onclick = e => {
+  const b = e.target.closest("[data-mode]"); if (!b || b.dataset.mode===tagMode) return;
+  tagMode = b.dataset.mode; saveTags(); renderTags(); refresh();
+};
+document.getElementById("tclear").onclick = () => { tagSel.clear(); saveTags(); renderTags(); refresh(); };
+sortSel.onchange = () => { sortBy = sortSel.value; store.set(SKEY, sortBy); refresh(); };'''),
+    ("renderCats(); renderList(); if (!current && !query) renderHome();",
+     "renderCats(); refresh();"),
+    ('Study ${activeCats.size ? "these categories" : "everything"}',
+     'Study ${tagSel.size ? "these papers" : activeCats.size ? "these categories" : "everything"}'),
+    ('activeCats.size ? [...activeCats].join(", ") : "All papers");',
+     'filterLabel());'),
+    ('    ${groups.map(c => `<div class="grp"',
+     '    ${list.length ? "" : `<p class="empty">No papers match the chosen topics and tags.</p>`}\n'
+     '    ${groups.map(c => `<div class="grp"'),
+    ("renderCats(); route();", "renderCats(); renderTags(); route();"),
 ]
 for old, new in REPL:
     n = html.count(old)
