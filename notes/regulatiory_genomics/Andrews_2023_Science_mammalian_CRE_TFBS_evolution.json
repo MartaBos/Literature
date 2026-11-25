@@ -1,0 +1,627 @@
+{
+ "id": "Andrews_2023",
+ "title": "Mammalian evolution of human cis-regulatory elements and transcription factor binding sites",
+ "link": "https://doi.org/10.1126/science.abn7930",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Andrews_2023_Science_mammalian_CRE_TFBS_evolution.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did this paper do, in one sentence?",
+   "a": "They used the Zoonomia reference-free alignment of 241 mammalian genomes to trace the evolutionary history of 0.92 million human candidate cis-regulatory elements (cCREs) and 15.6 million human transcription factor binding sites (TFBSs).",
+   "kw": [
+    "Zoonomia",
+    "cCREs",
+    "TFBSs"
+   ],
+   "info": "Part of the Zoonomia special section in Science (28 April 2023). The version read is marked 'Corrected 4 August 2023'.",
+   "concl": "439,461 cCREs and 2,024,062 TFBSs are under evolutionary constraint across mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What kinds of genes lie near constrained elements, and what kinds lie near primate-specific ones?",
+   "a": "Genes near constrained elements carry out fundamental cellular processes. Genes near primate-specific elements are involved in interaction with the environment, such as odor perception and immune response.",
+   "kw": [
+    "constraint",
+    "primate-specific"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What role do transposable elements (TEs) and GWAS variants play in the main findings?",
+   "a": "About 20% of TFBSs are derived from TEs and show complex patterns of gain and loss during primate evolution. Sequence variants associated with complex traits are enriched in constrained TFBSs.",
+   "kw": [
+    "transposable elements",
+    "GWAS"
+   ],
+   "info": "Summary figures: more than 85% of primate-specific TFBSs, which make up more than 20% of all TFBSs, come from TEs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why focus on regulation to explain mammalian complexity?",
+   "a": "Regardless of complexity, metazoan genomes devote roughly the same number of nucleotides to encoding proteins. The higher complexity of mammals, especially humans, is attributed to how those proteins are regulated.",
+   "kw": [
+    "gene regulation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are the two main approaches to finding regulatory regions?",
+   "a": "The first measures genome-wide biochemical signals such as chromatin accessibility, histone modifications, DNA methylation, transcription and the binding of about 1600 human TFs (ENCODE, Roadmap Epigenomics). The second measures evolutionary conservation, on the logic that sequence conserved across diverging species is maintained by purifying selection.",
+   "kw": [
+    "ENCODE",
+    "evolutionary conservation"
+   ],
+   "info": "ENCODE phase III defined a registry of almost 1 million cCREs. A cis-regulatory element that is not universally conserved may point to a novel, recently evolved function.",
+   "concl": "This paper combines the two approaches."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What does a phyloP score tell you?",
+   "a": "It quantifies evolutionary conservation at single nucleotides across an alignment. Positive scores indicate purifying selection and negative scores indicate accelerated evolution.",
+   "kw": [
+    "phyloP",
+    "purifying selection"
+   ],
+   "info": "Earlier work used 100-way phyloP across 100 vertebrates. Here they use the 241-mammal phyloP, which resolves constraint in placental mammals at single-base resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which earlier observation motivated looking specifically within mammals?",
+   "a": "Classes of cCREs differ in how conserved they are: promoter-like cCREs (PLS) are the most conserved. Among PLS, those with ubiquitously accessible chromatin show higher human-mouse synteny but lower 100-vertebrate phyloP than the remaining PLS.",
+   "kw": [
+    "PLS",
+    "ubiquitous accessibility"
+   ],
+   "info": "Ubiquitously accessible means accessible in more than 95% of the roughly 500 cell and tissue types with ENCODE DNase-seq data.",
+   "concl": "This suggested interesting evolutionary dynamics within the mammalian lineage."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the hypothesis, and what were the three goals?",
+   "a": "Hypothesis: human cCREs and TFBSs constrained across mammals are more likely to be functional and to control mammalian traits. The goals were (i) identify mammal-conserved cCREs and TFBSs, (ii) characterise their evolutionary histories and the forces behind gains and losses, and (iii) test whether they are functional in humans and other mammals using biochemical and epigenomic data.",
+   "kw": [
+    "hypothesis"
+   ],
+   "info": "The reference-free 241-genome alignment lets them study gains and losses of elements in individual mammalian genomes, not only relative to human.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE conservation groups",
+   "q": "How were the 0.92 million ENCODE cCREs defined?",
+   "a": "From epigenomic data (chromatin accessibility, H3K4me3, H3K27ac and CTCF occupancy) in more than 800 cell and tissue types.",
+   "kw": [
+    "ENCODE",
+    "H3K4me3",
+    "H3K27ac"
+   ],
+   "info": "cCRE classes: PLS (promoter-like), pELS (proximal enhancer-like), dELS (distal enhancer-like), DNase-H3K4me3 and CTCF-only. The total in the UMAP is 924,641 cCREs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE conservation groups",
+   "q": "What are N1 and N2?",
+   "a": "For each human cCRE, N1 is the number of the other 240 mammalian genomes in which at least 90% of its positions align, and N2 is the number in which at most 10% align. They are mutually exclusive and sum to at most 240, so cCREs plot inside a triangle on the N1-N2 plane.",
+   "kw": [
+    "N1",
+    "N2"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE conservation groups",
+   "q": "What are the three conservation groups of cCREs, and how large is each?",
+   "a": "G1, highly conserved (N1 >= 120 and N2 <= 25): 47.5%. G2, actively evolving (20 <= N1 <= 50 and N2 <= 120): 11.7%. G3, primate-specific (N1 <= 50 and N2 >= 180): 10.2%. The remaining 30.6% are 'other'.",
+   "kw": [
+    "G1",
+    "G2",
+    "G3"
+   ],
+   "info": "Roughly 70% of cCREs fall into the three dense peaks of the triangle. A similar analysis with 100 vertebrate genomes found that only 4.4% of cCREs are conserved beyond the mammalian lineage.",
+   "concl": "cCREs fall into three distinct groups of mammalian conservation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE conservation groups",
+   "q": "Does the functional class of a cCRE affect which conservation group it falls in?",
+   "a": "Yes. PLS have the most G1 (56.8%) and the least G3 (4.7%). DNase-H3K4me3 and CTCF-only cCREs have the least G1 (38.3% and 35.1%) and the most G3 (19.4% and 18.0%). Random size-matched regions are much less conserved: 23.6% G1 and 33.6% G3.",
+   "kw": [
+    "PLS",
+    "CTCF-only"
+   ],
+   "info": "pELS: 52.5% G1, 7.7% G3. dELS: 47.4% G1, 10.0% G3. Chi-squared P < 2.2e-308. For random regions vs every cCRE class, Fisher's exact P < 1e-300.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolutionary landscape UMAP",
+   "q": "How did they build a UMAP of cCRE evolution, and what does it show?",
+   "a": "They ran UMAP on all 924,641 cCREs, using the fraction of each cCRE's positions that align to each of the 240 nonhuman genomes. One large cluster forms a continuum from G1 through G2 to G3, and the remaining G3 cCREs split off into dozens of small, discrete clusters.",
+   "kw": [
+    "UMAP"
+   ],
+   "info": "Coloring by phyloP puts the highest scores at the G1 end. TSS-proximal cCREs form 'ridges' at the G1 end that overlap high-phyloP areas.",
+   "concl": "Alignment patterns across mammals give a landscape of cCREs ordered from most to least conserved."
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolutionary landscape UMAP",
+   "q": "What do the small discrete G3 clusters represent?",
+   "a": "Different combinations of gains and losses among the 42 nonhuman primates and their three closest relatives (Sunda flying lemur, northern tree shrew and large treeshrew).",
+   "kw": [
+    "primate-specific",
+    "gain and loss"
+   ],
+   "info": "Examples: 2970 cCREs only in great apes; 139 in great apes and old-world monkeys; 6865 in great apes plus old- and new-world monkeys; 1378 conserved up to lemurs; 1195 up to the Sunda flying lemur; 333 only in chimpanzee and bonobo. Some clusters are lost in specific lineages, for example present in all primates except old-world monkeys.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolutionary landscape UMAP",
+   "q": "How do the cCRE groups relate to transposable elements?",
+   "a": "Nearly 90% (89.1%) of G3 cCREs overlap TEs, enriched for the youngest families: LINE1 23.8%, Alu 16.1% and LTR 34.9%, against genomic backgrounds of 16.7%, 10% and 8.8%. G1 cCREs are depleted of young TEs and enriched in older ones: LINE2 5.9%, MIR 8.8% and DNA elements 5.2%, against backgrounds of 3.6%, 2.7% and 3.5%.",
+   "kw": [
+    "LINE1",
+    "Alu",
+    "LTR"
+   ],
+   "info": "Median ages: LINE1 97 Myr, Alu 54 Myr, LTR 97 Myr (95 Myr in a later section); LINE2 140 Myr, MIR 131 Myr, DNA 105 Myr. The 89.1% figure comes from fig. S4C.",
+   "concl": "TEs have driven regulatory elements throughout evolution but were instrumental in the evolution of primate-specific elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results - pathways and primate-specific exons",
+   "q": "Which GO terms are enriched near G1 and G2 cCREs?",
+   "a": "G1 enrichment is only moderate because G1 is so large. Its top terms (positive regulation of single-stranded telomeric DNA binding, of eukaryotic translation and of mRNA cap binding) matter for all cells. G2 top terms are regulation of ketone metabolism (FDR Q = 2.5e-30), adhesion of symbiont to host and tRNA wobble position uridine thiolation.",
+   "kw": [
+    "GO enrichment",
+    "ketogenesis"
+   ],
+   "info": "Ketogenesis has been proposed to be crucial for large brains, yet gene loss inactivated it in whales, fruit bats and elephants. This fits its regulatory elements being in the actively evolving group.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pathways and primate-specific exons",
+   "q": "Which processes are enriched near primate-specific (G3) cCREs?",
+   "a": "Processes for interacting with the environment: detection of chemical stimulus in smell perception (FDR Q = 2.1e-188), negative regulation of transposon integration (1.1e-131) and processing and presentation of exogenous peptide antigen (1.2e-95). Twelve of the top 20 enriched genes encode KRAB-ZFPs.",
+   "kw": [
+    "olfaction",
+    "KRAB-ZFP",
+    "immune response"
+   ],
+   "info": "These pathways respond to environmental chemicals, invading selfish elements and pathogens, all of which vary widely and change quickly.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - pathways and primate-specific exons",
+   "q": "Do protein-coding exons show the same primate-specific pathways as cCREs?",
+   "a": "Only partly. 12.2% of protein-coding genes (2409 of 19,760, GENCODE v38) have at least one G3 exon, but only 2.9% of exons are G3. Genes with G3 exons are enriched in immune pathways, most strongly type I interferon signalling (FDR Q = 1.7e-7), with no enrichment for olfaction or transposon control.",
+   "kw": [
+    "exons",
+    "type I interferon",
+    "GENCODE v38"
+   ],
+   "info": "The type I interferon genes are 11 alpha-interferons, 5 interferon-induced proteins (IFITM1-3, IFIT2, IFIT3) and 5 MHC proteins (HLA-A, B, C, F, G). Olfactory receptors are mostly single-coding-exon genes that evolve by gene duplication.",
+   "concl": "Immune pathways evolve both new exons and new cCREs, whereas olfaction and transposon control adapt mainly through regulatory elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS identification and groups",
+   "q": "How did they find the TF motifs and binding sites?",
+   "a": "A convolutional neural network discovered motifs de novo for 367 human sequence-specific TFs from 6748 ChIP-seq peak sets in the GTRD database, covering 785 human cell and tissue types.",
+   "kw": [
+    "CNN",
+    "GTRD",
+    "ChIP-seq"
+   ],
+   "info": "Validation: information content at each motif position correlates positively with conservation, and both correlate negatively with DNase I cleavage (DNase-seq) and Tn5 insertion (ATAC-seq). Individual datasets were manually annotated before merging.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS identification and groups",
+   "q": "How many TFBSs did they end up with?",
+   "a": "25.8 M motif instances for 367 TFs, which collapse to 15.6 M TFBSs after merging overlaps. These have a median width of 10 bp and cover 183 Mb (5.7%) of the human genome.",
+   "kw": [
+    "TFBS"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS identification and groups",
+   "q": "How do TFBSs split into the G1, G2 and G3 groups?",
+   "a": "32.5% are G1, 1.2% G2 and 24.6% G3. That is significantly more conserved than random sites for G1 and G3 but not for G2 (random: 23.2%, 1.3% and 36.9%).",
+   "kw": [
+    "G1",
+    "G3"
+   ],
+   "info": "Chi-squared P < 2.2e-308. TFBSs have much smaller G1 and G2 fractions and a much larger G3 fraction than cCREs (47.5%, 11.7%, 10.2%).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS identification and groups",
+   "q": "Why do TFBSs and cCREs have different group distributions?",
+   "a": "cCREs (150 to 350 bp) contain several TFBSs (7 to 20 bp). G1 cCREs mostly contain G1 and 'other' TFBSs, G3 cCREs mostly contain G3 TFBSs, and G2 cCREs contain a mixture of all groups.",
+   "kw": [
+    "TFBS turnover"
+   ],
+   "info": "Many 'other' TFBSs sit close to G1 and are highly conserved. Not shown in the figure: 6% of G1, 6.3% of other, 4.6% of G2 and 6.9% of G3 cCREs overlap no TFBS.",
+   "concl": "G1 cCREs kept most of their TFBSs throughout mammalian evolution, whereas G2 cCREs have had greater TFBS turnover."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFBS identification and groups",
+   "q": "What extra detail do per-TF UMAPs show?",
+   "a": "There is one UMAP per TF (367 in total), with high resolution thanks to the small size of TFBSs. For the 782,657 FOXA1 sites, the G3 clusters were more numerous and separated than for cCREs, and lobes of G2 and 'other' sites showed losses in specific mammalian lineages.",
+   "kw": [
+    "FOXA1",
+    "UMAP"
+   ],
+   "info": "Example FOXA1 lineage losses: bats; new-world monkeys; cetaceans; cetaceans plus even-toed ungulates; even-toed ungulates; carnivores.",
+   "concl": "Groups plus UMAP give a general framework for charting how regulatory elements evolved across mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Results - constrained TFBSs",
+   "q": "How did they decide which TFBSs are constrained?",
+   "a": "For each TF, the phyloP scores of its sites are bimodal, so they fit a two-component Gaussian mixture model per TF and called the high-phyloP component constrained. A second model was fit to the difference between a TFBS's phyloP and the mean of its two flanks. The union of the two models gives 2 M constrained TFBSs (0.8% of the genome).",
+   "kw": [
+    "Gaussian mixture model",
+    "phyloP"
+   ],
+   "info": "Fitting each TF separately accounts for binding sites of different TFs evolving at different rates. YY2 has a larger constrained fraction than HNF4A (constrained component means 4.72 vs 1.96 in Fig. 2B). Constrained sites are even more conserved than their flanks, which motivated the second model.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - constrained TFBSs",
+   "q": "Are all highly conserved (G1) TFBSs constrained?",
+   "a": "No. Only 1.66 M of the 5.1 M G1 TFBSs overlap the 2 M constrained TFBSs, about one third. In the per-TF UMAPs, only sites at the most conserved end of the large cluster are constrained.",
+   "kw": [
+    "G1",
+    "constraint"
+   ],
+   "info": "Of 77,486 G1 HNF4A sites, the 22,507 constrained ones keep high motif information content in all 240 genomes. The 54,979 unconstrained G1 sites lose information content in more distant mammals.",
+   "concl": "The mixture model is a principled way to pick out the most constrained TFBSs while accounting for each TF's mutation rate."
+  },
+  {
+   "type": "qa",
+   "section": "Results - constrained TFBSs",
+   "q": "What explains how many of a TF's sites are constrained?",
+   "a": "Across TFs, the gap in mean phyloP between the constrained and unconstrained components correlates with the constrained fraction (Pearson r = 0.71). The constrained fraction also correlates with the share of sites within 2 kb of a GENCODE TSS (r = 0.74).",
+   "kw": [
+    "TSS proximity"
+   ],
+   "info": "Constrained fractions range from 0 to 60%. The C2H2 zinc finger family has the widest range, and KRAB-ZFPs have the lowest fractions, consistent with their coevolution with TEs and role in repressing them.",
+   "concl": "Evolutionary pressure seems to act on each TF's constrained subset as a whole."
+  },
+  {
+   "type": "qa",
+   "section": "Results - constrained TFBSs",
+   "q": "Do TFBSs sit in regulatory elements active in the same cell type?",
+   "a": "Mostly yes. In HepG2, 71% of constrained and 40% of unconstrained TFBSs overlap a HepG2-active cCRE, and 81% vs 50% fall within 100 bp of one. Within 100 bp of a HepG2 rDHS, the figures are 93% vs 71%.",
+   "kw": [
+    "HepG2",
+    "rDHS"
+   ],
+   "info": "Five cell lines were tested (A549, GM12878, HepG2, K562, MCF-7), chosen because they have ENCODE cCREs and the best ChIP-seq coverage in GTRD. Results were similar in all five. rDHSs (representative DNase hypersensitive sites) are a superset of cCREs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - constrained TFBSs",
+   "q": "How do the constrained TFBSs compare with Zoonomia's constrained bases?",
+   "a": "Zoonomia called 100,651,377 bases (3.53% of the genome) constrained across mammals (241-mammal phyloP > 2.27, FDR < 0.05). Of the 2 M constrained TFBSs, 97.3% overlap at least one of these positions.",
+   "kw": [
+    "Zoonomia constraint"
+   ],
+   "info": "Ranked by phyloP, the 15.6 M TFBSs show steadily decreasing overlap with Zoonomia-constrained positions. For each TF, its constrained set sits near the point of highest overlap, even though the mixture model is a different approach from Zoonomia's position-wise method.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - primate-specific TFBSs and TEs",
+   "q": "How do primate-specific HNF4A binding sites relate to TE families?",
+   "a": "The G3 HNF4A clusters follow TE age. Cluster i (1504 sites, great apes only) is 51% LTR and 26% LINE1. Going from clusters ii to iv (3189, 644 and 7913 sites, shared by apes and monkeys), LINE1 overlap falls and Alu overlap rises. The oldest clusters are enriched in older TEs: v (4110 sites) in DNA elements (10.6% vs 3.5%) and vi (598 sites) in LINE2 (6.7%) and MIR (8.3%).",
+   "kw": [
+    "HNF4A",
+    "LTR",
+    "Alu"
+   ],
+   "info": "All six clusters are highly enriched in LTRs (28.4 to 51.7%). 42.6% of the 43,517 G3 HNF4A sites overlap LTRs, compared with 7.1% of non-G3 sites (167,311) and a genomic background of 8.8%. A third of cluster v sites exist in the Sunda flying lemur; cluster vi sites also exist in the two tree shrews.",
+   "concl": "G3 TFBS clusters carry the evolutionary histories of particular TE families; LTRs spread many HNF4A sites in primates."
+  },
+  {
+   "type": "qa",
+   "section": "Results - primate-specific TFBSs and TEs",
+   "q": "What fraction of all TFBSs are TE-derived primate innovations?",
+   "a": "86.1% of G3 TFBSs overlap TEs, most often Alu (27.3%), LINE1 (26.1%) and LTR (22.4%). Since G3 is 24.6% of all TFBSs, 21.2% of all TFBSs are primate innovations driven by TEs.",
+   "kw": [
+    "TE-derived TFBSs"
+   ],
+   "info": "The same calculation for cCREs gives 9.1% (89.1% of G3 cCREs x 10.2%). The gap reflects resolution: a cCRE, especially a G2 cCRE, can contain TFBSs from several groups.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - primate-specific TFBSs and TEs",
+   "q": "What is the TE content of constrained vs unconstrained TFBSs?",
+   "a": "Constrained TFBSs are largely depleted of TEs, whereas unconstrained TFBSs have TE distributions similar to the genomic background. Older TEs (LINE2, MIR) are better represented in constrained TFBSs than younger ones of the same class (LINE1, Alu).",
+   "kw": [
+    "TE age"
+   ],
+   "info": "DNA and LTR elements, younger than LINE2 and MIR but older than Alu, are also represented more than Alu. Simple repeats and other TEs (mostly tandem repeats) keep their representation in constrained TFBSs. TFs differ widely in how much they bind TEs, even among paralogous TFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - primate-specific TFBSs and TEs",
+   "q": "Which TFs bind TEs the most?",
+   "a": "KRAB-ZFPs are the most enriched TFs for binding each TE family, and TEs bound by KRAB-ZFPs tend to be younger than unbound TEs. Across all 114 C2H2 zinc finger TFs, the constrained fraction of sites correlates negatively with TE overlap (Pearson r = -0.78, Spearman rho = -0.91).",
+   "kw": [
+    "KRAB-ZFP",
+    "C2H2 zinc finger"
+   ],
+   "info": "The values come from Fig. 4C.",
+   "concl": "This suggests KRAB-ZFPs repress the activity of these young TEs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - function in other mammals",
+   "q": "Are constrained human TFBSs also present in other mammal genomes?",
+   "a": "Yes. More than 90% of constrained human HNF4A sites are present in macaque, dog, mouse and rat. Of the unconstrained sites, 53% are present in dog and only 36% in mouse and rat.",
+   "kw": [
+    "HNF4A",
+    "liver"
+   ],
+   "info": "They mapped TFBSs to other species through the 241-way alignment. The three liver TFs (HNF4A, FOXA1, CEBPA) were chosen because liver ChIP-seq exists for many mammals. FOXA1 and CEBPA give similar results. Fisher's exact P < 2.2e-308.",
+   "concl": "This supports their definition of constrained TFBSs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - function in other mammals",
+   "q": "Are the TFs actually bound at these sites in other species?",
+   "a": "Liver ChIP-seq for HNF4A, FOXA1 and CEBPA in human, macaque, dog, mouse and rat shows higher signal at constrained TFBSs in all five species. Most unconstrained TFBSs still show some binding.",
+   "kw": [
+    "ChIP-seq"
+   ],
+   "info": "Both sets are enriched for the motif, but motif logos of unconstrained sites lose information content in more distant species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - function in other mammals",
+   "q": "What did DNase footprinting show?",
+   "a": "Using the 33 TFs with ChIP-seq in both HepG2 and A549, constrained TFBSs bound in both cell lines had the highest baseline DNase signal and the deepest protection from cleavage. The next deepest footprints came from constrained sites bound only in that cell line and from unconstrained sites bound in both lines.",
+   "kw": [
+    "DNase footprinting",
+    "HepG2",
+    "A549"
+   ],
+   "info": "They limited the analysis to these 33 TFs to reduce bias from uneven data coverage between the two cell lines.",
+   "concl": "TFBSs are protected from DNase in a cell-type-specific way, and constrained TFBSs are protected more than unconstrained ones."
+  },
+  {
+   "type": "qa",
+   "section": "Results - function in other mammals",
+   "q": "Do constrained sites carry active histone marks in other mammals' livers?",
+   "a": "Yes. Using H3K4me3, H3K27ac and H3K4me1 liver ChIP-seq from ten mammals, they classified sites as promoters, enhancers or primed enhancers. In human liver, 86.8% of constrained and 73.0% of unconstrained HNF4A sites fall into one of these classes. The fractions drop with evolutionary distance but stay higher for constrained sites in every species.",
+   "kw": [
+    "H3K4me1",
+    "H3K27ac",
+    "enhancers"
+   ],
+   "info": "The classification follows Roller et al. Fisher's exact P < 4.9e-253; FOXA1 and CEBPA behave the same. Unclear in the paper: the results say ten mammals but the Methods Summary says nine. The Fig. 5E legend also appears to swap the Latin names of macaque and marmoset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - function in other mammals",
+   "q": "How are constrained TFBSs methylated?",
+   "a": "In 94 normal ENCODE WGBS samples, constrained TFBSs are unmethylated almost everywhere. Most unconstrained TFBSs are methylated in most samples but vary a lot between samples. In 18 cancer samples, constrained TFBSs mostly stay unmethylated, whereas most unconstrained TFBSs become methylated.",
+   "kw": [
+    "DNA methylation",
+    "WGBS",
+    "cancer"
+   ],
+   "info": "A small fraction of constrained TFBSs gains methylation in some cancer samples.",
+   "concl": "Constrained TFBSs look broadly active, unconstrained TFBSs look active in specific cell types, and gained methylation in cancer probably represses a subset."
+  },
+  {
+   "type": "qa",
+   "section": "Results - GWAS heritability",
+   "q": "How did they test whether these elements explain trait heritability?",
+   "a": "With stratified LD score regression (S-LDSC, baseline v2.2 model) on 69 well-powered, nonredundant GWASs, the same panel Zoonomia used. G1 cCREs were 4.7-fold enriched in heritability (P = 4.1e-22) after conditioning on the 91 baseline annotations.",
+   "kw": [
+    "S-LDSC",
+    "heritability"
+   ],
+   "info": "The G1 effect stayed significant when conditioned on the other cCRE groups (P = 2.4e-6). So G1 cCREs carry heritability that other functional annotations do not capture.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GWAS heritability",
+   "q": "Which annotation had the strongest heritability enrichment?",
+   "a": "Constrained TFBSs inside G1 cCREs were 18.2-fold enriched. That beats Zoonomia's 100,651,377 mammal-constrained nucleotides (6.6-fold) and its 101,134,907 primate-constrained nucleotides, defined by 43-primate phastCons (12.0-fold).",
+   "kw": [
+    "heritability enrichment",
+    "phastCons"
+   ],
+   "info": "Z-test P for the differences: 6.4e-9 (mammal) and 2.3e-3 (primate). Unclear: the text says 18.2-fold but Fig. 6A shows 17.4 for this set. All constrained TFBSs together show 12.2-fold and unconstrained TFBSs 1.34-fold.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GWAS heritability",
+   "q": "How does enrichment change with the level of constraint and with group?",
+   "a": "Ranking all TFBSs by phyloP, enrichment falls with rank but stays significant down to roughly the 9th to 10th percentile. Constrained TFBSs in G2 cCREs show no enrichment, and TFBSs in G3 cCREs are strongly depleted.",
+   "kw": [
+    "phyloP rank"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GWAS heritability",
+   "q": "Can constrained TFBSs pick out the most relevant Zoonomia-constrained nucleotides?",
+   "a": "Yes. Mammal-constrained nucleotides inside constrained TFBSs reach 19.5-fold, vs 5.4-fold outside them (P = 5.8e-16). Primate-constrained nucleotides inside constrained TFBSs reach 27.3-fold, vs 10.3-fold outside (P = 2.6e-12).",
+   "kw": [
+    "variant prioritisation"
+   ],
+   "info": "Results hold after removing coding nucleotides. Constrained TFBS nucleotides outside Zoonomia mammal-constrained bases still show 7.5-fold, comparable to the 5.4-fold for mammal-constrained nucleotides outside TFBSs.",
+   "concl": "Constrained TFBSs help prioritise candidate functional variants."
+  },
+  {
+   "type": "qa",
+   "section": "Results - GWAS heritability",
+   "q": "Is the heritability enrichment specific to cell type?",
+   "a": "Yes. Using constrained TFBSs in dELS active in each of six ENCODE cell lines, the 7 immune traits were most enriched in GM12878, a B-lymphoblastoid line (115.0-fold). The 16 erythroid traits were most enriched in K562, a myelogenous leukemia line resembling undifferentiated erythrocytes (54.9-fold).",
+   "kw": [
+    "GM12878",
+    "K562",
+    "dELS"
+   ],
+   "info": "dELS (TSS-distal cCREs with enhancer-like signatures) are the largest and most cell-type-specific cCRE subset. The other lines were HepG2, MCF-7, H1 and A549. In GM12878 and K562, enrichment was significantly higher inside constrained TFBSs than in the surrounding cCRE sequence (Z-test P < 2.3e-3).",
+   "concl": "Constrained disease-associated TFBSs act on regulation in a cell-type-specific way."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude about which regulatory elements drive complex traits?",
+   "a": "Conserved cCREs and constrained TFBSs are highly enriched for heritability across 69 traits, while primate-specific cCREs and TFBSs are greatly depleted of GWAS variants. So complex human traits and diseases are driven mainly by regulatory elements that arose at the start of the mammalian lineage and have stayed largely conserved.",
+   "kw": [
+    "complex traits"
+   ],
+   "info": "Fewer than 5% of cCREs are conserved for 90% or more of their positions beyond mammals, so the 241-mammal data give unprecedented resolution. About 439 thousand deeply conserved cCREs make up 4% of the genome.",
+   "concl": "Heritability enrichment comes from nucleotides under both mammalian and primate constraint."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the evidence that TEs drove regulatory innovation in primates?",
+   "a": "More than 85% of primate-specific TFBSs, over 20% of all TFBSs, come from TEs. Many TFBS clusters share presence/absence patterns across primates and are enriched in particular TE families, suggesting several waves of TE insertion spread them. Alu, LINE1 and LTR account for 88% of these primate-specific TE-derived TFBSs.",
+   "kw": [
+    "TE insertion waves"
+   ],
+   "info": "Of the 367 TFs, 69 are KRAB-ZFPs.",
+   "concl": "It is unclear whether these TE-derived innovations have been incorporated into useful regulatory programs or are still being tamed. The authors say their results support both."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What 'mutual regulation' do the authors propose between KRAB-ZFPs and primate-specific elements?",
+   "a": "Primate-specific cCREs lie preferentially near KRAB-ZFP genes and probably regulate them. Meanwhile 17 of the 18 TFs most enriched in TE-derived TFBSs are KRAB-ZFPs, whose bound TEs are younger than unbound ones. So KRAB-ZFPs may still repress TEs through primate-specific TFBSs while being regulated by primate-specific elements.",
+   "kw": [
+    "KRAB-ZFP",
+    "arms race"
+   ],
+   "info": "The 'negative regulation of transposon integration' GO enrichment near G3 cCREs comes from their position near KRAB-ZFP genes.",
+   "concl": "This offers a new angle on the KRAB-ZFP and TE evolutionary arms race."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why would KRAB-ZFPs bind TEs that can no longer transpose?",
+   "a": "Apart from a few LINE1 and Alu elements, TEs are inactive in humans, yet 80% of ZNF768 sites are in MIRs. TE transcripts can trigger an innate immune response to double-stranded RNA, and TEs are expressed in early development and cancer. Alternatively, old TEs may have been exapted to regulate host genes.",
+   "kw": [
+    "ZNF768",
+    "MIR",
+    "exaptation"
+   ],
+   "info": "Example given: in embryos KRAB-ZFPs repress young SVA, HERV-K and HERV-H, and later the same bound TEs act as tissue-specific enhancers. This part is the authors' speculation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data and conservation framework",
+   "q": "Which genomes and resources were used?",
+   "a": "Zoonomia's 240 placental mammal species including human, with two dog genomes (outbred and purebred), make up the 241-way reference-free alignment and the 241-mammal phyloP scores. They analysed ENCODE human cCREs and their own TFBSs on hg38.",
+   "kw": [
+    "Zoonomia",
+    "hg38"
+   ],
+   "info": "The main text has only a short 'Methods Summary'; full methods are in the supplementary materials, which were not read. Data and code are on Zenodo (10.5281/ZENODO.7447627).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data and conservation framework",
+   "q": "What was the input to UMAP?",
+   "a": "A matrix of elements (cCREs or TFBSs) by the 240 nonhuman genomes, where each value is the percentage of the element's positions aligned in that genome. UMAP was run with default parameters.",
+   "kw": [
+    "UMAP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CNN motif discovery",
+   "q": "How is the CNN for motif discovery set up?",
+   "a": "The forward and reverse-complement sequences go into a shared convolution layer of 16 kernels, each 24 bp wide, with linear activation. Max pooling over strand and over sequence follows, and each kernel's maximum feeds a single sigmoid output neuron, which amounts to logistic regression.",
+   "kw": [
+    "CNN",
+    "motif discovery"
+   ],
+   "info": "Training used 300-bp summit-centred ChIP-seq peak sequences as positives. Negatives were drawn at random from the flanking 2500-bp regions in each iteration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - constraint, TE and heritability analysis",
+   "q": "How were the constraint mixture models fit, and how were TEs annotated?",
+   "a": "For each TF, they computed two phyloP-based metrics, fit ten two-component Gaussian mixture models per metric and kept the best by BIC. A TFBS counts as constrained if its probability of belonging to the right-hand component is above 0.5. TEs were assigned with RepeatMasker, with TE age estimated from substitution rate under the Jukes-Cantor model.",
+   "kw": [
+    "BIC",
+    "RepeatMasker",
+    "Jukes-Cantor"
+   ],
+   "info": "TF enrichment in a TE family = fraction of the TF's TFBSs overlapping that family divided by the fraction of the genome annotated as that family. For heritability, cCRE and TFBS partitions were added to the S-LDSC baseline v2.2 model, reporting enrichment, its standard error and P-value.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Are primate-specific, TE-derived TFBSs already part of useful regulatory programs, or are they still being tamed by KRAB-ZFPs? The paper says its data support both."
+  },
+  {
+   "type": "note",
+   "section": "Results - function in other mammals",
+   "text": "Unconstrained TFBSs still show binding, histone marks and cell-type-specific methylation. How many of them are functional in a lineage-specific way rather than neutral? Could the N1/N2 grouping plus UMAP framework be used on a fish whole-genome alignment?"
+  },
+  {
+   "type": "note",
+   "section": "Results - GWAS heritability",
+   "text": "Check against the supplement: 18.2-fold (text) vs 17.4 (Fig. 6A) for constrained TFBSs in G1 cCREs; ten vs nine mammals for the liver histone data; macaque/marmoset Latin names apparently swapped in the Fig. 5E legend."
+  }
+ ]
+}

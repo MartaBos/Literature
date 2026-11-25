@@ -1,0 +1,597 @@
+{
+ "id": "Weber_2022",
+ "title": "Monitoring the 5'UTR landscape reveals isoform switches to drive translational efficiencies in cancer",
+ "link": "https://doi.org/10.1038/s41388-022-02578-2",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Weber_2022_Oncogene_5UTR_isoform_switches.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What question does this paper address?",
+   "a": "How far transcriptional and translational control are coordinated, and specifically whether switching between alternative 5'UTR isoforms with identical coding sequences changes translational efficiency in cancer.",
+   "kw": [
+    "5'UTR isoforms",
+    "translational efficiency"
+   ],
+   "info": "They used Nanopore long-read sequencing and CAGE-seq on mouse epidermal stem cells, wild-type keratinocytes and squamous cell carcinoma cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding of the paper?",
+   "a": "In squamous cell carcinoma, a small group of genes with alternative 5'UTR isoforms has higher overall translational efficiency. TSS heterogeneity switches 5'TOP and PRTE motifs on or off, which sets how strongly translation of the mRNA depends on mTORC1.",
+   "kw": [
+    "5'TOP",
+    "PRTE",
+    "mTORC1"
+   ],
+   "info": "These genes are enriched in ribosomal proteins and splicing factors. Genome-wide, highly translated SCC transcripts use more 5'TOP and PRTE motifs, have shorter 5'UTRs and less RNA secondary structure.",
+   "concl": "Switching between 5'UTR isoforms is a simple way to change protein synthesis rates and set sensitivity to mTORC1 nutrient sensing."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they find in human patients?",
+   "a": "The two 5'TOP motif-containing RPL21 transcript isoforms, but not the TOP-less isoform, correlated strongly with overall survival in head and neck squamous cell carcinoma (HNSCC) patients.",
+   "kw": [
+    "RPL21",
+    "HNSCC"
+   ],
+   "info": "",
+   "concl": "Cancer datasets should be analysed at the level of isoforms."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a 5'UTR isoform switch, and where was it first described?",
+   "a": "A gene switches between short and long 5'UTRs while the coding sequence stays identical. Several studies described this non-canonical mode of regulation in yeast.",
+   "kw": [
+    "isoform switch",
+    "uORF"
+   ],
+   "info": "During yeast meiosis about 8% of genes were temporally regulated by an extended 5'UTR. The extended 5'UTR was poorly translated because it contained inhibitory upstream ORFs.",
+   "concl": "The exact 5'UTR isoform can directly control protein synthesis, so precise TSS and 5'UTR mapping is needed."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does mTORC1 relate to the 5'UTR?",
+   "a": "The mTORC1 nutrient-sensing pathway selectively increases translation of mRNAs that contain 5' terminal oligopyrimidine (TOP) or pyrimidine-rich translational element (PRTE) motifs.",
+   "kw": [
+    "mTORC1",
+    "5'TOP",
+    "PRTE"
+   ],
+   "info": "mTORC1 signalling is often activated in tumorigenesis. mTORC1-dependent translational reprogramming is probably one of its most important outputs in cancer progression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What did this study set out to do?",
+   "a": "Map the UTR isoform landscape of in vivo epidermal stem cells, wild-type keratinocytes and cultured SCC cells with Nanopore and CAGE-seq. Then combine polysome profiling with CAGE-seq to measure the translational efficiency of each 5' isoform.",
+   "kw": [
+    "Nanopore",
+    "CAGE-seq",
+    "polysome profiling"
+   ],
+   "info": "The dataset and de novo transcriptome annotations are released as a resource on a UCSC genome browser session.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why do the authors warn against relying only on annotated transcripts?",
+   "a": "Genes with broad promoters have heterogeneous TSSs. Even small differences in the exact TSS, and therefore the 5'UTR isoform, can strongly change how efficiently an mRNA is translated.",
+   "kw": [
+    "broad promoters",
+    "TSS heterogeneity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Long-read transcriptome of mouse skin",
+   "q": "Which cell types did they sequence?",
+   "a": "Three: interfollicular epidermal stem cells (EpSCs) from P60 adult mice, isolated by Sca-1 (Ly6a) MACS; cultured SCC cells (SCCc) from an HrasG12V plus Tgfbr2-null allograft model; and wild-type keratinocytes as the reference.",
+   "kw": [
+    "Sca-1",
+    "HrasG12V",
+    "Tgfbr2"
+   ],
+   "info": "The SCC model forms invasive squamous cell carcinomas quickly when injected into immunocompromised mice.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Long-read transcriptome of mouse skin",
+   "q": "How much long-read data did they generate?",
+   "a": "158.1 million Nanopore reads, with mean read lengths between 943 and 1035 bp.",
+   "kw": [
+    "Nanopore"
+   ],
+   "info": "Mean read length was 943 bp for EpSC, 1035 bp for WT and 994 bp for SCCc.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Long-read transcriptome of mouse skin",
+   "q": "How many transcripts did they find, and how was the set filtered?",
+   "a": "StringTie found 210,630 transcripts, of which 39,392 matched the reference intron chain exactly. SQANTI3 filtering left 149,434. Keeping only transcripts supported by CAGE-seq gave a curated annotation of 77,017 transcripts.",
+   "kw": [
+    "StringTie",
+    "SQANTI3",
+    "curated transcriptome"
+   ],
+   "info": "About 62% of genes had only one transcript, about 17% had two or three, and about 21% had four or more.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative isoform events",
+   "q": "How many significant alternative isoform events were there?",
+   "a": "With the most stringent SplAdder settings, they found 496 significantly changed events in SCCc and 243 in EpSCs, both relative to WT keratinocytes.",
+   "kw": [
+    "SplAdder"
+   ],
+   "info": "The main event types were alternative 5' and 3' splice sites, exon skipping and intron retention. Exon skipping dominated in EpSCs. SCCc also had 50 alternative 5' and 63 alternative 3' splicing events.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative isoform events",
+   "q": "Which genes were alternatively spliced in SCC?",
+   "a": "They were enriched in ribosomal proteins and splicing factors, including 23 ribosomal protein genes of the 40S and 60S subunits. Gene expression (GO:0010467) was the top GO term.",
+   "kw": [
+    "ribosomal proteins",
+    "splicing factors",
+    "GO"
+   ],
+   "info": "Many of these ribosomal proteins sit on the ribosome surface, for example Rpl38, which was previously linked to preferential translation of specific mRNA subpools. Their 5'UTRs had higher GC content and more structure than those of other ribosomal proteins.",
+   "concl": "In SCC, a small group of translation-related genes is differentially spliced."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative isoform events",
+   "q": "Did the number of ribosomal protein isoforms change in SCC?",
+   "a": "Yes. Detected ribosomal protein mRNA isoforms increased from 264 in WT to 290 in SCCc.",
+   "kw": [
+    "ribosomal proteins"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5'UTR isoforms and translational efficiency",
+   "q": "How many SCC events changed the 5'UTR versus the 3'UTR?",
+   "a": "73 events changed the 5'UTR and 275 changed the 3'UTR. Of the 23 differentially spliced ribosomal protein genes, 12 had alternative 5'UTR isoforms.",
+   "kw": [
+    "5'UTR",
+    "3'UTR"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5'UTR isoforms and translational efficiency",
+   "q": "How did they estimate translational efficiency (TE) for these genes?",
+   "a": "They used previously published ribosome profiling and short-read RNA-seq data from the same WT keratinocyte and HrasG12V; Tgfbr2-null SCC lines. TE is ribosome profiling reads divided by RNA-seq reads, computed with the DESeq2 LRT test.",
+   "kw": [
+    "ribosome profiling",
+    "DESeq2"
+   ],
+   "info": "Caveat: TE was assessed at gene level, so low-abundance isoforms with altered TE would not show up in overall TE changes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5'UTR isoforms and translational efficiency",
+   "q": "Which region of the transcript affected TE when its isoforms changed?",
+   "a": "Genes with alternative 5'UTR events shifted towards higher TE (median log2FC 0.23 vs 0.011 for all genes; KS p=0.020). Genes with 3'UTR events looked like all genes (p=0.156).",
+   "kw": [
+    "Kolmogorov-Smirnov",
+    "translational efficiency"
+   ],
+   "info": "Genes with CDS events also shifted significantly (p=0.0017), but the distribution was bimodal and the median moved only slightly (0.13 vs 0.011).",
+   "concl": "SCC expresses alternative 5'UTR isoforms of a small group of genes, which raises their protein synthesis overall."
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5'UTR isoforms and translational efficiency",
+   "q": "How is a 5'TOP motif defined?",
+   "a": "A cytidine at position +1, directly next to the 5' cap, followed by an unbroken run of 4 to 16 pyrimidines.",
+   "kw": [
+    "5'TOP"
+   ],
+   "info": "TOP motifs are typical of mRNAs that encode translation factors and are needed for coordinated translation of the TOP mRNA family, which mTORC1 controls.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - 5'UTR isoforms and translational efficiency",
+   "q": "Do the genes with altered 5'UTR isoforms carry TOP motifs?",
+   "a": "Most of them express both TOP and non-TOP 5'UTR isoforms.",
+   "kw": [
+    "5'TOP"
+   ],
+   "info": "They analysed de novo StringTie 5' sequences of genes with altered 5'UTR isoforms in SCCc.",
+   "concl": "A cell could toggle between mTORC1-dependent and mTORC1-independent translation of the same protein."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CAGE-seq TSS mapping and TOPscore",
+   "q": "What is the TOPscore?",
+   "a": "A metric from a previous study that predicts mTORC1/LARP1 regulation. It combines the length of consecutive C/U at each CAGE 5' end with the peak height at that position, so it captures TSS heterogeneity.",
+   "kw": [
+    "TOPscore",
+    "LARP1"
+   ],
+   "info": "That study showed 5'TOP is a continuum rather than a binary feature. Core 5'TOP mRNAs score between 2 and 6.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CAGE-seq TSS mapping and TOPscore",
+   "q": "How did promoter width differ between cell types?",
+   "a": "Using CAGEr, WT and SCCc had wider promoters than EpSCs overall (Wilcoxon p=1.611e-15 and 3.536e-09).",
+   "kw": [
+    "CAGEr",
+    "promoter width"
+   ],
+   "info": "Mammalian promoters are either sharp TATA-box-enriched promoters or broad CpG-rich, more plastic promoters.",
+   "concl": "Differentiated cells use plastic TSSs more often than stem cells."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CAGE-seq TSS mapping and TOPscore",
+   "q": "How did TOPscores compare between EpSC, WT and SCC?",
+   "a": "WT and SCCc had higher median TOPscores than EpSCs. However, EpSCs had more transcripts with TOPscore >2: 500, versus 444 in WT and 487 in SCCc.",
+   "kw": [
+    "TOPscore"
+   ],
+   "info": "Only genes with an average of more than 500 CAGE reads were included. Among the 97 core 5'TOP mRNAs, WT and SCCc had lower TOPscores than EpSC. Broader promoters led to less strict use of the TOP motif.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "q": "Why did they pick Rpl21 and Rpl29 for follow-up?",
+   "a": "Both came up in the SplAdder analysis. Their isoforms differ only in the 5'UTR, with identical CDS and 3'UTR. Both have broad promoters and higher TE in SCCc than in WT (log2FC 1.38 and 1.25).",
+   "kw": [
+    "Rpl21",
+    "Rpl29"
+   ],
+   "info": "Several of their 5'UTR isoforms changed significantly in SCCc by short-read RNA-seq. In contrast, Rpl10 has a sharp promoter. The 5'UTR annotation was revised using the de novo transcriptome and CAGE data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "q": "How did they test individual 5'UTR isoforms experimentally?",
+   "a": "They cloned the main 5'UTR isoforms upstream of Firefly luciferase, co-transfected a control-5'UTR Renilla luciferase, and normalised to mRNA levels by qPCR. To test mTORC1 dependency, cells were treated with Torin 1 or the TOP motif was mutated.",
+   "kw": [
+    "luciferase reporter",
+    "Torin 1"
+   ],
+   "info": "Treatment was 500 nM Torin 1 for 3 h. mTORC1 dependency = (SCC no Torin 1 - SCC Torin 1)/(SCC no Torin 1 - WT Torin 1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "q": "What TSS switch did CAGE show for Rpl21, and did the reporters agree?",
+   "a": "CAGE reads shifted from window 3 in WT to windows 1+2 in SCCc. Construct B, which matches the SCC windows, was translated more efficiently than constructs C and D, which match WT window 3.",
+   "kw": [
+    "Rpl21",
+    "TSS switch"
+   ],
+   "info": "SCCc generally had higher reporter TEs, matching the ribosome profiling result. CAGE is more quantitative than long reads, so they used it for peak distributions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "q": "Why can reporter constructs fail to model broad promoters?",
+   "a": "Small differences in the exact TSS decide whether a 5'UTR starts with a TOP motif. In Rpl21 window 3, the main WT TSS lies 8 nucleotides downstream of the annotated 5'TOP TSS and has no TOP. In SCCc the peaks broaden to include 5'TOP starts.",
+   "kw": [
+    "Rpl21",
+    "broad promoters"
+   ],
+   "info": "",
+   "concl": "Annotated TSSs can mislabel whether a transcript is a TOP mRNA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "q": "Which reporters depended on mTORC1?",
+   "a": "In SCCc, the 5'TOP-containing constructs Rpl21-B/D and Rpl29-B/C/D were mTORC1-dependent by Torin 1 or TOP mutation. The TOP-less Rpl21-A was not. Rpl21-C had a 5'TOP but its TE did not drop with Torin 1.",
+   "kw": [
+    "mTORC1",
+    "Torin 1",
+    "TOP mutation"
+   ],
+   "info": "For example, TOP mutation reduced Rpl29-D TE. The figure shows mTORC1 dependency percentages (84%, 95%, 63%, 64%, 42%), but the text does not say which construct each value belongs to.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "q": "What is a PRTE, and how does it explain the TOP-less reporter results?",
+   "a": "A PRTE is a run of 9 consecutive pyrimidines with an invariant uridine at position 6 in the 5'UTR. The TOP-less Rpl29-A has a PRTE, which explains why it is mTORC1-sensitive.",
+   "kw": [
+    "PRTE"
+   ],
+   "info": "A previous study reported that more than 90% of mTORC1-targeted mRNAs have either a 5'TOP or a PRTE. Exception: Rpl21-A was not mTORC1-sensitive despite having a PRTE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Polysome CAGE-seq of endogenous transcripts",
+   "q": "How did they measure TE of endogenous TSS isoforms?",
+   "a": "They ran sucrose gradients on WT and SCCc and collected light polysomes (up to 3 ribosomes) and heavy polysomes (4 or more ribosomes). CAGE-seq on each fraction mapped TSSs, and the heavy/light (HP/LP) ratio served as a TE proxy.",
+   "kw": [
+    "polysome profiling",
+    "CAGE-seq",
+    "HP/LP ratio"
+   ],
+   "info": "This avoids reporter artefacts and overexpression bias from transient transfection. TE classes were low (ratio <1), medium (1 to 3) and high (>3).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Polysome CAGE-seq of endogenous transcripts",
+   "q": "Do SCC cells translate more or less overall, and what is their mTORC1 activity?",
+   "a": "SCCc had fewer polysomes than WT, meaning lower overall protein synthesis, probably because of more eIF2alpha phosphorylation. Yet they had higher mTORC1 activity, shown by phosphorylation of 4E-BP1 and S6K.",
+   "kw": [
+    "eIF2alpha",
+    "4E-BP1",
+    "S6K"
+   ],
+   "info": "This agrees with earlier OPP incorporation assays.",
+   "concl": "mTORC1 can raise the TE of specific gene groups even while global translation goes down."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Polysome CAGE-seq of endogenous transcripts",
+   "q": "How do promoter width and TOP/PRTE scores relate to translation?",
+   "a": "Highly translated transcripts had narrower promoters. SCCc had higher TOP and PRTE scores than WT in both fractions, and heavy fractions scored higher than light fractions in both cell types.",
+   "kw": [
+    "TOPscore",
+    "PRTE score"
+   ],
+   "info": "Transcripts with TOPscore >2: WT LP 440, WT HP 465, SCC LP 553, SCC HP 529. Median PRTE scores: 22.9 (WT LP), 25.8 (WT HP), 24.9 (SCC LP), 26.9 (SCC HP).",
+   "concl": "Genome-wide, SCC switches towards more 5'TOP and PRTE use, and higher TOP/PRTE scores go with higher TE."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Polysome CAGE-seq of endogenous transcripts",
+   "q": "Which TSS windows did Rpl21 and Rpl29 use in WT versus SCC?",
+   "a": "The main WT windows, Rpl21-3 and Rpl29-2, had low TE. SCCc shifted towards Rpl21-1, Rpl29-1 and Rpl29-3, which had high and medium TE.",
+   "kw": [
+    "Rpl21",
+    "Rpl29",
+    "TSS window"
+   ],
+   "info": "Rpl21-1 has no 5'TOP. The annotated Rpl29-1 transcript does not start with a TOP, but its broad window contains 3 stretches of 5'TOP, all with high TE. Both Rpl21-1 and Rpl29-1 contain PRTE motifs.",
+   "concl": "Broad promoters can use additional 5'TOP starts that the annotation does not show, and PRTEs may predict mTORC1 dependency."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Polysome CAGE-seq of endogenous transcripts",
+   "q": "Did TOP scores of the 73 5'UTR isoform genes differ significantly?",
+   "a": "No. They trended higher in SCCc and in heavy polysomes, but were too heterogeneous to reach significance.",
+   "kw": [
+    "TOPscore"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Features of highly translated 5'UTRs",
+   "q": "Apart from TOP and PRTE, what features mark highly translated SCC 5'UTRs?",
+   "a": "Compared with WT heavy-polysome 5'UTRs, they had less negative minimum free energy (even per nucleotide), lower GC content and shorter length. They also had fewer potential uORFs in total, though NUG density per length was higher.",
+   "kw": [
+    "minimum free energy",
+    "uORF",
+    "NUG"
+   ],
+   "info": "CAGE TSSs were grouped into tag-cluster promoters in CAGEr, SCC vs WT heavy-polysome clusters were compared with DESeq2, and 5'UTRs of the significant clusters were extracted. NUG means AUG, CUG, GUG or UUG. All Wilcoxon p<0.001 except NUG count (p=0.0185).",
+   "concl": "SCC isoforms have less secondary structure, which suggests more efficient scanning and initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Human HNSCC survival",
+   "q": "Does RPL21 expression relate to survival in human HNSCC?",
+   "a": "Yes. In 519 TCGA HNSCC patients, high total RPL21 mRNA (top vs bottom quartile) correlated with shorter overall survival: 31 vs 89 months, p=0.0014, Cox hazard ratio 1.4629. Total RPL29 did not.",
+   "kw": [
+    "TCGA",
+    "RPL21",
+    "survival"
+   ],
+   "info": "The paper writes 'medium survival', which presumably means median.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Human HNSCC survival",
+   "q": "How did the individual human RPL21 isoforms relate to survival?",
+   "a": "Human RPL21 has 4 main isoforms that all encode the same 160 aa protein and differ only in the 5'UTR. High expression of TOP isoform RPL21-201 meant shorter survival (48 vs 89 months, p=0.012). The TOP-less RPL21-203 showed no correlation (p=0.78).",
+   "kw": [
+    "RPL21",
+    "isoform-specific survival"
+   ],
+   "info": "RPL21-202: 54 vs 68 months (p=0.025). RPL21-204, which has a TOP-like motif: 36 vs 68 months (p=0.039). Labelling is inconsistent: text and Fig 5D name 201 and 204 as the survival-correlated isoforms, while the Fig 5B legend names 201 and 202 as the TOP-containing ones.",
+   "concl": "Isoforms coding for the same protein differ in prognostic value, depending on whether they have a TOP motif."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Human HNSCC survival",
+   "q": "Did splicing event ratios also stratify survival?",
+   "a": "Yes. The ratios 203/(203+204) and 203/(203+201) significantly stratified overall survival (p=0.028 and p=0.046), computed with SUPPA2.",
+   "kw": [
+    "SUPPA2",
+    "PSI"
+   ],
+   "info": "Median survival differences shown were 37 vs 68 months and 54 vs 68 months. The text does not say which quartile has the longer survival.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What evidence supports post-transcriptional control of ribosomal protein levels in HNSCC?",
+   "a": "In HNSCC patients, the genome-wide median mRNA-protein correlation was rs=0.52. Ribosomal protein transcripts, including RPL21 and RPL29, correlated particularly poorly.",
+   "kw": [
+    "mRNA-protein correlation"
+   ],
+   "info": "Transcription and translation together determine about 90% of cellular protein abundance.",
+   "concl": "For some translation-related genes, the type of 5'UTR isoform rather than absolute mRNA level may set protein levels."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What model do the authors propose?",
+   "a": "Small changes in the exact TSS can expose or mask TOP and PRTE motifs. This changes translational efficiency of the same coding sequence and sets its dependence on mTORC1 nutrient sensing.",
+   "kw": [
+    "5'TOP",
+    "PRTE",
+    "mTORC1"
+   ],
+   "info": "They suggest that switching between 5'UTR isoforms carrying different regulatory elements (uORFs, RBP binding motifs, 5'TOP, PRTE) could be used at different stages of tumorigenesis.",
+   "concl": "A 5'UTR isoform switch links transcription to translation by encoding translational potential in the 5'UTR."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "Only a small group of genes switches 5'UTR isoforms, so genome-wide the network of translational regulators is still the main determinant of protein synthesis rates.",
+   "kw": [],
+   "info": "Other caveats in the paper: TE was gene-level, reporters cannot fully model broad promoters, total-lysate CAGE was a single replicate, there was no ribosome profiling for P60 EpSCs, and the patient data are correlational.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Samples and cell culture",
+   "q": "How were the EpSCs isolated?",
+   "a": "From telogen back skin of female C57BL6 mice at P56-60. Skin was digested in 0.5% trypsin-EDTA for 25 min at 37 C, scraped into single cells, filtered through 70 and 40 um strainers, and sorted for SCA-1+ cells with anti-Sca-1 MACS microbeads.",
+   "kw": [
+    "MACS",
+    "Sca-1"
+   ],
+   "info": "RNA was extracted with TRIzol LS and the Direct-zol kit. Approved under Zurich license ZH233/2019.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Samples and cell culture",
+   "q": "How were the keratinocytes and SCC cells grown?",
+   "a": "In low-calcium (0.05 mM Ca2+) E-media made from DMEM/F12 with 15% chelated FBS plus supplements, at 37 C and 5% CO2. Primary newborn WT keratinocytes were grown on 3T3-S2 feeder layers.",
+   "kw": [
+    "E-media"
+   ],
+   "info": "The HrasG12V; Tgfbr2 knockout line came from earlier work. Cells were tested for mycoplasma every 3 months.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing and processing",
+   "q": "How were the Nanopore libraries made and processed?",
+   "a": "Libraries were made from polyA-enriched cDNA with kit SQK-PCS109 and sequenced on a PromethION. Data were processed with nf-core nanoseq v1.1: QC with FastQC and NanoPlot, alignment to GRCm38 Gencode M25 with minimap2, assembly with StringTie2, and merging with GFFcompare v0.11.2.",
+   "kw": [
+    "PromethION",
+    "minimap2",
+    "StringTie2"
+   ],
+   "info": "SQANTI3 removed poorly supported junctions and antisense artefacts from the ONT 1D protocol. Functional annotation was added with IsoAnnotLite v2.6. GEO GSE179525.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing and processing",
+   "q": "How were short-read RNA-seq and ribosome profiling data processed?",
+   "a": "With the nf-core RNA-seq pipeline: TrimGalore, STAR v2.6.1 against GRCm38, Salmon quantification and DESeq2 (FDR <0.05). Ribosome profiling reads were also filtered against rRNA, mitochondrial and tRNA sequences with Bowtie2 v2.4.1.",
+   "kw": [
+    "STAR",
+    "Salmon",
+    "Bowtie2"
+   ],
+   "info": "Data came from Sendoel et al. 2017 (GSE83332) plus new samples. The EpSC short reads were P4 epidermis enriched for stem cells, not P60 SCA-1+ cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Sequencing and processing",
+   "q": "How were TE and splicing events computed?",
+   "a": "Reads were counted over exons and CDS with Plastid v0.4.7, and TE was computed with the DESeq2 LRT (full vs reduced model) in R v4.0.2 for genes with RNA-seq rpkm >1. Alternative splicing was called with SplAdder v2.4.3 at confidence level 3, with adjusted p <0.05.",
+   "kw": [
+    "Plastid",
+    "SplAdder",
+    "DESeq2 LRT"
+   ],
+   "info": "For the comparison with SplAdder gene lists, TE was restricted to genes with base mean >25. GO enrichment used GSEA pre-ranked and EnrichR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE-seq and polysomes",
+   "q": "How was CAGE-seq done and analysed?",
+   "a": "Cap-trapping libraries were made by DNAFORM from RNA with RIN >7 and sequenced as 75 nt single-end reads on a NextSeq 500. Reads were processed with nf-core cageseq (5'G trimmed, STAR to Gencode M25) and CAGEr (distclu clustering, quantile width 0.1 to 0.9).",
+   "kw": [
+    "CAGE-seq",
+    "CAGEr",
+    "cap-trapping"
+   ],
+   "info": "Sharp promoters had interquartile width <10 bp, broad ones >=10 bp. Polysome CAGE was done in biological duplicates, total-lysate CAGE as one replicate. GEO GSE201308.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE-seq and polysomes",
+   "q": "How were TOPscore, PRTE and 5'UTR structure computed?",
+   "a": "TOPscores came from the tss_analyzer script (tss_tools) for mRNAs with more than 500 CAGE reads. PRTEs, defined as 9 C/T with a fixed T at position 6, were counted in CAGE reads and kept if above 10 counts per million. MFE was calculated with the ViennaRNA Python library.",
+   "kw": [
+    "tss_analyzer",
+    "ViennaRNA"
+   ],
+   "info": "Polysome gradients were 10-50% sucrose run for 2 h at 41,000 rpm with 100 ug/ml cycloheximide.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Survival analysis",
+   "q": "How was the human survival analysis done?",
+   "a": "TCGA HNSCC and GTEx data came from UCSC Xena Toil. They fitted a Cox proportional hazards model and compared top vs bottom expression quartiles with Kaplan-Meier curves and log-rank tests, using the R survival and survminer packages.",
+   "kw": [
+    "Kaplan-Meier",
+    "Cox regression",
+    "SUPPA2"
+   ],
+   "info": "Transcript usage came from SUPPA2 psiPerIsoform. Non-diseased esophagus served as the normal comparison because non-diseased pharynx samples were not available.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Rpl21 and Rpl29 reporters",
+   "text": "Why is Rpl21-C insensitive to Torin 1 despite its 5'TOP, while Rpl21-A is insensitive despite a PRTE? The rules linking TOP/PRTE to mTORC1 dependency seem incomplete."
+  },
+  {
+   "type": "note",
+   "section": "Results - Human HNSCC survival",
+   "text": "Check which RPL21 isoforms actually carry TOP vs TOP-like motifs (201/202 vs 204): the text and figure legends are inconsistent. Does the survival link reflect isoform-specific translation or just tumour proliferation?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Worth going back to: CAGE combined with polysome fractionation as a way to get TSS-resolved translational efficiency. It could apply to alternative TSS/promoter switches in other systems such as zebrafish development."
+  }
+ ]
+}

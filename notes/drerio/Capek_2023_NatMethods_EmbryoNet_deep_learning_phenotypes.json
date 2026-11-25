@@ -1,0 +1,622 @@
+{
+ "id": "Capek_2023",
+ "title": "EmbryoNet: using deep learning to link embryonic phenotypes to signaling pathways",
+ "link": "https://doi.org/10.1038/s41592-023-01873-4",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Capek_2023_NatMethods_EmbryoNet_deep_learning_phenotypes.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does EmbryoNet address?",
+   "a": "Classifying embryonic defects to find the responsible signaling pathway needs expert knowledge and the classification schemes are not standardized. EmbryoNet is a deep convolutional neural network that identifies zebrafish signaling mutants automatically and in an unbiased way.",
+   "kw": [
+    "EmbryoNet",
+    "CNN"
+   ],
+   "info": "Combined with a model of time-dependent developmental trajectories it classifies defects from loss of function of the seven major signaling pathways of vertebrate development.",
+   "concl": "Deep learning can link embryonic phenotypes to the underlying signaling pathway with high precision."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What further applications and resources does the paper provide?",
+   "a": "EmbryoNet identifies signaling defects in evolutionarily distant species and, in high-throughput drug screens, resolves the mechanism of action of pharmaceutical substances. The authors freely provide the more than 2 million images used for training and testing.",
+   "kw": [
+    "drug screen",
+    "open data"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which seven signaling pathways shape the zebrafish body plan and what do they do?",
+   "a": "BMP, retinoic acid (RA), Wnt, FGF and Nodal pattern the germ layers and the anterior-posterior and dorsal-ventral axes. Shh and planar cell polarity (PCP) control elongation and morphogenesis of the body axis and later tissue formation.",
+   "kw": [
+    "BMP",
+    "Nodal",
+    "PCP"
+   ],
+   "info": "The ligands activating these pathways are dynamically expressed from specific source tissues in the embryo.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are signaling phenotypes hard to tell apart by eye?",
+   "a": "The defects overlap. Nodal and Shh mutants both show cyclopia, and BMP, Wnt, RA, FGF and PCP mutants all have malformed, shortened tails.",
+   "kw": [
+    "cyclopia"
+   ],
+   "info": "Cyclopia in Nodal mutants comes from an early lack of mesoderm, in Shh mutants from a late midline patterning defect. Wnt mutants additionally have an enlarged head.",
+   "concl": "Even the most experienced developmental biologists can confuse these phenotypes, which motivates automated unbiased phenotyping."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What phenotypes do the individual classes show (Fig. 1b)?",
+   "a": "-BMP: reduced and often curled tails; +RA: no head structures and shortened tails; -Wnt: enlarged heads, shortened tails; -FGF: loss of mesoderm and tail tissue; -Nodal: no mesoderm plus cyclopia; -Shh: mispatterned somites and cyclopia; -PCP: shortened and widened body axis with shorter somites.",
+   "kw": [
+    "phenotype classes"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What were the limits of earlier machine learning work on embryos?",
+   "a": "Previous approaches were limited to staging, segmentation and classification of specific embryos and organs, and could not uncover the molecular basis of the morphological changes.",
+   "kw": [
+    "machine learning"
+   ],
+   "info": "CNNs had already been used for bioimage restoration, cell detection and classification, and image segmentation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - signaling defects in zebrafish embryos",
+   "q": "Why start the proof of concept with Nodal?",
+   "a": "The pathway components and their functions during the first day of zebrafish embryogenesis are well described, and a specific small molecule, SB-505124, targets the ATP-binding pocket of the receptor kinase.",
+   "kw": [
+    "Nodal",
+    "SB-505124"
+   ],
+   "info": "SB-505124 recapitulated the known Nodal loss-of-function phenotype: cyclopia and loss of all endoderm and head-trunk mesoderm.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - signaling defects in zebrafish embryos",
+   "q": "What data and architecture were used for the Nodal proof of concept?",
+   "a": "Bright-field movies of treated and untreated embryos in random orientations, 342,559 images between 2 and 26 hours post-fertilization, used to train a modified ResNet18 CNN that includes an image timestamp.",
+   "kw": [
+    "ResNet18",
+    "timestamp"
+   ],
+   "info": "It identified normal and Nodal-defective embryos independent of orientation and of whether the phenotype came from SB-505124 or from maternal zygotic oep (MZoep) mutants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - signaling defects in zebrafish embryos",
+   "q": "How was the full seven-pathway training set built and labeled?",
+   "a": "A chemical genetics approach with specific pathway modulators produced more than 2 million images of loss-of-function phenotypes (gain of function for RA). Curators who knew each treatment assigned the class at the timepoint when the phenotype first became apparent.",
+   "kw": [
+    "chemical genetics",
+    "annotation"
+   ],
+   "info": "Classes: Normal, -BMP, +RA, -Wnt, -FGF, -Nodal, -Shh, -PCP, plus Unknown (image lacks information to classify) and Dead (embryo disintegrated). Each image also carried a timestamp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - signaling defects in zebrafish embryos",
+   "q": "What is the model transition logic and what did it achieve?",
+   "a": "Rules from developmental knowledge: early embryos are Unknown and can transition to a phenotype class or to Dead at any time, while impossible transitions such as Dead to Normal are penalized. A cost is assigned to every transition in a track and the lowest-cost sequence is chosen.",
+   "kw": [
+    "transition logic",
+    "tracking"
+   ],
+   "info": "This approach yielded a classification performance of 89%.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - signaling defects in zebrafish embryos",
+   "q": "Does EmbryoNet recognize phenotypes produced by other means than the training inhibitors?",
+   "a": "Yes. It robustly classified Nodal and BMP loss of function caused by injected mRNAs for the inhibitors Lefty1 and Chordin and by mutants, also in mixed populations of embryos.",
+   "kw": [
+    "lefty1",
+    "chordin",
+    "MZoep"
+   ],
+   "info": "Extended Data Fig. 1: -Nodal accuracy 98% (SB-505124, n=33), 99% (lefty1 mRNA, n=27), 98% (MZoep, n=27); -BMP 96% (LDN-193189, n=45), 85% (chordin mRNA, n=26), 100% (swirl mutant, n=13). In the mixed experiment (n=85) the calls matched the dextran color labels.",
+   "concl": "The classification does not depend on how the pathway was disrupted."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EmbryoNet is proficient, fast and accurate",
+   "q": "How was EmbryoNet benchmarked against humans?",
+   "a": "With stacks of 98 embryo images covering the full spectrum of phenotype classes, none of which had been used for training, and with the treatments hidden from the assessors.",
+   "kw": [
+    "benchmark"
+   ],
+   "info": "Random guessing gave 9% accuracy (F-score 0.09), generated with the MATLAB R2022a function randi.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - EmbryoNet is proficient, fast and accurate",
+   "q": "How did non-experts, an expert and EmbryoNet compare on the 98 images?",
+   "a": "55 non-expert teams of two reached 53% accuracy (F 0.52) without and 54% (F 0.52) with time information. An experienced developmental biologist reached 79% (F 0.78). EmbryoNet reached 91% (F 0.90) within a few seconds.",
+   "kw": [
+    "human vs AI",
+    "F-score"
+   ],
+   "info": "Non-experts had 1 day of developmental biology training and confidently recognized only the class Dead. 31 teams worked without and 24 with time information.",
+   "concl": "EmbryoNet outperformed both expert and non-expert human assessors."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EmbryoNet is proficient, fast and accurate",
+   "q": "Did context from time series help the human experts?",
+   "a": "Only slightly: two experts who knew that all embryos in a movie had the same treatment reached 83% accuracy (F 0.84), while EmbryoNet reached 90% (F 0.90).",
+   "kw": [
+    "time-lapse"
+   ],
+   "info": "The gap was largest for the subtlest phenotypes: -PCP F-score 0.54 for EmbryoNet vs 0.04 for humans, -Shh 0.72 vs 0.36.",
+   "concl": "EmbryoNet is particularly strong on the difficult -Shh and -PCP classes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EmbryoNet is proficient, fast and accurate",
+   "q": "Can EmbryoNet handle phenotypes that are not fully penetrant?",
+   "a": "Yes, it accurately identified weaker BMP and Nodal defects produced by lower inhibitor doses, although its performance was lower on mild than on severe phenotypes, especially for Nodal.",
+   "kw": [
+    "penetrance",
+    "LDN-193189"
+   ],
+   "info": "Extended Data Fig. 5: a second human labeler was also inconsistent with the accepted ground truth on mild phenotypes. EmbryoNet-Prime was better on weak Nodal but worse on -BMP and on average.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - EmbryoNet is proficient, fast and accurate",
+   "q": "What is EmbryoNet-Prime?",
+   "a": "EmbryoNet retrained with each treatment class label shifted 4 hours earlier than the timepoint where a human annotator could see the phenotype. It identified Nodal loss of function at the beginning of gastrulation with 90% accuracy (F-score 0.93).",
+   "kw": [
+    "EmbryoNet-Prime",
+    "early detection"
+   ],
+   "info": "It detected -BMP, +RA, -Wnt, -Shh and -PCP on average 2 to 3 hours earlier than humans, consistent with the known expression and activation profiles of the signaling molecules.",
+   "concl": "Artificial intelligence can detect embryonic defects hours before human experts can."
+  },
+  {
+   "type": "qa",
+   "section": "Results - known and latent defect features",
+   "q": "What is a class activation map (CAM) and why was it used?",
+   "a": "A CAM projects the probability of the trained classes onto the input image, localizing the discriminative regions without extra annotation. Positive domains support a class, negative domains oppose it.",
+   "kw": [
+    "CAM",
+    "interpretability"
+   ],
+   "info": "Used to ask which features allow EmbryoNet-Prime to classify earlier than humans.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - known and latent defect features",
+   "q": "How did the authors validate that CAMs reflect the network's decisions?",
+   "a": "By following sudden classification switches: when BMP-inhibited embryos disintegrate, the CAM in the -BMP channel turns negative at once while the Dead channel becomes positively activated.",
+   "kw": [
+    "CAM",
+    "-BMP"
+   ],
+   "info": "",
+   "concl": "CAM visualization gives insight into the logic of phenotype classification."
+  },
+  {
+   "type": "qa",
+   "section": "Results - known and latent defect features",
+   "q": "Which features drove early -Wnt classification?",
+   "a": "At late stages the network was activated in the tail bud and head, the known defect regions at 24 hpf. During early segmentation the whole body axis was already activated, and head and tail defects were picked up as early as bud stage.",
+   "kw": [
+    "Wnt"
+   ],
+   "info": "This is why -Wnt embryos were detected earlier by EmbryoNet-Prime than by human assessors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - known and latent defect features",
+   "q": "What latent features allowed early -Nodal classification?",
+   "a": "At around 6 hpf detection started with activation at the margin and continued with activation spots at the border between yolk and blastoderm, directly next to the embryo proper. Late-stage calls relied on defects in ectodermal thickening and in head, tail and trunk.",
+   "kw": [
+    "Nodal",
+    "margin"
+   ],
+   "info": "The regions fit known sites of Nodal expression and activity, but the authors say it remains to be determined how these molecular signatures manifest as latent cellular and morphological features.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - drug screen",
+   "q": "How was the drug screen done?",
+   "a": "About 1,000 FDA-approved and bioactive compounds were screened in 96-well plates with several zebrafish embryos per well, spanning 2 to 26 hpf, with automatic classification by EmbryoNet.",
+   "kw": [
+    "drug screen",
+    "phenomics"
+   ],
+   "info": "The Results state four to five embryos per well and the Methods three to five. Manual assessment of such screens is limited by the number of images, ambiguity of defects and variability between assessors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - drug screen",
+   "q": "Did the screen recover compounds with known effects?",
+   "a": "Yes. Known viability modulators were classified as Dead while mock-treated embryos were Normal, and the RA agonists all-trans-retinoic acid and TTNPB were correctly detected as +RA.",
+   "kw": [
+    "controls",
+    "TTNPB"
+   ],
+   "info": "Viability modulators tested: aphidicolin, bafilomycin A1, blebbistatin, brefeldin A, cycloheximide, cytochalasin B, latrunculin B, staurosporin, trichostatin A, tunicamycin and vinblastine.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - drug screen",
+   "q": "What new signaling effect did the screen uncover?",
+   "a": "Several statins (HMG-CoA reductase inhibitors), including simvastatin, atorvastatin and lovastatin, were classified as -FGF.",
+   "kw": [
+    "statins",
+    "FGF"
+   ],
+   "info": "Simvastatin in well H-02 of BML-2843 plate 2 was the classified example shown in Fig. 4b.",
+   "concl": "EmbryoNet can link compounds to signaling pathways that were not previously associated with them."
+  },
+  {
+   "type": "qa",
+   "section": "Results - drug screen",
+   "q": "How was the -FGF call for statins validated?",
+   "a": "Statin-treated embryos showed dorsal-ventral patterning defects and loss of posterior tissues typical of -FGF embryos, and the activity of the FGF signal transducer pErk was reduced compared with untreated embryos.",
+   "kw": [
+    "pErk",
+    "statins"
+   ],
+   "info": "The authors suggest this could be due to dampened isoprenylation of the upstream small GTPase Ras.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - drug screen",
+   "q": "What is the clinical relevance of the statin finding?",
+   "a": "Lovastatin is not recommended during pregnancy and lactation, and simvastatin is recommended as a substitute, yet EmbryoNet detected the same defects with simvastatin.",
+   "kw": [
+    "teratogenicity"
+   ],
+   "info": "The authors caution that the bioavailability in zebrafish compared with human cells is currently unclear.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - generalization to other species",
+   "q": "Which other species were tested and how were conditions adapted?",
+   "a": "Medaka (Oryzias latipes) and three-spined stickleback (Gasterosteus aculeatus), which diverged from zebrafish hundreds of millions of years ago. Imaging length was adapted to their slower development, and temperature, embryos per well and drug concentration were adjusted.",
+   "kw": [
+    "medaka",
+    "stickleback"
+   ],
+   "info": "Medaka and stickleback eggs have large lipid droplets and more yolk relative to the embryo, and medaka eggs have adhesive filaments, so embryos had to be imaged until late segmentation stages.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - generalization to other species",
+   "q": "What were the cross-species results?",
+   "a": "In both species wild types had well-formed somites and eyes, while Nodal-inhibited embryos lost somites and had severe central nervous system defects and frequent cyclopia. After training on these datasets EmbryoNet robustly identified wild-type and Nodal-inhibited individuals.",
+   "kw": [
+    "Nodal"
+   ],
+   "info": "Confusion matrices: medaka Normal 1.00, Nodal 0.97 (n=39 and n=35); stickleback Normal 1.00, Nodal 0.94 (n=4 and n=4).",
+   "concl": "The approach generalizes to signaling-based phenotypic defects in evolutionarily distant species."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryo preparation",
+   "q": "How were the zebrafish embryos handled?",
+   "a": "TE strain embryos were collected within 1 hour of fertilization at the 2- to 8-cell stage, and 10 to 20 embryos were placed per well of a 24- or 48-well plate in 1 ml embryo medium, then treated with the small-molecule modulators.",
+   "kw": [
+    "TE strain"
+   ],
+   "info": "All zebrafish embryos were between 0 and 48 hpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryo preparation",
+   "q": "How were PCP and Shh phenotypes made, and which injections were used for Nodal and BMP?",
+   "a": "PCP: 1 ng vangl2-targeting morpholino at the one-cell stage. Shh: cyclopamine incubation or gli3R-GFP mRNA injection. Nodal: 10 pg lefty1 mRNA with Alexa647-dextran. BMP: 75 pg chordin mRNA with Alexa488-dextran.",
+   "kw": [
+    "vangl2",
+    "cyclopamine",
+    "gli3R"
+   ],
+   "info": "0.1 ng of 10 kDa dextran was co-injected as a label. Phenotypes were validated with swirl homozygous mutants and maternal zygotic oep mutants.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryo preparation",
+   "q": "What were the conditions for medaka and stickleback?",
+   "a": "Medaka (Cab strain) at 28 C, antagonists at 7.5 micromolar from early blastula, imaged 8 to 45 hpf every 5 min, about 500 embryos. Stickleback (Little Campbell River and Tyne River strains) at 16 C, antagonists at 15 micromolar, imaged 120 h every 5 min at 15-18 C, about 200 embryos.",
+   "kw": [
+    "medaka",
+    "stickleback"
+   ],
+   "info": "Stickleback embryos came from in vitro fertilization and covered 0 to 140 hpf; medaka 0 to 48 hpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - image acquisition",
+   "q": "How were the images acquired?",
+   "a": "On an ACQUIFER Imaging Machine with white LED bright-field and a 2,048 x 2,048 sCMOS camera, 2x objective (NA 0.06), 110 ms exposure at 100% LED, 28 C, 720 iterations at 120 s intervals.",
+   "kw": [
+    "ACQUIFER"
+   ],
+   "info": "Images were stored as 12-bit TIFF, 2,048 x 2,048 pixels, 0.31 pixels per micrometer, then converted to JPEG or PNG. Imaging Machine software v4.00.21.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - image acquisition",
+   "q": "How did they show the method is not tied to one microscope?",
+   "a": "A second microscope, the Keyence BZ-X810 (2x apochromat objective, 3.7 W LED, BZ-X800 viewer v01.03.00.01), was also used, with 0.1 ms exposure at 50% intensity and 8-bit JPEG images of 1,920 x 1,440 pixels.",
+   "kw": [
+    "Keyence BZ-X810"
+   ],
+   "info": "Extended Data Fig. 4d,e shows performance of EmbryoNet and EmbryoNet-Prime separately for each microscope's test data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - detection and tracking",
+   "q": "How are individual embryos found and followed over time?",
+   "a": "Embryos are detected per frame with a standard Hough-transform object detection that returns bounding boxes as JSON files, and the detections are linked across consecutive frames with the DeepSort algorithm without re-identification.",
+   "kw": [
+    "Hough transform",
+    "DeepSort"
+   ],
+   "info": "The radius range in pixels is set per experiment from the acquisition parameters. The Hough detector can be swapped for other methods such as watershed segmentation to handle non-spherical species like Drosophila.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - manual labeling",
+   "q": "How were the training labels assigned and how many classes were there?",
+   "a": "All embryos started as Unknown and each track was annotated with its phenotypic class from the timepoint the phenotype was visible to an experienced annotator; disintegrating embryos were labeled Dead. Altogether 14 classes were used.",
+   "kw": [
+    "FishLabeler",
+    "14 classes"
+   ],
+   "info": "Labeling used the GUI FishLabeler; 90% of images were used for training and 10% for validation, with an independent annotated test set. Partially visible or unspecific embryos were labeled Cut and excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - manual labeling",
+   "q": "How were severity levels defined for -BMP and -Nodal?",
+   "a": "Three levels: weak about 30%, intermediate about 60% and severe about 100% phenotype severity. For Nodal the bins came from the inhibitor concentration, with 100% being the lowest concentration giving full penetrance; for BMP the classes C3, C4 and C5 of a previous scheme corresponded to 30%, 60% and 100%.",
+   "kw": [
+    "severity bins"
+   ],
+   "info": "Using drug concentration as ground truth accepts a certain spread of actual phenotypes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - manual labeling",
+   "q": "How was EmbryoNet-Prime's training data generated?",
+   "a": "The original annotations were used to find the timepoint when most embryos were correctly classified, and the class was then assigned 120 frames (4 h) earlier, when the phenotype could not be identified by eye. Cut and Dead labels were left unchanged.",
+   "kw": [
+    "EmbryoNet-Prime"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model training",
+   "q": "What are the network inputs?",
+   "a": "Four channels of 224 x 224 pixels: three standard RGB image channels plus a timestamp channel giving the time since the start of the experiment, linearly mapped to [0, 1] with 0 about 2 hpf and 1 about 26 hpf.",
+   "kw": [
+    "timestamp channel"
+   ],
+   "info": "The time input was added because embryo images alone can be confused between phenotypes that look similar at different developmental stages. Time was also fed into the last fully connected layer.",
+   "concl": "Developmental time is used as an explicit second input, not just image content."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model training",
+   "q": "How was ResNet18 modified and how was class imbalance handled?",
+   "a": "ResNet18 was chosen for its easy and fast convergence; it was modified to take four instead of three input channels and its last classification layer was replaced. The overrepresented class Unknown was undersampled and the 13 remaining classes were replicated.",
+   "kw": [
+    "ResNet18",
+    "class imbalance"
+   ],
+   "info": "Weights were updated by back-propagation while the architecture stayed fixed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model training",
+   "q": "Which optimizer, loss and augmentations were used?",
+   "a": "The Adam optimizer with softmax cross-entropy loss, L = -1/n sum ln p_i. Augmentations from the Albumentations library included random horizontal and vertical flips, rotations from 1 to 90 degrees in 1 degree steps, crops and salt-and-pepper noise.",
+   "kw": [
+    "Adam",
+    "Albumentations",
+    "cross-entropy"
+   ],
+   "info": "During training one random augmentation per group was picked and applied to the input image.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model training",
+   "q": "Why and how was progressive training used?",
+   "a": "The CNN did not converge when all datasets and augmentations were used from the start, so training was split into sequential steps that progressively added data and augmentations. Eight steps with 10 to 20 epochs each gave 152 epochs in total.",
+   "kw": [
+    "progressive training"
+   ],
+   "info": "Initial learning rate 10^-3, decayed by a factor of 0.1 after each epoch and restored to 10^-3 at the beginning of each iteration; batch size n = 350; trained on an NVIDIA RTX 3090 under Ubuntu 20.04.4 LTS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model training",
+   "q": "How is rotation and mirror invariance exploited at prediction time?",
+   "a": "Each detected embryo is run through the trained network eight times (original, horizontal flip, vertical flip, diagonal mirror, and each of these rotated by 90 degrees), the class probabilities are averaged, and the embryo is assigned the class with the highest probability.",
+   "kw": [
+    "test-time augmentation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model transition logic",
+   "q": "Which transitions are allowed in a track, and how are severity calls corrected?",
+   "a": "Only Unknown to a phenotype class, phenotype class to Dead, and Unknown to Dead; any other transition is penalized. Nodal and BMP severity is corrected by taking the severity class seen most often over the time course.",
+   "kw": [
+    "transition logic"
+   ],
+   "info": "Model quality is scored by the number of frames between transition points that match the expected class, the least-cost sequence is taken as correct, and outliers are ignored in the track history.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model transition logic",
+   "q": "What was special about the medaka training, and what did it show?",
+   "a": "Semi-supervised training was used: a transition point from which phenotypes were easy to tell apart was set and applied automatically to all training data. Because medaka experiments started at blastula rather than cleavage stages, the transition point was timepoint 1 and the Unknown class was not used at all.",
+   "kw": [
+    "medaka",
+    "semi-supervised"
+   ],
+   "info": "Medaka embryos disintegrated if treated with Nodal inhibitor before blastula stages. Leaving out Unknown did not reduce training or classification efficiency.",
+   "concl": "An Unknown state for early stages is not unconditionally required."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - evaluation",
+   "q": "Which performance metrics were used?",
+   "a": "Subset accuracy, the fraction of images classified correctly, and the F-score, 2 x precision x recall / (precision + recall).",
+   "kw": [
+    "accuracy",
+    "F-score"
+   ],
+   "info": "The class Unknown was left out of the confusion matrices but was included in the overall accuracy and F-score; the numbers including Unknown are in the supplementary tables.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAMs",
+   "q": "How were the CAMs computed and displayed?",
+   "a": "The weights of the final output layer in a fully connected layer were projected using global max pooling, CAMs were computed for all classes and normalized so the minimum and maximum across classes were -1 and +1.",
+   "kw": [
+    "CAM"
+   ],
+   "info": "Values were remapped as sign(V) x sqrt(V) to emphasize strongly positive or negative regions, then mapped to 8-bit and shown with the jet colormap.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - drug screening",
+   "q": "Which libraries were screened and how were the plates set up?",
+   "a": "The Screen-Well ICCB Known Bioactives library BML-2840 and the FDA-approved drug library BML-2843. Compounds were diluted 1:25 in PBS, and 15 microlitres were added to wells holding three to five embryos in 135 microlitres of embryo medium.",
+   "kw": [
+    "BML-2840",
+    "BML-2843"
+   ],
+   "info": "Plates were imaged on the ACQUIFER machine with intervals of 135 to 192 s; images were sorted per well and classified with the custom FishClassifier software, with detections stored as JSON and summarized in Excel. The majority phenotype of a well is the class with the most embryo images.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - statin retest",
+   "q": "How were the statin hits retested and pErk measured?",
+   "a": "Embryos were treated from 1.5-2 hpf with 20 micromolar simvastatin, 40 micromolar atorvastatin or 0.4 micromolar lovastatin at 28 C, imaged live at 28 hpf, and fixed at shield stage for anti-pERK immunostaining (1:5,000) with Cy3-TSA amplification and DRAQ7 nuclear staining.",
+   "kw": [
+    "pErk",
+    "immunostaining"
+   ],
+   "info": "Stained embryos were imaged on a ZEISS Lightsheet Z.1 (10x objective, 0.9 zoom, 5 micrometre z-steps). Intensity profiles from the margin to the animal pole were taken from maximum intensity projections of 75 slices in Fiji, with background subtracted in MATLAB 2022a; embryos with tilted dorsal-ventral axes were excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is a phenome and why does phenomics need machine learning?",
+   "a": "The phenome is the entire set of phenotypes of an organism over time, and phenomics connects phenotypes with genotypes and environmental influences. It requires processing large amounts of high-dimensional data, which makes computer vision and machine learning promising.",
+   "kw": [
+    "phenomics"
+   ],
+   "info": "Such approaches are already increasingly used in plant and crop phenomics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the main claims the authors make for EmbryoNet?",
+   "a": "It outcompeted human assessors in speed, accuracy and sensitivity, linked zebrafish phenotypes to major signaling pathways including incompletely penetrant ones, could be retrained for species separated from zebrafish by hundreds of millions of years, and correctly associated compounds with signaling functions in a proof-of-concept screen.",
+   "kw": [
+    "EmbryoNet"
+   ],
+   "info": "The authors suggest it can speed up characterization of developmental mutants in multiple species and support drug repurposing.",
+   "concl": "Automated phenotyping links morphology to signaling pathways across species and compounds."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors list?",
+   "a": "It is uncertain whether EmbryoNet can beat humans on very mild phenotypes, for example from low drug concentrations, and its reliance on a library of manual annotations limits classification of novel phenotypes, especially those from combinatorial disruption of several pathways.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "They expect rapid progress in deep learning to help address these limits and eventually help bridge the genotype-phenotype gap.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Where are the code and data available?",
+   "a": "EmbryoNet is open source with Python packages, a GitHub repository and GUIs for labeling and classification at github.com/mueller-lab/EmbryoNet, and training, testing and drug screen imaging data are provided at embryonet.uni-konstanz.de.",
+   "kw": [
+    "open source"
+   ],
+   "info": "Code is archived at zenodo 10.5281/zenodo.7531593; datasets have DOIs under 10.48606. The modular design should allow adaptation to other species and to organoids.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - known and latent defect features",
+   "text": "The early -Nodal activation at the margin and at the yolk-blastoderm border is said to fit known Nodal expression domains, but what the network actually sees there in cellular or morphological terms is unresolved - could be worth checking the CAM videos (Supplementary Videos 19-20)."
+  },
+  {
+   "type": "note",
+   "section": "Methods - detection and tracking",
+   "text": "Detection uses a Hough transform assuming round embryos; the authors say it can be swapped for watershed for non-spherical species. Relevant if one wanted to apply this pipeline to Astyanax embryos."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "The annotation-dependence limit means novel or combinatorial phenotypes cannot be classified - an interesting direction would be unsupervised or self-supervised phenotype discovery rather than fixed classes."
+  }
+ ]
+}

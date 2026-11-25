@@ -1,0 +1,672 @@
+{
+ "id": "Agarwal_2025",
+ "title": "Massively parallel characterization of transcriptional regulatory elements",
+ "link": "https://doi.org/10.1038/s41586-024-08430-9",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Agarwal_2025_Nature_MPRA_regulatory_elements.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What problem does this paper tackle?",
+   "a": "The human genome contains millions of candidate cis-regulatory elements (cCREs) with cell-type-specific activity, but we lack a functional understanding of the sequence features that control their activity and cell-type specificity.",
+   "kw": [
+    "cCRE",
+    "lentiMPRA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How many sequences did they test and how many were active?",
+   "a": "They used lentivirus-based massively parallel reporter assays (lentiMPRAs) to test more than 680,000 sequences representing annotated cCREs in three cell types (HepG2, K562, WTC11), and 41.7% of these sequences were active.",
+   "kw": [
+    "lentiMPRA",
+    "HepG2",
+    "K562"
+   ],
+   "info": "Sequences were tested in both orientations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the headline difference between promoters and enhancers found here?",
+   "a": "Promoters have strand-orientation biases and their 200-nucleotide cores act as non-cell-type-specific 'on switches' giving expression similar to their associated gene; enhancers have weaker orientation biases but more tissue-specific characteristics.",
+   "kw": [
+    "promoter",
+    "enhancer",
+    "orientation"
+   ],
+   "info": "",
+   "concl": "Enhancers carry the cell-type specificity, core promoters act more like universal switches."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are genome-scale biochemical catalogues (open chromatin, ChIP-seq, histone marks) not enough?",
+   "a": "They are overwhelmingly descriptive and cannot confirm that any given cCRE is actually functional, even though they discovered millions of cCREs.",
+   "kw": [
+    "ENCODE"
+   ],
+   "info": "This also limits the training of machine learning tools that could predict tissue-specific CRE activity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is an MPRA and what does STARR-seq add?",
+   "a": "Massively parallel reporter assays test thousands of sequences or variants for regulatory activity in a multiplex fashion; STARR-seq (self-transcribing active regulatory region sequencing) is a derivative assay used for the same purpose in human cells.",
+   "kw": [
+    "MPRA",
+    "STARR-seq"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use lentiMPRA instead of transient transfection assays?",
+   "a": "Transient assays give an episomal ('out of genome') readout and are limited to easily transfectable cells; lentiMPRA integrates into the genome, giving an 'in genome' readout, and works in hard-to-transfect cells like neurons or organoids.",
+   "kw": [
+    "lentiMPRA",
+    "episomal"
+   ],
+   "info": "Because lentiviral integrations are random, lentiMPRA measures the effect of a cCRE averaged across different genomic locations. It correlates better with ENCODE annotations and gives higher cell-type specificity predictions than episomal MPRA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the main limitation of lentiMPRA that this work addresses?",
+   "a": "The number of sequences or variants that could be tested in a single experiment; here they scaled it to more than 200,000 sequences per experiment.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - optimization of lentiMPRA",
+   "q": "What was changed in the lentiMPRA protocol to scale it up?",
+   "a": "Random barcodes were added to the assayed sequences during the library amplification step together with the minimal promoter, and element-barcode associations were then reconstructed by sequencing and analysed with MPRAflow.",
+   "kw": [
+    "MPRAflow",
+    "barcode"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - optimization of lentiMPRA",
+   "q": "How is an element activity score defined?",
+   "a": "As the log2-transformed normalized count of RNA molecules from all barcodes for that element divided by the normalized number of DNA molecules from the same barcodes, i.e. log2(RNA/DNA).",
+   "kw": [
+    "activity score"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - optimization of lentiMPRA",
+   "q": "What did the two pilot libraries contain?",
+   "a": "A HepG2 pilot of 9,372 elements (9,172 cCREs centred on DNase hypersensitivity peaks not overlapping promoters, plus synthetic and natural positive/negative controls) and a K562 pilot of 7,500 elements (6,394 cCREs plus CRISPRi-derived, shuffled and locus-specific controls).",
+   "kw": [
+    "DNase",
+    "CRISPRi"
+   ],
+   "info": "DNase accessibility centred on the peak midpoint was the main selection criterion for cCREs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - optimization of lentiMPRA",
+   "q": "How reproducible were the pilot libraries?",
+   "a": "There were 50-250 median barcodes per element per replicate and activity scores correlated across replicates with Pearson r of 0.88-0.96.",
+   "kw": [],
+   "info": "Positive and negative controls separated strongly, except for CRISPRi-derived controls, which were still able to activate transcription outside their epigenetic context.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - optimization of lentiMPRA",
+   "q": "What fraction of pilot cCREs was active?",
+   "a": "In HepG2, 2,740 of 8,960 (30.6%) cCREs were more active than negative synthetic controls; in K562, 3,703 of 6,315 (58.6%) were more active than shuffled negative controls (5% FDR).",
+   "kw": [
+    "FDR"
+   ],
+   "info": "The authors warn these proportions should not be compared directly between cell types because different negative control sets were used (shuffled vs synthetic).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE characterization with lentiMPRA",
+   "q": "What did the three large-scale libraries contain?",
+   "a": "164,307 elements in HepG2 (all 19,104 promoters plus 66,017 potential enhancers), 243,780 in K562 (all promoters, 87,618 potential enhancers, 14,918 heterochromatic tiles) and 75,542 in WTC11 (7,500 promoters and 30,121 of 83,201 potential enhancers).",
+   "kw": [
+    "promoter",
+    "potential enhancer"
+   ],
+   "info": "WTC11 was reduced because of lower transduction efficiency. Potential enhancers were DNase peaks not near a promoter; elements were 200 nt and tested in both orientations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE characterization with lentiMPRA",
+   "q": "Why were heterochromatic regions included in the K562 library?",
+   "a": "To interrogate whether open chromatin is required for transcriptional activation; 14,918 regions were taken from 1 Mb either side of GATA1, MYC, HBE1, LMO2, RBM38, HBA2 and BCL11A.",
+   "kw": [
+    "heterochromatin",
+    "GATA1",
+    "BCL11A"
+   ],
+   "info": "These are known human disease-associated and erythroid lineage genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE characterization with lentiMPRA",
+   "q": "How reproducible were the large-scale libraries?",
+   "a": "20-50 median barcodes per element per replicate, with inter-replicate Pearson correlations of 0.94 (HepG2), 0.76 (K562) and 0.76 (WTC11).",
+   "kw": [],
+   "info": "Lower than the pilots because of the trade-off between library size and per-element sequencing depth. Downsampling to 90% of barcodes still gave near-perfect Spearman correlation with the full data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE characterization with lentiMPRA",
+   "q": "What proportion of promoters and enhancers were functional?",
+   "a": "More than 50% of promoters were active (HepG2 11,367/20,816 = 54.6%; K562 15,362/29,376 = 52.3%; WTC11 5,038/9,964 = 50.6%), and up to 42% of potential enhancers (HepG2 42.8%, K562 41.3%, WTC11 25.8%), all at 5% FDR.",
+   "kw": [
+    "FDR"
+   ],
+   "info": "Shuffled controls were the background set and both orientations of the cCREs were the foreground set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE characterization with lentiMPRA",
+   "q": "How did the activity distributions of promoters and enhancers differ?",
+   "a": "Promoters had higher average activity and a bimodal distribution, probably because inactive promoters show little to no activity, whereas potential enhancers had a right-skewed distribution in all cell types.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cCRE characterization with lentiMPRA",
+   "q": "Did MPRA activity predict CRISPRi enhancer-promoter results?",
+   "a": "The highest-activity bins had nearly a twofold increase in the proportion of validated enhancers relative to low-activity bins, but adding MPRA scores to activity-by-contact (ABC) scores only subtly improved discrimination of significant enhancer-promoter interactions in two of three studies.",
+   "kw": [
+    "CRISPRi",
+    "ABC model"
+   ],
+   "info": "The authors suggest H3K27ac in the ABC model already integrates local and distal information, which may overshadow an element's local activity alone.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter properties and orientation effect",
+   "q": "How orientation-dependent are cCREs?",
+   "a": "cCREs cloned in the same orientation correlated about 0.2 better across replicate pairs than cCREs cloned in opposite orientations, so activities are largely but not entirely independent of orientation.",
+   "kw": [
+    "strand asymmetry"
+   ],
+   "info": "Strand asymmetry was defined as the absolute deviation between activity scores in one orientation versus the other.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter properties and orientation effect",
+   "q": "Do promoters or enhancers show stronger strand asymmetry?",
+   "a": "Promoters displayed slightly stronger strand asymmetry than potential enhancers in all three cell types, consistent with them containing TFBSs that promote transcription unidirectionally.",
+   "kw": [
+    "TFBS"
+   ],
+   "info": "P values for the difference were 0.04 (HepG2), <2.2e-16 (K562) and 1.2e-7 (WTC11).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter properties and orientation effect",
+   "q": "How well does a 200-bp promoter core predict endogenous expression?",
+   "a": "The 200-bp core centred at the TSS recapitulated endogenous gene expression with Pearson r of about 0.55; removing non-expressed genes lowered this to about 0.43.",
+   "kw": [
+    "TSS"
+   ],
+   "info": "The on/off bimodal distribution of promoter states slightly inflated the correlation. Sense-oriented promoters correlated better with expression than antisense.",
+   "concl": "Short core promoters are information dense and strongly predict gene expression levels."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter properties and orientation effect",
+   "q": "Why did WTC11 have many expressed genes with inactive promoters in the MPRA?",
+   "a": "Largely because of alternative promoter use in WTC11; CAGE-seq signal at the precise promoters tested agreed with MPRA activity similarly in all three cell types (Pearson r about 0.60).",
+   "kw": [
+    "CAGE-seq",
+    "alternative promoter"
+   ],
+   "info": "Processed CAGE-seq was not available for WTC11, so H1-ESCs were used as a transcriptionally similar stem cell line.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter properties and orientation effect",
+   "q": "Do core promoters explain cell-type-specific expression?",
+   "a": "No. Deviations of promoter activity from the mean across cell types correlated with deviations in endogenous expression at Pearson r of 0.11 or less in all cell types.",
+   "kw": [],
+   "info": "The authors argue enhancers, super-enhancers and polycomb targeting are more likely to explain cell-type deviations from core promoter activity.",
+   "concl": "Core promoters have weak orientation dependence and little cell-type specificity on their own."
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter properties and orientation effect",
+   "q": "Which motifs were enriched in high- versus low-activity promoters and enhancers?",
+   "a": "Active promoters were enriched for CpG-rich motifs and ETV/ETS-related, KLF-related, NFYA/B/C and THAP11 sites; high-activity enhancers were enriched for cell-type-specific factors such as HNF1B, HNF4A, GATA1/2/6 and POU5F1-SOX2, with CTCF as a general repressive factor.",
+   "kw": [
+    "HOCOMOCO",
+    "CTCF",
+    "NFY"
+   ],
+   "info": "Two complementary analyses were used: motif enrichment with HOCOMOCO v.12 in the top 1,000 versus bottom 1,000 elements, and de novo motif discovery with STREME.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequence-based models predict activity",
+   "q": "What was the biochemical baseline model and how did it perform?",
+   "a": "A lasso regression on thousands of ENCODE biochemical features (ChIP-seq, DNase-seq, ATAC-seq) from the three cell types predicted enhancer activity at Pearson r of about 0.72 under tenfold cross-validation.",
+   "kw": [
+    "lasso",
+    "biochemical model"
+   ],
+   "info": "Merging features from all cell types into a 'universal' feature set only weakly improved performance.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequence-based models predict activity",
+   "q": "Which four sequence-based models were benchmarked?",
+   "a": "MPRAnn (a standard CNN), MPRALegNet (a CNN based on the LegNet architecture with EfficientNetV2-like convolutional blocks), EnformerMPRA (lasso on 5,313 Enformer-predicted features) and SeiMPRA (lasso on 21,907 Sei-predicted features).",
+   "kw": [
+    "MPRALegNet",
+    "Enformer",
+    "Sei"
+   ],
+   "info": "All sequence-based models outperformed the biochemical model on the same ten held-out folds; MPRALegNet was best in two of three cell types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequence-based models predict activity",
+   "q": "Why do the authors caution about EnformerMPRA and SeiMPRA performance?",
+   "a": "Their feature sets are more than eightfold larger than the biochemical models and were trained on extra cell types and marks, and because they were trained on nearly the whole genome they may have already seen biochemical marks of test-set elements.",
+   "kw": [],
+   "info": "Sequence models probably beat biochemical models because they see the precise 200-bp sequence, while biochemical signals lack that spatial resolution.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequence-based models predict activity",
+   "q": "How accurate was MPRALegNet overall?",
+   "a": "Combining folds, it reached Pearson r of about 0.83 (0.83 HepG2, 0.87 K562, 0.79 WTC11), comparable to the technical noise of the assay itself.",
+   "kw": [
+    "MPRALegNet"
+   ],
+   "info": "Downsampling showed log-linear improvement with training set size, so the model would still benefit from more training data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequence-based models predict activity",
+   "q": "Which motifs did MPRALegNet learn?",
+   "a": "In silico mutagenesis plus TF-MoDISco-lite recovered housekeeping activators (NRF1, USF1/2, TFEB/TFE3, JUN and FOS-related, KLF/SP, C/EBP, ETS) and the repressor REST; the top three activating TFBSs across cell types were KLF-related, ETS-related and CTCF.",
+   "kw": [
+    "TF-MoDISco",
+    "REST",
+    "NRF1"
+   ],
+   "info": "The top cell-type-specific TFBSs were HNF4A/G in HepG2, the GATA-TAL1 dimer in K562 and the POU5F1-SOX2 composite element in WTC11. CTCF was linked to both activation and repression, suggesting context dependence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - sequence-based models predict activity",
+   "q": "How were the implicated transcription factors validated?",
+   "a": "Using an MPRA dataset in which elements were tested under CRISPR-inhibition knockdown of transcription factors in K562; GATA1, NRF1, SP1 and FOSL1 were validated, while STAT1 and ATF4 had insufficient evidence.",
+   "kw": [
+    "CRISPRi",
+    "GATA1"
+   ],
+   "info": "Possibly due to limited knockdown efficiency or compensation by other family members.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MPRALegNet predicts TFBS combinations",
+   "q": "What happens when the same TFBS is present in multiple copies?",
+   "a": "MPRALegNet accurately predicted activity for elements with one to five copies of a given TFBS, and most transcription factors behaved close to multiplicatively (log-additive) with respect to dosage.",
+   "kw": [
+    "homotypic TFBS"
+   ],
+   "info": "STAT (K562) and ETS-related (WTC11) families showed sub-multiplicative saturation at the highest dosages; STAT showed a super-multiplicative (cooperative) jump from one to two sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MPRALegNet predicts TFBS combinations",
+   "q": "How were interactions between different TFBSs measured?",
+   "a": "By fitting a regression with an interaction term (TF1 x TF2) on elements carrying one site of either factor or one site of each; a positive coefficient means super-multiplicative and a negative one sub-multiplicative.",
+   "kw": [
+    "heterotypic TFBS",
+    "interaction term"
+   ],
+   "info": "Interaction coefficients from predictions and observations correlated at r = 0.92 in HepG2 (0.86 in another panel), 0.92 in K562 and 0.65 in WTC11.",
+   "concl": "MPRALegNet learned nonlinear interdependencies between TFBS pairs in all cell types."
+  },
+  {
+   "type": "qa",
+   "section": "Results - MPRALegNet predicts TFBS combinations",
+   "q": "Give examples of super- and sub-multiplicative TFBS pairs.",
+   "a": "In HepG2, co-occurrence of ATF3/FOS-JUN with FOXD2 gave the strongest super-multiplicative effect, while HNF4A/G together with NFYA/C gave a sub-multiplicative effect.",
+   "kw": [
+    "FOXD2",
+    "HNF4A"
+   ],
+   "info": "Similar findings were seen in K562 and WTC11.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting fine-mapping and variant effects",
+   "q": "How was MPRALegNet used for fine-mapping?",
+   "a": "For all SNPs in linkage disequilibrium with GWAS catalogue lead SNPs in the seven tiled disease loci, the K562 model predicted the difference between reference and alternative allele.",
+   "kw": [
+    "GWAS",
+    "fine-mapping"
+   ],
+   "info": "Examples: gain- and loss-of-function SNPs around RBM38 (rs2426715, rs376911010, rs737092) and a loss-of-function SNP in an LMO2 intronic enhancer (rs75395676).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting fine-mapping and variant effects",
+   "q": "How were variant effect predictions benchmarked against allele-specific data?",
+   "a": "Against six sets of allele-specific variants from ATAC-seq, DNase-seq and ChIP-seq in HepG2 and K562 from the UDACHA and ADASTRA databases; all six showed significant concordance (Fisher's exact odds ratios >1.5, P < 0.05).",
+   "kw": [
+    "ASV",
+    "ADASTRA"
+   ],
+   "info": "Odds ratios ranged from 2.1 (K562 ChIP-seq) to 25.3 (HepG2 ATAC-seq), though some comparisons had very few cases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - predicting fine-mapping and variant effects",
+   "q": "How did MPRALegNet do on saturation mutagenesis data?",
+   "a": "Correlations between predicted and observed variant effects were 0.49 for the SORT1 enhancer, 0.65 for the PKLR promoter, 0.66 for LDLR and 0.51 for F9.",
+   "kw": [
+    "saturation mutagenesis",
+    "SORT1",
+    "PKLR"
+   ],
+   "info": "Comparable to Enformer (0.63 SORT1, 0.83 PKLR, 0.62 LDLR, 0.28 F9). For PKLR, most relevant TFBSs (GATA3, KLF9, SP5, NFIB) were detected, but predicted effects were smaller for KLF4 and GATA2.",
+   "concl": "Despite being trained on element activity, the model partially captures effects of individual genetic variants."
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterization of cell-specific factors",
+   "q": "What was the joint library and why was it needed?",
+   "a": "A 60,000-element library tested in all three cell types, because the large-scale libraries measured activity within each cell type but did not directly compare the same elements across cell types.",
+   "kw": [
+    "joint library"
+   ],
+   "info": "It had about 19,000 potential enhancers from each cell line sampled across the activity range, 2,396 promoters, dinucleotide shuffled controls and HepG2/K562 positive and negative controls; mostly a single orientation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterization of cell-specific factors",
+   "q": "Which element class is more cell-type specific?",
+   "a": "Promoters correlated strongly across cell-type pairs (mean Pearson r = 0.82), while potential enhancers correlated more weakly between their source cell type and others (r = 0.32-0.51 HepG2, 0.51-0.65 K562, 0.64-0.65 WTC11).",
+   "kw": [
+    "cell-type specificity"
+   ],
+   "info": "Joint library replicates correlated at 0.98 (HepG2), 0.97 (K562) and 0.96 (WTC11).",
+   "concl": "Promoters are less cell-type specific; potential enhancers carry stronger cell-type specificity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterization of cell-specific factors",
+   "q": "Is open chromatin required for MPRA activity?",
+   "a": "No. Sequences with nearly absent DNase signal in K562 but high signal in HepG2 and WTC11 could still be highly active in K562, and 15-25% of elements lacking DNase signal were more active than shuffled controls (5% FDR).",
+   "kw": [
+    "DNase"
+   ],
+   "info": "Still, higher DNase signal was clearly associated with a larger proportion of active elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterization of cell-specific factors",
+   "q": "What is an element specificity score (ESS)?",
+   "a": "The deviation of an element's activity in one cell type from its mean activity across cell types, computed after z-score transformation of log2(RNA/DNA) values from each cell line.",
+   "kw": [
+    "ESS"
+   ],
+   "info": "ESSs recapitulated expected patterns: HepG2 and K562 controls and potential enhancers were most active in their own cell types; promoters and negative controls were weakly more active in WTC11.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterization of cell-specific factors",
+   "q": "Why might negative controls be more active in WTC11?",
+   "a": "Stem cells tend to have a more globally open chromatin state, which may make them susceptible to higher background transcription than other cell types.",
+   "kw": [
+    "open chromatin",
+    "iPS cells"
+   ],
+   "info": "A principal components analysis (after removing the dominant 'universal' component) showed promoters biased towards WTC11 and enhancers biased towards their source cell type on PC2/PC3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterization of cell-specific factors",
+   "q": "Which model predicted cell-type specificity best?",
+   "a": "EnformerMPRA outperformed both the multi-task MPRALegNet and the biochemical model for all three cell types, reaching Pearson r of about 0.81 for element specificity scores.",
+   "kw": [
+    "EnformerMPRA"
+   ],
+   "info": "TF-MoDISco-lite found 21 motifs associated with cell-type-specific activity in HepG2 and in K562, and 12 in WTC11.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the three generalizations the authors propose about mammalian regulatory elements?",
+   "a": "Enhancer activity is largely independent of orientation, in line with the original definition of enhancers; enhancers have more inherent cell-type specificity than promoters; and cell-type specificity is driven by a small number of cell-type-specific TFBSs.",
+   "kw": [],
+   "info": "",
+   "concl": "This is the paper's summary conclusion."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is a 'stripe' transcription factor and why does it matter here?",
+   "a": "Stripe transcription factors, such as the KLF-related family enriched here in promoters and enhancers of all three cell types, are thought to provide co-accessibility and increase residence time for other transcription-associated factors.",
+   "kw": [
+    "stripe TF",
+    "KLF"
+   ],
+   "info": "They were also enriched in active regulatory elements in a recent large-scale lentiMPRA, in line with a generalizable function.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What practical advantage does MPRALegNet have over Enformer?",
+   "a": "It performs competitively while having roughly 200-fold fewer parameters (about 1.3 million versus Enformer's about 249 million), making genome-wide variant effect prediction computationally efficient.",
+   "kw": [
+    "MPRALegNet",
+    "Enformer"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "Many cCREs may have been missed because of selection criteria, annotation assays or marks not used and technical issues of the biochemical assays; and promoters were tested together with a 32-bp minimal promoter that could affect their activity.",
+   "kw": [
+    "minimal promoter"
+   ],
+   "info": "They argue the 32-bp addition probably did not change the findings because results matched previous reports on orientation bias and ubiquitous promoter motifs. Further limitations are only in the Supplementary Discussion, not the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library design",
+   "q": "How were potential enhancers selected and sized?",
+   "a": "DNase I hypersensitivity peaks from two ENCODE replicates were merged with bedtools merge, peaks overlapping promoters (plus/minus 2,500 nt of any annotated TSS) were removed, and designed oligos were centred on the merged peak with plus/minus 100 bp, giving 200-bp elements.",
+   "kw": [
+    "bedtools",
+    "DNase peak"
+   ],
+   "info": "97% of merged peaks were 200 bp or shorter. Each element got a 5' adaptor AGGACCGGATCAACT and 3' adaptor CATTGCGTGAACCGA as 230-bp oligos on an Agilent array.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library design",
+   "q": "How was a single promoter chosen per protein-coding gene?",
+   "a": "FANTOM5 CAGE peaks were intersected with first exons of all protein-coding transcripts from Ensembl v.83 (lifted to hg19) to pick the promoter with maximal average TPM, giving 19,104 promoters.",
+   "kw": [
+    "FANTOM5",
+    "CAGE",
+    "Ensembl"
+   ],
+   "info": "Centring priority was the HepG2 DNase peak centre (6,181 promoters), otherwise the CAGE peak midpoint (9,735), otherwise the Ensembl TSS (3,188); the oligo was the plus/minus 100-bp window in sense orientation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library design",
+   "q": "What is 'representative subset selection' and why was it used?",
+   "a": "A submodular facility location objective, optimized greedily with the Python package apricot, used to pick a non-redundant subset of elements covering the epigenetic diversity of the ground set when not everything could be tested.",
+   "kw": [
+    "facility location",
+    "apricot"
+   ],
+   "info": "Similarity between 200-bp tiles was the Pearson correlation of mean signal vectors over hundreds of ENCODE histone and TF ChIP-seq experiments. k = 2,231 per each of the 7 K562 loci, k = 30,121 for WTC11 enhancers, k = 7,500 for WTC11 promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - MPRA library generation and infection",
+   "q": "How were the reporter libraries built?",
+   "a": "A 5-cycle PCR added the minimal promoter and spacer downstream of the cCRE, then 15 more cycles added a 15-bp random barcode; fragments were cloned into the SbfI/AgeI site of pLS-SceI (Addgene 137725) with NEBuilder HiFi assembly.",
+   "kw": [
+    "pLS-SceI",
+    "barcode"
+   ],
+   "info": "Colony numbers were chosen to target barcode coverage: about 8M, 12M and 3M colonies for the HepG2, K562 and WTC11 large-scale libraries (about 50, 50 and 40 barcodes per cCRE) and 3.3M for the joint library (about 55 barcodes).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - MPRA library generation and infection",
+   "q": "What cells and MOIs were used for infection?",
+   "a": "HepG2 (ATCC HB-8065), K562 (ATCC CCL-243) and WTC11 iPS cells (passage 43-49) were infected in three biological replicates with 8 ug/ml polybrene, at estimated MOI 50 for HepG2 and MOI 10 for K562 and WTC11.",
+   "kw": [
+    "MOI",
+    "WTC11"
+   ],
+   "info": "The higher MOI in HepG2 is because they are adherent, unlike suspension K562; higher MOIs were lethal for WTC11. DNA and RNA were harvested after three days with the AllPrep DNA/RNA mini kit. Cells were not authenticated or tested for mycoplasma.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - MPRA processing pipeline",
+   "q": "What software and filters produced the activity scores?",
+   "a": "FASTQs were made with bcl2fastq v.2.20, barcodes were associated to elements with the MPRAflow 1.0 association utility (aligner bt2_strand) and activity was computed with the MPRAflow count utility as log2(RNA/DNA); elements with fewer than 10 barcodes were removed.",
+   "kw": [
+    "MPRAflow",
+    "bcl2fastq"
+   ],
+   "info": "Retention after the 10-barcode filter: HepG2 pilot 97.7%, K562 pilot 97.6%, HepG2 large-scale 85.1%, K562 large-scale 92.8%, WTC11 large-scale 74.2%, and about 93% for each joint library. Replicates were median-normalized then averaged.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - regression modelling",
+   "q": "How many biochemical features went into the models?",
+   "a": "After averaging replicates per experiment target, 655 HepG2, 447 K562 and 122 WTC11/H1-ESC features, extracted as mean bigWig signal over each element with bigWigAverageOverBed and log-transformed with a pseudocount of 0.1.",
+   "kw": [
+    "bigWig",
+    "ENCODE"
+   ],
+   "info": "The raw file counts were 1,506 (HepG2), 1,206 (K562) and 277 (WTC11/H1-ESC) bigWigs; H1-ESC data were added because WTC11 data are sparse. Lasso lambda was tuned by tenfold cross-validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - regression modelling",
+   "q": "How was MPRALegNet adapted from LegNet?",
+   "a": "Max pooling layers were added after each local block, kernel size and block number were set so the receptive field matched the sequence length, weight decay was increased against overfitting and gradient clipping was used with a one-cycle learning rate policy.",
+   "kw": [
+    "LegNet",
+    "CNN"
+   ],
+   "info": "Training-time augmentation gave each sequence in forward and reverse complement orientation; at test time four scores (both element orientations and their full reverse complements) were averaged. The model has about 1.3 million trainable parameters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - regression modelling",
+   "q": "How were motifs extracted from the trained model?",
+   "a": "In silico mutagenesis of all possible single nucleotide variants in each 200-bp sequence, averaged over the nine models for which that sequence was held out, then TF-MoDISco-lite v.2.0.4 on the ISM scores with seqlet patterns matched to JASPAR 2022 CORE vertebrate non-redundant using Tomtom.",
+   "kw": [
+    "ISM",
+    "TF-MoDISco-lite",
+    "JASPAR"
+   ],
+   "info": "For combinatorial analyses, non-redundant PWMs were scanned with FIMO 5.5.4 (--text --thresh 0.001); groups with fewer than 10 elements were dropped and elements with sites to other top-10 factors were filtered out.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - regression modelling",
+   "q": "What do the authors recommend for making predictions on a new sequence?",
+   "a": "Average predictions from all 90 pretrained models with test-time augmentations (orientation and shifting), and replace the fixed 15-bp adaptors with the surrounding natural genomic context when available.",
+   "kw": [
+    "MPRALegNet"
+   ],
+   "info": "Replacing adaptors avoids artefactual motifs at adaptor-sequence boundaries biasing the result. The 90 models come from 10 held-out folds x 9 validation-set choices.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - characterization of cell-specific factors",
+   "text": "15-25% of elements with no DNase signal were still active in the reporter. Worth thinking about what this means for using accessibility alone to call candidate enhancers in cavefish or zebrafish, where we have ATAC but almost no functional validation."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "MPRALegNet is small (about 1.3M parameters) and trained only on 200-bp human elements. Open question: how transferable is this architecture if retrained on a teleost MPRA or ATAC dataset, given the paper only argues for transfer across human cell types?"
+  },
+  {
+   "type": "note",
+   "section": "Methods - library design",
+   "text": "Go back to the Supplementary Discussion for the full list of limitations: the main text only points to it and mentions the 32-bp minimal promoter and incomplete cCRE coverage."
+  }
+ ]
+}

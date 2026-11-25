@@ -1,0 +1,644 @@
+{
+ "id": "Mouren_2026",
+ "title": "Exonic enhancers are a widespread class of dual-function regulatory elements",
+ "link": "https://doi.org/10.1038/s41467-026-71220-6",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Mouren_2026_NatCommun_exonic_enhancers.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are exonic enhancers (EEs)?",
+   "a": "Protein-coding exons that also possess enhancer activity, i.e. dual-function elements that both encode protein and act as cis-regulatory sequences.",
+   "kw": [
+    "exonic enhancer",
+    "cEE"
+   ],
+   "info": "The paper calls the computationally defined set candidate exonic enhancers (cEEs).",
+   "concl": "Coding regions can simultaneously fulfil protein-coding and cis-regulatory roles."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What data types were integrated to demonstrate exonic enhancer activity?",
+   "a": "Transcription factor binding, chromatin accessibility and high-throughput enhancer-reporter assays (STARR-seq), across several species.",
+   "kw": [
+    "STARR-seq",
+    "ChIP-seq"
+   ],
+   "info": "Plus promoter capture Hi-C, CRISPRi, cancer genome analyses and comparative genomics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did the evolutionary comparisons show about cEEs?",
+   "a": "cEEs show both strong sequence constraint and lineage-specific plasticity, suggesting ancient regulatory functions plus a contribution to species divergence.",
+   "kw": [
+    "constraint",
+    "plasticity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What were the historical single-locus examples of enhancer activity in coding sequence?",
+   "a": "A regulatory element inside a coding exon of KRT18, and two ultraconserved HOXA2 exonic enhancers driving hindbrain expression (rhombomere 2 and 4).",
+   "kw": [
+    "KRT18",
+    "HOXA2"
+   ],
+   "info": "The HOXA2 elements were explicitly mapped via synonymous-constraint scans across 29 mammalian genomes.",
+   "concl": "Enhancer activity in coding regions was a known but anecdotal phenomenon before this study."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which three quantitative questions does the study ask?",
+   "a": "How common are dual-function exons, how potent is their enhancer activity, and what selective and mutational constraints accompany the coexistence of coding and regulatory information.",
+   "kw": [],
+   "info": "The authors present this as the first systematic cross-species census of exons meeting stringent enhancer criteria.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What scale of data underlies the census?",
+   "a": "More than 20,000 TF-binding profiles, multi-omic enhancer marks, high-throughput reporter assays and comparative genomics across four phyla.",
+   "kw": [
+    "ReMap"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "Which resource provided the TF occupancy map of coding sequences?",
+   "a": "ReMap (version 2022), a curated integrative catalogue of TF ChIP-seq data across human, mouse, Drosophila and Arabidopsis.",
+   "kw": [
+    "ReMap 2022"
+   ],
+   "info": "Example loci with multi-TF binding on an internal exon: GARRE1 (chr19) and USP20 (chr9).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "What fraction of regulatory signal falls in coding exons?",
+   "a": "3.9% of DNase I hypersensitive sites and 4.2% of ReMap TF ChIP-seq peaks localise to coding exons.",
+   "kw": [
+    "DHS"
+   ],
+   "info": "Most ReMap peaks are intronic (40.9%) or intergenic (25.6%); promoters 26.3%.",
+   "concl": "A non-negligible fraction of regulatory elements sits in protein-coding exons."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "How many human coding exons are TF-bound?",
+   "a": "Of 176,711 coding exons, 74% (n = 131,358) overlap at least one TF peak, 38% have 5 or more TFs and 24% (n = 42,699) are bound by ten or more TFs.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "How many human candidate exonic enhancers were defined?",
+   "a": "13,481 exons (8% of all coding exons) passed the stringent multi-TF binding thresholds and filtering and were designated cEEs.",
+   "kw": [
+    "cEE"
+   ],
+   "info": "Stringency excluded some previously tested EEs from the literature (Birnbaum et al.).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "How many cEEs were found in the other three species?",
+   "a": "Mouse 12,244, Drosophila melanogaster 13,688 and Arabidopsis thaliana 7,138.",
+   "kw": [],
+   "info": "As a fraction of coding exons: human 8%, mouse 6%, fly 23%, Arabidopsis 5%; as a fraction of coding genes: 42%, 31%, 47% and 21%.",
+   "concl": "cEEs are evolutionarily widespread."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "Where do TF summits sit within cEE exons?",
+   "a": "Meta-exon analysis shows a focused peak of TF summit density at the exon midpoint, strongest for exons bound by 10 or more TFs.",
+   "kw": [
+    "metagene"
+   ],
+   "info": "Exons bound by fewer than 5 TFs show a flat profile.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding maps",
+   "q": "Are cEEs skipped exons or unusual isoform exons?",
+   "a": "No: cEEs are present in nearly all host-gene isoforms, are constitutively spliced across GTEx tissues, and have APPRIS annotations broadly similar to ordinary coding exons.",
+   "kw": [
+    "PSI",
+    "APPRIS"
+   ],
+   "info": "APPRIS class distributions differed statistically from controls (chi-squared p < 1e-9) but Cramer's V was only 0.05-0.07, so not materially.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer-associated features",
+   "q": "What proportion of cEEs overlap open chromatin?",
+   "a": "82% of human cEEs and 67% of mouse cEEs overlap DNase or ATAC peaks.",
+   "kw": [
+    "ATAC-seq",
+    "DNase"
+   ],
+   "info": "Data from ENCODE and ChIP-Atlas.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer-associated features",
+   "q": "Which histone mark is most strongly enriched at cEEs, and why does that make sense?",
+   "a": "H3K4me2, enriched 7.4-fold; it marks poised promoters and active enhancers and keeps nucleosomes accessible for TF binding without impeding RNA Pol II elongation.",
+   "kw": [
+    "H3K4me2"
+   ],
+   "info": "H3K27ac and H3K4me1 also showed strong concordance. The authors state the H3K4me2 enrichment has not been quantified before in the exonic-enhancer context.",
+   "concl": "H3K4me2 suits enhancers embedded in actively transcribed coding exons."
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer-associated features",
+   "q": "What was the STARR-seq atlas used for the overlap analysis?",
+   "a": "A curated multi-species atlas of 112 published STARR-seq datasets across cell lines and tissues in the four species, yielding millions of enhancer peaks.",
+   "kw": [
+    "STARR-seq atlas"
+   ],
+   "info": "Peaks standardised to narrowPeak and lifted to GRCh38, GRCm39, dm6, TAIR10 with UCSC liftOver (minMatch 0.95).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer-associated features",
+   "q": "How did cEE overlap with STARR-seq peaks compare with controls?",
+   "a": "In all four species cEEs overlapped STARR-seq peaks far more often than coding exons without TF binding (Ctrl-), and at a rate matching canonical enhancers (Ctrl+).",
+   "kw": [],
+   "info": "Ctrl+ = intergenic distal cCREs bound by at least 10 TFs under the same filtering.",
+   "concl": "cEEs are as likely as classic enhancers to drive reporter expression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer-associated features",
+   "q": "Was the TF ChIP-seq signal in exons just a proximal-ligation artifact?",
+   "a": "No: cEEs showed significantly higher occupancy of TF peaks matching their binding motifs than randomised peaks in all four species (human two-sided p < 1e-300; 100,000 randomisations), plus higher TFBS density than negative controls.",
+   "kw": [
+    "randomisation",
+    "JASPAR"
+   ],
+   "info": "Wilcoxon signed-rank on paired observed vs randomised values; this contrasts with earlier interpretations that exonic DHS were ligation artifacts.",
+   "concl": "EEs are a distinct subclass of enhancers, not ChIP artifacts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - enhancer-associated features",
+   "q": "What secondary structure feature is enriched in cEEs?",
+   "a": "G-quadruplex (G4) forming sequences and GC content are significantly higher in cEEs than in Ctrl- and Ctrl+ regions.",
+   "kw": [
+    "G-quadruplex"
+   ],
+   "info": "G4 peaks from G4-seq data (GEO GSE110582), tested with one-sided Fisher exact test.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional validation",
+   "q": "How were individual cEEs tested by luciferase assay?",
+   "a": "Each cEE was cloned upstream of a minimal SV40 promoter in pGL3-Promoter and electroporated into K-562 cells; 20 cEEs were tested and 8 gave moderate to robust activation (fold-change 1.6-11.5).",
+   "kw": [
+    "luciferase",
+    "pGL3"
+   ],
+   "info": "Controls were the empty vector, two exons without TF binding and one EE previously identified in HepG2. Firefly signal normalised to Renilla.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional validation",
+   "q": "What did PCHi-C and ENCODE-rE2G show for EE3 and EE19?",
+   "a": "Each cEE lies in chromatin domains contacting its host-gene promoter and distal promoters, consistent with long-range enhancer looping.",
+   "kw": [
+    "PCHi-C",
+    "ENCODE-rE2G"
+   ],
+   "info": "EE3 (GARRE1) contacts GARRE1, GPI and PDCD2L; EE19 (USP20) contacts TOR1B, C9orf78, USP20 and TOR1A. PCHi-C resolution is 25 kb-2 Mb, so nearby elements cannot be excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - functional validation",
+   "q": "Do cEEs activate their predicted endogenous promoters?",
+   "a": "Yes: when SV40 was replaced by the predicted target promoters P1, P2 and P3, EE3 and EE19 significantly increased activity for all three promoters.",
+   "kw": [],
+   "info": "EE19 was slightly stronger with SV40 than with its native promoter (paired t = 2.46, p = 0.047), as expected for a deliberately weak enhancer-responsive promoter.",
+   "concl": "EEs can engage multiple promoters over substantial genomic distances."
+  },
+  {
+   "type": "qa",
+   "section": "Results - coding variants",
+   "q": "Can synonymous variants change enhancer activity in reporter assays?",
+   "a": "Yes: gnomAD synonymous and missense variants inside JASPAR-predicted TF consensus sites of GARRE1 (EE3) and USP20 (EE19) significantly reduced or abolished luciferase activity.",
+   "kw": [
+    "gnomAD",
+    "JASPAR"
+   ],
+   "info": "Variant impact predicted with FABIAN-variant.",
+   "concl": "Even 'silent' coding mutations can have a regulatory impact."
+  },
+  {
+   "type": "qa",
+   "section": "Results - coding variants",
+   "q": "Could variants also create enhancer activity?",
+   "a": "Yes: in silico designed synonymous variants that create or strengthen TF motifs in EE20 increased the luciferase signal.",
+   "kw": [
+    "EE20"
+   ],
+   "info": "Motifs involved included FOS::JUND, EBF3, SOX9, MTF1/USF1 and HOXB.",
+   "concl": "EEs can show both gain- and loss-of-function with coding mutations."
+  },
+  {
+   "type": "qa",
+   "section": "Results - population genetics",
+   "q": "What do gnomAD metrics say about selection on cEEs?",
+   "a": "cEEs carry rarer variants and a higher synonymous fraction, giving a lower missense-to-synonymous ratio (pN/pS 0.59 vs 0.62; chi-squared p = 1.3e-137) and more synonymous changes (0.33 vs 0.27; Mann-Whitney p < 1e-16).",
+   "kw": [
+    "pN/pS"
+   ],
+   "info": "Ultra-rare variants (AF <= 0.01%) 90.93% in cEEs vs 90.44% in controls (Z-test p = 1.82e-13).",
+   "concl": "cEEs are under purifying selection at the population level."
+  },
+  {
+   "type": "qa",
+   "section": "Results - population genetics",
+   "q": "Is purifying selection concentrated in the most TF-dense exons?",
+   "a": "No: although SNP density rises with TF-binding load, the allele-frequency spectrum is essentially unchanged across TF deciles (about 91% ultra-rare, 6% rare, 2% low-frequency, 1% common).",
+   "kw": [
+    "TF deciles"
+   ],
+   "info": "Chi-squared across deciles was significant (p = 5.76e-14) but Cramer's V was 0.0068, i.e. negligible.",
+   "concl": "Purifying selection acts broadly across cEEs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - population genetics",
+   "q": "What do dN/dS, DoS and FI indicate over deeper time?",
+   "a": "cEEs show a slightly higher human-mouse dN/dS with positive Direction-of-Selection and Fixation Index values, suggesting compensatory coding changes accumulated over deep evolutionary time.",
+   "kw": [
+    "dN/dS",
+    "DoS"
+   ],
+   "info": "DoS = dN/(dN+dS) - pN/(pN+pS); FI = (dN/dS)/(pN/pS); dN and dS by Nei-Gojobori on LASTZ human-mouse exon alignments.",
+   "concl": "Constrained at the population level yet evolving via compensatory substitutions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - STARR-seq screen",
+   "q": "Why did the authors run their own exon-bounded STARR-seq screen?",
+   "a": "Published STARR-seq enhancers often included adjacent intronic sequence, so it was unclear whether the exon alone drove activity; they screened 2,068 exon-only fragments in K-562 cells.",
+   "kw": [
+    "exon-bounded"
+   ],
+   "info": "Fragments were trimmed precisely at exon boundaries; only cEEs >= 130 bp kept, those over 220 bp trimmed to 220 bp centred on the densest TF peaks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - STARR-seq screen",
+   "q": "How active were cEEs in the K-562 STARR-seq screen?",
+   "a": "cEEs had significantly higher activity than negative controls (Ctrl-, n = 1235, p = 8.74e-20) and in many cases approached or exceeded classic enhancers (Ctrl+, n = 1184).",
+   "kw": [
+    "K-562"
+   ],
+   "info": "Two-sided t-tests with Bonferroni correction. The paper prints the Ctrl+ p-value as '165 x 10-22', apparently a typo (figure shows 1.6e-22).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - STARR-seq screen",
+   "q": "How were activity classes defined and how many cEEs were 'Strong'?",
+   "a": "Thresholds came from published STARR+ (n = 173) and STARR- (n = 122) control promoters; inactive FC <= 0, moderate 0 < FC < median STARR+, strong FC >= median STARR+. 61 of 2,068 cEEs (2.9%) were strong vs 21 of 1,184 Ctrl+ (1.8%).",
+   "kw": [
+    "log2FC"
+   ],
+   "info": "Top cEEs include MAP3K13 (signal transduction), TAF1 (transcription) and POLD1 (DNA replication).",
+   "concl": "High enhancer potency is not diminished within coding exons."
+  },
+  {
+   "type": "qa",
+   "section": "Results - STARR-seq screen",
+   "q": "Is cEE activity cell-type dependent?",
+   "a": "Yes: cEEs with A-549 or GM12878 signatures showed significantly lower activity when assayed in K-562 cells.",
+   "kw": [],
+   "info": "Metaprofiles of public K-562 and A-549 STARR-seq also showed tissue-matched enrichment (myeloid cEEs n = 808, respiratory n = 408).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - STARR-seq screen",
+   "q": "How did single versus multiple SNPs affect cEE activity in STARR-seq?",
+   "a": "Multi-SNP cEEs often lost activity (78 down, 37 up) and deviated more from reference than single-SNP constructs (single-SNP n = 150, multi-SNP n = 115).",
+   "kw": [
+    "FABIAN-variant"
+   ],
+   "info": "SNPs were gnomAD v3 synonymous variants predicted to change TF binding by more than |0.66| by FABIAN; two-sided Wald tests with Benjamini-Hochberg FDR < 0.05.",
+   "concl": "Multiple concurrent coding mutations amplify changes in enhancer function."
+  },
+  {
+   "type": "qa",
+   "section": "Results - STARR-seq screen",
+   "q": "What directional pattern did variant effects follow?",
+   "a": "Variants in highly active cEEs tended to reduce reporter output, while variants in cEEs with low or no basal activity often increased it.",
+   "kw": [],
+   "info": "A simulation-based null model with 10,000 pseudo-variants confirmed this negative correlation far exceeds a regression-to-the-mean artifact.",
+   "concl": "Inactive exons may acquire regulatory function through variant acquisition."
+  },
+  {
+   "type": "qa",
+   "section": "Results - target gene interactions",
+   "q": "Which three datasets formed the cEE interaction atlas?",
+   "a": "A compiled promoter capture Hi-C collection (Laverre et al.), enhancer-promoter interactions from ENCODE-rE2G, and GTEx v8 eQTL associations.",
+   "kw": [
+    "eQTL"
+   ],
+   "info": "Internal interaction = target gene is the host gene; external = outside the host gene body; mixed = both.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - target gene interactions",
+   "q": "What fraction of cEEs had robust target-gene interactions?",
+   "a": "26% of cEEs had interactions supported by at least two of the three resources, versus 35% for classic enhancers (Ctrl+) and only 2% for negative controls.",
+   "kw": [
+    "cEE-TG"
+   ],
+   "info": "These robust cEE-target gene pairs were used for all downstream cancer analyses.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer",
+   "q": "What cancer resource was used and how large is it?",
+   "a": "The TCGA Pan Cancer Atlas, comprising over 10,000 tumour samples (10,295 tumours) across 33 cancer types.",
+   "kw": [
+    "TCGA PanCanAtlas"
+   ],
+   "info": "cEE coordinates were lifted hg38 to hg19 and intersected with somatic mutations; differential expression with pyDESeq2 v0.4.8 (|FC| > 0.5, padj < 0.05).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - cancer",
+   "q": "Did cEE mutations associate with target-gene expression changes in tumours?",
+   "a": "Yes: a subset of cEE-target gene pairs showed significant expression changes in mutant versus wild-type patients, and this held even when only synonymous mutations were considered.",
+   "kw": [
+    "synonymous"
+   ],
+   "info": "cEE variants per patient ranged from a single event to thousands across the 33 tumour types. FABIAN predicted that these variants frequently altered TF binding, with weak to strong disruption scores.",
+   "concl": "Causal links to tumour progression remain to be demonstrated experimentally."
+  },
+  {
+   "type": "qa",
+   "section": "Results - prognosis",
+   "q": "Which cancers and genes were used for the survival analysis?",
+   "a": "Four cancer types with example cEE-target genes: LGG (H2AC25), LUAD (SFTPC), STAD (SNCG) and SKCM (FLG2); in all four, altered target-gene expression correlated with differential overall survival.",
+   "kw": [
+    "Kaplan-Meier"
+   ],
+   "info": "cSurvival v1.0.6, median-split expression, log-rank tests and Cox proportional-hazards models adjusting for stage and age where available.",
+   "concl": "The link to tumorigenesis remains primarily inferential; no in vivo validation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - prognosis",
+   "q": "Are cEEs enriched for GWAS variants?",
+   "a": "Yes: cEEs harbour a higher fraction of disease- and measurement-related GWAS variants than controls and are enriched for pleiotropic SNPs with robust regulatory interactions.",
+   "kw": [
+    "GWAS"
+   ],
+   "info": "GWAS Catalogue v1.0.2 variants plus 1000 Genomes SNPs in LD (r2 > 0.8 within 1 Mb), traits mapped to EFO parent categories.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRISPRi",
+   "q": "What CRISPRi system was used and in which cells?",
+   "a": "A dCas9-KRAB-MeCP2 lentiviral system (Addgene #122205) in a validated CRISPRi-competent K-562 clone, with sgRNAs designed in CRISPOR and cloned into Crop-seq-guide-puro.",
+   "kw": [
+    "dCas9-KRAB-MeCP2",
+    "CRISPOR"
+   ],
+   "info": "Clone validated by CD81 promoter knockdown (cytometry and RT-qPCR); cells harvested 10 days post-infection, MOI 10; readout by exonic RT-qPCR normalised to GAPDH (2^-ddCT).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - CRISPRi",
+   "q": "What happened when the four selected cEEs were silenced?",
+   "a": "All four showed a regulatory effect: EE3 GARRE1 and cEE STK11IP reduced the host gene plus one distal interacting gene (GPI and CHPF respectively), while EE19 USP20 and cEE COG1 reduced only the host gene.",
+   "kw": [
+    "GARRE1",
+    "STK11IP"
+   ],
+   "info": "Matched gRNAs targeting non-cEE coding exons of the same genes did not change expression, supporting a sequence-specific enhancer effect. n = 3 biological replicates.",
+   "concl": "EEs can contribute to long-range control of gene expression in the mammalian genome."
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolution",
+   "q": "How conserved are human cEEs in mouse?",
+   "a": "28% of human-defined cEEs map to mouse-defined cEEs, while the remainder are not shared; for comparison, only 11% of classic enhancers (Ctrl+) overlapped conserved enhancer loci in mouse.",
+   "kw": [
+    "LASTZ"
+   ],
+   "info": "The text says the remaining '70%' appear not shared, which does not sum exactly with 28%. Mouse exons aligned to non-shared human cEEs still showed low TF occupancy above negative controls, suggesting sub-threshold or decayed enhancer potential.",
+   "concl": "cEEs follow both lineage-specific and conserved regulatory trajectories."
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolution",
+   "q": "What multi-species ChIP-seq data were used, and what trend emerged?",
+   "a": "ChIP-seq of CEBPA, FOXA1, HNF4A and ONECUT1 in liver of human, macaque, mouse, rat and dog (Ballester et al.); cEEs were more frequently shared with macaque than with rat or dog, following phylogeny.",
+   "kw": [
+    "EPO alignments"
+   ],
+   "info": "113 human cEEs retained exonic enhancer features across multiple species; peak numbers per species: human 284, macaque 306, mouse 133, rat 85, dog 179.",
+   "concl": "A subset of cEEs is evolutionarily conserved across mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolution",
+   "q": "How constrained are cEE sequences at nucleotide level?",
+   "a": "Mean phyloP scores from 100-species alignments are significantly higher for cEEs (n = 13,481) than for control coding exons (Ctrl-, n = 13,253) or classic enhancers (Ctrl+, n = 404,325), p < 2.2e-16.",
+   "kw": [
+    "phyloP"
+   ],
+   "info": "Computed with bigWigAverageOverBed; Kruskal-Wallis with Bonferroni correction, comparing first and last deciles.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - evolution",
+   "q": "How does TF occupancy relate to conservation and gene age?",
+   "a": "cEEs bound by fewer TFs are more strongly conserved and sit in evolutionarily ancient genes (unicellular ancestors, n = 5571), whereas high-TF cEEs show accelerated evolution, more variants and links to early metazoan genes (n = 6223; mammal-specific n = 521).",
+   "kw": [
+    "gene age"
+   ],
+   "info": "Gene age categories from Trigos et al.",
+   "concl": "Ancient and recent genes host cEEs with distinct TF complexity and evolutionary trajectories."
+  },
+  {
+   "type": "qa",
+   "section": "Results - protein structure",
+   "q": "Where in proteins do heavily TF-bound cEEs sit?",
+   "a": "In intrinsically disordered, structurally flexible regions: with increasing TF occupancy deciles, GC content rises, mean AlphaFold pLDDT falls, and the fraction of MobiDB-predicted disordered residues rises.",
+   "kw": [
+    "AlphaFold",
+    "pLDDT",
+    "MobiDB"
+   ],
+   "info": "Deciles of 1,348 cEEs each; GC content p = 2.0e-162, pLDDT p = 1.3e-26, disorder p = 1.7e-50 (Kruskal-Wallis, Bonferroni).",
+   "concl": "Disordered regions act as an evolutionary 'safe harbour' where new TF motifs cost little structurally."
+  },
+  {
+   "type": "qa",
+   "section": "Results - what makes cEEs noteworthy",
+   "q": "Do cEEs need as many motifs as intergenic enhancers to be active?",
+   "a": "No: cEEs harbour fewer TF motifs than canonical intergenic enhancers yet achieve comparable reporter activity, indicating efficient use of sequence under dual constraint.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - defining cEEs",
+   "q": "What annotations and genome builds were used?",
+   "a": "GENCODE v41 (hg38) for human, GENCODE M33 (mm39) for mouse, Ensembl release 104 (dm6) for fly and Ensembl release 44 (TAIR10) for Arabidopsis; exon sets also used FlyBase r6.54 and Araport11.",
+   "kw": [
+    "GENCODE"
+   ],
+   "info": "Overlapping isoform exons differing by <= 50 bp were merged to avoid fragmenting elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - defining cEEs",
+   "q": "What are the three cEE selection criteria?",
+   "a": "At least 10 distinct TFs overlapping the exon; maximum TF density inside the exon exceeding the local density in the 50 bp flanking exonic region; and a ratio of at least 0.5 between TF peak summits and total TF peaks overlapping the exon.",
+   "kw": [
+    "ReMap"
+   ],
+   "info": "Exons within 1 kb (human, mouse) or 100 bp (fly, Arabidopsis) of annotated TSS/TES in the same orientation were removed, as were exons overlapping TSS peaks within 500 bp/100 bp. For human, only transcript support level 1 transcripts were kept and exons overlapping ENCODE promoter cCREs were removed.",
+   "concl": "Filters were designed to exclude promoters and TF clusters spilling over from exon-intron boundaries."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - controls",
+   "q": "How were the negative and positive controls built?",
+   "a": "Ctrl- are coding exons that passed the same filters but had zero overlapping TFs (human n = 13,253; mouse n = 18,457; fly n = 903; Arabidopsis n = 7,862); Ctrl+ are intergenic distal enhancers (human n = 404,325; mouse n = 149,241; fly n = 133,253; Arabidopsis n = 9,025) passing the same filters with at least 10 TFs.",
+   "kw": [
+    "Ctrl+",
+    "Ctrl-"
+   ],
+   "info": "",
+   "concl": "Controls were subject to equivalent selection criteria."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - permutation tests",
+   "q": "How were enrichment permutation tests performed?",
+   "a": "Each real interval was shuffled 10,000 times to the same chromosome, matching length exactly and GC content bin, within a uniquely mappable genome mask; fold enrichment = observed/mean expected, with empirical two-tailed p = 2x(k+1)/(10000+1).",
+   "kw": [
+    "bedtools shuffle"
+   ],
+   "info": "Caveat: in D. melanogaster and A. thaliana regulatory elements cover much of the small genome, leaving little space for shuffling, so those results should be interpreted with caution. Also, cEEs are significantly longer than other coding exons, which inflates shuffling opportunities.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - STARR-seq library",
+   "q": "How was the exon STARR-seq library built and sequenced?",
+   "a": "11,999 sequences (130-220 bp) were synthesised by Twist with 15 bp TruSeq adaptors, amplified with KAPA HiFi, Gibson-assembled into the digested STARR-seq vector, expanded in MegaX DH10B cells (516x coverage), transfected into K-562 by electroporation (1450 V, 10 ms, 3 pulses) in 5 replicates, and sequenced on a NextSeq 2000.",
+   "kw": [
+    "Twist",
+    "Gibson assembly"
+   ],
+   "info": "50 million cells and 250 ug library per experiment; GFP checked 24 h after transfection as an activity indicator.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - STARR-seq processing",
+   "q": "How were the STARR-seq reads processed?",
+   "a": "Paired-end reads were aligned to the reference library with Bowtie2 (--very-sensitive), filtered with SAMtools (view -F 20), counted per library identifier, normalised to CPM, and expressed as log2 ratio of cDNA to input.",
+   "kw": [
+    "Bowtie2",
+    "CPM"
+   ],
+   "info": "Sequences with input read count < 500 or input SD >= 20 were discarded; SNP effects tested by two-sided Wald test at FDR < 0.05 (Benjamini-Hochberg), following Long et al.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is a coding exon a harder place to host an enhancer than an intron?",
+   "a": "Coding exons carry extra informational load (reading frame, codon usage and side-chain constraints for structured domains), so dense TF binding must coexist with coding requirements.",
+   "kw": [],
+   "info": "The study quantifies how often the genome resolves this conflict, how strong the outputs are and where in proteins such sequences reside.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What practical change do the authors argue for?",
+   "a": "Variant-interpretation pipelines should assess coding-sequence mutations not only for protein impact but also for regulatory consequences, particularly in cancer genomics.",
+   "kw": [
+    "variant interpretation"
+   ],
+   "info": "They offer their cEE catalogue (Zenodo, UCSC trackhub 'ExonEnhancers', GitHub benoitballester/ExonEnhancer) to make such dual-impact assessment feasible.",
+   "concl": "Exons are not just blueprints for protein but part of the regulatory machinery."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors acknowledge?",
+   "a": "PCHi-C resolution (25 kb-2 Mb) cannot exclude nearby elements, cancer survival links are inferential without in vivo validation, GTEx analyses reflect host-gene expression rather than enhancer output, and permutation tests in fly and Arabidopsis have limited dynamic range.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "Non-shared human-mouse cEEs may also reflect incomplete TF coverage rather than true lineage specificity.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Open question raised by the authors: do coding exons acquire enhancer-like activity through variant acquisition, or do pre-existing intronic enhancers accumulate mutations that eventually incorporate them into coding sequence?"
+  },
+  {
+   "type": "note",
+   "section": "Results - evolution",
+   "text": "Worth checking: the human-mouse comparison states 28% conserved and 70% not shared, which does not add up; see Fig. 7a and Supplementary Fig. 29 for how the pairwise projection was counted."
+  },
+  {
+   "type": "note",
+   "section": "Methods - defining cEEs",
+   "text": "Their stringent filters exclude EEs previously tested in the literature (Birnbaum et al. 2014), so the 13,481 cEEs are a conservative subset; for cross-species work on cavefish or zebrafish the same criteria would need a comparable TF ChIP-seq catalogue, which ReMap does not provide for fish."
+  }
+ ]
+}

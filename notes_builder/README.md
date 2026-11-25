@@ -472,3 +472,22 @@ tags that give one; a catalog entry can force it with `"star": true` / `false`. 
 # edits to config.json / 02_build_html.py / 00_make_template.py (small python edits), then:
 python3 -I 00_make_template.py && python3 -I 02_build_html.py && ./check_pages.sh
 ```
+
+### Wednesday 2026-11-25
+
+- 04:00 weekly run: 20/22 of Damir's 2025 papers got notes (~$19.76). Andersson 2014 and Theodoris 2024
+  were cut off by false-positive safety stops (`notes/_failed/`).
+- 05:00 one-time task `tasks/2026-11-25_sort_filter.md`: sorting, tag filter (Only/Except), font switch;
+  passed run_task_once.sh checks, commit 688b753 ($0.85). Marta tested and approved the controls.
+- Retries (log `logs/manual_2026-11-25_retry.log`):
+  - Theodoris 2024 (2-page Science Perspective; page 1 also has the end of an unrelated qubit Perspective):
+    catalog `prompt_extra` (organise by arguments, ignore the qubit text) -> 32 questions, $0.31.
+  - Andersson 2014 (FANTOM5 enhancers): plain retry failed; retry with Phan-style `prompt_extra`
+    (Methods in <=4 items, ~40 items) failed too. Stopped; still without notes. Failure logs:
+    `notes/_failed/..._2026-11-25.log` (latest) and `..._2026-11-25_retry1.log` (first retry).
+```bash
+python3 -I 01_generate_notes.py --only ~/literature/papers/regulatiory_genomics/Andersson_2014_Nature_FANTOM5_enhancer_atlas.pdf
+python3 -I 01_generate_notes.py --only ~/literature/papers/regulatiory_genomics/Theodoris_2024_Science_learning_language_of_DNA.pdf
+# (both inside a flock on .lock; prompt_extra added to catalog.json with a small python edit)
+python3 -I 02_build_html.py && ./check_pages.sh
+```

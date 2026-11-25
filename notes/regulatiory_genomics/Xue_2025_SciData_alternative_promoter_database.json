@@ -1,0 +1,441 @@
+{
+ "id": "Xue_2025",
+ "title": "An Integrated Database for Exploring Alternative Promoters in Animals",
+ "link": "https://doi.org/10.1038/s41597-025-04548-1",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Xue_2025_SciData_alternative_promoter_database.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is an alternative promoter (AP) event?",
+   "a": "A major pre-transcriptional mechanism where different transcription start sites are initiated, producing distinct mRNA isoforms and regulating their expression.",
+   "kw": [
+    "alternative promoter",
+    "TSS"
+   ],
+   "info": "Hundreds of thousands of APs have already been identified across human tissues, and many are associated with complex traits and diseases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did this paper produce and at what scale?",
+   "a": "They characterised 102,349 AP profiles from 23,077 RNA-seq samples across 12 species and built Animal-APdb, a database for searching, browsing and downloading animal AP information.",
+   "kw": [
+    "Animal-APdb"
+   ],
+   "info": "They also identified tissue-specific APs and trait-related APs, and linked APs to potential regulators (eRNAs and TFs).",
+   "concl": "Animal-APdb is meant as a resource for exploring the functions and mechanisms of APs in animals."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How common are alternative promoters in humans and what do they add to the transcriptome?",
+   "a": "Over half of all human genes have multiple promoters. AP use creates different 5' UTRs and first exons, which increases mRNA and protein isoform diversity.",
+   "kw": [
+    "5' UTR",
+    "first exon"
+   ],
+   "info": "AP choice can differ across tissues, developmental stages and during cell differentiation, e.g. AP selection in CCND1 changes during retinal cell development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What disease examples of AP use do they give?",
+   "a": "A specific AP in ACSS2 produces ACSS2-S2, which is associated with amplified ribosome biogenesis in hepatocellular carcinoma. In pan-cancer studies AP events showed cancer-specific regulation, and AP usage was significantly associated with patient survival.",
+   "kw": [
+    "ACSS2",
+    "cancer"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What examples of AP function in non-human animals do they cite?",
+   "a": "Rbfox1 AP isoforms have distinct functions during mouse cortical development. Signal transduction genes with APs are conserved across vertebrates in zebrafish (cited as Damir et al.). In Drosophila heads, AP events globally influence 3' end site choice, and AP events in KATNAL1 are linked to reproductive traits in bulls.",
+   "kw": [
+    "Rbfox1",
+    "KATNAL1",
+    "zebrafish"
+   ],
+   "info": "The zebrafish study is cited in the text as 'Damir et al.' but the reference list gives it as Baranasic et al. 2022, Nat Genet (the multiomic atlas of zebrafish cis-regulatory elements). The Drosophila study is Alfonso-Gonzalez et al. 2023, Cell.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which regulators can control AP choice?",
+   "a": "Cis-acting elements such as enhancers, which loop to the target promoter and recruit TFs and cofactors, and trans-acting factors such as TFs, which recognise motifs in TSS flanking regions to activate or repress initiation. DNA methylation, which is enriched at promoters, also affects AP selection.",
+   "kw": [
+    "enhancer",
+    "transcription factor",
+    "DNA methylation"
+   ],
+   "info": "Example: overexpression of the TF Ets-1 in human mammary gland activates AP events of the lactoferrin gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which experimental methods identify promoters, and why did they use RNA-seq instead?",
+   "a": "CAGE-seq, 5' RACE and RAMPAGE identify promoters, but they need elaborate protocols and are not routinely used. RNA-seq is less sensitive for AP detection, but it is abundant in public repositories for many organisms and tissues and is cost-effective, so it suits genome-wide, multi-species AP analysis.",
+   "kw": [
+    "CAGE-seq",
+    "RAMPAGE",
+    "RNA-seq"
+   ],
+   "info": "Algorithms that call APs from RNA-seq include SEASTAR, proActiv and mountainClimber (spelled 'mountClimber' in the main text).",
+   "concl": "This is a deliberate trade-off: lower sensitivity in exchange for breadth across species and tissues."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "The AP landscape in animals other than humans has not been fully explored, and no database provides information on potential AP regulators for animals. EPD collects experimentally validated promoters for model organisms, but it does not focus on APs and includes only a limited number of them.",
+   "kw": [
+    "EPD",
+    "gap"
+   ],
+   "info": "The earlier Demircioglu et al. study used RNA-seq from 18,468 cancer and normal samples, with 6,674 human normal samples from GTEx v7. This study uses the larger GTEx v8.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which 12 species are included?",
+   "a": "Chicken, cow, dog, frog (Xenopus tropicalis), fruit fly (Drosophila melanogaster), human, mouse, pig, rat, rhesus macaque, worm (C. elegans) and zebrafish (Danio rerio).",
+   "kw": [
+    "species"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data collection and processing",
+   "q": "Where did the RNA-seq data come from?",
+   "a": "Aligned RNA-seq of human normal tissues came from GTEx v8. Normal-tissue RNA-seq for the other animals came from NCBI SRA and EMBL-EBI. Sample metadata (tissue, age, sex, developmental stage) were downloaded and manually curated.",
+   "kw": [
+    "GTEx v8",
+    "SRA"
+   ],
+   "info": "BioProject IDs are listed in Supplementary Table 1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data collection and processing",
+   "q": "What was the RNA-seq processing pipeline?",
+   "a": "SRA files were converted to FASTQ, quality-checked with FastQC v0.11.8, trimmed with Trim Galore and aligned to each species' reference genome with HISAT2. Gene-level counts came from featureCounts and were normalised to TPM.",
+   "kw": [
+    "HISAT2",
+    "Trim Galore",
+    "featureCounts"
+   ],
+   "info": "Reference genome versions are not stated in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data collection and processing",
+   "q": "How are the samples and tissues spread across species?",
+   "a": "In total there are 23,077 samples across 227 tissues. Sample numbers range from 199 in zebrafish to 16,563 in human, and tissue numbers from 1 in frog to 48 in human.",
+   "kw": [
+    "sample size"
+   ],
+   "info": "Per species (samples/tissues): chicken 656/15, cow 794/28, dog 289/34, frog 284/1, fruit fly 774/3, human 16,563/48, mouse 1,235/37, pig 808/24, rat 901/16, rhesus 257/13, worm 317/1, zebrafish 199/7.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data collection and processing",
+   "q": "What zebrafish data are in Animal-APdb?",
+   "a": "199 samples from 7 tissues, taken from NCBI SRA. This is the smallest sample set of the 12 species.",
+   "kw": [
+    "zebrafish"
+   ],
+   "info": "The zebrafish sources cited are an ageing transcriptome study (Aramillo Irizar et al. 2018) and two Bazzini/Giraldez lab ribosome profiling studies on uORFs and small ORFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data collection and processing",
+   "q": "How does proActiv estimate promoter activity?",
+   "a": "proActiv is an R package that estimates promoter activity from short-read RNA-seq by mapping and quantifying first-intron junctions. They used it to identify possible APs in each sample and to quantify their activity.",
+   "kw": [
+    "proActiv",
+    "first intron junction"
+   ],
+   "info": "The authors say proActiv performs well in promoter activity estimation and agrees better with H3K4me3 data than other methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data collection and processing",
+   "q": "What is the difference between absolute promoter activity and relative promoter usage?",
+   "a": "Absolute activity (A) is the activity estimated for one promoter in a sample. Relative usage (U) is that promoter's activity divided by the summed activity of all promoters of the same gene in that sample.",
+   "kw": [
+    "promoter usage",
+    "absolute activity"
+   ],
+   "info": "U(p,s) = A(p,s) / sum of A(p',s) over all promoters p' of the same gene.",
+   "concl": "They mainly used promoter usage, because it better reflects how often a specific AP is chosen and partly reduces batch effects."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - tissue-specific APs",
+   "q": "How were tissue-specific APs defined?",
+   "a": "With Demircioglu's method: a tissue-specific linear model tested both absolute activity and relative usage. A promoter was tissue-specific if both were significant at BH-adjusted p ≤ 0.05, with at least a 2-fold activity change between the target tissue and the others and minimal change in overall gene expression.",
+   "kw": [
+    "tissue-specific AP",
+    "linear model"
+   ],
+   "info": "The gene expression fold-change requirement is there to separate promoter switching from simple differences in gene expression. The exact gene-level threshold is not given in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - trait-related APs",
+   "q": "Which trait data were used?",
+   "a": "For human, sex, height, weight and age from GTEx. For other animals, sex, height, weight and developmental stage from SRA. Association with each individual AP's usage was tested per tissue.",
+   "kw": [
+    "trait-related AP"
+   ],
+   "info": "The methods only describe tests for sex and developmental stage/age. How height and weight were analysed is not described.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - trait-related APs",
+   "q": "How were sex-related APs identified?",
+   "a": "With a Mann-Whitney U test comparing AP usage between males and females. Significance required |fold change| ≥ 1.5 and FDR < 0.05.",
+   "kw": [
+    "Mann-Whitney U test",
+    "sex"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - trait-related APs",
+   "q": "How were development- or age-related APs identified?",
+   "a": "In human, Spearman correlation between AP usage and age (|Rho| ≥ 0.3, FDR < 0.05). In other animals, tissues with only embryonic or only postnatal samples used Spearman correlation with a numerical developmental index, or a Mann-Whitney U test if the index was dichotomous.",
+   "kw": [
+    "Spearman correlation",
+    "development"
+   ],
+   "info": "For tissues with both embryonic and postnatal samples, they first used a Mann-Whitney U test for embryo vs postnatal differences, then applied the same tests within the embryonic and postnatal groups separately.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - eRNA-related APs",
+   "q": "Why use enhancer RNAs to link enhancers to APs?",
+   "a": "eRNAs are non-coding RNAs transcribed from enhancer loci, and their expression reflects the activity of the corresponding enhancer. eRNA loci and expression were taken from Animal-eRNAdb.",
+   "kw": [
+    "eRNA",
+    "Animal-eRNAdb"
+   ],
+   "info": "Animal-eRNAdb comes from the same lab (Jin et al. 2022, NAR).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - eRNA-related APs",
+   "q": "What were the criteria for an eRNA to count as a putative AP regulator?",
+   "a": "The eRNA had to lie within 1 Mb of the target AP, and its expression had to correlate significantly with the AP's usage (Spearman |Rho| ≥ 0.3, FDR < 0.05).",
+   "kw": [
+    "eRNA",
+    "1 Mb window"
+   ],
+   "info": "This is purely correlation plus distance. There is no 3D contact or perturbation evidence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TF-related APs",
+   "q": "How were candidate TF regulators of APs identified?",
+   "a": "Two criteria. First, the TF had mean TPM > 5 in the tissue and its expression correlated with AP usage (Spearman |Rho| ≥ 0.3, FDR < 0.05). Second, the TF could bind the TSS flanking region, from 2,000 bp upstream to 500 bp downstream.",
+   "kw": [
+    "AnimalTFDB",
+    "JASPAR",
+    "FIMO"
+   ],
+   "info": "TF annotations came from AnimalTFDB 4.0 and motifs from JASPAR. Binding was checked by FIMO motif scans around each AP and by overlap with 9,675 uniformly processed ChIP-seq datasets from 32 tissues of 6 species in ChIP-Atlas. It is unclear whether one or both binding lines of evidence were required, since 'results were combined into the database'.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - database framework",
+   "q": "What is the technical stack of Animal-APdb?",
+   "a": "MongoDB v3.6.8 for storage, the Flask v1.0.3 back end, AngularJS v1.6.1 and Bootstrap for the front end, and an Apache 2 v2.4.18 web server, with ECharts and R for visualisation.",
+   "kw": [
+    "MongoDB",
+    "Flask"
+   ],
+   "info": "Free access with no registration or login.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Data records",
+   "q": "Where can the data be downloaded?",
+   "a": "From Figshare, Zenodo and the Animal-APdb download page (gong_lab.hzau.edu.cn/Animal_AP), as .tsv files per module and species.",
+   "kw": [
+    "Figshare",
+    "Zenodo"
+   ],
+   "info": "Files cover AP usage across tissues, trait-related APs (correlations with traits per tissue) and regulators (eRNAs and TFs). Processing code is on GitHub (fysheeeep/Animal-APdb).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - data summary",
+   "q": "How many AP events were identified per species?",
+   "a": "102,349 AP events in total, ranging from 1,346 in worm to 38,849 in human.",
+   "kw": [
+    "AP events"
+   ],
+   "info": "Many APs vary strongly in expression across tissues, which agrees with earlier work.",
+   "concl": "The number of APs per species tracks sample number, genome complexity and number of tissue types, so counts are not directly comparable between species."
+  },
+  {
+   "type": "qa",
+   "section": "Results - data summary",
+   "q": "How many tissue-specific APs did they find?",
+   "a": "2,523 tissue-specific AP events in species with two or more tissues, ranging from 34 in fruit fly to 884 in chicken.",
+   "kw": [
+    "tissue-specific AP"
+   ],
+   "info": "Frog and worm have only one tissue each, so no tissue-specific APs could be called for them.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - data summary",
+   "q": "How many trait-related APs were found?",
+   "a": "13,340 trait-related AP events across all species, from 5 in zebrafish to 6,687 in mouse.",
+   "kw": [
+    "trait-related AP"
+   ],
+   "info": "Others: chicken 1,701, rhesus 1,229, rat 1,223, human 855, frog 758, fruit fly 634, dog 82, worm 67, pig 58, cow 41.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - data summary",
+   "q": "How many APs were linked to eRNAs?",
+   "a": "19,813 AP events were linked to 63,854 eRNAs in 8 species, from 304 APs and 380 eRNAs in worm to 9,774 APs and 31,671 eRNAs in mouse.",
+   "kw": [
+    "eRNA"
+   ],
+   "info": "Cow, dog, human and pig have no eRNA data in Animal-eRNAdb, so no eRNA links exist for them. Zebrafish: 1,525 APs linked to 6,396 eRNAs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - data summary",
+   "q": "How many APs were linked to TFs?",
+   "a": "75,195 AP events were associated with 4,573 TFs across all 12 species, from 408 APs and 54 TFs in worm to 29,412 APs and 572 TFs in human.",
+   "kw": [
+    "transcription factor"
+   ],
+   "info": "Zebrafish: 2,154 APs associated with 246 TFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - technical validation",
+   "q": "What quality control steps did they apply during curation?",
+   "a": "Metadata were manually curated from SRA and GTEx. BioProjects with insufficient data were excluded to limit batch effects, low-quality samples were removed, and low-activity promoters were excluded from certain tissues and species.",
+   "kw": [
+    "quality control",
+    "batch effects"
+   ],
+   "info": "The exact low-activity cutoff and BioProject size threshold are not given in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - technical validation",
+   "q": "How was proActiv itself validated?",
+   "a": "According to the authors, proActiv's promoter activity estimates have been validated against H3K4me3 histone modification data, CAGE-seq and Iso-seq data in earlier work.",
+   "kw": [
+    "H3K4me3",
+    "CAGE-seq",
+    "Iso-seq"
+   ],
+   "info": "This study did not re-validate it with orthogonal data in these animals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - technical validation",
+   "q": "How does Animal-APdb compare with EPD?",
+   "a": "For most species, Animal-APdb contains many more genes with APs than EPD.",
+   "kw": [
+    "EPD"
+   ],
+   "info": "Some differences come from EPD and Animal-APdb using different reference genome versions, which can affect results for certain species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - technical validation",
+   "q": "How well did the human AP genes overlap with EPD?",
+   "a": "Of 8,361 human genes with APs in EPD, 6,994 were also detected by proActiv and 1,367 were not. 4,501 proActiv AP genes were removed by activity filtering, while EPD-validated AP genes dropped by only 1,797 in Animal-APdb.",
+   "kw": [
+    "EPD",
+    "proActiv"
+   ],
+   "info": "Venn diagram: 5,197 genes are shared by EPD, proActiv and Animal-APdb, 7,493 are in proActiv and Animal-APdb only, 1,797 are in EPD and proActiv but were filtered out of Animal-APdb, and 4,501 are in proActiv only.",
+   "concl": "The authors argue that activity-based filtering removes many proActiv calls but few experimentally validated ones, so the filter is efficient."
+  },
+  {
+   "type": "qa",
+   "section": "Results - technical validation",
+   "q": "Why did proActiv miss 1,367 EPD AP genes?",
+   "a": "proActiv treats transcripts with identical or closely spaced TSSs as one promoter. Genes found only by EPD had significantly shorter distances between APs than genes found by both EPD and proActiv (p = 2.97e-25).",
+   "kw": [
+    "TSS resolution"
+   ],
+   "info": "This is a resolution limit of the junction-based RNA-seq approach. Closely spaced alternative TSSs collapse into one promoter.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Usage notes",
+   "q": "What can users do with Animal-APdb?",
+   "a": "The web interface has four modules: AP events, Trait, eRNA and Transcription Factor. Users can query genes to see whether they have APs in specific species and tissues, and which traits and regulators are associated with them.",
+   "kw": [
+    "Animal-APdb"
+   ],
+   "info": "The authors suggest using the cross-species integration to study how AP usage relates to species evolution and to dissect gene regulatory networks.",
+   "concl": "A resource for generating hypotheses about AP function and regulation across species."
+  },
+  {
+   "type": "note",
+   "section": "Results - data summary",
+   "text": "Zebrafish has only 199 samples, 7 tissues and 5 trait-related APs. Is this coverage enough to use for cross-species comparison, e.g. with cavefish or other teleosts? No teleost other than zebrafish is included."
+  },
+  {
+   "type": "note",
+   "section": "Methods - eRNA-related APs",
+   "text": "The eRNA and TF regulator links are correlation-based (|Rho| ≥ 0.3 within 1 Mb, or within -2 kb/+500 bp of the TSS), so false positives are likely. It would be worth checking how they compare with CAGE-defined promoter shifts or Hi-C/3D contacts in zebrafish."
+  },
+  {
+   "type": "note",
+   "section": "Results - technical validation",
+   "text": "Because junction-based calling collapses closely spaced TSSs, promoter shifts within one promoter region (e.g. maternal vs zygotic TSS usage in zebrafish) are probably invisible in Animal-APdb."
+  }
+ ]
+}

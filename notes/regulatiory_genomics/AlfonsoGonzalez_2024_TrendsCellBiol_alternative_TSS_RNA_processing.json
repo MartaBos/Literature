@@ -1,0 +1,581 @@
+{
+ "id": "AlfonsoGonzalez_2024",
+ "title": "(Alternative) transcription start sites as regulators of RNA processing",
+ "link": "https://doi.org/10.1016/j.tcb.2024.02.010",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/AlfonsoGonzalez_2024_TrendsCellBiol_alternative_TSS_RNA_processing.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is alternative transcription start site usage (ATSS)?",
+   "a": "A widespread regulatory strategy that lets a gene choose between multiple genomic loci for initiating transcription. It is tightly controlled during development and often altered in disease.",
+   "kw": [
+    "ATSS",
+    "TSS"
+   ],
+   "info": "This is a review (Trends in Cell Biology, December 2024), not a primary research paper, so it has no methods section.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the review about?",
+   "a": "It reviews evidence that TSSs regulate mRNA isoform selection during and after transcription, how the choice of initiation site influences RNA processing, and why this crosstalk matters for cell identity and organism function. It also speculates on mechanisms that could integrate transcriptional and post-transcriptional processes.",
+   "kw": [
+    "mRNA isoform selection",
+    "RNA processing"
+   ],
+   "info": "Highlights: the authors focus especially on crosstalk between transcription and co-transcriptional processing, particularly 3'-end site selection.",
+   "concl": "The choice of TSS is not only about where transcription starts. It can prime what happens to the RNA downstream."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How far apart can alternative TSSs be, and why does that matter?",
+   "a": "Some TSSs lie a few nucleotides apart and share cis-regulatory promoter sequences. Others are spread far apart within the gene locus and are exposed to distinct cis and trans regulatory signals.",
+   "kw": [
+    "cis-regulation",
+    "trans-regulation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How widespread is ATSS, and how does it compare with alternative splicing?",
+   "a": "ATSS is widespread across metazoans. In human tissues, its influence on mRNA isoform diversity was shown to be larger than that of alternative splicing (AS).",
+   "kw": [
+    "alternative splicing",
+    "isoform diversity"
+   ],
+   "info": "Figure 1A shows the proportion of ATSS genes in human, mouse, chicken, Xenopus laevis, zebrafish (Danio rerio), Drosophila and C. elegans, based on Ensembl release 110 (July 2023). TSSs counted as distinct only if more than 50 nt apart, so ATSS here also means alternative cis-regulatory promoter elements. The proportions appear only as pie charts, with no numbers in the text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What can ATSS change in the final gene product?",
+   "a": "ATSS can determine alternative first exons. This can produce different protein isoforms and/or alternative 5'-UTRs that carry regulatory elements affecting translation.",
+   "kw": [
+    "alternative first exon",
+    "5'-UTR"
+   ],
+   "info": "Figure 1B: an example gene with three TSSs from distinct promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Consequences of ATSS on post-transcriptional regulation",
+   "q": "What is the most immediate consequence of ATSS for the mRNA?",
+   "a": "Selection of alternative 5'-UTRs, which can influence translation efficiency and mRNA stability. Even when closely spaced TSSs produce 5'-UTRs that differ only minimally, translational efficiency can increase by up to 100-fold.",
+   "kw": [
+    "5'-UTR",
+    "translation efficiency"
+   ],
+   "info": "Polysome sequencing in mouse fibroblasts estimated that about 20% of multiple-TSS genes regulate translation through ATSS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Consequences of ATSS on post-transcriptional regulation",
+   "q": "Through what features do alternative 5'-UTRs regulate translation?",
+   "a": "Through longer 5'-UTRs, inclusion of repressive elements, or inclusion of translationally repressive upstream open reading frames (uORFs).",
+   "kw": [
+    "uORF"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Consequences of ATSS on post-transcriptional regulation",
+   "q": "What is the Arabidopsis example of ATSS-mediated uORF regulation?",
+   "a": "Exposing etiolated Arabidopsis seedlings to blue light triggered widespread ATSS, often to nearby TSSs. The resulting transcripts escaped uORF-mediated inhibition, so the mRNA could be translated in response to blue light.",
+   "kw": [
+    "Arabidopsis thaliana",
+    "uORF",
+    "blue light"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Consequences of ATSS on post-transcriptional regulation",
+   "q": "How does 5'-UTR isoform switching contribute to tumorigenesis?",
+   "a": "Switching between 5'-UTR isoforms that carry different elements (uORFs, RBP binding motifs, 5'-TOP motifs, PRTEs) sets the translational potential of an mRNA. In a mouse squamous cell carcinoma model, translated transcripts increasingly used 5'-TOP and PRTE motifs, had shorter 5'-UTRs and had less RNA secondary structure, all of which raise protein synthesis rates.",
+   "kw": [
+    "5'-TOP",
+    "PRTE",
+    "cancer"
+   ],
+   "info": "PRTE: pyrimidine-rich translational element, an RNA element that enhances translation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Consequences of ATSS on post-transcriptional regulation",
+   "q": "Can promoters affect mRNA fate independently of the 5'-UTR?",
+   "a": "Yes. In yeast, reporters with the same mRNA sequence but different promoters showed that certain promoters enhance mRNA synthesis and degradation. Single-molecule imaging of cell cycle-regulated mRNAs showed that the promoter sequence alone can control mRNA decay, independent of the 5'-UTR, 3'-UTR or ORF.",
+   "kw": [
+    "mRNA decay",
+    "Dbf2p",
+    "Rap1p"
+   ],
+   "info": "Promoters are needed to co-transcriptionally load the RBPs Dbf2p and Rap1p, which trigger mRNA decay in response to specific cellular cues. The authors say 5'-UTR-independent roles of ATSS are not fully understood.",
+   "concl": "Transcription initiation and post-transcriptional regulation are coordinated, and ATSS may prime RNA processing."
+  },
+  {
+   "type": "qa",
+   "section": "ATSS in development and disease",
+   "q": "What role does ATSS play in developmental transitions in yeast and Drosophila?",
+   "a": "In S. cerevisiae, cell fate transitions are marked by differential expression from distinct TSSs, usually in distinct cis-regulatory environments, with TSSs from previous transitions co-expressed or repressed. In Drosophila, developmentally regulated TFs and morphogenesis genes undergo significant ATSS, and more than 40% of developmental genes rapidly switch between at least two promoters.",
+   "kw": [
+    "Saccharomyces cerevisiae",
+    "Drosophila",
+    "promoter switching"
+   ],
+   "info": "The authors propose that ATSS lets genes adapt to changing chromatin and transcriptional landscapes during development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "ATSS in development and disease",
+   "q": "What happens to TSS usage during the maternal-to-zygotic transition (MZT)?",
+   "a": "The shift from maternal to zygotic transcription causes widespread ATSS and changes in promoter architecture. Maternal-specific TSS selection requires an A/T-rich W-box motif, and it is replaced by zygotic TSSs with broader patterns of dinucleotide enrichment.",
+   "kw": [
+    "MZT",
+    "W-box",
+    "promoter architecture"
+   ],
+   "info": "ATSS lets constitutively expressed genes keep their expression levels across the two different regulatory environments. The MZT is described as one of the biggest transcriptome changes in the vertebrate life cycle.",
+   "concl": "Global ATSS events are a hallmark of development."
+  },
+  {
+   "type": "qa",
+   "section": "ATSS in development and disease",
+   "q": "What does the SCN1A example show about the importance of a minor TSS?",
+   "a": "SCN1A (alpha subunit of the NaV1.1 sodium channel, linked to epilepsy) has two TSSs from distinct promoters that are co-expressed at similar levels and share the same ORF. Deleting the minor TSS reduced SCN1A expression and caused severe seizures. This was milder than a full loss-of-function allele, but seizures appeared under environmental stressors.",
+   "kw": [
+    "SCN1A",
+    "NaV1.1",
+    "minor TSS"
+   ],
+   "info": "The text calls one TSS 'minor' while also saying both are co-expressed at similar levels. It is not explained which property makes it minor.",
+   "concl": "ATSS is critical for neuron development and function."
+  },
+  {
+   "type": "qa",
+   "section": "ATSS in development and disease",
+   "q": "Why is ATSS relevant for tissues and cancer?",
+   "a": "In transcriptome profiling, TSS expression discriminates well between tissues, cell types and cellular responses. ATSS is prevalent in cancers and affects a large fraction of cancer-associated genes. TSS choice can predict patient survival, possibly more precisely than overall gene expression.",
+   "kw": [
+    "cancer",
+    "prognosis"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sites of coordination - TSS and co-transcriptional processing",
+   "q": "Which prevailing model of RNA processing does the review challenge?",
+   "a": "The model that RNA processing depends only on cis-regulatory elements in the RNA molecule and the trans-factors recruited to them. Growing evidence shows that transcription initiation is coordinated with co-transcriptional processes and affects which isoform is made.",
+   "kw": [
+    "co-transcriptional processing"
+   ],
+   "info": "This applies to both alternative splicing and alternative polyadenylation (APA). The review focuses on APA, the alternative use of 3'-end sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sites of coordination - TSS and co-transcriptional processing",
+   "q": "What is alternative polyadenylation (APA)?",
+   "a": "A co-transcriptional mechanism that produces different mRNA isoforms by selecting distinct polyadenylation sites in a gene, usually giving 3'-UTRs of different lengths.",
+   "kw": [
+    "APA",
+    "3'-UTR"
+   ],
+   "info": "Glossary definition.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sites of coordination - TSS and co-transcriptional processing",
+   "q": "How did long-read sequencing help study TSS coordination?",
+   "a": "Long reads capture full-length mRNAs, so co-occurrence frequencies between exons in the same molecule can be measured. This revealed widespread coupling between alternative TSSs and alternative exons (TSS-exon) and between TSSs and APA sites (TSS-polyA) across cell types, tissues and developmental stages.",
+   "kw": [
+    "long-read sequencing",
+    "TSS-exon",
+    "TSS-polyA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sites of coordination - TSS and co-transcriptional processing",
+   "q": "What is promoter dominance?",
+   "a": "A form of TSS-polyA coupling in which TSS usage is so dominant that it overrides even the strongest polyadenylation signal and leads to specific gene isoforms. It drives alternative 3'-end selection and the diversification of tissue-specific isoforms.",
+   "kw": [
+    "promoter dominance",
+    "TSS-polyA"
+   ],
+   "info": "The concept comes from the authors' own earlier work (Alfonso-Gonzalez et al. 2023, Cell).",
+   "concl": "The promoter, not only the polyA signal, can decide which 3' end is used."
+  },
+  {
+   "type": "qa",
+   "section": "Sites of coordination - TSS and co-transcriptional processing",
+   "q": "What is the positional initiation-termination axis (PITA)?",
+   "a": "Another mode of TSS-polyA coupling in which the TSS-polyA isoforms that can form are constrained by the order in which TSSs and 3'-end sites appear along the gene.",
+   "kw": [
+    "PITA"
+   ],
+   "info": "Based on a 2024 bioRxiv preprint (Calvo-Roitberg et al.).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Sites of coordination - TSS and co-transcriptional processing",
+   "q": "What did single-nuclei full-length isoform sequencing of the human frontal cortex show?",
+   "a": "TSS-exon and TSS-polyA coordination was more cell-type specific than exon-exon coordination. Human-specific exons involved in TSS-exon/polyA coupling were coordinated as tightly as highly conserved exons.",
+   "kw": [
+    "single-nuclei isoform sequencing",
+    "cell-type specificity"
+   ],
+   "info": "",
+   "concl": "This kind of coordination may evolve quickly as organism-specific cell types arise."
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Promoter dominance",
+   "q": "What characterizes dominant promoters?",
+   "a": "They have distinctive epigenetic marks and CBP binding, they influence splicing and polyadenylation choices, and they are commonly linked to a single transcript variant. They can override cis-regulatory elements in the transcription unit, such as polyadenylation signals.",
+   "kw": [
+    "dominant promoter",
+    "CBP"
+   ],
+   "info": "CBP: CREB-binding protein, a histone acetyltransferase coactivator (also called p300/CBP).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Promoter dominance",
+   "q": "What experimental evidence supports promoter dominance?",
+   "a": "In vivo deletion or overexpression of dominant promoters, and CBP mutations, caused significant shifts in 3'-end expression profiles.",
+   "kw": [
+    "CBP",
+    "3'-end isoforms"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Box 1 - Promoter dominance",
+   "q": "How was coevolution between promoters and polyA sites assessed, and what did it show?",
+   "a": "With a coevolution score based on mutual information, which tests whether nucleotide pairs mutate jointly to maintain genetic interactions. Sequences in promoter regions coevolve with their associated polyadenylation sites, so these regulatory interactions appear conserved.",
+   "kw": [
+    "coevolution",
+    "mutual information"
+   ],
+   "info": "Figure I separates local coevolution (nucleotides close together) from distal coevolution (e.g. between a TSS and a distant polyA site).",
+   "concl": "This points to cis-regulatory synergy between distal elements within a gene."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - overview",
+   "q": "What early evidence suggested that promoters affect RNA processing?",
+   "a": "Changing specific promoter sequences increased splicing efficiency of fibronectin exon ED I up to tenfold without changing transcription levels. Specific promoters and enhancers can also increase 3'-end processing at polyadenylation sites, and activating tissue-specific promoters drives tissue-specific 3' ends.",
+   "kw": [
+    "fibronectin ED I",
+    "splicing"
+   ],
+   "info": "",
+   "concl": "The promoter may hold information that primes downstream processing events."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - overview",
+   "q": "Why might having multiple TSSs be useful for a gene?",
+   "a": "Each TSS has its own cis-regulatory elements, so the gene can support several transcriptional states with different chromatin structures, elongation rates and recruited cofactors. Genes with TSS-polyA coupling also show structural pairing of coupled start and end sites and fast Pol II elongation.",
+   "kw": [
+    "Pol II elongation",
+    "cofactors"
+   ],
+   "info": "Figure 2 shows four non-exclusive models: (A) chromatin-mediated recruitment, (B) TF-specific Pol II elongation, (C) TF-mediated loading of RBPs, (D) TFs that bind both DNA and RNA.",
+   "concl": "Several mechanisms of TSS-polyA coupling may act at the same time."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - chromatin states",
+   "q": "How does nucleosome positioning influence co-transcriptional processing?",
+   "a": "Exons have denser nucleosomes than introns, and this is linked to exon usage. Pol II moves faster through introns than exons, and these speed differences create time windows for recruiting RNA-processing factors. Polyadenylation sites are mostly nucleosome-free, while the regions just downstream are strongly nucleosome-enriched.",
+   "kw": [
+    "nucleosome density",
+    "Pol II dynamics"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - chromatin states",
+   "q": "Which histone modifications are linked to polyadenylation site choice?",
+   "a": "H3K4me1 and H3K36me3 levels are strongly associated with polyadenylation site locations. Depleting the conserved methyltransferases SET1 and SET2 causes a widespread change in APA.",
+   "kw": [
+    "H3K4me1",
+    "H3K36me3",
+    "SET1/SET2"
+   ],
+   "info": "Histone modifications also predict splicing outcomes in a positional and combinatorial way. The SET1/SET2 APA study cited is in yeast (S. cerevisiae).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - chromatin states",
+   "q": "What chromatin signature do TSS-polyA coordinated genes have?",
+   "a": "They are strongly enriched for H3K18ac and depleted of the histone variant H2A.Z, and CBP is enriched at both their TSS and 3' end. These features were previously linked to high transcriptional rates and robust TAD insulation.",
+   "kw": [
+    "H3K18ac",
+    "H2A.Z",
+    "CBP"
+   ],
+   "info": "Model (Figure 2A): chromatin modifiers such as CBP could shape nucleosomes at the 5' and 3' ends of specific isoforms, so regulatory factors are recruited depending on chromatin. TSS-specific histone marks would mark the boundaries of each 5'-3' isoform.",
+   "concl": "Specific chromatin landscapes may create an environment that favours co-transcriptional RNA processing."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - chromatin states",
+   "q": "What is still unknown about CBP and histone marks in TSS-polyA coupling?",
+   "a": "It is unclear how CBP, and probably other factors, link TSSs to 3'-end sites. It also remains to be tested whether the histone marks contribute functionally to TSS-polyA coupling or are just a consequence of CBP binding.",
+   "kw": [
+    "CBP"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription elongation",
+   "q": "How variable is the Pol II elongation rate, and what determines it?",
+   "a": "Elongation rates differ by several orders of magnitude between genes, but they stay consistent across cell types. This suggests elongation is mainly set by sequence elements and gene structure.",
+   "kw": [
+    "elongation rate",
+    "Pol II"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription elongation",
+   "q": "What do Pol II speed mutants show about 3'-end selection?",
+   "a": "In mammalian cells, a slow Pol II variant reduced Pol II accumulation in 3'-UTRs, while fast mutants were found more in distant genomic regions. In yeast, fast Pol II mutants shifted production toward distal 3'-UTR isoforms. In Drosophila, a slow Pol II mutant changed polyadenylation site selection in 3-5% of genes.",
+   "kw": [
+    "Pol II mutants",
+    "3'-UTR",
+    "APA"
+   ],
+   "info": "For Drosophila the text adds that 'a similar number' of genes showed increased use of upstream or downstream polyA sites. It is not clear whether this is in addition to the 3-5% or a breakdown of it.",
+   "concl": "Faster elongation tends to favour distal 3' ends."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription elongation",
+   "q": "What are the physiological consequences of changes in elongation speed?",
+   "a": "Elongation speeds up with age, and slowing Pol II extends lifespan in animals. Faster elongation during aging causes defects in splicing and transcript fidelity and more circRNA. In the nervous system, slow Pol II mutations affect long genes most. In cancer, elongation defects in long genes cause aberrant 3'-end processing of DNA damage response transcripts.",
+   "kw": [
+    "aging",
+    "circRNA",
+    "long genes"
+   ],
+   "info": "The stronger effect in neurons is hypothesized to relate to the specific chromatin landscape of neuronal tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription elongation",
+   "q": "Has the link between ATSS and Pol II speed been tested directly?",
+   "a": "No. The effect of ATSS and alternative promoter usage on Pol II speed has not been systematically studied. The authors think that loading different TFs at different TSSs likely plays a significant role.",
+   "kw": [
+    "alternative promoters"
+   ],
+   "info": "This is a hypothesis (Figure 2B): one TF could speed up elongation and cause read-through of the proximal polyA signal, while another could slow it and favour cleavage at the proximal 3'-UTR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription factors",
+   "q": "How could TFs bound at a TSS regulate 3'-end choice?",
+   "a": "Several transcription and elongation factors regulate APA independently of their transcriptional activity, and different TFs do this with different efficiencies. ATSS may offer an expanded platform for different TFs to bind, each affecting isoform expression and elongation in a TSS-specific way.",
+   "kw": [
+    "transcription factors",
+    "APA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription factors",
+   "q": "What does Ultrabithorax (Ubx) show about TFs loading RBPs?",
+   "a": "The Drosophila homeobox TF Ubx is expressed in many cell lineages, but its protein partners differ between lineages, ranging from chromatin modifiers to RNA-processing factors. Ubx loss-of-function causes RNA-processing defects.",
+   "kw": [
+    "Ubx",
+    "Drosophila",
+    "RBP loading"
+   ],
+   "info": "This supports the model in Figure 2C: TFs recruit different RBPs depending on cell type, which drives tissue-specific TSS-polyA coupling.",
+   "concl": "Efficient RNA processing may need a protein that integrates trans-regulatory complexes during transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - transcription factors",
+   "q": "How does Sp1 regulate alternative polyadenylation?",
+   "a": "Sp1, a ubiquitous C2H2 zinc-finger TF that regulates housekeeping genes, binds the long 3'-UTR of mRNAs. During transcription it blocks processing at distal polyadenylation sites by interacting with subunits of the core cleavage and polyadenylation (CPA) machinery, which leads to degradation of distal 3'-UTR transcripts.",
+   "kw": [
+    "Sp1",
+    "C2H2",
+    "CPA"
+   ],
+   "info": "Example of a TF acting by binding RNA (Figure 2D). Recent work found that a substantial share of TFs can bind RNA, so this mechanism may be more common than thought.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - gene looping",
+   "q": "What is the classical gene looping model?",
+   "a": "Genetic studies in yeast proposed that promoter regions loop to transcription end sites, defining 5'-3' boundaries. Looping needs both the transcription initiation and the 3'-processing machineries.",
+   "kw": [
+    "gene looping",
+    "yeast"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - gene looping",
+   "q": "How are CTCF and cohesin linked to RNA processing?",
+   "a": "Recruitment of cohesin by CTCF is essential for proper 3'-end processing. Loss of CTCF misregulates both APA and alternative splicing.",
+   "kw": [
+    "CTCF",
+    "cohesin"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - gene looping",
+   "q": "What evidence challenges the closed gene loop model?",
+   "a": "DNA-FISH on long, highly transcribed genes showed that loops form during transcription and are open rather than closed, with chromatin condensed around the TSS and 3' end. This could let protein complexes interact with Pol II as it travels along the gene.",
+   "kw": [
+    "DNA-FISH",
+    "open loops"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - gene looping",
+   "q": "What are gene globules, and how do TSS-polyA genes fold?",
+   "a": "High-resolution chromosome conformation capture such as Micro-C finds gene globules, with extensive intragenic interactions instead of classic loops. Genes with TSS-polyA coordination form gene looping domains, and predicted intragenic compartments correspond to their distinct TSS-polyA couplings.",
+   "kw": [
+    "Micro-C",
+    "gene globules",
+    "MecP2"
+   ],
+   "info": "MecP2 example: in neuronal differentiation, its recruitment to promoters, possibly helped by looping, changes elongation dynamics and represses expression.",
+   "concl": "Common theme: intragenic interactions with the promoter act as feedback, relaying co-transcriptional events back to the promoter."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - RBP hitchhiking",
+   "q": "What evidence suggests RBPs are loaded at the promoter?",
+   "a": "Large-scale ChIP-seq of RBPs shows they associate with chromatin, preferring euchromatin and gene promoters. In fly and mammal nervous systems, ELAV-driven neuron-specific 3'-UTR isoforms depend on specific promoter elements.",
+   "kw": [
+    "ChIP-seq",
+    "ELAV",
+    "RBP"
+   ],
+   "info": "",
+   "concl": "RNA regulatory proteins may be loaded from the start, priming 3'-end regulation at transcription initiation."
+  },
+  {
+   "type": "qa",
+   "section": "Possible mechanisms - RBP hitchhiking",
+   "q": "How might enhancers and eRNAs be involved in recruiting RBPs?",
+   "a": "Genome-wide estimates suggest about 25% of enhancers produce eRNAs. EPRI studies show eRNAs can influence looping selectivity by forming RNA duplexes with promoter RNAs through reverse complementarity. RBPs can localize near TF binding sites, so enhancers could serve as platforms for TF-RBP complexes.",
+   "kw": [
+    "eRNA",
+    "EPRI",
+    "enhancers"
+   ],
+   "info": "Enhancers can also regulate 3'-end processing and polyA site choice, with different TFs acting at different efficiencies. The functional role of RBPs in enhancer-promoter looping still needs testing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Concluding remarks",
+   "q": "What is exon-mediated activation of transcription starts (EMATS)?",
+   "a": "Active splicing of internal exons activates cryptic, weak TSSs located 1 or 2 kb upstream. In this case alternative splicing influences ATSS, the reverse of the direction discussed in most of the review.",
+   "kw": [
+    "EMATS",
+    "splicing"
+   ],
+   "info": "",
+   "concl": "RNA processing may act as a regulatory checkpoint within the gene, forming a gene-internal feedback loop on TSS activity."
+  },
+  {
+   "type": "qa",
+   "section": "Concluding remarks",
+   "q": "Why is it hard to dissect the functional consequences of TSS-polyA coupling?",
+   "a": "The separate roles of the 5'-UTR and 3'-UTR regulatory regions have to be distinguished. Each can mask the other's regulatory effect, which hides their individual contributions.",
+   "kw": [
+    "5'-UTR",
+    "3'-UTR",
+    "masking"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Concluding remarks",
+   "q": "Which methods do the authors propose for future work?",
+   "a": "High-resolution chromosome capture (Micro-C) and single-molecule live imaging to test whether TSSs and 3'-end sites physically interact. Perturb-seq and its in vivo variant AAV-Perturb-seq to deplete whole 5'-3' isoforms, or only the 5'-UTR or 3'-UTR, across cell contexts.",
+   "kw": [
+    "Perturb-seq",
+    "AAV-Perturb-seq",
+    "Micro-C"
+   ],
+   "info": "Perturb-seq combines CRISPR-based perturbation with single-cell RNA-seq readout.",
+   "concl": "Whether TSSs and 3'-end sites physically interact, and how that shapes RNA processing complexes, is still unresolved."
+  },
+  {
+   "type": "note",
+   "section": "Concluding remarks",
+   "text": "Outstanding questions: what regulatory grammar at promoters drives co-transcriptional RNA-processing choices, how much do TFs regulate RNA processing, and does gene looping coordinate the crosstalk between TSSs and polyadenylation sites?"
+  },
+  {
+   "type": "note",
+   "section": "ATSS in development and disease",
+   "text": "Go back to the cited MZT studies on the switch from maternal W-box TSSs to zygotic TSSs. This is relevant for zebrafish embryo promoter and TSS data (zebrafish is one of the species in Figure 1A)."
+  },
+  {
+   "type": "note",
+   "section": "Box 1 - Promoter dominance",
+   "text": "Could the promoter-polyA coevolution (mutual information) approach be applied to cavefish vs surface fish to look for TSS-polyA coupling changes in cave-adapted genes?"
+  }
+ ]
+}

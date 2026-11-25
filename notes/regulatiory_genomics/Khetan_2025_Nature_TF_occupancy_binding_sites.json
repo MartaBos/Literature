@@ -1,0 +1,626 @@
+{
+ "id": "Khetan_2025",
+ "title": "Multiple overlapping binding sites determine transcription factor occupancy",
+ "link": "https://doi.org/10.1038/s41586-025-09472-3",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Khetan_2025_Nature_TF_occupancy_binding_sites.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What limitation of existing TF binding assays does the paper address?",
+   "a": "High-throughput in vitro technologies such as protein-binding microarrays (uPBMs) and HT-SELEX have a limited ability to reliably identify lower-affinity DNA binding sites, which matter for precise spatiotemporal control of gene expression.",
+   "kw": [
+    "uPBM",
+    "HT-SELEX"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is PADIT-seq?",
+   "a": "Protein affinity to DNA by in vitro transcription and RNA sequencing: a method the authors developed to assay TF binding preferences for all possible 10-bp DNA sequences with much higher sensitivity for lower-affinity sites.",
+   "kw": [
+    "PADIT-seq"
+   ],
+   "info": "They assayed six TFs and detected hundreds of novel, lower-affinity binding sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main model the paper proposes?",
+   "a": "TF binding is not determined by individual binding sites but by the sum of multiple, overlapping binding sites; nucleotides flanking a high-affinity site create overlapping lower-affinity sites that together modulate TF genomic occupancy in vivo.",
+   "kw": [
+    "overlapping binding sites"
+   ],
+   "info": "",
+   "concl": "The overlapping binding sites model is the central claim of the paper."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which two long-standing problems does the model explain?",
+   "a": "Competition between paralogous TFs for shared high-affinity sites (determined by flanking nucleotides creating differential numbers of overlapping lower-affinity sites), and how single noncoding nucleotide changes additively alter multiple overlapping sites to influence gene expression and human traits.",
+   "kw": [
+    "paralogues",
+    "noncoding variants"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are low-affinity binding sites thought to be important?",
+   "a": "They are widespread and important for precise spatiotemporal control of gene expression during development, and homotypic clusters of low-affinity sites can increase local TF concentration cooperatively or non-cooperatively to achieve phenotypic robustness.",
+   "kw": [
+    "low affinity",
+    "homotypic clustering"
+   ],
+   "info": "Multiple low-affinity sites in repetitive elements have also been shown to increase local TF concentration.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the authors' hypothesis about why in vitro data fail to explain in vivo binding?",
+   "a": "That the gap stems from an inability of existing in vitro assays to reliably detect lower-affinity TF-DNA interactions, given that nucleotides flanking motif matches in the genome are known to alter TF occupancy.",
+   "kw": [],
+   "info": "Other assays listed include affinity purification approaches (DAP-seq), Spec-seq, microfluidics methods and bacterial one-hybrid.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PADIT-seq measures relative DNA affinity",
+   "q": "How does the PADIT-seq genetic circuit work?",
+   "a": "After in vitro transcription and translation (IVTT), an ALFA-tagged DNA-binding domain (DBD) binds the candidate site and recruits T7 RNA polymerase through the anti-ALFA nanobody (nbALFA); bound TF increases reporter expression in proportion to binding strength.",
+   "kw": [
+    "ALFA tag",
+    "nbALFA",
+    "T7 RNA polymerase"
+   ],
+   "info": "Without DNA binding, a minimal T7 promoter (D1) drives only a low basal level of reporter expression.",
+   "concl": "Output of the circuit is directly proportional to TF-DNA binding affinity, so detected binding events are functionally coupled to transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Results - PADIT-seq measures relative DNA affinity",
+   "q": "What was in the main PADIT-seq reporter library?",
+   "a": "All possible 10-bp DNA sequences as candidate TF binding sites, n = 1,048,576, each randomly associated with barcodes whose TFBS-barcode pairings were determined by Illumina sequencing.",
+   "kw": [
+    "10-mer library"
+   ],
+   "info": "The library was mixed with either a 'no DBD' control or a constitutive T7 promoter driving the DBD of interest.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PADIT-seq measures relative DNA affinity",
+   "q": "Which TFs were used for initial benchmarking and why?",
+   "a": "EGR1 and HOXD13, representing the largest (C2H2-type zinc-finger) and second largest (homeodomain) TF families in metazoans.",
+   "kw": [
+    "EGR1",
+    "HOXD13"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PADIT-seq measures relative DNA affinity",
+   "q": "How is 'PADIT-seq activity' defined and how many active k-mers were found for the first two TFs?",
+   "a": "PADIT-seq activity is the log2(DBD / no-DBD) value from DESeq2 differential expression of TFBS barcode counts; at FDR 5% there were 46,279 active 10-mers for HOXD13 and 6,596 for EGR1.",
+   "kw": [
+    "DESeq2",
+    "FDR 5%"
+   ],
+   "info": "Active TFBSs are those that significantly increased reporter gene expression upon TF binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PADIT-seq measures relative DNA affinity",
+   "q": "How was robustness of PADIT-seq checked with a second library?",
+   "a": "A smaller-scale library of 896 candidate 9-bp sites was built; for both HOXD13 and EGR1 all active k-mers from the all-10-mers library were also active in the small library, and activities were highly correlated (Pearson r = 0.96 and 0.97).",
+   "kw": [],
+   "info": "Correlations are reported in Extended Data Fig. 1d,e.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - PADIT-seq measures relative DNA affinity",
+   "q": "How accurate are PADIT-seq activities against true affinities?",
+   "a": "EGR1 PADIT-seq activities correlated with MITOMI-derived dissociation constants with Pearson r = 0.94, and binding to low-affinity sites with Kd around 0.1 micromolar was detected.",
+   "kw": [
+    "MITOMI",
+    "Kd"
+   ],
+   "info": "MITOMI is an orthogonal microfluidics-based affinity measurement taken from previously published data.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind hundreds of low-affinity sites",
+   "q": "Which six TFs were assayed in total?",
+   "a": "Human HOXD13 (homeodomain), EGR1 (C2H2 zinc-finger), NKX2.5 (homeodomain) and TBX5 (T-box), plus the paralogous Saccharomyces cerevisiae bHLH TFs Pho4 and Cbf1.",
+   "kw": [
+    "NKX2.5",
+    "TBX5",
+    "Pho4",
+    "Cbf1"
+   ],
+   "info": "NKX2.5 and TBX5 have critical roles in cardiac development; Pho4 regulates phosphate homeostasis and Cbf1 chromosome segregation, and the two compete for shared DNA sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind hundreds of low-affinity sites",
+   "q": "How did PADIT-seq compare with uPBM data?",
+   "a": "The two showed strong concordance for all six TFs, but PADIT-seq active k-mers extended into lower-affinity sites, detecting binding at uPBM E-scores as low as 0.3, which traditional uPBM analysis would miss.",
+   "kw": [
+    "E-score"
+   ],
+   "info": "8-mer median activities were used for HOXD13, NKX2.5, TBX5, Pho4 and Cbf1; 9-mers for EGR1 because of its longer known site.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind hundreds of low-affinity sites",
+   "q": "Did uPBM scores predict PADIT-seq active k-mers well?",
+   "a": "Yes in a ranking sense: uPBM E-scores and z-scores gave AUROC above 0.97 for all TFs, but the thresholds separating active from inactive differed between TFs.",
+   "kw": [
+    "AUROC"
+   ],
+   "info": "This means using a single fixed uPBM threshold across TFs, as in prior studies, does not reliably distinguish bound sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind hundreds of low-affinity sites",
+   "q": "How were PADIT-seq active k-mers validated independently?",
+   "a": "With custom PBMs in which each k-mer was embedded in constant flanking sequences; PADIT-seq activities correlated with custom PBM intensities with Pearson r greater than 0.90 (HOXD13) and greater than 0.86 (EGR1) across protein concentrations.",
+   "kw": [
+    "custom PBM"
+   ],
+   "info": "The correlation held even for k-mers with weaker evidence (0.01 < FDR < 0.10), arguing these are genuine sites and not assay artefacts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind hundreds of low-affinity sites",
+   "q": "How did HT-SELEX perform in identifying the same sites?",
+   "a": "Much worse than uPBM: AUROCs were substantially lower regardless of SELEX cycle (for example NKX2.5 cycles 1-4 gave 0.510-0.591), because HT-SELEX is biased toward high-affinity sites and misses lower-affinity interactions.",
+   "kw": [
+    "HT-SELEX"
+   ],
+   "info": "PWMs derived from HT-SELEX data (FIMO, ProBound) were similarly biased toward high-affinity interactions.",
+   "concl": "PADIT-seq significantly outperforms existing high-throughput technologies at identifying lower-affinity sites."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "Which in vivo datasets were used to test the role of low-affinity sites?",
+   "a": "ChIP-seq or ChIP-nexus for HOXD13 in mouse forelimb bud, EGR1 in mouse frontal cortex, NKX2.5 and TBX5 in human cardiomyocytes, and Pho4 and Cbf1 in S. cerevisiae.",
+   "kw": [
+    "ChIP-seq",
+    "ChIP-nexus"
+   ],
+   "info": "All were previously published datasets, reprocessed with the ReMap pipeline for the ChIP-seq sets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "Did lower-affinity sites help separate bound from unbound regions?",
+   "a": "No. They did not improve discrimination of bound versus background regions, but the sum of PADIT-seq activities of all active k-mers in a peak correlated modestly with normalized ChIP read counts (Pearson r = 0.29-0.50).",
+   "kw": [],
+   "info": "Using only the highest-affinity k-mers gave lower correlation with ChIP signal than including lower-affinity sites, so the low-affinity sites add quantitative information.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "What did the sliding window analysis across peaks reveal?",
+   "a": "Scoring every k-mer in 1-bp steps across peaks showed multiple consecutive active k-mers for all six TFs, for example 6 consecutive active HOXD13 8-mers (a 13-bp stretch) at a ChIP-seq peak near Cadps.",
+   "kw": [
+    "sliding window",
+    "Cadps"
+   ],
+   "info": "Each of these 8-mers had been assayed independently in PADIT-seq.",
+   "concl": "Overlapping binding sites are distinct from homotypic clustering, where non-overlapping sites lie tens to hundreds of bp apart."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "Are consecutive active k-mers enriched in real peaks?",
+   "a": "Yes. For all six TFs, ChIP-seq and ChIP-nexus peaks had significantly more consecutive active k-mers than random length-matched genomic regions (P values from 3.34 x 10^-61 down to below computational precision for EGR1).",
+   "kw": [],
+   "info": "The enrichment held regardless of how background regions were defined and regardless of the FDR cutoff (1%, 5% or 10%) used to call active k-mers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "How are high-affinity and low-affinity sites arranged within these stretches?",
+   "a": "High-affinity PADIT-seq active k-mers tended to be central and were flanked by nucleotides that created additional overlapping, lower-affinity binding sites.",
+   "kw": [],
+   "info": "Heat maps and mean activity profiles across peaks show a peak of activity in the centre with lower activity at the edges.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "Are regions with consecutive active k-mers conserved?",
+   "a": "Yes, genomic regions containing consecutive active k-mers had significantly higher PhastCons scores than their flanking sequences, across varying numbers of consecutive active k-mers.",
+   "kw": [
+    "PhastCons"
+   ],
+   "info": "mm10 60-way Glire scores for HOXD13 and EGR1, hg38 30-way for NKX2.5 and TBX5; conservation was not analysed for Pho4 and Cbf1 because of too few peaks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "q": "What DNA shape analysis was done?",
+   "a": "Deep DNAShape, a deep learning tool, showed that minor groove width and propeller twist at the extended recognition sequences differed from flanking genomic regions.",
+   "kw": [
+    "Deep DNAShape",
+    "minor groove width"
+   ],
+   "info": "The authors note further studies are needed to understand the relationship between DNA shape preferences and lower-affinity sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind each site independently in vivo",
+   "q": "Why use ChIP-nexus to test the model?",
+   "a": "ChIP-nexus combines ChIP specificity with 5' to 3' exonuclease trimming, mapping individual TF-DNA binding events at nucleotide resolution, so independent occupancy of each overlapping site should leave a distinct cut signature.",
+   "kw": [
+    "ChIP-nexus footprinting"
+   ],
+   "info": "Peaks were stratified by the number of consecutive overlapping active 8-mers; peaks with only 1 or 2 overlapping sites showed no cuts above background.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind each site independently in vivo",
+   "q": "What were the three key footprinting observations?",
+   "a": "(1) Cut magnitude increased progressively from 3 to 5 overlapping sites for both Pho4 and Cbf1; (2) the number of significant cuts expanded in 1-bp increments on both strands (Cbf1 2 to 3 to 4; Pho4 3 to 4); (3) footprint size grew incrementally (Cbf1 28 to 29 to 30 bp; Pho4 27 to 28 bp).",
+   "kw": [
+    "footprint size"
+   ],
+   "info": "Expansion of cuts occurred primarily inward toward the centre of the binding region.",
+   "concl": "Each additional overlapping site gives exactly one extra cut per strand, the predicted signature of independent TF binding at each site."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TFs bind each site independently in vivo",
+   "q": "How was the artefact of variable core motif position ruled out?",
+   "a": "For Pho4, about 96% of ChIP-nexus peaks with five overlapping sites had CACGTG at the fourth register; for Cbf1, where positioning was variable, analysis was restricted to peaks with CACGTG at the same register and the footprint still expanded from 28 bp (3 sites) to 30 bp (5 sites).",
+   "kw": [
+    "CACGTG",
+    "E-box"
+   ],
+   "info": "",
+   "concl": "The footprint expansion reflects genuine additional TF binding events, not positional artefacts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Each site additively increases affinity",
+   "q": "What three independent analyses supported additivity?",
+   "a": "(1) HT-SELEX reads with more overlapping active k-mers became progressively more abundant across selection rounds; (2) uPBM signal intensity increased linearly with the number of consecutive overlapping active k-mers across about 40,000 60-bp probes for all six TFs; (3) 10-mer PADIT-seq activity tracked the mean uPBM E-score of all constituent overlapping 8-mers, not just the strongest one.",
+   "kw": [
+    "additivity"
+   ],
+   "info": "For 10-mers with a central ACTTTACT 8-mer, mean HOXD13 uPBM E-scores of the two overlapping 8-mers correlated highly with 10-mer PADIT-seq activity; the relationship held for a significant majority of active k-mers (binomial test P < 2.2 x 10^-16).",
+   "concl": "Consecutive active k-mers increase TF affinity additively."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of TF paralogue competition",
+   "q": "How do Pho4 and Cbf1 differ in their PADIT-seq binding repertoires?",
+   "a": "Of 311 active 8-mers across both TFs, 34 high-affinity sites were bound by both, while lower-affinity sites were specific to Cbf1 (n = 58) or Pho4 (n = 219).",
+   "kw": [
+    "Pho4",
+    "Cbf1"
+   ],
+   "info": "The two compete for the same CACGTG E-box under low-phosphate conditions, when Pho4 translocates to the nucleus.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of TF paralogue competition",
+   "q": "What is BET-seq and what did it show here?",
+   "a": "BET-seq (binding energy topography by sequencing) measures relative binding affinities; published data for the central CACGTG E-box with all possible 5-bp flanks on either side showed a clearly bimodal distribution of Cbf1 versus Pho4 preference.",
+   "kw": [
+    "BET-seq",
+    "delta-delta-G"
+   ],
+   "info": "The bimodality indicates that flanking sequences alone create differential binding specificity between the paralogues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of TF paralogue competition",
+   "q": "How well does the overlapping sites model predict which paralogue wins?",
+   "a": "The difference in the number of consecutive active 8-mers for each TF predicted the dominant binder with Pearson r = 0.796; adding the PADIT-seq activities (relative binding strengths) raised this to Pearson r = 0.948, adjusted r2 = 0.898 +/- 0.0004.",
+   "kw": [],
+   "info": "PWM models reached only r2 = 0.795 +/- 0.0007, so the overlapping model captures about 50% of the remaining variance.",
+   "concl": "Flanking nucleotides create differential numbers of overlapping lower-affinity sites that control paralogue competition."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of TF paralogue competition",
+   "q": "Was the competition effect seen in competition experiments?",
+   "a": "Yes. In genomic context PBM (gcPBM) competition data, sequences with more Pho4-specific consecutive active 8-mers showed reduced Cbf1 binding when Pho4 was present and vice versa, and in vivo ChIP-seq peaks with more Pho4-specific sites showed higher Pho4 occupancy in the presence of Cbf1.",
+   "kw": [
+    "gcPBM"
+   ],
+   "info": "In vivo comparison used Pho4 ChIP-seq pileup in delta-pho80 versus delta-pho80 delta-cbf1 yeast.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of SNP effects on TF binding",
+   "q": "How did PADIT-seq compare with SNP-SELEX for variant effects?",
+   "a": "Across 5,748 (HOXD13) and 4,136 (EGR1) SNP-SELEX-tested variants, PADIT-seq recovered 92.8% (39/42) and 96.4% (81/84) of the variants SNP-SELEX called as altering binding, and additionally flagged more than fivefold more variants with subtler effects.",
+   "kw": [
+    "SNP-SELEX"
+   ],
+   "info": "The subtler variants' PADIT-seq effects still correlated with SNP-SELEX preferential binding scores, suggesting they are true positives below SNP-SELEX sensitivity.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of SNP effects on TF binding",
+   "q": "How were variant predictions validated and how did methods rank?",
+   "a": "Custom PBMs tested about 280 variants per TF; PADIT-seq reached AUROC 0.943 (HOXD13) and 0.962 (EGR1), versus SNP-SELEX 0.891 and 0.941 and MotifBreakR 0.790 and 0.872.",
+   "kw": [
+    "MotifBreakR",
+    "custom PBM"
+   ],
+   "info": "MotifBreakR is a widely used PWM-based variant effect scorer.",
+   "concl": "PADIT-seq outperformed PWM-based and SELEX-based approaches at predicting differential TF binding."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of SNP effects on TF binding",
+   "q": "How does variant effect size relate to the number of overlapping sites altered?",
+   "a": "The magnitude of differential binding scaled with the number of overlapping sites altered; variants hitting several overlapping k-mers (for example rs606231230, rs79228650) had large effects, while variants altering a single active k-mer (rs1104802, rs73414426) had modest but significant effects.",
+   "kw": [],
+   "info": "SNP-SELEX preferential binding scores also increased with the number of consecutive active k-mers altered between alleles.",
+   "concl": "Noncoding variants act through cumulative effects on multiple overlapping sites, and each site contributes independently."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of SNP effects on TF binding",
+   "q": "What is the disease example given?",
+   "a": "rs606231230 is pathogenic for preaxial polydactyly and lies in a limb-specific enhancer bound by HOXD13 in the developing mouse limb bud; the risk allele creates multiple overlapping HOXD13 binding sites.",
+   "kw": [
+    "rs606231230",
+    "preaxial polydactyly"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Mechanism of SNP effects on TF binding",
+   "q": "What in vivo evidence links the predictions to real regulatory output?",
+   "a": "Using allele-specific ChIP-seq data (ADASTRA), PADIT-seq identified the preferred allele with 91% concordance, outperforming MotifBreakR, and MPRA data for EGR1 showed that variants predicted to alter binding also significantly affected gene expression.",
+   "kw": [
+    "ADASTRA",
+    "MPRA"
+   ],
+   "info": "MPRA data came from four published studies; 149 SNPs with differential EGR1 PADIT-seq activity were examined.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding sites are innately weavable",
+   "q": "What is the network ('weavability') analysis?",
+   "a": "Nodes are PADIT-seq active k-mers and edges connect k-mers sharing a (k-1)-bp overlap; for HOXD13, 3,446 of 3,536 nodes (97.5%) fell in one connected component, versus only 7 of 3,536 (0.2%) for random 8-mers.",
+   "kw": [
+    "weavability",
+    "igraph"
+   ],
+   "info": "The same held for the other five TFs, and binding affinity of a node correlated positively with its number of edges.",
+   "concl": "TF binding sites have an inherent capacity to weave into extended recognition sequences; high-affinity k-mers are the most likely to be flanked by overlapping lower-affinity sites."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF binding sites are innately weavable",
+   "q": "Is weavability general beyond the six assayed TFs?",
+   "a": "Yes. Using top 500 uPBM 8-mers for 200 human and mouse TFs from 9 DBD classes in UniPROBE, 199 of 200 TFs had more than 80% of nodes in the largest connected component (P < 0.001, permutation test against 1,000 random samplings).",
+   "kw": [
+    "UniPROBE"
+   ],
+   "info": "Only TFs whose top 500 8-mers all had PBM E-score > 0.35 were analysed.",
+   "concl": "Weavability appears to be an intrinsic, general property of eukaryotic TFBSs."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PADIT-seq reagents",
+   "q": "How were the DBD and polymerase constructs made?",
+   "a": "DBD-ALFA tag fusions and nbALFA-T7 RNA polymerase were cloned into pET28b by multi-fragment Gibson assembly from Q5 PCR amplicons and IDT gBlocks, Sanger verified; nbALFA-T7 RNA polymerase was expressed in Rosetta 2 (DE3) E. coli and purified on Ni-NTA.",
+   "kw": [
+    "pET28b",
+    "Gibson assembly"
+   ],
+   "info": "Induction overnight at 18 degrees C with 1 mM IPTG maximized soluble protein; elution with 500 mM imidazole, storage at -80 degrees C in 50% glycerol.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library construction",
+   "q": "How deep was barcode coverage in the all-10-mers library?",
+   "a": "About 110 million transformants were obtained by electroporation into E. cloni 10G cells (13 transformations), giving roughly 100 barcodes per TFBS; the small-scale library had about 150,150 colonies, roughly 167 barcodes per TFBS.",
+   "kw": [
+    "barcodes"
+   ],
+   "info": "Barcodes were 25 bp in the all-10-mers library and 20 bp in the small-scale library; backbone was pGL4.23 with the luciferase ORF excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library construction",
+   "q": "How were PCR-mediated recombination artefacts in TFBS-barcode pairing removed?",
+   "a": "The library was amplified in four separately indexed PCR reactions; barcodes linked to multiple TFBSs were kept only if the TFBS appeared independently in at least two of the four libraries, any still-ambiguous barcodes were discarded, and barcodes where the top TFBS had fewer reads than the sum of discarded TFBSs were removed.",
+   "kw": [
+    "PCR recombination"
+   ],
+   "info": "The four indexed libraries were sequenced on NovaSeq6000 with 2 x 150-bp reads.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - PADIT-seq experiments",
+   "q": "What were the key PADIT-seq reaction conditions and replication?",
+   "a": "30 microlitre PURExpress IVTT reactions with purified nbALFA-T7 RNA polymerase, about 300 ng linearized reporter library and pT7-DBD-T7Term amplicon at a 2:1 molar ratio; HOXD13 and EGR1 used 3 biological replicates, NKX2.5, TBX5, Pho4 and Cbf1 used 5, with 7 'no DBD' control reactions in total.",
+   "kw": [
+    "PURExpress",
+    "IVTT"
+   ],
+   "info": "Libraries were linearized with DrdI to remove supercoiling; reactions ran 4 h at 37 degrees C before RNA purification and cDNA synthesis with barcoded primers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data analysis",
+   "q": "How were 8-mer and 9-mer activities derived from the 10-mer library?",
+   "a": "For each k-mer, all occurrences in the all-10-mers library were analysed separately by position within the 10-mer (3 positions for 8-mers, 2 for 9-mers), keeping the median log2 fold change per position and the orientation (forward or reverse complement) with the higher median.",
+   "kw": [],
+   "info": "EGR1 9-mer uPBM E-scores were obtained by re-analysing UniPROBE PBM data with a modified Universal PBM Analysis Suite.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data analysis",
+   "q": "How were ChIP-seq data processed?",
+   "a": "With the ReMap database pipeline: Trim Galore for adapters (trimming up to 30 bp), Bowtie2 with --end-to-end --sensitive aligning to mm10 (HOXD13, EGR1) or hg38 (NKX2.5, TBX5), with peak calls downloaded from ReMap and random length-matched intervals from BEDTools shuffle.",
+   "kw": [
+    "ReMap",
+    "Bowtie2",
+    "BEDTools"
+   ],
+   "info": "For each peak only the longest run of consecutive active k-mers was used in comparisons.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data analysis",
+   "q": "How was ChIP-nexus cut significance tested?",
+   "a": "By a permutation test: 5' cuts from both strands were combined and randomly shuffled 100,000 times to build a null distribution for 30-bp flanking regions, with Benjamini-Hochberg correction; adjusted P < 0.05 counted as a significant cut.",
+   "kw": [
+    "permutation test"
+   ],
+   "info": "Peaks containing predicted G-quadruplexes (pqsfinder) were filtered out because lambda-exonuclease has G4 biases, although only about 1% of peaks had any G4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data analysis",
+   "q": "What criteria defined a variant as altering TF binding by PADIT-seq?",
+   "a": "Two conditions: the total number of active overlapping k-mers must differ between alleles, and the absolute difference in summed PADIT-seq activities must be greater than 1 (i.e. more than a twofold change in reporter expression).",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - custom PBM",
+   "q": "How was the custom PBM array designed and run?",
+   "a": "Active k-mers (HOXD13 8-mers, EGR1 9-mers) were placed in the same constant flanks used in PADIT-seq (5' TGGCCTCGGC, 3' GGAACCTCTA) as 36-bp probes with a 24-bp priming sequence, each tested in both orientations with 8 technical replicates; Flag-tagged protein was used at 300, 500 and 800 nM and detected with Alexa Fluor 488 anti-Flag.",
+   "kw": [
+    "custom PBM"
+   ],
+   "info": "For SNPs, each allele was tested in both orientations at 500 nM in duplicate, giving 16 measurements per allele; differential binding by two-sided t-test with Benjamini-Hochberg correction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does this model differ from short tandem repeat and iMITOMI low-affinity cluster studies?",
+   "a": "Those studies describe multiple TF molecules binding simultaneously to distinct sites on one DNA fragment, whereas this study concerns how a single TF molecule interacts with multiple overlapping DNA binding sites.",
+   "kw": [
+    "STR",
+    "iMITOMI"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors rebut the idea that overlapping sites are just partial motif recognition?",
+   "a": "Three lines of evidence: lower-affinity active k-mers bound independently in custom PBMs; variants that alter a single overlapping site while preserving neighbours still changed binding in the predicted direction; and ChIP-nexus footprinting gave exactly one extra cut per strand and 1-bp footprint growth per added site.",
+   "kw": [],
+   "info": "",
+   "concl": "The ChIP-nexus signature is presented as the most compelling evidence for independent occupancy at consecutive overlapping sites."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What broader interpretation do the authors offer?",
+   "a": "The intrinsic tendency of high-affinity sites to carry overlapping lower-affinity sites may act as a tunable energetic 'sink' for TF binding, and evolution of flanking sequences that create differential numbers of overlapping sites may be a general way to control relative binding of co-expressed paralogous TFs.",
+   "kw": [],
+   "info": "They also note the model gives a new framework for interpreting how noncoding variation influences transcription and disease.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Limitation of PADIT-seq",
+   "q": "What limits detection of active k-mers by PADIT-seq?",
+   "a": "Three factors: concentrations of TF and nbALFA-T7 RNA polymerase (suboptimal levels reduce sensitivity), sequencing depth (low coverage reduces power), and the FDR threshold (stricter cutoffs exclude genuine lower-affinity sites).",
+   "kw": [
+    "limitations"
+   ],
+   "info": "So PADIT-seq may still not capture the complete spectrum of biologically relevant lower-affinity interactions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - Limitation of PADIT-seq",
+   "q": "What design constraint on flanking sequences did they apply, and why does it matter for other TFs?",
+   "a": "The constant flanks around the 10-bp candidate sites were chosen so that no adjoining 8-mer had a HOXD13 or EGR1 PBM E-score above 0.25; surveying other TFs with PADIT-seq would require similar consideration of flanking sequence effects.",
+   "kw": [
+    "flanking sequences"
+   ],
+   "info": "This precaution proved prudent exactly because adjacent lower-affinity sites turn out to influence binding.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Where are the data and code available?",
+   "a": "PADIT-seq data are in GEO under GSE250601, and code plus processed data for the figures are at https://github.com/BulykLab/PADIT-seq.",
+   "kw": [
+    "GSE250601"
+   ],
+   "info": "Reanalysed external data include uPBM from UniPROBE, HT-SELEX (ENA ERP001826), ChIP datasets GSE81356, GSE89457, GSE85628, GSE67482, GSE207001, BET-seq GSE111936 and ADASTRA allele-specific ChIP-seq.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Open question raised by the authors: does the intrinsic weavability of binding sites also hold for prokaryotic TFs, and how did this property evolve?"
+  },
+  {
+   "type": "note",
+   "section": "Results - TFs bind overlapping sites in the genome",
+   "text": "Worth going back to: lower-affinity sites did not improve bound-versus-background discrimination (Extended Data Fig. 3a) yet did improve correlation with ChIP signal. Useful caveat if applying this idea to peak prediction in cavefish or zebrafish regulatory regions."
+  },
+  {
+   "type": "note",
+   "section": "Methods - data analysis",
+   "text": "Check whether an analogous overlapping-k-mer scan could be run on Astyanax or zebrafish ChIP/ATAC peaks using published uPBM 8-mer E-scores, since PADIT-seq data exist for only six TFs but the weavability analysis used 200 TFs from UniPROBE."
+  }
+ ]
+}

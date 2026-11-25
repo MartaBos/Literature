@@ -1,0 +1,591 @@
+{
+ "id": "Sun_2024",
+ "title": "Mapping the chromatin accessibility landscape of zebrafish embryogenesis at single-cell resolution by SPATAC-seq",
+ "link": "https://doi.org/10.1038/s41556-024-01449-0",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Sun_2024_NatCellBiol_zebrafish_chromatin_accessibility_atlas.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main aim of this paper?",
+   "a": "To present SPATAC-seq, a split-pool ligation-based single-cell ATAC-seq method, and use it to map chromatin accessibility in single cells across zebrafish embryogenesis.",
+   "kw": [
+    "SPATAC-seq",
+    "scATAC-seq"
+   ],
+   "info": "Published as a Resource, meant as an open resource for finding driver regulators of cell fate decisions.",
+   "concl": "SPATAC-seq yields a single-cell open chromatin atlas of zebrafish embryogenesis covering more than 800,000 nuclei."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What does the atlas contain, in numbers?",
+   "a": "More than 800,000 nuclei across 20 developmental stages from the sphere stage to the early larval protruding mouth stage, classified into 604 cell states, with 959,040 candidate cis-regulatory elements (cCREs).",
+   "kw": [
+    "cCREs",
+    "cell states"
+   ],
+   "info": "They also defined development-specific cCREs and cell identity transcription factors, tested enhancers in reporter assays, and studied pigment and notochord differentiation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "Many epigenomic and transcriptomic datasets already exist for zebrafish embryos, but the dynamic accessible regions that set up the regulatory program of each cell type during embryogenesis had not been studied in detail.",
+   "kw": [
+    "gene regulatory networks",
+    "cell identity"
+   ],
+   "info": "The broader goal named is identifying the gene regulatory networks underlying lineage commitment and cell differentiation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is ZEPA?",
+   "a": "The Zebrafish Embryogenesis Single-Cell Open Chromatin Atlas, the compendium of single-cell chromatin accessibility data built with SPATAC-seq in this study.",
+   "kw": [
+    "ZEPA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview and validation of SPATAC-seq",
+   "q": "What is SPATAC-seq and which methods does it build on?",
+   "a": "A high-throughput scATAC-seq method that labels chromatin fragments in situ inside fixed nuclei through four rounds of combinatorial barcoding. It builds on sci-ATAC-seq (combinatorial indexing) and split-pool ligation-based transcriptome sequencing.",
+   "kw": [
+    "combinatorial indexing",
+    "split-pool"
+   ],
+   "info": "Compatible with standard Illumina sequencing recipes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview and validation of SPATAC-seq",
+   "q": "How do the four barcoding rounds work?",
+   "a": "Round 1: nuclei are tagmented in 48 wells with 48 uniquely barcoded Tn5 transposomes. Rounds 2 and 3: nuclei are pooled and split into two more 48-well plates where barcodes are ligated. Round 4: nuclei are pooled, split into sub-libraries, lysed, and given a fourth barcode by PCR.",
+   "kw": [
+    "Tn5",
+    "ligation barcoding"
+   ],
+   "info": "Three rounds give 48 x 48 x 48 = 110,592 combinations per sub-library; with 96 PCR wells Fig. 1a gives 10,616,832 combinations. Using 96 barcodes per round would give about 1 million combinations per sub-library. Transposome adaptors carry 5' phosphorylation at both ends, which enables the ligation rounds.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview and validation of SPATAC-seq",
+   "q": "How did they test whether barcodes stay specific to single cells?",
+   "a": "A species-mixing experiment: human K562 and mouse Hepa cells mixed 1:1, profiled with only eight barcoded transposomes. Of 1,293 cells, 721 were human, 555 mouse and 17 doublets, an observed doublet rate of about 2.6%, close to theory.",
+   "kw": [
+    "species mixing",
+    "doublet rate"
+   ],
+   "info": "A barcode was called a doublet if fewer than 85% of unique fragments aligned to either hg38 or mm10; the observed rate was multiplied by 2 to estimate the true rate. Barcodes with fewer than 500 reads or TSS enrichment below 4 were excluded. Eight sub-libraries (SL-1 to SL-8) were made.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview and validation of SPATAC-seq",
+   "q": "How well does SPATAC-seq agree with bulk ATAC-seq and other single-cell methods?",
+   "a": "Aggregated SPATAC-seq signal correlated with bulk K562 ATAC-seq at r = 0.919 and with bulk Hepa ATAC-seq at r = 0.955, was enriched at TSSs, and fragment sizes showed nucleosome phasing.",
+   "kw": [
+    "TSS enrichment",
+    "FRiP"
+   ],
+   "info": "Correlation between sub-libraries was r = 0.917 (K562) and r = 0.944 (Hepa). Unique fragments per cell, FRiT, FRiP and TSS enrichment were comparable to published plate-based and Fluidigm C1 scATAC-seq; valid-barcode and debris fractions were comparable to optimized sci-ATAC-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Overview and validation of SPATAC-seq",
+   "q": "How does SPATAC-seq compare with earlier zebrafish sci-ATAC-seq, and what does it cost?",
+   "a": "Against published zebrafish sci-ATAC-seq at 24 hpf it showed much higher TSS enrichment with a similar number of unique fragments, indicating a better signal-to-noise ratio. The cost is about US$0.01 per cell.",
+   "kw": [
+    "sci-ATAC-seq",
+    "cost"
+   ],
+   "info": "The authors also claim higher cell throughput and a lower doublet rate than sci-ATAC-seq.",
+   "concl": "SPATAC-seq is a reliable, low-cost, high-throughput scATAC-seq method."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryos and nuclei",
+   "q": "How were embryos staged and nuclei prepared?",
+   "a": "Wild-type Tubingen embryos were collected at the one-cell stage, raised in Holtfreter's solution at 28.5 C, dechorionated with Pronase (~10 min), and for time points under 24 h the yolk was removed before snap freezing.",
+   "kw": [
+    "Tubingen",
+    "yolk removal"
+   ],
+   "info": "Nuclei were released in a Dounce homogenizer in homogenization buffer with 0.1% NP-40, filtered through 40 um, fixed with 0.5% formaldehyde for exactly 10 min on ice, quenched with glycine, and diluted to 5,000 nuclei per ul.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryos and nuclei",
+   "q": "How was the number of cells per embryo estimated?",
+   "a": "By DNA content: total genomic DNA of 30 to 100 embryos per stage was extracted (five technical replicates), quantified with a Qubit, and converted to cell number assuming 4.6 pg of DNA per zebrafish cell.",
+   "kw": [
+    "DNA content"
+   ],
+   "info": "This underlies the 59 to 271% sampling-depth estimates.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Single-cell chromatin accessibility in zebrafish embryogenesis",
+   "q": "What samples were profiled and how many cells passed QC?",
+   "a": "Whole embryos at 20 stages from 4 to 72 hpf. SPATAC-seq gave 808,046 high-quality cells, with a median of 3,664 unique nuclear fragments per cell and a mean TSS enrichment of 12.6 (plus or minus 3.7).",
+   "kw": [
+    "whole embryo"
+   ],
+   "info": "SPATAC-seq data came from five experimental batches. All data are from nuclei, although the paper refers to cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Single-cell chromatin accessibility in zebrafish embryogenesis",
+   "q": "Which other datasets did they generate alongside SPATAC-seq?",
+   "a": "10x Genomics scATAC-seq of 80,767 cells at 24, 48 and 72 hpf (two experiments), plus bulk ATAC-seq of whole embryos at all 20 stages.",
+   "kw": [
+    "10x Genomics",
+    "bulk ATAC-seq"
+   ],
+   "info": "The 10x kit was Chromium Next GEM Single Cell ATAC v1.1, targeting 10,000 cells per channel, sequenced on MGISEQ-2000.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Single-cell chromatin accessibility in zebrafish embryogenesis",
+   "q": "How many nuclei per stage, and what fraction of an embryo is that?",
+   "a": "On average 44,440 nuclei per stage (median 36,627), corresponding to 59% (72 hpf) up to 271% (24 hpf) of the total cells in one embryo.",
+   "kw": [
+    "sampling depth"
+   ],
+   "info": "The range is printed as 9,244 to '11,1471', apparently a typo for 111,471. Values above 100% arise because nuclei came from pooled embryos (100 per tube), but the paper does not comment on this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data processing",
+   "q": "How were the sequencing data processed?",
+   "a": "Zebrafish SPATAC-seq reads were aligned to GRCz11 with BWA after merging barcodes into the read headers, and fragment files were made with Sinto. Species-mixing data were reformatted to Cell Ranger ATAC v1.2 format and run against GRCh38_and_mm10.",
+   "kw": [
+    "BWA",
+    "Sinto",
+    "Cell Ranger ATAC"
+   ],
+   "info": "Bulk ATAC-seq reads were trimmed with trim_galore, mapped with BWA, filtered for MAPQ below 30 and duplicates with SAMtools; consensus bulk peaks were made with MSPC. 10x fastq files from MGISEQ were converted to 10x format and run with Cell Ranger ATAC v1.2 on a custom GRCz11 reference.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - QC and clustering",
+   "q": "What tool and parameters were used for single-cell QC and dimensionality reduction?",
+   "a": "ArchR v1.0.1 in R v4.1.3, with a custom ArchRGenome built on the Lawson Lab Zebrafish Transcriptome Annotation v4.3.2. Doublets were scored with addDoubletScores (k = 10) and cells with doublet enrichment above 4 were removed.",
+   "kw": [
+    "ArchR",
+    "iterative LSI"
+   ],
+   "info": "Iterative LSI on the 501-bp tile matrix used three iterations, clustering resolution 2 (3 after the first iteration), 50,000 variable features, 100 dimensions, LSI method 1 and 10,000 sampled cells; batch effects were removed with addHarmony, clusters called at resolution 3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell type annotation for each stage",
+   "q": "How were scATAC-seq cells assigned to cell types?",
+   "a": "By label transfer from published annotated zebrafish scRNA-seq datasets (Farrell, Wagner, Farnsworth). Stages without a matching scRNA-seq dataset were annotated from their specifically accessible genes using the literature and ZFIN.",
+   "kw": [
+    "label transfer",
+    "ZFIN"
+   ],
+   "info": "Integration used ArchR addGeneIntegrationMatrix, transferring the expression matrix and labels onto ATAC cells. Stages 4-18, 24 and 48 hpf were annotated by integration; 20, 22, 30, 34, 38, 42 and 72 hpf from marker accessibility.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell type annotation for each stage",
+   "q": "What is a gene activity score?",
+   "a": "A value ArchR computes for each gene from accessibility within and around the gene body, used as a proxy for gene expression.",
+   "kw": [
+    "gene activity score"
+   ],
+   "info": "For t-SNE/UMAP visualization the scores were smoothed with MAGIC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell type annotation for each stage",
+   "q": "What did annotation at 10 hpf show?",
+   "a": "23 distinct cell types, with closely overlapping scRNA-seq and scATAC-seq distributions. Two ambiguous clusters were treated as doublets, and one cluster labelled mesodermal by label transfer was actually yolk syncytial layer (YSL) based on YSL marker accessibility.",
+   "kw": [
+    "YSL",
+    "pax2a",
+    "hesx1"
+   ],
+   "info": "Examples: pax2a specifically accessible in midbrain, hesx1 in telencephalon. All scRNA-seq cell types were present in the SPATAC data, and cell-type proportions matched the scRNA-seq data (r = 0.955).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell type annotation for each stage",
+   "q": "How many cell states and cell types were defined across all stages?",
+   "a": "604 cell states and 82 cell type annotations across 20 stages. Deeper profiling revealed more cell types at 24 hpf (for example lens and notochord) than the earlier sci-ATAC-seq dataset.",
+   "kw": [
+    "cell states"
+   ],
+   "info": "SPATAC-seq captured slightly fewer unique fragments per cell than 10x Genomics, but cell-type abundances at 24, 48 and 72 hpf correlated highly between the two methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstruction of trajectories spanning zebrafish embryogenesis",
+   "q": "How were all cells integrated and visualized together?",
+   "a": "Harmony corrected experimental batch and platform effects, and 888,813 cells (SPATAC plus 10x) were embedded with UMAP, showing clear stage-dependent expansion of cellular diversity. Cells were grouped into 36 broad cell types.",
+   "kw": [
+    "Harmony",
+    "UMAP"
+   ],
+   "info": "The 82 major cell types were manually merged into 36 broad types for display, for example pigment cells into neural crest and EVL into periderm. The peak-matrix LSI used 100,000 variable features and the last 99 LSI dimensions for Harmony, giving 156 clusters at resolution 3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstruction of trajectories spanning zebrafish embryogenesis",
+   "q": "What did the retina example show?",
+   "a": "Retinal cells followed progressive differentiation paths from early progenitors at 14 hpf to specialized types at 72 hpf: cones, rods, cone bipolar cells, horizontal cells, amacrine cells, retinal ganglion cells, Muller glia and retinal pigment epithelium.",
+   "kw": [
+    "retina"
+   ],
+   "info": "Terminal branches were annotated with published markers such as fabp1a, ompa, cabp5b and gngt2a.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstruction of trajectories spanning zebrafish embryogenesis",
+   "q": "How did they connect cell types between developmental stages?",
+   "a": "With a k-nearest-neighbour heuristic (k = 5): cells from adjacent stages were co-embedded and, for each cell type, the cell types of the 5 nearest neighbours in the earlier stage were counted. Keeping edges with weight above 0.3 gave a directed acyclic graph of 603 nodes and 635 edges.",
+   "kw": [
+    "k-NN",
+    "directed acyclic graph"
+   ],
+   "info": "UMAP used minDist 0.3 and nNeighbors 100; 500 iterations with 80% subsampling, median ancestor ratios as edge weights. Repeating in LSI space (dims 1:30) gave weights correlating at r = 0.994 (604 nodes, 636 edges). Graphs were drawn in Cytoscape. Example: margin at 5 hpf linked to the deep cell layer (DEL) at 4 hpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Reconstruction of trajectories spanning zebrafish embryogenesis",
+   "q": "How do these trajectories differ from earlier scRNA-seq-based ones?",
+   "a": "They cover longer periods and show more detail. Slow muscle cells derive from mesoderm adaxial cells, a path that terminated prematurely in a previous study, and the roof plate was inferred to come from the tailbud spinal cord rather than midbrain or hindbrain.",
+   "kw": [
+    "roof plate",
+    "adaxial cells"
+   ],
+   "info": "The authors note trajectories from accessibility or expression alone may be inaccurate, and suggest multiomics (SHARE-seq, Paired-Tag), dynamo and lineage tracing (GESTALT) as corrections.",
+   "concl": "Inferred trajectories are hypotheses that need lineage-tracing validation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - An atlas of cCREs during zebrafish embryogenesis",
+   "q": "How were the cCREs identified?",
+   "a": "MACS2 called fixed-width 501-bp peaks on pseudobulk profiles aggregated per cell type, giving 39,963 to 404,504 peaks per stage, merged into a union set of 959,040 non-redundant cCREs.",
+   "kw": [
+    "MACS2",
+    "pseudobulk",
+    "cCREs"
+   ],
+   "info": "Peak number per stage roughly followed developmental stage and the number of cell types. The 14 cell types with fewer than 100 cells were excluded from peak calling.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - An atlas of cCREs during zebrafish embryogenesis",
+   "q": "Where in the genome are the cCREs?",
+   "a": "They span more than 480 Mb, or 35.7% of the zebrafish reference genome. 46.4% are intronic and 38.6% distal intergenic, so most are distal elements.",
+   "kw": [
+    "distal elements"
+   ],
+   "info": "The pie chart also shows 8.9% and 6.1% for exonic and promoter categories; the extracted text does not make clear which value belongs to which.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - An atlas of cCREs during zebrafish embryogenesis",
+   "q": "How do the cCREs compare with bulk ATAC-seq and published enhancer sets?",
+   "a": "The cCREs covered most previously mapped bulk adult-tissue ATAC-seq peaks and enhancers, but only 44% of the cCREs were found in the Yang et al. data and only 36% in their own bulk embryo ATAC-seq.",
+   "kw": [
+    "bulk vs single cell",
+    "rare cell types"
+   ],
+   "info": "Explanation: single-cell data detect peaks from rare cell types whose signal is drowned out in bulk. At 8 hpf, cCREs near frzb, sox32 and twist2 were open only in rare cell types. The main text says 11 adult tissues while the Fig. 4c legend says 12.",
+   "concl": "Single-cell profiling recovers many regulatory elements that bulk ATAC-seq misses."
+  },
+  {
+   "type": "qa",
+   "section": "Results - An atlas of cCREs during zebrafish embryogenesis",
+   "q": "Are cCREs enriched in active chromatin states?",
+   "a": "Yes. Relative to the quiescent state, cCREs from 4, 8, 12, 24 and 48 hpf were clearly enriched in ChromHMM active promoter and enhancer states, although about half of the peaks fall in regions without histone modifications.",
+   "kw": [
+    "ChromHMM",
+    "DANIO-CODE"
+   ],
+   "info": "Ten-state ChromHMM annotations came from Baranasic et al. (DANIO-CODE); overlaps were computed with bedtools and odds ratios with Fisher's exact test on overlapping nucleotides.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - An atlas of cCREs during zebrafish embryogenesis",
+   "q": "Are the cCREs evolutionarily conserved?",
+   "a": "Yes. Their cyprinid phastCons scores were clearly higher than those of randomly shuffled genomic regions (P = 7.98 x 10-36 for one comparison shown).",
+   "kw": [
+    "phastCons",
+    "conservation"
+   ],
+   "info": "One-sided Wilcoxon rank-sum test, stratified by annotation: distal n = 205,789, intronic n = 257,752, exonic n = 76,898, promoter n = 38,060, shuffled n = 132,885. Conserved elements came from the goldfish genome paper.",
+   "concl": "Three lines of evidence support the cCREs: overlap with known elements, active chromatin states, and sequence conservation."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cis-regulatory dynamics of zebrafish embryonic development",
+   "q": "How does the chromatin landscape change over development?",
+   "a": "Progressively: in principal component analysis of pseudobulk scATAC-seq and bulk ATAC-seq, samples ordered along developmental time. Many loci were differentially accessible between stages, for example sp5l, which lost accessibility over development.",
+   "kw": [
+    "PCA",
+    "sp5l"
+   ],
+   "info": "sp5l is involved in postanal tail morphogenesis and anteroposterior patterning of the neuroectoderm.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cis-regulatory dynamics of zebrafish embryonic development",
+   "q": "How were development-associated dynamic cCREs defined?",
+   "a": "By k-means clustering of cCRE accessibility across the 20 stages: 102,397 dynamic cCREs in 16 modules. Nearest-gene expression from published bulk RNA-seq (White et al.) over 12 stages showed matching dynamics.",
+   "kw": [
+    "k-means",
+    "dynamic cCREs"
+   ],
+   "info": "They started with 30 primary clusters and settled on 16 final ones; the cluster with invariant activity was excluded. For the heatmap, 500 random CREs per cluster were plotted. Module sizes range from 2,588 to 16,930 elements.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cis-regulatory dynamics of zebrafish embryonic development",
+   "q": "Which functions are linked to the early, intermediate and late modules?",
+   "a": "Early module 4: embryonic pattern specification and three-germ-layer development. Intermediate module 10 (18 to 24 hpf): myofibril assembly and actomyosin organization, enriched for myogenic motifs such as Myog. Late module 15 (48 to 72 hpf): synapse assembly and neurotransmitter secretion, enriched for Cux2 motifs.",
+   "kw": [
+    "GREAT",
+    "HOMER",
+    "Myog"
+   ],
+   "info": "Module 10 is read as rapid muscle expansion in that window. The text calls Myog an 'LHX transcription factor', which is how it is written in the paper. Enrichment used GREAT v3.0.0 (binomial test, coordinates lifted to danRer7) and HOMER on danRer10 (hypergeometric test), with all tested cCREs as background.",
+   "concl": "Temporal cCREs carry strong development-specific regulatory functions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell type-specific transcription factors",
+   "q": "How did they infer transcription factor activity in single cells?",
+   "a": "With chromVAR bias-corrected motif deviation scores using DANIO-CODE position weight matrices. At 24 hpf, motif accessibility across 46 cell types showed cell type- and lineage-specific patterns, for example Hnf4a in endoderm and Gata5 in heart field.",
+   "kw": [
+    "chromVAR",
+    "footprinting"
+   ],
+   "info": "Run via ArchR addMotifAnnotations and addDeviationsMatrix; footprinting with getFootprints and plotFootprints showed Myog activity in muscle and Etv2 in endothelium. Motif activity for all 604 cell types is in Supplementary Table 4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Cell type-specific transcription factors",
+   "q": "How did they separate putative activators from repressors?",
+   "a": "By correlating each TF's motif deviation score with expression of the gene encoding it in matched scRNA-seq cell types. At 24 hpf across 46 cell types this gave 115 putative activators (r > 0.5, FDR < 0.01) and 16 putative repressors (r < -0.5, FDR < 0.01).",
+   "kw": [
+    "activators",
+    "repressors",
+    "sox10"
+   ],
+   "info": "Across 200 shared cell types at 11 stages they found 382 putative activators and 48 putative repressors. etv2 was exclusively enriched in endothelial cells and sox10 in neural crest.",
+   "concl": "Transcription factor activity is one of the prominent cell type-defining signatures."
+  },
+  {
+   "type": "qa",
+   "section": "Results - In vivo validation of putative cell type-specific enhancer elements",
+   "q": "How was the enhancer reporter assay designed?",
+   "a": "A Tol2 transposon vector with a lens-specific promoter driving mCherry as injection control and a basic promoter driving eGFP; candidate elements were cloned upstream of the basal promoter and plasmids co-injected with transposase mRNA into one-cell embryos.",
+   "kw": [
+    "Tol2",
+    "eGFP reporter"
+   ],
+   "info": "Elements were PCR-amplified from Tubingen genomic DNA and cloned into the EcoRI site with a seamless cloning kit. eGFP was scored at 24 to 48 hpf only in morphologically normal embryos expressing lens mCherry; about 40 embryos per enhancer, assay performed once.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - In vivo validation of putative cell type-specific enhancer elements",
+   "q": "How many tested cCREs acted as tissue-specific enhancers?",
+   "a": "65 of 100 accessible chromatin regions (65%), tested across 40 cell type-specific genes, drove restricted eGFP expression. For example, 3 of 4 putative endothelial enhancers near flt1 drove eGFP specifically in the vascular system.",
+   "kw": [
+    "flt1",
+    "enhancer validation"
+   ],
+   "info": "Validated enhancers were specific to heart, neuron, notochord, eye, muscle, gut and otic tissue; reported ratios are embryos with tissue-specific GFP over lens-mCherry-positive embryos, for example muscle 48/49, notochord 43/55, eye 55/55.",
+   "concl": "Most tested cell type-specific cCREs are functional tissue-restricted enhancers in vivo."
+  },
+  {
+   "type": "qa",
+   "section": "Results - In vivo validation of putative cell type-specific enhancer elements",
+   "q": "What did motif perturbation of the cdh5 enhancer show?",
+   "a": "An endothelium-specific enhancer (ACR6) near cdh5 drove vascular GFP. Removing Etv2 binding sites largely impaired its activity, and removing both Etv2 and Sox7 sites abolished it completely.",
+   "kw": [
+    "cdh5",
+    "Etv2",
+    "Sox7"
+   ],
+   "info": "Binding sites were found by motif scanning with FIMO; Etv2 and Sox7 are considered master regulators of endothelium. Wild-type, truncated and mutated constructs were compared.",
+   "concl": "Enhancer activity depends on the specific TF binding-site architecture, not just on accessibility."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory activity during pigment and notochord differentiation",
+   "q": "How was the pigment cell lineage subdivided?",
+   "a": "Into four subsets: precursors starting at 18 hpf (C1) and three specialized types from 24 to 72 hpf, iridophore (C2), xanthophore (C3) and melanophore (C4).",
+   "kw": [
+    "pigment cells",
+    "pseudotime"
+   ],
+   "info": "Subsets were defined with ArchR gene module scores for iridophore (ltk, tfec, apoda.1, gpnmb, pnp4a), xanthophore (paics, gch2, aox5, xdh) and melanoblast gene sets; cells were ordered in pseudotime with addTrajectory.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory activity during pigment and notochord differentiation",
+   "q": "What are cCRE-to-gene links and how many were found in pigment cells?",
+   "a": "Potential enhancer-gene interactions inferred by correlating peak accessibility with gene activity score. In the pigment lineage they found 37,277 high-confidence links, with a median of three cCREs per gene and one gene per cCRE.",
+   "kw": [
+    "peak-to-gene links"
+   ],
+   "info": "Computed with ArchR addPeak2GeneLinks, keeping pairs with Pearson r > 0.5 (pigment) and FDR-adjusted P < 0.0001; for notochord the threshold was r > 0.7, giving 55,433 links. Example: linked cCREs near pmela were accessible specifically in melanophores.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory activity during pigment and notochord differentiation",
+   "q": "Which motifs are enriched in the pigment subset-specific modules?",
+   "a": "Precursor-restricted cCREs were enriched for Cdx4 and Sox21 motifs, while cCREs restricted to the three pigment subsets were enriched for the sox10 motif, a key neural crest regulator. Melanophore cCREs also showed Tfap2e and Mitf motifs.",
+   "kw": [
+    "sox10",
+    "Mitf",
+    "Tfap2e"
+   ],
+   "info": "Motif enrichment used HOMER with a one-sided hypergeometric test. Precursor cCREs were near genes for neural development, while subset cCREs were near pigment cell commitment genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory activity during pigment and notochord differentiation",
+   "q": "How was the notochord lineage subdivided?",
+   "a": "Into four groups: C1 progenitors and C2 intermediate cells (almost all from 7 to 20 hpf), C3 ngs+ and pacsin3+ cells (vacuolated cells), and C4 cells with high accessibility at cartilage genes (col11a2, col2a1a, cnmd, sox9), representing late sheath cells.",
+   "kw": [
+    "notochord",
+    "vacuolated cells",
+    "sheath cells"
+   ],
+   "info": "Notochord cells formed two temporally specified branches. Marker identity was cross-checked against scRNA-seq data including Zebrahub.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory activity during pigment and notochord differentiation",
+   "q": "What distinguishes the two terminal notochord cell types at the cCRE level?",
+   "a": "7,117 differentially accessible cCREs separate C3 (ngs+) and C4 (col2a1a+). Both sets were enriched for notochord cell differentiation and embryonic organ development, but cartilage processes such as cartilage morphogenesis were specific to C4.",
+   "kw": [
+    "differentially accessible cCREs",
+    "GREAT"
+   ],
+   "info": "Called with ArchR getMarkerFeatures. The results text states FDR <= 0.001 and log2 fold change >= 1, while the Methods state FDR <= 0.01 and log2 fold change <= 1, so the exact cut-offs are inconsistent in the paper. GO used GREAT with a binomial test. C3 had 3,055 and C4 4,062 differentially accessible elements in the Fig. 7k labels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory activity during pigment and notochord differentiation",
+   "q": "Which transcription factors were nominated for notochord specialization?",
+   "a": "TEAD1/2/3/4 and NR2F1/2 for the cartilage-like (col2a1a+) notochord cells, and USF1/2 and MEF2B for the ngs+ notochord cells.",
+   "kw": [
+    "TEAD",
+    "NR2F",
+    "USF"
+   ],
+   "info": "Several distal cCREs with increased accessibility in C4 relative to C3 were linked to the sox9b promoter region.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors claim SPATAC-seq contributes?",
+   "a": "An up-scaled, low-cost, high-throughput combinatorial indexing scATAC-seq method with performance comparable to previous methods and compatibility with standard Illumina sequencing. They applied it both to zebrafish embryogenesis and to mouse organogenesis.",
+   "kw": [
+    "resource"
+   ],
+   "info": "ZEPA is presented as a resource for finding CREs and transcription factors driving lineage specification, supported by motif enrichment and in vivo reporter assays.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitations do the authors list?",
+   "a": "Cell type annotation via transfer learning still needs validation; some cell types such as primordial germ cells appeared only in scRNA-seq; and about half of their peaks fall in regions without histone modifications.",
+   "kw": [
+    "limitations",
+    "primordial germ cells"
+   ],
+   "info": "Reasons suggested for missing cell types include differences in cell isolation between technologies, limited cell numbers and unknown technical or biological factors. The reporter assay sample size was also called too small to estimate the function of all cCREs.",
+   "concl": "The atlas is a resource with open questions about annotation accuracy and the nature of peaks lacking histone marks."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What follow-up work do the authors propose?",
+   "a": "Applying single-cell histone modification technologies such as scCUT&Tag and nano-CT to zebrafish embryos from 4 to 72 hpf, to build per-cell-type ChromHMM annotations and further validate the regulatory roles of the cCREs.",
+   "kw": [
+    "scCUT&Tag",
+    "nano-CT"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data and code availability",
+   "q": "Where are the data and code available?",
+   "a": "Raw and processed sequencing data are in GEO under GSE215901 and GSE243256, BigWig tracks are in a UCSC Genome Browser session (ZEPA_danRer11), metadata and cCRE atlas files are on figshare, and the analysis code is on GitHub at Lan-lab/SPATAC-seq.",
+   "kw": [
+    "GEO",
+    "UCSC track hub"
+   ],
+   "info": "The authors state there are no restrictions on data availability or use.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - An atlas of cCREs during zebrafish embryogenesis",
+   "text": "About half of the cCREs fall in regions with no histone modifications in the DANIO-CODE ChromHMM data. Worth going back to: are these real but unmarked regulatory elements, bulk-level resolution limits of the ChromHMM data, or noise from pseudobulk peak calling?"
+  },
+  {
+   "type": "note",
+   "section": "Results - Single-cell chromatin accessibility in zebrafish embryogenesis",
+   "text": "Sampling depth above 100% of one embryo (271% at 24 hpf) means nuclei came from pooled embryos; useful trick for estimating coverage from DNA content (4.6 pg per cell), but it means a cell state present in only some embryos is still only partially sampled."
+  },
+  {
+   "type": "note",
+   "section": "Results - In vivo validation of putative cell type-specific enhancer elements",
+   "text": "The cdh5 enhancer dissection (Etv2 plus Sox7 site removal) is a clean template for testing cavefish or zebrafish candidate enhancers: accessibility alone does not predict activity, and stepwise motif deletion shows which sites carry it."
+  }
+ ]
+}

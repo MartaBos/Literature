@@ -1,0 +1,545 @@
+{
+ "id": "Dahale_2022",
+ "title": "Cap analysis of gene expression reveals alternative promoter usage in a rat model of hypertension",
+ "link": "https://doi.org/10.26508/lsa.202101234",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Dahale_2022_LSA_CAGE_alternative_promoters_rat.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "Alternative promoter usage is well established as a driver of tissue-specific gene expression, but its role in complex diseases is poorly understood. They used CAGE on rat heart to test whether promoter usage differs between a hypertensive and a normotensive strain.",
+   "kw": [
+    "alternative promoter usage",
+    "CAGE",
+    "complex disease"
+   ],
+   "info": "Tissue: left ventricle (LV). Strains: spontaneously hypertensive rat (SHR) and normotensive Brown Norway (BN).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the headline numbers of the study?",
+   "a": "26,560 CAGE-defined TSSs in rat left ventricle, including 1,970 novel cardiac TSSs. There were 28 genes with alternative promoter usage between SHR and BN, which could give protein isoforms with different N-termini, and 475 promoter switching events that change 5' UTR length.",
+   "kw": [
+    "TSS",
+    "5' UTR"
+   ],
+   "info": "The 1,970 novel TSSs in the abstract do not obviously match the 1,743 novel intergenic tag clusters reported in the Results. The paper does not explain the difference.",
+   "concl": "A shift in Insr promoter usage was associated with insulin levels and blood pressure in HXB/BXH recombinant inbred strains, suggesting that hyperinsulinemia due to insulin resistance might lead to hypertension in SHR."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the core promoter?",
+   "a": "The region about 40 bp upstream and downstream of the TSS. It is sufficient for transcription initiation: general transcription factors assemble there with RNA polymerase II.",
+   "kw": [
+    "core promoter",
+    "RNA polymerase II"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How do alternative promoters differ from alternative splicing in generating transcript diversity?",
+   "a": "Alternative splicing regulates isoform expression post-transcriptionally, while alternative promoters regulate isoform expression pre-transcriptionally. More than 60% of mammalian genes have multiple transcripts.",
+   "kw": [
+    "alternative splicing",
+    "alternative promoters"
+   ],
+   "info": "Most mammalian protein-coding genes are regulated by multiple promoters that start transcription of different isoforms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is CAGE and why use it?",
+   "a": "Cap Analysis of Gene Expression captures the 7-methylguanosine cap of transcripts. This maps TSSs genome-wide at single base-pair resolution, which shows the 5' ends of transcripts and therefore which promoters are used.",
+   "kw": [
+    "CAGE",
+    "7-methylguanosine cap"
+   ],
+   "info": "FANTOM used CAGE across many human and mouse tissues and primary cells. About 80% of CAGE-defined TSSs were tissue-specific.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is known about promoter shifts during development?",
+   "a": "In zebrafish, many transcripts switch TSS usage between the oocyte (maternal) and zygotic stages. The shift is often within 100 bp of the same promoter.",
+   "kw": [
+    "zebrafish",
+    "maternal-zygotic transition",
+    "promoter shift"
+   ],
+   "info": "Haberle et al. 2014. This is the precedent for their within-promoter shift analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why use SHR and BN as a model?",
+   "a": "SHR is a widely used hypertension model that also has metabolic syndrome features: insulin resistance, dyslipidemia and central obesity. Crossing SHR with normotensive BN produced the HXB/BXH recombinant inbred panel, which has many mapped pQTLs, eQTLs and hQTLs.",
+   "kw": [
+    "SHR",
+    "HXB/BXH RI strains",
+    "metabolic syndrome"
+   ],
+   "info": "Whole-genome sequencing found more than 4 million variants between SHR and BN. Both strains are homozygous across the genome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of CAGE-defined promoters",
+   "q": "What was the sequencing design?",
+   "a": "nAnT-iCAGE on left ventricles of SHR and BN, three biological replicates each of males and females (12 samples). On average 15 million uniquely mapped read pairs per sample.",
+   "kw": [
+    "nAnT-iCAGE"
+   ],
+   "info": "The non-tagging protocol allows longer reads (100 bp). The non-amplification protocol avoids PCR bias.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of CAGE-defined promoters",
+   "q": "How did they avoid mapping bias between strains?",
+   "a": "They built a pseudo-SHR genome by substituting all SHR SNVs into the BN reference. SHR tags were mapped to pseudo-SHR and BN tags to the BN reference.",
+   "kw": [
+    "pseudo-genome",
+    "mapping bias"
+   ],
+   "info": "Indels were not substituted, so the coordinate system stays the same as the BN reference.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of CAGE-defined promoters",
+   "q": "How many promoters were found and how reproducible were they?",
+   "a": "26,560 tag clusters, each a unique promoter region in rat heart, were found from all 12 samples analysed together. Biological replicates had pairwise Pearson correlations of 0.98 or higher.",
+   "kw": [
+    "tag clusters",
+    "reproducibility"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - identification of CAGE-defined promoters",
+   "q": "How many promoters fall in genes, and how many genes use multiple promoters?",
+   "a": "About 80% (21,353) of promoters were in gene regions of 10,935 protein-coding genes. 6,445 genes used a single promoter and 4,490 used more than one.",
+   "kw": [
+    "Ensembl 93",
+    "promoter rank"
+   ],
+   "info": "Gene region was defined as the longest protein-coding transcript plus 1 kb upstream (Ensembl version 93). Promoters were ranked by TPM as P1, P2 and so on. Other categories: 4,797 intergenic (18.06%) and 410 non-coding (1.54%).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - comparison with FANTOM",
+   "q": "How much did rat heart promoters overlap with FANTOM rat CAGE data?",
+   "a": "Only 41.13% (10,924) overlapped FANTOM rat tag clusters. FANTOM rat data come from four non-cardiac cell types or tissues of Sprague-Dawley and Lewis rats.",
+   "kw": [
+    "FANTOM"
+   ],
+   "info": "FANTOM rat samples: aortic smooth muscle cells, hepatocytes, mesenchymal stem cells and one tissue. The authors attribute the small overlap to differences in strain and tissue.",
+   "concl": "Rat needs CAGE from many more tissues to get a comprehensive TSS catalogue."
+  },
+  {
+   "type": "qa",
+   "section": "Results - comparison with FANTOM",
+   "q": "How conserved are rat heart promoters with mouse and human heart promoters?",
+   "a": "After liftover, 15,729 (59.22%) overlapped mouse heart CAGE clusters and 12,387 (46.64%) overlapped human heart promoters. Only 140 and 214 overlapped mouse and human non-cardiac promoters.",
+   "kw": [
+    "liftOver",
+    "conservation"
+   ],
+   "info": "Orthologous regions were in hg19 and mm9.",
+   "concl": "Promoter usage in heart is substantially conserved across human, mouse and rat."
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterisation of tag clusters",
+   "q": "What are the two broad promoter classes and how do they differ in shape?",
+   "a": "TATA box-rich promoters tend to be sharp, with CAGE signal from a few nucleotides. CpG island promoters tend to be broad, with signal spread over a larger region and often at housekeeping genes.",
+   "kw": [
+    "TATA box",
+    "CpG island",
+    "sharp vs broad promoters"
+   ],
+   "info": "More than half of mammalian genes initiate transcription from CpG islands.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - characterisation of tag clusters",
+   "q": "How many rat heart promoters had CpG islands or TATA boxes?",
+   "a": "13,005 (48.96%) overlapped CpG islands and 8,695 (32.73%) had a TATA box. Split into classes: TATA-only 5,190 (19.94%), CpG-only 9,500 (35.77%), both 3,505 (13.20%).",
+   "kw": [
+    "CpG island",
+    "TATA box"
+   ],
+   "info": "TATA-only promoters were significantly shorter than CpG-only and CpG+TATA promoters (Mann-Whitney P < 2.2e-16 for both). CpG-only and CpG+TATA did not differ in length (P = 0.4066).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - improved TSS annotations",
+   "q": "How well did CAGE TSSs match Ensembl TSS annotations?",
+   "a": "Of 21,353 genic CAGE TSSs, only 35.71% (7,627) matched Ensembl TSSs exactly. 1,965 were within 100 bp, 3,827 were 100 to 1,000 bp away, and 37% (7,934) had no Ensembl TSS annotation even though they were on the same strand within protein-coding genes.",
+   "kw": [
+    "Ensembl",
+    "TSS annotation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - improved TSS annotations",
+   "q": "Were the 7,934 unannotated genic tag clusters real TSSs?",
+   "a": "In de novo RNA-seq assembly, 383 matched a de novo transcript TSS exactly and 857 were within 500 bp. In total, 3,317 (41.81%) overlapped CAGE promoters from other rat tissues (730), mouse heart (2,326) or human heart (2,177).",
+   "kw": [
+    "de novo assembly",
+    "StringTie"
+   ],
+   "info": "De novo assembly used public SHR and BN LV RNA-seq data (Johnson et al. 2014).",
+   "concl": "Most unannotated genic clusters likely represent ubiquitous and/or conserved cardiac TSSs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - improved TSS annotations",
+   "q": "What did they find for Mef2c?",
+   "a": "All 10 Ensembl Mef2c transcripts share one TSS, but no CAGE cluster overlapped it. Instead, three CAGE TSSs in the gene body matched de novo transcripts. The strongest (58.44 TPM) was 20 kb downstream of the annotated TSS.",
+   "kw": [
+    "Mef2c"
+   ],
+   "info": "Mef2c_P1 was in FANTOM rat data. All three promoters were seen in mouse and two in human. P1 was also the predominant promoter in mouse and human.",
+   "concl": "CAGE can correct TSS annotation of important cardiac genes in rat."
+  },
+  {
+   "type": "qa",
+   "section": "Results - improved TSS annotations",
+   "q": "What about intergenic tag clusters?",
+   "a": "5,207 clusters were intergenic, of which 410 were annotated ncRNAs. The remaining 4,797 had average expression between gene P1 and P2 promoters, so some may be unannotated promoters of protein-coding genes.",
+   "kw": [
+    "intergenic TSS"
+   ],
+   "info": "827 were within 100 bp and 286 within 500 bp of de novo transcript TSSs. 3,054 (63.66%) overlapped FANTOM promoters: other rat tissues 1,229, mouse heart 2,578, human heart 1,832.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - improved TSS annotations",
+   "q": "How many intergenic clusters were completely novel, and what are example genes?",
+   "a": "1,743 intergenic clusters had no annotation in Ensembl or any FANTOM dataset (rat, mouse, human). Plekhg1's nearest CAGE TSS was more than 100 kb upstream of the Ensembl TSS. Myo6 had a novel TSS about 47 kb upstream.",
+   "kw": [
+    "Plekhg1",
+    "Myo6"
+   ],
+   "info": "The novel Myo6 transcript (20.57 TPM) was much more highly expressed than the annotated one (0.96 TPM). The annotated transcript was up in SHR and the novel one down in SHR, which suggests alternative transcript use between strains.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoter usage SHR vs BN",
+   "q": "What was the logic for detecting alternative promoter usage between strains?",
+   "a": "If a gene is mainly transcribed from different promoters in SHR and BN, its two promoters should both be differentially expressed but in opposite directions.",
+   "kw": [
+    "alternative promoter usage",
+    "DESeq2"
+   ],
+   "info": "Only promoters with at least 20% of a gene's total promoter expression were considered.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoter usage SHR vs BN",
+   "q": "How many genes used alternative promoters between SHR and BN?",
+   "a": "Of 4,490 multi-promoter genes, 3,571 had one predominant promoter and 918 had at least two promoters above 20%. Of these, 447 had at least one differentially expressed promoter: 419 changed in the same direction and 28 had promoters changing in opposite directions.",
+   "kw": [
+    "alternative promoter usage"
+   ],
+   "info": "In all 28 genes, the switch gives a shorter transcript in one strain that affects the protein-coding region (N-terminus). Both promoters were conserved in human for 10 genes and in mouse for 13. Only one was conserved for 8 genes (human) and 9 genes (mouse).",
+   "concl": "28 genes switch promoters between SHR and BN."
+  },
+  {
+   "type": "qa",
+   "section": "Results - alternative promoter usage SHR vs BN",
+   "q": "Which of the 28 genes are linked to cardiovascular disease?",
+   "a": "Synpo2l, Abhd16a, Ece1, Shroom3 and Rbfox2 are all implicated in human cardiovascular disorders including hypertension. Shroom3 is mainly transcribed from P1 in SHR and from P2 in BN.",
+   "kw": [
+    "Shroom3",
+    "Ece1",
+    "Rbfox2"
+   ],
+   "info": "SHROOM3 LoF: congenital heart defects. SYNPO2L LoF: atrial fibrillation. RBFOX2 dysregulation: early event in diabetic cardiac pathogenesis. ECE1 polymorphisms: essential hypertension. ABHD16A: coronary artery aneurysm.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift SHR vs BN",
+   "q": "How many within-promoter TSS shifts were found between SHR and BN?",
+   "a": "475 transcripts shifted TSS usage within the same promoter. 287 (60%) were dominant P1 promoters, and only 50% were assigned to Ensembl genes. Most shifts were within 100 bp and occurred in both directions relative to BN.",
+   "kw": [
+    "promoter shift",
+    "TSS switching"
+   ],
+   "info": "Annotated shifting genes were enriched for metabolic processes (P = 0.003) and chloride transport (P = 0.005). Examples: Insr, Endog, Vnn1, Serpina3c. The Discussion says 425 transcripts instead of 475, which looks like an inconsistency in the paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift SHR vs BN",
+   "q": "Are the shifting promoters conserved?",
+   "a": "Human orthologous regions of 182 shifting promoters had CAGE signal: both the SHR and BN TSS in 93, only one in 89. In mouse, 200 were conserved: both in 144, only one in 56.",
+   "kw": [
+    "conservation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift SHR vs BN",
+   "q": "What is the consequence of a within-promoter TSS shift?",
+   "a": "One strain produces a longer and the other a shorter transcript. In most cases this changes the length of the 5' UTR, not the coding sequence.",
+   "kw": [
+    "5' UTR"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift SHR vs BN",
+   "q": "How did they validate promoter shifts using F1 crosses?",
+   "a": "F1s are heterozygous, so they inherit both the long and short transcripts. Variants in regions unique to the longer transcript should therefore show strong allelic imbalance. They did reciprocal crosses (SHR female x BN male, BN female x SHR male) and ran CAGE on 3 male and 3 female F1s per cross (12 F1s).",
+   "kw": [
+    "allelic imbalance",
+    "reciprocal F1 cross"
+   ],
+   "info": "Both promoter variants showed intermediate expression in F1s.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift SHR vs BN",
+   "q": "What did the allelic imbalance analysis show?",
+   "a": "Of 1,853 SHR/BN variants in CAGE promoters, 110 were in shifting promoters. These showed strong allelic imbalance in F1s compared with non-shifting, non-DE promoters (Fisher's exact P < 2.2e-16), similar to strongly DE promoters (padj <= 0.05, log2FC > 1).",
+   "kw": [
+    "allelic imbalance",
+    "cis-regulation"
+   ],
+   "info": "Variants in non-DE promoters showed no imbalance, as expected.",
+   "concl": "Allelic imbalance in F1s confirms that the promoter shifts between SHR and BN are real."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Insr promoter shift",
+   "q": "What is the Insr TSS shift?",
+   "a": "In BN, transcription starts mainly at chr12:1,816,432 (346 bp upstream of the start codon). In SHR it starts at chr12:1,816,500 (414 bp upstream), giving SHR a longer transcript with an extended 5' UTR.",
+   "kw": [
+    "Insr",
+    "insulin receptor"
+   ],
+   "info": "Supported by RNA-seq: no BN reads in the SHR-specific extension. Both TSSs lie within a CpG island, which is a housekeeping-like promoter like human INSR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Insr promoter shift",
+   "q": "How was the Insr shift confirmed genetically?",
+   "a": "Variant g.1816552:A>G in the SHR-specific region showed significant allelic imbalance in F1s (binomial P = 2.77e-15), with most reads carrying the SHR allele. So the longer transcript is inherited from SHR.",
+   "kw": [
+    "Insr",
+    "allelic imbalance"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Insr promoter shift",
+   "q": "What did the recombinant inbred strains show for Insr?",
+   "a": "RI strains with the SHR allele (GG) mainly used the longer Insr transcript in both heart and liver (P < 0.0001). They also had higher insulin (P = 0.041), systolic BP (P = 0.0029) and diastolic BP (P = 0.011).",
+   "kw": [
+    "HXB/BXH",
+    "insulin",
+    "blood pressure"
+   ],
+   "info": "Public RI RNA-seq (Witte et al. 2021); phenotypes from earlier publications. Insulin = ins15, measured in 10-week-old males fed 60% fructose for 15 days. Many pQTLs for blood pressure and insulin resistance map to the Insr region (Rat Genome Database).",
+   "concl": "Insr TSS usage is associated with insulin levels and blood pressure."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Insr promoter shift",
+   "q": "Do other hypertensive rat models share the SHR Insr allele?",
+   "a": "Yes. Fawn Hooded Hypertensive, Sabra Hypertensive and SHR stroke-prone carry the SHR allele (G). Their normotensive controls (Fawn Hooded Low BP, Sabra Normotensive, Wistar Kyoto) carry the BN allele (A).",
+   "kw": [
+    "Insr",
+    "hypertensive strains"
+   ],
+   "info": "Based on existing whole-genome sequences of rat hypertension models.",
+   "concl": "There is a strong association between the longer Insr transcript and cardio-metabolic phenotype, but causality is not shown."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitation comes from using whole left ventricle tissue?",
+   "a": "The LV contains many cell types and there is no rat heart single-cell data, so the cell-type source of CAGE signals cannot be determined. They speculate most TSSs are active in cardiomyocytes, since about 50% of human ventricular cells are cardiomyocytes.",
+   "kw": [
+    "cell type heterogeneity",
+    "cardiomyocytes"
+   ],
+   "info": "Some signal may come from endothelial cells, fibroblasts, pericytes and smooth muscle cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the two types of TSS switching they describe?",
+   "a": "Type 1: genes use completely different promoters more than 100 bp apart, which affects the coding region and N-terminus (28 genes). Type 2: TSS shifts within the same promoter, usually within 100 bp, which changes only 5' UTR length.",
+   "kw": [
+    "alternative promoter",
+    "promoter shift"
+   ],
+   "info": "In type 1, both transcripts are expressed in both strains but each strain predominantly uses one.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why might a small 5' UTR change matter?",
+   "a": "The 5' UTR controls ribosome recruitment and start codon choice through structural motifs and uORFs. Even 10 bp of sequence change just upstream of start sites can strongly change translational efficiency.",
+   "kw": [
+    "5' UTR",
+    "uORF",
+    "translation efficiency"
+   ],
+   "info": "They did not measure translation or protein levels in this study.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the authors interpret the Insr finding?",
+   "a": "SHR has metabolic syndrome. Insulin receptor mutations or downregulation cause insulin resistance, and compensatory hyperinsulinemia has been linked to hypertension. An altered Insr TSS might therefore contribute to SHR phenotypes.",
+   "kw": [
+    "insulin resistance",
+    "hyperinsulinemia"
+   ],
+   "info": "Clinical context they cite: 50% of hypertensive people have hyperinsulinemia, and 80% of type 2 diabetes patients have hypertension.",
+   "concl": "The evidence is genetic association only. Causality needs experimental validation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the overall conclusions?",
+   "a": "Alternative promoter usage may contribute to complex disease phenotypes, and the rat heart CAGE data can substantially improve rat TSS and gene annotation. Both the 28 alternative-promoter genes and the TSS shifts need experimental validation.",
+   "kw": [],
+   "info": "From combined de novo assembly and CAGE, TSSs of 1,113 transcripts were more than 1,000 bp upstream of annotated TSSs. The paper does not clearly say how this number was derived.",
+   "concl": "This is preliminary evidence for alternative promoter usage in complex disease."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - animals and sequencing",
+   "q": "Which animals and sequencing platform were used?",
+   "a": "SHR/OlaIpcv and BN-Lx/Cub, 6-week-old, 3 males and 3 females per strain, plus 12 reciprocal F1s, also 6 weeks old. nAnT-iCAGE was done by DNAform (Japan) with 100 bp paired-end reads on Illumina HiSeq2500.",
+   "kw": [
+    "HiSeq2500",
+    "nAnT-iCAGE"
+   ],
+   "info": "Animals were housed at the Institute of Physiology, Czech Academy of Sciences, Prague.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - read mapping",
+   "q": "How were CAGE reads processed and mapped?",
+   "a": "Adapters were removed with cutadapt, and the extra 5' G added by reverse transcriptase was removed. Reads were mapped with STAR 2.4.0. F1 tags were mapped to both BN and pseudo-SHR genomes, keeping the best hits.",
+   "kw": [
+    "cutadapt",
+    "STAR",
+    "extra G"
+   ],
+   "info": "Only uniquely mapped reads (MAPQ 255, extracted with samtools 1.2) were used.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - tag clusters and promoters",
+   "q": "How were tag clusters and promoter regions defined?",
+   "a": "Unique 5' ends of read 1 were taken as CTSSs and kept if at least 3 samples had 1 or more reads. CTSSs within 20 bp were merged into tag clusters, normalised to TPM and kept if 1 TPM or more in at least one sample. Tag clusters within 100 bp were then merged into promoter regions.",
+   "kw": [
+    "CTSS",
+    "tag cluster",
+    "TPM"
+   ],
+   "info": "Intergenic clusters were treated as independent P1 promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - promoter characterisation",
+   "q": "How were CpG and TATA promoters identified?",
+   "a": "Tag clusters extended by 200 bp on each side were intersected with UCSC rn6 CpG islands using bedtools. The -500 to +200 bp region around the CAGE peak was scanned for TATA motifs with HOMER.",
+   "kw": [
+    "HOMER",
+    "bedtools",
+    "rn6"
+   ],
+   "info": "FANTOM comparison: UCSC liftOver with rn6ToHg19 and mouse mm9 chain files, then bedtools overlap.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - alternative and shifting promoters",
+   "q": "How were alternative and shifting promoters called statistically?",
+   "a": "Alternative promoters: DESeq2 1.32.0, padj <= 0.05, promoters with at least 20% of gene expression, and two promoters changing in opposite directions with one being P1. Shifting promoters: Kolmogorov-Smirnov test on aggregated CTSS distributions within each tag cluster, requiring D > 0.3 and D above the critical value at alpha 0.05.",
+   "kw": [
+    "DESeq2",
+    "Kolmogorov-Smirnov test"
+   ],
+   "info": "The position of maximum D was taken as the switch position. Enrichment analysis was done with Enrichr.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq and allelic imbalance",
+   "q": "How were de novo assembly and F1 allelic imbalance done?",
+   "a": "Public SHR and BN LV RNA-seq was mapped with STAR 2.4.0 and assembled per strain with StringTie 2.1.4 (default settings), then merged. Variants were called with GATK 4.0.7 (SplitNCigarReads, HaplotypeCaller, CombineGVCFs). Imbalance was tested with a binomial test (P <= 0.05).",
+   "kw": [
+    "StringTie",
+    "GATK",
+    "binomial test"
+   ],
+   "info": "Variant filters: at least 10 reads in all 6 replicates of both parents, different between SHR and BN, and at least 10 reads in at least 9 of 12 F1s. For the Insr analysis in RI strains, reads in chr12:1,816,550-1,816,650 were normalised to first-exon reads, and a Mann-Whitney test was used. Data: ENA PRJEB47228; code at github santoshatanur/ratCAGE.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - promoter shift SHR vs BN",
+   "text": "Do the 5' UTR extensions from TSS shifts (for example the longer SHR Insr transcript) actually change translation efficiency or protein levels? This was not tested. Ribo-seq or reporter assays would be needed."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Which cis variants cause the promoter shifts and switches? F1 allelic imbalance points to cis effects, but the causal variants were not identified. Similar CAGE plus F1 allelic imbalance designs could work for surface x cave Astyanax hybrids."
+  },
+  {
+   "type": "note",
+   "section": "Abstract",
+   "text": "Check inconsistencies: 1,970 novel TSSs (abstract) vs 1,743 novel intergenic clusters (results); 475 (results) vs 425 (discussion) shifting transcripts; 3,571 + 918 = 4,489, not 4,490."
+  }
+ ]
+}

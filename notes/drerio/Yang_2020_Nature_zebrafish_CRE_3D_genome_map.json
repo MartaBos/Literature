@@ -1,0 +1,638 @@
+{
+ "id": "Yang_2020",
+ "title": "A map of cis-regulatory elements and 3D genome structures in zebrafish",
+ "link": "https://doi.org/10.1038/s41586-020-2962-9",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/drerio/Yang_2020_Nature_zebrafish_CRE_3D_genome_map.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap does this paper address?",
+   "a": "About 70% of human protein-coding genes are conserved in zebrafish, but zebrafish studies are held back by sparse annotation of functional control elements in its genome.",
+   "kw": [
+    "cis-regulatory elements",
+    "annotation"
+   ],
+   "info": "Most earlier zebrafish genomic studies used whole embryos, so little was known about tissue-specific regulators.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did they generate overall?",
+   "a": "Maps of transcriptomes, cis-regulatory elements, heterochromatin, methylomes and 3D genome organization in up to eleven adult and two embryonic tissues of the Tübingen reference strain. They used RNA-seq, ATAC-seq, ChIP-seq, WGBS and Hi-C.",
+   "kw": [
+    "Tübingen",
+    "multi-omics"
+   ],
+   "info": "They also did scATAC-seq in brain, which gave 25 cell clusters, and a de novo assembly of chromosome 4 from long-read sequencing plus Hi-C.",
+   "concl": "An epigenomic anchor for functional annotation of vertebrate genomes and for studying conserved 3D genome organization."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main evolutionary finding about TADs?",
+   "a": "Evolutionary breakpoints are enriched at TAD boundaries, and these boundaries have strong H3K4me3 and CTCF signals.",
+   "kw": [
+    "TAD",
+    "evolutionary breakpoints",
+    "CTCF"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is zebrafish a useful vertebrate model?",
+   "a": "It has high fecundity, external embryogenesis, rapid embryonic development and nearly transparent embryos.",
+   "kw": [
+    "model organism"
+   ],
+   "info": "It is used for vertebrate development and ageing, comparative genomics and human disease modelling.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which histone marks did they profile and why?",
+   "a": "They profiled H3K4me3, H3K27ac, H3K9me2 and H3K9me3, because combinations of histone modifications can predict classes of regulatory elements such as enhancers and repressors.",
+   "kw": [
+    "H3K27ac",
+    "H3K4me3",
+    "H3K9me3"
+   ],
+   "info": "Hi-C was done only in adult brain and muscle, to study higher-order structure and link distal enhancers to their target genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why did they re-assemble chromosome 4?",
+   "a": "Chromosome 4 is regarded as the rudimentary sex chromosome in zebrafish, but its current assembly is poor because it contains so much heterochromatin.",
+   "kw": [
+    "chromosome 4",
+    "sex chromosome"
+   ],
+   "info": "They did nanopore, 10X Genomics and Bionano optical mapping on one Tübingen female.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How large is the dataset?",
+   "a": "161 genomic datasets comprising over 10 billion reads, which the authors describe as the most comprehensive analysis of candidate cis-regulatory elements in zebrafish to date.",
+   "kw": [],
+   "info": "The reporting summary lists 160 datasets (11 WGBS, 26 RNA-seq, 95 ChIP-seq, 22 ATAC-seq, 4 Hi-C, 2 scATAC-seq), which differs slightly from the 161 in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome analysis",
+   "q": "How many transcripts did RNA-seq detect, and how many were novel?",
+   "a": "They detected 39,188 transcripts, 14,764 of them tissue-specific. They also found 13,285 previously unknown transcripts, of which 8,311 were supported by H3K4me3 peaks at their promoters.",
+   "kw": [
+    "novel transcripts",
+    "RNA-seq"
+   ],
+   "info": "The 8,311 include 976 lncRNAs, 3,596 previously unknown isoforms and 3,739 potential previously uncharacterized protein-coding genes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Transcriptome analysis",
+   "q": "Is tissue-specific expression conserved between zebrafish and human?",
+   "a": "Partly. Of the 14,764 tissue-specific zebrafish transcripts, 3,737 have a one-to-one human orthologue, and 1,747 of these (47%) are also tissue-specific in human.",
+   "kw": [
+    "orthologues",
+    "GTEx"
+   ],
+   "info": "Example: myh6 in zebrafish and MYH6 in human are both heart-specific. Human data came from GTEx.",
+   "concl": "These genes may have critical, conserved roles in the tissues where they are uniquely expressed."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility, promoter and enhancer dynamics",
+   "q": "How many ATAC-seq peaks did they find?",
+   "a": "66,771 to 180,788 peaks per tissue, merged into 436,036 non-redundant peaks across the 11 adult tissues. Of these, 116,353 had not been found in previous whole-embryo studies.",
+   "kw": [
+    "ATAC-seq",
+    "chromatin accessibility"
+   ],
+   "info": "Distal peaks were more tissue-specific than proximal peaks. The Methods give 436,035 representative open chromatin regions, one fewer than the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility, promoter and enhancer dynamics",
+   "q": "How did they define classes of cis-regulatory elements?",
+   "a": "Active promoter: H3K27ac + H3K4me3 + ATAC-seq. Weak promoter: H3K4me3 + ATAC-seq. Active enhancer: distal H3K27ac + ATAC-seq. Heterochromatin: H3K9me2 or H3K9me3 sites.",
+   "kw": [
+    "active enhancer",
+    "weak promoter",
+    "heterochromatin"
+   ],
+   "info": "Across tissues this gave 25,593 active promoters, 40,220 weak promoters, 58,065 active enhancers and 112,445 heterochromatin sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility, promoter and enhancer dynamics",
+   "q": "How many of the predicted elements are new, and how tissue-specific are the enhancers?",
+   "a": "40.9% of the predicted promoters and 62.5% of the predicted enhancers had not been found in previous reports. Of the enhancers, 71.3% were tissue-specific and also had tissue-specific ATAC-seq signal.",
+   "kw": [
+    "tissue-specific enhancers"
+   ],
+   "info": "GO analysis put tissue-specific enhancers near genes with relevant tissue functions. The previous data were from the AB strain, while this study used Tübingen.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Accessibility, promoter and enhancer dynamics",
+   "q": "How did they validate the predicted enhancers?",
+   "a": "With a GFP reporter assay in zebrafish embryos. 28 of the 32 tissue-specific enhancers tested (87.5%) gave restricted GFP expression.",
+   "kw": [
+    "reporter assay",
+    "GFP"
+   ],
+   "info": "Examples: brain enhancer 5 near elavl3 (112 of 143 surviving embryos), heart enhancer near gata6, muscle enhancer near musk, kidney enhancer 1 (47 of 82 embryos).",
+   "concl": "Most predicted tissue-specific enhancers drive tissue-restricted expression in vivo."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Single-cell ATAC-seq in zebrafish brain",
+   "q": "What did scATAC-seq in the adult brain give?",
+   "a": "654 million usable reads from 19,955 cells and 268,268 non-redundant peaks. These covered 98.7% of the bulk brain ATAC-seq peaks, and 73,264 peaks were found only by scATAC-seq.",
+   "kw": [
+    "scATAC-seq",
+    "brain"
+   ],
+   "info": "Aggregated scATAC-seq correlated with bulk ATAC-seq at PCC = 0.878, using 10-kb bins.",
+   "concl": "The zebrafish genome probably has more regulatory elements than bulk tissue data predict."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Single-cell ATAC-seq in zebrafish brain",
+   "q": "How were the brain cell clusters annotated?",
+   "a": "They found 25 clusters and inferred likely cell types from key cell-type-specific transcription factor motifs, for example oligodendrocyte progenitor cells.",
+   "kw": [
+    "motif enrichment",
+    "SOX9",
+    "OLIG2"
+   ],
+   "info": "Neuronal TFs such as SOX9 and OLIG2 were enriched in different clusters. Cell type labels come only from motif inference, not from marker gene expression. The authors also name 'prefrontal cortex cells' as an inferred type without further explanation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heterochromatin and DNA methylation",
+   "q": "Do H3K9me2 and H3K9me3 mark the same regions?",
+   "a": "Mostly not. There were 73,777 non-redundant H3K9me2 sites and 68,798 H3K9me3 sites, with only about 10% overlap in the same tissue.",
+   "kw": [
+    "H3K9me2",
+    "H3K9me3"
+   ],
+   "info": "SINEs were enriched in both marks. LTRs were enriched only in H3K9me2 sites.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heterochromatin and DNA methylation",
+   "q": "Can heterochromatin in one tissue be active in another?",
+   "a": "Yes. Heterochromatin sites lacked active marks within the same tissue, but 20% of them overlapped ATAC-seq peaks or other active marks in other tissues.",
+   "kw": [
+    "heterochromatin",
+    "tissue specificity"
+   ],
+   "info": "",
+   "concl": "Heterochromatin regions in one tissue may be active regulatory elements in another."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heterochromatin and DNA methylation",
+   "q": "What does the zebrafish methylome look like across tissues?",
+   "a": "Genome-wide CpG methylation was about 80% in all tissues except testis, which was higher. Brain had more CAC methylation, as reported in human and mouse.",
+   "kw": [
+    "WGBS",
+    "CpG methylation",
+    "non-CpG methylation"
+   ],
+   "info": "WGBS coverage was about 30x per tissue. Mean mCG/CG was 0.777 to 0.804 in most tissues and 0.859 in testis. Unmethylated CpGs were mainly in CpG islands, promoters and 5' UTRs, while gene bodies and repeats were heavily methylated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Heterochromatin and DNA methylation",
+   "q": "What are UMRs, LMRs and hypoDMRs, and what do they mark?",
+   "a": "UMRs (unmethylated regions) mostly overlapped promoters and proximal ATAC-seq peaks. LMRs (low-methylated regions) overlapped more with enhancers and distal peaks. Tissue-specific hypomethylated DMRs were enriched for tissue-specific H3K27ac and ATAC-seq signal.",
+   "kw": [
+    "UMR",
+    "LMR",
+    "hypoDMR"
+   ],
+   "info": "There were 17,654 tissue-specific hypoDMRs in total, for example 1,912 in muscle, 1,708 in heart and 3,386 in liver.",
+   "concl": "Tissue-specific hypoDMRs can help identify tissue-specific cis-regulatory elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results - De novo assembly of chromosome 4",
+   "q": "What was wrong with chromosome 4 in GRCz10/GRCz11?",
+   "a": "The long arm is strongly enriched for H3K9me3, H3K9me2 and DNA methylation. Hi-C mapped to GRCz10/GRCz11 showed many aberrant off-diagonal signals, which indicate structural variants between the reference and the study fish.",
+   "kw": [
+    "structural variation",
+    "Hi-C",
+    "GRCz11"
+   ],
+   "info": "The authors say these could come from assembly errors or from differences between individuals, and do not separate the two.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - De novo assembly of chromosome 4",
+   "q": "Did the new chromosome 4 assembly fix the problem?",
+   "a": "Largely. When Hi-C data were remapped to the de novo chromosome 4, most aberrant signals disappeared, and Bionano data showed fewer structural variant events.",
+   "kw": [
+    "de novo assembly",
+    "Bionano"
+   ],
+   "info": "The new chromosome 4 is about 74.5 Mb, compared with 78.1 Mb in GRCz11 and 76.6 Mb in GRCz10, based on the Fig. 3e labels.",
+   "concl": "A resource for studying sex determination and other processes involving chromosome 4 genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of cis-regulatory elements",
+   "q": "How conserved are zebrafish regulatory elements at the sequence level?",
+   "a": "Promoters had the highest sequence conservation. Enhancers had much lower, but still significant, conservation. Of the enhancers not conserved in human or mouse, 88.6% were conserved in other fish.",
+   "kw": [
+    "sequence conservation",
+    "PhyloP"
+   ],
+   "info": "Enhancers with no detectable conservation in human still had higher fish PhyloP scores, so they may act as enhancers in other fish too.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of cis-regulatory elements",
+   "q": "Are human-conserved zebrafish enhancers also enhancers in human?",
+   "a": "Often. 60 to 90% of zebrafish enhancers with human-conserved sequence were also predicted as candidate enhancers by NIH ENCODE and the Roadmap Epigenomics Project.",
+   "kw": [
+    "ENCODE",
+    "Roadmap"
+   ],
+   "info": "Mapping used liftOver of the central 100 bp of each element (minMatch >0.1). The chain files were modified using a zebrafish conserved noncoding element database.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Conservation of cis-regulatory elements",
+   "q": "What about ultra-conserved noncoding elements (UCNEs)?",
+   "a": "69% of the 2,405 zebrafish UCNEs overlapped predicted cis-regulatory elements: 15% as promoters, 53% as enhancers and 1% as noncoding RNAs.",
+   "kw": [
+    "UCNE",
+    "SALL3_Anna"
+   ],
+   "info": "Example: UCNE SALL3_Anna is predicted as a brain enhancer in zebrafish, mouse and human, and was validated in mouse embryos (VISTA hs1056). FOXP1_Finn_1 is a second example.",
+   "concl": "Enhancers in ultra-conserved regions were more likely to also be enhancers in mouse and human (30% vs 5.68%)."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Linking distal elements to target genes",
+   "q": "How did they link distal elements to target genes, and how many links did they find?",
+   "a": "They used correlation of activity across tissues. This gave 340,527 ATAC-seq peak-to-gene links (FDR < 0.01; 144,886 distal peaks, 18,792 genes) and 96,540 enhancer-to-gene links, of which 37,241 were also supported by ATAC links.",
+   "kw": [
+    "enhancer-gene linking",
+    "correlation"
+   ],
+   "info": "The enhancer-to-gene links involve 33,728 enhancers and 16,935 genes. Each gene has on average 4.85 linked enhancers, and each enhancer 2.67 genes. 34% of enhancers link to only one gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Linking distal elements to target genes",
+   "q": "Were the correlation-based links supported by 3D data?",
+   "a": "Yes. Predicted enhancer-to-gene pairs had more Hi-C reads than expected at every genomic distance, in both brain and muscle.",
+   "kw": [
+    "Hi-C validation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Tissue-specific transcriptional regulatory network",
+   "q": "Are tissue TF networks similar between zebrafish and human?",
+   "a": "Yes. Motifs enriched in tissue-specific enhancers were often shared with the same human tissues, and three-node network patterns were highly similar between the two species.",
+   "kw": [
+    "three-node network",
+    "NEUROD",
+    "MYOD"
+   ],
+   "info": "In the three-node network, node A is the driver (regulates B and C), node B is the middle node (regulated by A, regulates C) and node C is the passenger (regulated by A and B). CTCF was the driver in most tissues. NEUROD and MYOD were middle or passenger nodes in brain and muscle. mef2d acts in both muscle and heart but is predicted to have different targets in each.",
+   "concl": "Zebrafish is a valuable system for studying human TF regulatory circuits."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher-order genome structure",
+   "q": "What Hi-C data did they generate, and what did compartment analysis show?",
+   "a": "10-kb resolution Hi-C in adult brain (about 2.1 billion read pairs) and muscle (about 1.4 billion). Active marks were enriched in the A compartment and H3K9me2/me3 in the B compartment.",
+   "kw": [
+    "A/B compartments",
+    "Hi-C"
+   ],
+   "info": "5,348 regions switched compartment between brain and muscle. These switches were associated with changes in gene expression and H3K27ac.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher-order genome structure",
+   "q": "How many TADs did they find, and what is at their boundaries?",
+   "a": "1,350 TADs in brain and 1,238 in muscle, most shared between the two tissues. Boundaries were enriched for CTCF-binding sites, SINEs and satellite elements.",
+   "kw": [
+    "TAD",
+    "CTCF",
+    "SINE"
+   ],
+   "info": "The median TAD size used for profile plots was 2,800 kb (Methods). TADs were called from insulation scores on ICE-normalized matrices.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher-order genome structure",
+   "q": "What did the chromatin loop analysis show?",
+   "a": "7,708 loops in brain and 5,312 in muscle. Most loop anchors had convergent CTCF motifs (63% in brain, 72% in muscle).",
+   "kw": [
+    "chromatin loops",
+    "convergent CTCF"
+   ],
+   "info": "In brain, 98.6% of loops linked regions containing at least one promoter or enhancer. 91.6% of enhancer-promoter loops overlapped the correlation-based linkages.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher-order genome structure",
+   "q": "Which TF motifs were enriched in shared versus tissue-specific loops?",
+   "a": "CTCF and BORIS were enriched in shared loops. RFX and NeuroD2 were enriched in brain-specific loops, and Myf5 and Ascl1 in muscle-specific loops.",
+   "kw": [
+    "BORIS",
+    "NeuroD2",
+    "Myf5"
+   ],
+   "info": "The authors call Myf5 and Ascl1 muscle-specific master regulators.",
+   "concl": "Tissue-specific TFs may help form tissue-specific chromatin interactions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome evolution and TADs",
+   "q": "Where are evolutionary breakpoints located relative to TADs?",
+   "a": "They are enriched near TAD boundaries and depleted towards TAD centres. 80.5% of zebrafish-to-human breakpoints (984 of 1,223) were near TAD boundaries.",
+   "kw": [
+    "evolutionary breakpoints",
+    "synteny"
+   ],
+   "info": "Breakpoints were found with progressiveMauve against human, mouse, chicken and 15 more vertebrates. The same pattern appeared in all of these comparisons.",
+   "concl": "TAD boundaries are preferred sites of genome rearrangement during evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome evolution and TADs",
+   "q": "How do TADs with and without breakpoints differ?",
+   "a": "TADs without breakpoints had stronger interactions in their middle. Their genes also had expression patterns more correlated with their human homologues (4,625 vs 3,918 gene pairs; P = 3.56e-26, Mann-Whitney U).",
+   "kw": [
+    "TAD stability",
+    "expression conservation"
+   ],
+   "info": "TAD sizes did not differ between the two groups (P = 0.098). The authors give two possible explanations: strong interactions stabilize TADs, or breaking TADs with strong, physiologically important interactions is selected against.",
+   "concl": "TAD stability is associated with conserved expression patterns."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome evolution and TADs",
+   "q": "What marks TAD boundaries that overlap breakpoints?",
+   "a": "Much higher H3K4me3 than at boundaries without breakpoints. H3K27ac and ATAC-seq did not differ between the two boundary groups.",
+   "kw": [
+    "H3K4me3",
+    "TAD boundary"
+   ],
+   "info": "They saw the same H3K4me3 pattern at human and mouse ESC TAD boundaries with breakpoints. They mention an earlier report of H3K4me3 at mouse recombination hotspots.",
+   "concl": "H3K4me3 may be associated with genome stability and evolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome evolution and TADs",
+   "q": "Is there transcription at breakpoints that sit at CTCF TAD boundaries?",
+   "a": "Yes. In human GM12878 and K562 cells, Pol2 ChIP-seq and GRO-seq signals were much higher at breakpoints overlapping CTCF-containing TAD boundaries (639) than at breakpoints without them (625).",
+   "kw": [
+    "GRO-seq",
+    "Pol2"
+   ],
+   "info": "This used public human cell line data, not zebrafish data. Previous work linked transcription at CTCF boundaries to translocations.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome evolution and TADs",
+   "q": "How do TADs relate to expression of paralogues from the teleost genome duplication?",
+   "a": "Across 2,456 Ensembl paralogue pairs, the median expression correlation was 0.458. Paralogues in the same TAD were more correlated than those in different TADs.",
+   "kw": [
+    "paralogues",
+    "genome duplication"
+   ],
+   "info": "The same-TAD comparison is small: 17 pairs in the same TAD vs 65 in different TADs, all on the same chromosome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude overall?",
+   "a": "They provide a comprehensive annotation of the zebrafish genome and describe both conserved and divergent gene-regulatory networks and 3D genome structures between zebrafish and human.",
+   "kw": [],
+   "info": "The data are in GEO GSE134055 and viewable on the WashU Epigenome Browser.",
+   "concl": "The data give a genomic foundation for human disease modelling and biological studies in zebrafish."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - samples and ChIP-seq",
+   "q": "What samples were used?",
+   "a": "One-year-old adult Tübingen zebrafish from ZIRC, plus 1-dpf embryonic trunk and embryonic neurons sorted by FACS from Tg(HuC:Kaede) crossed to Tübingen.",
+   "kw": [
+    "Tübingen",
+    "HuC:Kaede"
+   ],
+   "info": "Sex information is in Supplementary Table 17. For RNA-seq, tissues from at least two fish were pooled per replicate. About 20,000 sorted neurons were used per embryonic neuron replicate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - samples and ChIP-seq",
+   "q": "How was ChIP-seq done and how were peaks called?",
+   "a": "Tissues were fixed in 1% formaldehyde, sonicated on a Covaris E220 to 100-300 bp, and immunoprecipitated with 3 ug antibody on about 200 ug chromatin. Reads were mapped to GRCz10 with BWA (MAPQ < 30 removed), and H3K27ac/H3K4me3 peaks were called with the ENCODE pipeline.",
+   "kw": [
+    "ChIP-seq",
+    "BWA",
+    "MACS2"
+   ],
+   "info": "Peaks needed -logP > 5, -logQ > 2, RPM(IP) at least 2x RPM(input), and RPM(IP) - RPM(input) > 1. Broad H3K9 marks were called with HOMER (-region -size 1000) and merged within 5 kb. Kidney H3K27ac has only one replicate.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - samples and ChIP-seq",
+   "q": "How did they build a zebrafish blacklist?",
+   "a": "They called peaks with MACS2 on ChIP input data against a whole-genome background, did the same for ChIP data, and defined overlapping peaks across all tissues as the blacklist.",
+   "kw": [
+    "blacklist"
+   ],
+   "info": "Peaks with -log10(q) < 5 were dropped. Blacklisted regions such as centromeres, telomeres and satellites were removed from all ChIP-seq and ATAC-seq peak calling.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq and novel transcripts",
+   "q": "How were novel transcripts and lncRNAs identified?",
+   "a": "Reads were mapped with TopHat2 to GRCz10 and assembled with Cufflinks. Novel transcripts were those with class code u, x, j or i present in both replicates. Multi-exon transcripts > 150 bp with CPAT coding score < 0.38 were called lncRNAs.",
+   "kw": [
+    "Cufflinks",
+    "CPAT",
+    "lncRNA"
+   ],
+   "info": "Transcripts scoring above 0.38 were protein-coding candidates. ORFs were predicted with TransDecoder and searched with BLASTp against Xenopus, cattle, pig, chicken, mouse and human (cutoff 1e-3).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq and novel transcripts",
+   "q": "How were tissue-specific genes defined?",
+   "a": "STAR alignment, RSEM quantification and limma batch correction on log2(TPM+1). Genes with Z-score > 2 and at least threefold change were tissue-specific.",
+   "kw": [
+    "STAR",
+    "RSEM",
+    "limma"
+   ],
+   "info": "Genes with TPM < 1 in both replicates in all tissues were filtered out. Human comparisons used GTEx median TPM and BioMart one-to-one orthologues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq and CRE identification",
+   "q": "How was ATAC-seq processed?",
+   "a": "Adapters were trimmed with cutadapt, reads aligned with bowtie2 (-X2000), and duplicates removed with Picard. Peaks were called with the ENCODE ATAC pipeline, filtered at P < 1e-5 and q < 0.01, and fixed to 500 bp.",
+   "kw": [
+    "bowtie2",
+    "ENCODE pipeline",
+    "HINT"
+   ],
+   "info": "Proximal peaks overlap the TSS region (2.5 kb upstream to 500 bp downstream): on average 23,233 per tissue, versus 122,979 distal. Footprints were called with HINT v0.13.0 and motifs matched with MOODS using HOCOMOCO.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq and CRE identification",
+   "q": "How were tissue-specific CREs and testis promoters handled?",
+   "a": "Union CRE sets were quantile-normalized on H3K27ac RPM, and elements with Z > 2 and at least twofold change were called tissue-specific. In testis, where H3K4me3 is broad across the genome, annotated TSSs were used instead of H3K4me3 peaks to define promoters.",
+   "kw": [
+    "Z-score",
+    "GREAT",
+    "HOMER"
+   ],
+   "info": "About 96% of H3K27ac and H3K4me3 peaks overlapped ATAC peaks (plus or minus 500 bp). Merged elements were fixed to 2 kb. GO analysis used GREAT 3.0.0 after liftOver to danRer7.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - WGBS",
+   "q": "How was WGBS processed and how were DMRs called?",
+   "a": "Reads were trimmed with Trim Galore 0.6.1 and mapped with Bismark v0.18.1 to GRCz10. UMRs and LMRs were called with MethylSeekR v1.22.0, and DMRs with DSS v2.14.0 without replicates.",
+   "kw": [
+    "Bismark",
+    "MethylSeekR",
+    "DSS"
+   ],
+   "info": "DSS settings: delta = 0.2, p = 0.05, minlen = 200, minCG = 5. Tissue-specific hypoDMRs had to be hypomethylated in at least 8 of 10 pairwise comparisons. Only CpGs with at least 5 reads were used. The replicate table lists one WGBS replicate per tissue.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - genome assembly",
+   "q": "What was the chromosome 4 assembly pipeline?",
+   "a": "About 50x nanopore reads were assembled with Canu, polished twice with Nanopolish and twice with Pilon using 10X reads, scaffolded with Bionano Solve, and finally scaffolded to chromosome level with 3d-dna using brain Hi-C.",
+   "kw": [
+    "Canu",
+    "3d-dna",
+    "Pilon"
+   ],
+   "info": "1,325 contigs (N50 9.418 Mb), then 114 arm-level scaffolds (N50 29.725 Mb), then a final 1,519 Mb assembly (N50 56.768 Mb). Bionano used 407 Gb of data from female muscle DNA. Canu is listed as v1.8 in the Methods but 2.0 in the reporting summary.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - linking and networks",
+   "q": "How was the significance of peak-to-gene correlations assessed?",
+   "a": "They computed the Pearson correlation between peak log2(RPM) and gene log2(TPM+1) for genes within 500 kb. The null came from 10,000 random peaks correlated with genes on other chromosomes, and z-score P values were corrected with Benjamini-Hochberg.",
+   "kw": [
+    "Pearson correlation",
+    "FDR"
+   ],
+   "info": "Peaks with normalized RPM < 1 in all tissues were removed first. H3K27ac links used FDR < 0.01 and PCC cutoff 0.56142. The network analysis scanned nucleosome-free regions within 10 kb of the TSS of 661 TF genes with FIMO (P < 1e-5).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Hi-C and breakpoints",
+   "q": "Which tools were used for Hi-C features?",
+   "a": "HiC-Pro v2.9.0 for mapping to GRCz10, HOMER for A/B compartments, insulation score on ICE-normalized matrices for TADs, and HiCCUPS at 10 kb for loops. HiCRep was used for replicate reproducibility.",
+   "kw": [
+    "HiC-Pro",
+    "HiCCUPS",
+    "insulation score"
+   ],
+   "info": "Insulation parameters: -is 480,000, -ids 320,000. Compartment switches are sign changes in PC1 between brain and muscle. TADs with breakpoints were defined with bedtools intersect -f 0.3. The reporting summary lists HiC-Pro 2.11.1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - single-cell analysis",
+   "q": "How was scATAC-seq quality-controlled and clustered?",
+   "a": "From 781 million reads and 23,871 cells (10X Chromium), cells were kept with log10(UMI) between 3 and 5 and 10-65% of reads in promoters, leaving 19,955 cells. Clustering used a 5-kb bin matrix with SnapATAC, and scAlign removed the batch effect between replicates.",
+   "kw": [
+    "SnapATAC",
+    "scAlign",
+    "chromVAR"
+   ],
+   "info": "Peaks were called per cluster with MACS2. There were 171,159 differentially accessible peaks (Fisher's exact test, FDR < 0.05). Cell types came from HOMER motifs, confirmed with chromVAR. The two libraries came from one female and one male brain.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - enhancer reporter assay",
+   "q": "How was the enhancer reporter assay set up and scored?",
+   "a": "Enhancers were cloned upstream of an hsp70 promoter-eGFP cassette in pT2HE and co-injected with Tol2 transposase mRNA into one-cell Tübingen embryos. A pattern was recorded only if at least 30-40% of embryos showed it, with about 100 embryos per enhancer.",
+   "kw": [
+    "Tol2",
+    "hsp70",
+    "eGFP"
+   ],
+   "info": "Embryos were imaged at 24-36 hpf, 2 dpf, 3 dpf and 5 dpf.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Genome evolution and TADs",
+   "text": "Why do breakpoint-containing TAD boundaries carry so much H3K4me3, and is it a cause or a consequence of rearrangement? Worth checking whether cavefish vs surface fish rearrangements also fall at TAD boundaries with high H3K4me3."
+  },
+  {
+   "type": "note",
+   "section": "Results - Conservation of cis-regulatory elements",
+   "text": "88.6% of zebrafish enhancers not conserved in mammals are conserved in other fish. This could be a useful filter for fish-specific enhancers in Astyanax comparisons."
+  },
+  {
+   "type": "note",
+   "section": "Methods - WGBS",
+   "text": "Limitations: WGBS and DMR calls have no biological replicates, Hi-C covers only brain and muscle, and enhancer-gene links are correlation-based across about 11 tissues. Treat the tissue-specific links as hypotheses."
+  }
+ ]
+}

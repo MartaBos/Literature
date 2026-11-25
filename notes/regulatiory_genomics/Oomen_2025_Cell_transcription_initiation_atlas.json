@@ -1,0 +1,654 @@
+{
+ "id": "Oomen_2025",
+ "title": "An atlas of transcription initiation reveals regulatory principles of gene and transposable element expression in early mammalian development",
+ "link": "https://doi.org/10.1016/j.cell.2024.12.013",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Oomen_2025_Cell_transcription_initiation_atlas.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is EGA?",
+   "a": "Embryonic genome activation is the major developmental landmark at which the embryo transitions from inherited maternal transcripts to transcription from its own genome, making it independent from maternal control.",
+   "kw": [
+    "EGA"
+   ],
+   "info": "The magnitude and control of transcriptional reprogramming during EGA across mammals was poorly understood before this work.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What method did they develop and what does it do?",
+   "a": "Smart-seq+5', which gives high sensitivity, full-length transcript coverage and simultaneous capture of 5' transcript end (TSS) information from single cells and single embryos.",
+   "kw": [
+    "Smart-seq+5'"
+   ],
+   "info": "Built on Smart-seq2 with a modified tagmentation strategy.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How much data did the atlas cover?",
+   "a": "34 developmental stages in 5 mammalian species, profiled before, during and after EGA.",
+   "kw": [],
+   "info": "Mouse, pig, cow, rabbit, rhesus macaque; 332 single preimplantation embryos passed QC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the headline TE finding?",
+   "a": "Widespread TE-driven transcription across species, including of DNA transposons, and 19,657 TE-driven genic (chimeric) transcripts, suggesting extensive TE co-option in early development.",
+   "kw": [
+    "transposable elements",
+    "chimeric transcripts"
+   ],
+   "info": "TEs show both similar expression dynamics across species and species-specific patterns, suggesting shared and divergent regulation.",
+   "concl": "TEs occupy a vast place in the embryonic transcriptome and may be co-opted for genome regulation."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How much of the mouse and human genome is TE-derived?",
+   "a": "Around half of the mouse and human genome is composed of transposable elements and their remnants, since many TEs have become fragmented over evolutionary time.",
+   "kw": [
+    "TE content"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why can TEs act as regulatory elements?",
+   "a": "Like genes, TE sequences contain cis-regulatory elements that allow recruitment of transcription factors and chromatin remodelers, which in turn regulate and initiate transcriptional activity.",
+   "kw": [
+    "cis-regulatory elements"
+   ],
+   "info": "For a few individual TEs, activation is not merely a side effect of heterochromatin remodeling after fertilization but has a role in development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which individual TEs were already known to matter in early development?",
+   "a": "The mouse ERVL (mERVL) LTR MT2_Mm, which resembles human ERVL (hERVL) in expression and regulatory sequence, and LINE L1, which regulates global chromatin accessibility in early mouse embryos.",
+   "kw": [
+    "MT2_Mm",
+    "LINE L1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the main technical obstacle to studying TE transcription?",
+   "a": "It is technically hard to distinguish transcription initiated within the TE from transcriptional initiation at neighbouring genes (read-through), especially in low-input RNA-seq that gives no information on transcription initiation.",
+   "kw": [
+    "read-through"
+   ],
+   "info": "CAGE-type capture of capped RNAs can solve this but needs more input material.",
+   "concl": "This gap motivated the development of a 5'-end-capturing low-input method."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Smart-seq+5' validation",
+   "q": "What was modified relative to Smart-seq2?",
+   "a": "They added molecular crowding for better reverse transcription efficiency and modified the tagmentation-based library prep, using sequencing adaptors complementary to the Smart-seq2 adaptors so that terminal 5' fragments are sequenced alongside internal fragments.",
+   "kw": [
+    "Smart-seq2",
+    "tagmentation"
+   ],
+   "info": "5' fragments and internal fragments are then computationally sorted by adaptor sequence.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Smart-seq+5' validation",
+   "q": "How did they validate 5'-end accuracy?",
+   "a": "Five ways: ERCC spike-ins (first bp of 5' reads matches the synthetic 5' coordinate), aggregation over refTSS annotated TSSs (n = 97,682), comparison with published mESC CAGE data, mapping to known TSSs of mouse TEs, and benchmarking against a published Smart-seq2 dataset.",
+   "kw": [
+    "ERCC",
+    "refTSS",
+    "CAGE"
+   ],
+   "info": "Internal fragments instead span along the gene body, as expected.",
+   "concl": "Smart-seq+5' retains Smart-seq2 sensitivity while also identifying TSSs and promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Smart-seq+5' validation",
+   "q": "Which mouse TEs were used as positive controls for TSS capture?",
+   "a": "5' reads mapped effectively to known TSSs of the young LTR MT2_Mm, the LINE L1 Mur2 and the SINE B1 Mus1.",
+   "kw": [
+    "MT2_Mm",
+    "B1_Mus1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - species and samples",
+   "q": "Which species were profiled and why those five?",
+   "a": "Mouse (Mus musculus), pig (Sus scrofa), cow (Bos taurus), rabbit (Oryctolagus cuniculus) and rhesus macaque (Macaca mulatta), because they span substantial evolutionary time in mammals, have relatively well-annotated genomes, and are common developmental model systems.",
+   "kw": [
+    "eutherians"
+   ],
+   "info": "EGA occurs at different stages in these species, so embryos were collected before, during and after EGA.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - species and samples",
+   "q": "Which TE annotation did they use and why?",
+   "a": "The Dfam annotation, because it is the best available annotation and is used in large-scale projects such as Zoonomia, enabling direct comparison between datasets.",
+   "kw": [
+    "Dfam"
+   ],
+   "info": "Dfam v3.8 was used for the TE age analysis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - stage-specific expression",
+   "q": "What did PCA of genes versus TEs show?",
+   "a": "PCA on genic 5' reads clearly separated pre- and post-EGA stages along PC1, and PCA on TE reads alone also separated pre- from post-EGA stages.",
+   "kw": [
+    "PCA"
+   ],
+   "info": "TE loadings indicated that LTRs contribute most dominantly to PC1, reflecting EGA timing.",
+   "concl": "Developmental progression through EGA in mammals is demarcated by expression of specific TEs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EGA genes",
+   "q": "How were EGA genes defined?",
+   "a": "With DESeq2: genes with LFC > 1.5 and padj < 0.05 from zygote to the EGA stage, followed by LFC < -0.25 and padj < 0.1 from EGA to the latest stage (16-cell or morula).",
+   "kw": [
+    "DESeq2"
+   ],
+   "info": "For mouse a stricter LFC < -0.5 was used for the post-EGA downregulation because of its very strong EGA profile. Rhesus needed a relaxed read-count filter (>10 reads in at least 3 datapoints instead of 10) due to fewer embryos.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - EGA genes",
+   "q": "What did the TF motif search on EGA genes reveal?",
+   "a": "26 TFs with motifs at EGA genes in two or more species, including DUX and KLF proteins and general factors such as TBP and SP1.",
+   "kw": [
+    "DUX",
+    "KLF"
+   ],
+   "info": "Individual motifs are rarely shared by more than three species; KLF motifs are present in all species except rabbit, with KLF TFs expressed at EGA.",
+   "concl": "The TF network regulating EGA shows certain species specificity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EGA genes",
+   "q": "How do DUX and NR5A2 orthologs behave across species?",
+   "a": "DUX orthologs show an EGA expression pattern in all species, whereas NR5A2 is more variable and becomes activated post-EGA in all species except pig and rabbit.",
+   "kw": [
+    "NR5A2"
+   ],
+   "info": "This fits with rodent-specific OBOX regulating mouse EGA and primate-specific TPRX contributing in human embryos.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE capture performance",
+   "q": "Does Smart-seq+5' detect TEs better than Smart-seq2?",
+   "a": "Yes, in general Smart-seq+5' detects TEs more efficiently; an in vitro poly-adenylation step did not increase TE detection except for a few cases such as ERVL-MaLR and SINE B1/Alu.",
+   "kw": [
+    "poly-adenylation"
+   ],
+   "info": "Consistent with reports that some SINE B1s are not poly-adenylated. SINE B1_Mus1 was better detected by Smart-seq+5', likely due to better capture of short transcripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE capture performance",
+   "q": "Can fragmented LINE L1 elements still initiate transcription?",
+   "a": "5' reads mapped to all LINE L1 structural elements including the 5' end, ORF2 and 3' end, suggesting L1 can initiate transcription from internal elements; the old eutherian L1M5_orf2 fragments are expressed at levels comparable to the young Mus-specific L1MdTf_I.",
+   "kw": [
+    "L1M5_orf2",
+    "L1MdTf_I"
+   ],
+   "info": "This suggests L1 fragments retained or acquired the ability to be transcribed despite losing structural integrity; insertion frequencies differ between the two.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE copy numbers",
+   "q": "How do TE copy numbers differ between the species?",
+   "a": "Rhesus has about 2 million SINE insertions versus only about 750,000 in pig, and mouse has the highest absolute number of LTRs (about 1.1 million), while the genome sizes are comparable (2.5-2.85 Mbp as stated).",
+   "kw": [
+    "genomic insertions"
+   ],
+   "info": "The paper writes genome lengths as 2.5-2.85 Mbp, which appears to be a typo for Gbp. Insertion number alone does not explain the different expression dynamics between species.",
+   "concl": "Mouse seems to have a more efficient LTR expansion strategy."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE copy numbers",
+   "q": "Where are TEs located relative to genes?",
+   "a": "Most TEs lie distal to genes (>5 kb), except SINEs in mouse, which reside mostly inside genes, and in rhesus, where SINEs are equally enriched inside and distal to genes.",
+   "kw": [],
+   "info": "Genomic context was classed as internal, proximal (<5 kb) or distal (>5 kb).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE age",
+   "q": "How were TEs grouped by evolutionary age?",
+   "a": "As amniota (about 319 mya), mammalia (about 180 mya), eutheria (about 99 mya), superorder (about 87-94 mya), or order/species specific (less than 70 mya).",
+   "kw": [
+    "TimeTree"
+   ],
+   "info": "Ages were taken from Dfam annotation (v3.8) with famdb tools and the TimeTree database.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE age",
+   "q": "Is embryonic TE expression restricted to young elements?",
+   "a": "No. Rabbit embryos express primarily TEs conserved across eutheria rather than order-specific TEs, while mouse LTRs and SINEs expressed are largely species specific and all porcine SINE transcripts derive from species-specific SINEs.",
+   "kw": [],
+   "info": "Mouse genome contains primarily younger order- and species-specific elements; LINEs are mostly mammalian/eutherian specific in pig, cow and rabbit, suggesting less successful colonization there.",
+   "concl": "TE expression in early development is not exclusively restricted to young TEs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE superfamilies",
+   "q": "Which LTR superfamily is most highly expressed?",
+   "a": "ERVL-MaLR sequences were the most highly expressed LTRs in all species at almost all stages, with highly similar expression patterns relative to EGA across species.",
+   "kw": [
+    "ERVL-MaLR"
+   ],
+   "info": "In contrast, non-MaLR ERVL, ERV1 and ERV2 (ERVK) show strong species-specific dynamics: cow upregulates ERV1/2 after EGA, while in rabbit ERV1/2 and ERVL are practically undetectable.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TE superfamilies",
+   "q": "How conserved are LINE and SINE dynamics?",
+   "a": "LINE L1 dynamics are shared across all species, consistently increasing during and after EGA, whereas SINEs show the most striking species-specific patterns.",
+   "kw": [
+    "LINE L1",
+    "SINE"
+   ],
+   "info": "Most mouse SINE transcripts derive from tRNA-derived sequences, whereas rhesus embryos express predominantly Alu elements.",
+   "concl": "LINE transcriptional regulation appears partly conserved across mammals."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EGA TEs",
+   "q": "What criteria and pipeline identified TEs with an EGA profile?",
+   "a": "TEs that either undergo a stage-specific increase at EGA (like MT2_Mm) and/or strongly decrease at or after EGA, found by Z-score expression, hierarchical and k-means clustering, then inspection of read counts of individual TEs within informative clusters.",
+   "kw": [
+    "k-means clustering",
+    "Z score"
+   ],
+   "info": "Example: pig LTRs clustered with k = 6; cow DNA transposons with k = 5.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - EGA TEs",
+   "q": "How many TEs with an EGA profile were found per species?",
+   "a": "13 murine, 10 porcine, 15 bovine, 9 rabbit and 11 rhesus TEs, representing all retrotransposon subclasses.",
+   "kw": [],
+   "info": "MT2_Mm was among the mouse hits, validating the analysis. MLT2A1, expressed at EGA in rhesus, is also expressed in day-3 human embryos.",
+   "concl": "A defined set of TEs shares EGA expression dynamics across mammalian preimplantation development."
+  },
+  {
+   "type": "qa",
+   "section": "Results - EGA TEs",
+   "q": "Which TE stood out as shared across species?",
+   "a": "The ERVL-MaLR LTR MLT1A0, identified in all species except mouse, expressed at around 1,000 rpm or more with a similar temporal pattern: increase at EGA relative to zygote, then sharp downregulation after EGA.",
+   "kw": [
+    "MLT1A0"
+   ],
+   "info": "Eleven TEs with an EGA profile are shared by two or more species. Oocytes of several species contain MLT1A0 transcripts, suggesting maternal inheritance. In mouse the pattern is similar but with much lower expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TSS architecture",
+   "q": "What are sharp versus broad promoters?",
+   "a": "Sharp promoters have a single well-defined TSS and typically occur at cell-type-specific genes of terminally differentiated cells, whereas broad promoters initiate at multiple positions and are more common in housekeeping genes and, in mammals, developmental regulators.",
+   "kw": [
+    "promoter architecture"
+   ],
+   "info": "The 5' fragments give strand-specific, single-base-pair resolution, similar to CAGE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TSS architecture",
+   "q": "What does the MT2_Mm TSS look like?",
+   "a": "Aggregated 5' signal showed one sharply positioned predominant TSS used across all stages, strongest at the 2-cell stage, with the vast majority of individual insertions using the same TSS position and predominantly sense transcripts.",
+   "kw": [
+    "MT2_Mm"
+   ],
+   "info": "Served as proof of principle for positioning a TSS within a TE.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TSS architecture",
+   "q": "Which expression and TSS patterns did they classify?",
+   "a": "Four expression patterns (up specifically at EGA, up at EGA then plateau, up after EGA, down at EGA) and six TSS patterns, ranging from a sharp sense-only TSS to a sense TSS at the 3' end with antisense TSS at the 5' start, or depletion of signal inside the TE.",
+   "kw": [],
+   "info": "The depletion case is mostly due to initiation within 500 nt downstream of the element, e.g. MIRb in cow.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TSS architecture",
+   "q": "What are the characteristic TSS types per TE subclass?",
+   "a": "LTRs typically use a single sharp sense-only TSS; LINEs typically have a sense TSS at the 3' end plus antisense transcription from a TSS at the 5' of ORF2; SINEs have a sharp sense TSS at the 5' start of the element.",
+   "kw": [
+    "antisense transcription"
+   ],
+   "info": "Antisense transcription was detected from within all LINEs but rarely at SINEs or LTRs. Some LTRs and SINEs with an EGA profile are expressed higher than LINEs, suggesting stronger promoters.",
+   "concl": "Transcriptional regulation appears inherent to the TE and its subclass, not to the host or insertion frequency."
+  },
+  {
+   "type": "qa",
+   "section": "Results - DNA transposons",
+   "q": "Why were DNA transposons thought uninteresting, and what did the data show?",
+   "a": "They are considered largely extinct for transposition in mammals, with the last amplification wave over 40 mya except in some bats, yet remnants are abundant (200,000-600,000 copies in these species) and were transcribed at all stages in all five species.",
+   "kw": [
+    "DNA transposons"
+   ],
+   "info": "Combined dynamics varied: strong maternal contribution in pig, cow, rabbit and rhesus, less in mouse.",
+   "concl": "DNA transposons share the regulatory burst of transcriptional activation with retrotransposons at mammalian EGA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - DNA transposons",
+   "q": "What is MER5A?",
+   "a": "A DNA transposon of the Charlie-hAT superfamily found across the eutherian clade (therefore >99 mya), strongly expressed with an EGA-specific pattern in all five species.",
+   "kw": [
+    "MER5A",
+    "hAT-Charlie"
+   ],
+   "info": "",
+   "concl": "Ancient DNA transposons become activated in early development with patterns shared across species."
+  },
+  {
+   "type": "qa",
+   "section": "Results - DNA transposons",
+   "q": "What fraction of MER5A insertions is actually transcribed?",
+   "a": "Only 9-14 percent: 694 in mouse, 2,366 in rabbit, 3,797 in pig, 3,215 in cow and 3,111 in rhesus (expressed = >1 rpm in at least two replicates).",
+   "kw": [],
+   "info": "Expressed insertions tend to be less fragmented, most visibly in rhesus, cow and pig, though there is no strong correlation between expression level and fragmentation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - DNA transposons",
+   "q": "How conserved are MER5A insertions and their TF motifs?",
+   "a": "Over 30 percent of transcriptionally active MER5A insertions have an orthologous insertion in human (33% mouse, 35% pig, 36% rabbit, 47% rhesus), and 21 TF motifs were found, with ZNF692 motifs in at least about 31 percent of insertions in all species.",
+   "kw": [
+    "ZNF692",
+    "TEAD"
+   ],
+   "info": "TEAD2 motifs are enriched in rabbit, pig, cow and mouse MER5A but absent in rhesus, which instead has >59% of insertions with a TEAD4 motif. MER5A uses a broad promoter with several initiation sites inside and just downstream of the element, and shows sense and antisense transcription, likely because it is a palindrome.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MLT1A0 conservation",
+   "q": "How did they study MLT1A0 sequence conservation?",
+   "a": "They built species-specific consensus sequences from predominant full-length insertions in 12 mammalian genomes (5 profiled plus 7 extra) and made a maximum-likelihood phylogeny with IQ-TREE v2.2.5 (-m MFP, min split support 0.95, seed 42), rooted on the Dfam consensus.",
+   "kw": [
+    "IQ-TREE",
+    "MUSCLE",
+    "trimAl"
+   ],
+   "info": "Sequences were aligned with MUSCLE and trimmed with trimAl (-gt 0.01 -clustal); trees visualized in iTOL v6.9.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MLT1A0 conservation",
+   "q": "What did the MLT1A0 phylogeny show?",
+   "a": "The tree follows the general genome diversification of species and orders: primates (gorilla, rhesus, chimpanzee, human) cluster together, glires (rabbit, mouse, rat) form a second cluster and artiodactyls (goat, alpaca, pig, cow, sheep) a third; consensuses are 92-96 percent identical to the Dfam consensus.",
+   "kw": [
+    "phylogeny"
+   ],
+   "info": "It is notably the full-length MLT1A0 insertions that contribute most to the EGA profile.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MLT1A0 conservation",
+   "q": "Which TFs are implicated in MLT1A0 regulation?",
+   "a": "Known and de novo motif searches found conserved motifs including OTX2 and ZKSCAN5 (also ZBTB26, ZNF317, DUXBL), and OTX2 and ZKSCAN5 are expressed throughout preimplantation development.",
+   "kw": [
+    "OTX2",
+    "ZKSCAN5",
+    "HOMER"
+   ],
+   "info": "OTX2 has been suggested as a regulator of human EGA, and MLT1A0 is expressed in early human embryos in public data. Motif searches used HOMER (findMotifsGenome.pl, -mset vertebrates -size given).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - MLT1A0 reporter",
+   "q": "Does MLT1A0 have intrinsic promoter activity?",
+   "a": "Yes. MLT1A0 LTRs cloned from eight species of rodents, lagomorphs, primates and artiodactyls upstream of the red fluorescent protein Ruby all drove reporter expression in mouse or rabbit ESCs, compared with a promoterless control.",
+   "kw": [
+    "Ruby reporter",
+    "mESC",
+    "rbESC"
+   ],
+   "info": "Transactivation capacity followed the structure of the phylogeny. Plasmid was pcDNA3-mRuby2 with the CMV promoter removed; 2 ug transfected with JetPrime, read by flow cytometry after 48 h.",
+   "concl": "MLT1A0 possesses transcriptional activity across species."
+  },
+  {
+   "type": "qa",
+   "section": "Results - MLT1A0 reporter",
+   "q": "Which TF motif deletions reduced MLT1A0 reporter activity?",
+   "a": "Deletion of the ZBTB26 or ZKSCAN5 motifs reduced reporter activity, whereas deleting the DUX motif did not.",
+   "kw": [
+    "ZBTB26",
+    "DUX"
+   ],
+   "info": "Consistently, MLT1A0 insertions containing the DUX motif are expressed at lower levels than those with ZBTB26 or ZKSCAN5 motifs, in line with the abundance of these TFs in ESCs. Statistics: Welch t-test.",
+   "concl": "ZBTB26 and ZKSCAN5 contribute most to MLT1A0 transcriptional activity in stem cells."
+  },
+  {
+   "type": "qa",
+   "section": "Results - chimeric transcripts",
+   "q": "How were TE-initiated genic transcripts identified?",
+   "a": "With ChimeraTE (mode1), which uses read directionality to distinguish chimeric reads that initiate or terminate at a TE from exonized TE transcripts, run with --strand rf-stranded and --window 150000 using only read 2 (the 5' fragment).",
+   "kw": [
+    "ChimeraTE"
+   ],
+   "info": "Only TE-initiated chimeras present in two or more replicates per stage were kept, except for rhesus where sample numbers were too low. Bovine analysis used a de novo repeatmasker annotation of bosTau9/ARS-UCD1.2 because bosTau5 gene annotation was poorer.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chimeric transcripts",
+   "q": "Which TE subclasses dominate chimeric transcripts per species?",
+   "a": "LTRs dominate in mouse (59 percent, 3,614 of 6,112), LINEs in rabbit (40 percent, 646 of 1,612) and SINEs in rhesus (42 percent, 3,910 of 9,121).",
+   "kw": [],
+   "info": "SINEs form chimeric transcripts in all species: 1,863 in mouse, 356 in rabbit, 112 in cow, 3,910 in rhesus, 495 in pig. All retrotransposon subclasses and DNA transposons can initiate chimeric transcripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chimeric transcripts",
+   "q": "When are chimeric transcripts most abundant?",
+   "a": "TE-initiated chimeric transcripts are most prevalent in oocytes, followed by the EGA stage, and this pattern is conserved in all analyzed species.",
+   "kw": [],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chimeric transcripts",
+   "q": "At what distances do TEs initiate host gene transcripts?",
+   "a": "The vast majority of TE-gene interactions occur at less than 50 kb; SINEs initiate host transcripts at the shortest distances (mostly within 5 kb) in all species except cow, while LTRs act over larger distances, a conserved feature.",
+   "kw": [
+    "alternative promoter"
+   ],
+   "info": "The relative representation of LTRs, LINEs and SINEs as alternative promoters does not necessarily reflect their expression levels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chimeric transcripts",
+   "q": "Do MER5A and MLT1A0 act as alternative promoters?",
+   "a": "Yes: MER5A acts as alternative promoter for 210 genes across all 5 species and stages (coding and noncoding), and MLT1A0 forms 93 chimeric transcripts in total across all 5 species.",
+   "kw": [
+    "C1D"
+   ],
+   "info": "No ortholog gene used the same TE as alternative TSS in all five species.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chimeric transcripts",
+   "q": "What is the C1D example?",
+   "a": "C1D, a nuclear co-repressor, is among the highest expressed TE-gene chimeras; MLT1A0 initiates its transcription in pig and cow, but in mouse it is MT2C_Mm, an about 30-mya LTR ancestor of MT2_Mm, that initiates C1D transcription at EGA.",
+   "kw": [
+    "C1D",
+    "MT2C_Mm"
+   ],
+   "info": "TSS usage (visualized with bambu and proActiv) shows the TE TSS is most used at EGA in all cases.",
+   "concl": "Mouse-specific LTRs such as MT2_Mm and MT2C_Mm appear to have overtaken the role of older eutherian LTRs like MLT1A0 in driving chimeric gene expression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - embryo reporter assays",
+   "q": "What did microinjection of MLT1A0 reporters into embryos show?",
+   "a": "MLT1A0 drove Ruby reporter transcription in bovine embryos at the 8-cell stage, shortly before major EGA (28/41 embryos, N = 2), but not in mouse embryos (0/21), while MT2_Mm drove expression in mouse 2-cell embryos (18/22).",
+   "kw": [
+    "microinjection"
+   ],
+   "info": "No-promoter controls were negative (0/11 mouse, 0/20 cow). Fluorescence was heterogeneous between bovine blastomeres, reflecting known asynchrony of cells entering EGA in cow.",
+   "concl": "MLT1A0 can drive transcription in vivo at EGA."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the long-standing hypothesis about TEs and gene regulation?",
+   "a": "That transposition of TEs allowed dispersed integration of TF motifs, promoter, enhancer and/or repressive sequences, so that their transcriptional regulation can simultaneously regulate many flanking genes and chromatin genome-wide.",
+   "kw": [
+    "co-option"
+   ],
+   "info": "Even though most vertebrate TEs are no longer mobile, this would let them orchestrate entire gene networks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What alternative explanation do the authors offer for conserved TE expression at EGA?",
+   "a": "Conserved TE regulation may be a testament to TE colonization of cellular niches that promote their evolutionary persistence; the preimplantation embryo is a desirable niche because transcription there can produce heritable insertions.",
+   "kw": [],
+   "info": "Their data are consistent with this, suggesting the TE strategy of hijacking EGA is evolutionarily stable.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - limitations",
+   "q": "What limitations do the authors list?",
+   "a": "RNA-seq cannot distinguish steady-state from nascent transcripts, genome assembly and annotation quality differs between species, loss of multimapping reads may lose signal, and Smart-seq+5' cannot assemble full-length transcripts because internal fragments lack strand information.",
+   "kw": [
+    "multimapping"
+   ],
+   "info": "They also cannot exclude other roles of MLT1A0 and MER5A (enhancer, splice donor, noncoding functions), and whether the chimeric transcripts are translated into functional proteins remains undetermined.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion - limitations",
+   "q": "What follow-up experiments do the authors propose?",
+   "a": "ATAC-seq and chromatin state analysis across species to test why only some insertions of a TE family are expressed, and CRISPRi/a for functional studies of TEs in early embryogenesis, plus study in 2-cell-like and 8-cell-like cells.",
+   "kw": [
+    "ATAC-seq",
+    "CRISPRi"
+   ],
+   "info": "They note recent NR5A2 work in mouse embryos indicating that chromatin accessibility, TF binding and TE expression are not always correlated; such analyses remain challenging in non-mouse models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - mapping",
+   "q": "What is the computational pipeline for Smart-seq+5' libraries?",
+   "a": "FastQC and Trimmomatic for quality and adaptor trimming, a custom python script to sort 5' versus internal reads by adaptor sequence, STAR for mapping, samtools filtering, and TEcount/TElocal from TEtranscripts for gene and TE quantification.",
+   "kw": [
+    "STAR",
+    "TEtranscripts",
+    "Trimmomatic"
+   ],
+   "info": "Only read2 of the 5' reads carries true 5' transcript information; rRNA reads were removed using repeatmasker positions. Deeptools and bambu analyses used unique-mapping reads only. Libraries sequenced on HiSeq4000, 2 x 150 bp.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - library prep",
+   "q": "What are key wet-lab parameters of Smart-seq+5'?",
+   "a": "Reverse transcription with SuperScript II in betaine plus 40 percent PEG-8000 for molecular crowding, 90 min at 42 C, 14 PCR cycles with KAPA HiFi, then Nextera XT tagmentation of 300 pg cDNA and 12 PCR cycles with a custom adaptor mix.",
+   "kw": [
+    "PEG-8000",
+    "Nextera XT"
+   ],
+   "info": "The custom mix includes a tailed i7 index with an overhang complementary to the Smart-seq2 adaptors. ERCC spike-ins were added to lysis buffer at 1:581,000.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryos",
+   "q": "How were pig and cow embryos produced?",
+   "a": "In vitro: cumulus-oocyte complexes aspirated from abattoir ovaries, matured and fertilized with frozen-thawed semen from a Duroc boar or a Fleckvieh bull, with stages collected at defined hours after fertilization.",
+   "kw": [
+    "IVF"
+   ],
+   "info": "Pig: zygote 10 h, 2-cell 25 h, 4-cell 34 h, 5-8-cell 48 h, ~16-cell 72 h, morula 97 h. Cow: zygote 18 h, 2-cell 22-27 h, 4-cell 40-42 h, 5-8-cell 48-50 h, ~16-cell 72 h, morula 120 h. High lipid content makes 8- and 16-cell pig embryos impossible to identify unambiguously, so embryos were preselected.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - embryos",
+   "q": "Where did mouse, rabbit and rhesus embryos come from?",
+   "a": "C57BL6J mouse embryos from natural mating; rabbit GV oocytes by follicular aspiration and in vivo embryos from natural mating of non-superovulated Zika rabbits collected at defined hours post-mating; rhesus embryos from superovulated females by ICSI and in vitro culture.",
+   "kw": [],
+   "info": "Rabbit timing: zygote 18-20 hpm, 2-cell 24-26, 4-cell 30-32, 8-cell 38-40, late 16-cell 46-48, morula 54-56 hpm. Rhesus oocytes were used only at metaphase II.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - data availability",
+   "q": "Where are the data and code?",
+   "a": "Genomics data under GEO accession GSE225056, browsable at embryo.helmholtz-munich.de, with code at github.com/meoomen/Smartseq5.",
+   "kw": [
+    "GSE225056"
+   ],
+   "info": "No new materials were generated in the study; statistics were done in R version 4.2.2.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - DNA transposons",
+   "text": "Why are only 9-14 percent of MER5A insertions transcribed, and what distinguishes them? The authors see no strong correlation with fragmentation; chromatin accessibility (ATAC-seq) is the suggested next test."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Worth revisiting: could the same 5'-capture logic be applied to zebrafish or cavefish embryos to compare TE-driven initiation at the MZT in non-mammals? The paper only covers five eutherians and notes that promoter architecture of TE families outside human/mouse is largely uncharacterized."
+  }
+ ]
+}

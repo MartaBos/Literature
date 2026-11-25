@@ -1,0 +1,578 @@
+{
+ "id": "Nepal_2013",
+ "title": "Dynamic regulation of the transcription initiation landscape at single nucleotide resolution during vertebrate embryogenesis",
+ "link": "https://doi.org/10.1101/gr.153692.112",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Nepal_2013_GenomeRes_transcription_initiation_embryogenesis.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did this paper set out to do?",
+   "a": "To give the first comprehensive description of the core promoter repertoire and how its use changes during development of a vertebrate embryo. They mapped transcription initiation at single nucleotide resolution with CAGE across 12 stages of zebrafish development.",
+   "kw": [
+    "CAGE",
+    "core promoter",
+    "zebrafish"
+   ],
+   "info": "They compared the zebrafish data to the first CAGE promoter map of Tetraodon and to existing human CAGE data to find conserved features.",
+   "concl": "The zebrafish developmental promoterome is a resource for studying developmental gene regulation and promoter features shared across vertebrates."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main findings listed in the abstract?",
+   "a": "They found genome-wide rules of core promoter usage, structure and dynamics, several classes of pervasive intra- and intergenic post-transcriptionally processed RNAs, and splice donor site-associated intronic RNAs (sRNAs) that are specific to genes of the splicing machinery.",
+   "kw": [
+    "sRNA",
+    "processed RNA"
+   ],
+   "info": "Promoter type, a purine-rich initiator motif, and sRNAs together with the genes that carry them are conserved in Tetraodon and mammalian CAGE maps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a core promoter?",
+   "a": "A short stretch of sequence around the transcription start site (TSS) that contains the information for recruiting general transcription initiation factors (GTFs), which are needed to form the pre-initiation complex.",
+   "kw": [
+    "core promoter",
+    "GTF",
+    "pre-initiation complex"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why is the core promoter thought to matter for developmental transcription control?",
+   "a": "Two advances point that way. GTF proteins and complexes have been found that can replace TFIID or its subunits at different developmental stages, and core promoter types and features turned out to be more diverse than expected, which suggests that subsets of genes use core promoters differently.",
+   "kw": [
+    "TFIID",
+    "promoter diversity"
+   ],
+   "info": "The diversity of core promoters may provide alternative integration points for developmental signals.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What did CAGE reveal about promoters before this study?",
+   "a": "CAGE improved genome-scale annotation of core promoters and showed TSS usage at single nucleotide resolution. It showed that most promoters lack a TATA-box, which had been seen as the seeding element for transcription initiation.",
+   "kw": [
+    "CAGE",
+    "TATA-box"
+   ],
+   "info": "Despite several alternative core promoter motifs, a global code for core promoters is still elusive.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What happens at the mid-blastula transition (MBT) in zebrafish?",
+   "a": "Before MBT the embryo has no transcriptional activity and its transcriptome reflects the maternal program inherited from the oocyte. At MBT the zygotic genome is activated while maternal mRNA is degraded.",
+   "kw": [
+    "MBT",
+    "maternal to zygotic transition",
+    "zygotic genome activation"
+   ],
+   "info": "These transcriptome changes are needed for cell fate specification and determination during differentiation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What gap does the paper address?",
+   "a": "There were no genome-scale data on core promoter usage and its dynamics in a developing vertebrate embryo. TSS positions inferred from cDNA/EST and RNA-seq were unreliable and data sets were scarce.",
+   "kw": [
+    "TSS mapping"
+   ],
+   "info": "Accurate TSS mapping is needed to study how DNA sequence determinants of initiation interact with epigenetic regulation, such as histone modifications, on core promoters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which data types did they combine?",
+   "a": "CAGE maps of TSSs, RNA-seq of protein-coding and noncoding transcripts, and ChIP-seq of the promoter-associated histone mark H3K4me3.",
+   "kw": [
+    "CAGE",
+    "RNA-seq",
+    "H3K4me3 ChIP-seq"
+   ],
+   "info": "The stages cover the maternal to zygotic transition at MBT and later differentiation stages that form the body plan and organ systems.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide detection of 5' ends of capped transcripts",
+   "q": "How much CAGE data was generated?",
+   "a": "More than 83 million Illumina reads from 12 developmental stages, with 3.7 to 8.2 million reads mapped to the zebrafish genome per stage.",
+   "kw": [
+    "CAGE"
+   ],
+   "info": "The 12 stages, as listed in Fig. 5B, are unfertilized egg, fertilized egg, 64 cells, 512 cells, high, oblong, dome, 30% epiboly, shield, 14 somites, prim-6 and prim-20.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide detection of 5' ends of capped transcripts",
+   "q": "What are CTSSs and TCs?",
+   "a": "A CTSS (CAGE transcript start site) is a single nucleotide position mapped by CAGE 5' ends, with its frequency measured in tags per million (tpm). CTSSs that lie within 20 bp of each other are clustered into transcript clusters (TCs) of varying width, which describe the TSS distribution within a promoter.",
+   "kw": [
+    "CTSS",
+    "TC",
+    "tpm"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide detection of 5' ends of capped transcripts",
+   "q": "What does the ncalda example show?",
+   "a": "Early pre-MBT TCs reflect maternal products inherited from the oocyte. A previously unannotated major TC downstream of the annotated promoter is up-regulated after the shield stage, which points to a zygote-specific alternative promoter that RNA-seq also confirmed.",
+   "kw": [
+    "ncalda",
+    "alternative promoter"
+   ],
+   "info": "H3K4me3 peaks also support both promoter regions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide detection of 5' ends of capped transcripts",
+   "q": "How did they show that the CAGE data are reproducible and low in noise?",
+   "a": "Biological replicates of the prim-6 stage were consistent. The change in the number of CTSSs and TCs that account for a given percentage of tags was consistent between adjacent stages, and a relatively small proportion of CTSSs accounted for most of the signal.",
+   "kw": [
+    "reproducibility"
+   ],
+   "info": "The number of CTSSs and TCs was counted at different thresholds to make it robust to sequencing depth. Promoter usage dynamics correlated with gene activity measured by RNA-seq.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Genome-wide detection of 5' ends of capped transcripts",
+   "q": "How do sharp and broad promoters change from maternal to zygotic stages?",
+   "a": "Zebrafish TCs follow the mammalian split into sharp (focused) and broad (diffuse) promoters. The number of sharp TCs dropped significantly from maternal to zygotic stages, while broad TC usage increased after zygotic genome activation and peaked at organogenesis.",
+   "kw": [
+    "sharp promoter",
+    "broad promoter"
+   ],
+   "info": "Most CAGE tags were at gene 5' ends, within 500 bp of annotated start sites. Many promoter regions used multiple TCs, especially at maternal stages, and this decreased noticeably at zygotic stages. Comparisons used a one-tailed Fisher's exact test.",
+   "concl": "Promoter shape shifts toward broad promoters after the maternal to zygotic transition."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CAGE, RNA-seq and H3K4me3 detect promoters of coding and noncoding RNAs",
+   "q": "What fraction of known gene models does CAGE detect?",
+   "a": "At the stringent threshold of at least 1 tpm, about 70% of RefSeq and 52% of Ensembl gene models were detected during early embryonic stages.",
+   "kw": [
+    "RefSeq",
+    "Ensembl"
+   ],
+   "info": "At a lower TC threshold (above 0.5 tpm), Ensembl coverage was similar to RNA-seq (Pauli et al. 2012). The gene models include non-embryonic transcripts. Concordance of CAGE TCs, RNA-seq 5' ends and H3K4me3 peaks was shown at prim-6.",
+   "concl": "CAGE supports most transcripts detectable in embryogenesis and gives gene 5' ends at nucleotide resolution."
+  },
+  {
+   "type": "qa",
+   "section": "Results - CAGE, RNA-seq and H3K4me3 detect promoters of coding and noncoding RNAs",
+   "q": "How well does CAGE detect lncRNAs and novel genes?",
+   "a": "CAGE detected 926 of the 1133 known lncRNAs, and 625 of them showed transcription in at least two consecutive stages. It also found 459 novel promoters of intergenic transcripts without RNA-seq evidence, and 327 of these had H3K4me3 enrichment.",
+   "kw": [
+    "lncRNA",
+    "novel promoters"
+   ],
+   "info": "CAGE also found initiation events for unannotated noncoding transcripts, including antisense RNAs. In these cases CAGE was more sensitive than RNA-seq.",
+   "concl": "Some of these are likely promoters of novel genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters",
+   "q": "How many genes have alternative promoters?",
+   "a": "1612 genes had at least one alternative promoter, and 586 of those promoters were novel.",
+   "kw": [
+    "alternative promoters"
+   ],
+   "info": "Ensembl and RNA-seq transcripts with different 5' ends were compared with CAGE-supported gene 5' ends. Dynamics were quantified with TC tpm values.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters",
+   "q": "How are alternative promoters regulated relative to the reference promoter?",
+   "a": "Their regulation is complex and often independent. Genes were grouped by when the reference promoter is active: maternal (148 genes), zygotic (320) or maternal and zygotic (920). In some genes the CAGE-discovered promoter is used more than the annotated 5' end.",
+   "kw": [
+    "reference promoter",
+    "alternative promoter"
+   ],
+   "info": "Reference promoters were assigned by Ensembl 71. Alternative promoters can carry either broad or sharp TCs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Alternative promoters",
+   "q": "How did they validate CAGE-predicted promoters in vivo?",
+   "a": "They cloned 5 alternative and 5 novel promoter regions into a Venus reporter linked to the neural-specific islet1 zCREST2 enhancer. In transient transgenic zebrafish, 9 of the 10 drove neural reporter expression, while random control fragments stayed silent.",
+   "kw": [
+    "reporter assay",
+    "zCREST2",
+    "Venus"
+   ],
+   "info": "Activity was seen in the cerebellum and spinal cord.",
+   "concl": "CAGE detects functional promoters in zebrafish."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary conservation of promoter sequence features",
+   "q": "Why did they generate CAGE data for Tetraodon?",
+   "a": "To find evolutionarily conserved promoter features through comparative genomics. Vertebrate core promoters have relatively few promoter motifs, so conservation helps identify functional features.",
+   "kw": [
+    "Tetraodon nigroviridis",
+    "comparative genomics"
+   ],
+   "info": "Tetraodon is a small-genome species (spotted green pufferfish). They bred it in the lab to produce the first Tetraodon CAGE promoter map.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary conservation of promoter sequence features",
+   "q": "Did they find known core promoter motifs at fixed positions relative to TSSs?",
+   "a": "No positionally constrained motifs were enriched apart from SP1 and the TATA-box. Both were significantly enriched in Tetraodon orthologs of zebrafish genes.",
+   "kw": [
+    "TATA-box",
+    "SP1",
+    "JASPAR"
+   ],
+   "info": "They tested TATA-box, GC-box, CAAT-box, Inr, DPE, DRE and MTE, plus k-mer enrichment for novel motifs. The SP1 and TATA-box data are 'data not shown'.",
+   "concl": "This suggests conserved mechanisms for gene-specific transcription initiation among teleosts."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary conservation of promoter sequence features",
+   "q": "Which initiator dinucleotides at the -1,+1 positions are conserved between zebrafish and Tetraodon?",
+   "a": "Three dinucleotides were significantly enriched in ortholog pairs: CC, TC and AA. CC and TC are part of a broader TC/CT motif resembling the TCT initiator, and the genes that carry them are protein translation-associated genes, as for TCT in other species.",
+   "kw": [
+    "initiator",
+    "TCT motif",
+    "dinucleotide"
+   ],
+   "info": "TCT is known as an initiator specific to highly expressed translation-associated genes (Parry et al. 2010).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary conservation of promoter sequence features",
+   "q": "What is the GAAG initiator?",
+   "a": "A novel, noncanonical initiator motif with AA at the TSS. It is used by a small set of genes: 557 in zebrafish, 150 in Tetraodon and 152 in human (ENCODE cell line CAGE).",
+   "kw": [
+    "GAAG",
+    "AA initiator"
+   ],
+   "info": "Genes with the AA initiator can also have a canonical initiator in the promoter region, but the AA initiator is dominant.",
+   "concl": "GAAG is a conserved noncanonical initiation mechanism, probably universal across vertebrates."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Evolutionary conservation of promoter sequence features",
+   "q": "Which genes use the GAAG initiator?",
+   "a": "GO analysis linked GAAG-initiator genes to vesicles, vesicle transport and membrane-associated proteins, in both fish and human.",
+   "kw": [
+    "GO analysis",
+    "vesicle transport"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Exonic CAGE tags and post-transcriptionally processed RNAs",
+   "q": "Where else were CAGE tags found besides promoters?",
+   "a": "There was pervasive CAGE signal in introns, exons and 3'-UTRs, similar to mammalian cells. It showed developmentally regulated production of RNAs at intragenic sites, including coding exons and 3'-UTRs.",
+   "kw": [
+    "intragenic CAGE tags",
+    "3'-UTR"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Exonic CAGE tags and post-transcriptionally processed RNAs",
+   "q": "What evidence suggests that exonic CAGE tags come from spliced, processed RNAs?",
+   "a": "Up to 15% of the CAGE tags that did not map to the genome aligned to zebrafish cDNAs across exon-exon junctions. Exonic tags also overlapped significantly with a zebrafish small RNA library in the same exons (58%, Fisher test P < 2.2 x 10^-16).",
+   "kw": [
+    "exon-exon junction",
+    "small RNA"
+   ],
+   "info": "The small RNA library is from Wei et al. 2012.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Exonic CAGE tags and post-transcriptionally processed RNAs",
+   "q": "Why does the timing of exonic TCs argue against new transcription?",
+   "a": "Exonic TCs appear before zygotic transcription starts at MBT, so they cannot come from de novo transcription. They mostly correlate with expression at the gene 5' end.",
+   "kw": [
+    "MBT",
+    "exonic TCs"
+   ],
+   "info": "Exonic tags are enriched in translation and cellular metabolism genes. Exonic CAGE tags also detected post-transcriptional cleavage of lncRNAs such as MALAT1 (data not shown).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Exonic CAGE tags and post-transcriptionally processed RNAs",
+   "q": "Do exonic CAGE start sites work as promoters in reporter assays?",
+   "a": "No. None of 5 tested exonic CAGE start regions activated significant reporter expression. They were comparable to 3 random genomic control regions without CAGE tags.",
+   "kw": [
+    "reporter assay"
+   ],
+   "info": "",
+   "concl": "Exonic CAGE tag-defined RNAs are post-transcriptional in origin and do not start from intragenic promoters."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intronic CAGE tags",
+   "q": "How are intronic CAGE tags distributed along introns?",
+   "a": "Intronic TCs not assigned to alternative promoters showed distinct groups at the 5' end and the 3' end of introns, plus tags within introns (intra-intronic). 5', 3' and intra-intronic RNAs are produced mostly in non-overlapping sets of genes.",
+   "kw": [
+    "intronic CAGE tags",
+    "splice site"
+   ],
+   "info": "From the Venn diagram (Fig. 5C): 169 genes have only 5' intronic TCs, 320 only 3' intronic TCs and 1234 only internal intronic TCs, with very small overlaps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intronic CAGE tags",
+   "q": "How do intron 5' end RNAs differ from other intronic RNAs during development?",
+   "a": "Intron 5' end RNAs are made only at zygotically active stages, which fits splicing-associated activity. Other intronic RNAs are present throughout development.",
+   "kw": [
+    "sRNA",
+    "zygotic"
+   ],
+   "info": "Example: the splice donor site of acin1b. Intra-intronic tags correlate both positively and negatively with gene 5' end and exonic activity, so many are not constitutive mRNA degradation products.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intronic CAGE tags",
+   "q": "In which genes are intron 5' end RNAs found?",
+   "a": "Mainly in genes that encode splicing-associated proteins. The same association was seen in human cells.",
+   "kw": [
+    "splicing machinery",
+    "sRNA"
+   ],
+   "info": "Splice site-associated RNAs had been described before in HeLa cells (Valen et al. 2011).",
+   "concl": "Intron 5' end RNAs are evolutionarily conserved and are a property of splicing-associated genes."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic CAGE tags lack core promoter features",
+   "q": "What is the canonical initiator consensus?",
+   "a": "YYA(+1)NWYY (Bucher 1990), or more generally a YR(+1) consensus established in mouse and human.",
+   "kw": [
+    "initiator",
+    "YR"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic CAGE tags lack core promoter features",
+   "q": "How does the start site sequence of intragenic tags differ from promoter TSSs?",
+   "a": "Exonic tags, both spliced and unspliced, are marked mainly by G stretches at their 5' end, which had previously been linked only to 3'-UTR CAGE signal. This differs clearly from the initiator at gene 5' end promoters and resembles exon start sites in human.",
+   "kw": [
+    "G stretch",
+    "dinucleotide frequency"
+   ],
+   "info": "The analysis covered dominant CTSSs of 38766 promoter, 9480 exonic, 897 exon junction, 1622 internal intronic, 244 3' intronic and 102 5' intronic TCs. In Fig. 6, 3' intronic sites are dominated by AG and 5' intronic sites by GT, matching splice sites. The G stretch was also seen on MALAT1 in zebrafish and human.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Intragenic CAGE tags lack core promoter features",
+   "q": "Could the G at the start of exonic tags be a CAGE artifact?",
+   "a": "No. CAGE can add an extra G, but this is corrected by removing mismatching Gs at the 5' end of all tags.",
+   "kw": [
+    "G bias"
+   ],
+   "info": "Exonic and intronic tags also lack H3K4me3, unlike regions around gene 5' end TSSs.",
+   "concl": "Intragenic CAGE start sites are not canonical core promoters and are strong candidates for RNAs generated by post-transcriptional processing."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors see as their main contributions?",
+   "a": "The first quantitative, single nucleotide map of TSS usage dynamics during vertebrate embryo development, covering coding and noncoding genes. It includes many alternative promoters, positionally constrained promoter features including a novel initiator, and a pervasive layer of intragenic processed RNAs that appears with the maternal to zygotic transition.",
+   "kw": [
+    "promoterome"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What open questions remain about the intragenic RNAs?",
+   "a": "Their size, role and mechanism of generation are unknown. It is also unclear whether they carry a conventional cap.",
+   "kw": [
+    "recapping"
+   ],
+   "info": "Recapping can happen downstream of mRNA production and also in the cytoplasm (Otsuka et al. 2009). Their abundance at developmentally regulated genes points to a possible regulatory function.",
+   "concl": "The link between intron 5' end RNAs and splicing genes suggests a mechanism connecting splicing activity to the expression of the splicing machinery."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do zebrafish developmental promoters compare with Drosophila?",
+   "a": "Some features are shared with Drosophila and Xenopus, such as sharp and broad promoter dynamics. However, fish developmental promoters rely much less on positionally constrained motifs than Drosophila promoters.",
+   "kw": [
+    "Drosophila",
+    "Xenopus"
+   ],
+   "info": "",
+   "concl": "This suggests substantially different core promoter regulation mechanisms."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the limitations of the study?",
+   "a": "Whole-embryo analysis at differentiation stages masks cell- and tissue-specific variation in promoter usage and makes it harder to decipher promoter codes. Only a small number of regions were tested in the reporter assays.",
+   "kw": [
+    "limitations"
+   ],
+   "info": "The authors say that working out promoter codes in specific cell types is the challenge for future research.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What practical uses does the resource have?",
+   "a": "Alternative promoters cause variable 5'-UTRs, which affects the design of translation-blocking morpholinos and site-specific mutations. Knowing the correct core promoters also helps in choosing promoters for transgene and enhancer assays and in finding noncoding mutations that affect development.",
+   "kw": [
+    "morpholino",
+    "5'-UTR",
+    "transgenesis"
+   ],
+   "info": "Core promoter features may also underlie the specificity of enhancer-promoter interactions over hundreds of kilobases.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Embryo collection and RNA",
+   "q": "How were the embryo samples collected?",
+   "a": "They used AB* wild-type zebrafish raised at 28 C in 10% Hanks solution. Embryos were staged, snap-frozen in liquid nitrogen, and up to 800 embryos per stage were homogenized in TRIzol (1 mL per 150 embryos).",
+   "kw": [
+    "AB*",
+    "TRIzol"
+   ],
+   "info": "Unfertilized eggs came from spawning females. Fertilized eggs and 2-cell embryos came from pairwise crosses 10 min after pairing, and other stages from clutches laid within 20 min. Starting at 512 cells, three more samples were taken at 30, 60 and 90 min. RNA quality was checked on a Bioanalyzer 2100.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE library preparation",
+   "q": "How were the CAGE libraries made?",
+   "a": "The protocol was adapted from Takahashi et al. 2012 for Illumina GA IIx. 5 ug total RNA was reverse transcribed with a random N15 primer, cap-trapped, ligated to a linker containing an EcoP15I site, cleaved with EcoP15I, ligated to a second linker, PCR amplified for 15 to 18 cycles, and sequenced as 36-cycle single reads.",
+   "kw": [
+    "cap-trapping",
+    "EcoP15I",
+    "Illumina GA IIx"
+   ],
+   "info": "Reverse transcription used PrimeScript in the presence of trehalose and sorbitol. Libraries were clustered at 5 pM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIP-seq and RNA-seq",
+   "q": "How were the H3K4me3 ChIP-seq and RNA-seq done?",
+   "a": "ChIP used about 1500 dome/30% epiboly embryos or 200 prim-6 embryos, the ChIP-IT Express Enzymatic kit and anti-H3K4me3 (Abcam ab8580), with 36 bp reads on GA IIx or HiSeq 2000. RNA-seq covered four stages (2 cells, dome/30% epiboly, 14 somites, prim-6) as poly(A)+ libraries with 76 bp paired-end reads, aligned with SOAPsplice v1.0 to Zv9/danRer7.",
+   "kw": [
+    "H3K4me3",
+    "SOAPsplice"
+   ],
+   "info": "Expression was quantified as the Rseq-score: RNA-seq reads on the first exon divided by exon length. Using the second and third exons gave very similar results.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE mapping and TC clustering",
+   "q": "How were CAGE tags mapped and clustered?",
+   "a": "Tags were mapped with Bowtie to Zv9 (zebrafish) and tetNig2 (Tetraodon), allowing up to 2 mismatches and keeping only unique mappers. A mismatching G at the first position was removed. Counts were normalized to tpm as in Balwierz et al. 2009, and CTSSs with at least 0.5 tpm in one stage were clustered into TCs if less than 20 bp apart.",
+   "kw": [
+    "Bowtie",
+    "tpm"
+   ],
+   "info": "Tags with an extra mismatch at the second position were removed, affecting 1 to 2% of tags. Thresholds used throughout were 0.5 tpm for CTSSs and 1 tpm for TCs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - CAGE mapping and TC clustering",
+   "q": "How did they define sharp versus broad TCs?",
+   "a": "TC width was taken as the interquantile range between the 10th and 90th percentile of the cumulative tag distribution. TCs narrower than 10 bp were called sharp and the rest broad.",
+   "kw": [
+    "interquantile width",
+    "sharp promoter",
+    "broad promoter"
+   ],
+   "info": "The interquantile range avoids broadening of highly expressed clusters. The 10 bp cutoff was set empirically. Stage classes: maternal means 0 tpm from shield onward, zygotic means 0.5 tpm from high stage onward, and M-Z means at least 0.5 tpm in at least two maternal and zygotic stages.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genomic location and alternative promoters",
+   "q": "How were tags assigned to gene regions and alternative promoters?",
+   "a": "Using Ensembl 71 and RefSeq plus RNA-seq transcript models, tags were classified into promoter (within 500 bp of annotated TSSs), 5'-UTR, coding exon, intron and 3'-UTR. Alternative promoters were defined by collapsing transcripts that share the first splice donor site and whose 5' ends are less than 500 bases apart.",
+   "kw": [
+    "Ensembl 71",
+    "alternative promoters"
+   ],
+   "info": "Intronic TCs overlapping the first or last intron base were called 5'- or 3'-intronic and the rest intra-intronic. Remaining TCs were novel intergenic. Unmapped prim-6 tags were mapped to Ensembl cDNA (v65). The cage-score (maximum TC tpm within 500 bp of a gene) was correlated with the Rseq-score using Pearson correlation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Orthologous promoter comparison and GO",
+   "q": "How was the zebrafish-Tetraodon promoter comparison set up?",
+   "a": "They used one-to-one ortholog pairs at two stages per species: zebrafish fertilized egg and prim-6, and pufferfish fertilized egg and 46 hpf. Only genes with a TC of at least 5 tpm were kept, giving 2070 maternal and 2700 zygotic ortholog pairs.",
+   "kw": [
+    "orthologs",
+    "JASPAR",
+    "chi-square"
+   ],
+   "info": "Motifs were scanned within 150 bp of the dominant CTSS using the JASPAR TFBS Perl module (80% threshold). Statistics used a chi-square test for independence. Human initiators came from ENCODE AG04450, BJ, H1 hESC, HUVEC and NHEK. GO analysis used GOstats with FDR correction, at least 5 genes and P at most 0.05.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Reporter constructs and transgenesis",
+   "q": "How were the reporter assays done?",
+   "a": "Promoter fragments were PCR-amplified from AB* genomic DNA and cloned into a Venus reporter vector with MultiSite Gateway. Fertilized eggs were injected 10 to 25 min after laying with 1 to 1.2 nL of 20 ng/uL plasmid and 30 ng/uL eCFP mRNA.",
+   "kw": [
+    "Gateway",
+    "Zebrafish Miner"
+   ],
+   "info": "Reporter activity was recorded by automated imaging and quantified as pixel intensity in tissue domains with Zebrafish Miner software. Raw data are in SRA under SRA055273, and tracks are at zeprome.genereg.net.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Intronic CAGE tags",
+   "text": "What is the mechanism that links intron 5' end RNAs to splicing genes, and do they feed back on the expression of the splicing machinery?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Cell-type-resolved promoter usage is needed, because whole-embryo CAGE masks tissue-specific promoter codes. Worth checking later single-cell or tissue-level CAGE work in zebrafish."
+  }
+ ]
+}

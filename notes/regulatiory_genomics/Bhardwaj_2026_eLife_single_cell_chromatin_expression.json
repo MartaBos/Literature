@@ -1,0 +1,638 @@
+{
+ "id": "Bhardwaj_2026",
+ "title": "Single-cell co-mapping reveals relationship between chromatin state and gene expression in early zebrafish development",
+ "link": "https://doi.org/10.7554/elife.110400",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Bhardwaj_2026_eLife_single_cell_chromatin_expression.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Why has it been hard to study how the cell type-specific chromatin landscape is set up during vertebrate embryogenesis?",
+   "a": "There were no methods to detect chromatin modifications and gene expression together in the same cell.",
+   "kw": [
+    "cell identity",
+    "single-cell multi-omics"
+   ],
+   "info": "A cell type-specific chromatin landscape is thought to be crucial for maintaining cell identity during development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main finding about how chromatin and transcription relate during early zebrafish development?",
+   "a": "Before germ layers form, the chromatin state and the transcription state of cells are uncoupled. They become progressively connected during gastrulation and somitogenesis.",
+   "kw": [
+    "gastrulation",
+    "somitogenesis"
+   ],
+   "info": "They measured full-length transcriptome plus histone modifications in single cells from 4 to 24 hpf.",
+   "concl": "Coupling between chromatin and transcription increases as cells mature."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How are developmental genes silenced, according to this paper?",
+   "a": "Repressive chromatin (H3K27me3) spreads locally, and this is combined with cell type-specific demethylation.",
+   "kw": [
+    "H3K27me3",
+    "cis-spreading",
+    "demethylation"
+   ],
+   "info": "They also used an interpretable machine learning model that combines TF expression with chromatin state. It classifies TFs as lineage-specific activators or repressors and flags TFs that are epigenetically regulated.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why not just use bulk assays or a single-modality single-cell assay?",
+   "a": "Chromatin and gene expression vary a lot between cells in the embryo, so bulk assays average out the differences. A single-cell assay that measures only chromatin or only RNA cannot show how the two layers interact within one cell.",
+   "kw": [
+    "bulk vs single-cell"
+   ],
+   "info": "Earlier chromatin-expression studies used cultured cells, whole tissues or sorted populations. Single-cell DNA methylome and chromatin studies have mostly looked at adult tissues. Genome-wide single-cell studies of chromatin changes over time in early embryos are rare.",
+   "concl": "Gap: we don't know how cell type-specific chromatin states are established and propagated in early embryos."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What did they set out to do, and in which system?",
+   "a": "They asked how active and silenced chromatin states are shaped during early vertebrate embryogenesis in zebrafish. They used T-ChIC to profile histone modifications and the full-length transcriptome in the same single cells from 4 to 24 hpf.",
+   "kw": [
+    "zebrafish",
+    "T-ChIC"
+   ],
+   "info": "They then inferred continuous developmental trajectories and asked how chromatin state correlates with the expression of TFs and other developmental genes during cell fate commitment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - paired profiling of histone marks and transcriptome",
+   "q": "What is T-ChIC?",
+   "a": "T-ChIC (transcriptome and chromatin immuno-cleavage) is a single-cell multi-omics method that combines the sortChIC and VASA-seq protocols in one workflow. It measures histone modifications at kilobase resolution and the full-length transcriptome in the same cell.",
+   "kw": [
+    "T-ChIC",
+    "sortChIC",
+    "VASA-seq"
+   ],
+   "info": "An antibody plus pA-MNase is targeted to the histone mark, and adding Ca2+ activates MNase to cut at the target regions. RNA and ChIC fragments carry different barcodes and are separated after sequencing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - paired profiling of histone marks and transcriptome",
+   "q": "What is woT-ChIC and how does it differ from T-ChIC?",
+   "a": "Whole-organism T-ChIC adds an optimised embryo cell dissociation step and a sample multiplexing strategy. Cells from different time points are labelled with combinations of CellTrace dyes and pooled, which reduces batch effects.",
+   "kw": [
+    "woT-ChIC",
+    "CellTrace",
+    "multiplexing"
+   ],
+   "info": "Pooled cells are FAC-sorted into 384-well plates with position-indexed RNA and ChIC barcodes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - paired profiling of histone marks and transcriptome",
+   "q": "Which time points and how many cells were profiled for H3K27me3?",
+   "a": "They profiled 4, 6, 8, 10, 12 and 24 hpf and obtained 18,432 cells. After filtering, 9275 cells with both transcriptome and H3K27me3 signal were kept.",
+   "kw": [
+    "H3K27me3",
+    "hpf"
+   ],
+   "info": "Stages: sphere (4 hpf), shield (6), 75% epiboly (8), bud (10), 6 somite (12), prim-5 (24). The time points cover all of gastrulation (4 to 10 hpf) and the start and end of somitogenesis (12 and 24 hpf). There were four biological replicates plus two 'T-noChIC' replicates without a functional antibody. T-noChIC cells had similar transcript numbers and co-clustered with woT-ChIC cells, so transcriptome quality does not depend on the ChIC fraction.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - paired profiling of histone marks and transcriptome",
+   "q": "How does the RNA side of the data reflect the maternal-to-zygotic transition?",
+   "a": "Over developmental time, unique fragment counts from spliced reads dropped strongly compared with unspliced reads. This fits with maternal transcripts being replaced by newly made zygotic RNA.",
+   "kw": [
+    "maternal-to-zygotic transition",
+    "spliced/unspliced"
+   ],
+   "info": "They detected more genes with both spliced and unspliced counts than earlier zebrafish scRNA-seq studies (Farrell 2018, Wagner 2018), because of higher sensitivity and full-length RNA recovery. Total RNA profiling also picked up non-coding RNAs: miR-430 in pluripotent cells (clears maternal RNA) and miR-124 in neural ectoderm.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - paired profiling of histone marks and transcriptome",
+   "q": "How does the woT-ChIC H3K27me3 signal compare with published bulk data?",
+   "a": "Pseudo-bulk H3K27me3 correlated highly genome-wide with public bulk ChIP data from matched time points. Bins ranked by signal showed better enrichment than bulk data at comparable sequencing depth.",
+   "kw": [
+    "pseudo-bulk",
+    "validation"
+   ],
+   "info": "Time points were grouped as early (4 to 6 hpf), intermediate (8, 10, 12 hpf) and late (24 hpf). MNase cuts per cell (H3K27me3 signal) increased with development, in line with bulk reports of rising H3K27me3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - paired profiling of histone marks and transcriptome",
+   "q": "Give examples of genes where H3K27me3 matches silencing in single cells.",
+   "a": "hoxc3a (anterior-posterior patterning) already had high H3K27me3 and was silenced at 4 hpf, while pcdh1b was silenced late. rfx4, expressed in CNS and neural rod, was silenced by H3K27me3 only transiently, in non-neural ectoderm during gastrulation.",
+   "kw": [
+    "hoxc3a",
+    "pcdh1b",
+    "rfx4"
+   ],
+   "info": "Figure 1c shows a 450 kb region around the hoxc cluster with single-cell RNA and H3K27me3 tracks.",
+   "concl": "The data give quantitative insight into the relationship between H3K27me3 and gene expression."
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "How were cell types annotated?",
+   "a": "Cells were Leiden-clustered on expression and matched to the Wagner et al. 2018 time-course scRNA-seq data by canonical correlation analysis, then labels were transferred. Labels were refined with ZFIN cell ontologies into 34 cell types.",
+   "kw": [
+    "label transfer",
+    "ZFIN",
+    "metacells"
+   ],
+   "info": "Virtually all cells matched an annotated Wagner cell with high confidence. Cell type proportions were consistent between replicates. Transcriptionally similar cells were combined into metacells (SEACells) to reduce dropouts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "When do cell types start to separate by their H3K27me3 pattern?",
+   "a": "Most cell types annotated from expression also separate by H3K27me3 enrichment as early as 8 to 12 hpf. So distinct, cell state-specific H3K27me3 patterns start to appear during gastrulation.",
+   "kw": [
+    "H3K27me3",
+    "gastrulation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "What is cis-spreading and why did they suspect it?",
+   "a": "Cis-spreading is H3K27me3 spilling over from previously enriched regions into neighbouring DNA, as opposed to a de novo gain. They suspected it because the number of bins with H3K27me3 kept increasing while the average signal per detected bin plateaued at 24 hpf, meaning new regions were gaining signal.",
+   "kw": [
+    "cis-spreading",
+    "H3K27me3"
+   ],
+   "info": "Example: at the zic locus (zic3) signal spreads with differentiation, and the nearby gene rbmx is also downregulated over time.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "How much of the early H3K27me3 signal shows spreading?",
+   "a": "They took 5 kb bins with signal in at least 5% of pluripotent cells at 4 hpf, and 65% of these overlapped a promoter. About 30% of bins correlated positively with the surrounding 100 kb background, which points to spillover. The other 70% stayed localised.",
+   "kw": [
+    "spillover",
+    "promoter"
+   ],
+   "info": "Tightly repressed loci with broad signal were the exception: gata3, nr2f1a, six3b, pax9a, foxc1b, zic1/4, the hox clusters and the pcdh1/2 cluster. All other signal was localised within 5 kb bins.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "How did they confirm spreading with an independent approach?",
+   "a": "They called domains on the pooled pseudo-bulk data. Wide H3K27me3 domains matched the 24 hpf signal, while sharper subpeaks inside them were seen at 4 to 6 hpf. More mature cell types, especially neural ectoderm such as differentiating neurons, showed higher subpeak-to-background correlation, so a wider spread.",
+   "kw": [
+    "domain calling",
+    "subpeaks"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "Is H3K27me3 spreading lineage-specific?",
+   "a": "Mostly not. Only a handful of bins differed significantly between lineages, and the mean H3K27me3 signal suggested even these results were not robust.",
+   "kw": [
+    "lineage-agnostic"
+   ],
+   "info": "Tested with a likelihood ratio test comparing a linear model with and without a germ layer covariate (see Methods).",
+   "concl": "The spread of H3K27me3 does not appear to be lineage-specific."
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "Is promoter-anchored H3K27me3 spreading also seen in other species?",
+   "a": "They re-analysed mouse embryo ChIP-seq (Xiang et al. 2020). Comparing E5.5 epiblast with post-gastrulation ectoderm showed signal spreading from a subset of promoter sites.",
+   "kw": [
+    "mouse",
+    "conservation"
+   ],
+   "info": "Signal was plotted over 50 kb bins around mouse TSSs (mm9).",
+   "concl": "Spreading of H3K27me3 from promoters might be conserved."
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "How does the expression of 'host' and 'nearby' genes change around the time of spreading?",
+   "a": "Host genes, which have promoter H3K27me3 in pluripotent cells, increased in expression before the spread and were silenced after it. Nearby genes, with promoters within 100 kb, changed less but were also downregulated later.",
+   "kw": [
+    "host gene",
+    "pseudotime"
+   ],
+   "info": "Cells were ordered in pseudotime. Linear regression predicting expression from H3K27me3 density (reads per kb) on the nearest or overlapping domain in metacells found strong negative correlations. The strongest targets were the hox and pcdh1 clusters.",
+   "concl": "Silencing happens once enough gene-body H3K27me3 coverage builds up by cis-spreading, seemingly independent of the gene's prior transcription."
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "Do any genes lose H3K27me3 during development?",
+   "a": "Yes. Differential analysis of each 24 hpf cell type against earlier cell types (log2FC < -1, FDR < 0.05) found 265 genes across 10 cell types, most of them in periderm and differentiating neurons. H3K27me3 was lost specifically in the gene's cell type of origin and gained in almost all other cell types relative to pluripotent cells.",
+   "kw": [
+    "demethylation",
+    "periderm",
+    "differentiating neurons"
+   ],
+   "info": "The loss was proportional to the change in gene expression in those cell types.",
+   "concl": "Loss of H3K27me3 is a cell type-specific process."
+  },
+  {
+   "type": "qa",
+   "section": "Results - H3K27me3 spreading and gene silencing",
+   "q": "Which key developmental genes are demethylated in a cell type-specific way?",
+   "a": "POU family TFs (mid/hindbrain), tet3 and tet2 (neurons/optic cup), myod1 (muscle) and tal1 (endothelium). The regression hits gata2a, dlx3b, shha and tet2 were also on the list.",
+   "kw": [
+    "myod1",
+    "tal1",
+    "tet2"
+   ],
+   "info": "",
+   "concl": "H3K27me3 demethylation can happen later in development, when key genes are reactivated in their own cell types."
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromatin and expression coupling",
+   "q": "Why did they choose H3K4me1 as the active mark?",
+   "a": "H3K4me1 marks active and poised enhancers and promoters. Unlike H3K27me3, it has been seen in zebrafish before zygotic genome activation (ZGA).",
+   "kw": [
+    "H3K4me1",
+    "ZGA",
+    "enhancers"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromatin and expression coupling",
+   "q": "What is the 'nuclei' batch and why was it needed?",
+   "a": "It is a modified cell preparation that expels cytoplasmic RNA, so maternal RNA interferes less. It gave a fourfold higher unspliced-to-spliced RNA ratio and fewer detected genes than whole cells, with no loss in chromatin quality.",
+   "kw": [
+    "nuclei",
+    "saponin",
+    "maternal RNA"
+   ],
+   "info": "H3K4me1 woT-ChIC was done at 4, 6, 8, 10 and 12 hpf. H3K27me3 MNase cut numbers and patterns over time were similar between the nuclei and whole-cell batches. Permeabilisation used 0.05% saponin instead of 0.05% Tween20.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromatin and expression coupling",
+   "q": "How large is the integrated multi-omic gastrulation dataset?",
+   "a": "It has 15,961 cells (9197 H3K27me3 and 6764 H3K4me1). It combines the nuclei batch with the 4 to 12 hpf part of the whole-cell H3K27me3 data.",
+   "kw": [
+    "integration",
+    "harmony"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromatin and expression coupling",
+   "q": "How do total H3K4me1 and H3K27me3 change over time, and does this reflect CRE activity?",
+   "a": "Globally, H3K27me3 increases and H3K4me1 decreases. 84% of H3K27me3-enriched regions overlap an H3K4me1 domain, and these gain H3K27me3 without losing H3K4me1. The H3K4me1 loss happens in a minor fraction of H3K27me3-only sites and in random regions away from enriched sites.",
+   "kw": [
+    "CRE",
+    "H3K4me1",
+    "H3K27me3"
+   ],
+   "info": "Regions were split into H3K4me1-enriched (active or poised CREs), H3K27me3-enriched (mostly near genes and promoters) and other (mostly intergenic).",
+   "concl": "The global drop in H3K4me1 does not reflect a change in CRE activity."
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromatin and expression coupling",
+   "q": "Do promoters become bivalent during gastrulation?",
+   "a": "Yes. The H3K4me1 to H3K27me3 ratio suggests most promoters stay bivalent from 4 to 12 hpf in all germ layers. Only a small fraction gain H3K4me1 activity in a specific germ layer.",
+   "kw": [
+    "bivalent chromatin"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - chromatin and expression coupling",
+   "q": "How does the chromatin-transcription correlation change as cells differentiate?",
+   "a": "Cells were ordered by RNA velocity latent time. The per-metacell correlation between gene-body H3K4me1 and unspliced (nascent) RNA increased with latent time, but promoter H3K4me1 did not show this trend. H3K27me3 was mostly uncorrelated with transcription at both promoters and gene bodies.",
+   "kw": [
+    "RNA velocity",
+    "latent time",
+    "unspliced RNA"
+   ],
+   "info": "Latent time comes from the ratio of spliced to unspliced reads and marks differentiation stage. The high unspliced counts of the protocol made this possible. In Figure 3c the correlation rises from about 0.3 in early metacells to about 0.5 to 0.7 in late ones.",
+   "concl": "A cell's overall chromatin state is decoupled from its transcription early on, and the two become coupled as cells mature."
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF function prediction",
+   "q": "What was the idea behind predicting TF function from chromatin?",
+   "a": "If a TF's expression goes with a gain of H3K4me1 at its binding sites, it likely acts as an activator; a loss suggests a repressor. If the TF's own chromatin state also predicts this activity, the TF is epigenetically regulated.",
+   "kw": [
+    "TFBS",
+    "activator/repressor"
+   ],
+   "info": "The model combines TF expression, H3K4me1 and H3K27me3 on the TF locus, and cell state (pseudotime, lineage) to predict H3K4me1 activity at the TF's binding sites. TFs are classified as activator or repressor and as regulated or independent.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF function prediction",
+   "q": "How well did the TF model perform, and does it recover known biology?",
+   "a": "It predicted H3K4me1 activity at TFBS with R2 > 0.6 for 45 TFs. It recovered known activators: tbx16 in paraxial mesoderm formation and tfap2a in neural crest induction.",
+   "kw": [
+    "lasso",
+    "tbx16",
+    "tfap2a"
+   ],
+   "info": "Figure 4a shows class counts of 46, 43, 9 and 26 across activator/repressor by regulated/independent. The text does not explain how these numbers relate to the 45 TFs with R2 > 0.6.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF function prediction",
+   "q": "What new context-specific TF functions did the model suggest, and how were they checked?",
+   "a": "zbtb16a (predicted DNA-binding repressor) and zeb1a (context-dependent activator/repressor) were both found to act as repressors during hindbrain (neural ectoderm) specification. Nascent RNA of the genes nearest the TFBS went up for top activators and down for top repressors, as expected.",
+   "kw": [
+    "zbtb16a",
+    "zeb1a",
+    "nascent RNA"
+   ],
+   "info": "Function predicted from protein domains is compared in Supplementary file 4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - TF function prediction",
+   "q": "Which TFs appear to be epigenetically regulated?",
+   "a": "For sox13, tbx16, lhx1a and tfap2a, gaining H3K4me1, losing H3K27me3, or both on the TF itself was associated with TFBS activity. Most early-expressed TFs seem to be regulated by other mechanisms.",
+   "kw": [
+    "sox13",
+    "lhx1a",
+    "epigenetic regulation"
+   ],
+   "info": "",
+   "concl": "Chromatin state may set up gene expression memory for a subset of developmentally important TFs."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does H3K27me3 pre-marking differ between multi-promoter and single-promoter loci?",
+   "a": "At the start of differentiation, loci with multiple promoters (hox, pcdh1) are pre-marked with broad H3K27me3. Single-promoter loci such as pax7b have focused domains, and a selected set of loci later spreads and silences the host genes.",
+   "kw": [
+    "PRC1",
+    "PRC2",
+    "pax7b"
+   ],
+   "info": "Earlier work says pre-marking is set up by a non-canonical PRC1-PRC2 interaction (Hickey 2022). Nucleation and spreading was proposed in mouse ESCs (Veronezi and Ramachandran 2024) as a way to maintain Polycomb silencing. The authors propose that it also spreads silencing during development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the authors' model for how H3K27me3 sets up cell type-specific gene memory?",
+   "a": "A spread that is not lineage-specific is followed by cell type-specific demethylation of developmental genes. They suggest this may be a fundamental way to establish cell type-specific expression memory through Polycomb.",
+   "kw": [
+    "Polycomb",
+    "gene expression memory"
+   ],
+   "info": "Without H3K27 demethylation, hox, pax and shh genes are silenced in a spatiotemporal pattern. These are known PcG targets that are mislocalised after ezh2 deletion.",
+   "concl": "Main model: lineage-agnostic spread, then cell type-specific demethylation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Which new Polycomb targets did they identify?",
+   "a": "rfx4, important for neural tube formation, and dlx3b, important for placode development, among others.",
+   "kw": [
+    "rfx4",
+    "dlx3b",
+    "PcG targets"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why is H3K27me3 spreading, but not promoter H3K27me3, linked to silencing?",
+   "a": "Many promoters carry H3K27me3 in pluripotent cells, but only a minority spread and become silenced. Most promoters are co-marked by an active mark and H3K27me3 at 4 to 12 hpf, so they may act as 'placeholders' for later activation or silencing.",
+   "kw": [
+    "placeholder",
+    "bivalency"
+   ],
+   "info": "The Discussion says the promoter comparison used H3K4me3, but the Results only show H3K4me1 data. This is probably a typo; the paper does not clarify it.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How does H3K4me1 behave on CREs, and what new TF roles came out of it?",
+   "a": "H3K4me1 is widespread in pluripotent cells and disappears outside CREs. On CREs it does not change monotonically: H3K27me3 increases without H3K4me1 loss, making most CREs bivalent, plus lineage-specific gains or losses at selected CREs. New TF roles: zbtb16a/b and zeb1a/b act as negative regulators in ectoderm, and tfap2a/b drives non-neural ectoderm.",
+   "kw": [
+    "H3K4me1",
+    "zeb1a/b",
+    "tfap2a/b"
+   ],
+   "info": "The Discussion names zfhx3, foxc1a and irx3a as TFs regulated by their own chromatin state, while the Results name sox13, tbx16, lhx1a and tfap2a.",
+   "concl": "Chromatin may shape cell fate by setting up transcriptional memory on key lineage regulators."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are the overall conclusions and the main limitations?",
+   "a": "The active state (H3K4me1) predicts a cell's transcriptomic state better than the silencing state in early development. Chromatin and transcription become correlated as cells mature, and the authors propose this as a hallmark of cell identity formation. They did not map other silencing marks such as H3K9me3 or DNA methylation.",
+   "kw": [
+    "cell identity",
+    "limitations"
+   ],
+   "info": "Maturation time is not the same as hpf: transcriptionally mature cells collected at early time points also show high chromatin-transcription correlation. The eLife assessment adds that functional perturbations and orthogonal validation are needed to establish a causal role for Polycomb spreading.",
+   "concl": "Correlation between chromatin and transcription may be a hallmark of cell identity formation."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - woT-ChIC experimental protocol",
+   "q": "How were the embryos processed into single cells for woT-ChIC?",
+   "a": "Wild-type TL embryos were raised at 28.5°C, dechorionated with 1 mg/mL pronase, and 30 to 50 embryos were deyolked in Ca-free Ringer's. Cells were dissociated with FACSmax (4, 6, 8 hpf; 5 min at RT) or protease solution (10, 12, 24 hpf; 6 min at 28°C, 400 rpm), then filtered.",
+   "kw": [
+    "TL strain",
+    "dissociation"
+   ],
+   "info": "Full protocol: protocols.io q26g7pbe8gwz/v2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - woT-ChIC experimental protocol",
+   "q": "What were the staining, antibody and sequencing details?",
+   "a": "Time points were stained with CellTrace dye combinations for 20 min at 4°C, quenched with rat serum, and pooled at about 1 million cells. Antibodies were H3K27me3 rabbit mAb (CST #9733, 1:200) and H3K4me1 polyclonal (Thermo #710795, 1:100) overnight at 4°C, followed by pA-MNase for 1 h. Libraries were sequenced paired-end 100 bp on NovaSeq or NextSeq2000 at 15 to 25 million reads per 384-well plate.",
+   "kw": [
+    "pA-MNase",
+    "antibodies"
+   ],
+   "info": "Cells were sorted into indexed 384-well plates with CelSeq2 adapters, and MNase digestion ran for 30 min at 4°C.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - T-ChIC data processing",
+   "q": "How were the RNA and ChIC reads separated and processed?",
+   "a": "A custom Python script split reads by barcode pattern (RNA: 6N7X, ChIC: 3N8X; N = UMI, X = cell barcode), and both fractions were mapped to GRCz11. RNA was trimmed with cutadapt v2.1 and mapped with STARsolo (STAR v2.7.11, Ensembl 104), filtered with samtools v1.21 (MAPQ 255) and deduplicated with UMI-tools v1.0.0.",
+   "kw": [
+    "STARsolo",
+    "UMI-tools",
+    "scChICflow"
+   ],
+   "info": "The full pipeline is scChICflow v0.4 (github bhardwaj-lab/scChICflow). Coverage was made with deepTools bamCoverage (CPM). Data are at GEO GSE265874; code and source data are on Zenodo 10.5281/zenodo.16813408.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - T-ChIC data processing",
+   "q": "How was the ChIC fraction mapped and counted?",
+   "a": "Reads were trimmed with cutadapt v2.1 and mapped with hisat2 v2.2.1 (--no-spliced-alignment, --no-mixed, --no-discordant, --no-softclip, -X 1000), then deduplicated with UMI-tools. Reads were counted in 50 kb genomic windows with sincei.",
+   "kw": [
+    "hisat2",
+    "sincei"
+   ],
+   "info": "QC was done with deepTools.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - public data analysis",
+   "q": "Which public datasets did they compare to, and how?",
+   "a": "6 hpf H3K27me3 CUT&RUN (GSE178343) and 12 and 24 hpf ChIP-seq from DANIO-CODE, mapped to GRCz11 with the snakePipes DNA-mapping workflow. BAMs were subsampled to match the depth of the pooled time points and compared with deepTools multiBamSummary (50 kb bins) and plotFingerprint.",
+   "kw": [
+    "DANIO-CODE",
+    "snakePipes",
+    "deepTools"
+   ],
+   "info": "Mouse H3K27me3 bedgraphs (E5.5, endoderm, ectoderm, mesoderm; GSE125318, Xiang 2020) were plotted with computeMatrix and plotHeatmap over 50 kb around TSSs (mm9).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - cell clustering and annotation",
+   "q": "What QC and clustering settings were used for the RNA data?",
+   "a": "In scanpy v1.9.1, cells were removed if they had fewer than 1000 counts, more than 10000 genes, more than 60% of counts in the top 100 genes, or less than 70% protein-coding counts. They used the top 4000 HVGs by analytical Pearson residuals, 50 PCs and 30 neighbours (20 for nuclei), with PAGA (threshold 0.1) and Leiden (resolution 1.5).",
+   "kw": [
+    "scanpy",
+    "Pearson residuals",
+    "PAGA"
+   ],
+   "info": "Whole-cell data used spliced counts; nuclei data used total counts. Normalisation was a shifted log transform with alpha 0.05. Annotation used Seurat CCA FindTransferAnchors against Wagner 2018 (4 to 24 hpf), followed by manual marker checks in ZFIN.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - integration and RNA velocity",
+   "q": "How were the nuclei and whole-cell batches integrated, and how was latent time computed?",
+   "a": "They ran PCA on Pearson residuals of unspliced counts using the intersection of HVGs from the two batches (3091 genes), then aligned the batches on the top 50 PCs with harmony. Latent time came from the scVelo v0.2.4 dynamical model combined with CellRank v1.5.1, which found one initial and six terminal states with the GPCCA estimator.",
+   "kw": [
+    "harmony",
+    "scVelo",
+    "CellRank"
+   ],
+   "info": "Genes with fewer than 100 counts or detected in fewer than 100 cells were removed. scVelo used the top 1000 genes, t_max 12, min_r2 0.2, and was fitted on 8 to 12 hpf. CellRank weight_connectivities was 0.2.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - metacells",
+   "q": "How were metacells built?",
+   "a": "With SEACells archetype analysis: 180 metacells for the whole-cell data and 160 for the integrated 4 to 12 hpf data (n_waypoint_eigs 15). For H3K4me1 versus H3K27me3 comparisons, cells were downsampled to equal numbers per mark, and only metacells with at least 20 cells per mark were kept.",
+   "kw": [
+    "SEACells",
+    "metacells"
+   ],
+   "info": "Each metacell was annotated with the mean latent time or pseudotime and the majority cell type or hpf.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ChIC clustering",
+   "q": "How were cells clustered on the chromatin signal?",
+   "a": "They used latent semantic analysis (gensim): TF-IDF on the cell-by-50 kb bin matrix, pivoted normalisation (slope 0.25), then truncated SVD. Topic 1 correlated with read depth and was dropped; the other topics gave 30 nearest neighbours, PAGA, UMAP and Leiden (resolution 1.5).",
+   "kw": [
+    "LSA",
+    "TF-IDF",
+    "SVD"
+   ],
+   "info": "The pivot was set to the average number of non-zero bins per cell.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - peak calling and annotation",
+   "q": "How were H3K27me3 and H3K4me1 domains and subpeaks called?",
+   "a": "A two-step approach on all filtered cells pooled. histoneHMM v1.7 (bin size 750, posterior at least 0.4) called domains, and MACS2 v2.2.4 broad peaks inside domains with local enrichment of at least 50 were kept as subpeaks. This gave 11,221 H3K27me3 and 74,004 H3K4me1 domains.",
+   "kw": [
+    "histoneHMM",
+    "MACS2",
+    "cPADREs"
+   ],
+   "info": "Promoter was defined as +300 to -200 bp around the TSS, and 'gene covering' as at least 80% of a gene covered. CREs were taken from DANIO-CODE consensus PADREs. Motifs were found with gimmemotifs v0.18.0 (vertebrate v5.0) and filtered to SwissRegulon dr11, giving 590 motifs for 912 TFs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - H3K27me3 spreading and demethylation analysis",
+   "q": "How was spreading tested statistically, and how was H3K27me3 loss detected?",
+   "a": "Center bins were 5 kb bins with counts in at least 5% of pluripotent cells (784 bins), and neighbours were the 10 bins up- and downstream. Linear regression on metacells predicted neighbour counts from center counts, and a likelihood ratio test checked whether adding germ layer improved the fit. H3K27me3 loss was tested with edgeR quasi-likelihood using metacells as replicates (FDR < 0.05, logFC < -1).",
+   "kw": [
+    "linear regression",
+    "likelihood ratio test",
+    "edgeR"
+   ],
+   "info": "For the silencing regression, Y was the log2 unspliced counts scaled by intron length, and X was the log2 H3K27me3 counts scaled by domain length. For edgeR, cell types with fewer than 3 metacells were dropped; filterByExpr used min.count 5, min.total.count 20, min.prop 0.3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - TF activity prediction",
+   "q": "How was TF activity computed and the lasso model set up?",
+   "a": "H3K4me1 counts at H3K4me1-only peaks with motif-matched cPADREs were turned into bias-corrected motif deviation scores with chromVAR. A lasso regression predicted TF activity from TF spliced RNA, H3K4me1 and H3K27me3 on the TF, germ layer and latent time. They used a 70/30 train/test split, 10-fold grid search for lambda, permutation-based significance and BH correction (padj < 0.01).",
+   "kw": [
+    "chromVAR",
+    "lasso",
+    "permutation test"
+   ],
+   "info": "Classification came from model weights. A positive weight between TF expression and H3K4me1 activity means activator; a negative weight means repressor. A non-zero weight for the TF's own H3K4me1 or H3K27me3 means the TF is epigenetically regulated.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Is H3K27me3 cis-spreading the cause of silencing and fate commitment or just a correlate? The paper has no perturbations (for example of ezh2 or H3K27 demethylases), and the eLife assessment flags this."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Inconsistencies to check: the Discussion says H3K4me3 for the promoter placeholder comparison but the data are H3K4me1; Figure 4a counts (46/43/9/26) versus 45 TFs with R2 > 0.6; regulated TFs named in the Discussion (zfhx3, foxc1a, irx3a) differ from those in the Results (sox13, tbx16, lhx1a, tfap2a)."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "H3K9me3 and DNA methylation were not mapped. Would they show complementary dynamics that explain the early uncoupling of chromatin and transcription?"
+  }
+ ]
+}

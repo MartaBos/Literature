@@ -902,7 +902,8 @@
   "shared_by": "Damir",
   "shared_year": "2025",
   "link": "https://doi.org/10.1038/nature12787",
-  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)",
+  "prompt_extra": "Cover the Methods in at most 4 short summary items (what was done and with which tools); skip low-level procedural and model-training details. Put the detail into Results instead. Keep the whole set to about 40 items."
  },
  "regulatiory_genomics/Agarwal_2025_Nature_MPRA_regulatory_elements": {
   "provided_link": "Google Drive folder (shared)",
@@ -1034,7 +1035,8 @@
   "shared_by": "Damir",
   "shared_year": "2025",
   "link": "https://doi.org/10.1126/science.adt3007",
-  "pdf_from": "Google Drive (2026-11-20_damir2025_local)"
+  "pdf_from": "Google Drive (2026-11-20_damir2025_local)",
+  "prompt_extra": "This is a 2-page Science Perspective (commentary on the Evo genome language model, Nguyen et al. 2024), not a research article: organise the notes by its main arguments, no Methods/Results sections. Page 1 also contains the end of an unrelated Perspective on mechanical qubits; ignore that text completely."
  },
  "regulatiory_genomics/Weber_2022_Oncogene_5UTR_isoform_switches": {
   "provided_link": "Google Drive folder (shared)",

@@ -1,0 +1,393 @@
+{
+ "id": "Theodoris_2024",
+ "title": "Learning the language of DNA: A genomic foundation model broadly enables sequence modeling, prediction, and design",
+ "link": "https://doi.org/10.1126/science.adt3007",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Theodoris_2024_Science_learning_language_of_DNA.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Opening - why model DNA as a language",
+   "q": "What kind of article is this?",
+   "a": "It is a two-page Science Perspective (commentary) by Christina V. Theodoris discussing Evo, the genomic foundation model published by Nguyen et al. in the same issue (Science 386, eado9336, 2024, page 746).",
+   "kw": [
+    "Perspective",
+    "Evo"
+   ],
+   "info": "Published 15 November 2024, Science vol 386, issue 6723, pages 729-730. The author is at the Gladstone Institutes and UCSF. No new data are presented; the piece summarises and contextualises the Evo paper.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opening - why model DNA as a language",
+   "q": "Why is DNA described as a language?",
+   "a": "With a vocabulary of just four nucleotides, DNA encodes the information needed to orchestrate all layers of regulation in a cell, from DNA to RNA to proteins, directing the function of each cell and transmitting information between generations.",
+   "kw": [
+    "DNA language"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opening - why model DNA as a language",
+   "q": "How does evolution enter the argument for training language models on DNA?",
+   "a": "Changes in genomic sequence drive evolution, letting organisms adapt to their environments through natural selection of advantageous sequences, so comparing DNA across evolutionarily diverse genomes should let a large language model learn the grammar of DNA.",
+   "kw": [
+    "natural selection",
+    "grammar of DNA"
+   ],
+   "info": "",
+   "concl": "The evolutionary contrast between whole genomes is the learning signal that single-genome models lack."
+  },
+  {
+   "type": "qa",
+   "section": "Opening - why model DNA as a language",
+   "q": "What had limited earlier DNA language models?",
+   "a": "Models trained on a single genome failed to learn the grammar of DNA; they could only learn from the contrast between loci within one reference genome rather than between whole genomes of many species.",
+   "kw": [
+    "single genome"
+   ],
+   "info": "The Perspective cites an earlier preprint by Nguyen et al. (2023) as the example of this limitation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Opening - why model DNA as a language",
+   "q": "What is Evo, in one sentence?",
+   "a": "Evo is a foundation model trained on 2.7 million evolutionarily diverse prokaryotic and phage genomes that can decode natural genomes, enable prediction and design tasks across DNA, RNA and proteins, and generate DNA at the whole-genome scale.",
+   "kw": [
+    "foundation model",
+    "Evo"
+   ],
+   "info": "",
+   "concl": "Evo is presented as a genomic foundation model that generalises across all three layers of the central dogma."
+  },
+  {
+   "type": "qa",
+   "section": "Opening - why model DNA as a language",
+   "q": "How much sequence was Evo trained on?",
+   "a": "300 billion nucleotides, from 2.7 million evolutionarily diverse prokaryotic and phage genomes.",
+   "kw": [
+    "training data"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - DNA is not like natural language",
+   "q": "How does DNA differ from natural language as a modelling problem?",
+   "a": "Natural language is discretized into words and punctuated into sentences, whereas DNA is encoded as a continuum, with parallel threads of information contained in overlapping combinations of nucleotides.",
+   "kw": [
+    "tokenization",
+    "continuum"
+   ],
+   "info": "",
+   "concl": "There is no natural word boundary in DNA, which makes tokenization choices consequential."
+  },
+  {
+   "type": "qa",
+   "section": "Argument - DNA is not like natural language",
+   "q": "What is the example given of overlapping threads of information in one DNA sequence?",
+   "a": "Codons are three-nucleotide units specifying the amino acids of a protein, but the same DNA sequence may also contain motifs that dictate binding of transcriptional regulators and information about how the gene should be spliced in a particular environmental context or cell state.",
+   "kw": [
+    "codons",
+    "TF motifs",
+    "splicing"
+   ],
+   "info": "This is the key conceptual point for a regulatory genomics reader: coding and regulatory information are superimposed on the same nucleotides.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - DNA is not like natural language",
+   "q": "Why must a DNA language model work at single-nucleotide resolution?",
+   "a": "Mutations in any of the overlapping threads of information can critically affect cellular function, so the model has to be able to resolve individual nucleotides rather than blocks.",
+   "kw": [
+    "single-nucleotide resolution"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - DNA is not like natural language",
+   "q": "What was the trade-off made by prior DNA models?",
+   "a": "Prior methods aggregate nucleotides into discrete units, which efficiently retains some threads of information at the expense of others.",
+   "kw": [
+    "k-mer tokens"
+   ],
+   "info": "The cited prior approaches include DNABERT and the Nucleotide Transformer among others; the Perspective does not detail their individual tokenization schemes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - DNA is not like natural language",
+   "q": "What is the computational cost of single-nucleotide resolution?",
+   "a": "High resolution means the model needs a much larger context window to capture the same view of the genome, which is computationally expensive.",
+   "kw": [
+    "context window"
+   ],
+   "info": "",
+   "concl": "Resolution and context length trade off against each other; the architecture is what resolves this tension."
+  },
+  {
+   "type": "qa",
+   "section": "Argument - model design and architecture",
+   "q": "Which architecture does Evo use?",
+   "a": "StripedHyena, which hybridizes dense Transformer operators with subquadratic Hyena operators.",
+   "kw": [
+    "StripedHyena",
+    "Hyena",
+    "Transformer"
+   ],
+   "info": "StripedHyena is cited as Poli et al. 2023; the attention Transformer as Vaswani et al.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - model design and architecture",
+   "q": "Why are dense Transformers a problem for long DNA sequences?",
+   "a": "Their computational time increases quadratically with the size of the input, so very long single-nucleotide contexts become prohibitively expensive.",
+   "kw": [
+    "quadratic scaling",
+    "attention"
+   ],
+   "info": "Hyena operators are subquadratic, so mixing them with attention layers gives a more computationally efficient alternative to standard dense Transformers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - model design and architecture",
+   "q": "What is perplexity here?",
+   "a": "Perplexity is used as a measure of generation quality for the sequences the model produces; the hybrid architecture is reported to improve perplexity of generated sequences.",
+   "kw": [
+    "perplexity"
+   ],
+   "info": "The Perspective states the improvement is 'compared with StripedHyena alone', which is confusing since StripedHyena is the architecture Evo uses; the intended comparison (presumably against a pure Transformer or pure Hyena baseline) is not clear from this text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - model design and architecture",
+   "q": "What are scaling laws and what did Nguyen et al. report?",
+   "a": "They report scaling laws for DNA sequence modeling with StripedHyena and alternative architectures, defining the optimal allocation of compute between data and model size.",
+   "kw": [
+    "scaling laws",
+    "compute"
+   ],
+   "info": "This is useful for scaling training to larger models and datasets.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - model design and architecture",
+   "q": "Were the DNA scaling laws unusual?",
+   "a": "No; the analysis revealed patterns analogous to the scaling laws previously reported for natural language and computer vision.",
+   "kw": [],
+   "info": "Cited work includes Henighan et al. 2020, Kaplan et al. 2020 and Hoffmann et al. 2022.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - what Evo can do",
+   "q": "How was Evo evaluated?",
+   "a": "On a diverse panel of both prediction-based and generation-based downstream tasks, testing its ability to decode genetic sequence that orchestrates the varying levels of regulation within the cell.",
+   "kw": [
+    "downstream tasks"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - what Evo can do",
+   "q": "What kinds of predictions could Evo make?",
+   "a": "Evo can predict critical features of DNA sequence, including the effect of mutations on the functions of regulatory DNA, noncoding RNA, and proteins.",
+   "kw": [
+    "variant effect",
+    "ncRNA"
+   ],
+   "info": "The accompanying figure also lists gene essentiality and variant impact on DNA, RNA or protein as prediction tasks.",
+   "concl": "A single model trained only on DNA covers variant effects across all three molecular layers."
+  },
+  {
+   "type": "qa",
+   "section": "Argument - what Evo can do",
+   "q": "Why does the author call this understanding 'democratized'?",
+   "a": "Because a fundamental understanding of DNA grammar learned once can now be transferred to a broad range of downstream tasks, accelerating discovery and design of meaningful genetic code within evolutionarily diverse genomes.",
+   "kw": [
+    "transfer learning"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - CRISPR-Cas design case study",
+   "q": "What design task was used as the showcase for Evo?",
+   "a": "Co-designing new DNA sequences, for both protein and RNA, that encode biologically valid CRISPR-Cas protein-RNA complexes.",
+   "kw": [
+    "CRISPR-Cas",
+    "co-design"
+   ],
+   "info": "This is a hard test because the protein and its guide RNA must be designed jointly and must function together.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - CRISPR-Cas design case study",
+   "q": "Why are Cas proteins a good target for such a test?",
+   "a": "Cas proteins play a vital role in bacterial adaptive immunity and are widely used for genome editing because they can be programmed to cleave specific genomic loci, relying on accompanying guide RNAs.",
+   "kw": [
+    "Cas9",
+    "guide RNA"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - CRISPR-Cas design case study",
+   "q": "How many generated sequences were experimentally tested, and with what result?",
+   "a": "Evo generated a diversity of potential DNA sequences, of which 11 were selected for experimental validation; this led to a new Cas9 protein, EvoCas9-1.",
+   "kw": [
+    "EvoCas9-1"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - CRISPR-Cas design case study",
+   "q": "What did EvoCas9-1 actually do?",
+   "a": "When paired with its guide RNA, EvoCas9-1 successfully achieved Cas9's complex multistep mechanism of DNA cleavage at a specified site in vitro.",
+   "kw": [
+    "in vitro cleavage"
+   ],
+   "info": "",
+   "concl": "Evo can generate biologically verifiable, functional DNA sequences, not just plausible-looking ones."
+  },
+  {
+   "type": "qa",
+   "section": "Argument - CRISPR-Cas design case study",
+   "q": "What is 'biological prompt engineering'?",
+   "a": "The term the author uses for directing effective synthetic sequence design by how one prompts the model, opened up by Evo's demonstrated ability to generate functional sequences.",
+   "kw": [
+    "prompt engineering"
+   ],
+   "info": "The Perspective introduces the phrase without giving a formal definition or protocol.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - context length and genome scale",
+   "q": "What is Evo's context length?",
+   "a": "131,072 nucleotides.",
+   "kw": [
+    "context length"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - context length and genome scale",
+   "q": "Why is a 131,072-nucleotide context enough for prokaryotes?",
+   "a": "Because most prokaryotic genomes are less than 5 million nucleotides in total, so this context lets the model learn from examples that encompass a considerable portion of an entire prokaryotic or phage genome.",
+   "kw": [
+    "prokaryotic genome size"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - context length and genome scale",
+   "q": "Does context size affect generation quality?",
+   "a": "Yes; Evo's evaluation perplexity for DNA sequence generation improves with increasing context size.",
+   "kw": [
+    "perplexity"
+   ],
+   "info": "The author argues the largest gains from such models may come in informational fields where learning benefits from observing expansive sequence lengths.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Argument - context length and genome scale",
+   "q": "Why is long context particularly relevant for regulatory genomics?",
+   "a": "Because regulatory interactions can occur between genomic regions more than 1 million nucleotides away, which exceeds Evo's current context length.",
+   "kw": [
+    "distal regulation",
+    "enhancers"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook and limitations",
+   "q": "What is the main open question about scaling Evo to eukaryotes?",
+   "a": "Whether the StripedHyena architecture is the optimal choice for larger eukaryotic genomes, which can be up to 160 billion nucleotides and may require much larger context lengths to learn the grammar of distant regulatory interactions.",
+   "kw": [
+    "eukaryotic genomes"
+   ],
+   "info": "",
+   "concl": "Evo's success is demonstrated on prokaryotes and phages only; eukaryotic generalisation is untested here."
+  },
+  {
+   "type": "qa",
+   "section": "Outlook and limitations",
+   "q": "What limitations does the author name?",
+   "a": "Data continue to increase and computational costs remain a limitation, although advances in compute-efficient architectures may enable training of more powerful models within fixed budgets.",
+   "kw": [
+    "compute cost"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook and limitations",
+   "q": "What would be the translational payoff of such models?",
+   "a": "The ability to predict the effects of mutations across all layers of regulation in the cell and to design DNA sequences to manipulate cell function would have tremendous diagnostic and therapeutic implications for disease.",
+   "kw": [
+    "variant interpretation"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Outlook and limitations",
+   "q": "What future modelling direction does the author propose regarding cell context?",
+   "a": "Developing methods to prompt Evo with environmental cues or cell states, since DNA is identical across cells within a multicellular organism yet directs variable functions of each cell across space and time.",
+   "kw": [
+    "cell state",
+    "context"
+   ],
+   "info": "This is the gap most relevant to multicellular regulatory genomics: a DNA-only model has no notion of which cell type is reading the sequence.",
+   "concl": "Conditioning on cell state or environment is the missing ingredient for applying genomic foundation models to multicellular organisms."
+  },
+  {
+   "type": "note",
+   "section": "Argument - context length and genome scale",
+   "text": "Evo's context is 131,072 nt but vertebrate enhancer-promoter interactions can span over 1 Mb. Worth checking what context lengths current eukaryotic/vertebrate sequence models reach, and whether any of them would be usable for cavefish or zebrafish regulatory regions."
+  },
+  {
+   "type": "note",
+   "section": "Argument - model design and architecture",
+   "text": "The claim that the hybrid improves perplexity 'compared with StripedHyena alone' seems garbled; go back to Nguyen et al. 2024 (Science 386, eado9336) to see what the actual architecture baselines and perplexity numbers were."
+  },
+  {
+   "type": "note",
+   "section": "Outlook and limitations",
+   "text": "Open question raised: how could a DNA-only foundation model be prompted with cell state or environmental context? Relevant for cave vs surface Astyanax, where the same regulatory sequence behaves differently depending on developmental and environmental context."
+  }
+ ]
+}

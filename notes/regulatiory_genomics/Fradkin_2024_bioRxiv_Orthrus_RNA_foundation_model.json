@@ -1,0 +1,540 @@
+{
+ "id": "Fradkin_2024",
+ "title": "Orthrus: Towards Evolutionary and Functional RNA Foundation Models",
+ "link": "https://doi.org/10.1038/s41592-026-03064-3",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Fradkin_2024_bioRxiv_Orthrus_RNA_foundation_model.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Notes are from the bioRxiv preprint, not from the peer-reviewed version (Nature Methods 2026; no access). Details may differ in the journal version.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is Orthrus?",
+   "a": "Orthrus is a foundation model for mature RNA built on Mamba. It is pre-trained with a new self-supervised contrastive objective that uses biological augmentations: it maximizes embedding similarity between related pairs of RNA transcripts.",
+   "kw": [
+    "Orthrus",
+    "Mamba",
+    "contrastive learning"
+   ],
+   "info": "Pairs come from splice isoforms in 10 model organisms and from orthologous transcripts in 400+ mammalian species from the Zoonomia Project.",
+   "concl": "The resulting latent space groups RNA sequences that are functionally and evolutionarily similar."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the main claim about performance?",
+   "a": "Orthrus representations significantly outperform existing genomic foundation models on five mRNA property prediction tasks and need only a fraction of the fine-tuning data to do so. It can also capture divergent biological functions of individual transcript isoforms.",
+   "kw": [
+    "mRNA property prediction"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why are supervised models for RNA properties limited?",
+   "a": "Supervised models can predict post-transcriptional processes such as splicing and RNA degradation cheaply. However, experimental training data are hard to obtain, which limits supervised methods to a narrow range of tasks.",
+   "kw": [
+    "supervised learning"
+   ],
+   "info": "Experimental methods such as eCLIP, ribosome profiling and metabolic labelling are slow and expensive.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What are genomic foundation models and how are they usually trained?",
+   "a": "They are deep networks pre-trained on large sequence datasets with self-supervised learning (SSL), meaning no labels are needed. Most existing models use reconstruction objectives such as next token prediction (NTP) or masked language modeling (MLM).",
+   "kw": [
+    "self-supervised learning",
+    "MLM",
+    "NTP"
+   ],
+   "info": "A good foundation model can be fine-tuned on downstream tasks with few labelled examples, which is called few-shot learning.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why do reconstruction-based SSL objectives work poorly for genomic sequences?",
+   "a": "Genomes have low natural diversity and high mutual information between samples. Only about 10% of the human genome is under constraint, so models spend much of their effort reconstructing uninformative tokens from the roughly 90% that shows no evidence of negative selection.",
+   "kw": [
+    "evolutionary constraint",
+    "inductive bias"
+   ],
+   "info": "Footnote: in the coding region (2% of human DNA), an average individual carries 27 plus or minus 13 unique SNPs. Because samples share so much information, it is also hard to grow the effective size of the training set.",
+   "concl": "Without a strong biological inductive bias, SSL learns sub-optimal representations for mRNA property prediction."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which other gaps in current genomic foundation models do the authors point out?",
+   "a": "Current models cannot use exon co-occurrence patterns, so it is hard for them to capture isoform-specific function and properties. The gap to supervised methods is still large, and there is no clear trend linking model size to performance.",
+   "kw": [
+    "isoforms"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "In which three settings do they evaluate Orthrus?",
+   "a": "(1) Linear probing on frozen embeddings. (2) Full fine-tuning on experimental mRNA property datasets, including low-data settings. (3) Grouping RNA isoforms by shared function in the latent space.",
+   "kw": [
+    "linear probing",
+    "fine-tuning"
+   ],
+   "info": "As few as 45 labelled examples were enough to fine-tune an mRNA half-life predictor. Code, weights and evaluation datasets are on GitHub (bowang-lab/Orthrus).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - contrastive learning dataset construction",
+   "q": "What is a positive pair in Orthrus contrastive learning?",
+   "a": "A reference RNA transcript paired with a transcript sampled from its set of related mature RNAs, either splice isoforms or orthologs. The related transcripts are treated as augmentations: they share function and properties but differ in sequence.",
+   "kw": [
+    "positive pair",
+    "augmentation"
+   ],
+   "info": "Contrastive learning maximizes similarity within positive pairs and minimizes similarity to all unrelated transcripts in the batch.",
+   "concl": "Hypothesis: transcripts produced by splicing or speciation are more functionally similar to each other than random RNAs are."
+  },
+  {
+   "type": "qa",
+   "section": "Results - contrastive learning dataset construction",
+   "q": "Which organisms provide the splicing augmentations?",
+   "a": "Ten metazoans: human, mouse, chicken, C. elegans, chimpanzee, cow, dog, fruit fly, rat and zebrafish. Isoforms were grouped using GENCODE or RefSeq, depending on availability.",
+   "kw": [
+    "GENCODE",
+    "RefSeq",
+    "alternative splicing"
+   ],
+   "info": "The method assumes that, on average, splice isoforms are more functionally similar to each other than random mRNAs, while acknowledging that some isoforms have new functions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - contrastive learning dataset construction",
+   "q": "Where do the orthology augmentations come from?",
+   "a": "From the Zoonomia TOGA resource. TOGA jointly annotates genes and infers orthology, mapping transcripts from over 400 Eutherian species to the human and mouse annotations.",
+   "kw": [
+    "Zoonomia",
+    "TOGA",
+    "orthology"
+   ],
+   "info": "TOGA aligns identified coding sequences together with nearby intronic and intergenic regions.",
+   "concl": "Orthologs expose the model to regions conserved by negative selection, which are likely to matter for mRNA metabolism."
+  },
+  {
+   "type": "qa",
+   "section": "Results - contrastive learning dataset construction",
+   "q": "How large is the pre-training dataset?",
+   "a": "49 million unique transcripts and over 870 million unique positive pairs.",
+   "kw": [],
+   "info": "Table 1: Zoonomia plus splicing gives 876,871,640 pairs and 49,493,993 transcripts. Zoonomia alone gives 157,975,815 pairs and 41,562,358 transcripts. GENCODE Basic splicing alone gives 16,249,112 pairs and 771,105 transcripts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus model overview",
+   "q": "How does one training step work?",
+   "a": "For each of N reference transcripts in a batch, a partner is sampled from its augmentation set (resampled every epoch). Both transcripts pass through the Mamba encoder and then an MLP projection head that gives normalized projections. A decoupled contrastive learning (DCL) loss maximizes cosine similarity within pairs and pushes unpaired transcripts apart.",
+   "kw": [
+    "DCL",
+    "projection head"
+   ],
+   "info": "After pre-training, the projection head is discarded and the Mamba encoder outputs, pooled by averaging over length, are used as embeddings.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus model overview",
+   "q": "What model sizes exist?",
+   "a": "Orthrus Base has 1.3 million trainable parameters and Orthrus Large has 10.1 million, not counting the projection head.",
+   "kw": [
+    "Orthrus Base",
+    "Orthrus Large"
+   ],
+   "info": "These models are tiny compared with baselines such as Nucleotide Transformer, which has 0.5 to 2.5 billion parameters.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings predict mRNA properties",
+   "q": "What is linear probing and how was it done here?",
+   "a": "The encoder weights are frozen and only a linear layer is trained on the embeddings to predict labels. If a linear model works well, the embedding already contains the information.",
+   "kw": [
+    "linear probing"
+   ],
+   "info": "Used for both regression and classification tasks. Details are in Appendix A.3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings predict mRNA properties",
+   "q": "How well do Orthrus embeddings encode basic transcript features?",
+   "a": "Linear prediction from the embeddings gave Pearson R of 0.95 for CDS length, 0.74 for 3' UTR length, 0.53 for 5' UTR length and 0.96 for exon number. Transcript type classification had 0.93 balanced accuracy and 0.92 accuracy.",
+   "kw": [
+    "transcript type",
+    "UTR length"
+   ],
+   "info": "Transcript types were protein coding, lncRNA, miRNA, snRNA and misc RNA, classified with logistic regression. The embeddings have a fixed length, so these properties cannot simply be read off the embedding dimension.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings predict mRNA properties",
+   "q": "How does Orthrus compare with other SSL models in linear probing?",
+   "a": "It beats all of them by a large margin. On human mRNA half-life, Orthrus Large reaches Pearson R 0.69, while the closest competitor (HyenaDNA 450K) reaches 0.45, only 65% of Orthrus.",
+   "kw": [
+    "HyenaDNA",
+    "Nucleotide Transformer",
+    "DNA-BERT2"
+   ],
+   "info": "Table A2 for Orthrus Large: human HL 0.69, mouse HL 0.65, MRL 0.45, GO MF AUROC 0.86, protein localization AUROC 0.84. Baselines were DNA-BERT2, NT 500m and 2.5b variants, HyenaDNA 32K, 160K and 450K, and RNA-FM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings predict mRNA properties",
+   "q": "Does Orthrus still win without the splice-site and CDS tracks?",
+   "a": "Yes. A Base 4-track model that sees only sequence still outperforms the other SSL baselines, for example human HL R 0.52 and MRL 0.38.",
+   "kw": [
+    "six-track encoding"
+   ],
+   "info": "The 6-track Base model reaches human HL 0.67, so the extra tracks clearly help.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings predict mRNA properties",
+   "q": "How does a linear probe on Orthrus compare with a fully supervised model?",
+   "a": "Across all tasks, a linear model on Orthrus embeddings matches or beats an ab initio supervised Saluki model, a CNN-RNN hybrid that is state of the art for mRNA properties.",
+   "kw": [
+    "Saluki"
+   ],
+   "info": "",
+   "concl": "A simple linear regression on Orthrus embeddings can replace expensive task-specific neural network training for mRNA property prediction."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings predict mRNA properties",
+   "q": "Does performance scale with model size?",
+   "a": "For Orthrus, Large improves over Base, most of all for MRL and GO molecular function. For HyenaDNA and Nucleotide Transformer, more parameters do not consistently help.",
+   "kw": [
+    "scaling"
+   ],
+   "info": "The NT 2.5b multi-species model does better than NT 2.5b trained on 1000 Genomes data. The authors take this as further evidence that evolutionary information helps.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - fine-tuning Orthrus",
+   "q": "How does fully fine-tuned Orthrus compare with supervised models?",
+   "a": "Fine-tuned Orthrus Base beats Saluki, an architecture-matched supervised Mamba, a dilated CNN ResNet and fine-tuned HyenaDNA on all five tasks. For example, human HL R is 0.74 versus 0.68 for Saluki, and MRL R is 0.52 versus 0.41.",
+   "kw": [
+    "fine-tuning",
+    "Saluki",
+    "HyenaDNA"
+   ],
+   "info": "Table A3 for Orthrus Base: mouse HL 0.71, GO MF 0.84, protein localization 0.83. Supervised Mamba: 0.65, 0.62, 0.46, 0.80, 0.82. DNA-BERT2 and RNA-FM could not be fine-tuned because their context windows are too short.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - fine-tuning Orthrus",
+   "q": "How does Orthrus perform with very little labelled data?",
+   "a": "Supervised methods fail in the low-data setting, while Orthrus stays competitive at 10% and 1% of the data. With 0.5% of the human half-life data (45 samples), it reaches about 73% of supervised performance.",
+   "kw": [
+    "few-shot learning",
+    "data efficiency"
+   ],
+   "info": "The paper gives Pearson R 0.72 versus 0.53, but it does not say clearly which number belongs to which model, and 0.53/0.72 is about 74%. Check Fig. 2B. Results are averaged over three seeds and random splits.",
+   "concl": "Orthrus moves toward few-shot learning for tasks where experimental data are scarce."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus latent space encodes functional similarities",
+   "q": "How did they test whether embeddings separate isoforms of the same gene?",
+   "a": "They compared embedding similarity for three groups: pairs of protein-coding transcripts from the same gene, transcripts from random gene pairs, and transcripts from genes sharing a GO term. All pairwise group differences were significant (p < 2.2e-16, Mann-Whitney U).",
+   "kw": [
+    "intragene similarity",
+    "Mann-Whitney U"
+   ],
+   "info": "As expected, same-gene pairs were most similar, random pairs least similar, and same-GO pairs in between. Same-gene and between-gene distributions overlapped.",
+   "concl": "The training objective keeps sequence diversity within a gene. Some isoforms have distinct embeddings, which may reflect functional differences."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus latent space encodes functional similarities",
+   "q": "Does embedding similarity track protein domain similarity?",
+   "a": "Yes. For isoform pairs within a gene, Orthrus similarity correlated with protein domain overlap with median Spearman rho 0.37 and Pearson R 0.45. This was significantly higher than for baselines such as transcript length similarity and overall sequence overlap.",
+   "kw": [
+    "protein domains",
+    "Jaccard index"
+   ],
+   "info": "Computed over 1000 randomly sampled genes with multiple isoforms.",
+   "concl": "Orthrus captures functional differences encoded by protein domains better than simple sequence metrics do."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus latent space encodes functional similarities",
+   "q": "How does CDS overlap relate to Orthrus similarity?",
+   "a": "Positively, with Spearman rho 0.68 and Pearson R 0.66 across all same-gene protein-coding isoform pairs. The coding sequence is therefore a major determinant, but Orthrus also captures variation beyond sequence similarity.",
+   "kw": [
+    "CDS overlap"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus latent space encodes functional similarities",
+   "q": "What does the IQCF6 example show?",
+   "a": "The IQCF6 isoforms have very similar CDS but low Orthrus similarity (1.52th percentile). The AlphaFold3-predicted structures align poorly (RMSD 16.1 angstrom), which agrees with Orthrus calling them functionally distinct.",
+   "kw": [
+    "IQCF6",
+    "AlphaFold3",
+    "RMSD"
+   ],
+   "info": "The numbers are inconsistent. The text gives CDS similarity 0.93 and Orthrus similarity 0.84, but Fig. 3E shows CDS overlap 0.84 and Orthrus similarity 0.29. Structures were aligned in PyMOL.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus latent space encodes functional similarities",
+   "q": "What do the TAFA5 and PANK2 examples show?",
+   "a": "Both genes have isoform pairs with low CDS overlap (Jaccard < 0.6, bottom 20th percentile) but high Orthrus similarity (60th and 55th percentiles). Their predicted structures align closely (RMSD 0.15 and 0.55 angstrom).",
+   "kw": [
+    "TAFA5",
+    "PANK2"
+   ],
+   "info": "Fig. 3G shows a CDS overlap of 0.61 for TAFA5, slightly above the stated cutoff of 0.6.",
+   "concl": "Orthrus embeddings encode functionally relevant information, not just sequence overlap."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings capture functional transcript diversity",
+   "q": "How did Orthrus group the BCL2L1 isoforms?",
+   "a": "Clustering by embedding similarity gave two main groups. BCL2L1-202 and BCL2L1-205 formed one group, separate from the cluster of apoptosis-inhibiting transcripts.",
+   "kw": [
+    "BCL2L1",
+    "Bcl-X(L)",
+    "Bcl-X(S)"
+   ],
+   "info": "Most BCL2L1 isoforms encode anti-apoptotic Bcl-X(L), and a minority encode pro-apoptotic Bcl-X(S). In Fig. 4A, the 202/205 cluster is annotated as promoting apoptosis.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Orthrus embeddings capture functional transcript diversity",
+   "q": "What does the OAS1 example show?",
+   "a": "The p46 and p42 isoforms of OAS1 have different antiviral functions, and each forms its own cluster in Orthrus similarity space. p46 is prenylated, anchors to membranous organelles such as the trans-Golgi and blocks replication of viruses such as SARS-CoV. p42 lacks prenylation, stays cytosolic and does not inhibit replication.",
+   "kw": [
+    "OAS1",
+    "prenylation"
+   ],
+   "info": "The text mistakenly calls these isoforms BCL2L1-201 and BCL2L1-203. Fig. 4B shows they are OAS1-201 (p46) and OAS1-203 (p42).",
+   "concl": "Orthrus embeddings could help flag isoforms that are likely to have different functions."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why do the authors think the contrastive approach beats reconstruction objectives?",
+   "a": "Training on sequences produced by evolution and alternative splicing gives a stronger biological inductive bias. It also avoids reconstructing tokens from the many genome positions under little or no negative selection, which carry little information.",
+   "kw": [
+    "inductive bias"
+   ],
+   "info": "Pre-training helped most when 200 or fewer labelled data points were available. Adding more species is presented as an effective way to expand the dataset.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "Why should pulling isoforms together help predict properties such as half-life?",
+   "a": "One hypothesis is that splicing and speciation preserve core functional RNA segments, and contrastive training identifies these shared regions. This fits the correlation between intragene similarity and protein domains.",
+   "kw": [
+    "invariance"
+   ],
+   "info": "DCL also pushes diverse sequences apart, spreading samples uniformly in the latent space, which helps downstream tasks.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What limitation do the authors acknowledge?",
+   "a": "Maximizing similarity between related sequences could remove signals needed for some prediction tasks, so the inductive bias might sometimes hurt compared with random initialization.",
+   "kw": [
+    "limitation"
+   ],
+   "info": "They argue that for half-life, isoform choice has no discernible effect in over 85% of genes (cited study), and that Orthrus intragene embeddings still show significant diversity. Alternative splicing is considered crucial in processes such as neural tissue development.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future direction do they suggest?",
+   "a": "Combining the contrastive loss with a masked language modelling objective, which might further improve mature RNA representations.",
+   "kw": [
+    "MLM"
+   ],
+   "info": "They also suggest conditioning isoform analyses on properties such as protein localization or mRNA stability.",
+   "concl": "The approach addresses two major challenges in cellular property prediction: data efficiency and generalizability."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - contrastive objective",
+   "q": "What theory underlies the contrastive loss?",
+   "a": "Contrastive learning bounds the mutual information between two variables. They use a variant of the InfoNCE loss, in which the model must identify the correct partner y_i that was drawn jointly with x_i.",
+   "kw": [
+    "InfoNCE",
+    "mutual information"
+   ],
+   "info": "Here x_i and y_i are splice isoforms or orthologous sequences.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - contrastive objective",
+   "q": "Which four augmentations were used?",
+   "a": "Alternatively spliced transcripts from 10 organisms, Zoonomia orthologs from more than 400 species, naive orthology based on gene identity, and masking of 15% of the input sequence.",
+   "kw": [
+    "naive orthology",
+    "masking"
+   ],
+   "info": "Naive orthology: when a gene name is the same across species, all splice isoforms are pooled into one transcript set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - splicing and orthology dataset",
+   "q": "What is the six-track input representation?",
+   "a": "Four one-hot sequence tracks, one track marking the 5' position of splice sites, and one track marking the first nucleotide of every codon in the CDS.",
+   "kw": [
+    "six-track encoding"
+   ],
+   "info": "Splice site and CDS tracks had previously been shown to help mRNA property prediction (Saluki).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Mamba encoder",
+   "q": "Why use Mamba rather than a Transformer?",
+   "a": "mRNAs can exceed 12,000 nt, and Transformer memory grows quadratically with length. Mamba is a selective state space model whose memory grows linearly, O(n).",
+   "kw": [
+    "Mamba",
+    "state space model",
+    "S4"
+   ],
+   "info": "Mamba extends S4 by making the B, C and delta parameters depend on the input (selectivity).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Mamba encoder",
+   "q": "Which properties of Mamba suit genomic sequences?",
+   "a": "Variable spacing, meaning it can learn interactions between motifs spaced irregularly. Context filtering, meaning it can ignore uninformative regions. Linear memory scaling with sequence length.",
+   "kw": [
+    "variable spacing",
+    "context filtering"
+   ],
+   "info": "Variable spacing refers to Mamba's performance on the selective copying task.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - DCL objective",
+   "q": "Why decoupled contrastive learning (DCL) and how is it set up?",
+   "a": "DCL needs smaller batch sizes, is less sensitive to hyperparameters such as learning rate, and can weight the positive term by sample difficulty. It splits the NT-Xent loss into a positive (similarity) term and a negative (dissimilarity) term, with temperature tau = 0.1.",
+   "kw": [
+    "DCL",
+    "NT-Xent",
+    "temperature"
+   ],
+   "info": "Negatives are all the other samples in the batch, so larger batches usually help. Projections are L2-normalized MLP outputs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - downstream evaluation tasks",
+   "q": "Which downstream datasets were used?",
+   "a": "mRNA half-life for human and mouse (first principal component of over 40 half-life experiments, from Agarwal and Kelley 2022). Mean ribosome load from the HP5 workflow (12,459 isoforms from 7,815 genes, one experiment). Human Protein Atlas protein localization (12 most common locations, APPRIS canonical isoform). GO molecular function terms taken three levels from the root.",
+   "kw": [
+    "mRNA half-life",
+    "mean ribosome load",
+    "Human Protein Atlas"
+   ],
+   "info": "Sizes differ between text and Table 2. Text: 10,432 human and 11,008 mouse half-life sequences, 10,409 localization genes. Table 2: 12,968, 13,738, MRL 11,693, localization 9,769, GO MF 3,697. MRL is expected to be noisier because it comes from a single experiment.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - isoform similarity and protein domains",
+   "q": "How were embedding similarity and domain similarity calculated?",
+   "a": "Embedding similarity was 1 minus log(L2 distance) between embeddings. Protein domain similarity, sequence overlap and CDS overlap were all Jaccard indices: intersection divided by union.",
+   "kw": [
+    "Jaccard index",
+    "Pybiomart",
+    "Ensembl"
+   ],
+   "info": "Domains came from Ensembl via Pybiomart. Pair sets: 1,000 genes for intragene pairs, 1,000 non-homologous gene pairs using MANE transcripts, and 5,000 GO terms (10 to 1,000 genes each) with five non-homologous pairs per term. Structures were predicted on the AlphaFold3 server from Ensembl v113 proteins, using seed 0, and aligned in PyMOL.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - model architecture and training (Appendix)",
+   "q": "What are the key architecture and training settings?",
+   "a": "Base uses 3 Mamba layers with hidden dimension 256. Large uses 6 layers with hidden dimension 512. The projection head has 2 layers (hidden 512, output 128, ReLU, BatchNorm). Training used Adam for 20,000 steps at learning rate 1e-3, with 2,000 warmup steps followed by cosine annealing.",
+   "kw": [
+    "hyperparameters"
+   ],
+   "info": "Weight decay was 5e-5 for Large and 1e-5 for Base (1e-4 for the head), with gradient clipping at norm 5 and mixed precision. Training ran on 4 A100 or H100 GPUs with PyTorch DDP. Batches were split by length at 4,000 nt (batch sizes 50 for long and 150 for short transcripts). Larger models were not tested because of compute limits.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - augmentation ablation (Appendix)",
+   "q": "Which components mattered most in the ablation?",
+   "a": "Removing the six-track input hurt most (human HL R dropped from 0.675 to 0.531), followed by removing masking (0.647, MRL from 0.393 to 0.332). Removing only splicing or only orthology barely changed results (0.678 and 0.680). Removing everything gave 0.217.",
+   "kw": [
+    "ablation",
+    "masking"
+   ],
+   "info": "Ablations were run with Base models only, which may lack the capacity to use the joint dataset. Masking may help by preventing shortcut learning. The six-track input matters most for tasks influenced by exon junction density, such as half-life.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - linear probe and homology splitting (Appendix)",
+   "q": "How were linear probes run and data leakage prevented?",
+   "a": "Data were split 70-15-15. Orthrus embeddings were mean-pooled and fitted with scikit-learn linear or ridge regression, or with LogisticRegression inside a MultiOutputClassifier (max_iter 5000). Homology splitting put Ensembl paralog groups (similarity threshold 35%) into the same split.",
+   "kw": [
+    "homology splitting",
+    "scikit-learn",
+    "paralogs"
+   ],
+   "info": "Paralog pairs were joined into a graph so that transitive paralogs end up in the same split. Baselines with 500 or 1000 nt context windows were applied to chunks of each sequence, and the chunk embeddings were averaged. Fine-tuning used Adam at learning rate 0.01 with exponential decay 0.95 on a single T4 GPU.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - contrastive learning dataset construction",
+   "text": "Zebrafish is one of the 10 splicing species, but orthology pairs cover only Eutherian mammals. How well would Orthrus embeddings transfer to teleost transcripts such as Astyanax, which has no annotation in the training set?"
+  },
+  {
+   "type": "note",
+   "section": "Methods - augmentation ablation (Appendix)",
+   "text": "Removing splicing or orthology alone hardly changes performance. Is the gain really from the biological augmentations, or mostly from the six-track input and masking? Ablations on the Large model are not shown."
+  },
+  {
+   "type": "note",
+   "section": "Results - Orthrus latent space encodes functional similarities",
+   "text": "The isoform function evidence rests on a few hand-picked examples (IQCF6, PANK2, TAFA5, BCL2L1, OAS1) plus AlphaFold3 predictions, and several numbers and isoform labels are inconsistent between text and figures. Recheck before citing."
+  }
+ ]
+}

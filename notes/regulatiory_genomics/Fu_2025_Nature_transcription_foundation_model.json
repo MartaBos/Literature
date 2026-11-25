@@ -1,0 +1,660 @@
+{
+ "id": "Fu_2025",
+ "title": "A foundation model of transcription across human cell types",
+ "link": "https://doi.org/10.1038/s41586-024-08391-z",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Fu_2025_Nature_transcription_foundation_model.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is GET and what input data does it use?",
+   "a": "GET (general expression transformer) is an interpretable foundation model that learns regulatory grammar across 213 human fetal and adult cell types. Its only inputs are chromatin accessibility data and sequence information (TF motifs in accessible regions).",
+   "kw": [
+    "GET",
+    "foundation model",
+    "chromatin accessibility"
+   ],
+   "info": "The abstract says GET predicts gene expression with experimental-level accuracy, including in cell types it has not seen. It also adapts to new sequencing platforms and assays.",
+   "concl": "A single model trained on accessibility and motifs can predict expression in unseen cell types about as well as experimental replicates agree."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What gap in computational models of transcription does the paper address?",
+   "a": "Existing models of transcription do not generalize well to unseen cell types and conditions.",
+   "kw": [
+    "generalizability"
+   ],
+   "info": "In the introduction they give Expecto, Basenji2 and Enformer as examples: after fine-tuning, these models make predictions only for the cell types they were trained on.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What are the main biological applications shown in the abstract?",
+   "a": "(1) Zero-shot prediction of lentiMPRA readout, where GET beats current models. (2) Identification of distal (more than 1 Mbp) regulatory regions in fetal erythroblasts that earlier models missed. (3) A lymphocyte-specific TF-TF interaction in B cells that explains the functional effect of a leukaemia-risk germline mutation.",
+   "kw": [
+    "lentiMPRA",
+    "fetal erythroblasts",
+    "B-ALL"
+   ],
+   "info": "The authors also release catalogues of gene regulation and TF interactions, each specific to a cell type.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why should one model be able to capture regulation across many cell types?",
+   "a": "Cell types differ in which regulatory regions they use, but the biochemistry of protein-protein and protein-DNA interactions stays largely the same across cell types when epigenetic conditions are fixed. Clustering of known TF motifs also shows strong homology among TF DNA-binding domains, which further limits the combinatorial variability of regulatory interactions.",
+   "kw": [
+    "TF motifs",
+    "regulatory machinery"
+   ],
+   "info": "The open question is how combinations of interacting TFs produce the diversity of expression profiles seen across cell types. Most current understanding comes from studies of single cell types.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a foundation model, and which ones existed before GET?",
+   "a": "A foundation model is pretrained extensively on broad, diverse data, which gives it a general understanding that can then be adapted to specific tasks. Examples are GPT-4 and ESM-2, plus the single-cell models Geneformer, scGPT and scFoundation.",
+   "kw": [
+    "Geneformer",
+    "scGPT",
+    "scFoundation"
+   ],
+   "info": "The single-cell foundation models encode transcriptome profiles and support tasks such as cell type annotation and perturbation prediction.",
+   "concl": "Before this paper, no foundation model described how transcription emerges from the chromatin landscape."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "What biological idea is GET's design based on?",
+   "a": "A local genomic region of about 2 Mbp contains promoters and regulatory elements. Each element is described by how well it binds different TFs (motifs) and how accessible it is in a given cell type. Together these define a chromatin environment p(X), which PolII 'reads out' into expression E, so E = (f·p)(X).",
+   "kw": [
+    "chromatin environment",
+    "PolII"
+   ],
+   "info": "Expression at each element is approximated from RNA-seq data. The model applies an embedding and attention architecture to regulatory elements rather than to individual nucleotides.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "What are GET's two training stages?",
+   "a": "(1) Self-supervised pretraining: random regulatory elements are masked and the model predicts their motif binding scores (and optionally accessibility). This learns p. (2) Fine-tuning: the same architecture gets a different output head and learns to predict expression from paired data (f·p).",
+   "kw": [
+    "masked pretraining",
+    "fine-tuning"
+   ],
+   "info": "Because of the two stages, accessibility data without paired expression can be used for pretraining, which greatly increases the diversity of regulatory information in training.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "What training data were used?",
+   "a": "Pretraining used pseudobulk chromatin accessibility from scATAC-seq of 213 human fetal and adult cell types. Of these, 153 cell types had expression data (from multiome or from separate scRNA-seq experiments) and were used for fine-tuning and evaluation.",
+   "kw": [
+    "scATAC-seq",
+    "pseudobulk"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "How well did GET predict expression in a cell type left out of fine-tuning?",
+   "a": "For left-out fetal astrocytes, considering genes with accessible promoters, predicted and observed expression correlated at Pearson r = 0.94 (R2 = 0.88). Experimental replicates and different culture systems of human astrocytes agree at r = 0.92-0.99.",
+   "kw": [
+    "leave-out cell type",
+    "astrocytes"
+   ],
+   "info": "The text gives R2 = 0.88 while Fig. 1c shows R2 = 0.89. Predictions were made for all accessible TSSs and averaged per gene.",
+   "concl": "GET reaches accuracy comparable to experimental replicates in an unseen cell type."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "Which baselines did GET beat on the left-out astrocytes?",
+   "a": "TSS accessibility (r = 0.47), gene activity score (r = 0.51), expression of the most correlated training cell type (r = 0.83; this was fetal inhibitory neurons) and mean expression across training cell types (r = 0.78).",
+   "kw": [
+    "gene activity score",
+    "TSS accessibility"
+   ],
+   "info": "R2 values in the text differ from those printed in Fig. 1c. Text: TSS accessibility -0.23, gene activity -0.67, top correlated cell type 0.62, mean expression 0.53. Figure: 0.22, 0.26, 0.68, 0.60. The paper does not explain the difference.",
+   "concl": "DNA sequence specificity and distal context add a lot beyond promoter accessibility alone."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "How much did pretraining matter?",
+   "a": "A lot. With only the fine-tuning stage, performance on the left-out cell type dropped to Pearson r = 0.6, compared with 0.94 for the pretrained model.",
+   "kw": [
+    "ablation",
+    "pretraining"
+   ],
+   "info": "Extended Data Fig. 2d: random initialization gave r = 0.60 after 100 epochs and 0.61 after 800 epochs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Modelling cell-type-specific expression",
+   "q": "What other benchmarks did GET win?",
+   "a": "GET predicted the expression log fold change between two cell types even when one was unseen. Across many fetal cell types it beat genome-wide prediction from Enformer CAGE output tracks and the training-cell-type mean. It also beat simpler ML methods in both leave-out-cell-type and leave-out-chromosome settings.",
+   "kw": [
+    "Enformer",
+    "log fold change"
+   ],
+   "info": "The simpler methods were MLP, CNN, CatBoost, SVM, random forest and linear regression, all trained on the same data for the same number of epochs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Generalizability",
+   "q": "Does a model trained only on fetal data work on adult cell types?",
+   "a": "Yes. Across diverse adult cell types the average R2 was 0.53, compared with 0.33 for a baseline that uses the corresponding fetal cell types.",
+   "kw": [
+    "fetal to adult transfer"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Generalizability",
+   "q": "Which other platforms and assays was GET transferred to?",
+   "a": "10x multiome data from lymph nodes and from glioblastoma (GBM) tumour cells. GET was also adapted to predict other assays: CAGE and chromatin accessibility.",
+   "kw": [
+    "10x multiome",
+    "GBM",
+    "CAGE"
+   ],
+   "info": "In lymph node cell types, the fine-tuned GET reached r = 0.87-0.89 (Extended Data Fig. 3c). Detailed analyses are in the Supplementary Information.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot regulatory activity prediction",
+   "q": "What is lentiMPRA, and what benchmark did they use?",
+   "a": "In lentiMPRA (lentivirus-based massively parallel reporter assay), the tested sequences are integrated into the genome, which avoids the limitations of episomal MPRAs and gives relevant readouts in hard-to-transfect cells. The benchmark tested 226,243 sequences in K562 cells.",
+   "kw": [
+    "lentiMPRA",
+    "K562"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot regulatory activity prediction",
+   "q": "How did they simulate lentiMPRA with GET?",
+   "a": "They fine-tuned GET on bulk ENCODE K562 OmniATAC accessibility and NEAT-seq expression. They then inferred the activity of the mini promoter in each genomic insertion context and averaged across insertions. GET never saw any lentiMPRA data.",
+   "kw": [
+    "zero-shot",
+    "NEAT-seq",
+    "in silico lentiMPRA"
+   ],
+   "info": "The predicted readout distributions for different element types matched expectations (Supplementary Information).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot regulatory activity prediction",
+   "q": "How did GET compare with Enformer on lentiMPRA?",
+   "a": "On 2,000 elements, GET's expression model alone gave Pearson r = 0.45 (slope 0.38). Combined with K562 accessibility it gave r = 0.55 (slope 0.63). Enformer gave r = 0.44 (slope 0.14).",
+   "kw": [
+    "Enformer",
+    "benchmark"
+   ],
+   "info": "By element class (GET vs Enformer): promoters 0.53 vs 0.40, enhancers 0.16 vs 0.39, repressed/quiescent 0.16 vs 0.43. Enformer was trained on 486 K562 tracks including TF and histone ChIP-seq, CAGE and accessibility. The authors attribute its better enhancer and repressed-region performance to greater heterochromatin coverage and the many functional K562 assays in its training data.",
+   "concl": "GET is more accurate and better scaled overall, but Enformer does better on enhancers and repressed regions."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Zero-shot regulatory activity prediction",
+   "q": "How does GET's computational cost compare with Enformer's?",
+   "a": "To benchmark Enformer within 3 days they had to subsample to 2,000 elements. In the same compute time, GET screened all 226,243 elements.",
+   "kw": [
+    "computational cost"
+   ],
+   "info": "The Methods instead say that in silico lentiMPRA of all 200,000 K562 elements took around 5 days, which is not consistent with the main text. GET's predicted active elements were enriched for meaningful histone marks and TF binding sites (Extended Data Fig. 5).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identifying cis-regulatory elements",
+   "q": "How did they use GET to find cis-regulatory elements, and in which system?",
+   "a": "Model interpretation gives region and motif contribution scores for genes with accessible promoters, for virtually all genes even in cell types with only about 1,000 cells. They tested this in fetal erythroblasts against published base-editing data at four fetal haemoglobin loci: BCL11A, NFIX, KLF1 and HBG2.",
+   "kw": [
+    "fetal haemoglobin",
+    "base editing",
+    "HbFBase"
+   ],
+   "info": "BCL11A, NFIX and KLF1 regulate fetal haemoglobin, and HBG2 encodes one of its subunits. The ground truth is the HbFBase gRNA enrichment score from base-editing screens.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identifying cis-regulatory elements",
+   "q": "What did GET find at the BCL11A erythroid enhancer?",
+   "a": "It recovered the central role of GATA, which binds the erythroid-specific enhancer that drives BCL11A, a known haemoglobin regulator and HbF repressor. It also highlighted SOX family motifs in the same enhancer. SOX factors were already linked to fetal haemoglobin, but not to this enhancer.",
+   "kw": [
+    "GATA",
+    "SOX",
+    "BCL11A"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identifying cis-regulatory elements",
+   "q": "How did GET compare with other models at linking enhancers to promoters?",
+   "a": "GET outperformed Enformer, HyenaDNA, DeepSEA and ABC, especially for long-range (more than 100 kb) enhancer-promoter interactions. Enhancer accessibility predicted proximal pairs well, but its precision fell for long-range ones.",
+   "kw": [
+    "ABC",
+    "HyenaDNA",
+    "AUPRC"
+   ],
+   "info": "Results held with functional-enhancer thresholds at the top 10% or top 25% of HbFBase. They reached the same conclusion on an ENCODE CRISPRi benchmark in K562. AUPRC was computed over 1,000 bootstraps of 80% of the pairs. Positive numbers are small: only 7 distal positives in the erythroblast benchmark.",
+   "concl": "GET is particularly good at finding distal cis-regulatory elements."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identifying upstream regulators",
+   "q": "Which upstream regulators did GET predict for the haemoglobin genes?",
+   "a": "The top motifs matched known regulators or haematopoietic TFs: NFY and SOX for HBG2, and KLF1 for BCL11A. For NFIX, GET highlighted TAL1, a known GATA1 partner and haematopoietic factor that had not been directly linked to NFIX regulation.",
+   "kw": [
+    "TAL1",
+    "NFY",
+    "KLF1"
+   ],
+   "info": "Motif importance is aggregated across all cis-regulatory elements of a gene.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Identifying upstream regulators",
+   "q": "How did they find the downstream targets of GATA?",
+   "a": "From the GET motif contribution matrix they took the top 10% of genes influenced by the GATA motif. This set was enriched for 'hemopoiesis' (Fisher exact test, adjusted P = 7.6e-4) and included erythroid TFs KLF1, GATA1, TAL1 and IKZF1.",
+   "kw": [
+    "GATA1",
+    "gene ontology",
+    "g:Profiler"
+   ],
+   "info": "The Methods describe taking the top 1,000 genes and using g:Profiler with g_SCS correction. It is not clear whether this is the same set as the 'top 10%'. Cross-cell-type analyses linked motif contribution to target gene expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Finding coregulating TFs",
+   "q": "Why would correlated motif columns indicate TF coregulation?",
+   "a": "If two motifs' contribution columns correlate highly in the cell-type-agnostic gene-by-motif matrix, the two TFs likely share genomic targets. TF pairs in the top correlation decile were more likely to share biological functions than pairs in the bottom decile (Kolmogorov-Smirnov P = 6.78e-82).",
+   "kw": [
+    "gene-by-motif matrix",
+    "coregulation"
+   ],
+   "info": "Example: MBD2 and MECP2 are a highly correlated pair, and both read DNA methylation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Finding coregulating TFs",
+   "q": "How well did GET's predicted TF-TF interactions match known physical interactions?",
+   "a": "Against STRING v11, random selection gives 5.6% precision. Taking the top 1% of pairs (n = 793), GET Causal reached 25.2% precision and GET Correlation 15.9%.",
+   "kw": [
+    "LiNGAM",
+    "STRING",
+    "causal discovery"
+   ],
+   "info": "For comparison, a mass-spectrometry TF-TF study reported 30.4% precision on its top 1.25% (n = 990) pairs. HepG2 ChIP-seq colocalization of 677 TFs found more interactions but had slightly lower precision and macro F1 than GET Causal. GET Causal also beat two accessibility-aware motif colocalization baselines.",
+   "concl": "Causal discovery on GET's interpretation output recovers known TF interactions better than correlation does and points to new ones."
+  },
+  {
+   "type": "qa",
+   "section": "Results - GET catalogue of TF interactions",
+   "q": "How did they categorize TF-TF interactions, and can AlphaFold detect them?",
+   "a": "Direct interactions: homodimers, intrafamily heterodimers and interfamily heterodimers. Cofactor-mediated interactions: cooperative or competitive binding. AlphaFold2 dimer predictions for more than 1,700 human TFs reliably captured known dimer structures.",
+   "kw": [
+    "AlphaFold2",
+    "homodimer",
+    "heterodimer"
+   ],
+   "info": "For classifying intrafamily binders, the product pDockQ x pAE worked best (AUROC 0.69, AUPRC 0.41).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GET catalogue of TF interactions",
+   "q": "What did they find for TFAP2A and ZFX?",
+   "a": "Both motifs (TFAP2/1 and ZFX) were among the highest out-degree nodes in the causal network. The ZFX intrinsically disordered region (IDR), unstructured on its own, folded into a defined multimeric structure with the structured domains of TFAP2A, driven mainly by electrostatics. Co-IP in HeLa cells with a TFAP2A antibody pulled down ZFX, while the negative control SRF did not.",
+   "kw": [
+    "TFAP2A",
+    "ZFX",
+    "IDR"
+   ],
+   "info": "In 100 ns molecular dynamics, the monomeric IDR collapsed more and formed fewer interchain hydrogen bonds than the complex. The known motifs of the two TFs share a common core. Proteins were segmented into domains using pLDDT.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GET catalogue of TF interactions",
+   "q": "What is a cofactor-mediated interaction, and what example did they show?",
+   "a": "SNAI1 (Ebox/CACCTG) and RELA (NFKB/1) had a strong predicted interaction effect but no robust direct structural interaction. Both are known to interact with EP300, and the predicted structures showed electrostatic binding to EP300's TAZ1 and TAZ2 domains.",
+   "kw": [
+    "EP300",
+    "TAZ domains",
+    "SNAI1"
+   ],
+   "info": "This agrees with earlier studies of TF IDRs binding EP300 TAZ domains electrostatically.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - GET catalogue of TF interactions",
+   "q": "How large is the structural catalogue?",
+   "a": "Using the top 5% of predicted interactions in each cell type gave 1,718 TF pairs, or 24,737 pairs when individual protein segments are counted.",
+   "kw": [
+    "GET Catalog"
+   ],
+   "info": "For each interaction, structures were predicted for the two TFs most highly expressed in that cell type. The catalogue is public on Hugging Face (GET Catalog).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - An IDR mutation alters TF coregulation",
+   "q": "Why study PAX5 and the G183S variant?",
+   "a": "PAX5 drives B cell precursor acute lymphoblastic leukaemia (B-ALL), the most frequent paediatric malignancy, and is somatically altered in about 30% of sporadic cases. G183S is a recurrent familial germline mutation that raises B-ALL risk. It sits in the IDR, and its function was unknown.",
+   "kw": [
+    "PAX5",
+    "B-ALL",
+    "G183S"
+   ],
+   "info": "Most somatic missense mutations hit the DNA-binding domain (V26G, P80R). G183 and the octapeptide domain form a small pLDDT peak inside the IDR.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - An IDR mutation alters TF coregulation",
+   "q": "Which PAX5 partners did GET predict, and what did the structures show?",
+   "a": "In fetal B lymphocytes (CXCR5+), PAX/2 interacted with E2F/2, RFX/1, MECP2, ZSCAN3 and NR/3. An AlphaFold Multimer segment screen, supported by AlphaFold3, found a new interaction between the nuclear receptor domain of NR/3 TFs and the PAX5 octapeptide domain. The interface was hydrophobic and contained G183 plus a series of hydrogen-bonded serines.",
+   "kw": [
+    "NR/3",
+    "AlphaFold3",
+    "octapeptide domain"
+   ],
+   "info": "Independent support: affinity purification mass spectrometry for the paralogue pair PAX2-NR2C2, and BioID mass spectrometry in mouse pre-B cells.",
+   "concl": "A glycine-to-serine change at G183 could affect PAX5 binding to the NR domain."
+  },
+  {
+   "type": "qa",
+   "section": "Results - An IDR mutation alters TF coregulation",
+   "q": "How did they validate the PAX5-NR2C2 interaction?",
+   "a": "They ranked NR/3 TFs by expression in 15 PAX5-WT B-ALL patients; NR4A1 and NR2C2 were highest. Proximity labelling (BioID) of PAX5-WT and PAX5 G183S in REH B-ALL cells detected NCOR1, NR2C2 and NRIP1, but not NR4A1 or NR3C1. G183S increased the PAX5-NR2C2 interaction.",
+   "kw": [
+    "BioID",
+    "NR2C2",
+    "REH"
+   ],
+   "info": "NR3C1 (NR/20 motif) was a negative control: GET predicted it to interact with NR/3 but not with PAX. RHOA-BioID was the specificity control. Three independent experiments were run.",
+   "concl": "The G183S germline variant strengthens PAX5 binding to NR2C2."
+  },
+  {
+   "type": "qa",
+   "section": "Results - An IDR mutation alters TF coregulation",
+   "q": "Which genes are predicted to be co-regulated by PAX5 and NR/3?",
+   "a": "Among the top 10,000 promoters for each motif, 2,570 genes were shared. They included CD19 and CD79B and the B-ALL oncogenes MYC, CEBPD and LMO2. The shared set was enriched for lymphocyte activation and for genes affected by PAX5 perturbation.",
+   "kw": [
+    "CD19",
+    "coregulation",
+    "IKZF1"
+   ],
+   "info": "The oncogenes were also predicted to be strongly repressed by IKZF1 (ZNF143 motif) and were not highly expressed. PAX/2-only targets were enriched for neuronal pathways and NR/3-only targets for cell cycle.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - An IDR mutation alters TF coregulation",
+   "q": "What did patient transcriptomes show about G183S?",
+   "a": "In B-ALL samples with CDKN2A loss, PAX5-loss DEGs were enriched for predicted PAX5 targets (fold enrichment 1.22, P = 1.5e-3) but not NR/3 targets. G183S-specific DEGs were enriched for NR/3 targets (1.41, P = 1.05e-30), PAX5+NR/3 targets (1.35, P = 1.57e-18) and ProB-activated genes (1.57, P = 2.2e-3).",
+   "kw": [
+    "G183S",
+    "differential expression"
+   ],
+   "info": "The cohort was 141 sporadic childhood B-ALL samples, including four familial G183S cases. Comparisons were PAX5-WT (n = 10) vs PAX5 loss (n = 10) as a negative control, and G183S (n = 4) vs loss-of-function cases (n = 12). The familial group is described as 'n = n' in the paper, apparently a typo. Hypergeometric tests with Benjamini-Hochberg correction. Genes include CD19, EBF1, BACH2 and PML.",
+   "concl": "G183S appears to drive a transcriptional program specific to PAX5-NR coregulation."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude?",
+   "a": "Using accessibility plus sequence, GET reaches replicate-level precision in left-out cell types and adapts to many platforms, assays and non-physiological cells such as tumours. Interpreting it revealed long-range haemoglobin regulatory elements and their TFs. Combined with structure prediction it produced the public GET Catalog, which helped find functional variants in disordered domains.",
+   "kw": [
+    "GET Catalog"
+   ],
+   "info": "",
+   "concl": "GET is a generalizable model for identifying regulatory elements, upstream regulators and TF interactions in a cell-type-specific way."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What are GET's limitations?",
+   "a": "It relies mainly on chromatin accessibility data. It has limited resolution to distinguish TF homologues with very similar motifs. It is trained only on coarse-grained cell states and on region-level rather than nucleotide-level sequence information.",
+   "kw": [
+    "limitations",
+    "motif clusters"
+   ],
+   "info": "Poly(A) scRNA-seq measures aggregated mRNA, not nascent transcription (Methods). Some fetal and adult cell types got expression labels by annotation matching rather than true multiome pairing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What future directions do they propose?",
+   "a": "Adding nucleotide-level regulator footprints, 3D chromatin architecture and regulator expression or single-cell embeddings; including diseased, perturbed and treated cell states; and adding assays that directly measure TF binding, histone marks and PolII activity. Multiplexed nucleotide-level perturbations could calibrate GET for predicting non-coding variant effects.",
+   "kw": [
+    "non-coding variants",
+    "3D genome"
+   ],
+   "info": "Other ideas: modelling the kinetics of regulation, comparing pretrained and fine-tuned models to find drivers of cell state changes, and building generative models to design enhancer arrays or cell-type-specific TFs and inhibitors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq data processing",
+   "q": "How were the accessibility pseudobulks and peaks built?",
+   "a": "Single cells were aggregated into pseudobulk cell types using each study's Louvain clusters, keeping clusters with more than 600 cells, and accessibility was expressed as logCPM. The data covered 1.3 million nuclei from normal primary tissue with no disease states. The original 222 cell types were filtered to 213.",
+   "kw": [
+    "pseudobulk",
+    "logCPM",
+    "Louvain"
+   ],
+   "info": "Peaks came from the Zhang et al. adult and fetal peak set, which incorporates the Domcke et al. fetal atlas. A fetal-only model built on the Domcke peaks performed comparably. For K562, permissive peaks were called with MACS2 and several logCPM cutoffs were used as augmentation. Score formula as printed: s_i = log10(c_i/t + 1), where t is the total fragment count.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq data processing",
+   "q": "What is the binary ATAC version of GET, and why use it?",
+   "a": "Every accessibility value is set to 1 if the region is a peak, so the model sees only which motifs lie in accessible regions. Most regulatory analyses used this version.",
+   "kw": [
+    "binary ATAC"
+   ],
+   "info": "It gives better attribution to sequence features, so the model cannot use accessibility signal strength as a surrogate for sequence. For gene-by-motif matrices, the quantitative ATAC values are still used as the input X when multiplying with the gradient.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq data processing",
+   "q": "How were motif features computed?",
+   "a": "Peak sequences on hg38 were scanned with 2,179 TF PWMs from Vierstra et al. using MOODS at default threshold. The PWMs were grouped into 282 motif clusters. Within overlapping matches of the same cluster only the best match was kept, the scores of non-overlapping matches were summed per cluster, and scores were min-max normalized across regions.",
+   "kw": [
+    "MOODS",
+    "Vierstra motif clusters",
+    "PWM"
+   ],
+   "info": "MOODS-python version 1.9.4.1 per the reporting summary.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - ATAC-seq data processing",
+   "q": "What is one input sample to GET?",
+   "a": "200 consecutive accessible regions, each with 282 motif scores plus one accessibility value: a 200 x 283 matrix. This approximates a PolII 'receptive field' of about 2-4 Mbp, where most chromatin contacts occur.",
+   "kw": [
+    "receptive field",
+    "input matrix"
+   ],
+   "info": "The estimate assumes about 150,000 accessible peaks per 3 Gb genome. Pretraining used non-overlapping sampling; fine-tuning used a sliding window with a stride of 100 peaks. Sampling ran separately per chromosome from its start, with no other priors.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - RNA-seq data processing",
+   "q": "How were expression labels assigned to regions?",
+   "a": "Expression was log10(TPM + 1). A region overlapping one gene's TSS got that gene's value, and overlapping several TSSs summed their values. Regions without a TSS got 0, as did promoters with very low accessibility (aCPM below 0.05). The target is a 200 x 2 matrix covering both strands.",
+   "kw": [
+    "TSS",
+    "GENCODE v40",
+    "TPM"
+   ],
+   "info": "With multiome data, cell types were matched by barcode. Otherwise they were matched by annotation: Cao et al. fetal atlas for fetal cells, Tabula Sapiens for adult cells. ATAC pseudobulks sharing an annotation received identical labels. The zero labels on non-promoter regions act as negative labels.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model architecture",
+   "q": "What does the GET architecture look like?",
+   "a": "Three parts: a linear regulatory element embedding layer (RegionEmb, 768 dimensions per peak), 12 transformer encoder layers with multi-head attention across regulatory elements, and an output head (linear projection plus SoftPlus).",
+   "kw": [
+    "transformer",
+    "RegionEmb",
+    "masked autoencoder"
+   ],
+   "info": "Each layer uses pre-layer-norm, multi-head attention, a GELU feed-forward block and residual connections. Pretraining masks 50% of regions with a shared learnable [MASK] token, similar to vision masked autoencoders. Heads: MaskHead (pretraining), ExpHead (stranded expression), ATACHead and CAGEHead.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Training scheme",
+   "q": "What were the training settings?",
+   "a": "Pretraining: AdamW with weight decay 0.05, batch size 256, 800 epochs with 40 warmup epochs, about a week on 16 V100 GPUs. Fine-tuning: 100 epochs with a Poisson negative log-likelihood loss (as in Enformer) on 8 A100 GPUs, with early stopping on validation loss.",
+   "kw": [
+    "AdamW",
+    "Poisson NLL",
+    "LoRA"
+   ],
+   "info": "The paper is inconsistent on learning rate and fine-tuning time. The maximum learning rate is given as 1.5e-4 but the training details give a base learning rate of 1e-3 with a cosine schedule. Fine-tuning is described as about 8 h in one place and about one day in another. LoRA parameter-efficient fine-tuning cuts the number of trained parameters by 99%. Built with PyTorch 2.1.1 and Lightning 2.3.3.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model evaluation",
+   "q": "How did GET do on leave-out-chromosome and new-cohort tests?",
+   "a": "Mean Pearson r on held-out chromosomes was 0.78 in fetal astrocytes (range 0.73-0.84), 0.75 in an IDH1-wild-type GBM patient (0.68-0.81) and 0.81 for K562 OmniATAC (0.72-0.84). For GBM, fine-tuning on a single patient gave r above 0.9 on 16 held-out patients, compared with 0.67 zero-shot.",
+   "kw": [
+    "leave-out chromosome",
+    "one-shot"
+   ],
+   "info": "For CAGE, GET adapted with LoRA was compared against Enformer on chromosome 14, which Enformer never trained or validated on. LoRA fine-tuning converged in under 30 min on a single RTX 3090 GPU and produced a 3 MB adaptor.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model evaluation",
+   "q": "How do you transfer GET to a new dataset with a different peak set?",
+   "a": "Merge the new and training peak sets, using the training coordinates wherever peaks overlap and adding unique new peaks as they are. Keep peak lengths consistent (400 bp in the fetal-adult atlas). Because the 1.3M-peak reference is so broad, new peaks are usually less than 10% of the total.",
+   "kw": [
+    "peak set harmonization",
+    "transfer learning"
+   ],
+   "info": "Domain shifts to consider: sequencing depth, peak-calling threshold and software, library and technical bias, and biology. Datasets with several cell types are fine-tuned with a left-out cell type, and single sorted cell types with a left-out chromosome. In the leave-out-motif test, removing 1-10 motifs had little effect, but removing 20 hurt performance badly because most training data was lost.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model interpretation",
+   "q": "How are motif and region importance scores calculated?",
+   "a": "From the Jacobian of the gene's output (its promoter region and strand) with respect to the input. Motif importance is gradient times input, summed over regions. Region importance uses the L2-norm of the Jacobian with respect to the region embedding, normalized by each gene's maximum.",
+   "kw": [
+    "Jacobian",
+    "gradient x input",
+    "feature attribution"
+   ],
+   "info": "The enhancer-gene score is the region Jacobian weighted by aCPM. A DistanceContactMap CNN trained on K562 Hi-C (r = 0.855) provides 'GET Powerlaw', which is combined as Jacobian + aCPM x Powerlaw or Jacobian x Powerlaw. All benchmark scores were normalized across each gene's ±100 peaks. The authors say methods such as Integrated Gradients or DeepLIFT might improve this.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model interpretation",
+   "q": "How exactly was the in silico lentiMPRA done?",
+   "a": "Each element's motif scores were added to an existing genomic region, and the ±100 regions around it formed the input. Predicted activity was mean predicted expression times mean predicted accessibility over 600 insertions, matching the experimental insertion count.",
+   "kw": [
+    "in silico insertion",
+    "ChromHMM"
+   ],
+   "info": "For Enformer, the vector was inserted into 196,608 bp of sequence and the K562 CAGE track was averaged over the 3 central bins. This was feasible for only 1,000 enhancer and 1,000 non-enhancer elements. Elements were classified with K562 ChromHMM states: EnhBiv, EnhG and Enh as enhancers; ReprPC, ReprPCWk and Quies as repressed/quiescent.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Model interpretation",
+   "q": "How was the causal TF interaction network built and benchmarked?",
+   "a": "LiNGAM (Causal Discovery Toolbox, default settings) was run on the gene-by-motif matrix built from input x gradient scores. In the cell-type-agnostic setting, 50,000 genes were sampled across cell types. Ground truth was STRING v11 physical interactions with combined score above 400, mapped to motif clusters.",
+   "kw": [
+    "LiNGAM",
+    "STRING v11"
+   ],
+   "info": "Results were aggregated over 5 random seeds. The HepG2 ChIP-seq colocalization comparison used tiered peak overlaps with score at least 4; the stricter high-high cutoff (score 9) dropped macro F1 to 0.097. The cell-type-specific catalogue keeps interactions with the top 5% absolute effect size.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Structural analysis",
+   "q": "How were proteins segmented and multimers predicted?",
+   "a": "pLDDT was smoothed with a 10-amino-acid moving average and divided by its maximum. Regions below 0.6 were called low-pLDDT and merged if less than 30 aa apart; everything else was high-pLDDT. Multimers were predicted with LocalColabFold or ColabFold using AlphaFold Multimer v2.3.",
+   "kw": [
+    "pLDDT",
+    "ColabFold",
+    "molecular dynamics"
+   ],
+   "info": "High-pLDDT regions plus a high fraction of positive residues recovered 80% of known DNA-binding domains. Homodimers used all 5 models with 3 recycles; the large screen used model 3 only. MD used the a99SBdisp force field, TIP4P water and a 100 ns production run. Per-residue pLDDT correlated with instability (RMSD). LocalColabFold version 1.5.1.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Biological experiments",
+   "q": "How were the co-IP and proximity labelling experiments set up?",
+   "a": "Co-IP: HeLa lysates in 0.5% NP-40 buffer were incubated with agarose-conjugated TFAP2A antibody and immunoblotted for ZFX, with SRF as the negative control. BioID: PAX5-WT and PAX5-G183S were fused to BioID2-HA via a 13x linker and stably expressed in REH cells. Cells were given 100 µM biotin for 24 h, then biotinylated proteins were pulled down with streptavidin beads and probed by western blot.",
+   "kw": [
+    "co-IP",
+    "BioID2",
+    "REH"
+   ],
+   "info": "Controls were linker-only and RHOA-WT BioID. The co-IP was repeated twice and BioID three times. Blots were quantified with GelAnalyzer 23.1. Cell lines came from ATCC, were not further authenticated and tested negative for mycoplasma.",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Zero-shot regulatory activity prediction",
+   "text": "GET beats Enformer overall on lentiMPRA but is clearly worse on enhancers (r 0.16 vs 0.39) and repressed regions (r 0.16 vs 0.43). Does motif-only region input miss what makes an enhancer active, or is this only a training data coverage issue, as the authors suggest?"
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "GET works at motif-cluster level, so it cannot distinguish homologous TFs with similar motifs. The PAX5 case needed patient expression data and BioID to narrow NR/3 down to NR2C2. How reliable are catalogue predictions without that extra filtering?"
+  },
+  {
+   "type": "note",
+   "section": "Methods - Training scheme",
+   "text": "Several numbers disagree between sections: R2 values in the text vs Fig. 1c, max learning rate 1.5e-4 vs base 1e-3, fine-tuning ~8 h vs ~1 day, and lentiMPRA screening of all 226,243 elements in 3 days vs ~5 days for 200,000. Check the Supplementary Information before quoting these."
+  }
+ ]
+}

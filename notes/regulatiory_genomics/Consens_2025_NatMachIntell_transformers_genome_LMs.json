@@ -1,0 +1,621 @@
+{
+ "id": "Consens_2025",
+ "title": "Transformers and genome language models",
+ "link": "https://doi.org/10.1038/s42256-025-01007-9",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Consens_2025_NatMachIntell_transformers_genome_LMs.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is this review about?",
+   "a": "It covers how transformers and language models are used in genomics. Genome language models (gLMs) were motivated by the analogy between human language and the genome's biological code.",
+   "kw": [
+    "gLM",
+    "transformer"
+   ],
+   "info": "It is written as a guide for computational biologists and computer scientists. It is a review, not a primary study. It covers selected models and advances up to July 2024.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "Which aspects of gLMs does the review focus on?",
+   "a": "Unsupervised pretraining tasks, especially the power of zero- and few-shot learning, plus the strengths and limitations of the transformer architecture and of current gLMs more broadly.",
+   "kw": [
+    "pretraining",
+    "zero-shot learning",
+    "few-shot learning"
+   ],
+   "info": "The review also looks at genomic modelling beyond the transformer, based on current research trends.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which deep learning architecture used to dominate models that predict genomic data from DNA sequence?",
+   "a": "Convolutional neural networks (CNNs). Transformers are now being applied to genomic problems, driven by their success in computer vision and natural language processing (NLP).",
+   "kw": [
+    "CNN",
+    "transformer"
+   ],
+   "info": "The predicted modalities include transcription factor binding, RNA binding, chromatin accessibility, contact maps, gene expression, RNA-seq coverage and promoter or enhancer regions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does the review define a gLM, and what does it leave out?",
+   "a": "gLMs are models pretrained, in a self-supervised way, on sequences of genomic tokens such as nucleotides or k-mers. The review covers only transformers for genomic sequence prediction, transformer gLMs and gLMs with other architectures.",
+   "kw": [
+    "gLM"
+   ],
+   "info": "Transformers and language models for protein sequences are excluded because they have been reviewed elsewhere.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a hybrid model in this review?",
+   "a": "A model that contains transformer modules but is not a language model. It combines them with other layer types, such as convolutional or recurrent layers, and is trained directly to predict assay data.",
+   "kw": [
+    "hybrid model"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Open problem in genomics",
+   "q": "What open problem in genomics do gLMs aim to address?",
+   "a": "Deciphering the regulatory grammar of the genome. This means understanding how regulatory elements interact with each other and with their target genes to modulate expression, and how this varies across conditions, developmental stages and cell types.",
+   "kw": [
+    "regulatory grammar",
+    "non-coding DNA"
+   ],
+   "info": "Only about 2% of the human genome encodes proteins. Most of the rest is non-coding and its function is poorly understood.",
+   "concl": "Because regulation is large and complex, researchers break it into smaller tasks: identifying promoters and enhancers, classifying mutations as deleterious or benign, and predicting TF binding sites, splice sites, gene expression and chromatin accessibility."
+  },
+  {
+   "type": "qa",
+   "section": "Open problem - training data and encoding",
+   "q": "What data do genomic deep learning models train on?",
+   "a": "DNA sequence from GenBank, RefSeq and the Sequence Read Archive. They also use other modalities: ATAC-seq and DNase-seq (accessibility), Hi-C (3D contacts), ChIP-seq (protein-DNA binding), RNA-seq and scRNA-seq (transcription), and CRISPR perturbations.",
+   "kw": [
+    "ENCODE",
+    "Roadmap",
+    "GTEx"
+   ],
+   "info": "Public sources of the non-sequence modalities include ENCODE, Roadmap, GTEx and the 1000 Genomes Project. CRISPR knockdowns or knockouts that change expression point to candidate enhancers.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Open problem - training data and encoding",
+   "q": "How is DNA sequence fed into a deep learning model?",
+   "a": "Either by one-hot encoding, which turns a sequence of length N into a 4 x N matrix of zeros and ones, or by tokenization into single nucleotides, k-mers or byte-pair encoding (BPE) tokens.",
+   "kw": [
+    "one-hot encoding",
+    "k-mer",
+    "BPE"
+   ],
+   "info": "k-mer tokenization treats k-length subsequences as the words of the genomic language. The vocabulary size depends on the strategy.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Open problem - training data and encoding",
+   "q": "What is byte-pair encoding (BPE) for DNA?",
+   "a": "BPE repeatedly merges the nucleotides that most often occur together in the genome. The result is a vocabulary of a chosen size made of variable-length words.",
+   "kw": [
+    "BPE",
+    "tokenization"
+   ],
+   "info": "Later in the review: in BPE vocabularies of DNA, the longest tokens correspond to known repetitive elements. k-mer tokenization treats all regions of the genome equally.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Open problem - training data and encoding",
+   "q": "How much sequence can a model take as input?",
+   "a": "Usually up to about 1,000 tokens. Clever tokenization, for example tokens that stand for 100 bp motifs, can stretch the effective context to about 10,000 bp.",
+   "kw": [
+    "context window"
+   ],
+   "info": "Chromosomes are millions of base pairs long, so they are split into manageable pieces before tokenization or one-hot encoding. Modelling whole chromosomes is still an open challenge.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Why transformers and gLMs",
+   "q": "Why are transformers good at representing DNA?",
+   "a": "Their attention mechanism captures relationships across the whole input sequence, regardless of how close the nucleotides are. RNNs struggle with long-range dependencies, and CNNs only capture relationships within fixed window sizes.",
+   "kw": [
+    "attention",
+    "RNN",
+    "CNN"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Why transformers and gLMs",
+   "q": "Why is pretraining attractive in genomics?",
+   "a": "Most DNA sequence data are unlabelled. Pretraining learns general representations without human annotation, which reduces bias and improves performance on downstream tasks.",
+   "kw": [
+    "pretraining",
+    "few-shot learning",
+    "zero-shot learning"
+   ],
+   "info": "Few-shot learning is useful because biologists often have only a few well-characterized examples, such as microRNAs or enhancers. Strong zero-shot performance could reveal new regulatory grammar.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - architecture",
+   "q": "What does a transformer consist of?",
+   "a": "It was introduced in 2017. It has stacked layers of self-attention (usually multi-head attention) with addition and normalization layers, skip connections, and fully connected layers for the final predictions.",
+   "kw": [
+    "transformer",
+    "self-attention",
+    "multi-head attention"
+   ],
+   "info": "The original was an encoder-decoder, but transformers can also be built as encoder-only or decoder-only models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - architecture",
+   "q": "How does attention work?",
+   "a": "The input is projected into learned key, query and value matrices. Dot products of keys and queries are softmaxed into an attention matrix of relevance scores between 0 and 1. That matrix is multiplied by the values, so each element's representation is updated by every other element according to their pairwise relevance.",
+   "kw": [
+    "attention",
+    "query key value"
+   ],
+   "info": "Self-attention means the keys, queries and values all come from the same input sequence. Multi-head attention computes several sets of them in parallel.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - architecture",
+   "q": "What is the difference between BERT-style and GPT-style models?",
+   "a": "BERT is encoder-only (12 layers, 12 attention heads). It is pretrained with masked language modelling (MLM) and reads context in both directions. GPT is decoder-only, pretrained with autoregressive language modelling (ALM), and predicts the next token from the previous ones.",
+   "kw": [
+    "BERT",
+    "GPT",
+    "encoder-decoder"
+   ],
+   "info": "In genomics, BERT predicts masked nucleotides from upstream and downstream sequence. GPT predicts the next nucleotides from the preceding ones.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - architecture",
+   "q": "Which genomic tasks suit encoder-only models and which suit decoder-only models?",
+   "a": "Encoder-only (BERT-like) models suit classification and feature identification, where the full upstream and downstream context matters and direction does not. Decoder-only models suit tasks where direction matters, such as co-transcriptional or co-translational processes like RNA splicing or protein folding.",
+   "kw": [
+    "encoder-only",
+    "decoder-only"
+   ],
+   "info": "Decoder-only models generally show better zero-shot generalization.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - training",
+   "q": "What is masked language modelling (MLM)?",
+   "a": "A pretraining task in which a random subset of input tokens, usually 15%, is masked and the model predicts them. It is the most common pretraining task in genomics and teaches the model bidirectional relationships between nucleotides.",
+   "kw": [
+    "MLM",
+    "pretext task"
+   ],
+   "info": "Pretext tasks are reconstruction tasks (for example, predicting masked regions) or contrastive tasks (pulling similar data points together in representation space).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - training",
+   "q": "What is autoregressive language modelling (ALM), and which gLMs use it?",
+   "a": "ALM predicts the next token from all preceding tokens, so the model can generate new sequences, but it only uses context from one direction. When the review was written, only HyenaDNA and Evo had used ALM, and neither is a transformer.",
+   "kw": [
+    "ALM",
+    "HyenaDNA",
+    "Evo"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformers - training",
+   "q": "What is fine-tuning, and what is the caveat for genomic models?",
+   "a": "Fine-tuning is transfer learning: a pretrained model is adjusted on a smaller, usually labelled, task-specific dataset, sometimes with the earlier layers frozen. It assumes the pretrained weights will not change much, but this is often not checked.",
+   "kw": [
+    "fine-tuning",
+    "transfer learning"
+   ],
+   "info": "Example from the review: MLM pretraining on the human genome, then fine-tuning to classify TATA promoters.",
+   "concl": "Most genomic models have not been examined to see what they learn in pretraining versus fine-tuning."
+  },
+  {
+   "type": "qa",
+   "section": "SSMs and beyond",
+   "q": "What is a state space model (SSM)?",
+   "a": "A model from control theory that represents dynamic systems with state variables. At time t it maps the input x_t to a hidden state h_t to predict y_t, and the prediction depends on the previous hidden state. An RNN is a special case of an SSM.",
+   "kw": [
+    "SSM",
+    "state space model"
+   ],
+   "info": "Trade-offs: RNNs train slowly but run inference fast. Transformers train faster but infer slowly because their cost is quadratic in sequence length, and storing the attention weights can take too much memory. Selective SSMs aim for parallel training and fast inference.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "SSMs and beyond",
+   "q": "What makes selective SSMs such as Mamba and the Hyena layer different?",
+   "a": "Selective SSMs learn a different matrix for each input that decides how much of that input enters the hidden state, so they can propagate or forget information. This, plus memory-access tricks, lets them compete with attention at a fraction of the cost. The Hyena layer builds on this idea to reach very long contexts at subquadratic cost.",
+   "kw": [
+    "Mamba",
+    "Hyena",
+    "selective SSM"
+   ],
+   "info": "So far, Hyena and Mamba layers are the only new model types applied to genomic data.",
+   "concl": "These architectures could match transformer performance at lower compute and allow larger genomic context windows."
+  },
+  {
+   "type": "qa",
+   "section": "Hybrid models and gLMs - overview",
+   "q": "In which two ways are transformers used in genomic modelling?",
+   "a": "In hybrid models, earlier layers compress a long input into a shorter but high-dimensional embedding before the transformer module, which reduces attention's quadratic cost. In transformer gLMs, the transformer runs on its own, directly on the input, when long contexts are not needed.",
+   "kw": [
+    "hybrid model",
+    "gLM"
+   ],
+   "info": "Hybrid models predict assays such as CAGE tracks and ChIP-seq, like CNN models such as DeepBind. They usually are not pretrained, so they are more task-specific and generalize less.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Hybrid models - assay prediction",
+   "q": "What is SATORI?",
+   "a": "A hybrid model that combines a convolutional layer with self-attention to model interactions between regulatory elements. It uses sparsity in the attention matrix as a proxy for covariance and was presented as interpretable.",
+   "kw": [
+    "SATORI"
+   ],
+   "info": "From Table 1: input up to 1 kb, 674,270 parameters if the RNN is included, one-hot encoding, multispecies. It infers TF-TF cooperativity. The review warns that attention is not directly interpretable.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Hybrid models - assay prediction",
+   "q": "What is Enformer?",
+   "a": "A hybrid of convolutional and transformer blocks that predicts genomic tracks (gene expression, DNA accessibility, histone modifications, TF binding) from up to about 200 kb of sequence. It has separate prediction heads for human and mouse.",
+   "kw": [
+    "Enformer"
+   ],
+   "info": "From Table 1: 196 kb input and 228 million parameters, plus 16 million for the human head and 5 million for the mouse head. Trained on ENCODE tracks. It overcomes the context limits of convolution-only models such as Basenji and ExPecto.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Hybrid models - assay prediction",
+   "q": "What did Karollus et al. find about Enformer?",
+   "a": "Despite its much larger context window, Enformer still struggled to predict the effects of distal regulatory elements such as enhancers. Its performance stayed fairly robust even when the input window was severely restricted.",
+   "kw": [
+    "Enformer",
+    "distal enhancers",
+    "receptive field"
+   ],
+   "info": "So receptive field size is not the main reason for its success. The review credits architecture (combining layer types), parameter number or training data size instead.",
+   "concl": "Models that capture distal regulators need training datasets curated for long-range signals."
+  },
+  {
+   "type": "qa",
+   "section": "Hybrid models - assay prediction",
+   "q": "How does Borzoi build on Enformer?",
+   "a": "It doubles the context window, predicts more assays, and adds RNA-seq coverage. Its main innovation is a U-Net-style architecture that upsamples the transformer output with deconvolution layers to give higher-resolution predictions.",
+   "kw": [
+    "Borzoi",
+    "U-Net",
+    "RNA-seq coverage"
+   ],
+   "info": "From Table 1: 524 kb input, 186 million parameters. Convolutional blocks first compress the input to Enformer's resolution, so attention costs about the same compute.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Hybrid models - assay prediction",
+   "q": "What does C.Origami do?",
+   "a": "It predicts cell-type-specific 3D chromatin architecture de novo from DNA sequence plus genomic signals (CTCF binding and ATAC-seq). Two encoders handle the two input types, and a transformer module integrates them before a task-specific decoder.",
+   "kw": [
+    "C.Origami",
+    "3D genome",
+    "CTCF"
+   ],
+   "info": "From Table 1: about 200 kbp input, 10 million parameters. It outperforms Orca and Akita. It enables in silico perturbation experiments and identified putative cell-type-specific regulators of 3D chromatin architecture.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformer gLMs",
+   "q": "What is DNABERT, and what was its main contribution?",
+   "a": "One of the earliest gLMs. It adapts BERT, is pretrained with MLM on overlapping k-mers, and is then fine-tuned for tasks such as promoter and TF binding site prediction. Its main contribution was bringing self-supervised pretraining to genomic data.",
+   "kw": [
+    "DNABERT",
+    "overlapping k-mers"
+   ],
+   "info": "From Table 1: 512 bp input, 110 million parameters, human only. The 512-token limit restricts long-range modelling. DNABERT-XL splits longer sequences into pieces that are processed independently. It distinguished TATA from non-TATA promoters well but is not end-to-end.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformer gLMs",
+   "q": "How does the Nucleotide Transformer differ from DNABERT?",
+   "a": "It uses non-overlapping k-mers to avoid token leakage, and its models range from 500 million to 2.5 billion parameters. The smallest is five times larger than DNABERT, and benchmarks showed that bigger models performed better.",
+   "kw": [
+    "Nucleotide Transformer",
+    "non-overlapping k-mers"
+   ],
+   "info": "Downside of non-overlapping k-mers: a single-nucleotide insertion or deletion changes the whole tokenization dramatically. Maximum input is 1,000 tokens.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformer gLMs",
+   "q": "Is it better to pretrain on many genomes from one species or on genomes from many species?",
+   "a": "Many species. In the Nucleotide Transformer, pretraining on thousands of human genomes performed worse than multi-species pretraining, even on human prediction tasks.",
+   "kw": [
+    "multi-species pretraining",
+    "evolutionary conservation"
+   ],
+   "info": "The likely reason is that multi-species models capture functional importance that is conserved across evolution.",
+   "concl": "Using evolutionarily diverse data in pretraining should improve a model's ability to capture functional relevance."
+  },
+  {
+   "type": "qa",
+   "section": "Transformer gLMs",
+   "q": "What did DNABERT-2 change?",
+   "a": "It uses multi-species pretraining and BPE tokenization instead of k-mers, plus efficiency methods such as Flash Attention. It performs comparably to the Nucleotide Transformer on several tasks with 21 times fewer parameters and much less compute.",
+   "kw": [
+    "DNABERT-2",
+    "BPE",
+    "Flash Attention"
+   ],
+   "info": "From Table 1: 128 bp input, 117 million parameters. BPE avoids the problems of both overlapping and non-overlapping k-mers and is as efficient as non-overlapping tokenization.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Transformer gLMs",
+   "q": "How does GENA-LM reach longer contexts?",
+   "a": "It uses sparse attention to reduce the quadratic cost of attention, allowing up to 4,096 tokens. With a median BPE token length of 9 bp, that covers up to 36,000 bp.",
+   "kw": [
+    "GENA-LM",
+    "sparse attention"
+   ],
+   "info": "It has BPE tokenization and both human-only and multi-species versions. From Table 1: up to 4.5 kb input with 336 million parameters using full attention, or 36 kb with 110 million parameters using sparse attention. No interpretability method is reported.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Beyond the transformer",
+   "q": "Is the attention mechanism really why transformers succeed?",
+   "a": "It is unclear. Success may come from attention itself, or attention may simply have let these models scale faster. Pretraining, which is not unique to transformers, might contribute most.",
+   "kw": [
+    "attention",
+    "pretraining"
+   ],
+   "info": "If pretraining is the main driver, other architectures could replace the transformer in NLP, proteomics and genomics.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Beyond the transformer",
+   "q": "What is GPN (genomic pretrained network)?",
+   "a": "A gLM that keeps the transformer encoder architecture but replaces attention with convolutions. It is pretrained with MLM on single-nucleotide tokens from eight Brassicales reference genomes from NCBI Genome. Without supervision, it learned non-coding variant effects and outperformed supervised models such as DeepSEA.",
+   "kw": [
+    "GPN",
+    "Brassicales",
+    "variant effect prediction"
+   ],
+   "info": "Its 512 bp training windows were not sampled evenly from the genome. They were the union of exons (with a small intronic flank), promoters (1,000 bp upstream of the TSS) and a matching number of random windows. The authors say this may have helped but show no experiments to support it. From Table 1: over 65 million parameters, dilated convolutions.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Beyond the transformer",
+   "q": "What is HyenaDNA?",
+   "a": "A decoder-only gLM in which the Hyena operator replaces attention. It is trained with ALM and has a 1 million nucleotide context, 500 times larger than the Nucleotide Transformer. It reached state-of-the-art performance on all eight GenomicBenchmarks datasets.",
+   "kw": [
+    "HyenaDNA",
+    "Hyena operator",
+    "GenomicBenchmarks"
+   ],
+   "info": "It was trained on only one human reference genome. From Table 1: up to 6.6 million parameters, single-nucleotide tokens. The review is inconsistent about the context comparison: here it says 500 times larger than the Nucleotide Transformer, but the Limitations section says the Nucleotide Transformer's 1,000 tokens is 1,000 times smaller than HyenaDNA's window.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Beyond the transformer",
+   "q": "What is Evo, and what can it do?",
+   "a": "A gLM trained on whole prokaryotic genomes. It uses StripedHyena, a mix of attention layers and Hyena layers. Zero-shot, it predicts fitness effects of non-coding RNA mutations (ncRNA deep mutational scanning), gene expression from promoter-RNA binding site pairs, and gene essentiality.",
+   "kw": [
+    "Evo",
+    "StripedHyena",
+    "scaling laws"
+   ],
+   "info": "Mutations in essential genes cause larger changes in negative log likelihood. Evo's authors were the first to run scaling-law experiments to justify their architecture over Mamba, Hyena and efficient transformer variants. Scaling laws, in which more data and bigger models give proportionally better performance, have not yet been robustly shown for gLMs.",
+   "concl": "Evo was tested only on prokaryotic data, which is much less complex than eukaryotic data, so its results may not carry over to eukaryotic DNA."
+  },
+  {
+   "type": "qa",
+   "section": "A comparison",
+   "q": "How do gLM embeddings compare with supervised models?",
+   "a": "When evaluated on their pretrained embeddings, gLMs often underperform supervised models. This is partly because they aim for general representations rather than accuracy on one task, and partly because their pretraining tasks may be poorly designed.",
+   "kw": [
+    "zero-shot learning",
+    "supervised baseline"
+   ],
+   "info": "gLMs have more parameters and need more pretraining data. If a smaller, cheaper model can beat them, there is little reason to train a gLM.",
+   "concl": "The authors recommend comparing gLMs in zero-shot settings, with supervised hybrid models as the baseline. A gLM's zero-shot performance should match hybrid models, and fine-tuned it should beat them on more tasks."
+  },
+  {
+   "type": "qa",
+   "section": "A comparison",
+   "q": "Which benchmarks exist for comparing gLMs?",
+   "a": "GenomicBenchmarks and Genome Understanding Evaluation (GUE) test fine-tuned performance. BEND tests zero- and few-shot performance, either directly from the embeddings or by training a shallow CNN on top of frozen gLM embeddings.",
+   "kw": [
+    "BEND",
+    "GUE",
+    "GenomicBenchmarks"
+   ],
+   "info": "For variant effect prediction, the cosine distance between the embeddings of the reference and variant sequences can indicate a functional difference. Annotation tasks such as enhancer annotation use the shallow-CNN approach.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "A comparison",
+   "q": "What did the BEND benchmark show?",
+   "a": "Current gLMs show promise but do not consistently beat supervised baselines. The Nucleotide Transformer Multi-Species and the original DNABERT had the best zero- and few-shot embeddings, approaching hybrid models such as Enformer and Basset.",
+   "kw": [
+    "BEND",
+    "Nucleotide Transformer",
+    "DNABERT"
+   ],
+   "info": "The Nucleotide Transformer did best at gene finding and enhancer annotation. DNABERT did best at chromatin accessibility and histone modification prediction. Designing and curating gLM benchmarks is still an open research area.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - long-range interactions",
+   "q": "Can current models capture long-range regulatory interactions?",
+   "a": "Hybrid models still cannot, even though context windows keep growing. Borzoi seems better at ranking distal regulatory elements by gene-specific enhancer activity (CRISPR screen data), but it has not been tested with a strongly reduced input size.",
+   "kw": [
+    "long-range interactions",
+    "eQTL",
+    "Borzoi"
+   ],
+   "info": "Transformer gLMs without downsampling or efficient attention are limited by their context window. Even the 2.5 billion parameter Nucleotide Transformer reaches only 1,000 tokens.",
+   "concl": "Bigger context windows must be paired with datasets curated for distal effects (distal eQTLs, distal enhancers and repressors). Non-attention gLMs (HyenaDNA, Evo, GPN) are a promising route."
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - cell type specificity and data privacy",
+   "q": "What is the problem with cell type specificity in hybrid models?",
+   "a": "Hybrid models are usually trained on ENCODE data pooled across many cell lines, or fine-tuned without regard to cell type. Their predictions therefore ignore cell-to-cell variation in accessibility, chromatin conformation, expression and TF binding.",
+   "kw": [
+    "cell type specificity",
+    "ENCODE"
+   ],
+   "info": "Some transformer models use transfer learning to reduce cross-cell-line bias, but this is not yet common.",
+   "concl": "The authors suggest using the prompting abilities of generative gLMs to set cell-type-specific contexts for predictions."
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - cell type specificity and data privacy",
+   "q": "Why is data privacy a concern for gLMs?",
+   "a": "Genetic information is unique, so people can be re-identified even from anonymized genomic datasets. The risk grows as models are used on private and clinical data.",
+   "kw": [
+    "data privacy",
+    "differential privacy",
+    "federated learning"
+   ],
+   "info": "Suggested solutions: stronger de-identification and privacy-preserving algorithms such as differential privacy and federated learning.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - interpretability",
+   "q": "Why are attention scores not enough to interpret transformers?",
+   "a": "Raw attention scores use only the query-key inner product and ignore the values. Aggregating across layers or heads ignores how information also flows through add-and-norm layers and skip connections, and averaging over heads dilutes the signal because heads contribute unequally.",
+   "kw": [
+    "attention scores",
+    "interpretability"
+   ],
+   "info": "Enformer, DNABERT and C.Origami all used attention scores to show they capture biological signal. SATORI's authors claimed it was inherently interpretable because of attention alone.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - interpretability",
+   "q": "Which interpretability methods do the authors recommend instead?",
+   "a": "Attention flow, attention rollout, classic and partial layer-wise relevance propagation (LRP), an LRP adaptation for transformers that combines attention across heads, and model-agnostic SHAP or WeightedSHAP.",
+   "kw": [
+    "LRP",
+    "SHAP",
+    "attention rollout"
+   ],
+   "info": "SHAP measures each feature's contribution to a prediction by averaging uniformly over feature subsets. WeightedSHAP lets more important features be weighted more. Among non-transformer gLMs, only GPN reported any interpretability: motifs from its convolutional blocks, compared with known motifs as PWMs or logos. HyenaDNA has none.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - compute requirements",
+   "q": "How did the authors compare the compute needed to train these models?",
+   "a": "With OpenAI's PFS-day measure: number of GPUs x petaflops per hardware x days trained x estimated utilization, assuming 33% GPU utilization. One PFS-day is 10^15 operations per second for one day, about 10^20 operations.",
+   "kw": [
+    "PFS-days",
+    "compute"
+   ],
+   "info": "The baseline is USD 5,000 of compute: eight rented A100 GPUs at USD 8.80 per hour. GENA-LM and Evo were left out because there was not enough data.",
+   "concl": "Most models can be trained for USD 5,000, but of the most discussed models (DNABERT, Enformer, Nucleotide Transformer, HyenaDNA) only DNABERT fits that budget. Even the more efficient HyenaDNA costs more than most academic labs can afford."
+  },
+  {
+   "type": "qa",
+   "section": "Limitations - pretraining task design",
+   "q": "What is wrong with current gLM pretraining tasks?",
+   "a": "They were taken from NLP with little thought for biological relevance or for how DNA differs from natural language, so they may not capture meaningful biological signals. A badly designed pretraining task is just an unnecessary computational cost.",
+   "kw": [
+    "pretext task",
+    "phylogenetic augmentation"
+   ],
+   "info": "One biologically informed alternative is phylogenetic augmentation. It treats evolutionarily related sequences as different views of the same sequence and learns representations that maximize the mutual information between them and their conserved function.",
+   "concl": "All the gLMs reviewed use MLM or ALM with minimal biological adaptation, and early studies of their pretraining effectiveness were not favourable."
+  },
+  {
+   "type": "qa",
+   "section": "Future directions",
+   "q": "Do gLMs actually learn genomic grammar during pretraining?",
+   "a": "Not clearly. One study of BERT models in genomics found that k-mer embeddings from random data performed comparably on downstream tasks to embeddings pretrained on real biological sequences.",
+   "kw": [
+    "pretraining validation",
+    "k-mer embeddings"
+   ],
+   "info": "The authors suggest comparing pretrained-then-fine-tuned models with randomly initialized-then-fine-tuned models. They also question pretraining on whole genomes: repetitive non-coding DNA makes up nearly half of the human genome and may drown out rarer but more important regions.",
+   "concl": "Pretraining tasks must be well designed and validated to show that real genomic grammar is captured."
+  },
+  {
+   "type": "qa",
+   "section": "Future directions",
+   "q": "Where do the authors expect the field to go?",
+   "a": "Toward non-attention architectures (Hyena, Mamba, StripedHyena) and hybrids of attention with SSM-like layers, models that integrate multi-omic data, and possibly diffusion-based training, following trends in protein modelling.",
+   "kw": [
+    "diffusion models",
+    "multi-omics",
+    "Mamba"
+   ],
+   "info": "DNA diffusion models already show promise for modelling regulatory elements. Single-cell RNA-seq language models follow similar principles but were outside the review's scope.",
+   "concl": "The authors hope for more multi-species pretraining, biologically motivated pretext tasks aligned with downstream tasks, more emphasis on zero-shot performance, and better interpretation of models in genomic contexts."
+  },
+  {
+   "type": "note",
+   "section": "Beyond the transformer",
+   "text": "Is attention itself what makes transformers succeed, or is it pretraining and scaling? If pretraining is the key, cheaper architectures such as Hyena or Mamba could replace transformers for long genomic contexts."
+  },
+  {
+   "type": "note",
+   "section": "Limitations - long-range interactions",
+   "text": "Would Borzoi keep its apparent ability to use distal enhancers if its input were cut down, as Karollus et al. did for Enformer? And what would a dataset curated for distal eQTLs, enhancers and repressors look like?"
+  },
+  {
+   "type": "note",
+   "section": "Future directions",
+   "text": "Multi-species pretraining beat many-human-genome pretraining, yet HyenaDNA used one human genome and Evo only prokaryotes. Worth checking how well gLM pretraining transfers to non-model eukaryotic genomes."
+  }
+ ]
+}

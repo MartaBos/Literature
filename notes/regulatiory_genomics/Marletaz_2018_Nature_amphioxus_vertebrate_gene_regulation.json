@@ -1,0 +1,580 @@
+{
+ "id": "Marletaz_2018",
+ "title": "Amphioxus functional genomics and the origins of vertebrate gene regulation",
+ "link": "https://doi.org/10.1038/s41586-018-0734-6",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Marletaz_2018_Nature_amphioxus_vertebrate_gene_regulation.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What did this paper set out to do?",
+   "a": "They sequenced the genome of the Mediterranean amphioxus (Branchiostoma lanceolatum) and profiled DNA methylation, chromatin accessibility, histone modifications and transcriptomes across developmental stages and adult tissues. The aim was to see how regulation of the chordate genome evolved, especially after the vertebrate whole-genome duplications.",
+   "kw": [
+    "amphioxus",
+    "Branchiostoma lanceolatum",
+    "functional genomics"
+   ],
+   "info": "Amphioxus was compared with zebrafish, medaka, frog, chicken and mouse.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What were the main findings in short?",
+   "a": "They found an intermediate stage in the evolution of differentially methylated enhancers, and strong conservation of gene expression and cis-regulatory logic between amphioxus and vertebrates, highest at an earlier mid-embryonic phylotypic period. In vertebrates, over 80% of broadly expressed gene families with multiple WGD-derived paralogues have members that restricted their ancestral expression.",
+   "kw": [
+    "phylotypic period",
+    "WGD",
+    "specialization"
+   ],
+   "info": "Counter-intuitively, paralogues that restricted their expression gained more complex regulatory landscapes, not simpler ones.",
+   "concl": "After WGD, specialization was more common than subfunctionalization."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is the 2R hypothesis?",
+   "a": "Two rounds of whole-genome duplication (WGD) happened at the base of the vertebrate lineage and reshaped the gene complement. This is the biggest genomic difference between vertebrates and non-vertebrate chordates.",
+   "kw": [
+    "2R hypothesis",
+    "WGD"
+   ],
+   "info": "WGDs are thought to have helped vertebrate morphological innovation, partly because 'developmental' gene families and transcription factors were preferentially retained. But duplicates and their regulatory elements started out identical, so they could not drive innovation without regulatory or protein-coding changes.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Which genomic traits are characteristic of vertebrates and linked to gene regulation?",
+   "a": "Unusually large intergenic and intronic regions, high global 5-methylcytosine (5mC) content, and 5mC-dependent regulation of embryonic transcriptional enhancers.",
+   "kw": [
+    "5mC",
+    "intergenic regions"
+   ],
+   "info": "How the vertebrate WGDs affected gene regulation, both for duplicate gene fates and for these traits, was poorly understood.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What was the gap with previous comparative regulatory studies?",
+   "a": "Comparisons were either too short (human vs mouse) or too long (human vs fly or nematode). The modENCODE human-fly-nematode comparison found no detectable cis-regulatory conservation and very little conservation of gene expression.",
+   "kw": [
+    "modENCODE",
+    "outgroup"
+   ],
+   "info": "Fly and nematode genomes are also highly derived. What was missing was functional genomic data from a slow-evolving, closely related outgroup to vertebrates.",
+   "concl": "Amphioxus fills this gap: it is a chordate with the basic vertebrate body plan but without the vertebrate specializations and WGDs."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional genome annotation of amphioxus",
+   "q": "What does the new B. lanceolatum genome assembly look like?",
+   "a": "It was assembled de novo at 150x coverage. Total size is 495.4 Mbp, scaffold N50 is 1.29 Mbp and 4% is gaps.",
+   "kw": [
+    "genome assembly",
+    "N50"
+   ],
+   "info": "The 25-mer spectrum was bimodal, which is typical of highly polymorphic species, so haplotypes had to be reconciled (see Methods).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional genome annotation of amphioxus",
+   "q": "Which datasets did they generate for amphioxus?",
+   "a": "52 sample types (94 samples including replicates) across eight functional-genomic datasets: RNA-seq, CAGE-seq, ATAC-seq, ChIP-seq for H3K27ac, H3K4me3 and H3K27me3, and MethylC-seq/RRBS. They cover 16 developmental stages (egg to premetamorphic larva) and 9 adult tissues.",
+   "kw": [
+    "ATAC-seq",
+    "ChIP-seq",
+    "CAGE-seq"
+   ],
+   "info": "The 9 adult tissues are hepatic diverticulum, neural tube, muscle, gill bars, gut, testis, ovary, skin and cirri. Equivalent datasets were also made for zebrafish and medaka. Everything is in a UCSC track hub (amphiencode.github.io), alongside a Genomicus synteny server.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional genome annotation of amphioxus",
+   "q": "What are APREs?",
+   "a": "ATAC-seq-defined putative cis-regulatory elements. They identified 88,391 APREs in amphioxus, along with 20,569 protein-coding genes supported by orthology.",
+   "kw": [
+    "APRE",
+    "ATAC-seq"
+   ],
+   "info": "APREs were split into promoter (1 kb upstream to 0.5 kb downstream of a TSS), gene body, proximal (within 5 kb upstream of a TSS, not overlapping it) and distal (everything else).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional genome annotation of amphioxus",
+   "q": "How do amphioxus and zebrafish APREs differ in number and location?",
+   "a": "Zebrafish had 256,018 potential regulatory regions, with a significantly higher proportion of distal APREs (P < 2.2e-16, one-sided Fisher's exact test). All vertebrates had a larger APRE-to-TSS distance than amphioxus, even after correcting for intergenic length.",
+   "kw": [
+    "distal enhancers",
+    "TSS distance"
+   ],
+   "info": "Mann-Whitney tests gave P < 2.2e-16 for every vertebrate vs amphioxus comparison.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Functional genome annotation of amphioxus",
+   "q": "How did they validate that APREs are real enhancers?",
+   "a": "APREs were enriched for enhancer-associated chromatin marks that changed a lot during development. They drove GFP expression in zebrafish or amphioxus transgenic assays in 93% of cases (14/15), and 89% (32/36) of previously reported amphioxus enhancers overlapped APREs.",
+   "kw": [
+    "reporter assay",
+    "enhancer validation",
+    "Pax1/9"
+   ],
+   "info": "Example: Pax1/9-126 drove GFP in the pharyngeal arches of 26-hpf zebrafish embryos (4/4).",
+   "concl": "A large fraction of APREs probably act as developmentally regulated transcriptional enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Disentangling vertebrate bidirectional promoters",
+   "q": "What do amphioxus core promoters look like?",
+   "a": "CAGE-seq at single-nucleotide resolution showed that amphioxus promoters mix pan-metazoan, pan-vertebrate and unique features.",
+   "kw": [
+    "core promoter",
+    "CAGE-seq",
+    "TATA box"
+   ],
+   "info": "Features examined: TATA box, YY1 motif, GC/AT content, SS and WW dinucleotides, first exons and nucleosome positioning. Ubiquitous promoters show a nucleosome positioned downstream of the TSS (12-bp W/S periodicity). Details are mostly in the Supplementary Information.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Disentangling vertebrate bidirectional promoters",
+   "q": "How common are bidirectional promoters in amphioxus compared with vertebrates?",
+   "a": "In amphioxus, 25% (3,950/15,884) of neighbouring protein-coding genes were arranged in bidirectional promoters. By CAGE-seq the fraction was 12.83% (1,752/13,654) in mouse and 7.84% (1,098/14,014) in zebrafish.",
+   "kw": [
+    "bidirectional promoters"
+   ],
+   "info": "In amphioxus they were most common among ubiquitous promoters, were enriched for housekeeping functions, and the distance between paired promoters showed periodicity (integral nucleosome spacing). The amphioxus denominator is neighbouring genes while the vertebrate ones are CAGE promoters, so the numbers are not strictly like-for-like.",
+   "concl": "Ancestral bidirectional promoters were disentangled after each round of WGD (two in tetrapods, three in teleosts)."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Disentangling vertebrate bidirectional promoters",
+   "q": "When were ancestral bidirectional promoters lost?",
+   "a": "Most of 372 putatively ancestral bidirectional promoters were lost in vertebrates, especially in stem vertebrates (54.5%). Only 5.3% were amphioxus-specific losses.",
+   "kw": [
+    "bidirectional promoters",
+    "microsynteny"
+   ],
+   "info": "Ancestral status was inferred from CAGE-seq or microsynteny (neighbouring genes in 5' to 5' orientation).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Developmental DNA demethylation of APREs",
+   "q": "What does DNA methylation look like in the amphioxus genome?",
+   "a": "As in other non-vertebrates, CpG methylation is very low and nearly all 5mC sits in gene bodies. Gene-body methylation correlates positively with expression and negatively with H3K27me3, H3K4me3 and CpG density.",
+   "kw": [
+    "5mC",
+    "gene-body methylation"
+   ],
+   "info": "Comparison set: oyster mantle, amphioxus 8 hpf and zebrafish 1,000-cell stage, with roughly 14.8, 19.7 and 39.0 million CpGs measured.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Developmental DNA demethylation of APREs",
+   "q": "Does global 5mC change during amphioxus development?",
+   "a": "Yes. As in zebrafish and frogs, global 5mC levels decrease during development, coinciding with the onset of expression of the amphioxus TET demethylase orthologue.",
+   "kw": [
+    "TET",
+    "demethylation"
+   ],
+   "info": "DMRs between stages: 768 and 701 (8 vs 15 hpf), 1,066 and 1,025 (15 vs 36 hpf), and 22,333 hypermethylated at 36 hpf vs liver and 4,154 the reverse.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Developmental DNA demethylation of APREs",
+   "q": "How did they test whether 5mC dynamics have regulatory potential?",
+   "a": "They took adult hepatic diverticulum-specific APREs that are inactive during development and clustered them by 5mC. This gave two subsets: one hypomethylated only in the hepatic tissue (cluster 1, 1,114 genes) and one constitutively hypomethylated (cluster 2, 1,594 genes).",
+   "kw": [
+    "differentially methylated APREs",
+    "k-means"
+   ],
+   "info": "Embryo-specific APREs did not split this way. Cluster 1 APREs were also robustly hypomethylated in other adult tissues, suggesting organism-wide demethylation in adults.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Developmental DNA demethylation of APREs",
+   "q": "Which TF motifs and genes are associated with the hepatic-specific APREs?",
+   "a": "Both clusters were enriched for motifs of liver-specific TFs such as Hnf4a and broadly expressed TFs such as Foxa, a pioneer factor that helps remove 5mC at regulatory regions in mammals. Both were linked to metabolic genes.",
+   "kw": [
+    "Hnf4a",
+    "Foxa",
+    "pioneer factor"
+   ],
+   "info": "Only cluster 1 (hepatic-specific hypomethylation) APREs were associated with genes with steady, widespread expression, and they were mostly inside gene bodies.",
+   "concl": "Demethylation may help mark adult-specific enhancers within continuously hypermethylated gene bodies, the typical non-vertebrate context."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Developmental DNA demethylation of APREs",
+   "q": "Are any of these differentially methylated APREs conserved in zebrafish?",
+   "a": "14 zebrafish gene families had differentially methylated intronic APREs orthologous to the amphioxus ones. Four of them encode Hippo pathway components, including the effectors Yap (yap1, wwtr1) and Tead (tead1a, tead3a).",
+   "kw": [
+    "Hippo pathway",
+    "yap1",
+    "tead"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The hourglass model and chordate embryogenesis",
+   "q": "What is the hourglass model and phylotypic period?",
+   "a": "Comparisons of vertebrate transcriptomes found a mid-development period of maximal similarity in gene expression, the phylotypic period, as the hourglass model predicts. Earlier comparisons with tunicates and amphioxus had not found a phylotypic period shared by all chordates.",
+   "kw": [
+    "hourglass model",
+    "phylotypic period"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - The hourglass model and chordate embryogenesis",
+   "q": "When is the chordate phylotypic period, according to this paper?",
+   "a": "Stage-by-stage RNA-seq comparisons of amphioxus with zebrafish, medaka, frog and chicken consistently gave the highest similarity at the amphioxus neurula, 4-7-somite stage (18-21 hpf). This is slightly earlier than the period reported for vertebrates.",
+   "kw": [
+    "Jensen-Shannon distance",
+    "neurula"
+   ],
+   "info": "Matching vertebrate periods: zebrafish 15-20 hpf, frog stages 16-19, chicken HH 6-19, medaka 20-26 hpf (from the figure). Error bars come from 100 bootstrap resamplings of orthologue sets of about 5,300-5,900 genes. The result held with Euclidean, Manhattan and Spearman distances.",
+   "concl": "There is a shared chordate phylotypic period, earlier than the vertebrate one."
+  },
+  {
+   "type": "qa",
+   "section": "Results - The hourglass model and chordate embryogenesis",
+   "q": "Does the hourglass pattern also show up at the regulatory level?",
+   "a": "Yes. Correlating TF motif enrichment in stage-specific dynamic APREs between zebrafish and amphioxus also supported an earlier hourglass. In contrast, sequence conservation of the same APREs among amphioxus species was higher after the putative phylotypic period.",
+   "kw": [
+    "TF motif z-scores",
+    "phastCons"
+   ],
+   "info": "Active APREs per stage: 5,282 (8 hpf), 17,387 (15 hpf), 21,089 (36 hpf), 22,674 (60 hpf), 16,551 (hepatic).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory conservation shapes chordate body plan",
+   "q": "How conserved is adult tissue gene expression between amphioxus and zebrafish?",
+   "a": "Embryo transcriptome comparisons and NACC showed high conservation of expression and gene function. WGCNA modules across tissues had many amphioxus-zebrafish pairs with highly significant orthologue overlap, including cilium, neural, muscle, gut, liver, skin and metabolism modules.",
+   "kw": [
+    "WGCNA",
+    "NACC",
+    "co-expression modules"
+   ],
+   "info": "Example: the cilium modules (1,681 zebrafish and 261 amphioxus genes) are highly expressed in organs with ciliated cells, such as spermatozoa and gill bars, and are enriched for cilium GO terms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Regulatory conservation shapes chordate body plan",
+   "q": "Is cis-regulatory logic conserved between matched modules too?",
+   "a": "Yes. Many module pairs had significantly correlated TF motif enrichment scores, and the top motifs in each module were very consistent between amphioxus and zebrafish.",
+   "kw": [
+    "cis-regulatory logic",
+    "RFX",
+    "HNF1A"
+   ],
+   "info": "Examples from the figure: RFX1/2/4/7 in the cilium modules, HNF1A/HNF4G in the gut-hepatic/intestine modules, GRHL2 in skin. Correlations used 242 motif super-families.",
+   "concl": "Both expression and its cis-regulatory logic are conserved across chordate adult tissues."
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher regulatory information in vertebrate genomes",
+   "q": "Do vertebrate genes have more regulatory elements than amphioxus genes?",
+   "a": "Yes. Zebrafish had significantly more APREs per gene regulatory landscape (GREAT region) than amphioxus at comparable pre-phylotypic stages (15 hpf amphioxus vs 8-somite zebrafish; 6,047 vs 9,239 genes).",
+   "kw": [
+    "GREAT",
+    "regulatory landscape"
+   ],
+   "info": "The same held for all developmental stages, for medaka and mouse, and after down-sampling vertebrate ATAC-seq coverage.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher regulatory information in vertebrate genomes",
+   "q": "What are ohnologues and how do their APRE numbers look?",
+   "a": "Ohnologues are gene copies retained from the WGDs. The vertebrate-amphioxus difference in APREs is strongest for families with multiple ohnologues, and APRE numbers are very uneven between copies, with marked regulatory expansion in some.",
+   "kw": [
+    "ohnologues",
+    "trans-dev genes"
+   ],
+   "info": "The share of trans-dev genes rises with ohnologue number: 1.77% (1:1), 6.57% (1:2), 12.31% (1:3), 14.84% (1:4). Trans-dev genes had more peaks than housekeeping genes in all species. 4C-seq on 58 genes from 11 trans-dev families in amphioxus, zebrafish and mouse agreed.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - Higher regulatory information in vertebrate genomes",
+   "q": "Is the extra regulatory content just due to bigger vertebrate genomes?",
+   "a": "No. More APREs did go with larger intergenic regions in zebrafish, but genes matched for GREAT-region or intergenic size still had more APREs in zebrafish. The difference was largest for genes with large regulatory landscapes (>50 kb).",
+   "kw": [
+    "genome size",
+    "stratification"
+   ],
+   "info": "Matched sets: 10,186 gene pairs by GREAT size and 13,941 by intergenic size (within 500 bp). Pearson r between APRE number and GREAT size was 0.57 in amphioxus vs 0.79-0.88 in vertebrates, so larger regions in amphioxus do not gain regulatory complexity at the same rate.",
+   "concl": "Regulatory regions, especially distal ones, increased a lot during vertebrate evolution (and/or decreased in amphioxus), and some ohnologues gained more than others."
+  },
+  {
+   "type": "qa",
+   "section": "Results - More-complex regulation in specialized ohnologues",
+   "q": "What is the DDC model and what does it predict?",
+   "a": "Under the duplication-degeneration-complementation model, duplicates are retained through reciprocal loss of regulatory elements, so each paralogue keeps a subset of the ancestral expression pattern. Each paralogue should be more restricted than the unduplicated outgroup gene, but their sum should not be.",
+   "kw": [
+    "DDC model",
+    "subfunctionalization"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - More-complex regulation in specialized ohnologues",
+   "q": "How did they test expression domain changes after WGD?",
+   "a": "They binarized expression (on/off) in nine homologous domains in amphioxus, zebrafish, frog and mouse. Genes that returned to single copy showed no bias vs amphioxus, but individual ohnologues often had far more restricted expression than their single amphioxus orthologue.",
+   "kw": [
+    "binarized expression",
+    "tau index"
+   ],
+   "info": "Zebrafish set: 2,478 1-to-1 pairs and 3,427 ohnologue pairs in 1,135 families. The symmetric pattern came back when all ohnologues in a family were combined (union) or when raw expression was summed. Tau values gave similar results.",
+   "concl": "This fits DDC, but also fits a specialization model."
+  },
+  {
+   "type": "qa",
+   "section": "Results - More-complex regulation in specialized ohnologues",
+   "q": "How did they define redundancy, subfunctionalization and specialization?",
+   "a": "They used families where both the amphioxus orthologue and the union of vertebrate ohnologues are expressed in all nine domains. Redundancy: all paralogues expressed everywhere. Subfunctionalization: no paralogue expressed everywhere. Specialization: at least one paralogue expressed everywhere and at least one not.",
+   "kw": [
+    "specialization",
+    "subfunctionalization",
+    "redundancy"
+   ],
+   "info": "Specialized ohnologues were further split into spec. equal (all domains kept), spec. mild (lost some, kept more than 2) and spec. strong (2 or fewer domains left).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - More-complex regulation in specialized ohnologues",
+   "q": "Which fate is most common for ohnologues with broad ancestral expression?",
+   "a": "In all three vertebrates, 80-88% of families were subfunctionalized or specialized, so at least one member lost ancestral domains. Specialization was consistently more frequent than subfunctionalization.",
+   "kw": [
+    "specialization"
+   ],
+   "info": "Results were very similar for zebrafish, frog and mouse.",
+   "concl": "Specialization, not subfunctionalization, is the main fate after WGD."
+  },
+  {
+   "type": "qa",
+   "section": "Results - More-complex regulation in specialized ohnologues",
+   "q": "What are the features of strongly specialized ohnologues?",
+   "a": "They more often kept expression in neural tissues and were generally not expressed in extra vertebrate-specific tissues. They also had the fastest sequence evolution (lower human-mouse similarity, higher dN/dS).",
+   "kw": [
+    "neofunctionalization",
+    "dN/dS"
+   ],
+   "info": "The authors read the fast evolution as coding-sequence optimization for a specific tissue and/or neofunctionalization. Validated with in situ hybridization, e.g. Chordc1, Itgb1bp2, Rab11.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - More-complex regulation in specialized ohnologues",
+   "q": "Do specialized ohnologues have fewer regulatory elements, as you might expect?",
+   "a": "No. Ohnologues that lost expression domains had significantly more APREs than those keeping full ancestral expression, and the more domains were lost, the more APREs there were.",
+   "kw": [
+    "regulatory remodelling",
+    "APRE"
+   ],
+   "info": "",
+   "concl": "Specialization after WGD happens mainly through complex remodelling of regulatory landscapes and recruitment of new tissue-specific elements, not through loss of ancestral enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude about methylation-dependent enhancer regulation?",
+   "a": "Differential demethylation activating APREs in adult tissues was thought to be vertebrate-specific but exists in amphioxus. There it is mostly in gene bodies of widely expressed genes.",
+   "kw": [
+    "enhancer demethylation",
+    "co-option"
+   ],
+   "info": "They propose it began as a way to define enhancers in a hypermethylated intragenic context and was later co-opted to distal intergenic enhancers in hypermethylated vertebrate genomes. Other non-vertebrates may show it once similar multi-omics data exist.",
+   "concl": "Amphioxus shows an intermediate stage in the evolution of differentially methylated enhancers."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What is the overall model for how WGDs shaped vertebrate gene regulation?",
+   "a": "The two WGDs expanded and diversified gene repertoires and also let extra copies specialize in function and expression by increasing the complexity of their regulatory landscapes. Specialization went with faster protein evolution and more, not fewer, regulatory elements.",
+   "kw": [
+    "WGD",
+    "regulatory complexity"
+   ],
+   "info": "This increased the repertoire of tightly regulated genes, which may have contributed to tissue-specific evolution.",
+   "concl": "The authors suggest these regulatory landscape changes underpinned vertebrate morphological specializations."
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and genome sequencing",
+   "q": "How were amphioxus embryos and genomic DNA obtained?",
+   "a": "Gametes were collected by heat stimulation, and embryos came from in vitro fertilization cultured at 19 °C. Genomic DNA was from a single adult male collected at Argeles-sur-Mer, France.",
+   "kw": [
+    "heat stimulation"
+   ],
+   "info": "Zebrafish (AB strain) and medaka (Cab strain) embryos were used in pools, so sex was not determined.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Animals and genome sequencing",
+   "q": "How was the genome assembled?",
+   "a": "Illumina libraries with a range of insert sizes (897 million reads, 150x paired-end coverage) were assembled into a diploid assembly with SOAPdenovo (v2.04, k-mer 71). After gap closing, haplotypes were reconciled with HaploMerger.",
+   "kw": [
+    "SOAPdenovo",
+    "HaploMerger"
+   ],
+   "info": "Sequencing was done at Genoscope. GapCloser v1.12 was used for gap closing.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Genome annotation",
+   "q": "How were genes, repeats and lncRNAs annotated?",
+   "a": "Strand-specific RNA-seq (4.16 billion reads; 16 stages, 9 tissues) was assembled with Trinity and PASA, gene models built with Augustus and refined with EVM, plus a parallel TopHat2/Cufflinks/TransDecoder pipeline. Reconciled models gave 218,070 transcripts from 90,927 loci, of which 20,569 were protein-coding with homologues in other species.",
+   "kw": [
+    "Trinity",
+    "PASA",
+    "EVM"
+   ],
+   "info": "Repeats were annotated with RepeatMasker using a RepeatModeler custom library. lncRNAs were transcripts with no coding potential by CPAT (trained on zebrafish) and no HMM hits to NR or PFAM.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Comparative genomics",
+   "q": "How were gene families and ohnologues defined?",
+   "a": "Gene families were built with OMA (v1.0.5) and merged when they shared Ensembl paralogues of Euteleostomi or Vertebrata ancestry. High-confidence ohnologue families had two to four copies in three of five non-teleost vertebrates and went through phylogenetic reconciliation.",
+   "kw": [
+    "OMA",
+    "ohnologues"
+   ],
+   "info": "For sequence conservation, B. floridae, B. belcheri and B. lanceolatum were aligned with LASTZ and scored with phastCons.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Comparative transcriptomics",
+   "q": "How were transcriptomes compared across species?",
+   "a": "Expression was quantified with Kallisto (v0.42.4) against Ensembl transcriptomes, summing isoform TPMs per gene. Distances between stages were Jensen-Shannon distances on quantile-normalized TPMs of single-copy orthologues, with 100 bootstrap replicates.",
+   "kw": [
+    "Kallisto",
+    "Jensen-Shannon distance",
+    "Mfuzz"
+   ],
+   "info": "Temporal clusters came from Mfuzz on cRPKMs over 8 matched stages. Co-expression modules came from WGCNA (v1.62, default parameters) on 17 amphioxus and 27 zebrafish samples. Overlaps were tested with upper-tail hypergeometric tests.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Comparative transcriptomics",
+   "q": "What is NACC?",
+   "a": "Neighbourhood analysis of conserved co-expression compares heterogeneous, non-matched sample sets across species. For each orthologue pair, it compares distances to each gene's 20 closest co-expressed genes and to their reciprocal orthologues in the other species.",
+   "kw": [
+    "NACC"
+   ],
+   "info": "Run for families with one amphioxus member and up to eight zebrafish members, with randomized orthology as a control. Lower NACC means more conserved relative expression.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Regulatory profiling",
+   "q": "How were ATAC-seq and ChIP-seq done and processed?",
+   "a": "ATAC-seq had two biological replicates per sample (about 66, 83 and 78 million reads for amphioxus, zebrafish and medaka). Reads were mapped with Bowtie2, nucleosome-free pairs (insert < 120 bp) were kept, peaks were called with MACS2, and replicability was assessed with IDR.",
+   "kw": [
+    "MACS2",
+    "Bowtie2",
+    "IDR"
+   ],
+   "info": "ChIP-seq used Abcam antibodies (H3K4me3 ab8580, H3K27ac ab4729, H3K27me3 ab6002) on embryos fixed in 2% formaldehyde, about 30 million reads per library, MACS2 defaults. 8-hpf H3K27me3 had only one replicate. Nucleosome positions came from NucleoATAC.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Regulatory profiling",
+   "q": "How were 4C-seq, methylation and CAGE data generated?",
+   "a": "4C-seq: DpnII and Csp6 digestion, primers at TSSs, about 5 million reads per replicate, interactions called with peakC. MethylC-seq: bisulfite conversion (about 73 million reads per sample). RRBS used MspI digestion (about 46 million reads). CAGE: non-amplifying non-tagging protocol, with TSS clustering in CAGEr.",
+   "kw": [
+    "4C-seq",
+    "RRBS",
+    "CAGEr"
+   ],
+   "info": "Bisulfite reads were mapped to an in silico converted genome. CAGE consensus clusters were grouped by expression with a self-organizing map. Mouse CAGE came from FANTOM5. The muscle CAGE sample failed QC and was excluded.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Cis-regulatory comparisons",
+   "q": "How were APREs assigned to genes and TF motifs scanned?",
+   "a": "APREs were assigned to the 'basal' region (-5 kb to +1 kb of the TSS) for motif composition, or to the GREAT region (up to ±1 Mb unless another basal region intervenes) for counting APREs per gene. Gene sets were size-matched with matt stratify (±500 bp).",
+   "kw": [
+    "GREAT",
+    "GimmeMotifs",
+    "CIS-BP"
+   ],
+   "info": "CIS-BP v1.02 motifs were clustered with GimmeMotifs (v0.11.1, P ≤ 0.0001) into 242 clusters assigned to orthologous groups in both species, then scanned with gimme threshold and gimme scan.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Effect of WGDs on gene expression",
+   "q": "What threshold did they use to call a gene 'on' in a domain?",
+   "a": "A gene was 'on' if normalized cRPKM > 5 in one of nine comparable samples (eggs, embryo, testis, ovary, skin, gut, hepatic/liver, muscle, neural). Expression bias was the number of positive domains in the vertebrate gene minus that in amphioxus.",
+   "kw": [
+    "cRPKM",
+    "binarization"
+   ],
+   "info": "Only families with a single amphioxus member were used. Human-mouse sequence similarity and dN/dS came from BioMart.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - Transgenic assays",
+   "q": "How were enhancer reporter assays done?",
+   "a": "In zebrafish, APREs were cloned into a vector with a gata2 minimal promoter, GFP and the z48 midbrain enhancer as internal control, and integrated with Tol2. Three or more independent stable lines were made per construct. In amphioxus, a Branchiostoma minimal actin promoter-GFP vector was used with piggyBac transposase.",
+   "kw": [
+    "Tol2",
+    "piggyBac",
+    "GFP reporter"
+   ],
+   "info": "Amphioxus assays were transient (e.g. Foxa-251 positive in 46/52 embryos).",
+   "concl": ""
+  },
+  {
+   "type": "note",
+   "section": "Results - Higher regulatory information in vertebrate genomes",
+   "text": "The authors cannot tell whether vertebrates gained regulatory elements or amphioxus lost them ('and/or a decrease in these regions in amphioxus'). A second outgroup would be needed to polarize this."
+  },
+  {
+   "type": "note",
+   "section": "Results - Functional genome annotation of amphioxus",
+   "text": "Gene counts look swapped between figures: Fig. 5e gives amphioxus 20,053 and zebrafish 20,569, but the text and Extended Data Fig. 9c give amphioxus 20,569 and zebrafish 20,053. Check the supplement."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Worth checking in cavefish or zebrafish (teleost third WGD): do specialized ohnologues there also gain APREs, and is enhancer demethylation in gene bodies a route to tissue-specific regulation?"
+  }
+ ]
+}

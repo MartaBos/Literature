@@ -1,0 +1,485 @@
+{
+ "id": "Grushina_2024",
+ "title": "Prediction and annotation of alternative transcription starts and promoter shift in the chicken genome",
+ "link": "https://doi.org/10.1142/s0219720025500040",
+ "category": null,
+ "note": "",
+ "source_pdf": "papers/regulatiory_genomics/Grushina_2024_bioRxiv_alternative_TSS_promoter_shift.pdf",
+ "added": "2026-11-25",
+ "generated_by": "claude -p (default model)",
+ "source_note": "Notes are from the bioRxiv preprint, not from the peer-reviewed version (J Bioinform Comput Biol 2025; no access). Details may differ in the journal version.",
+ "items": [
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is a promoter shift?",
+   "a": "A long known phenomenon in which the coordinates of a transcription start site (TSS) change. CAGE experiments can be used to measure how large the shift is and whether it is statistically significant.",
+   "kw": [
+    "promoter shift",
+    "TSS",
+    "CAGE"
+   ],
+   "info": "The shift can come with changes in early developmental stage or tissue differentiation, and also with environmental influence on the cells.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "What is the classic view of promoter architecture in regulated versus housekeeping genes?",
+   "a": "Differential promoter usage suggests a regulated, non-constitutive gene that uses a few sharp promoters. Housekeeping genes are assumed to have stable expression, to use multiple broad promoters and to be expressed in most tissues.",
+   "kw": [
+    "sharp promoter",
+    "broad promoter",
+    "housekeeping genes"
+   ],
+   "info": "",
+   "concl": "Many ubiquitously expressed chicken genes use single sharp promoters and undergo significant promoter shift. This makes it harder to define what a housekeeping gene is."
+  },
+  {
+   "type": "qa",
+   "section": "Abstract",
+   "q": "How is their approach different from the usual way of studying gene responses to stimuli?",
+   "a": "Instead of differential gene expression, they use differential promoter usage. Genes whose promoters shift significantly are treated as signatures of tissue response and phenotypic effect.",
+   "kw": [
+    "differential promoter usage"
+   ],
+   "info": "",
+   "concl": "The authors suggest that differences in chicken growth rate are controlled by the rate of nutrient metabolism, through differential promoter usage of the relevant genes."
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why does promoter analysis often disagree with the existing genome annotation?",
+   "a": "Either the existing annotation is not accurate enough, or there are previously unknown transcripts that are activated only under certain non-standard conditions.",
+   "kw": [
+    "genome annotation"
+   ],
+   "info": "CAGE data help to locate the starts of such transcripts and to detect promoter shift events. The aim is to improve Gallus gallus genome annotation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What is a CTSS?",
+   "a": "A CAGE tag start site: the start positions of mapped CAGE reads aggregated into 0 bp wide intervals. Each CTSS counts how many times transcription started at exactly that genome coordinate.",
+   "kw": [
+    "CTSS",
+    "CAGE"
+   ],
+   "info": "This is the first step of the conventional CAGE analysis pipeline.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How is a TSS defined in CAGE analysis, compared with a CTSS?",
+   "a": "Transcription usually does not start from a single base. Several CTSS form a peak or cluster within a short genomic interval, and that interval is called the TSS.",
+   "kw": [
+    "TSS",
+    "dominant CTSS"
+   ],
+   "info": "The CTSS within a TSS are usually distributed around the most expressed one, called the TSS peak center or dominating CTSS.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "How does a promoter shift show up in CAGE data when two conditions are compared?",
+   "a": "The CTSS distribution along the TSS is not unimodal. Instead it is a mixture of two distributions, each characteristic of one tissue or condition. This is called promoter shift or TSS shifting.",
+   "kw": [
+    "TSS shifting"
+   ],
+   "info": "The shift is thought to come from differential promoter usage.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Where was promoter shift first observed?",
+   "a": "It was first found in mutations of the transcription factor TFIIB that shifted the TSS. In CAGE data it was first seen in differentiating zebrafish embryo cells during the maternal to zygotic transition.",
+   "kw": [
+    "TFIIB",
+    "maternal to zygotic transition",
+    "zebrafish"
+   ],
+   "info": "More recently, altered promoter usage in the same adult tissue has been linked to differential gene expression (human heart failure) and to response to environmental change.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "Why might CAGE TSS peaks not match RefSeq or Ensembl gene starts in chicken?",
+   "a": "The chicken genome annotation is much less complete than the human one. Some predicted TSS may belong to existing genes that are not yet annotated, and some annotated genes expressed below detection may have no predicted TSS near their start.",
+   "kw": [
+    "RefSeq",
+    "Ensembl"
+   ],
+   "info": "The sentence about the UCSC genome browser annotation is cut off in the preprint ('which is currently'), so it is unclear what the authors meant.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Introduction",
+   "q": "What were the aims of the study?",
+   "a": "To predict TSS in the chicken genome from CAGE data on growing chickens, estimate the regulatory potential of the promoter regions, and test for significant promoter shift both between tissues and between slow and fast growing chickens within each tissue.",
+   "kw": [
+    "Gallus gallus"
+   ],
+   "info": "They also say the data let them annotate enhancers and alternative transcription starts, but no enhancer results are reported in the main text.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - public CAGE data",
+   "q": "Which chickens and tissues were used?",
+   "a": "24 F2 chickens from a Russian White x Cornish cross, split by average daily weight gain into 12 slow growing and 12 fast growing birds. Six tissues were sampled from each bird at 9 weeks: heart, kidney, leg, liver, brain and breast.",
+   "kw": [
+    "F2 cross",
+    "growth rate"
+   ],
+   "info": "The data were not generated in this study. Paired-end CAGE-seq reads (DNBSEQ-G400) were downloaded from the Chicken GeneTech database (chicken.biouml.org, ChickenResearch2023).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - public CAGE data",
+   "q": "What data did they use for validation?",
+   "a": "CAGE reads from chicken tissue samples in the FANTOM5 project. These were remapped to galGal6 and processed into CTSS and TSS peaks the same way as the F2 samples.",
+   "kw": [
+    "FANTOM5"
+   ],
+   "info": "The main text does not report the results of this validation.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - reference genome and annotation",
+   "q": "Which genome assembly and annotations were used?",
+   "a": "The GRCg6a (galGal6) RefSeq assembly from NCBI (GCF_000002315.6). Ensembl release 106 and NCBI RefSeq Gallus gallus annotation release 104 (GCF_000002315.5) were used to annotate, compare and validate TSS and CTSS coordinates.",
+   "kw": [
+    "galGal6",
+    "GRCg6a"
+   ],
+   "info": "The assembly accession (.6) and the annotation accession (.5) differ in version, but the paper calls them the corresponding assemblies.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - read mapping and CTSS",
+   "q": "How were CAGE reads mapped and turned into CTSS?",
+   "a": "Paired-end reads were aligned separately for each sample with STAR v2.7.11b. Read start positions were aggregated into CTSS following the FANTOM5 approach: filtering with SAMtools, then conversion and aggregation with BEDtools.",
+   "kw": [
+    "STAR",
+    "SAMtools",
+    "BEDtools"
+   ],
+   "info": "CTSS were converted from BED into the native CAGEr format (chromosome, tag start, strand, read count) and loaded into CAGEr for annotation with RefSeq gene models.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - normalization",
+   "q": "How were CTSS values normalized?",
+   "a": "With the power-law based normalization in CAGEr. Robust normalization used a slope of -1.2 (log-log) and a reference number of 5e+04 CTSS. Permissive normalization kept the same slope but relaxed the reference number to 1.2e+07.",
+   "kw": [
+    "power law normalization",
+    "CAGEr"
+   ],
+   "info": "Inconsistency: the Results say the permissive normalization was relaxed to 10^8 total tags, not 1.2e+07 as in the Methods.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - normalization",
+   "q": "When did they use robust versus permissive normalization?",
+   "a": "Robust normalization was used to find promoter shifts in ubiquitously expressed genes, between tissues and between slow and fast growers. Permissive normalization was used when tissue-specific genes were included.",
+   "kw": [
+    "robust",
+    "permissive"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - contrasts and TSS clustering",
+   "q": "How were the samples grouped for clustering?",
+   "a": "In two steps, following the standard CAGEr pipeline. Group-specific TSS peaks were made first and then merged into consensus clusters. Samples were split into six tissue groups of 24 samples, and each tissue group into slow and fast growth groups.",
+   "kw": [
+    "consensus clusters",
+    "tag clusters"
+   ],
+   "info": "This hierarchical grouping is what allows promoter shift to be estimated between contrasts.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - contrasts and TSS clustering",
+   "q": "Which clustering algorithm and parameters were used?",
+   "a": "CAGEr's implementation of DISTCLU (distance-based clustering). CTSS with TPM < 1 were removed, singleton CTSS with fewer than 5 reads were removed, and the maximum distance between neighbouring CTSS in a cluster was 20 nt.",
+   "kw": [
+    "DISTCLU"
+   ],
+   "info": "The resulting TSS peaks were annotated with the RefGene set.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - contrasts and TSS clustering",
+   "q": "How was a significant promoter shift detected?",
+   "a": "With CAGEr's Kolmogorov-Smirnov test of differential CAGE tag usage, applied to unnormalized CTSS counts within consensus clusters.",
+   "kw": [
+    "Kolmogorov-Smirnov test",
+    "CAGEr"
+   ],
+   "info": "Table 3 uses FDR < 0.01 as the significance cutoff for promoter shift between tissues.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Methods - gene set enrichment",
+   "q": "How was enrichment analysis done?",
+   "a": "With a Fisher exact test and FDR correction in PANTHER against GO Slim biological processes, and with the Bioconductor package clusterProfiler against the KEGG Pathway database.",
+   "kw": [
+    "PANTHER",
+    "clusterProfiler",
+    "KEGG"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue characteristic promoter regions",
+   "q": "How many genes had TSSs in all tissues versus only one tissue?",
+   "a": "The tag clusters were annotated to 1215 genes in total. 1187 were detected in all tissues and only 16 were tissue specific, with TSSs detected in one tissue only.",
+   "kw": [
+    "tissue specific genes"
+   ],
+   "info": "Tag clusters were mostly annotated to exonic and intergenic regions. Examples of tissue-specific genes: brain AVP, SLC38A2, VAMP1; breast KLHL31, MYH1E; heart C7, LPL, RRAD, RYR2, TPM4; liver PHGDH (Table 1).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue characteristic promoter regions",
+   "q": "How many TSSs did each gene typically have?",
+   "a": "Nearly 90% of genes (1091 of 1215) had only one active TSS across all six tissues, and only a few had more than 3.",
+   "kw": [
+    "single promoter genes"
+   ],
+   "info": "Table 2: 75 genes had 2 TSSs and 11 had 3. Single genes had 8, 26 and 34 TSSs.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue characteristic promoter regions",
+   "q": "Were TSSs, including intergenic ones, active in all tissues?",
+   "a": "Yes, mostly. 2350 of 2387 non-overlapping tag cluster intervals were active in all six tissues, and so were 1027 of 1035 intergenic tag clusters.",
+   "kw": [
+    "intergenic TSS"
+   ],
+   "info": "",
+   "concl": "Gene expression differences between tissues do not work in a switch-on/switch-off manner. They are based on different levels of mRNA."
+  },
+  {
+   "type": "qa",
+   "section": "Results - ubiquitously active promoter regions",
+   "q": "How many consensus TSSs were active in all tissues, and how many promoters did their genes have?",
+   "a": "507 genomic intervals. 308 were annotated in galGal6 RefSeq, and nearly all of these (306) were the only TSS region of their gene.",
+   "kw": [
+    "consensus clusters",
+    "ubiquitous promoters"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - ubiquitously active promoter regions",
+   "q": "How wide were the ubiquitous consensus TSSs?",
+   "a": "Narrow. The median interquartile width was only 6 nt, counting all intergenic and both intronic TSSs.",
+   "kw": [
+    "interquantile width",
+    "Kadonaga model"
+   ],
+   "info": "Figure 1 measures width between the 0.1 and 0.9 quantiles of the tag distribution. The exceptions were LOC112533555 (olfactory receptor, OR14J1 ortholog) and LOC112533599 (RNA28S18, 28S ribosomal RNA 18), each with 5 comparatively wide TSSs of 35 to 1004 nt.",
+   "concl": "This fits Kadonaga's core promoter model: single-promoter genes have sharp TSSs and multi-promoter genes have wide ones."
+  },
+  {
+   "type": "qa",
+   "section": "Results - housekeeping status",
+   "q": "How many of the ubiquitously expressed genes were known chicken housekeeping genes?",
+   "a": "Few. Only 68 of 308 (22%) overlapped the 1256 housekeeping gene symbols from Lizio et al. 2017.",
+   "kw": [
+    "housekeeping genes"
+   ],
+   "info": "The Lizio set was defined by ubiquitous expression, low variance across tissues and no exceptional expression (Eisenberg and Levanon criteria).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - housekeeping status",
+   "q": "What did the tissue characteristic TSS set look like in terms of promoter number and housekeeping overlap?",
+   "a": "92% were single promoters of their gene. The other 8% included 90 genes with 2 or 3 promoters and 3 genes with many: CPS1 (8), an olfactory receptor 14C36-like gene (26) and RNA28S18 (34). Only 282 of 1091 genes (26%) expressed in all 6 tissues overlapped the Lizio housekeeping set.",
+   "kw": [
+    "CPS1",
+    "RNA28S18"
+   ],
+   "info": "LOC112533555 is called an OR14J1 ortholog in one paragraph and 'olfactory receptor 14C36-like' in another.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - housekeeping status",
+   "q": "Why do their genes not fit both housekeeping definitions?",
+   "a": "The genes are ubiquitous, which matches the Eisenberg and Levanon definition. But they mostly have sharp single promoters, while Kadonaga's model predicts multiple broad promoters for housekeeping genes.",
+   "kw": [
+    "housekeeping genes",
+    "Kadonaga model"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift between tissues",
+   "q": "How common was promoter shift between tissues?",
+   "a": "Very common. Although promoter activity was not tissue specific in terms of presence or absence, more than half of the consensus TSSs were used significantly differently between any pair of tissues.",
+   "kw": [
+    "promoter shift"
+   ],
+   "info": "Table 3: about 246 to 350 TSSs shifted significantly (FDR < 0.01) per tissue pair. Liver had the largest total distance from all other tissues (1668).",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - promoter shift between tissues",
+   "q": "Which two tissues were most similar in promoter usage?",
+   "a": "Leg and breast. They had the fewest significantly shifted TSSs between them (246), as expected for two skeletal muscle tissues.",
+   "kw": [
+    "leg",
+    "breast"
+   ],
+   "info": "The largest pairwise number was leg versus liver (350). In the Figure 2 clustering, breast and leg group together.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - slow vs fast growing chickens",
+   "q": "Which genes shifted promoters between slow and fast growers within the same tissue?",
+   "a": "Mostly the same genes in all 6 tissues, 32 genes in total. They were enriched for protein cascade, negative regulation of blood coagulation, IMP metabolism and mitochondrial electron transport.",
+   "kw": [
+    "IMP metabolism",
+    "mitochondrial electron transport"
+   ],
+   "info": "This analysis used the robust normalization (ubiquitous set). Details are in supplementary tables ST3 and ST4.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - slow vs fast growing chickens",
+   "q": "How far did TSSs shift in fast compared with slow growing chickens?",
+   "a": "Mostly by no more than 100 bp upstream or downstream. A few TSSs shifted by 300 to 400 bp.",
+   "kw": [
+    "TSS position shift"
+   ],
+   "info": "The Figure 3 histograms are centred near 0 in all six tissues. Leg and liver each show one shift above 500 bp, which is more than the text's stated maximum.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue specific promoter shift",
+   "q": "Which KEGG pathways were enriched among shifted genes only in particular tissues?",
+   "a": "Brain: fatty acid metabolism, lysosome and endocytosis. Kidney: peroxisome, valine/leucine/isoleucine degradation and fatty acid degradation. Breast: autophagy. Liver: glutathione, glycine/serine/threonine and glyoxylate/dicarboxylate metabolism.",
+   "kw": [
+    "KEGG",
+    "permissive normalization"
+   ],
+   "info": "This used the permissive set of consensus clusters. Ribosome, oxidative phosphorylation and carbon metabolism were enriched in all six tissues. PPAR signaling and amino acid biosynthesis were enriched in both kidney and liver.",
+   "concl": "At the tissue-specific level, promoter shift between growth groups affects different pathways in different tissues."
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue specific promoter shift",
+   "q": "How did tissues group by their enriched pathways?",
+   "a": "The presence/absence pattern of enriched KEGG pathways separated liver and kidney from the other tissues (Figure 5).",
+   "kw": [],
+   "info": "In Figure 5, heart, breast and leg share muscle-related terms (cytoskeleton in muscle cells, proteasome), and brain clusters with them. The Figure 5 heatmap shows focal adhesion in heart and liver, but the Figure 4 bar plots show it in heart and leg. Glutathione metabolism appears for liver in Figure 5 but not among the top terms in Figure 4F.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Results - tissue specific promoter shift",
+   "q": "How do the authors link kidney enrichment to fast growth?",
+   "a": "Overweight chickens can develop fatty liver and kidney syndrome, with fatty acids accumulating in kidney as well as liver. The authors suggest fast growers may benefit from better fatty acid degradation specifically in the kidney.",
+   "kw": [
+    "fatty liver and kidney syndrome",
+    "peroxisome",
+    "PPAR"
+   ],
+   "info": "This is speculative and based on literature: peroxisomes do beta-oxidation of fatty acids, and chicken kidney expresses PPAR genes. Lipogenesis in chicken happens mainly in liver. The authors also say growth signatures were enriched only in kidney but do not specify which terms.",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What do the authors conclude about housekeeping genes?",
+   "a": "Ubiquitously expressed genes mostly had one sharp promoter and overlapped only weakly (though significantly) with known chicken housekeeping genes. So not all housekeeping genes may resist regulation, and not all ubiquitous genes should be called housekeeping.",
+   "kw": [
+    "housekeeping genes"
+   ],
+   "info": "No test statistic or p-value is given for the 'significant' overlap with the Lizio set.",
+   "concl": "Ubiquity and promoter architecture give different answers to what counts as a housekeeping gene."
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "What does promoter shift add to the idea of tissue specificity?",
+   "a": "Tissue specificity is already seen as quantitative rather than qualitative. The results show that ubiquitously expressed genes are also regulated differently between tissues through promoter shift, and that tissue-specific promoter shift is common across genes and tissues.",
+   "kw": [
+    "tissue specificity"
+   ],
+   "info": "",
+   "concl": ""
+  },
+  {
+   "type": "qa",
+   "section": "Discussion",
+   "q": "How do the growth-related findings compare with earlier expression studies?",
+   "a": "The focal adhesion pathway agrees with an earlier study of chicken leg between slow and fast growth stages. The growth hormone receptor pathway, previously linked to myoblast differentiation and muscle growth, was not enriched.",
+   "kw": [
+    "focal adhesion",
+    "growth hormone receptor"
+   ],
+   "info": "",
+   "concl": "The slow versus fast differences probably do not come from myoblast differentiation at an early developmental stage. The signatures point to enhanced nutrient metabolism, not hormonal regulation of growth."
+  },
+  {
+   "type": "qa",
+   "section": "Conclusion",
+   "q": "What are the main take-home conclusions?",
+   "a": "CAGE reveals TSSs beyond those annotated in RefSeq and Ensembl, and a significant fraction of genes show condition-specific TSS shifts. Ubiquitous genes with sharp TSSs are subject to regulation and shift promoters between tissues. Promoter shift also contributes to growth-rate differences within the same tissue.",
+   "kw": [
+    "promoter shift",
+    "CAGE"
+   ],
+   "info": "Limitations seen in the paper: it is a preprint; only about 1215 genes were annotated to tag clusters, which is few for a vertebrate genome and probably reflects strict filtering; the FANTOM5 validation results are not reported; the enhancer annotation mentioned in the Introduction is not shown; and the functional interpretation rests on enrichment and literature only.",
+   "concl": "Promoter shift is a regulatory layer that differential expression analysis would miss."
+  },
+  {
+   "type": "note",
+   "section": "Results - tissue characteristic promoter regions",
+   "text": "Only 1215 genes were annotated to tag clusters across six tissues. How much do the TPM and singleton filters and the robust normalization limit gene coverage, and would deeper or permissive analysis change the conclusion that most genes have a single sharp promoter?"
+  },
+  {
+   "type": "note",
+   "section": "Results - slow vs fast growing chickens",
+   "text": "Does promoter shift between slow and fast growers actually change transcript or protein output (for example a different 5' UTR or first exon), or is it just repositioning within the same core promoter? This would matter for applying a similar promoter-shift analysis to cavefish versus surface fish CAGE data."
+  },
+  {
+   "type": "note",
+   "section": "Discussion",
+   "text": "Go back to the supplementary tables (ST2 to ST6) for the actual gene lists and FDR values. The main text gives no statistic for the housekeeping overlap, and the figures and text disagree on some pathways and on the permissive normalization parameter."
+  }
+ ]
+}
